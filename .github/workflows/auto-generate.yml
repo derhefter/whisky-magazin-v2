@@ -57,7 +57,12 @@ jobs:
                 "getyourguide": "https://www.getyourguide.de/?partner_id=deinpartnerid"
               }
             }
-          }
+          },
+            "content_settings": {
+              "articles_per_run": 1,
+              "min_word_count": 1200,
+              "max_word_count": 2500
+            }
           EOF
 
       - name: 3 Artikel generieren + Website bauen
