@@ -1,0 +1,80 @@
+name: Auto-Generate Articles (Weekly)
+
+on:
+  schedule:
+    # Jeden Donnerstag um 10:00 Uhr UTC (11:00 CET / 12:00 CEST)
+    - cron: '0 10 * * 4'
+  workflow_dispatch:  # Manueller Trigger
+
+jobs:
+  generate-and-deploy:
+    name: Generate 3 Articles & Build Site
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Abhaengigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: config.json aus Secret erstellen
+        run: |
+          cat > config.json << EOF
+          {
+            "site": {
+              "name": "Whisky Magazin",
+              "tagline": "Dein Guide für edle Tropfen und unvergessliche Reisen",
+              "author": "Ellas",
+              "base_url": "https://whisky-magazin.vercel.app"
+            },
+            "openai": {
+              "api_key": "${{ secrets.OPENAI_API_KEY }}",
+              "model": "gpt-4o",
+              "temperature": 0.7
+            },
+            "min_word_count": 1200,
+            "max_word_count": 2500,
+            "affiliate_links": {
+              "whisky_shops": [
+                {
+                  "name": "Amazon",
+                  "url_template": "https://www.amazon.de/s?k={query}&tag=deinpartnerid"
+                }
+              ],
+              "travel_links": {
+                "booking": "https://www.booking.com/?aid=deinpartnerid",
+                "getyourguide": "https://www.getyourguide.de/?partner_id=deinpartnerid"
+              }
+            }
+          }
+          EOF
+
+      - name: 3 Artikel generieren + Website bauen
+        run: |
+          python main.py --auto -n 3
+
+      - name: Git Konfiguration
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<actions@github.com>"
+
+      - name: Änderungen committen und pushen
+        run: |
+          git add articles/ site/ used_topics.json
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: Auto-generate 3 new articles [$(date +%Y-%m-%d)]"
+            git push
+          else
+            echo "Keine Änderungen zu committen"
+          fi
