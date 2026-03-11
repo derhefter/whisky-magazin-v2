@@ -30,7 +30,7 @@ jobs:
 
       - name: config.json aus Secret erstellen
         run: |
-          cat > config.json << EOF
+          cat > config.json << 'EOF'
           {
             "site": {
               "name": "Whisky Magazin",
@@ -43,8 +43,6 @@ jobs:
               "model": "gpt-4o",
               "temperature": 0.7
             },
-            "min_word_count": 1200,
-            "max_word_count": 2500,
             "affiliate_links": {
               "whisky_shops": [
                 {
@@ -56,14 +54,13 @@ jobs:
                 "booking": "https://www.booking.com/?aid=deinpartnerid",
                 "getyourguide": "https://www.getyourguide.de/?partner_id=deinpartnerid"
               }
-            }
-          },
+            },
             "content_settings": {
               "articles_per_run": 1,
               "min_word_count": 1200,
               "max_word_count": 2500
             }
-                  }
+          }
           EOF
 
       - name: 3 Artikel generieren + Website bauen
