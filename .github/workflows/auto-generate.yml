@@ -63,6 +63,7 @@ jobs:
               "min_word_count": 1200,
               "max_word_count": 2500
             }
+                  }
           EOF
 
       - name: 3 Artikel generieren + Website bauen
