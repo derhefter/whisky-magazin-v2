@@ -165,15 +165,19 @@ def generate_article(topic, config):
             "keywords": ", ".join(topic.get("tags", [])),
             "og_description": topic["title"],
         }
+    # Bestimme Kategorien
+    cat = topic.get("category", "Allgemein")
+    if cat in ["Reise", "Urlaub"]:
+        cats = ["Reise", "Lifestyle"]
+    else:
+        cats = [cat]
+
 
     return {
         "title": topic["title"],
         "html_content": html_content,
         "category": topic.get("category", "Allgemein"),
-                        "categories": [
-                    topic.get("category", "Allgemein")
-                ] if topic.get("category", "Allgemein") not in ["Reise", "Urlaub"] else ["Reise", "Lifestyle"],
-        "tags": topic.get("tags", []),
+                "categories": cats,        "tags": topic.get("tags", []),
         "type": topic.get("type", "article"),
         "meta": meta,
         "date": datetime.now().strftime("%Y-%m-%d"),
