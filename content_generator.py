@@ -170,6 +170,9 @@ def generate_article(topic, config):
         "title": topic["title"],
         "html_content": html_content,
         "category": topic.get("category", "Allgemein"),
+                        "categories": [
+                    topic.get("category", "Allgemein")
+                ] if topic.get("category", "Allgemein") not in ["Reise", "Urlaub"] else ["Reise", "Lifestyle"],
         "tags": topic.get("tags", []),
         "type": topic.get("type", "article"),
         "meta": meta,
