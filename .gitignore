@@ -10,6 +10,7 @@ config.json
 # Temp
 temp/
 *.log
+used_topics.json
 
 # OS
 .DS_Store
