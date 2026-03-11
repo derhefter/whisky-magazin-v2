@@ -608,8 +608,18 @@ def build_category_page(category_name, articles, config):
     base_url = config["site"].get("base_url", "")
     site_name = config["site"]["name"]
 
-    filtered = [a for a in articles if a.get("category", "").lower() == category_name.lower()]
-
+    # Funktion zum Prüfen, ob ein Artikel zu dieser Kategorie gehört
+    def belongs_to_category(article, cat_name):
+        # Prüfe altes single-category Format
+        if article.get("category", "").lower() == cat_name.lower():
+            return True
+        # Prüfe neues multi-category Format
+        categories = article.get("categories", [])
+        if isinstance(categories, list):
+            return any(c.lower() == cat_name.lower() for c in categories)
+        return False
+    
+    filtered = [a for a in articles if belongs_to_category(a, category_name)]
     cards_html = ""
     for article in filtered:
         meta = article.get("meta", {})
