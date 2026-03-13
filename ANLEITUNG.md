@@ -85,6 +85,25 @@ Falls du bereits Webspace hast (z.B. bei deinem Domain-Anbieter):
 
 ---
 
+## Automatische Artikel-Generierung (GitHub Actions)
+
+Der Workflow `.github/workflows/auto-generate.yml` generiert jeden **Donnerstag um 11:00 Uhr** automatisch 3 neue Artikel und deployed sie.
+
+**Voraussetzung:** Der OpenAI API-Key muss als GitHub Secret eingerichtet sein:
+
+1. Gehe zu deinem Repository auf GitHub
+2. Settings > Secrets and variables > Actions
+3. "New repository secret" klicken
+4. Name: `OPENAI_API_KEY`
+5. Value: Dein OpenAI API-Key (beginnt mit `sk-...`)
+6. "Add secret" klicken
+
+**Manuell ausloesen:** Actions > "Auto-Generate Articles (Weekly)" > "Run workflow"
+
+**Wichtig:** Unter Settings > Actions > General muss "Workflow permissions" auf **"Read and write permissions"** stehen, damit der Bot die neuen Artikel committen und pushen kann.
+
+---
+
 ## Eigene Domain verbinden
 
 Wenn du eine eigene Domain willst (z.B. whisky-magazin.de):
@@ -176,6 +195,64 @@ whisky-magazin/
   used_topics.json      <- Verwendete Themen (lokal, nicht im Git)
   magazin.log           <- Protokoll (lokal, nicht im Git)
 ```
+
+---
+
+## Blog-Artikel anpassen
+
+Alle Artikel liegen als JSON-Dateien im Ordner `articles/`. Du kannst sie jederzeit manuell bearbeiten.
+
+### Dateiformat
+
+Jede Datei heißt `YYYY-MM-DD_slug.json` und enthält:
+
+```json
+{
+  "title": "Artikel-Überschrift",
+  "html_content": "<h2>...</h2><p>...</p>",
+  "category": "Reise",
+  "tags": ["Schottland", "Whisky"],
+  "type": "article",
+  "meta": {
+    "meta_description": "SEO-Beschreibung (max. 160 Zeichen)",
+    "teaser": "Vorschautext für die Startseite",
+    "slug": "url-freundlicher-name",
+    "keywords": "SEO Keywords, kommagetrennt",
+    "og_description": "Social-Media-Beschreibung"
+  },
+  "date": "2026-03-13",
+  "date_display": "13. März 2026"
+}
+```
+
+### Artikel bearbeiten
+
+1. Öffne die gewünschte JSON-Datei im `articles/`-Ordner mit einem Texteditor
+2. Bearbeite den `html_content` (HTML-formatiert) oder andere Felder
+3. Speichere die Datei
+4. Baue die Website neu: `python main.py --build`
+
+### Veröffentlichungsdatum ändern
+
+Das Feld `date` bestimmt die Sortierung auf der Startseite (neueste zuerst). Das Feld `date_display` wird dem Leser angezeigt.
+
+1. Ändere `"date": "YYYY-MM-DD"` auf das gewünschte Datum
+2. Ändere `"date_display"` auf die deutsche Darstellung (z.B. `"13. März 2026"`)
+3. Benenne die Datei um, damit das Datum im Dateinamen übereinstimmt
+4. Website neu bauen: `python main.py --build`
+
+### Artikel löschen
+
+1. Lösche die JSON-Datei aus dem `articles/`-Ordner
+2. Website neu bauen: `python main.py --build`
+
+### Affiliate-Links einfügen
+
+Im `html_content` können Affiliate-Links als HTML eingefügt werden:
+
+- **Amazon:** `<a href="https://www.amazon.de/s?k=suchbegriff&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Linktext</a>`
+- **Tradedoubler (Flüge/Reisen):** `<a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Linktext</a>`
+- **whisky.reise:** `<a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Linktext</a>`
 
 ---
 

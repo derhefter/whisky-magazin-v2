@@ -6,11 +6,15 @@ on:
     - cron: '0 10 * * 4'
   workflow_dispatch:  # Manueller Trigger
 
+# WICHTIG: Schreibrechte fuer git push
+permissions:
+  contents: write
+
 jobs:
   generate-and-deploy:
     name: Generate 3 Articles & Build Site
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
@@ -28,40 +32,73 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: config.json aus Secret erstellen
+      - name: config.json aus Secrets erstellen
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          cat > config.json << 'EOF'
-          {
-            "site": {
-              "name": "Whisky Magazin",
-              "tagline": "Dein Guide für edle Tropfen und unvergessliche Reisen",
-              "author": "Ellas",
-              "base_url": "https://whisky-magazin.vercel.app"
-            },
-            "openai": {
-              "api_key": "${{ secrets.OPENAI_API_KEY }}",
-              "model": "gpt-4o",
-              "temperature": 0.7
-            },
-            "affiliate_links": {
-              "whisky_shops": [
-                {
-                  "name": "Amazon",
-                  "url_template": "https://www.amazon.de/s?k={query}&tag=deinpartnerid"
-                }
-              ],
-              "travel_links": {
-                "booking": "https://www.booking.com/?aid=deinpartnerid",
-                "getyourguide": "https://www.getyourguide.de/?partner_id=deinpartnerid"
+          python -c "
+          import json
+          config = {
+              'site': {
+                  'name': 'Whisky Magazin',
+                  'tagline': 'Dein Guide fuer Whisky, Destillerien & Reisen',
+                  'author': 'Ellas',
+                  'base_url': 'https://whisky-magazin.vercel.app',
+                  'language': 'de'
+              },
+              'openai': {
+                  'api_key': '$OPENAI_API_KEY',
+                  'model': 'gpt-4o',
+                  'temperature': 0.7,
+                  'max_tokens': 4000
+              },
+              'affiliate_links': {
+                  'amazon_tag': 'whiskyreise74-21',
+                  'tradedoubler_id': '2205846',
+                  'whisky_shops': [
+                      {
+                          'name': 'Amazon Whisky',
+                          'url_template': 'https://www.amazon.de/s?k={keyword}&tag=whiskyreise74-21',
+                          'priority': 1
+                      },
+                      {
+                          'name': 'whisky.de',
+                          'url_template': 'https://www.whisky.de/shop/search?q={keyword}',
+                          'priority': 2
+                      }
+                  ],
+                  'travel_links': {
+                      'faehre': 'https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448',
+                      'flug': 'https://clk.tradedoubler.com/click?p=227718&a=2205846',
+                      'hotel': 'https://www.whisky.reise/hotels/',
+                      'mietwagen': 'https://www.whisky.reise/mietwagen/',
+                      'touren': 'https://www.whisky.reise/touren/',
+                      'versicherung': 'https://www.whisky.reise/reiseversicherung/',
+                      'wohnmobil': 'https://www.whisky.reise/wohnmobil/'
+                  }
+              },
+              'content_settings': {
+                  'articles_per_run': 1,
+                  'min_word_count': 1200,
+                  'max_word_count': 2500
               }
-            },
-            "content_settings": {
-              "articles_per_run": 1,
-              "min_word_count": 1200,
-              "max_word_count": 2500
-            }
           }
-          EOF
+          import os
+          config['openai']['api_key'] = os.environ['OPENAI_API_KEY']
+          with open('config.json', 'w') as f:
+              json.dump(config, f, indent=2, ensure_ascii=False)
+          print('config.json erstellt.')
+          "
+
+      - name: Pruefen ob OpenAI Key gesetzt ist
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY Secret ist nicht gesetzt! Bitte unter Settings > Secrets > Actions hinzufuegen."
+            exit 1
+          fi
+          echo "OpenAI Key ist gesetzt."
 
       - name: 3 Artikel generieren + Website bauen
         run: |
@@ -70,14 +107,14 @@ jobs:
       - name: Git Konfiguration
         run: |
           git config user.name "GitHub Actions Bot"
-          git config user.email "<actions@github.com>"
+          git config user.email "actions@github.com"
 
-      - name: Änderungen committen und pushen
+      - name: Aenderungen committen und pushen
         run: |
           git add articles/ site/ used_topics.json
           if ! git diff --staged --quiet; then
             git commit -m "chore: Auto-generate 3 new articles [$(date +%Y-%m-%d)]"
             git push
           else
-            echo "Keine Änderungen zu committen"
+            echo "Keine Aenderungen zu committen"
           fi

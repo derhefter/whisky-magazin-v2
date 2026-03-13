@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/index.html</loc></url>
-  <url><loc>/artikel/whisky-und-kaese-ueberraschende-kombinationen.html</loc></url>
-  <url><loc>/artikel/luxusurlaub-schottland-schlosshotels-fine-dining.html</loc></url>
-  <url><loc>/artikel/loch-ness-und-mehr-schottlands-geheimnisvolle-seen.html</loc></url>
-  <url><loc>/artikel/whisky-tasting-fuer-einsteiger.html</loc></url>
-  <url><loc>/artikel/islay-erreichen-faehre-flug-oder-beides.html</loc></url>
-  <url><loc>/artikel/geschichte-lagavulin-200-jahre-torfrauch.html</loc></url>
-  <url><loc>/artikel/die-schoensten-whisky-bars-in-deutschland.html</loc></url>
-  <url><loc>/artikel/die-schoensten-straende-schottlands.html</loc></url>
-  <url><loc>/artikel/wohnmobil-reise-durch-schottland.html</loc></url>
-  <url><loc>/artikel/familienurlaub-schottland-tipps-eltern-whisky-fans.html</loc></url>
-  <url><loc>/artikel/die-besten-whisky-destillerien-auf-islay.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/index.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/highlands-whisky-trail-2023.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/glasgow-winter-citybreak-2025.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/bourbon-trail-kentucky-tennessee-2024.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/whisky-und-kaese-ueberraschende-kombinationen.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/luxusurlaub-schottland-schlosshotels-fine-dining.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/loch-ness-und-mehr-schottlands-geheimnisvolle-seen.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/whisky-tasting-fuer-einsteiger.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/islay-erreichen-faehre-flug-oder-beides.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/geschichte-lagavulin-200-jahre-torfrauch.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/die-schoensten-whisky-bars-in-deutschland.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/die-schoensten-straende-schottlands.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/wohnmobil-reise-durch-schottland.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/familienurlaub-schottland-tipps-eltern-whisky-fans.html</loc></url>
+  <url><loc>https://whisky-magazin.vercel.app/artikel/die-besten-whisky-destillerien-auf-islay.html</loc></url>
 </urlset>
