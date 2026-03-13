@@ -60,11 +60,6 @@ jobs:
                           'name': 'Amazon Whisky',
                           'url_template': 'https://www.amazon.de/s?k={keyword}&tag=whiskyreise74-21',
                           'priority': 1
-                      },
-                      {
-                          'name': 'whisky.de',
-                          'url_template': 'https://www.whisky.de/shop/search?q={keyword}',
-                          'priority': 2
                       }
                   ],
                   'travel_links': {
