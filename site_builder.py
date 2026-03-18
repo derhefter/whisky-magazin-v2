@@ -443,6 +443,74 @@ def load_all_articles():
     return articles
 
 
+def _find_related_articles(current_article, all_articles, base_url, max_count=4):
+    """Findet verwandte Artikel basierend auf Kategorie- und Tag-Uebereinstimmung."""
+    current_slug = current_article.get("meta", {}).get("slug", "")
+    current_cats = set()
+    if current_article.get("categories"):
+        current_cats = set(c.lower() for c in current_article["categories"])
+    elif current_article.get("category"):
+        current_cats = {current_article["category"].lower()}
+    current_tags = set(t.lower() for t in current_article.get("tags", []))
+
+    scored = []
+    for a in all_articles:
+        slug = a.get("meta", {}).get("slug", "")
+        if not slug or slug == current_slug:
+            continue
+        # Punkte fuer ueberlappende Kategorien
+        a_cats = set()
+        if a.get("categories"):
+            a_cats = set(c.lower() for c in a["categories"])
+        elif a.get("category"):
+            a_cats = {a["category"].lower()}
+        cat_score = len(current_cats & a_cats) * 2
+        # Punkte fuer ueberlappende Tags
+        a_tags = set(t.lower() for t in a.get("tags", []))
+        tag_score = len(current_tags & a_tags)
+        total = cat_score + tag_score
+        if total > 0:
+            scored.append((total, a))
+
+    # Nach Score sortieren (hoechster zuerst), bei Gleichstand nach Datum
+    scored.sort(key=lambda x: (x[0], x[1].get("date", "")), reverse=True)
+
+    related_html = ""
+    for _, a in scored[:max_count]:
+        slug = a.get("meta", {}).get("slug", "")
+        title = a["title"]
+        related_html += f'<li><a href="{base_url}/artikel/{slug}.html">{title}</a></li>\n'
+
+    # Falls weniger als max_count gefunden, mit neuesten Artikeln auffuellen
+    used_slugs = {current_slug} | {a.get("meta", {}).get("slug", "") for _, a in scored[:max_count]}
+    if len(scored) < max_count:
+        for a in all_articles:
+            if len(scored) + (max_count - len(scored)) <= 0:
+                break
+            slug = a.get("meta", {}).get("slug", "")
+            if slug and slug not in used_slugs:
+                title = a["title"]
+                related_html += f'<li><a href="{base_url}/artikel/{slug}.html">{title}</a></li>\n'
+                used_slugs.add(slug)
+                if related_html.count("<li>") >= max_count:
+                    break
+
+    if related_html:
+        return f'<div class="related-box"><h3>Das koennte dich auch interessieren</h3><ul>{related_html}</ul></div>'
+    return ""
+
+
+def _replace_related_box(html_content, related_html):
+    """Ersetzt die GPT-generierte related-box durch echte verlinkte Artikel."""
+    # Entferne die bestehende related-box (verschiedene Formate)
+    pattern = r'<div class=["\']related-box["\']>.*?</div>'
+    cleaned = re.sub(pattern, '', html_content, flags=re.DOTALL)
+    # Fuege die neue related-box vor dem Ende ein
+    if related_html:
+        cleaned = cleaned.rstrip() + "\n\n" + related_html
+    return cleaned
+
+
 def build_article_page(article, config):
     """Erstellt die HTML-Seite fuer einen einzelnen Artikel."""
     base_url = config["site"].get("base_url", "")
@@ -466,6 +534,10 @@ def build_article_page(article, config):
             t = a["title"]
             recent_html += f'<li><a href="{base_url}/artikel/{s}.html">{t}</a></li>\n'
 
+    # Related-Box: GPT-generierte Platzhalter durch echte Links ersetzen
+    related_html = _find_related_articles(article, all_articles, base_url, max_count=4)
+    article_html = _replace_related_box(article['html_content'], related_html)
+
     content = f"""
     <div class="article-header">
         <h1>{article['title']}</h1>
@@ -475,7 +547,7 @@ def build_article_page(article, config):
         <div class="content-grid">
             <main>
                 <div class="article-body">
-                    {article['html_content']}
+                    {article_html}
                     {tags_html}
                 </div>
             </main>

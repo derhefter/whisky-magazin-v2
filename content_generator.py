@@ -77,8 +77,16 @@ REISE-LINKS (fuer Reiseempfehlungen):
 8. Fuege ein <blockquote> mit einem passenden Whisky-Zitat oder persoenlichem Tipp ein.
 9. Am Ende einen "Fazit"-Abschnitt.
 10. Schreibe lebendig, mit Persoenlichkeit - keine trockenen Fakten.
-11. Am Ende des Artikels fuege eine Box ein mit verwandten Themen:
-    <div class="related-box"><h3>Das koennte dich auch interessieren</h3><ul><li>3-4 verwandte Themenvorschlaege als Listenpunkte</li></ul></div>
+11. WICHTIG - Korrekte Schreibweise von Whisky/Whiskey:
+    - Scotch Whisky (OHNE e) - fuer schottische Whiskys
+    - Irish Whiskey (MIT e) - fuer irische Whiskeys
+    - American Whiskey / Bourbon Whiskey (MIT e) - fuer amerikanische Whiskeys
+    - Japanese Whisky (OHNE e) - fuer japanische Whiskys
+    - German Whisky (OHNE e) - fuer deutsche Whiskys
+    Achte IMMER darauf, die landestypische Schreibweise korrekt zu verwenden!
+    Auch in zusammengesetzten Woertern: "Whiskey-Szene" (irisch), "Whisky-Region" (schottisch).
+13. Am Ende des Artikels fuege eine Box ein mit verwandten Themen (NUR Text, KEINE Links - die werden automatisch hinzugefuegt):
+    <div class="related-box"><h3>Das koennte dich auch interessieren</h3><ul><li>3-4 verwandte Themenvorschlaege als einfache Listenpunkte OHNE a-Tags</li></ul></div>
 
 ANTWORTE NUR MIT DEM HTML-INHALT. Kein zusaetzlicher Text."""
 
