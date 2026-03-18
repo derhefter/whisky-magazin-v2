@@ -31,13 +31,29 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          echo "Installierte Pakete:"
+          pip list | grep -i openai
+
+      - name: Pruefen ob OpenAI Key gesetzt ist
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY Secret ist nicht gesetzt! Bitte unter Settings > Secrets > Actions hinzufuegen."
+            exit 1
+          fi
+          echo "OpenAI Key ist gesetzt (Laenge: ${#OPENAI_API_KEY} Zeichen)."
 
       - name: config.json aus Secrets erstellen
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python -c "
+          python3 << 'PYEOF'
           import json
+          import os
+
+          api_key = os.environ['OPENAI_API_KEY']
+
           config = {
               'site': {
                   'name': 'Whisky Magazin',
@@ -47,7 +63,7 @@ jobs:
                   'language': 'de'
               },
               'openai': {
-                  'api_key': '$OPENAI_API_KEY',
+                  'api_key': api_key,
                   'model': 'gpt-4o',
                   'temperature': 0.7,
                   'max_tokens': 4000
@@ -78,26 +94,39 @@ jobs:
                   'max_word_count': 2500
               }
           }
-          import os
-          config['openai']['api_key'] = os.environ['OPENAI_API_KEY']
+
           with open('config.json', 'w') as f:
               json.dump(config, f, indent=2, ensure_ascii=False)
-          print('config.json erstellt.')
-          "
 
-      - name: Pruefen ob OpenAI Key gesetzt ist
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          print(f"config.json erstellt. API-Key: {api_key[:8]}...{api_key[-4:]}")
+          PYEOF
+
+      - name: OpenAI API-Verbindung testen
         run: |
-          if [ -z "$OPENAI_API_KEY" ]; then
-            echo "::error::OPENAI_API_KEY Secret ist nicht gesetzt! Bitte unter Settings > Secrets > Actions hinzufuegen."
-            exit 1
-          fi
-          echo "OpenAI Key ist gesetzt."
+          python3 << 'PYEOF'
+          import json
+          with open('config.json', 'r') as f:
+              config = json.load(f)
+
+          from openai import OpenAI
+          client = OpenAI(api_key=config['openai']['api_key'])
+          try:
+              response = client.chat.completions.create(
+                  model='gpt-4o',
+                  max_tokens=10,
+                  messages=[{'role': 'user', 'content': 'Say OK'}],
+              )
+              print(f"OpenAI API Test OK: {response.choices[0].message.content}")
+          except Exception as e:
+              print(f"::error::OpenAI API Test fehlgeschlagen: {e}")
+              raise
+          PYEOF
 
       - name: 3 Artikel generieren + Website bauen
         run: |
           python main.py --auto -n 3
+        env:
+          PYTHONIOENCODING: utf-8
 
       - name: Git Konfiguration
         run: |
@@ -108,8 +137,10 @@ jobs:
         run: |
           git add articles/ site/ used_topics.json
           if ! git diff --staged --quiet; then
-            git commit -m "chore: Auto-generate 3 new articles [$(date +%Y-%m-%d)]"
+            ARTICLE_COUNT=$(find articles/ -name "*.json" | wc -l)
+            git commit -m "chore: Auto-generate 3 new articles [$(date +%Y-%m-%d)] (total: $ARTICLE_COUNT)"
             git push
+            echo "Erfolgreich gepusht!"
           else
             echo "Keine Aenderungen zu committen"
           fi

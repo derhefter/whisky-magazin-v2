@@ -173,6 +173,15 @@ def generate_article(topic, config):
         cats = [cat]
 
 
+    # Deutsche Monatsnamen (strftime gibt auf Linux englische Namen)
+    monate_de = {
+        1: "Januar", 2: "Februar", 3: "Maerz", 4: "April",
+        5: "Mai", 6: "Juni", 7: "Juli", 8: "August",
+        9: "September", 10: "Oktober", 11: "November", 12: "Dezember",
+    }
+    now = datetime.now()
+    date_display = f"{now.day}. {monate_de[now.month]} {now.year}"
+
     return {
         "title": topic["title"],
         "html_content": html_content,
@@ -181,6 +190,6 @@ def generate_article(topic, config):
         "tags": topic.get("tags", []),
         "type": topic.get("type", "article"),
         "meta": meta,
-        "date": datetime.now().strftime("%Y-%m-%d"),
-        "date_display": datetime.now().strftime("%d. %B %Y"),
+        "date": now.strftime("%Y-%m-%d"),
+        "date_display": date_display,
     }

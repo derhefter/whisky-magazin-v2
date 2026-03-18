@@ -40,9 +40,11 @@ SITE_DIR = PROJECT_DIR / "site"
 
 sys.path.insert(0, str(PROJECT_DIR))
 
-from content_generator import generate_article
 from site_builder import build_site, load_all_articles
 from topic_library import WHISKY_TOPICS
+
+# Lazy-Import: content_generator erst bei Bedarf laden (braucht openai)
+generate_article = None
 
 
 # ============================================================
@@ -161,6 +163,11 @@ def log_action(action, details=""):
 
 def cmd_generate(config, count=1):
     """Generiert neue Artikel."""
+    global generate_article
+    if generate_article is None:
+        from content_generator import generate_article as _gen
+        generate_article = _gen
+
     print(f"\n  Generiere {count} Artikel...\n")
 
     success = 0
