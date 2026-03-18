@@ -487,12 +487,12 @@ def build_article_page(article, config):
                 <div class="cta-box">
                     <h3>Whisky entdecken</h3>
                     <p>Finde deinen naechsten Lieblings-Dram</p>
-                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config['affiliate_links']['amazon_tag']}" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
+                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')}" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
                 </div>
                 <div class="cta-box" style="margin-top: 20px;">
                     <h3>Schottland-Reise planen</h3>
                     <p>Faehren, Fluege & Hotels</p>
-                    <a href="{config['affiliate_links']['travel_links'].get('faehre', '#')}" target="_blank" rel="noopener noreferrer">Faehre buchen &#8594;</a>
+                    <a href="{config.get('affiliate_links', {}).get('travel_links', {}).get('faehre', '#')}" target="_blank" rel="noopener noreferrer">Faehre buchen &#8594;</a>
                 </div>
             </aside>
         </div>
@@ -576,7 +576,7 @@ def build_index_page(articles, config):
                 <div class="cta-box">
                     <h3>Whisky shoppen</h3>
                     <p>Die besten Single Malts auf einen Blick</p>
-                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config['affiliate_links']['amazon_tag']}" target="_blank" rel="noopener noreferrer">Jetzt entdecken &#8594;</a>
+                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')}" target="_blank" rel="noopener noreferrer">Jetzt entdecken &#8594;</a>
                 </div>
                 <div class="sidebar-box" style="margin-top: 20px;">
                     <h3>Ueber uns</h3>
