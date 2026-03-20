@@ -19,7 +19,7 @@ ARTICLES_DIR = PROJECT_DIR / "articles"
 # Deutsche Monatsnamen
 # ============================================================
 MONATE = {
-    "January": "Januar", "February": "Februar", "March": "Maerz",
+    "January": "Januar", "February": "Februar", "March": "März",
     "April": "April", "May": "Mai", "June": "Juni",
     "July": "Juli", "August": "August", "September": "September",
     "October": "Oktober", "November": "November", "December": "Dezember",
@@ -419,7 +419,7 @@ def _base_template():
     {content}
     <footer>
         <p>Ein Projekt von <a href="https://www.whisky.reise">whisky.reise</a> &mdash; Whisky, Reisen & mehr.</p>
-        <p class="footer-note">* Affiliate-Links: Bei Kaeufen ueber gekennzeichnete Links erhalten wir eine kleine Provision.</p>
+        <p class="footer-note">* Affiliate-Links: Bei Käufen über gekennzeichnete Links erhalten wir eine kleine Provision.</p>
     </footer>
 </body>
 </html>"""
@@ -496,7 +496,7 @@ def _find_related_articles(current_article, all_articles, base_url, max_count=4)
                     break
 
     if related_html:
-        return f'<div class="related-box"><h3>Das koennte dich auch interessieren</h3><ul>{related_html}</ul></div>'
+        return f'<div class="related-box"><h3>Das könnte dich auch interessieren</h3><ul>{related_html}</ul></div>'
     return ""
 
 
@@ -558,13 +558,13 @@ def build_article_page(article, config):
                 </div>
                 <div class="cta-box">
                     <h3>Whisky entdecken</h3>
-                    <p>Finde deinen naechsten Lieblings-Dram</p>
+                    <p>Finde deinen nächsten Lieblings-Dram</p>
                     <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')}" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
                 </div>
                 <div class="cta-box" style="margin-top: 20px;">
                     <h3>Schottland-Reise planen</h3>
-                    <p>Faehren, Fluege & Hotels</p>
-                    <a href="{config.get('affiliate_links', {}).get('travel_links', {}).get('faehre', '#')}" target="_blank" rel="noopener noreferrer">Faehre buchen &#8594;</a>
+                    <p>Fähren, Flüge & Hotels</p>
+                    <a href="{config.get('affiliate_links', {}).get('travel_links', {}).get('faehre', '#')}" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
                 </div>
             </aside>
         </div>
@@ -642,7 +642,7 @@ def build_index_page(articles, config):
                     <ul>{cat_html}</ul>
                 </div>
                 <div class="sidebar-box">
-                    <h3>Schlagwoerter</h3>
+                    <h3>Schlagwörter</h3>
                     <div class="tag-cloud">{tags_html}</div>
                 </div>
                 <div class="cta-box">
@@ -651,11 +651,11 @@ def build_index_page(articles, config):
                     <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')}" target="_blank" rel="noopener noreferrer">Jetzt entdecken &#8594;</a>
                 </div>
                 <div class="sidebar-box" style="margin-top: 20px;">
-                    <h3>Ueber uns</h3>
+                    <h3>Über uns</h3>
                     <p style="font-size:0.9em; color: var(--text-secondary);">
                         Wir sind leidenschaftliche Whisky-Liebhaber und Reisende.
-                        Hier teilen wir unser Wissen ueber Single Malts, Destillerien
-                        und die schoensten Whisky-Regionen der Welt.
+                        Hier teilen wir unser Wissen über Single Malts, Destillerien
+                        und die schönsten Whisky-Regionen der Welt.
                     </p>
                     <p style="margin-top:10px;"><a href="https://www.whisky.reise" target="_blank">&#8594; Mehr auf whisky.reise</a></p>
                 </div>
@@ -723,7 +723,7 @@ def build_category_page(category_name, articles, config):
             <aside class="sidebar">
                 <div class="cta-box">
                     <h3>Alle Artikel</h3>
-                    <p>Zurueck zur Uebersicht</p>
+                    <p>Zurück zur Übersicht</p>
                     <a href="{base_url}/index.html">Zur Startseite &#8594;</a>
                 </div>
             </aside>

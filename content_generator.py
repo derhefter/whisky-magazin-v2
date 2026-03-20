@@ -1,6 +1,6 @@
 """
 Content-Generator: Erstellt SEO-optimierte Whisky- und Reise-Artikel
-mithilfe der OpenAI API. Gibt strukturierte Artikel-Daten zurueck.
+mithilfe der OpenAI API. Gibt strukturierte Artikel-Daten zurück.
 """
 
 import json
@@ -28,7 +28,7 @@ def _call_openai_with_retry(client, max_retries=3, **kwargs):
 
 
 def _build_article_prompt(topic, affiliate_links, content_settings):
-    """Erstellt den Prompt fuer die KI-Artikelgenerierung."""
+    """Erstellt den Prompt für die KI-Artikelgenerierung."""
 
     shop_links = []
     for shop in affiliate_links.get("whisky_shops", []):
@@ -40,10 +40,10 @@ def _build_article_prompt(topic, affiliate_links, content_settings):
 
     article_type = topic.get("type", "article")
     type_instructions = {
-        "guide": "Schreibe einen umfassenden, praktischen Reisefuehrer/Guide mit konkreten Tipps, Empfehlungen und nuetzlichen Informationen. Verwende Infoboxen und praktische Hinweise.",
-        "review": "Schreibe eine ausfuehrliche, ehrliche Bewertung/Review mit Verkostungsnotizen, Aromen-Beschreibungen und persoenlicher Einschaetzung. Gib eine Gesamtbewertung.",
-        "listicle": "Schreibe einen strukturierten Listikel-Artikel mit nummerierten Punkten, klaren Beschreibungen und praktischen Empfehlungen fuer jeden Punkt.",
-        "article": "Schreibe einen informativen, gut recherchierten Artikel mit interessanten Fakten und persoenlichen Einschaetzungen.",
+        "guide": "Schreibe einen umfassenden, praktischen Reiseführer/Guide mit konkreten Tipps, Empfehlungen und nützlichen Informationen. Verwende Infoboxen und praktische Hinweise.",
+        "review": "Schreibe eine ausführliche, ehrliche Bewertung/Review mit Verkostungsnotizen, Aromen-Beschreibungen und persönlicher Einschätzung. Gib eine Gesamtbewertung.",
+        "listicle": "Schreibe einen strukturierten Listikel-Artikel mit nummerierten Punkten, klaren Beschreibungen und praktischen Empfehlungen für jeden Punkt.",
+        "article": "Schreibe einen informativen, gut recherchierten Artikel mit interessanten Fakten und persönlichen Einschätzungen.",
     }
 
     min_words = content_settings.get("min_word_count", 1200)
@@ -51,55 +51,59 @@ def _build_article_prompt(topic, affiliate_links, content_settings):
 
     return f"""Du bist ein leidenschaftlicher Whisky-Experte und Reiseblogger.
 Dein Name ist Ellas. Du bist ein Weltenbummler und Whisky-Liebhaber.
-Du schreibst auf Deutsch, in einem warmen, persoenlichen, aber fachkundigen Ton.
+Du schreibst auf Deutsch, in einem warmen, persönlichen, aber fachkundigen Ton.
 Du duzt deine Leser.
 
-AUFGABE: Schreibe einen vollstaendigen Blog-Artikel zum Thema: "{topic['title']}"
+AUFGABE: Schreibe einen vollständigen Blog-Artikel zum Thema: "{topic['title']}"
 
 ARTIKELTYP: {type_instructions.get(article_type, type_instructions['article'])}
 
 WICHTIGE REGELN:
-1. Zwischen {min_words} und {max_words} Woerter.
+1. Zwischen {min_words} und {max_words} Wörter.
 2. Schreibe in HTML-Format. Verwende <h2>, <h3>, <p>, <ul>, <li>, <ol>, <strong>, <em>, <blockquote>.
-3. Beginne NICHT mit <h1> - die Ueberschrift wird separat gesetzt.
-4. Mindestens 4-6 Zwischenueberschriften (<h2>).
-5. SEO-optimiert: Hauptkeyword natuerlich im Text, in Ueberschriften und im ersten Absatz.
+3. Beginne NICHT mit <h1> - die Überschrift wird separat gesetzt.
+4. Mindestens 4-6 Zwischenüberschriften (<h2>).
+5. SEO-optimiert: Hauptkeyword natürlich im Text, in Überschriften und im ersten Absatz.
 6. Baue an passenden Stellen Affiliate-Links ein:
 
-WHISKY-SHOP-LINKS (fuer Produktempfehlungen):
+WHISKY-SHOP-LINKS (für Produktempfehlungen):
 {chr(10).join(shop_links)}
 
-REISE-LINKS (fuer Reiseempfehlungen):
+REISE-LINKS (für Reiseempfehlungen):
 {chr(10).join(travel_links)}
 
 7. Affiliate-Links als: <a href="LINK" target="_blank" rel="noopener noreferrer" class="affiliate-link">Linktext</a>
    Verwende 3-6 Affiliate-Links, nur wo sie thematisch passen.
-8. Fuege ein <blockquote> mit einem passenden Whisky-Zitat oder persoenlichem Tipp ein.
+8. Füge ein <blockquote> mit einem passenden Whisky-Zitat oder persönlichem Tipp ein.
 9. Am Ende einen "Fazit"-Abschnitt.
-10. Schreibe lebendig, mit Persoenlichkeit - keine trockenen Fakten.
+10. Schreibe lebendig, mit Persönlichkeit - keine trockenen Fakten.
 11. WICHTIG - Korrekte Schreibweise von Whisky/Whiskey:
-    - Scotch Whisky (OHNE e) - fuer schottische Whiskys
-    - Irish Whiskey (MIT e) - fuer irische Whiskeys
-    - American Whiskey / Bourbon Whiskey (MIT e) - fuer amerikanische Whiskeys
-    - Japanese Whisky (OHNE e) - fuer japanische Whiskys
-    - German Whisky (OHNE e) - fuer deutsche Whiskys
+    - Scotch Whisky (OHNE e) - für schottische Whiskys
+    - Irish Whiskey (MIT e) - für irische Whiskeys
+    - American Whiskey / Bourbon Whiskey (MIT e) - für amerikanische Whiskeys
+    - Japanese Whisky (OHNE e) - für japanische Whiskys
+    - German Whisky (OHNE e) - für deutsche Whiskys
     Achte IMMER darauf, die landestypische Schreibweise korrekt zu verwenden!
-    Auch in zusammengesetzten Woertern: "Whiskey-Szene" (irisch), "Whisky-Region" (schottisch).
-13. Am Ende des Artikels fuege eine Box ein mit verwandten Themen (NUR Text, KEINE Links - die werden automatisch hinzugefuegt):
-    <div class="related-box"><h3>Das koennte dich auch interessieren</h3><ul><li>3-4 verwandte Themenvorschlaege als einfache Listenpunkte OHNE a-Tags</li></ul></div>
+    Auch in zusammengesetzten Wörtern: "Whiskey-Szene" (irisch), "Whisky-Region" (schottisch).
+12. WICHTIG - Verwende IMMER korrekte deutsche Umlaute (ä, ö, ü, ß) im Text!
+    Schreibe "für" statt "fuer", "schön" statt "schoen", "über" statt "ueber".
+    Die Website verwendet UTF-8-Encoding, Umlaute werden korrekt dargestellt.
+    Für HTML-Entities verwende &ndash; &mdash; &bdquo; &ldquo; wie gewohnt.
+13. Am Ende des Artikels füge eine Box ein mit verwandten Themen (NUR Text, KEINE Links - die werden automatisch hinzugefügt):
+    <div class="related-box"><h3>Das könnte dich auch interessieren</h3><ul><li>3-4 verwandte Themenvorschläge als einfache Listenpunkte OHNE a-Tags</li></ul></div>
 
-ANTWORTE NUR MIT DEM HTML-INHALT. Kein zusaetzlicher Text."""
+ANTWORTE NUR MIT DEM HTML-INHALT. Kein zusätzlicher Text."""
 
 
 def _build_meta_prompt(topic):
-    """Erstellt den Prompt fuer SEO-Meta-Daten."""
-    return f"""Erstelle fuer einen Blog-Artikel mit dem Titel "{topic['title']}" folgendes:
+    """Erstellt den Prompt für SEO-Meta-Daten."""
+    return f"""Erstelle für einen Blog-Artikel mit dem Titel "{topic['title']}" folgendes:
 
-1. SEO Meta-Description (max. 155 Zeichen, Deutsch)
-2. Kurzer Teaser/Auszug (max. 200 Zeichen, Deutsch, macht neugierig)
+1. SEO Meta-Description (max. 155 Zeichen, Deutsch, mit korrekten Umlauten ä/ö/ü/ß)
+2. Kurzer Teaser/Auszug (max. 200 Zeichen, Deutsch, macht neugierig, mit Umlauten)
 3. URL-Slug (lowercase, Bindestriche, keine Umlaute, keine Sonderzeichen)
 4. 3-5 Focus-Keywords (kommagetrennt)
-5. Open-Graph-Beschreibung (max. 200 Zeichen, Deutsch)
+5. Open-Graph-Beschreibung (max. 200 Zeichen, Deutsch, mit Umlauten)
 
 Antworte EXAKT in diesem JSON-Format:
 {{"meta_description": "...", "teaser": "...", "slug": "...", "keywords": "...", "og_description": "..."}}
@@ -109,8 +113,8 @@ NUR JSON, kein anderer Text."""
 
 def generate_article(topic, config):
     """
-    Generiert einen vollstaendigen Artikel mit Meta-Daten.
-    Gibt ein Dict mit allen Artikeldaten zurueck.
+    Generiert einen vollständigen Artikel mit Meta-Daten.
+    Gibt ein Dict mit allen Artikeldaten zurück.
     """
     client = OpenAI(api_key=config["openai"]["api_key"])
     model = config["openai"].get("model", "gpt-4o")
@@ -131,7 +135,7 @@ def generate_article(topic, config):
         temperature=temperature,
         max_tokens=config["openai"].get("max_tokens", 4000),
         messages=[
-            {"role": "system", "content": "Du bist ein professioneller Blog-Autor. Antworte nur mit HTML-Inhalt."},
+            {"role": "system", "content": "Du bist ein professioneller Blog-Autor. Schreibe auf Deutsch mit korrekten Umlauten (ä, ö, ü, ß). Antworte nur mit HTML-Inhalt."},
             {"role": "user", "content": prompt},
         ],
     )
@@ -152,7 +156,7 @@ def generate_article(topic, config):
         temperature=0.3,
         max_tokens=500,
         messages=[
-            {"role": "system", "content": "Du bist ein SEO-Experte. Antworte nur mit validem JSON."},
+            {"role": "system", "content": "Du bist ein SEO-Experte. Antworte nur mit validem JSON. Verwende korrekte deutsche Umlaute (ä, ö, ü, ß)."},
             {"role": "user", "content": _build_meta_prompt(topic)},
         ],
     )
@@ -165,7 +169,7 @@ def generate_article(topic, config):
     try:
         meta = json.loads(meta_text)
     except json.JSONDecodeError:
-        slug = re.sub(r"[^a-z0-9\-]", "", topic["title"].lower().replace(" ", "-").replace(":", "").replace("ue", "ue").replace("ae", "ae").replace("oe", "oe"))
+        slug = re.sub(r"[^a-z0-9\-]", "", topic["title"].lower().replace(" ", "-").replace(":", "").replace("ü", "ue").replace("ä", "ae").replace("ö", "oe"))
         meta = {
             "meta_description": topic["title"],
             "teaser": topic["title"],
@@ -183,7 +187,7 @@ def generate_article(topic, config):
 
     # Deutsche Monatsnamen (strftime gibt auf Linux englische Namen)
     monate_de = {
-        1: "Januar", 2: "Februar", 3: "Maerz", 4: "April",
+        1: "Januar", 2: "Februar", 3: "März", 4: "April",
         5: "Mai", 6: "Juni", 7: "Juli", 8: "August",
         9: "September", 10: "Oktober", 11: "November", 12: "Dezember",
     }
