@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=special-edition-deutschland-berlin-dresden-2022"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('special-edition-deutschland-berlin-dresden-2022') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Deutschland-Tour 2022 &ndash; Wenn der Brexit dazwischenfunkt</h2> <p>September 2022. Eigentlich sollte es nach Schottland gehen. Alles war gebucht: Flüge, Hotel, Mietwagen. Aber dann kam der <strong>Brexit</strong> dazwischen &ndash; oder genauer: der <strong>fehlende Reisepass</strong>. Jahrelang waren wir mit dem Personalausweis nach Schottland geflogen, kein Problem. Doch seit dem Brexit braucht man einen Reisepass für Großbritannien. Unserer war abgelaufen. Am Flughafen: Nichts zu machen.</p> <p>Was tun? Alles stornieren und zu Hause bleiben? Auf keinen Fall. Wir haben kurzerhand umgeplant: <strong>Deutschland-Tour statt Schottland</strong>. Und weil wir ursprünglich ab Berlin fliegen wollten, lag die Route auf der Hand: <strong>Berlin &ndash; Spreewald &ndash; Dresden &ndash; Glashütte</strong>. Aus dem Nachteil einen Vorteil machen.</p> <p>Kleiner Trost: Die Stornierung der Schottland-Buchungen war problemlos möglich. Über die gängigen Buchungsportale lief alles reibungslos &ndash; auch ein Argument für flexible Buchungsoptionen bei der Reiseplanung.</p> <h3>Berlin &ndash; Immer anders, immer Berlin</h3> <p>Berlin als Startpunkt braucht keine Einführung. Die Stadt erfindet sich ständig neu, und genau das macht sie so faszinierend. Diesmal lag der Fokus weniger auf Whisky (obwohl <strong>Eschenbrenner</strong> aus unserem 2020er-Trip natürlich in Erinnerung blieb) und mehr auf der Stadt selbst: Museen, Architektur, das pulsierende Nachtleben in Kreuzberg und Friedrichshain.</p> <h3>Spreewald &ndash; Stork Club Territorium</h3> <p>Der <strong>Spreewald</strong> ist ein Ort, der einen sofort entschleunigt. Die berühmten Fließe, die Kahnfahrten, die Gurken &ndash; und natürlich das Revier von <strong>Stork Club Rye Whisky</strong>, den wir 2020 kennengelernt hatten. Der Spreewald beweist: Manchmal liegt das Gute ganz nah.</p> <p>Stork Club Rye Whisky bei <a href="https://www.amazon.de/s?k=Stork+Club+Rye+Whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Dresden &ndash; Elbflorenz in voller Pracht</h3> <p><strong>Dresden</strong> hat uns umgehauen. Die <strong>Frauenkirche</strong>, der <strong>Zwinger</strong>, die <strong>Brühlsche Terrasse</strong> mit Blick auf die Elbe &ndash; es ist kaum zu glauben, wie schön diese Stadt nach dem Wiederaufbau erstrahlt. Abends durch die Neustadt flanieren, in kleinen Kneipen und Restaurants landen &ndash; Dresden hat eine Atmosphäre, die man nicht erwartet.</p> <p>Wer als Whisky-Fan hierher kommt, wird überrascht sein: Die sächsische Craft-Szene wächst, und in Dresdens Bars findet man zunehmend gute Whisky-Auswahl.</p> <h3>Glashütte &ndash; Handwerk auf höchstem Niveau</h3> <p>Das Highlight der Tour: <strong>Glashütte</strong> im Erzgebirge. Die kleine Stadt ist das Zentrum der deutschen Uhrmacherkunst &ndash; hier sitzen <strong>A. Lange &amp; Söhne</strong>, <strong>Glashütte Original</strong>, <strong>NOMOS</strong> und viele andere. Wir haben alle Uhrenmuseen besucht, die geöffnet hatten, darunter das <strong>Deutsche Uhrenmuseum Glashütte</strong> &ndash; absolut faszinierend, wie hier Uhrmachergeschichte lebendig wird.</p> <p>Was hat das mit Whisky zu tun? Mehr als man denkt: Wie beim Whisky geht es um <strong>Handwerk, Tradition und Präzision</strong>. Die Liebe zum Detail, die Wertschätzung für Rohstoffe, die Geduld im Prozess &ndash; Uhrmacher und Brennmeister haben mehr gemeinsam, als man auf den ersten Blick sieht.</p> <h3>Praktische Tipps</h3> <ul>
 <li><strong>Route:</strong> Berlin &rarr; Spreewald (ca. 1,5h) &rarr; Dresden (ca. 2h) &rarr; Glashütte (ca. 45min von Dresden). Perfekt als 4-5 Tage Roadtrip.</li>
 <li><strong>Spreewald:</strong> Eine Kahnfahrt ist Pflicht. Am besten in Lübbenau starten.</li>

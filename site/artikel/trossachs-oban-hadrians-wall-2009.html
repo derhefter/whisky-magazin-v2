@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=trossachs-oban-hadrians-wall-2009"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('trossachs-oban-hadrians-wall-2009') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Von Glasgow über die Trossachs bis Hadrian's Wall</h2> <p>September 2009. Unsere dritte Schottlandreise führte uns in die Mitte des Landes: die Trossachs, die Westküste und &ndash; als Abstecher &ndash; bis an die römische Grenze. Eine Reise voller Kontraste.</p> <h3>Glasgow &ndash; Old Scotia und Kelvingrove</h3> <p>Wie jedes Jahr begann alles in Glasgow. Abends natürlich im <strong>Old Scotia Bar</strong> &ndash; mittlerweile unser Stammlokal. Am nächsten Tag stand das <strong>Kelvingrove Art Gallery and Museum</strong> auf dem Plan: ein prächtiges Sandsteingebäude im West End mit einer beeindruckenden Sammlung. Von Dali bis Mackintosh &ndash; und der Eintritt ist kostenlos.</p> <p>Hotels in Glasgow über <a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">whisky.reise/hotels</a>.</p> <h3>Oban &ndash; das Tor zu den Inseln</h3> <p><strong>Oban Distillery</strong> liegt mitten in der Stadt &ndash; eine der ältesten lizensierten Destillerien Schottlands, gegründet 1794. Der 14-jährige ist ein sanfter, maritimer Malt mit Honig und Salz. Von der Terrasse hat man Blick auf den Hafen und die Inseln.</p> <h3>Famous Grouse Experience &amp; Deanston</h3> <p>Die <strong>Famous Grouse Experience</strong> bei Crieff ist eigentlich die Glenturret Distillery &ndash; die älteste Destillerie Schottlands. Interaktiv, unterhaltsam und perfekt für Einsteiger. <strong>Deanston</strong> in Doune überrascht: eine ehemalige Baumwollmühle am River Teith, heute Destillerie. Unkonventionell und charakterstark.</p> <p>Oban und Deanston bei <a href="https://www.amazon.de/s?k=oban+deanston+single+malt&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Die Trossachs &ndash; Schottlands erster Nationalpark</h3> <p>Callander ist das Tor zu den Trossachs &ndash; Schottlands Antwort auf die Lake District, nur wilder. Lochs, Berge, Wälder. Rob Roy MacGregor lebte hier, und die Landschaft hat sich seitdem kaum verändert.</p> <h3>Hadrian's Wall &ndash; ein Abstecher in die Geschichte</h3> <p>Auf dem Rückweg machten wir einen Schlenker nach Süden: <strong>Hadrian's Wall</strong>, die römische Grenzmauer quer durch England. Fast 2000 Jahre alt und immer noch beeindruckend. Ein Stück Weltgeschichte mitten in der grünen Landschaft Nordenglands.</p> <h3>Praktische Tipps</h3> <ul>
 <li><strong>Oban:</strong> Perfekt als Tagestrip von Glasgow (ca. 2,5 Stunden). Oder als Basis für Insel-Ausflüge nach Mull, Iona oder Staffa.</li>
 <li><strong>Trossachs:</strong> Der Loch Lomond &amp; The Trossachs National Park ist ideal für Wanderer. Callander hat gute Pubs und B&amp;Bs.</li>

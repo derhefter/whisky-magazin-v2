@@ -1,0 +1,734 @@
+{
+  "_info": "Manuell gepflegte Locations aus Google Maps Listen. Werden beim Build mit scotland-archive Daten gemerged.",
+  "_sources": [
+    "Google Maps Liste '2024 USA' - Bourbon Trail & Nashville",
+    "Google Maps Liste 'Schottland' - Destillerien, Shops & Touren"
+  ],
+  "locations": [
+    {
+      "name": "Ole Smoky Moonshine Distillery",
+      "lat": 36.1623,
+      "lon": -86.7765,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.5
+    },
+    {
+      "name": "Nashville Barrel Company Downtown",
+      "lat": 36.1632,
+      "lon": -86.7810,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Big Machine Brewery & Distillery",
+      "lat": 36.1555,
+      "lon": -86.7930,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Standard Proof Whiskey Co.",
+      "lat": 36.1510,
+      "lon": -86.7890,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.9
+    },
+    {
+      "name": "Southern Collective Spirit Company",
+      "lat": 36.1580,
+      "lon": -86.7800,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Nashville Craft Distillery",
+      "lat": 36.1410,
+      "lon": -86.7770,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.9,
+      "note": "dauerhaft geschlossen"
+    },
+    {
+      "name": "Nashville Barrel Company Distillery",
+      "lat": 36.1850,
+      "lon": -86.7630,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.9
+    },
+    {
+      "name": "Tennessee Legend Distillery",
+      "lat": 36.1740,
+      "lon": -86.8000,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.9
+    },
+    {
+      "name": "Nelson's Green Brier Distillery",
+      "lat": 36.1742,
+      "lon": -86.8010,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Pennington Distilling Co.",
+      "lat": 36.1780,
+      "lon": -86.8010,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 5.0,
+      "note": "voruebergehend geschlossen"
+    },
+    {
+      "name": "Old Glory Distilling Co.",
+      "lat": 36.5300,
+      "lon": -87.3450,
+      "type": "distillery",
+      "region": "Clarksville",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Dueling Grounds Distillery",
+      "lat": 36.7090,
+      "lon": -86.5730,
+      "type": "distillery",
+      "region": "Franklin KY",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Cascade Hollow Distilling Co. (George Dickel)",
+      "lat": 35.4670,
+      "lon": -86.0760,
+      "type": "distillery",
+      "region": "Tullahoma",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Pauley Hollow Distillery",
+      "lat": 37.3500,
+      "lon": -83.6200,
+      "type": "distillery",
+      "region": "Eastern Kentucky",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Route 52 Distillery",
+      "lat": 37.3500,
+      "lon": -83.4900,
+      "type": "distillery",
+      "region": "Eastern Kentucky",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Regeneration Distilling Co.",
+      "lat": 37.6940,
+      "lon": -83.9440,
+      "type": "distillery",
+      "region": "Estill County",
+      "country": "USA",
+      "rating": 4.3
+    },
+    {
+      "name": "Bluegrass Distillers at Elkwood Farm",
+      "lat": 38.0100,
+      "lon": -84.4600,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Jack Daniel's Distillery",
+      "lat": 35.2830,
+      "lon": -86.3740,
+      "type": "distillery",
+      "region": "Lynchburg",
+      "country": "USA",
+      "rating": 4.9
+    },
+    {
+      "name": "Corsair Distillery & Taproom",
+      "lat": 36.1740,
+      "lon": -86.8000,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "James B. Beam Distilling Co.",
+      "lat": 37.8000,
+      "lon": -85.6700,
+      "type": "distillery",
+      "region": "Clermont",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Heaven Hill Bourbon Experience",
+      "lat": 37.8090,
+      "lon": -85.4670,
+      "type": "distillery",
+      "region": "Bardstown",
+      "country": "USA",
+      "rating": 4.5
+    },
+    {
+      "name": "Maker's Mark Distillery",
+      "lat": 37.6710,
+      "lon": -85.3360,
+      "type": "distillery",
+      "region": "Loretto",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Wilderness Trail Distillery",
+      "lat": 37.6430,
+      "lon": -84.7720,
+      "type": "distillery",
+      "region": "Danville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Four Roses Distillery",
+      "lat": 38.0180,
+      "lon": -84.8880,
+      "type": "distillery",
+      "region": "Lawrenceburg",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "Lexington Brewing & Distilling Co.",
+      "lat": 38.0470,
+      "lon": -84.4970,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Barrel House Distilling Co.",
+      "lat": 38.0440,
+      "lon": -84.4970,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "RD1 Spirits Distillery",
+      "lat": 38.0540,
+      "lon": -84.4960,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Divine Spirits",
+      "lat": 38.0460,
+      "lon": -84.4980,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 4.0
+    },
+    {
+      "name": "James E. Pepper Distillery",
+      "lat": 38.0560,
+      "lon": -84.4950,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "Woodford Reserve Distillery",
+      "lat": 38.0790,
+      "lon": -84.7540,
+      "type": "distillery",
+      "region": "Versailles",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Larrikin Bourbon Company",
+      "lat": 38.0440,
+      "lon": -84.4940,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Wild Turkey Distillery",
+      "lat": 38.0250,
+      "lon": -84.8390,
+      "type": "distillery",
+      "region": "Lawrenceburg",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Saddlestone Distillery",
+      "lat": 37.8060,
+      "lon": -85.4680,
+      "type": "distillery",
+      "region": "Bardstown",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Bourbon 30 / J. Mattingly 1845 Distillery",
+      "lat": 38.2100,
+      "lon": -84.5600,
+      "type": "distillery",
+      "region": "Georgetown",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "Glenns Creek Distilling",
+      "lat": 38.1670,
+      "lon": -84.8780,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "Castle & Key Distillery",
+      "lat": 38.1780,
+      "lon": -84.8840,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "rating": 4.9
+    },
+    {
+      "name": "Buffalo Trace Distillery",
+      "lat": 38.2130,
+      "lon": -84.8690,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Whiskey Thief Distilling Co.",
+      "lat": 38.1940,
+      "lon": -84.8760,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Bulleit Distilling Co.",
+      "lat": 38.2100,
+      "lon": -85.2270,
+      "type": "distillery",
+      "region": "Shelbyville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Jeptha Creed Distillery",
+      "lat": 38.1840,
+      "lon": -85.1950,
+      "type": "distillery",
+      "region": "Shelbyville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Kentucky Artisan Distillery",
+      "lat": 38.1800,
+      "lon": -85.6800,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Michter's Fort Nelson Distillery",
+      "lat": 38.2570,
+      "lon": -85.7560,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Angel's Envy Distillery",
+      "lat": 38.2560,
+      "lon": -85.7400,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Old Forester Distilling Co.",
+      "lat": 38.2563,
+      "lon": -85.7575,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Rabbit Hole Distillery",
+      "lat": 38.2565,
+      "lon": -85.7590,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "Evan Williams Bourbon Experience",
+      "lat": 38.2575,
+      "lon": -85.7570,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Old Carter Whiskey",
+      "lat": 38.2540,
+      "lon": -85.7570,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.9
+    },
+    {
+      "name": "Old Louisville Whiskey Co.",
+      "lat": 38.2400,
+      "lon": -85.7620,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Big Bourbon Club",
+      "lat": 38.2550,
+      "lon": -85.7610,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 5.0
+    },
+    {
+      "name": "Printers Alley",
+      "lat": 36.1630,
+      "lon": -86.7790,
+      "type": "poi",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.5
+    },
+    {
+      "name": "Arnold's Country Kitchen",
+      "lat": 36.1520,
+      "lon": -86.7780,
+      "type": "poi",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.5
+    },
+    {
+      "name": "Legends Corner",
+      "lat": 36.1620,
+      "lon": -86.7760,
+      "type": "poi",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Louisville Slugger Museum & Factory",
+      "lat": 38.2585,
+      "lon": -85.7610,
+      "type": "poi",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.8
+    },
+    {
+      "name": "Country Music Hall of Fame",
+      "lat": 36.1582,
+      "lon": -86.7764,
+      "type": "poi",
+      "region": "Nashville",
+      "country": "USA",
+      "rating": 4.6
+    },
+    {
+      "name": "Whiskey Row Louisville",
+      "lat": 38.2570,
+      "lon": -85.7575,
+      "type": "poi",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.7
+    },
+    {
+      "name": "Kentucky Bourbon Trail Visitor Center",
+      "lat": 38.2570,
+      "lon": -85.7580,
+      "type": "poi",
+      "region": "Louisville",
+      "country": "USA",
+      "rating": 4.8
+    },
+
+{
+      "name": "The Glenturret Distillery",
+      "lat": 56.3730,
+      "lon": -3.8620,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "The Cairn Distillery",
+      "lat": 57.4800,
+      "lon": -3.2200,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Ardnamurchan Distillery",
+      "lat": 56.7350,
+      "lon": -6.1020,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.6
+    },
+    {
+      "name": "Dalwhinnie Distillery",
+      "lat": 56.9400,
+      "lon": -4.2440,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "Glenallachie Distillery",
+      "lat": 57.4550,
+      "lon": -3.2510,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.9
+    },
+    {
+      "name": "Blair Athol Distillery",
+      "lat": 56.7060,
+      "lon": -3.7340,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Tomatin Distillery",
+      "lat": 57.3400,
+      "lon": -4.0130,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "8 Doors Distillery",
+      "lat": 58.6400,
+      "lon": -3.0700,
+      "type": "distillery",
+      "region": "Caithness",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Glenfiddich Distillery",
+      "lat": 57.4530,
+      "lon": -3.1290,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.6
+    },
+    {
+      "name": "Nc'nean Distillery",
+      "lat": 56.6370,
+      "lon": -5.9950,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.9
+    },
+    {
+      "name": "Glen Garioch Distillery",
+      "lat": 57.3390,
+      "lon": -2.2860,
+      "type": "distillery",
+      "region": "Aberdeenshire",
+      "country": "Schottland",
+      "rating": 4.9
+    },
+    {
+      "name": "Toulvaddie Distillery",
+      "lat": 57.6500,
+      "lon": -3.9500,
+      "type": "distillery",
+      "region": "Easter Ross",
+      "country": "Schottland",
+      "rating": 4.3
+    },
+    {
+      "name": "Wolfburn Distillery",
+      "lat": 58.5930,
+      "lon": -3.5230,
+      "type": "distillery",
+      "region": "Caithness",
+      "country": "Schottland",
+      "rating": 4.9
+    },
+    {
+      "name": "Ballindalloch Distillery",
+      "lat": 57.3050,
+      "lon": -3.3950,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Speyside Distillery",
+      "lat": 57.0740,
+      "lon": -4.0550,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.6
+    },
+    {
+      "name": "Glen Ord Distillery",
+      "lat": 57.5170,
+      "lon": -4.4650,
+      "type": "distillery",
+      "region": "Inverness",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Great Glen Distillery",
+      "lat": 57.1440,
+      "lon": -4.6800,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+
+{
+      "name": "Abbey Whisky",
+      "lat": 56.0720,
+      "lon": -3.4590,
+      "type": "poi",
+      "region": "Fife",
+      "country": "Schottland",
+      "rating": 5.0
+    },
+    {
+      "name": "Highland Whisky Shop",
+      "lat": 57.4780,
+      "lon": -4.2250,
+      "type": "poi",
+      "region": "Inverness",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "Royal Mile Whiskies",
+      "lat": 55.9500,
+      "lon": -3.1880,
+      "type": "poi",
+      "region": "Edinburgh",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "Cadenhead's Whisky Shop",
+      "lat": 55.9510,
+      "lon": -3.1820,
+      "type": "poi",
+      "region": "Edinburgh",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Whiskies of Scotland",
+      "lat": 57.4470,
+      "lon": -2.7860,
+      "type": "poi",
+      "region": "Aberdeenshire",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+
+{
+      "name": "The Scotch Whisky Experience",
+      "lat": 55.9490,
+      "lon": -3.1950,
+      "type": "poi",
+      "region": "Edinburgh",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "Scotland Whisky Tours",
+      "lat": 56.5010,
+      "lon": -2.7120,
+      "type": "poi",
+      "region": "Angus",
+      "country": "Schottland",
+      "rating": 5.0
+    }
+  ]
+}

@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=campbeltown-springbank-glengyle-glen-scotia-2016"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('campbeltown-springbank-glengyle-glen-scotia-2016') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Die vergessene Whisky-Hauptstadt &ndash; Campbeltown</h2> <p>Oktober 2016. Campbeltown. Einst hatte diese kleine Stadt an der Spitze der Kintyre-Halbinsel über dreissig Destillerien und war die Whisky-Hauptstadt der Welt. Heute sind es noch drei &ndash; aber was für welche. Wir wollten sie alle sehen.</p> <h3>Glasgow &ndash; der übliche Auftakt</h3> <p>Wie immer starteten wir in Glasgow, wie immer mit einem Besuch im <strong>Old Scotia Bar</strong> &ndash; unserem Stammlokal seit 2007. Von dort ging es am nächsten Tag über die A82 und A83 nach Südwesten, durch die längste Halbinsel Schottlands.</p> <h3>Springbank &ndash; die letzte ihrer Art</h3> <p><strong>Springbank Distillery</strong> ist ein Mythos. Eine der letzten Destillerien, die alles unter einem Dach machen: Mälzen, Brennen, Reifen, Abfüllen. Kein anderer schottischer Whisky wird so traditionell hergestellt. Drei verschiedene Whiskys entstehen hier: Springbank (leicht getorft, 2,5-fach destilliert), Longrow (stark getorft, zweifach destilliert) und Hazelburn (ungetorft, dreifach destilliert).</p> <h3>Glengyle &ndash; Kilkerran</h3> <p><strong>Glengyle Distillery</strong> ist die Schwester von Springbank. 2004 wiedereröffnet nach fast 80 Jahren Stillstand. Der Whisky heisst <strong>Kilkerran</strong> (nicht Glengyle &ndash; der Name war bereits vergeben). Noch jung, aber mit enormem Potenzial. Wer Campbeltown-Charakter sucht, findet ihn hier.</p> <h3>Glen Scotia &ndash; Campbeltown Loch</h3> <p><strong>Glen Scotia Distillery</strong> ist die dritte im Bunde. Kleiner, bescheidener als Springbank, aber mit eigenem Charakter: maritim, ölig, komplex. Und dann ist da der Song: <em>Campbeltown Loch</em> &ndash; ein irisches/schottisches Trinklied, das die Stadt und ihren Whisky feiert. Wir haben es in der Destillerie zum ersten Mal gehört und seitdem nicht vergessen.</p> <p>Campbeltown Whiskys bei <a href="https://www.amazon.de/s?k=springbank+kilkerran+glen+scotia+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Campbeltown &ndash; eine Stadt mit Geschichte</h3> <p>Die Stadt selbst hat einen melancholischen Charme. Verlassene Destilleriegebäude, ein Hafen, der bessere Tage gesehen hat, und Einheimische, die stolz auf ihre Whisky-Tradition sind. Campbeltown ist keine Touristenattraktion &ndash; es ist ein Ort mit Seele.</p> <h3>Praktische Tipps</h3> <ul>
 <li><strong>Anreise:</strong> Ca. 3,5 Stunden von Glasgow über die A82/A83. Alternativ Flug von Glasgow nach Campbeltown (Loganair). <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge vergleichen</a>.</li>
 <li><strong>Mietwagen:</strong> Die Fahrt durch Kintyre ist spektakulär. <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen buchen</a>.</li>

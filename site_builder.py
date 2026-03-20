@@ -563,6 +563,7 @@ def _base_template():
                 <a href="{base_url}/index.html">Start</a>
                 <a href="{base_url}/kategorie/whisky.html">Whisky</a>
                 <a href="{base_url}/kategorie/reise.html">Reise</a>
+                <a href="{base_url}/karte.html">Karte</a>
                 <a href="{base_url}/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -725,6 +726,72 @@ def _inject_empfehlung_boxes(html_content, article, config):
     return result
 
 
+def _has_map_locations(article):
+    """Prueft ob ein Artikel Karten-Locations hat (explizit oder per Reisebericht-Typ)."""
+    if article.get("locations"):
+        return True
+    if article.get("type") == "reisebericht":
+        return True
+    # Tag-basiert: Artikel mit Orts-/Destillerie-Tags
+    geo_tags = {'islay', 'glasgow', 'edinburgh', 'speyside', 'highlands', 'skye',
+                'orkney', 'campbeltown', 'arran', 'kentucky', 'dublin', 'oban',
+                'lagavulin', 'ardbeg', 'laphroaig', 'talisker', 'springbank'}
+    article_tags = {t.lower() for t in article.get("tags", [])}
+    return bool(article_tags & geo_tags)
+
+
+def _build_mini_map_html(article, base_url):
+    """Erzeugt Mini-Map HTML fuer Artikel mit Ortsbezug."""
+    slug = article.get("meta", {}).get("slug", "")
+
+    return f"""
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="{base_url}/karte.html?highlight={slug}"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {{
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {{
+                    var locs = data.locations.filter(function(l) {{
+                        return l.articles && l.articles.indexOf('{slug}') !== -1;
+                    }});
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', {{ scrollWheelZoom: false, zoomControl: true }});
+                    L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }}).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {{
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({{ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] }})
+                            : L.divIcon({{ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] }});
+                        L.marker([loc.lat, loc.lon], {{ icon: icon }})
+                            .bindTooltip(loc.name, {{ permanent: locs.length <= 5 }})
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    }});
+                    if (bounds.length === 1) {{
+                        m.setView(bounds[0], 10);
+                    }} else {{
+                        m.fitBounds(bounds, {{ padding: [30, 30] }});
+                    }}
+                }});
+        }})();
+        </script>
+    </div>"""
+
+
 def build_article_page(article, config):
     """Erstellt die HTML-Seite fuer einen einzelnen Artikel."""
     from urllib.parse import quote
@@ -814,6 +881,11 @@ def build_article_page(article, config):
                     <a href="{faehre_url}" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
                 </div>"""
 
+    # Mini-Map fuer Artikel mit Ortsbezug
+    mini_map_html = ""
+    if _has_map_locations(article):
+        mini_map_html = _build_mini_map_html(article, base_url)
+
     content = f"""
     <div class="article-header">
         <h1>{article['title']}</h1>
@@ -831,6 +903,7 @@ def build_article_page(article, config):
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    {mini_map_html}
                     {article_html}
                     {share_html}
                     {tags_html}
@@ -1041,10 +1114,431 @@ def build_category_page(category_name, articles, config):
     )
 
 
+def build_map_page(config):
+    """Erstellt die interaktive Karten-Seite mit Leaflet.js."""
+    base_url = config["site"].get("base_url", "")
+    site_name = config["site"]["name"]
+    map_config = config.get("map", {})
+    center_lat, center_lon = map_config.get("default_center", [57.0, -4.5])
+    default_zoom = map_config.get("default_zoom", 6)
+
+    content = f"""
+    <div class="map-page">
+        <div class="map-header">
+            <h1>Unsere Whisky-Reisekarte</h1>
+            <p class="map-subtitle">18 Jahre Destillerien, Reisen & Abenteuer &mdash; von Schottland bis Kentucky</p>
+        </div>
+        <div class="map-controls" id="map-controls">
+            <div class="filter-group">
+                <label for="filter-year">Jahr:</label>
+                <select id="filter-year"><option value="">Alle Jahre</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-region">Region:</label>
+                <select id="filter-region"><option value="">Alle Regionen</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-country">Land:</label>
+                <select id="filter-country"><option value="">Alle Laender</option></select>
+            </div>
+            <div class="filter-group filter-toggles">
+                <label class="toggle-label"><input type="checkbox" id="toggle-distillery" checked> Destillerien</label>
+                <label class="toggle-label"><input type="checkbox" id="toggle-city" checked> Staedte</label>
+                <label class="toggle-label"><input type="checkbox" id="toggle-nature" checked> Natur</label>
+                <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswuerdigkeiten</label>
+                <label class="toggle-label"><input type="checkbox" id="toggle-travel_stop" checked> Reisestopps</label>
+            </div>
+            <div class="map-stats" id="map-stats"></div>
+        </div>
+        <div id="map" style="height: 65vh; min-height: 400px; border-radius: 12px; box-shadow: var(--shadow-md); z-index: 1;"></div>
+        <div class="location-cards" id="location-cards"></div>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <style>
+        .map-page {{ max-width: 1200px; margin: 0 auto; padding: 24px; }}
+        .map-header {{ text-align: center; margin-bottom: 20px; }}
+        .map-header h1 {{ font-size: 2em; color: var(--whisky-brown); margin-bottom: 8px; }}
+        .map-subtitle {{ color: var(--text-secondary); font-size: 1.05em; }}
+        .map-controls {{
+            display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+            padding: 16px; background: var(--whisky-white); border-radius: var(--radius);
+            box-shadow: var(--shadow-sm); margin-bottom: 16px;
+        }}
+        .filter-group {{ display: flex; align-items: center; gap: 6px; }}
+        .filter-group label {{ font-size: 0.85em; color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }}
+        .filter-group select {{
+            padding: 6px 10px; border: 1px solid var(--whisky-gold); border-radius: 6px;
+            background: var(--whisky-cream); font-size: 0.85em; cursor: pointer;
+        }}
+        .filter-toggles {{ display: flex; flex-wrap: wrap; gap: 8px; }}
+        .toggle-label {{
+            display: flex; align-items: center; gap: 4px; cursor: pointer;
+            font-size: 0.82em !important; white-space: nowrap;
+        }}
+        .toggle-label input {{ accent-color: var(--whisky-amber); }}
+        .map-stats {{
+            margin-left: auto; font-size: 0.82em; color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }}
+        .location-cards {{
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px; margin-top: 24px;
+        }}
+        .loc-card {{
+            background: var(--whisky-white); border-radius: var(--radius);
+            box-shadow: var(--shadow-sm); overflow: hidden; cursor: pointer;
+            transition: box-shadow 0.3s, transform 0.2s;
+        }}
+        .loc-card:hover {{ box-shadow: var(--shadow-md); transform: translateY(-2px); }}
+        .loc-card-img {{ width: 100%; height: 160px; object-fit: cover; }}
+        .loc-card-body {{ padding: 14px; }}
+        .loc-card-name {{ font-weight: bold; font-size: 1em; color: var(--whisky-brown); }}
+        .loc-card-meta {{
+            font-size: 0.8em; color: var(--text-secondary); margin-top: 4px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }}
+        .loc-card-type {{
+            display: inline-block; font-size: 0.7em; padding: 2px 8px;
+            border-radius: 10px; margin-top: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }}
+        .type-distillery {{ background: #f0e6d2; color: #8b6914; }}
+        .type-city {{ background: #e0e8f0; color: #4a6785; }}
+        .type-nature {{ background: #e0f0e0; color: #3a7a3a; }}
+        .type-poi {{ background: #f0e0f0; color: #7a3a7a; }}
+        .type-travel_stop {{ background: #f0f0e0; color: #7a7a3a; }}
+
+        /* Popup-Styles */
+        .map-popup {{ min-width: 220px; max-width: 300px; }}
+        .map-popup h3 {{ font-size: 1em; margin: 0 0 6px; color: var(--whisky-brown); }}
+        .map-popup .popup-type {{
+            font-size: 0.75em; display: inline-block; padding: 1px 6px;
+            border-radius: 8px; margin-bottom: 6px;
+        }}
+        .map-popup .popup-photos {{ display: flex; gap: 4px; margin: 8px 0; overflow-x: auto; }}
+        .map-popup .popup-photos img {{
+            width: 90px; height: 65px; object-fit: cover; border-radius: 4px; cursor: pointer;
+        }}
+        .map-popup .popup-years {{ font-size: 0.8em; color: #666; margin: 4px 0; }}
+        .map-popup .popup-articles {{ margin-top: 6px; }}
+        .map-popup .popup-articles a {{
+            display: block; font-size: 0.82em; color: var(--whisky-amber);
+            text-decoration: none; padding: 3px 0; border-top: 1px solid #eee;
+        }}
+        .map-popup .popup-articles a:hover {{ color: var(--whisky-brown); }}
+
+        /* Leaflet-Anpassungen */
+        .leaflet-popup-content-wrapper {{ border-radius: 10px; }}
+        .marker-cluster-small {{ background-color: rgba(181, 137, 52, 0.6); }}
+        .marker-cluster-small div {{ background-color: rgba(181, 137, 52, 0.8); color: #fff; }}
+        .marker-cluster-medium {{ background-color: rgba(139, 105, 20, 0.6); }}
+        .marker-cluster-medium div {{ background-color: rgba(139, 105, 20, 0.8); color: #fff; }}
+
+        @media (max-width: 768px) {{
+            .map-controls {{ flex-direction: column; align-items: flex-start; }}
+            .map-stats {{ margin-left: 0; }}
+            .location-cards {{ grid-template-columns: 1fr; }}
+            #map {{ height: 50vh !important; }}
+        }}
+    </style>
+
+    <script>
+    (function() {{
+        const BASE_URL = '{base_url}';
+        // Fuer lokales Testen: Daten und Bilder relativ laden
+        const LOCAL_BASE = window.location.origin;
+        const CENTER = [{center_lat}, {center_lon}];
+        const ZOOM = {default_zoom};
+
+        // Icons
+        const ICONS = {{
+            distillery: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:22px">🥃</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
+            city: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">🏙️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
+            nature: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">🌿</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
+            poi: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">📍</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
+            travel_stop: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:18px">✈️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }})
+        }};
+
+        // Routen-Farben pro Jahr
+        const ROUTE_COLORS = [
+            '#e6194B', '#3cb44b', '#4363d8', '#f58231', '#911eb4',
+            '#42d4f4', '#f032e6', '#bfef45', '#fabed4', '#469990',
+            '#dcbeff', '#9A6324', '#800000', '#aaffc3', '#808000',
+            '#000075', '#a9a9a9', '#e6beff'
+        ];
+
+        const TYPE_LABELS = {{
+            distillery: 'Destillerie', city: 'Stadt', nature: 'Natur',
+            poi: 'Sehenswuerdigkeit', travel_stop: 'Reisestopp'
+        }};
+
+        let mapData = null;
+        let map = null;
+        let markerCluster = null;
+        let allMarkers = [];
+        let routeLayers = [];
+
+        // Karte initialisieren
+        map = L.map('map').setView(CENTER, ZOOM);
+        L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }}).addTo(map);
+
+        markerCluster = L.markerClusterGroup({{
+            maxClusterRadius: 40,
+            spiderfyOnMaxZoom: true,
+            showCoverageOnHover: false,
+            disableClusteringAtZoom: 13
+        }});
+        map.addLayer(markerCluster);
+
+        // Daten laden
+        fetch(LOCAL_BASE + '/data/map-data.json')
+            .then(r => r.json())
+            .then(data => {{
+                mapData = data;
+                populateFilters(data);
+                renderMarkers(data.locations);
+
+                renderCards(data.locations);
+                updateStats(data.locations);
+                handleUrlParams();
+            }})
+            .catch(err => console.error('Karten-Daten konnten nicht geladen werden:', err));
+
+        function populateFilters(data) {{
+            const yearSel = document.getElementById('filter-year');
+            data.years.forEach(y => {{
+                const opt = document.createElement('option');
+                opt.value = y; opt.textContent = y;
+                yearSel.appendChild(opt);
+            }});
+            const regionSel = document.getElementById('filter-region');
+            data.regions.forEach(r => {{
+                const opt = document.createElement('option');
+                opt.value = r; opt.textContent = r;
+                regionSel.appendChild(opt);
+            }});
+            const countrySel = document.getElementById('filter-country');
+            (data.countries || []).forEach(c => {{
+                const opt = document.createElement('option');
+                opt.value = c; opt.textContent = c;
+                countrySel.appendChild(opt);
+            }});
+        }}
+
+        function createPopup(loc) {{
+            let html = '<div class="map-popup">';
+            html += '<h3>' + loc.name + '</h3>';
+            html += '<span class="popup-type type-' + loc.type + '">' + (TYPE_LABELS[loc.type] || loc.type) + '</span>';
+            html += ' <span style="font-size:0.75em;color:#888">' + loc.region + ', ' + loc.country + '</span>';
+
+            // Fotos
+            if (loc.photos && loc.photos.length > 0) {{
+                html += '<div class="popup-photos">';
+                loc.photos.slice(0, 4).forEach(p => {{
+                    html += '<img src="' + LOCAL_BASE + p.src + '" alt="' + p.caption + '" loading="lazy">';
+                }});
+                html += '</div>';
+            }}
+
+            // Besuchsjahre
+            if (loc.years_visited && loc.years_visited.length > 0) {{
+                html += '<div class="popup-years">Besucht: ' + loc.years_visited.join(', ') + '</div>';
+            }}
+
+            // Verlinkte Artikel
+            if (loc.articles && loc.articles.length > 0 && mapData && mapData.articles) {{
+                html += '<div class="popup-articles">';
+                loc.articles.forEach(slug => {{
+                    const meta = mapData.articles[slug];
+                    if (meta) {{
+                        html += '<a href="' + LOCAL_BASE + '/artikel/' + slug + '.html">' + meta.title + '</a>';
+                    }}
+                }});
+                html += '</div>';
+            }}
+
+            html += '</div>';
+            return html;
+        }}
+
+        function renderMarkers(locations) {{
+            markerCluster.clearLayers();
+            allMarkers = [];
+            locations.forEach(loc => {{
+                const icon = ICONS[loc.type] || ICONS.poi;
+                const marker = L.marker([loc.lat, loc.lon], {{ icon: icon }});
+                marker.bindPopup(createPopup(loc), {{ maxWidth: 320 }});
+                marker._locData = loc;
+                allMarkers.push(marker);
+                markerCluster.addLayer(marker);
+            }});
+        }}
+
+        function renderRoutes(routes) {{
+            routeLayers.forEach(l => map.removeLayer(l));
+            routeLayers = [];
+            routes.forEach((route, i) => {{
+                const color = ROUTE_COLORS[i % ROUTE_COLORS.length];
+                const layer = L.geoJSON(route.geojson, {{
+                    style: {{ color: color, weight: 3, opacity: 0.7, dashArray: '8 4' }}
+                }});
+                layer.bindTooltip(route.label, {{ sticky: true, className: 'route-tooltip' }});
+                layer._routeData = route;
+                layer.addTo(map);
+                routeLayers.push(layer);
+            }});
+        }}
+
+        function renderCards(locations) {{
+            const container = document.getElementById('location-cards');
+            // Nur Destillerien und POIs mit Artikeln anzeigen
+            const featured = locations.filter(l =>
+                l.type === 'distillery' || (l.articles && l.articles.length > 0)
+            ).slice(0, 24);
+
+            container.innerHTML = featured.map(loc => {{
+                const photoSrc = (loc.photos && loc.photos.length > 0)
+                    ? LOCAL_BASE + loc.photos[0].src
+                    : '';
+                const imgHtml = photoSrc
+                    ? '<img class="loc-card-img" src="' + photoSrc + '" alt="' + loc.name + '" loading="lazy">'
+                    : '<div class="loc-card-img" style="background:linear-gradient(135deg,var(--whisky-amber),var(--whisky-brown));display:flex;align-items:center;justify-content:center;font-size:2em;">🥃</div>';
+                return '<div class="loc-card" data-loc-id="' + loc.id + '">'
+                    + imgHtml
+                    + '<div class="loc-card-body">'
+                    + '<div class="loc-card-name">' + loc.name + '</div>'
+                    + '<div class="loc-card-meta">' + loc.region + ', ' + loc.country + (loc.years_visited && loc.years_visited.length ? ' &bull; ' + loc.years_visited.join(', ') : '') + '</div>'
+                    + '<span class="loc-card-type type-' + loc.type + '">' + (TYPE_LABELS[loc.type] || loc.type) + '</span>'
+                    + '</div></div>';
+            }}).join('');
+
+            // Klick auf Karte -> Location auf Karte anzeigen
+            container.querySelectorAll('.loc-card').forEach(card => {{
+                card.addEventListener('click', () => {{
+                    const locId = card.dataset.locId;
+                    const marker = allMarkers.find(m => m._locData.id === locId);
+                    if (marker) {{
+                        map.setView(marker.getLatLng(), 12);
+                        markerCluster.zoomToShowLayer(marker, () => {{
+                            marker.openPopup();
+                        }});
+                    }}
+                }});
+            }});
+        }}
+
+        function updateStats(locations) {{
+            const visible = getVisibleLocations(locations);
+            const distCount = visible.filter(l => l.type === 'distillery').length;
+            document.getElementById('map-stats').textContent =
+                visible.length + ' Orte, davon ' + distCount + ' Destillerien';
+        }}
+
+        function getVisibleLocations(locations) {{
+            const year = document.getElementById('filter-year').value;
+            const region = document.getElementById('filter-region').value;
+            const country = document.getElementById('filter-country').value;
+            const types = ['distillery', 'city', 'nature', 'poi', 'travel_stop']
+                .filter(t => document.getElementById('toggle-' + t).checked);
+
+            return locations.filter(loc => {{
+                if (year && !loc.years_visited.includes(parseInt(year))) return false;
+                if (region && loc.region !== region) return false;
+                if (country && loc.country !== country) return false;
+                if (!types.includes(loc.type)) return false;
+                return true;
+            }});
+        }}
+
+        function applyFilters() {{
+            if (!mapData) return;
+            const visible = getVisibleLocations(mapData.locations);
+            markerCluster.clearLayers();
+            allMarkers.forEach(m => {{
+                if (visible.includes(m._locData)) {{
+                    markerCluster.addLayer(m);
+                }}
+            }});
+
+            renderCards(visible);
+            updateStats(mapData.locations);
+        }}
+
+        // Filter-Events
+        ['filter-year', 'filter-region', 'filter-country'].forEach(id => {{
+            document.getElementById(id).addEventListener('change', applyFilters);
+        }});
+        ['toggle-distillery', 'toggle-city', 'toggle-nature', 'toggle-poi',
+         'toggle-travel_stop'].forEach(id => {{
+            document.getElementById(id).addEventListener('change', applyFilters);
+        }});
+
+        // URL-Parameter verarbeiten
+        function handleUrlParams() {{
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('year')) {{
+                document.getElementById('filter-year').value = params.get('year');
+                applyFilters();
+            }}
+            if (params.get('region')) {{
+                document.getElementById('filter-region').value = params.get('region');
+                applyFilters();
+            }}
+            if (params.get('loc')) {{
+                const locId = params.get('loc');
+                const marker = allMarkers.find(m => m._locData.id === locId);
+                if (marker) {{
+                    map.setView(marker.getLatLng(), 13);
+                    setTimeout(() => {{
+                        markerCluster.zoomToShowLayer(marker, () => marker.openPopup());
+                    }}, 500);
+                }}
+            }}
+            if (params.get('highlight')) {{
+                const slug = params.get('highlight');
+                const locs = mapData.locations.filter(l => l.articles && l.articles.includes(slug));
+                if (locs.length > 0) {{
+                    const bounds = L.latLngBounds(locs.map(l => [l.lat, l.lon]));
+                    map.fitBounds(bounds.pad(0.3));
+                    setTimeout(() => {{
+                        locs.forEach(l => {{
+                            const m = allMarkers.find(mk => mk._locData.id === l.id);
+                            if (m) m.openPopup();
+                        }});
+                    }}, 500);
+                }}
+            }}
+        }}
+    }})();
+    </script>"""
+
+    return _base_template().format(
+        title="Karte",
+        site_name=site_name,
+        meta_description="Interaktive Karte aller Destillerien, Reiseziele und Orte aus dem Whisky Magazin",
+        keywords="Whisky Karte, Destillerien Schottland, Reisekarte, Whisky Trail",
+        og_description="18 Jahre Whisky-Reisen auf einer interaktiven Karte: Destillerien, Staedte und Routen",
+        og_image=f"{base_url}/images/default.jpg",
+        canonical_url=f"{base_url}/karte.html",
+        base_url=base_url,
+        content=content,
+    )
+
+
 def build_sitemap(articles, config):
     """Erstellt eine XML-Sitemap."""
     base_url = config["site"].get("base_url", "")
-    urls = [f"{base_url}/index.html"]
+    urls = [f"{base_url}/index.html", f"{base_url}/karte.html"]
 
     for article in articles:
         slug = article.get("meta", {}).get("slug", "")
@@ -1109,7 +1603,23 @@ def build_site(config):
             f.write(cat_html)
     print(f"  {len(categories)} Kategorieseiten erstellt.")
 
-    # 4. Sitemap erstellen
+    # 4. Karten-Daten erstellen
+    try:
+        from map_data_builder import build_map_data
+        build_map_data(config)
+    except Exception as e:
+        print(f"  WARNUNG: Karten-Daten konnten nicht erstellt werden: {e}")
+
+    # 5. Kartenseite erstellen
+    try:
+        map_html = build_map_page(config)
+        with open(SITE_DIR / "karte.html", "w", encoding="utf-8") as f:
+            f.write(map_html)
+        print("  Kartenseite erstellt.")
+    except Exception as e:
+        print(f"  WARNUNG: Kartenseite konnte nicht erstellt werden: {e}")
+
+    # 6. Sitemap erstellen
     sitemap_xml = build_sitemap(articles, config)
     with open(SITE_DIR / "sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap_xml)

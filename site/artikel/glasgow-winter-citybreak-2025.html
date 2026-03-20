@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=glasgow-winter-citybreak-2025"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('glasgow-winter-citybreak-2025') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Glasgow im Dezember 2025 &ndash; Unsere Lieblingsstadt</h2> <p>Glasgow ist unsere Lieblingsstadt in Schottland. Nicht Edinburgh mit seinen Touristen, nicht die Highlands mit ihrer Einsamkeit &ndash; Glasgow. Rau, ehrlich, musikalisch und voller Überraschungen. Im Dezember 2025 waren wir vier Tage dort, und diese Reise hatte einen ganz besonderen Anlass.</p> <h3>Das Fass &ndash; unser eigener Whisky wird 10</h3> <p>Der eigentliche Grund der Reise: <strong>Wir besitzen ein Whisky-Fass in der Glasgow Distillery.</strong> Nächstes Jahr wird es zehn Jahre alt. Wir haben es besucht, begutachtet und geplant, wie es nach Deutschland kommt. Die Lösung: <strong>Kirsch Import GmbH</strong> wird die Logistik übernehmen. Ein eigenes Fass Single Malt &ndash; das ist für jeden Whisky-Fan ein Lebenstraum.</p> <p>Mehr über die Glasgow Distillery und ihre Whiskys findest du bei <a href="https://www.amazon.de/s?k=glasgow+distillery+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Die Route</h3> <ol>
 <li><strong>Tag 1 (12. Dez):</strong> <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flug</a> nach Edinburgh, Weiterfahrt nach Glasgow. Shopping in der City.</li>
 <li><strong>Tag 2 (13. Dez):</strong> Glasgow Distillery (Fass-Besuch!) + Auchentoshan. Abends: Gun im Barrowland Ballroom.</li>

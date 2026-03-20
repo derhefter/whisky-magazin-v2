@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=die-besten-whisky-destillerien-auf-islay"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('die-besten-whisky-destillerien-auf-islay') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Die besten Whisky-Destillerien auf Islay: Ein Paradies für Whisky-Liebhaber</h2> <p>Islay – für viele Whisky-Kenner ist diese kleine schottische Insel das Mekka der Whisky-Destillation. Mit ihrer rauen Küstenlinie, den torfigen Landschaften und der reichen Geschichte bietet Islay nicht nur atemberaubende Landschaften, sondern auch einige der besten Whisky-Destillerien der Welt. Lass uns gemeinsam einen tiefen Einblick in diese faszinierende Whisky-Welt werfen.</p> <h2>Was macht Islay-Whisky so besonders?</h2><div class="empfehlung-box"><div class="emp-icon">🥃</div><div class="emp-content"><div class="emp-title">Diesen Whisky bestellen</div><div class="emp-text">Die im Artikel erwähnten Whiskys findest du bei Amazon – oft mit Prime-Lieferung.</div><a href="https://www.amazon.de/s?k=islay+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="emp-cta">Bei Amazon ansehen →</a></div></div> <p>Islay-Whiskys sind bekannt für ihren charakteristischen, torfigen Geschmack, der von den natürlichen Gegebenheiten der Insel beeinflusst wird. Die Nähe zum Meer, die salzige Luft und der reichlich vorhandene Torf verleihen den Whiskys eine unverwechselbare Note. Ob du ein erfahrener Whisky-Liebhaber oder ein neugieriger Neuling bist, auf Islay gibt es immer etwas Neues zu entdecken.</p> <h3>Anreise nach Islay</h3> <p>Bevor du dich ins Destillerie-Abenteuer stürzt, musst du natürlich erst auf die Insel gelangen. Die Anreise ist ein Teil des Abenteuers selbst! Du kannst entweder einen <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flug</a> nach Islay nehmen oder die malerische Route mit der <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">Fähre</a> wählen. Ein <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a> ist praktisch, um die Insel flexibel zu erkunden.</p> <h2>Die Top-Destillerien auf Islay</h2> <h3>1. Ardbeg Destillerie</h3> <p>Ardbeg ist ein Muss für jeden, der Islay besucht. Bekannt für seinen intensiven, rauchigen Geschmack, bietet die Destillerie faszinierende Touren an, die dir die Geheimnisse ihrer Herstellung näherbringen. Verpasse nicht die Gelegenheit, einige ihrer Limited Editions zu probieren!</p> <p>Besuche den <a href="https://www.amazon.de/s?k=Ardbeg+Whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Ardbeg Whisky auf Amazon</a> oder stöbere auf und nach interessanten Angeboten.</p> <h3>2. Lagavulin Destillerie</h3> <p>Lagavulin ist berühmt für seinen tiefen, torfigen Charakter und die reichhaltigen, rauchigen Aromen. Die Destillerie bietet eine Vielzahl von Touren an, darunter auch eine exklusive Verkostung direkt vom Fass.</p> <blockquote>"Ein guter Whisky ist wie ein guter Freund: er bringt die Seele zum Schwingen." - Ellas, der Whisky-Reiseblogger</blockquote> <h3>3. Laphroaig Destillerie</h3> <p>Laphroaig ist bekannt für seinen mutigen, medizinischen Geschmack, der Liebhaber und Kritiker gleichermaßen polarisiert. Ein Besuch hier ist ein wahres Erlebnis, besonders wenn du den berühmten 10-jährigen Laphroaig probierst.</p> <h3>4. Bowmore Destillerie</h3> <p>Die Bowmore Destillerie ist eine der ältesten auf Islay und bietet eine perfekte Balance zwischen Rauch und Süße. Die Führungen sind informativ und enden oft mit einer Verkostung im historischen Lagerhaus Nr. 1.</p> <h2>Tipps für deinen Besuch</h2> <ul> <li><strong>Planung:</strong> Die Destillerien bieten unterschiedliche Touren an. Buche deine Führungen im Voraus, besonders in der Hochsaison.</li> <li><strong>Unterkunft:</strong> Schöne Übernachtungsmöglichkeiten findest du über <a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">unsere Hotel-Empfehlungen</a>.</li> <li><strong>Transport:</strong> Ein <a href="https://www.whisky.reise/wohnmobil/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Wohnmobil</a> könnte eine interessante Alternative sein, um die Insel flexibel zu erkunden.</li> <li><strong>Sicherheit:</strong> Denke daran, eine <a href="https://www.whisky.reise/reiseversicherung/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Reiseversicherung</a> abzuschließen.</li>
 </ul> <h2>Fazit</h2> <p>Ein Besuch der Whisky-Destillerien auf Islay ist ein unvergessliches Erlebnis für jeden Whisky-Liebhaber. Die Kombination aus der Schönheit der Insel, dem Erbe der Destillerien und den einzigartigen Geschmacksprofilen der Whiskys macht diese Reise zu einem echten Highlight. Prost!</p>
 

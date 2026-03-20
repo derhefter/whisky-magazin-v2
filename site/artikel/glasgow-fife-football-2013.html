@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=glasgow-fife-football-2013"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('glasgow-fife-football-2013') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Whisky, Fußball und die beste Fish-Bar Schottlands</h2> <p>Oktober 2013. Diese Reise war anders. Weniger Destillerien, mehr Erlebnisse. Glasgow, die Küste von Fife, ein Fußballspiel, das wir fast verpasst hätten, und ein Abend in einer Celtic-Kneipe, der alles veränderte.</p> <h3>Old Scotia Bar &ndash; Tradition seit 1792</h3> <p>Wie immer begann alles im <strong>Old Scotia Bar</strong>. Diesmal erlebten wir etwas Besonderes: Schotten, die Eis in ihren Scotch taten. Ein Stilbruch? Vielleicht. Aber der Abend war großartig &ndash; echt, ungezwungen, typisch Glasgow.</p> <h3>Loch Lomond Distillery</h3> <p>Am nächsten Tag ging es zur <strong>Loch Lomond Distillery</strong> in Alexandria. Die Destillerie besitzt verschiedene Brennblasen-Typen und produziert eine ungewöhnliche Bandbreite an Stilen &ndash; von leicht und fruchtig bis schwer und torfig. Alles unter einem Dach.</p> <p>Loch Lomond Whiskys bei <a href="https://www.amazon.de/s?k=loch+lomond+single+malt&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>St Andrews &amp; Anstruther Fish Bar</h3> <p>Von Glasgow nach Fife: <strong>St Andrews</strong> mit seiner mittelalterlichen Universität und der Burgruine direkt an den Klippen. Eine Stadt voller Geschichte &ndash; und natürlich der Geburtsort des Golfs.</p> <p>Aber das kulinarische Highlight war <strong>Anstruther Fish Bar</strong> in dem kleinen Fischerdorf Anstruther. Bestes Fish and Chips in ganz Schottland &ndash; und das sagen nicht nur wir, sondern ziemlich viel jeder, der dort war. Frischer Fisch, knuspriger Teig, Blick auf den Hafen.</p> <h3>Celtic Park &ndash; Block 139</h3> <p><strong>Celtic vs. Aberdeen</strong> im Celtic Park. Wir hatten keine Karten &ndash; und auf dem Markt vor dem Stadion auch keine bekommen. Trotzdem haben wir es reingeschafft. Block 139. Die Atmosphäre im Celtic Park ist elektrisierend: 60.000 Fans, die singen als gäbe es kein Morgen.</p> <h3>Die Celtic-Kneipe &ndash; der Abend unseres Lebens</h3> <p>Nach dem Spiel landeten wir in einer <strong>Celtic-Kneipe</strong> in einem Celtic-Stadtteil. Hinterhof, ein Gitarrist spielte irische Lieder, Live-Musik unter freiem Himmel. Die Locals haben uns sofort aufgenommen &ndash; einer hat uns mit <strong>Magnus-Whisky</strong> überschüttet. Wir waren vollständig integriert. Keine Touristen, keine Show &ndash; einfach ein unfassbarer Abend. Das ist Glasgow.</p> <h3>DoubleTree Dunblane Castle</h3> <p>Übernachtet haben wir im <strong>DoubleTree by Hilton Dunblane Castle</strong> &ndash; ein Schlosshotel mit Hirschstatuen und tollem Ausblick auf die Umgebung.</p> <h3>Praktische Tipps</h3> <ul>
 <li><strong>Celtic Park:</strong> Tickets im Vorverkauf sichern! Die Atmosphere ist einzigartig. Parkhead im Osten von Glasgow.</li>
 <li><strong>Anstruther Fish Bar:</strong> 42-44 Shore Street, Anstruther. Früh kommen &ndash; die Schlange ist lang.</li>

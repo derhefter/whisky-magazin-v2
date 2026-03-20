@@ -518,6 +518,7 @@
                 <a href="https://whisky-magazin.vercel.app/index.html">Start</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a>
+                <a href="https://whisky-magazin.vercel.app/karte.html">Karte</a>
                 <a href="https://whisky-magazin.vercel.app/kategorie/lifestyle.html">Lifestyle</a>
                 <a href="https://www.whisky.reise" target="_blank">whisky.reise</a>
             </nav>
@@ -540,6 +541,52 @@
         <div class="content-grid">
             <main>
                 <div class="article-body">
+                    
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=arran-ayrshire-celtic-vs-bayern-2017"
+               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
+                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('arran-ayrshire-celtic-vs-bayern-2017') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
                     <h2>Von Arran bis Hadrian's Wall &ndash; und dazwischen Champions League</h2> <p>Oktober 2017. Diese Reise hatte alles: eine Insel, die südlichste Destillerie Schottlands, römische Geschichte und &ndash; das absolute Highlight &ndash; <strong>Celtic gegen Bayern München in der Champions League</strong>. Ein Trip, den wir nie vergessen werden.</p> <h3>Anreise &amp; Glasgow</h3> <p>easyJet von Berlin Schönefeld nach Glasgow. <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a> war ein Opel Astra von Sunny Cars. Erste Nacht im Novotel Glasgow, abends die Stadt erkunden.</p> <h3>Isle of Arran &ndash; Schottland im Kleinen</h3> <p>Mit der <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> (15 GBP) nach Arran. Die Insel wird oft als &bdquo;Schottland im Kleinen&ldquo; bezeichnet: Highlands im Norden, Lowlands im Süden, alles auf 430 Quadratkilometern. Die <strong>Arran Distillery</strong> in Lochranza liegt spektakulär am Ende einer Bucht, umgeben von Bergen. Ein unabhängiger Produzent mit hervorragendem Single Malt.</p> <h3>Ayrshire &amp; der Süden</h3> <p>Zurück auf dem Festland übernachteten wir im Mercure Ayr Hotel. Am nächsten Tag ging es nach Süden:</p> <ul>
 <li><strong>Girvan:</strong> Die riesige Grain-Destillerie von William Grant &amp; Sons. Nicht glamourös, aber hier wird die Basis für Blends wie Grant's produziert.</li>
 <li><strong>Bladnoch:</strong> Die <strong>südlichste Destillerie Schottlands</strong>, wiederbelebt nach Jahren der Stille. Bladnoch Single Malt ist leicht, blumig und völlig anders als die torfigen Nachbarn im Norden.</li>
