@@ -9,6 +9,7 @@
     <meta property="og:title" content="Whisky-Tasting für Einsteiger: So geht's richtig">
     <meta property="og:description" content="Erleben Sie Whisky-Tasting wie ein Profi! Unser Guide für Einsteiger zeigt Ihnen, wie Sie Aromen entdecken und Ihr Tasting perfektionieren.">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="/images/whisky-tasting-fuer-einsteiger.jpg">
     <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/whisky-tasting-für-einsteiger.html">
     <style>
         :root {
@@ -231,14 +232,25 @@
         .article-body a:hover { color: var(--whisky-brown); }
 
         .affiliate-link {
-            background: linear-gradient(135deg, var(--whisky-light), var(--whisky-cream));
-            padding: 2px 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, var(--whisky-amber), var(--whisky-gold));
+            color: #fff !important;
+            padding: 3px 10px 3px 8px;
             border-radius: 4px;
             text-decoration: none !important;
-            border-bottom: 2px solid var(--whisky-gold);
+            border-bottom: none !important;
+            font-size: 0.9em;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
         }
+        .affiliate-link::before { content: "→"; font-size: 0.8em; }
         .affiliate-link:hover {
-            background: var(--whisky-gold);
+            background: linear-gradient(135deg, var(--whisky-brown), var(--whisky-amber));
+            transform: translateY(-1px);
             color: #fff !important;
         }
 
@@ -348,6 +360,142 @@
             margin-top: 12px;
         }
 
+        /* --- CARD IMAGE --- */
+        .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius) var(--radius) 0 0;
+            height: 210px;
+        }
+        .card-image {
+            width: 100%; height: 210px; object-fit: cover;
+            display: block;
+            filter: saturate(1.15) contrast(1.05) brightness(0.92);
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        .article-card:hover .card-image {
+            transform: scale(1.04);
+            filter: saturate(1.25) contrast(1.08) brightness(0.97);
+        }
+        /* Einheitlicher Warm-Amber-Overlay auf allen Kartenbildern */
+        .card-image-wrapper::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(184, 134, 11, 0.08) 0%,
+                rgba(61, 43, 31, 0.28) 100%
+            );
+            pointer-events: none;
+        }
+        .card-image-placeholder {
+            width: 100%; height: 210px;
+            background: linear-gradient(135deg, var(--whisky-dark) 0%, var(--whisky-brown) 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3em; color: var(--whisky-gold);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        /* --- ARTICLE HERO IMAGE --- */
+        .article-hero-image {
+            width: 100%; max-height: 480px; object-fit: cover; display: block;
+        }
+        .article-image-credit {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.72em; color: var(--text-secondary);
+            text-align: right; padding: 4px 8px; background: var(--whisky-light);
+        }
+        .article-image-credit a { color: var(--text-secondary); }
+
+        /* --- EMPFEHLUNG BOX --- */
+        .empfehlung-box {
+            border: 2px solid var(--whisky-gold); border-radius: var(--radius);
+            padding: 20px 24px; margin: 32px 0;
+            background: linear-gradient(135deg, var(--whisky-cream) 0%, #fff9f0 100%);
+            display: flex; align-items: flex-start; gap: 16px;
+        }
+        .empfehlung-box .emp-icon { font-size: 2em; flex-shrink: 0; margin-top: 2px; }
+        .empfehlung-box .emp-content { flex: 1; }
+        .empfehlung-box .emp-title {
+            font-family: Georgia, serif; font-weight: bold;
+            color: var(--whisky-brown); font-size: 1.05em; margin-bottom: 6px;
+        }
+        .empfehlung-box .emp-text {
+            font-size: 0.9em; color: var(--text-secondary); margin-bottom: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .empfehlung-box .emp-cta {
+            display: inline-block; background: var(--whisky-amber);
+            color: #fff !important; padding: 8px 20px; border-radius: 20px;
+            text-decoration: none !important; font-weight: bold; font-size: 0.85em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s; margin-right: 8px; margin-bottom: 4px;
+        }
+        .empfehlung-box .emp-cta:hover { background: var(--whisky-brown); color: #fff !important; }
+
+        /* --- SHARE BUTTONS --- */
+        .share-bar {
+            display: flex; gap: 10px; margin: 28px 0 20px;
+            flex-wrap: wrap; align-items: center;
+        }
+        .share-label {
+            font-size: 0.85em; color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 20px;
+            text-decoration: none !important; font-size: 0.82em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600; transition: opacity 0.2s; color: #fff !important;
+        }
+        .share-btn:hover { opacity: 0.85; }
+        .share-btn-whatsapp { background: #25D366; }
+        .share-btn-x { background: #000; }
+        .share-btn-pinterest { background: #E60023; }
+        .share-btn-email { background: var(--whisky-brown); }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb {
+            background: var(--whisky-light); padding: 10px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.82em; color: var(--text-secondary);
+        }
+        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--whisky-amber); }
+
+        /* --- RELATED GRID --- */
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+        .related-item {
+            background: var(--whisky-cream); border-radius: 8px;
+            padding: 12px 14px; text-decoration: none !important;
+            border-left: 3px solid var(--whisky-gold);
+            color: var(--whisky-brown) !important; font-size: 0.88em;
+            line-height: 1.4; transition: background 0.2s, border-color 0.2s; display: block;
+        }
+        .related-item:hover { background: var(--whisky-light); border-left-color: var(--whisky-amber); }
+
+        /* --- PERSONAL PHOTO BADGE --- */
+        .personal-photo-wrapper { position: relative; display: block; }
+        .personal-photo-badge {
+            position: absolute; bottom: 8px; left: 8px;
+            background: rgba(61,43,31,0.85); color: var(--whisky-gold);
+            font-size: 0.7em; padding: 2px 8px; border-radius: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            pointer-events: none;
+        }
+
+        /* --- HERO TEXTURE --- */
+        .hero { position: relative; }
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+            opacity: 0.15; pointer-events: none;
+        }
+        .hero > * { position: relative; }
+
         /* --- RESPONSIVE --- */
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8em; }
@@ -355,6 +503,10 @@
             .article-body { padding: 24px; }
             .header-inner { flex-direction: column; gap: 12px; }
             nav a { margin-left: 12px; }
+            .card-image-wrapper, .card-image, .card-image-placeholder { height: 160px; }
+            .article-hero-image { max-height: 240px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .empfehlung-box { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -374,23 +526,37 @@
     
     <div class="article-header">
         <h1>Whisky-Tasting für Einsteiger: So geht's richtig</h1>
-        <div class="meta-line">23. Februar 2026 &bull; Whisky &bull; von Ellas</div>
+        <div class="meta-line">23. Februar 2026 &bull; Whisky &bull; 3 Min. Lesezeit &bull; von Ellas</div>
+    </div>
+    <img src="/images/whisky-tasting-fuer-einsteiger.jpg" alt="Whisky-Tasting für Einsteiger: So geht's richtig" class="article-hero-image" loading="lazy"><div class="article-image-credit">Foto von <a href="https://unsplash.com/photos/three-half-filled-clear-glasses-C7Y9r_lby7Y?utm_source=whisky_magazin&utm_medium=referral">Mr. C Lovesme</a> auf <a href="https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral">Unsplash</a></div>
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="https://whisky-magazin.vercel.app/index.html">Start</a> ›
+            <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a> ›
+            Whisky-Tasting für Einsteiger: So geht's richtig
+        </div>
     </div>
     <div class="container">
         <div class="content-grid">
             <main>
                 <div class="article-body">
-                    <h2>Whisky-Tasting für Einsteiger: So geht's richtig</h2> <p>Whisky ist mehr als nur ein Getränk – es ist ein Erlebnis, eine Reise durch Aromen und Geschichte. Wenn du gerade erst anfängst, dich für Whisky zu begeistern, bist du hier genau richtig. In diesem Guide zeige ich dir, wie du ein Whisky-Tasting richtig angehst, um das volle Potenzial dieses edlen Tropfens auszuschöpfen.</p> <h2>Die richtige Umgebung für dein Whisky-Tasting</h2> <p>Ein gelungenes Whisky-Tasting beginnt mit der Wahl der richtigen Umgebung. Du solltest einen ruhigen, ungestörten Ort wählen, an dem du dich voll und ganz auf die Aromen und Geschmäcker konzentrieren kannst. Eine gedämpfte Beleuchtung und sanfte Musik im Hintergrund können die Stimmung zusätzlich heben.</p> <blockquote>"Whisky ist wie ein Gedicht, das darauf wartet, entdeckt zu werden." – Ellas</blockquote> <h3>Das richtige Glas wählen</h3> <p>Nicht jedes Glas eignet sich für ein Whisky-Tasting. Am besten verwendest du ein <em>Glencairn-Glas</em> oder ein <em>Tulpen-Glas</em>. Diese Gläser sind so geformt, dass sie die Aromen optimal zur Nase leiten. Du kannst passende Gläser ganz einfach online kaufen. Schau mal bei <a href="https://www.amazon.de/s?k=whisky+gl%C3%A4ser&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a> vorbei.</p> <h2>Whisky-Auswahl: Vielfalt entdecken</h2> <p>Die Auswahl des richtigen Whiskys ist entscheidend. Als Einsteiger empfehle ich dir, mit einem <strong>Einsteiger-Set</strong> zu beginnen, das verschiedene Sorten bietet. So bekommst du einen Eindruck von der Vielfalt der Aromen. Stöbere doch mal bei nach spannenden Sets.</p> <h3>Whisky-Stile verstehen</h3> <p>Whisky gibt es in verschiedenen Stilen, die je nach Region und Herstellungsmethode variieren. Hier sind einige der gängigsten:</p>
+                    <h2>Whisky-Tasting für Einsteiger: So geht's richtig</h2> <p>Whisky ist mehr als nur ein Getränk – es ist ein Erlebnis, eine Reise durch Aromen und Geschichte. Wenn du gerade erst anfängst, dich für Whisky zu begeistern, bist du hier genau richtig. In diesem Guide zeige ich dir, wie du ein Whisky-Tasting richtig angehst, um das volle Potenzial dieses edlen Tropfens auszuschöpfen.</p> <h2>Die richtige Umgebung für dein Whisky-Tasting</h2><div class="empfehlung-box"><div class="emp-icon">🥃</div><div class="emp-content"><div class="emp-title">Diesen Whisky bestellen</div><div class="emp-text">Die im Artikel erwähnten Whiskys findest du bei Amazon – oft mit Prime-Lieferung.</div><a href="https://www.amazon.de/s?k=tasting+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="emp-cta">Bei Amazon ansehen →</a></div></div> <p>Ein gelungenes Whisky-Tasting beginnt mit der Wahl der richtigen Umgebung. Du solltest einen ruhigen, ungestörten Ort wählen, an dem du dich voll und ganz auf die Aromen und Geschmäcker konzentrieren kannst. Eine gedämpfte Beleuchtung und sanfte Musik im Hintergrund können die Stimmung zusätzlich heben.</p> <blockquote>"Whisky ist wie ein Gedicht, das darauf wartet, entdeckt zu werden." – Ellas</blockquote> <h3>Das richtige Glas wählen</h3> <p>Nicht jedes Glas eignet sich für ein Whisky-Tasting. Am besten verwendest du ein <em>Glencairn-Glas</em> oder ein <em>Tulpen-Glas</em>. Diese Gläser sind so geformt, dass sie die Aromen optimal zur Nase leiten. Du kannst passende Gläser ganz einfach online kaufen. Schau mal bei <a href="https://www.amazon.de/s?k=whisky+gl%C3%A4ser&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a> vorbei.</p> <h2>Whisky-Auswahl: Vielfalt entdecken</h2> <p>Die Auswahl des richtigen Whiskys ist entscheidend. Als Einsteiger empfehle ich dir, mit einem <strong>Einsteiger-Set</strong> zu beginnen, das verschiedene Sorten bietet. So bekommst du einen Eindruck von der Vielfalt der Aromen. Stöbere doch mal bei nach spannenden Sets.</p> <h3>Whisky-Stile verstehen</h3> <p>Whisky gibt es in verschiedenen Stilen, die je nach Region und Herstellungsmethode variieren. Hier sind einige der gängigsten:</p>
 <ul> <li><strong>Single Malt Scotch:</strong> Hergestellt in Schottland aus gemälzter Gerste.</li> <li><strong>Bourbon:</strong> Ein amerikanischer Whisky, der mindestens 51% Mais enthält.</li> <li><strong>Irish Whiskey:</strong> Bekannt für seinen weichen, milden Geschmack.</li> <li><strong>Rye Whisky:</strong> Vor allem in Kanada und den USA populär, aus Roggen hergestellt.</li>
 </ul> <h2>Der Ablauf eines Whisky-Tastings</h2> <p>Ein Tasting folgt einem bestimmten Ablauf, um die Aromen optimal zu erfassen. Hier eine Schritt-für-Schritt-Anleitung:</p> <ol> <li><strong>Betrachten:</strong> Sieh dir die Farbe des Whiskys an. Diese kann dir Hinweise auf das Alter und die Fassart geben.</li> <li><strong>Riechen:</strong> Halte das Glas an deine Nase und nimm einen tiefen Atemzug. Welche Aromen kannst du erkennen? Vanille, Früchte oder Rauch?</li> <li><strong>Schmecken:</strong> Nimm einen kleinen Schluck und lass ihn im Mund zergehen. Welche Aromen entfalten sich?</li> <li><strong>Nachklang:</strong> Achte darauf, wie der Whisky nach dem Schlucken im Mund bleibt. Ist er lang und warm oder eher kurz und spritzig?</li>
 </ol> <h2>Gute Begleitung: Wasser und Snacks</h2> <p>Wasser ist dein bester Freund beim Tasting – es hilft, den Gaumen zu reinigen und den Alkoholgehalt zu senken, um mehr Aromen zu entdecken. Auch kleine Snacks wie Brot oder Käse sind ideale Begleiter, um den Geschmack des Whiskys zu unterstützen.</p> <h3>Praktische Tipps für Einsteiger</h3> <ul> <li>Notiere dir deine Eindrücke. Ein Tasting-Notizbuch kann dir helfen, deine Lieblingswhiskys wiederzufinden.</li> <li>Vermeide starke Gerüche in der Umgebung, die deine Wahrnehmung stören könnten.</li> <li>Sei offen für neue Geschmäcker und erlaube dir, deine Vorlieben zu entwickeln.</li>
 </ul> <h2>Fazit</h2> <p>Whisky-Tasting ist eine wunderbare Möglichkeit, die Welt des Whiskys in all ihren Facetten kennenzulernen. Mit dem richtigen Equipment, ein wenig Geduld und einer Prise Neugier kannst du tiefer in die Materie eintauchen und echte Geschmackserlebnisse entdecken. Und wer weiß, vielleicht wird Whisky bald zu deinem neuen Lieblingshobby.</p>
 
-<div class="related-box"><h3>Das könnte dich auch interessieren</h3><ul><li><a href="https://whisky-magazin.vercel.app/artikel/macallan-ist-der-hype-gerechtfertigt.html">Macallan: Ist der Hype gerechtfertigt?</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/geschichte-lagavulin-200-jahre-torfrauch.html">Die Geschichte von Lagavulin: 200 Jahre Torfrauch</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/die-besten-whisky-destillerien-auf-islay.html">Die besten Whisky-Destillerien auf Islay</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/wildlife-in-schottland-hirsche-adler-robben.html">Wildlife in Schottland: Hirsche, Adler und Robben</a></li>
-</ul></div>
+<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid"><a href="https://whisky-magazin.vercel.app/artikel/macallan-ist-der-hype-gerechtfertigt.html" class="related-item">🥃 Macallan: Ist der Hype gerechtfertigt?</a>
+<a href="https://whisky-magazin.vercel.app/artikel/geschichte-lagavulin-200-jahre-torfrauch.html" class="related-item">🥃 Die Geschichte von Lagavulin: 200 Jahre Torfrauch</a>
+<a href="https://whisky-magazin.vercel.app/artikel/die-besten-whisky-destillerien-auf-islay.html" class="related-item">🥃 Die besten Whisky-Destillerien auf Islay</a>
+<a href="https://whisky-magazin.vercel.app/artikel/wildlife-in-schottland-hirsche-adler-robben.html" class="related-item">🌿 Wildlife in Schottland: Hirsche, Adler und Robben</a></div></div>
+                    <div class="share-bar">
+        <span class="share-label">Teilen:</span>
+        <a href="https://wa.me/?text=Whisky-Tasting%20f%C3%BCr%20Einsteiger%3A%20So%20geht%27s%20richtig%20https%3A//whisky-magazin.vercel.app/artikel/whisky-tasting-f%C3%BCr-einsteiger.html" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+        <a href="https://x.com/intent/tweet?text=Whisky-Tasting%20f%C3%BCr%20Einsteiger%3A%20So%20geht%27s%20richtig&url=https%3A//whisky-magazin.vercel.app/artikel/whisky-tasting-f%C3%BCr-einsteiger.html" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
+        <a href="https://pinterest.com/pin/create/button/?url=https%3A//whisky-magazin.vercel.app/artikel/whisky-tasting-f%C3%BCr-einsteiger.html&description=Whisky-Tasting%20f%C3%BCr%20Einsteiger%3A%20So%20geht%27s%20richtig" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
+        <a href="mailto:?subject=Whisky-Tasting%20f%C3%BCr%20Einsteiger%3A%20So%20geht%27s%20richtig&body=https%3A//whisky-magazin.vercel.app/artikel/whisky-tasting-f%C3%BCr-einsteiger.html" class="share-btn share-btn-email">✉ E-Mail</a>
+    </div>
                     <div class="article-tags"><div class="tag-cloud"><span class="tag">Tasting</span> <span class="tag">Einsteiger</span></div></div>
                 </div>
             </main>

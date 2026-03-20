@@ -194,7 +194,7 @@ def generate_article(topic, config):
     now = datetime.now()
     date_display = f"{now.day}. {monate_de[now.month]} {now.year}"
 
-    return {
+    article = {
         "title": topic["title"],
         "html_content": html_content,
         "category": topic.get("category", "Allgemein"),
@@ -205,3 +205,20 @@ def generate_article(topic, config):
         "date": now.strftime("%Y-%m-%d"),
         "date_display": date_display,
     }
+
+    # Bild automatisch fetchen
+    try:
+        from pathlib import Path
+        from image_fetcher import fetch_and_save_image
+        images_dir = Path(__file__).parent / "site" / "images"
+        print(f"  [3/3] Suche passendes Bild...")
+        image_data = fetch_and_save_image(article, config, images_dir)
+        if image_data:
+            article["image_url"] = image_data["url"]
+            article["image_alt"] = image_data["alt"]
+            article["image_credit"] = image_data["credit"]
+            article["image_source"] = "unsplash"
+    except Exception as e:
+        print(f"  Bild-Fetch übersprungen: {e}")
+
+    return article

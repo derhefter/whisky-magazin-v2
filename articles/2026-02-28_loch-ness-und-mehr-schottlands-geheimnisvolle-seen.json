@@ -16,5 +16,10 @@
     "og_description": "Erkunden Sie die faszinierenden und geheimnisvollen Seen Schottlands. Entdecken Sie Mythen und Naturwunder von Loch Ness bis zu unbekannten Gewässern."
   },
   "date": "2026-02-28",
-  "date_display": "28. February 2026"
+  "date_display": "28. February 2026",
+  "image_url": "/images/loch-ness-und-mehr-schottlands-geheimnisvolle-seen.jpg",
+  "image_alt": "Loch Ness und mehr: Schottlands geheimnisvolle Seen",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-vast-lake-bordered-by-a-lush-green-forest-OzTwK5JvMeg?utm_source=whisky_magazin&utm_medium=referral\">𝕡𝕒𝕨𝕤 𝕒𝕟𝕕 𝕡𝕣𝕚𝕟𝕥𝕤</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "OzTwK5JvMeg",
+  "image_source": "unsplash"
 }

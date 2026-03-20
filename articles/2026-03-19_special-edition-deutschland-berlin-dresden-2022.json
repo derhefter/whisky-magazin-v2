@@ -21,5 +21,10 @@
     "og_description": "Special Edition: Deutschland-Tour 2022. Berlin, Spreewald, Dresden und Glashütte. Persönlicher Reisebericht."
   },
   "date": "2026-03-19",
-  "date_display": "19. März 2026"
+  "date_display": "19. März 2026",
+  "image_url": "/images/special-edition-deutschland-berlin-dresden-2022.jpg",
+  "image_alt": "Special Edition: Berlin, Spreewald, Dresden & Glashütte 2022",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/berlin-cityscape-with-river-and-cloudy-skies-9R76T6j9VNo?utm_source=whisky_magazin&utm_medium=referral\">Samuel Girven</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "9R76T6j9VNo",
+  "image_source": "unsplash"
 }

@@ -15,5 +15,10 @@
     "og_description": "Erleben Sie die schönsten Whisky-Bars in Deutschland und genießen Sie unvergessliche Abende voller Atmosphäre und Geschmack."
   },
   "date": "2026-02-23",
-  "date_display": "23. February 2026"
+  "date_display": "23. February 2026",
+  "image_url": "/images/die-schoensten-whisky-bars-in-deutschland.jpg",
+  "image_alt": "Die schönsten Whisky-Bars in Deutschland",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/clear-glass-bottles-jQlp6c9iOfM?utm_source=whisky_magazin&utm_medium=referral\">Tony Wan</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "jQlp6c9iOfM",
+  "image_source": "unsplash"
 }

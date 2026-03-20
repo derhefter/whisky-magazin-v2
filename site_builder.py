@@ -54,6 +54,7 @@ def _base_template():
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{og_description}">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="{og_image}">
     <link rel="canonical" href="{canonical_url}">
     <style>
         :root {{
@@ -276,14 +277,25 @@ def _base_template():
         .article-body a:hover {{ color: var(--whisky-brown); }}
 
         .affiliate-link {{
-            background: linear-gradient(135deg, var(--whisky-light), var(--whisky-cream));
-            padding: 2px 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, var(--whisky-amber), var(--whisky-gold));
+            color: #fff !important;
+            padding: 3px 10px 3px 8px;
             border-radius: 4px;
             text-decoration: none !important;
-            border-bottom: 2px solid var(--whisky-gold);
+            border-bottom: none !important;
+            font-size: 0.9em;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
         }}
+        .affiliate-link::before {{ content: "→"; font-size: 0.8em; }}
         .affiliate-link:hover {{
-            background: var(--whisky-gold);
+            background: linear-gradient(135deg, var(--whisky-brown), var(--whisky-amber));
+            transform: translateY(-1px);
             color: #fff !important;
         }}
 
@@ -393,6 +405,142 @@ def _base_template():
             margin-top: 12px;
         }}
 
+        /* --- CARD IMAGE --- */
+        .card-image-wrapper {{
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius) var(--radius) 0 0;
+            height: 210px;
+        }}
+        .card-image {{
+            width: 100%; height: 210px; object-fit: cover;
+            display: block;
+            filter: saturate(1.15) contrast(1.05) brightness(0.92);
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }}
+        .article-card:hover .card-image {{
+            transform: scale(1.04);
+            filter: saturate(1.25) contrast(1.08) brightness(0.97);
+        }}
+        /* Einheitlicher Warm-Amber-Overlay auf allen Kartenbildern */
+        .card-image-wrapper::after {{
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(184, 134, 11, 0.08) 0%,
+                rgba(61, 43, 31, 0.28) 100%
+            );
+            pointer-events: none;
+        }}
+        .card-image-placeholder {{
+            width: 100%; height: 210px;
+            background: linear-gradient(135deg, var(--whisky-dark) 0%, var(--whisky-brown) 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3em; color: var(--whisky-gold);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }}
+
+        /* --- ARTICLE HERO IMAGE --- */
+        .article-hero-image {{
+            width: 100%; max-height: 480px; object-fit: cover; display: block;
+        }}
+        .article-image-credit {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.72em; color: var(--text-secondary);
+            text-align: right; padding: 4px 8px; background: var(--whisky-light);
+        }}
+        .article-image-credit a {{ color: var(--text-secondary); }}
+
+        /* --- EMPFEHLUNG BOX --- */
+        .empfehlung-box {{
+            border: 2px solid var(--whisky-gold); border-radius: var(--radius);
+            padding: 20px 24px; margin: 32px 0;
+            background: linear-gradient(135deg, var(--whisky-cream) 0%, #fff9f0 100%);
+            display: flex; align-items: flex-start; gap: 16px;
+        }}
+        .empfehlung-box .emp-icon {{ font-size: 2em; flex-shrink: 0; margin-top: 2px; }}
+        .empfehlung-box .emp-content {{ flex: 1; }}
+        .empfehlung-box .emp-title {{
+            font-family: Georgia, serif; font-weight: bold;
+            color: var(--whisky-brown); font-size: 1.05em; margin-bottom: 6px;
+        }}
+        .empfehlung-box .emp-text {{
+            font-size: 0.9em; color: var(--text-secondary); margin-bottom: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }}
+        .empfehlung-box .emp-cta {{
+            display: inline-block; background: var(--whisky-amber);
+            color: #fff !important; padding: 8px 20px; border-radius: 20px;
+            text-decoration: none !important; font-weight: bold; font-size: 0.85em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s; margin-right: 8px; margin-bottom: 4px;
+        }}
+        .empfehlung-box .emp-cta:hover {{ background: var(--whisky-brown); color: #fff !important; }}
+
+        /* --- SHARE BUTTONS --- */
+        .share-bar {{
+            display: flex; gap: 10px; margin: 28px 0 20px;
+            flex-wrap: wrap; align-items: center;
+        }}
+        .share-label {{
+            font-size: 0.85em; color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }}
+        .share-btn {{
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 20px;
+            text-decoration: none !important; font-size: 0.82em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600; transition: opacity 0.2s; color: #fff !important;
+        }}
+        .share-btn:hover {{ opacity: 0.85; }}
+        .share-btn-whatsapp {{ background: #25D366; }}
+        .share-btn-x {{ background: #000; }}
+        .share-btn-pinterest {{ background: #E60023; }}
+        .share-btn-email {{ background: var(--whisky-brown); }}
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb {{
+            background: var(--whisky-light); padding: 10px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.82em; color: var(--text-secondary);
+        }}
+        .breadcrumb-inner {{ max-width: 1100px; margin: 0 auto; }}
+        .breadcrumb a {{ color: var(--text-secondary); text-decoration: none; }}
+        .breadcrumb a:hover {{ color: var(--whisky-amber); }}
+
+        /* --- RELATED GRID --- */
+        .related-grid {{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }}
+        .related-item {{
+            background: var(--whisky-cream); border-radius: 8px;
+            padding: 12px 14px; text-decoration: none !important;
+            border-left: 3px solid var(--whisky-gold);
+            color: var(--whisky-brown) !important; font-size: 0.88em;
+            line-height: 1.4; transition: background 0.2s, border-color 0.2s; display: block;
+        }}
+        .related-item:hover {{ background: var(--whisky-light); border-left-color: var(--whisky-amber); }}
+
+        /* --- PERSONAL PHOTO BADGE --- */
+        .personal-photo-wrapper {{ position: relative; display: block; }}
+        .personal-photo-badge {{
+            position: absolute; bottom: 8px; left: 8px;
+            background: rgba(61,43,31,0.85); color: var(--whisky-gold);
+            font-size: 0.7em; padding: 2px 8px; border-radius: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            pointer-events: none;
+        }}
+
+        /* --- HERO TEXTURE --- */
+        .hero {{ position: relative; }}
+        .hero::before {{
+            content: "";
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+            opacity: 0.15; pointer-events: none;
+        }}
+        .hero > * {{ position: relative; }}
+
         /* --- RESPONSIVE --- */
         @media (max-width: 600px) {{
             .hero h1 {{ font-size: 1.8em; }}
@@ -400,6 +548,10 @@ def _base_template():
             .article-body {{ padding: 24px; }}
             .header-inner {{ flex-direction: column; gap: 12px; }}
             nav a {{ margin-left: 12px; }}
+            .card-image-wrapper, .card-image, .card-image-placeholder {{ height: 160px; }}
+            .article-hero-image {{ max-height: 240px; }}
+            .related-grid {{ grid-template-columns: 1fr; }}
+            .empfehlung-box {{ flex-direction: column; gap: 8px; }}
         }}
     </style>
 </head>
@@ -475,28 +627,33 @@ def _find_related_articles(current_article, all_articles, base_url, max_count=4)
     # Nach Score sortieren (hoechster zuerst), bei Gleichstand nach Datum
     scored.sort(key=lambda x: (x[0], x[1].get("date", "")), reverse=True)
 
-    related_html = ""
+    cat_emoji = {"whisky": "🥃", "reise": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "lifestyle": "✨", "natur": "🌿", "urlaub": "🌄"}
+
+    items = []
     for _, a in scored[:max_count]:
         slug = a.get("meta", {}).get("slug", "")
         title = a["title"]
-        related_html += f'<li><a href="{base_url}/artikel/{slug}.html">{title}</a></li>\n'
+        cat = a.get("category", "").lower()
+        emoji = cat_emoji.get(cat, "📖")
+        items.append(f'<a href="{base_url}/artikel/{slug}.html" class="related-item">{emoji} {title}</a>')
 
     # Falls weniger als max_count gefunden, mit neuesten Artikeln auffuellen
     used_slugs = {current_slug} | {a.get("meta", {}).get("slug", "") for _, a in scored[:max_count]}
-    if len(scored) < max_count:
+    if len(items) < max_count:
         for a in all_articles:
-            if len(scored) + (max_count - len(scored)) <= 0:
-                break
             slug = a.get("meta", {}).get("slug", "")
             if slug and slug not in used_slugs:
                 title = a["title"]
-                related_html += f'<li><a href="{base_url}/artikel/{slug}.html">{title}</a></li>\n'
+                cat = a.get("category", "").lower()
+                emoji = cat_emoji.get(cat, "📖")
+                items.append(f'<a href="{base_url}/artikel/{slug}.html" class="related-item">{emoji} {title}</a>')
                 used_slugs.add(slug)
-                if related_html.count("<li>") >= max_count:
+                if len(items) >= max_count:
                     break
 
-    if related_html:
-        return f'<div class="related-box"><h3>Das könnte dich auch interessieren</h3><ul>{related_html}</ul></div>'
+    if items:
+        grid = '\n'.join(items)
+        return f'<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid">{grid}</div></div>'
     return ""
 
 
@@ -511,12 +668,74 @@ def _replace_related_box(html_content, related_html):
     return cleaned
 
 
+def _reading_time(html_content):
+    """Schätzt die Lesezeit in Minuten aus HTML-Content."""
+    text = re.sub(r'<[^>]+>', '', html_content)
+    word_count = len(text.split())
+    return max(1, round(word_count / 200))
+
+
+def _inject_empfehlung_boxes(html_content, article, config):
+    """Fügt nach dem 2. </h2> eine kategorie-spezifische Empfehlung-Box ein."""
+    amazon_tag = config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')
+    travel = config.get('affiliate_links', {}).get('travel_links', {})
+    category = article.get('category', '').lower()
+    categories = [c.lower() for c in article.get('categories', [])]
+
+    if category in ('reise', 'urlaub') or 'reise' in categories or 'urlaub' in categories:
+        faehre = travel.get('faehre', 'https://www.whisky.reise/reise')
+        hotel = travel.get('hotel', 'https://www.whisky.reise/hotels')
+        box = (
+            '<div class="empfehlung-box">'
+            '<div class="emp-icon">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'
+            '<div class="emp-content">'
+            '<div class="emp-title">Reise planen</div>'
+            '<div class="emp-text">Fähre, Hotel und mehr für deine Schottland-Reise – alles auf einen Blick.</div>'
+            f'<a href="{faehre}" target="_blank" rel="noopener noreferrer" class="emp-cta">Fähre buchen →</a>'
+            f'<a href="{hotel}" target="_blank" rel="noopener noreferrer" class="emp-cta">Hotels ansehen →</a>'
+            '</div></div>'
+        )
+    else:
+        # Erstes Keyword aus Tags für Amazon-Suche
+        tags = article.get('tags', [])
+        keyword = tags[0].lower().replace(' ', '+') if tags else 'single+malt+whisky'
+        box = (
+            '<div class="empfehlung-box">'
+            '<div class="emp-icon">🥃</div>'
+            '<div class="emp-content">'
+            '<div class="emp-title">Diesen Whisky bestellen</div>'
+            '<div class="emp-text">Die im Artikel erwähnten Whiskys findest du bei Amazon – oft mit Prime-Lieferung.</div>'
+            f'<a href="https://www.amazon.de/s?k={keyword}+whisky&tag={amazon_tag}" target="_blank" rel="noopener noreferrer" class="emp-cta">Bei Amazon ansehen →</a>'
+            '</div></div>'
+        )
+
+    # Nach dem 2. </h2> einfügen
+    count = [0]
+    def insert_after_second_h2(m):
+        count[0] += 1
+        if count[0] == 2:
+            return m.group(0) + box
+        return m.group(0)
+
+    result = re.sub(r'</h2>', insert_after_second_h2, html_content)
+    # Falls weniger als 2 h2 vorhanden, nach dem 1. einfügen
+    if count[0] < 2:
+        count[0] = 0
+        result = re.sub(r'</h2>', insert_after_second_h2, html_content)
+    return result
+
+
 def build_article_page(article, config):
     """Erstellt die HTML-Seite fuer einen einzelnen Artikel."""
+    from urllib.parse import quote
     base_url = config["site"].get("base_url", "")
     site_name = config["site"]["name"]
     meta = article.get("meta", {})
+    slug = meta.get("slug", "")
     date_display = _german_date(article.get("date", ""))
+    category = article.get('category', 'Allgemein')
+    cat_lower = category.lower()
+    reading_time = _reading_time(article['html_content'])
 
     tags_html = ""
     if article.get("tags"):
@@ -529,25 +748,91 @@ def build_article_page(article, config):
     all_articles = load_all_articles()
     recent_html = ""
     for a in all_articles[:5]:
-        if a.get("meta", {}).get("slug") != meta.get("slug"):
+        if a.get("meta", {}).get("slug") != slug:
             s = a.get("meta", {}).get("slug", "")
             t = a["title"]
             recent_html += f'<li><a href="{base_url}/artikel/{s}.html">{t}</a></li>\n'
 
-    # Related-Box: GPT-generierte Platzhalter durch echte Links ersetzen
+    # Related-Box + Empfehlung-Box
     related_html = _find_related_articles(article, all_articles, base_url, max_count=4)
     article_html = _replace_related_box(article['html_content'], related_html)
+    article_html = _inject_empfehlung_boxes(article_html, article, config)
+
+    # Hero-Bild (Unsplash oder persönliches Cartoon-Foto)
+    hero_img = ""
+    if article.get("image_url"):
+        is_personal = article.get("image_source") == "personal_cartoon"
+        img_tag = f'<img src="{article["image_url"]}" alt="{article.get("image_alt", article["title"])}" class="article-hero-image" loading="lazy">'
+        if is_personal:
+            hero_img = f'<div class="personal-photo-wrapper">{img_tag}<span class="personal-photo-badge">Eigenes Foto</span></div>'
+        else:
+            hero_img = img_tag
+        if article.get("image_credit"):
+            hero_img += f'<div class="article-image-credit">{article["image_credit"]}</div>'
+
+    # OG-Image
+    og_image = article.get("image_url", f"{base_url}/images/default.jpg")
+
+    # Share-Buttons
+    article_url = f"{base_url}/artikel/{slug}.html"
+    share_title = quote(article["title"])
+    share_url = quote(article_url)
+    share_html = f"""<div class="share-bar">
+        <span class="share-label">Teilen:</span>
+        <a href="https://wa.me/?text={share_title}%20{share_url}" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+        <a href="https://x.com/intent/tweet?text={share_title}&url={share_url}" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
+        <a href="https://pinterest.com/pin/create/button/?url={share_url}&description={share_title}" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
+        <a href="mailto:?subject={share_title}&body={share_url}" class="share-btn share-btn-email">✉ E-Mail</a>
+    </div>"""
+
+    # Sidebar CTAs (Reise-Artikel bekommen Reise-CTAs zuerst)
+    amazon_tag = config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')
+    travel = config.get('affiliate_links', {}).get('travel_links', {})
+    faehre_url = travel.get('faehre', '#')
+    is_travel = cat_lower in ('reise', 'urlaub')
+
+    if is_travel:
+        cta1 = f"""<div class="cta-box">
+                    <h3>Schottland-Reise planen</h3>
+                    <p>Fähren, Flüge & Hotels auf einen Blick</p>
+                    <a href="{faehre_url}" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
+                </div>
+                <div class="cta-box" style="margin-top: 20px;">
+                    <h3>Whisky entdecken</h3>
+                    <p>Die besten Single Malts bei Amazon</p>
+                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={amazon_tag}" target="_blank" rel="noopener noreferrer">Whisky shoppen &#8594;</a>
+                </div>"""
+    else:
+        cta1 = f"""<div class="cta-box">
+                    <h3>Whisky entdecken</h3>
+                    <p>Finde deinen nächsten Lieblings-Dram</p>
+                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={amazon_tag}" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
+                </div>
+                <div class="cta-box" style="margin-top: 20px;">
+                    <h3>Schottland-Reise planen</h3>
+                    <p>Fähren, Flüge & Hotels</p>
+                    <a href="{faehre_url}" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
+                </div>"""
 
     content = f"""
     <div class="article-header">
         <h1>{article['title']}</h1>
-        <div class="meta-line">{date_display} &bull; {article.get('category', 'Allgemein')} &bull; von {config['site']['author']}</div>
+        <div class="meta-line">{date_display} &bull; {category} &bull; {reading_time} Min. Lesezeit &bull; von {config['site']['author']}</div>
+    </div>
+    {hero_img}
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="{base_url}/index.html">Start</a> ›
+            <a href="{base_url}/kategorie/{cat_lower}.html">{category}</a> ›
+            {article['title']}
+        </div>
     </div>
     <div class="container">
         <div class="content-grid">
             <main>
                 <div class="article-body">
                     {article_html}
+                    {share_html}
                     {tags_html}
                 </div>
             </main>
@@ -556,16 +841,7 @@ def build_article_page(article, config):
                     <h3>Neueste Artikel</h3>
                     <ul>{recent_html}</ul>
                 </div>
-                <div class="cta-box">
-                    <h3>Whisky entdecken</h3>
-                    <p>Finde deinen nächsten Lieblings-Dram</p>
-                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag={config.get('affiliate_links', {}).get('amazon_tag', 'whiskyreise74-21')}" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
-                </div>
-                <div class="cta-box" style="margin-top: 20px;">
-                    <h3>Schottland-Reise planen</h3>
-                    <p>Fähren, Flüge & Hotels</p>
-                    <a href="{config.get('affiliate_links', {}).get('travel_links', {}).get('faehre', '#')}" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
-                </div>
+                {cta1}
             </aside>
         </div>
     </div>"""
@@ -576,7 +852,8 @@ def build_article_page(article, config):
         meta_description=meta.get("meta_description", article["title"]),
         keywords=meta.get("keywords", ""),
         og_description=meta.get("og_description", meta.get("meta_description", "")),
-        canonical_url=f"{base_url}/artikel/{meta.get('slug', '')}.html",
+        og_image=og_image,
+        canonical_url=f"{base_url}/artikel/{slug}.html",
         base_url=base_url,
         content=content,
     )
@@ -588,6 +865,8 @@ def build_index_page(articles, config):
     site_name = config["site"]["name"]
     tagline = config["site"]["tagline"]
 
+    cat_emoji = {"Whisky": "🥃", "Reise": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Lifestyle": "✨", "Natur": "🌿", "Urlaub": "🌄"}
+
     # Artikelkarten
     cards_html = ""
     for article in articles[:12]:
@@ -597,8 +876,16 @@ def build_index_page(articles, config):
         date_display = _german_date(article.get("date", ""))
         category = article.get("category", "Allgemein")
 
+        emoji = cat_emoji.get(category, "🥃")
+        if article.get("image_url"):
+            onerror = f"this.parentNode.innerHTML='<div class=\\'card-image-placeholder\\'>{emoji}</div>'"
+            img_html = f'<div class="card-image-wrapper"><img src="{article["image_url"]}" alt="{article.get("image_alt", article["title"])}" class="card-image" loading="lazy" onerror="{onerror}"></div>'
+        else:
+            img_html = f'<div class="card-image-placeholder">{emoji}</div>'
+
         cards_html += f"""
         <div class="article-card">
+            {img_html}
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">{category}</span>
@@ -669,6 +956,7 @@ def build_index_page(articles, config):
         meta_description=tagline,
         keywords="Whisky, Scotch, Single Malt, Reise, Schottland, Destillerien",
         og_description=tagline,
+        og_image=f"{base_url}/images/default.jpg",
         canonical_url=f"{base_url}/index.html",
         base_url=base_url,
         content=content,
@@ -691,6 +979,8 @@ def build_category_page(category_name, articles, config):
             return any(c.lower() == cat_name.lower() for c in categories)
         return False
     
+    cat_emoji_map = {"Whisky": "🥃", "Reise": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Lifestyle": "✨", "Natur": "🌿", "Urlaub": "🌄"}
+
     filtered = [a for a in articles if belongs_to_category(a, category_name)]
     cards_html = ""
     for article in filtered:
@@ -698,9 +988,17 @@ def build_category_page(category_name, articles, config):
         slug = meta.get("slug", "")
         teaser = meta.get("teaser", meta.get("meta_description", ""))
         date_display = _german_date(article.get("date", ""))
+        cat = article.get("category", category_name)
+
+        if article.get("image_url"):
+            img_html = f'<div class="card-image-wrapper"><img src="{article["image_url"]}" alt="{article.get("image_alt", article["title"])}" class="card-image" loading="lazy"></div>'
+        else:
+            emoji = cat_emoji_map.get(cat, cat_emoji_map.get(category_name, "🥃"))
+            img_html = f'<div class="card-image-placeholder">{emoji}</div>'
 
         cards_html += f"""
         <div class="article-card">
+            {img_html}
             <div class="card-body">
                 <div class="card-meta"><span>{date_display}</span></div>
                 <h2><a href="{base_url}/artikel/{slug}.html">{article['title']}</a></h2>
@@ -736,6 +1034,7 @@ def build_category_page(category_name, articles, config):
         meta_description=f"Alle Artikel in der Kategorie {category_name}",
         keywords=category_name,
         og_description=f"Alle Artikel in der Kategorie {category_name}",
+        og_image=f"{base_url}/images/default.jpg",
         canonical_url=f"{base_url}/kategorie/{category_name.lower()}.html",
         base_url=base_url,
         content=content,

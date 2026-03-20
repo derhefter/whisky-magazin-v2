@@ -17,5 +17,10 @@
     "og_description": "Erkunden Sie die berühmtesten Whisky-Destillerien auf Islay und erleben Sie die einzigartige Vielfalt der Aromen und Traditionen dieser schottischen Insel."
   },
   "date": "2026-02-22",
-  "date_display": "22. February 2026"
+  "date_display": "22. February 2026",
+  "image_url": "/images/die-besten-whisky-destillerien-auf-islay.jpg",
+  "image_alt": "Die besten Whisky-Destillerien auf Islay",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-grassy-area-with-water-in-the-background-Exyu7aLjs0A?utm_source=whisky_magazin&utm_medium=referral\">Simon Wiedensohler</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "Exyu7aLjs0A",
+  "image_source": "unsplash"
 }

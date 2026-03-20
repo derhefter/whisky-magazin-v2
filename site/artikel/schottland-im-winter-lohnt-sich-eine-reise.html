@@ -9,6 +9,7 @@
     <meta property="og:title" content="Schottland im Winter: Lohnt sich eine Reise?">
     <meta property="og:description" content="Schottland im Winter: Entdecke die faszinierende Landschaft und die kulturellen Highlights. Ist eine Reise wert? Finde es heraus!">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="/images/schottland-im-winter-lohnt-sich-eine-reise.jpg">
     <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/schottland-im-winter-lohnt-sich-eine-reise.html">
     <style>
         :root {
@@ -231,14 +232,25 @@
         .article-body a:hover { color: var(--whisky-brown); }
 
         .affiliate-link {
-            background: linear-gradient(135deg, var(--whisky-light), var(--whisky-cream));
-            padding: 2px 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, var(--whisky-amber), var(--whisky-gold));
+            color: #fff !important;
+            padding: 3px 10px 3px 8px;
             border-radius: 4px;
             text-decoration: none !important;
-            border-bottom: 2px solid var(--whisky-gold);
+            border-bottom: none !important;
+            font-size: 0.9em;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
         }
+        .affiliate-link::before { content: "→"; font-size: 0.8em; }
         .affiliate-link:hover {
-            background: var(--whisky-gold);
+            background: linear-gradient(135deg, var(--whisky-brown), var(--whisky-amber));
+            transform: translateY(-1px);
             color: #fff !important;
         }
 
@@ -348,6 +360,142 @@
             margin-top: 12px;
         }
 
+        /* --- CARD IMAGE --- */
+        .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius) var(--radius) 0 0;
+            height: 210px;
+        }
+        .card-image {
+            width: 100%; height: 210px; object-fit: cover;
+            display: block;
+            filter: saturate(1.15) contrast(1.05) brightness(0.92);
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        .article-card:hover .card-image {
+            transform: scale(1.04);
+            filter: saturate(1.25) contrast(1.08) brightness(0.97);
+        }
+        /* Einheitlicher Warm-Amber-Overlay auf allen Kartenbildern */
+        .card-image-wrapper::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(184, 134, 11, 0.08) 0%,
+                rgba(61, 43, 31, 0.28) 100%
+            );
+            pointer-events: none;
+        }
+        .card-image-placeholder {
+            width: 100%; height: 210px;
+            background: linear-gradient(135deg, var(--whisky-dark) 0%, var(--whisky-brown) 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3em; color: var(--whisky-gold);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        /* --- ARTICLE HERO IMAGE --- */
+        .article-hero-image {
+            width: 100%; max-height: 480px; object-fit: cover; display: block;
+        }
+        .article-image-credit {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.72em; color: var(--text-secondary);
+            text-align: right; padding: 4px 8px; background: var(--whisky-light);
+        }
+        .article-image-credit a { color: var(--text-secondary); }
+
+        /* --- EMPFEHLUNG BOX --- */
+        .empfehlung-box {
+            border: 2px solid var(--whisky-gold); border-radius: var(--radius);
+            padding: 20px 24px; margin: 32px 0;
+            background: linear-gradient(135deg, var(--whisky-cream) 0%, #fff9f0 100%);
+            display: flex; align-items: flex-start; gap: 16px;
+        }
+        .empfehlung-box .emp-icon { font-size: 2em; flex-shrink: 0; margin-top: 2px; }
+        .empfehlung-box .emp-content { flex: 1; }
+        .empfehlung-box .emp-title {
+            font-family: Georgia, serif; font-weight: bold;
+            color: var(--whisky-brown); font-size: 1.05em; margin-bottom: 6px;
+        }
+        .empfehlung-box .emp-text {
+            font-size: 0.9em; color: var(--text-secondary); margin-bottom: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .empfehlung-box .emp-cta {
+            display: inline-block; background: var(--whisky-amber);
+            color: #fff !important; padding: 8px 20px; border-radius: 20px;
+            text-decoration: none !important; font-weight: bold; font-size: 0.85em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s; margin-right: 8px; margin-bottom: 4px;
+        }
+        .empfehlung-box .emp-cta:hover { background: var(--whisky-brown); color: #fff !important; }
+
+        /* --- SHARE BUTTONS --- */
+        .share-bar {
+            display: flex; gap: 10px; margin: 28px 0 20px;
+            flex-wrap: wrap; align-items: center;
+        }
+        .share-label {
+            font-size: 0.85em; color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 20px;
+            text-decoration: none !important; font-size: 0.82em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600; transition: opacity 0.2s; color: #fff !important;
+        }
+        .share-btn:hover { opacity: 0.85; }
+        .share-btn-whatsapp { background: #25D366; }
+        .share-btn-x { background: #000; }
+        .share-btn-pinterest { background: #E60023; }
+        .share-btn-email { background: var(--whisky-brown); }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb {
+            background: var(--whisky-light); padding: 10px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.82em; color: var(--text-secondary);
+        }
+        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--whisky-amber); }
+
+        /* --- RELATED GRID --- */
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+        .related-item {
+            background: var(--whisky-cream); border-radius: 8px;
+            padding: 12px 14px; text-decoration: none !important;
+            border-left: 3px solid var(--whisky-gold);
+            color: var(--whisky-brown) !important; font-size: 0.88em;
+            line-height: 1.4; transition: background 0.2s, border-color 0.2s; display: block;
+        }
+        .related-item:hover { background: var(--whisky-light); border-left-color: var(--whisky-amber); }
+
+        /* --- PERSONAL PHOTO BADGE --- */
+        .personal-photo-wrapper { position: relative; display: block; }
+        .personal-photo-badge {
+            position: absolute; bottom: 8px; left: 8px;
+            background: rgba(61,43,31,0.85); color: var(--whisky-gold);
+            font-size: 0.7em; padding: 2px 8px; border-radius: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            pointer-events: none;
+        }
+
+        /* --- HERO TEXTURE --- */
+        .hero { position: relative; }
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+            opacity: 0.15; pointer-events: none;
+        }
+        .hero > * { position: relative; }
+
         /* --- RESPONSIVE --- */
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8em; }
@@ -355,6 +503,10 @@
             .article-body { padding: 24px; }
             .header-inner { flex-direction: column; gap: 12px; }
             nav a { margin-left: 12px; }
+            .card-image-wrapper, .card-image, .card-image-placeholder { height: 160px; }
+            .article-hero-image { max-height: 240px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .empfehlung-box { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -374,7 +526,15 @@
     
     <div class="article-header">
         <h1>Schottland im Winter: Lohnt sich eine Reise?</h1>
-        <div class="meta-line">19. März 2026 &bull; Urlaub &bull; von Ellas</div>
+        <div class="meta-line">19. März 2026 &bull; Urlaub &bull; 2 Min. Lesezeit &bull; von Ellas</div>
+    </div>
+    <img src="/images/schottland-im-winter-lohnt-sich-eine-reise.jpg" alt="Schottland im Winter: Lohnt sich eine Reise?" class="article-hero-image" loading="lazy"><div class="article-image-credit">Foto von <a href="https://unsplash.com/photos/aerial-photography-of-field-viewing-mountain-under-white-and-gray-sky-NFkMP7sFssI?utm_source=whisky_magazin&utm_medium=referral">Alex Mnatsakanov</a> auf <a href="https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral">Unsplash</a></div>
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="https://whisky-magazin.vercel.app/index.html">Start</a> ›
+            <a href="https://whisky-magazin.vercel.app/kategorie/urlaub.html">Urlaub</a> ›
+            Schottland im Winter: Lohnt sich eine Reise?
+        </div>
     </div>
     <div class="container">
         <div class="content-grid">
@@ -384,7 +544,7 @@
 
 <p>Schottland im Winter? Viele denken dabei an eisige Kälte und ungemütliches Wetter. Doch als leidenschaftlicher Whisky-Experte und Reiseblogger kann ich dir versichern: Eine Reise nach Schottland in der kalten Jahreszeit hat ihren ganz besonderen Reiz. Lass uns gemeinsam eintauchen in die winterliche Magie der Highlands, die gemütlichen Whisky-Destillerien und die atemberaubend ruhige Landschaft, die dich erwartet.</p>
 
-<h2>Der Zauber von Schottlands Winterlandschaft</h2>
+<h2>Der Zauber von Schottlands Winterlandschaft</h2><div class="empfehlung-box"><div class="emp-icon">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div><div class="emp-content"><div class="emp-title">Reise planen</div><div class="emp-text">Fähre, Hotel und mehr für deine Schottland-Reise – alles auf einen Blick.</div><a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="emp-cta">Fähre buchen →</a><a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="emp-cta">Hotels ansehen →</a></div></div>
 
 <p>Die schottische Landschaft im Winter ist ein wahrer Augenschmaus. Die schneebedeckten Berge der Highlands, die glitzernden Seen und die mystischen Nebelschwaden schaffen eine Atmosphäre, die sich in den Sommermonaten kaum erleben lässt. Besonders die Isle of Skye mit ihren dramatischen Klippen und die Cairngorms bieten atemberaubende Panoramen, die sich ideal für Winterwanderungen eignen.</p>
 
@@ -423,11 +583,17 @@
 
 <p>Eine Reise nach Schottland im Winter ist definitiv lohnenswert. Die Ruhe und Schönheit der winterlichen Landschaft, kombiniert mit der Wärme und Gastfreundschaft der schottischen Kultur, schaffen ein unvergessliches Erlebnis. Für Whisky-Liebhaber bietet der Winter die perfekte Gelegenheit, die Destillerien in einem ganz neuen Licht zu erleben.</p>
 
-<div class="related-box"><h3>Das könnte dich auch interessieren</h3><ul><li><a href="https://whisky-magazin.vercel.app/artikel/frühling-in-schottland-die-beste-reisezeit.html">Frühling in Schottland: Die beste Reisezeit?</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/glasgow-winter-weihnachten-2022.html">Glasgow Winter 2022: Clydeside, Kelvingrove & Weihnachtszauber</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/teeling-distillery-dublin-ein-besuch-lohnt-sich.html">Teeling Distillery Dublin: Ein Besuch lohnt sich</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/glasgow-winter-citybreak-2025.html">Glasgow im Winter: Unser Fass, Gun im Barrowland & Auchentoshan</a></li>
-</ul></div>
+<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid"><a href="https://whisky-magazin.vercel.app/artikel/frühling-in-schottland-die-beste-reisezeit.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Frühling in Schottland: Die beste Reisezeit?</a>
+<a href="https://whisky-magazin.vercel.app/artikel/glasgow-winter-weihnachten-2022.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow Winter 2022: Clydeside, Kelvingrove & Weihnachtszauber</a>
+<a href="https://whisky-magazin.vercel.app/artikel/teeling-distillery-dublin-ein-besuch-lohnt-sich.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Teeling Distillery Dublin: Ein Besuch lohnt sich</a>
+<a href="https://whisky-magazin.vercel.app/artikel/glasgow-winter-citybreak-2025.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow im Winter: Unser Fass, Gun im Barrowland & Auchentoshan</a></div></div>
+                    <div class="share-bar">
+        <span class="share-label">Teilen:</span>
+        <a href="https://wa.me/?text=Schottland%20im%20Winter%3A%20Lohnt%20sich%20eine%20Reise%3F%20https%3A//whisky-magazin.vercel.app/artikel/schottland-im-winter-lohnt-sich-eine-reise.html" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+        <a href="https://x.com/intent/tweet?text=Schottland%20im%20Winter%3A%20Lohnt%20sich%20eine%20Reise%3F&url=https%3A//whisky-magazin.vercel.app/artikel/schottland-im-winter-lohnt-sich-eine-reise.html" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
+        <a href="https://pinterest.com/pin/create/button/?url=https%3A//whisky-magazin.vercel.app/artikel/schottland-im-winter-lohnt-sich-eine-reise.html&description=Schottland%20im%20Winter%3A%20Lohnt%20sich%20eine%20Reise%3F" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
+        <a href="mailto:?subject=Schottland%20im%20Winter%3A%20Lohnt%20sich%20eine%20Reise%3F&body=https%3A//whisky-magazin.vercel.app/artikel/schottland-im-winter-lohnt-sich-eine-reise.html" class="share-btn share-btn-email">✉ E-Mail</a>
+    </div>
                     <div class="article-tags"><div class="tag-cloud"><span class="tag">Schottland</span> <span class="tag">Winter</span> <span class="tag">Reisezeit</span></div></div>
                 </div>
             </main>
@@ -441,14 +607,14 @@
 </ul>
                 </div>
                 <div class="cta-box">
-                    <h3>Whisky entdecken</h3>
-                    <p>Finde deinen nächsten Lieblings-Dram</p>
-                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
+                    <h3>Schottland-Reise planen</h3>
+                    <p>Fähren, Flüge & Hotels auf einen Blick</p>
+                    <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
                 </div>
                 <div class="cta-box" style="margin-top: 20px;">
-                    <h3>Schottland-Reise planen</h3>
-                    <p>Fähren, Flüge & Hotels</p>
-                    <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
+                    <h3>Whisky entdecken</h3>
+                    <p>Die besten Single Malts bei Amazon</p>
+                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer">Whisky shoppen &#8594;</a>
                 </div>
             </aside>
         </div>

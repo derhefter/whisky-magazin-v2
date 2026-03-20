@@ -9,6 +9,7 @@
     <meta property="og:title" content="Start">
     <meta property="og:description" content="Dein Guide fuer Whisky, Destillerien & Reisen">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="https://whisky-magazin.vercel.app/images/default.jpg">
     <link rel="canonical" href="https://whisky-magazin.vercel.app/index.html">
     <style>
         :root {
@@ -231,14 +232,25 @@
         .article-body a:hover { color: var(--whisky-brown); }
 
         .affiliate-link {
-            background: linear-gradient(135deg, var(--whisky-light), var(--whisky-cream));
-            padding: 2px 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, var(--whisky-amber), var(--whisky-gold));
+            color: #fff !important;
+            padding: 3px 10px 3px 8px;
             border-radius: 4px;
             text-decoration: none !important;
-            border-bottom: 2px solid var(--whisky-gold);
+            border-bottom: none !important;
+            font-size: 0.9em;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
         }
+        .affiliate-link::before { content: "→"; font-size: 0.8em; }
         .affiliate-link:hover {
-            background: var(--whisky-gold);
+            background: linear-gradient(135deg, var(--whisky-brown), var(--whisky-amber));
+            transform: translateY(-1px);
             color: #fff !important;
         }
 
@@ -348,6 +360,142 @@
             margin-top: 12px;
         }
 
+        /* --- CARD IMAGE --- */
+        .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius) var(--radius) 0 0;
+            height: 210px;
+        }
+        .card-image {
+            width: 100%; height: 210px; object-fit: cover;
+            display: block;
+            filter: saturate(1.15) contrast(1.05) brightness(0.92);
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        .article-card:hover .card-image {
+            transform: scale(1.04);
+            filter: saturate(1.25) contrast(1.08) brightness(0.97);
+        }
+        /* Einheitlicher Warm-Amber-Overlay auf allen Kartenbildern */
+        .card-image-wrapper::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(184, 134, 11, 0.08) 0%,
+                rgba(61, 43, 31, 0.28) 100%
+            );
+            pointer-events: none;
+        }
+        .card-image-placeholder {
+            width: 100%; height: 210px;
+            background: linear-gradient(135deg, var(--whisky-dark) 0%, var(--whisky-brown) 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3em; color: var(--whisky-gold);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        /* --- ARTICLE HERO IMAGE --- */
+        .article-hero-image {
+            width: 100%; max-height: 480px; object-fit: cover; display: block;
+        }
+        .article-image-credit {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.72em; color: var(--text-secondary);
+            text-align: right; padding: 4px 8px; background: var(--whisky-light);
+        }
+        .article-image-credit a { color: var(--text-secondary); }
+
+        /* --- EMPFEHLUNG BOX --- */
+        .empfehlung-box {
+            border: 2px solid var(--whisky-gold); border-radius: var(--radius);
+            padding: 20px 24px; margin: 32px 0;
+            background: linear-gradient(135deg, var(--whisky-cream) 0%, #fff9f0 100%);
+            display: flex; align-items: flex-start; gap: 16px;
+        }
+        .empfehlung-box .emp-icon { font-size: 2em; flex-shrink: 0; margin-top: 2px; }
+        .empfehlung-box .emp-content { flex: 1; }
+        .empfehlung-box .emp-title {
+            font-family: Georgia, serif; font-weight: bold;
+            color: var(--whisky-brown); font-size: 1.05em; margin-bottom: 6px;
+        }
+        .empfehlung-box .emp-text {
+            font-size: 0.9em; color: var(--text-secondary); margin-bottom: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .empfehlung-box .emp-cta {
+            display: inline-block; background: var(--whisky-amber);
+            color: #fff !important; padding: 8px 20px; border-radius: 20px;
+            text-decoration: none !important; font-weight: bold; font-size: 0.85em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: background 0.2s; margin-right: 8px; margin-bottom: 4px;
+        }
+        .empfehlung-box .emp-cta:hover { background: var(--whisky-brown); color: #fff !important; }
+
+        /* --- SHARE BUTTONS --- */
+        .share-bar {
+            display: flex; gap: 10px; margin: 28px 0 20px;
+            flex-wrap: wrap; align-items: center;
+        }
+        .share-label {
+            font-size: 0.85em; color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 20px;
+            text-decoration: none !important; font-size: 0.82em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600; transition: opacity 0.2s; color: #fff !important;
+        }
+        .share-btn:hover { opacity: 0.85; }
+        .share-btn-whatsapp { background: #25D366; }
+        .share-btn-x { background: #000; }
+        .share-btn-pinterest { background: #E60023; }
+        .share-btn-email { background: var(--whisky-brown); }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb {
+            background: var(--whisky-light); padding: 10px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.82em; color: var(--text-secondary);
+        }
+        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--whisky-amber); }
+
+        /* --- RELATED GRID --- */
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+        .related-item {
+            background: var(--whisky-cream); border-radius: 8px;
+            padding: 12px 14px; text-decoration: none !important;
+            border-left: 3px solid var(--whisky-gold);
+            color: var(--whisky-brown) !important; font-size: 0.88em;
+            line-height: 1.4; transition: background 0.2s, border-color 0.2s; display: block;
+        }
+        .related-item:hover { background: var(--whisky-light); border-left-color: var(--whisky-amber); }
+
+        /* --- PERSONAL PHOTO BADGE --- */
+        .personal-photo-wrapper { position: relative; display: block; }
+        .personal-photo-badge {
+            position: absolute; bottom: 8px; left: 8px;
+            background: rgba(61,43,31,0.85); color: var(--whisky-gold);
+            font-size: 0.7em; padding: 2px 8px; border-radius: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            pointer-events: none;
+        }
+
+        /* --- HERO TEXTURE --- */
+        .hero { position: relative; }
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+            opacity: 0.15; pointer-events: none;
+        }
+        .hero > * { position: relative; }
+
         /* --- RESPONSIVE --- */
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8em; }
@@ -355,6 +503,10 @@
             .article-body { padding: 24px; }
             .header-inner { flex-direction: column; gap: 12px; }
             nav a { margin-left: 12px; }
+            .card-image-wrapper, .card-image, .card-image-placeholder { height: 160px; }
+            .article-hero-image { max-height: 240px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .empfehlung-box { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -381,6 +533,7 @@
             <main>
                 
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/wildlife-in-schottland-hirsche-adler-robben.jpg" alt="Wildlife in Schottland: Hirsche, Adler und Robben" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🌿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Natur</span>
@@ -392,6 +545,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/whisky-cocktails-mehr-als-nur-pur-geniessen.jpg" alt="Whisky-Cocktails: Mehr als nur pur geniessen" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>✨</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Lifestyle</span>
@@ -403,6 +557,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/special-edition-deutschland-berlin-dresden-2022.jpg" alt="Special Edition: Berlin, Spreewald, Dresden & Glashütte 2022" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -414,6 +569,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/schottland-im-winter-lohnt-sich-eine-reise.jpg" alt="Schottland im Winter: Lohnt sich eine Reise?" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🌄</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Urlaub</span>
@@ -425,6 +581,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/glasgow-winter-weihnachten-2022.jpg" alt="Glasgow Winter 2022: Clydeside, Kelvingrove & Weihnachtszauber" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -436,6 +593,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/teeling-distillery-dublin-ein-besuch-lohnt-sich.jpg" alt="Teeling Distillery Dublin: Ein Besuch lohnt sich" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -447,6 +605,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/macallan-ist-der-hype-gerechtfertigt.jpg" alt="Macallan: Ist der Hype gerechtfertigt?" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🥃</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Whisky</span>
@@ -458,6 +617,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/fruehling-in-schottland-die-beste-reisezeit.jpg" alt="Frühling in Schottland: Die beste Reisezeit?" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -469,6 +629,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/westkueste-mull-zurueck-in-schottland-2021.jpg" alt="Westküste & Mull 2021: Zurück in Schottland" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -480,6 +641,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/trossachs-oban-hadrians-wall-2009.jpg" alt="Trossachs, Oban & Hadrian's Wall 2009: Schottlands Vielfalt" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -491,6 +653,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/speyside-marathon-zwoelf-destillerien-2010.jpg" alt="Speyside Marathon 2010: Zwölf Destillerien in drei Tagen" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>
@@ -502,6 +665,7 @@
             </div>
         </div>
         <div class="article-card">
+            <div class="card-image-wrapper"><img src="/images/speyside-aberdeen-dufftown-2014.jpg" alt="Speyside & Aberdeen 2014: Dufftown, Aberlour und Fußball" class="card-image" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-image-placeholder\'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>'"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="cat">Reise</span>

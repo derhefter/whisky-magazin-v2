@@ -15,5 +15,10 @@
     "og_description": "Erleben Sie Whisky-Tasting wie ein Profi! Unser Guide für Einsteiger zeigt Ihnen, wie Sie Aromen entdecken und Ihr Tasting perfektionieren."
   },
   "date": "2026-02-23",
-  "date_display": "23. February 2026"
+  "date_display": "23. February 2026",
+  "image_url": "/images/whisky-tasting-fuer-einsteiger.jpg",
+  "image_alt": "Whisky-Tasting für Einsteiger: So geht's richtig",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/three-half-filled-clear-glasses-C7Y9r_lby7Y?utm_source=whisky_magazin&utm_medium=referral\">Mr. C Lovesme</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "C7Y9r_lby7Y",
+  "image_source": "unsplash"
 }

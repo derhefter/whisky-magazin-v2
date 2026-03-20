@@ -21,5 +21,10 @@
     "og_description": "Special Edition: Dublin und Irish Whiskey 2015. Teeling Distillery und Guinness Storehouse. Persönlicher Reisebericht."
   },
   "date": "2026-03-17",
-  "date_display": "17. März 2026"
+  "date_display": "17. März 2026",
+  "image_url": "/images/special-edition-dublin-irland-2015.jpg",
+  "image_alt": "Special Edition: Dublin & Irish Whiskey 2015",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/modern-buildings-across-a-river-under-cloudy-sky-Wz8tdiBOWEA?utm_source=whisky_magazin&utm_medium=referral\">Alessandro Santoro</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "Wz8tdiBOWEA",
+  "image_source": "unsplash"
 }

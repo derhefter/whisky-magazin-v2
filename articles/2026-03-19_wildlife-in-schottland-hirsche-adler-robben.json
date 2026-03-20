@@ -19,5 +19,10 @@
     "og_description": "Tauche ein in Schottlands wilde Natur und entdecke Hirsche, Adler und Robben hautnah. Ein unvergessliches Erlebnis wartet auf dich!"
   },
   "date": "2026-03-19",
-  "date_display": "19. Maerz 2026"
+  "date_display": "19. Maerz 2026",
+  "image_url": "/images/wildlife-in-schottland-hirsche-adler-robben.jpg",
+  "image_alt": "Wildlife in Schottland: Hirsche, Adler und Robben",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-couple-of-animals-that-are-standing-in-the-grass-rs3ND9qKILc?utm_source=whisky_magazin&utm_medium=referral\">Anna Saveleva</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "rs3ND9qKILc",
+  "image_source": "unsplash"
 }

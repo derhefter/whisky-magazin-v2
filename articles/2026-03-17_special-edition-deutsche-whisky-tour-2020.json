@@ -22,5 +22,10 @@
     "og_description": "Special Edition: Deutsche Whisky-Tour 2020. Nine Springs, Stork Club und mehr. Persönlicher Reisebericht."
   },
   "date": "2026-03-17",
-  "date_display": "17. März 2026"
+  "date_display": "17. März 2026",
+  "image_url": "/images/special-edition-deutsche-whisky-tour-2020.jpg",
+  "image_alt": "Special Edition: Deutsche Whisky-Tour 2020",
+  "image_credit": "Foto von <a href=\"https://unsplash.com/photos/twin-towers-dominate-city-skyline-at-sunset-Ej8yuxi9f0U?utm_source=whisky_magazin&utm_medium=referral\">Leópold Kristjánsson</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
+  "image_photo_id": "Ej8yuxi9f0U",
+  "image_source": "unsplash"
 }
