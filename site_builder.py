@@ -1139,19 +1139,19 @@ def build_map_page(config):
             </div>
             <div class="filter-group">
                 <label for="filter-country">Land:</label>
-                <select id="filter-country"><option value="">Alle Laender</option></select>
+                <select id="filter-country"><option value="">Alle Länder</option></select>
             </div>
             <div class="filter-group filter-toggles">
                 <label class="toggle-label"><input type="checkbox" id="toggle-distillery" checked> Destillerien</label>
-                <label class="toggle-label"><input type="checkbox" id="toggle-city" checked> Staedte</label>
+                <label class="toggle-label"><input type="checkbox" id="toggle-city" checked> Städte</label>
                 <label class="toggle-label"><input type="checkbox" id="toggle-nature" checked> Natur</label>
-                <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswuerdigkeiten</label>
+                <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswürdigkeiten</label>
                 <label class="toggle-label"><input type="checkbox" id="toggle-travel_stop" checked> Reisestopps</label>
             </div>
             <div class="map-stats" id="map-stats"></div>
         </div>
         <div id="map" style="height: 65vh; min-height: 400px; border-radius: 12px; box-shadow: var(--shadow-md); z-index: 1;"></div>
-        <div class="location-cards" id="location-cards"></div>
+        <div class="location-directory" id="location-cards"></div>
     </div>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -1187,27 +1187,70 @@ def build_map_page(config):
             margin-left: auto; font-size: 0.82em; color: var(--text-secondary);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }}
-        .location-cards {{
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px; margin-top: 24px;
-        }}
-        .loc-card {{
+        /* Verzeichnis-Styles */
+        .location-directory {{ margin-top: 32px; }}
+        .dir-section {{
             background: var(--whisky-white); border-radius: var(--radius);
-            box-shadow: var(--shadow-sm); overflow: hidden; cursor: pointer;
-            transition: box-shadow 0.3s, transform 0.2s;
+            box-shadow: var(--shadow-sm); padding: 20px 24px; margin-bottom: 20px;
         }}
-        .loc-card:hover {{ box-shadow: var(--shadow-md); transform: translateY(-2px); }}
-        .loc-card-img {{ width: 100%; height: 160px; object-fit: cover; }}
-        .loc-card-body {{ padding: 14px; }}
-        .loc-card-name {{ font-weight: bold; font-size: 1em; color: var(--whisky-brown); }}
-        .loc-card-meta {{
-            font-size: 0.8em; color: var(--text-secondary); margin-top: 4px;
+        .dir-section-header {{
+            display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+            padding-bottom: 10px; border-bottom: 2px solid var(--whisky-cream);
+        }}
+        .dir-section-icon {{ font-size: 1.4em; }}
+        .dir-section-title {{
+            font-size: 1.1em; font-weight: bold; color: var(--whisky-brown);
+            margin: 0;
+        }}
+        .dir-section-count {{
+            background: var(--whisky-amber); color: #fff; font-size: 0.75em;
+            padding: 2px 8px; border-radius: 12px; font-weight: bold;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }}
-        .loc-card-type {{
-            display: inline-block; font-size: 0.7em; padding: 2px 8px;
-            border-radius: 10px; margin-top: 6px;
+        .dir-items {{
+            display: flex; flex-wrap: wrap; gap: 10px;
+        }}
+        .dir-item {{
+            display: flex; flex-direction: column; gap: 3px;
+            background: var(--whisky-cream); border-radius: 10px;
+            padding: 10px 14px; cursor: pointer; text-decoration: none;
+            border: 1px solid transparent;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+            min-width: 150px; max-width: 250px;
+        }}
+        .dir-item:hover {{
+            border-color: var(--whisky-amber); box-shadow: 0 2px 8px rgba(181,137,52,0.2);
+            transform: translateY(-2px);
+        }}
+        .dir-item.type-distillery {{ border-left: 3px solid #c8922a; }}
+        .dir-item.type-city {{ border-left: 3px solid #4a6785; }}
+        .dir-item.type-nature {{ border-left: 3px solid #3a7a3a; }}
+        .dir-item.type-poi {{ border-left: 3px solid #7a3a7a; }}
+        .dir-item.type-travel_stop {{ border-left: 3px solid #7a7a3a; }}
+        .dir-item-name {{
+            font-weight: 600; font-size: 0.92em; color: var(--whisky-brown);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }}
+        .dir-item-region {{
+            font-size: 0.75em; color: var(--text-secondary);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }}
+        .dir-item-footer {{
+            display: flex; align-items: center; gap: 6px; margin-top: 2px;
+        }}
+        .dir-item-years {{
+            font-size: 0.7em; color: var(--whisky-amber); font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }}
+        .dir-item-arts {{
+            font-size: 0.7em; color: #888;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin-left: auto;
+        }}
+        .dir-empty {{
+            color: var(--text-secondary); font-size: 0.9em; font-style: italic;
+            padding: 8px 0;
         }}
         .type-distillery {{ background: #f0e6d2; color: #8b6914; }}
         .type-city {{ background: #e0e8f0; color: #4a6785; }}
@@ -1244,7 +1287,7 @@ def build_map_page(config):
         @media (max-width: 768px) {{
             .map-controls {{ flex-direction: column; align-items: flex-start; }}
             .map-stats {{ margin-left: 0; }}
-            .location-cards {{ grid-template-columns: 1fr; }}
+            .dir-items {{ flex-direction: column; }}
             #map {{ height: 50vh !important; }}
         }}
     </style>
@@ -1401,37 +1444,68 @@ def build_map_page(config):
 
         function renderCards(locations) {{
             const container = document.getElementById('location-cards');
-            // Nur Destillerien und POIs mit Artikeln anzeigen
-            const featured = locations.filter(l =>
-                l.type === 'distillery' || (l.articles && l.articles.length > 0)
-            ).slice(0, 24);
 
-            container.innerHTML = featured.map(loc => {{
-                const photoSrc = (loc.photos && loc.photos.length > 0)
-                    ? LOCAL_BASE + loc.photos[0].src
-                    : '';
-                const imgHtml = photoSrc
-                    ? '<img class="loc-card-img" src="' + photoSrc + '" alt="' + loc.name + '" loading="lazy">'
-                    : '<div class="loc-card-img" style="background:linear-gradient(135deg,var(--whisky-amber),var(--whisky-brown));display:flex;align-items:center;justify-content:center;font-size:2em;">🥃</div>';
-                return '<div class="loc-card" data-loc-id="' + loc.id + '">'
-                    + imgHtml
-                    + '<div class="loc-card-body">'
-                    + '<div class="loc-card-name">' + loc.name + '</div>'
-                    + '<div class="loc-card-meta">' + loc.region + ', ' + loc.country + (loc.years_visited && loc.years_visited.length ? ' &bull; ' + loc.years_visited.join(', ') : '') + '</div>'
-                    + '<span class="loc-card-type type-' + loc.type + '">' + (TYPE_LABELS[loc.type] || loc.type) + '</span>'
-                    + '</div></div>';
-            }}).join('');
+            const SECTIONS = [
+                {{ key: 'distillery', icon: '🥃', label: 'Destillerien' }},
+                {{ key: 'city',       icon: '🏙️', label: 'Städte & Orte' }},
+                {{ key: 'poi',        icon: '📍', label: 'Sehenswürdigkeiten' }},
+                {{ key: 'nature',     icon: '🌿', label: 'Natur & Landschaft' }},
+                {{ key: 'travel_stop',icon: '✈️', label: 'Reisestopps & Hotels' }},
+            ];
 
-            // Klick auf Karte -> Location auf Karte anzeigen
-            container.querySelectorAll('.loc-card').forEach(card => {{
-                card.addEventListener('click', () => {{
-                    const locId = card.dataset.locId;
+            let html = '';
+            SECTIONS.forEach(sec => {{
+                const items = locations
+                    .filter(l => l.type === sec.key)
+                    .sort((a, b) => a.name.localeCompare(b.name, 'de'));
+                if (items.length === 0) return;
+
+                html += '<div class="dir-section">'
+                    + '<div class="dir-section-header">'
+                    + '<span class="dir-section-icon">' + sec.icon + '</span>'
+                    + '<h3 class="dir-section-title">' + sec.label + '</h3>'
+                    + '<span class="dir-section-count">' + items.length + '</span>'
+                    + '</div>'
+                    + '<div class="dir-items">';
+
+                items.forEach(loc => {{
+                    const years = loc.years_visited && loc.years_visited.length
+                        ? loc.years_visited.sort().join(', ') : '';
+                    const artCount = loc.articles ? loc.articles.length : 0;
+                    const artLabel = artCount === 1 ? '1 Artikel' : (artCount > 1 ? artCount + ' Artikel' : '');
+                    const firstArticle = (artCount > 0 && mapData && mapData.articles)
+                        ? (mapData.articles[loc.articles[0]] || null) : null;
+                    const href = firstArticle
+                        ? LOCAL_BASE + '/artikel/' + loc.articles[0] + '.html'
+                        : '#';
+
+                    html += '<a class="dir-item type-' + loc.type + '" data-loc-id="' + loc.id + '" href="' + href + '">'
+                        + '<span class="dir-item-name">' + loc.name + '</span>'
+                        + '<span class="dir-item-region">' + loc.region + (loc.country && loc.country !== 'Schottland' ? ', ' + loc.country : '') + '</span>'
+                        + '<div class="dir-item-footer">'
+                        + (years ? '<span class="dir-item-years">' + years + '</span>' : '')
+                        + (artLabel ? '<span class="dir-item-arts">📖 ' + artLabel + '</span>' : '')
+                        + '</div>'
+                        + '</a>';
+                }});
+
+                html += '</div></div>';
+            }});
+
+            container.innerHTML = html || '<p class="dir-empty">Keine Orte für die gewählten Filter gefunden.</p>';
+
+            // Klick auf Karte -> Location auf Karte zentrieren
+            container.querySelectorAll('.dir-item').forEach(item => {{
+                item.addEventListener('click', (e) => {{
+                    const locId = item.dataset.locId;
                     const marker = allMarkers.find(m => m._locData.id === locId);
                     if (marker) {{
-                        map.setView(marker.getLatLng(), 12);
+                        e.preventDefault();
+                        map.setView(marker.getLatLng(), 13);
                         markerCluster.zoomToShowLayer(marker, () => {{
                             marker.openPopup();
                         }});
+                        window.scrollTo({{ top: 0, behavior: 'smooth' }});
                     }}
                 }});
             }});
@@ -1527,7 +1601,7 @@ def build_map_page(config):
         site_name=site_name,
         meta_description="Interaktive Karte aller Destillerien, Reiseziele und Orte aus dem Whisky Magazin",
         keywords="Whisky Karte, Destillerien Schottland, Reisekarte, Whisky Trail",
-        og_description="18 Jahre Whisky-Reisen auf einer interaktiven Karte: Destillerien, Staedte und Routen",
+        og_description="18 Jahre Whisky-Reisen auf einer interaktiven Karte: Destillerien, Städte und Routenn",
         og_image=f"{base_url}/images/default.jpg",
         canonical_url=f"{base_url}/karte.html",
         base_url=base_url,
