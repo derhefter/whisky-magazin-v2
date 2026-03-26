@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Westküste & Mull 2021: Zurück in Schottland | Whisky Magazin</title>
-    <meta name="description" content="Westküste und Mull 2021: Zurück in Schottland nach der Pandemie. Tobermory, Oban, Deanston, Glasgow Distillery und Loch Lomond. Persönlicher Reisebericht.">
-    <meta name="keywords" content="Tobermory Distillery, Isle of Mull, Oban, Deanston, Glasgow Distillery, Loch Lomond, Schottland 2021, Westküste">
-    <meta property="og:title" content="Westküste & Mull 2021: Zurück in Schottland">
-    <meta property="og:description" content="Westküste und Mull 2021: Tobermory, Oban, Glasgow. Zurück in Schottland. Persönlicher Reisebericht mit Tipps.">
+    <title>Glenfiddich vs. Glenlivet: Der grosse Vergleich | Whisky Magazin</title>
+    <meta name="description" content="Entdecken Sie den ultimativen Vergleich zwischen Glenfiddich und Glenlivet. Erfahren Sie, welcher Whisky Ihren Geschmack trifft.">
+    <meta name="keywords" content="Glenfiddich, Glenlivet, Whisky Vergleich, schottischer Whisky, Single Malt">
+    <meta property="og:title" content="Glenfiddich vs. Glenlivet: Der grosse Vergleich">
+    <meta property="og:description" content="Glenfiddich vs. Glenlivet: Der große Vergleich. Entdecken Sie die Unterschiede und finden Sie Ihren Favoriten unter diesen Whisky-Legenden.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="/images/westkueste-mull-zurueck-in-schottland-2021.jpg">
-    <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/westküste-mull-zurück-in-schottland-2021.html">
+    <meta property="og:image" content="/images/glenfiddich-vs-glenlivet-der-grosse-vergleich.jpg">
+    <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html">
     <style>
         :root {
             --whisky-dark: #1a1209;
@@ -526,15 +526,15 @@
     </header>
     
     <div class="article-header">
-        <h1>Westküste & Mull 2021: Zurück in Schottland</h1>
-        <div class="meta-line">17. März 2026 &bull; Reise &bull; 2 Min. Lesezeit &bull; von Ellas</div>
+        <h1>Glenfiddich vs. Glenlivet: Der grosse Vergleich</h1>
+        <div class="meta-line">26. März 2026 &bull; Whisky &bull; 3 Min. Lesezeit &bull; von Ellas</div>
     </div>
-    <img src="/images/westkueste-mull-zurueck-in-schottland-2021.jpg" alt="Westküste & Mull 2021: Zurück in Schottland" class="article-hero-image" loading="lazy"><div class="article-image-credit">Foto von <a href="https://unsplash.com/photos/white-lighthouse-during-daytime-rYT910XkkJA?utm_source=whisky_magazin&utm_medium=referral">Jess Snoek</a> auf <a href="https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral">Unsplash</a></div>
+    <img src="/images/glenfiddich-vs-glenlivet-der-grosse-vergleich.jpg" alt="Glenfiddich vs. Glenlivet: Der grosse Vergleich" class="article-hero-image" loading="lazy">
     <div class="breadcrumb">
         <div class="breadcrumb-inner">
             <a href="https://whisky-magazin.vercel.app/index.html">Start</a> ›
-            <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a> ›
-            Westküste & Mull 2021: Zurück in Schottland
+            <a href="https://whisky-magazin.vercel.app/kategorie/whisky.html">Whisky</a> ›
+            Glenfiddich vs. Glenlivet: Der grosse Vergleich
         </div>
     </div>
     <div class="container">
@@ -542,91 +542,81 @@
             <main>
                 <div class="article-body">
                     
-    <div class="article-mini-map" style="margin: 20px 0;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-            <span style="font-size:1.2em;">📍</span>
-            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=westküste-mull-zurück-in-schottland-2021"
-               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
-                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-                Auf der Karte anzeigen &rarr;
-            </a>
-        </div>
-        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script>
-        (function() {
-            var localBase = window.location.origin;
-            fetch(localBase + '/data/map-data.json')
-                .then(r => r.json())
-                .then(data => {
-                    var locs = data.locations.filter(function(l) {
-                        return l.articles && l.articles.indexOf('westküste-mull-zurück-in-schottland-2021') !== -1;
-                    });
-                    if (locs.length === 0) return;
-                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; OSM', maxZoom: 16
-                    }).addTo(m);
-                    var bounds = [];
-                    locs.forEach(function(loc) {
-                        var icon = loc.type === 'distillery'
-                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
-                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
-                        L.marker([loc.lat, loc.lon], { icon: icon })
-                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
-                            .addTo(m);
-                        bounds.push([loc.lat, loc.lon]);
-                    });
-                    if (bounds.length === 1) {
-                        m.setView(bounds[0], 10);
-                    } else {
-                        m.fitBounds(bounds, { padding: [30, 30] });
-                    }
-                });
-        })();
-        </script>
-    </div>
-                    <h2>Endlich wieder Schottland &ndash; Westküste, Mull und alte Bekannte</h2> <p>September 2021. Nach der erzwungenen Pause und der deutschen Whisky-Tour 2020 war es endlich soweit: <strong>Zurück in Schottland</strong>. Ryanair nach Glasgow, Mietwagen, Westküste. Es fühlte sich an wie Heimkommen.</p> <h3>Glasgow &ndash; der vertraute Startpunkt</h3> <p>Glasgow empfing uns wie einen alten Freund. Unser Zuhause für die nächsten Tage: das <strong>ibis Styles Glasgow</strong>, zentral gelegen und perfekt als Basis. Die Stadt hat sich verändert (neue Restaurants, mehr Street Art), aber der Kern ist geblieben: rau, herzlich, musikalisch. Der <strong>Old Scotia Bar</strong>? Steht noch. Wie seit 1792.</p> <h3>Duty Free in Glasgow &ndash; Whisky-Shopping am Flughafen</h3> <p>Schon am Flughafen Glasgow ging es los: Der <strong>Duty Free Shop</strong> hatte eine beeindruckende Whisky-Auswahl. Von limitierten Abfüllungen bis zu den Klassikern &ndash; wer hier nicht zuschlägt, verpasst was. Ein perfekter Einstieg in die Reise.</p> <h3>Oban &ndash; die Westküste ruft</h3> <p><strong>Oban Distillery</strong> zum zweiten Mal (nach 2009). Wir übernachteten im <strong>Central Great Western Hotel</strong> direkt in Oban &ndash; ein klassisches schottisches Hotel mit Blick auf den Hafen. Die Destillerie mitten in der Stadt, der Hafen, die Fähren zu den Inseln &ndash; Oban ist und bleibt das Tor zum Westen.</p> <h3>Deanston &ndash; altes Wiedersehen</h3> <p>Auch <strong>Deanston</strong> besuchten wir erneut. Die ehemalige Baumwollmühle am River Teith hat nichts von ihrem Charme verloren. Deanston's ungetorfter Highland-Whisky ist ein Geheimtipp für alle, die es sanft und komplex mögen.</p> <h3>Tobermory &ndash; Isle of Mull</h3> <p>Das Highlight: <strong>Tobermory Distillery</strong> auf der <strong>Isle of Mull</strong>. Die bunte Hafenstadt Tobermory ist eines der fotogensten Dörfer Schottlands. Die Destillerie produziert zwei verschiedene Whiskys: den ungetorften <strong>Tobermory</strong> und den stark getorften <strong>Ledaig</strong> &ndash; beides unter einem Dach. Die <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> nach Mull fährt ab Oban und dauert ca. 45 Minuten.</p> <p>Tobermory und Oban bei <a href="https://www.amazon.de/s?k=tobermory+oban+single+malt&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Glasgow Distillery Co &amp; Loch Lomond</h3> <p>Zurück in Glasgow zwei weitere Besuche: Die <strong>Glasgow Distillery Co</strong> (unser vierter Besuch &ndash; bald würden wir hier ein Fass kaufen!) und <strong>Loch Lomond Distillery</strong>, die mit ihrer Vielfalt an Brennblasen eine erstaunliche Bandbreite an Stilen produziert.</p> <h3>Praktische Tipps</h3> <ul>
-<li><strong>Mull:</strong> <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> ab Oban. Tagesausflug möglich, aber eine Übernachtung auf Mull lohnt sich.</li>
-<li><strong>Mietwagen:</strong> Für die Westküste unverzichtbar. <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Hier buchen</a>.</li>
-<li><strong>Ryanair:</strong> Günstige Flüge nach Glasgow. Früh buchen für die besten Preise. <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge vergleichen</a>.</li>
-<li><strong>Tobermory:</strong> Die bunten Häuser am Hafen sind das Fotomotiv schlechthin. Früh morgens für die besten Fotos.</li>
-</ul> <blockquote>&bdquo;Zurück in Schottland nach einem Jahr Pause. Tobermory's bunte Häuser, Oban's Hafen und Glasgow's Old Scotia Bar. Wie Heimkommen.&ldquo;</blockquote>
+                    <h2>Glenfiddich vs. Glenlivet: Der große Vergleich</h2>
 
-<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid"><a href="https://whisky-magazin.vercel.app/artikel/trossachs-oban-hadrians-wall-2009.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Trossachs, Oban & Hadrian's Wall 2009: Schottlands Vielfalt</a>
-<a href="https://whisky-magazin.vercel.app/artikel/glasgow-fife-football-2013.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow, Fife & Football 2013: Celtic, Livemusik und Fish & Chips</a>
-<a href="https://whisky-magazin.vercel.app/artikel/glasgow-winter-weihnachten-2022.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow Winter 2022: Clydeside, Kelvingrove & Weihnachtszauber</a>
-<a href="https://whisky-magazin.vercel.app/artikel/glasgow-islay-erste-schottlandreise-2007.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow & Islay 2007: Wo alles begann</a></div></div>
+<p>Schottland ist ein wahres Paradies für Whisky-Liebhaber, und kein Besuch in diesem wunderschönen Land wäre vollständig ohne eine Verkostung seiner berühmtesten Spirituosen. Zwei der bekanntesten Namen in der Welt des Scotch Whiskys sind Glenfiddich und Glenlivet. Beide Marken haben eine lange Geschichte und bieten eine Vielzahl von Abfüllungen, die jedem Whisky-Enthusiasten das Herz höherschlagen lassen. In diesem Artikel werden wir die beiden Giganten vergleichen und dir helfen, herauszufinden, welcher Scotch am besten zu deinem Geschmack passt.</p>
+
+<h2>Die Geschichte hinter den Namen</h2><div class="empfehlung-box"><div class="emp-icon">🥃</div><div class="emp-content"><div class="emp-title">Diesen Whisky bestellen</div><div class="emp-text">Die im Artikel erwähnten Whiskys findest du bei Amazon – oft mit Prime-Lieferung.</div><a href="https://www.amazon.de/s?k=glenfiddich+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="emp-cta">Bei Amazon ansehen →</a></div></div>
+
+<h3>Glenfiddich: Ein Familienunternehmen mit Tradition</h3>
+<p>Glenfiddich, was auf Gälisch „Tal der Hirsche“ bedeutet, wurde 1887 von William Grant gegründet. Die Destillerie befindet sich in Dufftown, einer kleinen Stadt in der Speyside-Region, die oft als das Herz der schottischen Whiskyproduktion bezeichnet wird. Glenfiddich ist bekannt für seine Unabhängigkeit und wird bis heute von der Familie Grant geführt. Diese Unabhängigkeit erlaubt es Glenfiddich, innovativ zu bleiben und gleichzeitig die traditionelle Handwerkskunst zu bewahren.</p>
+
+<h3>Glenlivet: Der Pionier des Speyside Whiskys</h3>
+<p>Glenlivet ist eine der ältesten legalen Brennereien in Schottland. Sie erhielt ihre Lizenz im Jahr 1824 und hat sich seitdem einen Namen als Produzent hochwertiger Speyside Whiskys gemacht. Der Gründer, George Smith, war ein echter Pionier und hatte den Mut, als erster eine Lizenz zu erwerben, während andere Brennereien noch im Verborgenen arbeiteten. Heute gehört Glenlivet zu Pernod Ricard und ist weltweit für seine eleganten und fruchtigen Whiskys bekannt.</p>
+
+<h2>Verkostungsnotizen: Glenfiddich vs. Glenlivet</h2>
+
+<h3>Glenfiddich 12 Jahre</h3>
+<p>Der Glenfiddich 12 Jahre ist ein klassischer Single Malt, der in Eichenfässern gereift ist. Seine Aromen sind reich an frischen Birnen, mit einer leichten Honigsüße und einem Hauch von Eichenholz. Der Geschmack ist ausgewogen, mit Noten von Sahnebonbons, Malz und subtilen Eichenwürzen. Der Abgang ist weich und anhaltend.</p>
+
+<ul>
+  <li><strong>Nase:</strong> Frische Birnen, Honig, Eichenholz</li>
+  <li><strong>Gaumen:</strong> Sahnebonbons, Malz, Eichenwürze</li>
+  <li><strong>Abgang:</strong> Weich, anhaltend</li>
+</ul>
+
+<h3>Glenlivet 12 Jahre</h3>
+<p>Der Glenlivet 12 Jahre ist bekannt für seinen fruchtigen und floralen Charakter. In der Nase finden sich Aromen von Zitrusfrüchten, Apfelblüten und einem Hauch von Vanille. Der Geschmack ist leicht und frisch, mit Noten von Aprikosen, Äpfeln und einem Anflug von Honig. Der Abgang ist sanft, mit einer leichten Würze.</p>
+
+<ul>
+  <li><strong>Nase:</strong> Zitrusfrüchte, Apfelblüten, Vanille</li>
+  <li><strong>Gaumen:</strong> Aprikosen, Äpfel, Honig</li>
+  <li><strong>Abgang:</strong> Sanft, leicht würzig</li>
+</ul>
+
+<h2>Persönliche Einschätzung</h2>
+<p>Beide Whiskys sind hervorragende Vertreter der Speyside-Region, und die Wahl zwischen ihnen kann eine Frage des persönlichen Geschmacks sein. Glenfiddich bietet eine etwas kräftigere Eichenpräsenz und eine reiche Süße, während Glenlivet mit seinem fruchtigen und floralen Charakter punktet. Wenn du ein Fan von komplexen und ausgewogenen Whiskys bist, könnte Glenfiddich der richtige für dich sein. Wenn du jedoch leichtere, fruchtigere Aromen bevorzugst, ist Glenlivet eine exzellente Wahl.</p>
+
+<blockquote>„Whisky ist flüssige Poesie.“ – Robert Louis Stevenson</blockquote>
+
+<h2>Reiseempfehlungen für Whisky-Liebhaber</h2>
+<p>Ein Besuch in der Speyside-Region ist ein Muss für jeden Whisky-Enthusiasten. Hier kannst du die Destillerien von Glenfiddich und Glenlivet besichtigen und tief in die Welt des schottischen Whiskys eintauchen. Um deinen Besuch zu planen, könntest du einen <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flug</a> nach Schottland buchen und ein <a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Hotel</a> in der Nähe der Destillerien finden. Für die Erkundung der Region empfiehlt sich ein <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a>, um flexibel und unabhängig unterwegs zu sein.</p>
+
+<h2>Fazit: Glenfiddich oder Glenlivet?</h2>
+<p>Zusammenfassend lässt sich sagen, dass sowohl Glenfiddich als auch Glenlivet hervorragende Whiskys produzieren, die in keiner Sammlung fehlen sollten. Deine Wahl hängt letztlich von deinen persönlichen Vorlieben ab. Vielleicht hast du ja auch die Gelegenheit, beide zu probieren und deinen eigenen Favoriten zu küren. Egal, für welchen du dich entscheidest, eine Reise in die Speyside-Region wird dir ein tieferes Verständnis und eine größere Wertschätzung für die Kunst der Whiskyherstellung schenken.</p>
+
+<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid"><a href="https://whisky-magazin.vercel.app/artikel/whisky-tasting-für-einsteiger.html" class="related-item">🥃 Whisky-Tasting für Einsteiger: So geht's richtig</a>
+<a href="https://whisky-magazin.vercel.app/artikel/macallan-ist-der-hype-gerechtfertigt.html" class="related-item">🥃 Macallan: Ist der Hype gerechtfertigt?</a>
+<a href="https://whisky-magazin.vercel.app/artikel/speyside-marathon-zwölf-destillerien-2010.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Speyside Marathon 2010: Zwölf Destillerien in drei Tagen</a>
+<a href="https://whisky-magazin.vercel.app/artikel/geschichte-lagavulin-200-jahre-torfrauch.html" class="related-item">🥃 Die Geschichte von Lagavulin: 200 Jahre Torfrauch</a></div></div>
                     <div class="share-bar">
         <span class="share-label">Teilen:</span>
-        <a href="https://wa.me/?text=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland%20https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
-        <a href="https://x.com/intent/tweet?text=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland&url=https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
-        <a href="https://pinterest.com/pin/create/button/?url=https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html&description=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
-        <a href="mailto:?subject=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland&body=https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html" class="share-btn share-btn-email">✉ E-Mail</a>
+        <a href="https://wa.me/?text=Glenfiddich%20vs.%20Glenlivet%3A%20Der%20grosse%20Vergleich%20https%3A//whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+        <a href="https://x.com/intent/tweet?text=Glenfiddich%20vs.%20Glenlivet%3A%20Der%20grosse%20Vergleich&url=https%3A//whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
+        <a href="https://pinterest.com/pin/create/button/?url=https%3A//whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html&description=Glenfiddich%20vs.%20Glenlivet%3A%20Der%20grosse%20Vergleich" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
+        <a href="mailto:?subject=Glenfiddich%20vs.%20Glenlivet%3A%20Der%20grosse%20Vergleich&body=https%3A//whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html" class="share-btn share-btn-email">✉ E-Mail</a>
     </div>
-                    <div class="article-tags"><div class="tag-cloud"><span class="tag">Schottland</span> <span class="tag">Westküste</span> <span class="tag">Isle of Mull</span> <span class="tag">Tobermory</span> <span class="tag">Oban</span> <span class="tag">Glasgow</span> <span class="tag">Deanston</span> <span class="tag">Loch Lomond</span> <span class="tag">Destillerien</span></div></div>
+                    <div class="article-tags"><div class="tag-cloud"><span class="tag">Glenfiddich</span> <span class="tag">Glenlivet</span> <span class="tag">Tasting</span></div></div>
                 </div>
             </main>
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Neueste Artikel</h3>
                     <ul><li><a href="https://whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html">Schottische Kueche: Mehr als Haggis</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html">Glenfiddich vs. Glenlivet: Der grosse Vergleich</a></li>
 <li><a href="https://whisky-magazin.vercel.app/artikel/burns-night-feiern-tradition-und-rezepte.html">Burns Night feiern: Tradition und Rezepte</a></li>
 <li><a href="https://whisky-magazin.vercel.app/artikel/wildlife-in-schottland-hirsche-adler-robben.html">Wildlife in Schottland: Hirsche, Adler und Robben</a></li>
 <li><a href="https://whisky-magazin.vercel.app/artikel/whisky-cocktails-mehr-als-nur-pur-geniessen.html">Whisky-Cocktails: Mehr als nur pur geniessen</a></li>
 </ul>
                 </div>
                 <div class="cta-box">
-                    <h3>Schottland-Reise planen</h3>
-                    <p>Fähren, Flüge & Hotels auf einen Blick</p>
-                    <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
+                    <h3>Whisky entdecken</h3>
+                    <p>Finde deinen nächsten Lieblings-Dram</p>
+                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer">Whisky bei Amazon &#8594;</a>
                 </div>
                 <div class="cta-box" style="margin-top: 20px;">
-                    <h3>Whisky entdecken</h3>
-                    <p>Die besten Single Malts bei Amazon</p>
-                    <a href="https://www.amazon.de/s?k=single+malt+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer">Whisky shoppen &#8594;</a>
+                    <h3>Schottland-Reise planen</h3>
+                    <p>Fähren, Flüge & Hotels</p>
+                    <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer">Fähre buchen &#8594;</a>
                 </div>
             </aside>
         </div>

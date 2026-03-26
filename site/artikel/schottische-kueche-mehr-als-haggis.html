@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Westküste & Mull 2021: Zurück in Schottland | Whisky Magazin</title>
-    <meta name="description" content="Westküste und Mull 2021: Zurück in Schottland nach der Pandemie. Tobermory, Oban, Deanston, Glasgow Distillery und Loch Lomond. Persönlicher Reisebericht.">
-    <meta name="keywords" content="Tobermory Distillery, Isle of Mull, Oban, Deanston, Glasgow Distillery, Loch Lomond, Schottland 2021, Westküste">
-    <meta property="og:title" content="Westküste & Mull 2021: Zurück in Schottland">
-    <meta property="og:description" content="Westküste und Mull 2021: Tobermory, Oban, Glasgow. Zurück in Schottland. Persönlicher Reisebericht mit Tipps.">
+    <title>Schottische Kueche: Mehr als Haggis | Whisky Magazin</title>
+    <meta name="description" content="Entdecken Sie die Vielfalt der schottischen Küche jenseits von Haggis. Von Cullen Skink bis Shortbread – ein kulinarisches Abenteuer erwartet Sie!">
+    <meta name="keywords" content="schottische Küche, Haggis, schottische Rezepte, Cullen Skink, Shortbread">
+    <meta property="og:title" content="Schottische Kueche: Mehr als Haggis">
+    <meta property="og:description" content="Die schottische Küche bietet weit mehr als nur Haggis. Entdecken Sie traditionelle Gerichte und neue Geschmackserlebnisse aus Schottland.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="/images/westkueste-mull-zurueck-in-schottland-2021.jpg">
-    <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/westküste-mull-zurück-in-schottland-2021.html">
+    <meta property="og:image" content="/images/schottische-kueche-mehr-als-haggis.jpg">
+    <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html">
     <style>
         :root {
             --whisky-dark: #1a1209;
@@ -526,15 +526,15 @@
     </header>
     
     <div class="article-header">
-        <h1>Westküste & Mull 2021: Zurück in Schottland</h1>
-        <div class="meta-line">17. März 2026 &bull; Reise &bull; 2 Min. Lesezeit &bull; von Ellas</div>
+        <h1>Schottische Kueche: Mehr als Haggis</h1>
+        <div class="meta-line">26. März 2026 &bull; Reise &bull; 2 Min. Lesezeit &bull; von Ellas</div>
     </div>
-    <img src="/images/westkueste-mull-zurueck-in-schottland-2021.jpg" alt="Westküste & Mull 2021: Zurück in Schottland" class="article-hero-image" loading="lazy"><div class="article-image-credit">Foto von <a href="https://unsplash.com/photos/white-lighthouse-during-daytime-rYT910XkkJA?utm_source=whisky_magazin&utm_medium=referral">Jess Snoek</a> auf <a href="https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral">Unsplash</a></div>
+    <img src="/images/schottische-kueche-mehr-als-haggis.jpg" alt="Schottische Kueche: Mehr als Haggis" class="article-hero-image" loading="lazy">
     <div class="breadcrumb">
         <div class="breadcrumb-inner">
             <a href="https://whisky-magazin.vercel.app/index.html">Start</a> ›
             <a href="https://whisky-magazin.vercel.app/kategorie/reise.html">Reise</a> ›
-            Westküste & Mull 2021: Zurück in Schottland
+            Schottische Kueche: Mehr als Haggis
         </div>
     </div>
     <div class="container">
@@ -542,77 +542,56 @@
             <main>
                 <div class="article-body">
                     
-    <div class="article-mini-map" style="margin: 20px 0;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-            <span style="font-size:1.2em;">📍</span>
-            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=westküste-mull-zurück-in-schottland-2021"
-               style="color:var(--whisky-amber); text-decoration:none; font-size:0.9em;
-                      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-                Auf der Karte anzeigen &rarr;
-            </a>
-        </div>
-        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script>
-        (function() {
-            var localBase = window.location.origin;
-            fetch(localBase + '/data/map-data.json')
-                .then(r => r.json())
-                .then(data => {
-                    var locs = data.locations.filter(function(l) {
-                        return l.articles && l.articles.indexOf('westküste-mull-zurück-in-schottland-2021') !== -1;
-                    });
-                    if (locs.length === 0) return;
-                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; OSM', maxZoom: 16
-                    }).addTo(m);
-                    var bounds = [];
-                    locs.forEach(function(loc) {
-                        var icon = loc.type === 'distillery'
-                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
-                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
-                        L.marker([loc.lat, loc.lon], { icon: icon })
-                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
-                            .addTo(m);
-                        bounds.push([loc.lat, loc.lon]);
-                    });
-                    if (bounds.length === 1) {
-                        m.setView(bounds[0], 10);
-                    } else {
-                        m.fitBounds(bounds, { padding: [30, 30] });
-                    }
-                });
-        })();
-        </script>
-    </div>
-                    <h2>Endlich wieder Schottland &ndash; Westküste, Mull und alte Bekannte</h2> <p>September 2021. Nach der erzwungenen Pause und der deutschen Whisky-Tour 2020 war es endlich soweit: <strong>Zurück in Schottland</strong>. Ryanair nach Glasgow, Mietwagen, Westküste. Es fühlte sich an wie Heimkommen.</p> <h3>Glasgow &ndash; der vertraute Startpunkt</h3> <p>Glasgow empfing uns wie einen alten Freund. Unser Zuhause für die nächsten Tage: das <strong>ibis Styles Glasgow</strong>, zentral gelegen und perfekt als Basis. Die Stadt hat sich verändert (neue Restaurants, mehr Street Art), aber der Kern ist geblieben: rau, herzlich, musikalisch. Der <strong>Old Scotia Bar</strong>? Steht noch. Wie seit 1792.</p> <h3>Duty Free in Glasgow &ndash; Whisky-Shopping am Flughafen</h3> <p>Schon am Flughafen Glasgow ging es los: Der <strong>Duty Free Shop</strong> hatte eine beeindruckende Whisky-Auswahl. Von limitierten Abfüllungen bis zu den Klassikern &ndash; wer hier nicht zuschlägt, verpasst was. Ein perfekter Einstieg in die Reise.</p> <h3>Oban &ndash; die Westküste ruft</h3> <p><strong>Oban Distillery</strong> zum zweiten Mal (nach 2009). Wir übernachteten im <strong>Central Great Western Hotel</strong> direkt in Oban &ndash; ein klassisches schottisches Hotel mit Blick auf den Hafen. Die Destillerie mitten in der Stadt, der Hafen, die Fähren zu den Inseln &ndash; Oban ist und bleibt das Tor zum Westen.</p> <h3>Deanston &ndash; altes Wiedersehen</h3> <p>Auch <strong>Deanston</strong> besuchten wir erneut. Die ehemalige Baumwollmühle am River Teith hat nichts von ihrem Charme verloren. Deanston's ungetorfter Highland-Whisky ist ein Geheimtipp für alle, die es sanft und komplex mögen.</p> <h3>Tobermory &ndash; Isle of Mull</h3> <p>Das Highlight: <strong>Tobermory Distillery</strong> auf der <strong>Isle of Mull</strong>. Die bunte Hafenstadt Tobermory ist eines der fotogensten Dörfer Schottlands. Die Destillerie produziert zwei verschiedene Whiskys: den ungetorften <strong>Tobermory</strong> und den stark getorften <strong>Ledaig</strong> &ndash; beides unter einem Dach. Die <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> nach Mull fährt ab Oban und dauert ca. 45 Minuten.</p> <p>Tobermory und Oban bei <a href="https://www.amazon.de/s?k=tobermory+oban+single+malt&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Glasgow Distillery Co &amp; Loch Lomond</h3> <p>Zurück in Glasgow zwei weitere Besuche: Die <strong>Glasgow Distillery Co</strong> (unser vierter Besuch &ndash; bald würden wir hier ein Fass kaufen!) und <strong>Loch Lomond Distillery</strong>, die mit ihrer Vielfalt an Brennblasen eine erstaunliche Bandbreite an Stilen produziert.</p> <h3>Praktische Tipps</h3> <ul>
-<li><strong>Mull:</strong> <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> ab Oban. Tagesausflug möglich, aber eine Übernachtung auf Mull lohnt sich.</li>
-<li><strong>Mietwagen:</strong> Für die Westküste unverzichtbar. <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Hier buchen</a>.</li>
-<li><strong>Ryanair:</strong> Günstige Flüge nach Glasgow. Früh buchen für die besten Preise. <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge vergleichen</a>.</li>
-<li><strong>Tobermory:</strong> Die bunten Häuser am Hafen sind das Fotomotiv schlechthin. Früh morgens für die besten Fotos.</li>
-</ul> <blockquote>&bdquo;Zurück in Schottland nach einem Jahr Pause. Tobermory's bunte Häuser, Oban's Hafen und Glasgow's Old Scotia Bar. Wie Heimkommen.&ldquo;</blockquote>
+                    <h2>Eine kulinarische Reise durch Schottland: Mehr als Haggis</h2>
 
-<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid"><a href="https://whisky-magazin.vercel.app/artikel/trossachs-oban-hadrians-wall-2009.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Trossachs, Oban & Hadrian's Wall 2009: Schottlands Vielfalt</a>
-<a href="https://whisky-magazin.vercel.app/artikel/glasgow-fife-football-2013.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow, Fife & Football 2013: Celtic, Livemusik und Fish & Chips</a>
-<a href="https://whisky-magazin.vercel.app/artikel/glasgow-winter-weihnachten-2022.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow Winter 2022: Clydeside, Kelvingrove & Weihnachtszauber</a>
-<a href="https://whisky-magazin.vercel.app/artikel/glasgow-islay-erste-schottlandreise-2007.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Glasgow & Islay 2007: Wo alles begann</a></div></div>
+<p>Wenn man an schottische Küche denkt, fällt einem meist sofort Haggis ein, das berühmte Gericht aus Schafsinnereien. Doch die schottische Küche hat weit mehr zu bieten als dieses traditionelle Gericht. Sie ist ein Spiegelbild der rauen Landschaft und der reichen Geschichte des Landes. Begleite mich auf einer kulinarischen Entdeckungsreise durch Schottland, die weit über Haggis hinausgeht.</p>
+
+<h2>Schottische Suppen: Wärmende Genüsse</h2><div class="empfehlung-box"><div class="emp-icon">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div><div class="emp-content"><div class="emp-title">Reise planen</div><div class="emp-text">Fähre, Hotel und mehr für deine Schottland-Reise – alles auf einen Blick.</div><a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="emp-cta">Fähre buchen →</a><a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="emp-cta">Hotels ansehen →</a></div></div>
+
+<p>In einem Land, in dem das Wetter oft kühl und regnerisch ist, spielen Suppen eine wichtige Rolle. Eine der bekanntesten ist die <strong>Cullen Skink</strong>, eine dicke Suppe aus geräuchertem Schellfisch, Kartoffeln und Zwiebeln. Sie ist nicht nur sättigend, sondern auch voller Geschmack. Für Vegetarier bietet sich die <strong>Scotch Broth</strong> an, eine herzhafte Suppe mit Gerste, Lamm und Gemüse.</p>
+
+<h3>Ein persönlicher Tipp</h3>
+
+<blockquote>„Für mich gibt es nichts Besseres, als nach einem langen Spaziergang durch die Highlands eine Schüssel Cullen Skink zu genießen. Die rauchige Note des Fischs und die cremige Konsistenz sind einfach unschlagbar.“ – Ellas</blockquote>
+
+<h2>Fisch und Meeresfrüchte: Frische aus dem Meer</h2>
+
+<p>Schottland ist umgeben von Wasser, und so ist es kein Wunder, dass Fisch und Meeresfrüchte in der Küche eine große Rolle spielen. <strong>Lachs aus Schottland</strong> ist weltberühmt und wird oft geräuchert oder pochiert serviert. Ein weiteres Muss sind die <strong>Langusten</strong>, die frisch aus den Gewässern des Atlantiks gefangen werden. Ein Besuch in einem kleinen Fischerdorf wird dich mit den besten und frischesten Meeresfrüchten belohnen.</p>
+
+<p>Falls du planst, die schottischen Küsten zu erkunden, empfehle ich dir einen Mietwagen zu nehmen, um flexibel zu sein. Hier findest du passende Angebote: <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a>.</p>
+
+<h2>Whisky und Schokolade: Eine himmlische Kombination</h2>
+
+<p>Wer sagt, dass Whisky nur zum Trinken da ist? Die Kombination von Scotch Whisky mit Schokolade ist ein wahrer Genuss. Die komplexen Aromen des Whiskys harmonieren perfekt mit der Süße der Schokolade. Besonders zu empfehlen ist eine Verkostungstour, bei der du verschiedene Paarungen ausprobieren kannst.</p>
+
+<p>Wenn du dich für eine solche Tour interessierst, findest du hier mehr Informationen: <a href="https://www.whisky.reise/touren/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Whisky-Touren</a>.</p>
+
+<h2>Vegetarische und vegane Optionen: Mehr als nur Beilagen</h2>
+
+<p>Auch wenn die traditionelle schottische Küche sehr fleischlastig ist, gibt es mittlerweile viele vegetarische und vegane Optionen. <strong>Vegetarische Haggis</strong> ist eine köstliche Alternative zum Original und besteht aus Linsen, Nüssen und Haferflocken. Ebenso beliebt sind <strong>Rösti</strong> aus schottischen Kartoffeln und <strong>Gemüseeintöpfe</strong>.</p>
+
+<h2>Fazit</h2>
+
+<p>Die schottische Küche ist so vielfältig wie das Land selbst. Von deftigen Suppen über frische Meeresfrüchte bis hin zu süßen Leckereien gibt es viel zu entdecken. Lass dich nicht von Vorurteilen abschrecken und probiere dich durch die kulinarischen Genüsse Schottlands. Und vergiss nicht, dass ein guter Scotch Whisky immer die perfekte Begleitung ist.</p>
+
+<div class="related-box"><h3>Das könnte dich auch interessieren</h3><div class="related-grid"><a href="https://whisky-magazin.vercel.app/artikel/schottland-im-winter-lohnt-sich-eine-reise.html" class="related-item">🌄 Schottland im Winter: Lohnt sich eine Reise?</a>
+<a href="https://whisky-magazin.vercel.app/artikel/frühling-in-schottland-die-beste-reisezeit.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Frühling in Schottland: Die beste Reisezeit?</a>
+<a href="https://whisky-magazin.vercel.app/artikel/burns-night-feiern-tradition-und-rezepte.html" class="related-item">✨ Burns Night feiern: Tradition und Rezepte</a>
+<a href="https://whisky-magazin.vercel.app/artikel/teeling-distillery-dublin-ein-besuch-lohnt-sich.html" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Teeling Distillery Dublin: Ein Besuch lohnt sich</a></div></div>
                     <div class="share-bar">
         <span class="share-label">Teilen:</span>
-        <a href="https://wa.me/?text=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland%20https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
-        <a href="https://x.com/intent/tweet?text=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland&url=https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
-        <a href="https://pinterest.com/pin/create/button/?url=https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html&description=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
-        <a href="mailto:?subject=Westk%C3%BCste%20%26%20Mull%202021%3A%20Zur%C3%BCck%20in%20Schottland&body=https%3A//whisky-magazin.vercel.app/artikel/westk%C3%BCste-mull-zur%C3%BCck-in-schottland-2021.html" class="share-btn share-btn-email">✉ E-Mail</a>
+        <a href="https://wa.me/?text=Schottische%20Kueche%3A%20Mehr%20als%20Haggis%20https%3A//whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+        <a href="https://x.com/intent/tweet?text=Schottische%20Kueche%3A%20Mehr%20als%20Haggis&url=https%3A//whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html" class="share-btn share-btn-x" target="_blank" rel="noopener noreferrer">✕ X</a>
+        <a href="https://pinterest.com/pin/create/button/?url=https%3A//whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html&description=Schottische%20Kueche%3A%20Mehr%20als%20Haggis" class="share-btn share-btn-pinterest" target="_blank" rel="noopener noreferrer">📌 Pinterest</a>
+        <a href="mailto:?subject=Schottische%20Kueche%3A%20Mehr%20als%20Haggis&body=https%3A//whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html" class="share-btn share-btn-email">✉ E-Mail</a>
     </div>
-                    <div class="article-tags"><div class="tag-cloud"><span class="tag">Schottland</span> <span class="tag">Westküste</span> <span class="tag">Isle of Mull</span> <span class="tag">Tobermory</span> <span class="tag">Oban</span> <span class="tag">Glasgow</span> <span class="tag">Deanston</span> <span class="tag">Loch Lomond</span> <span class="tag">Destillerien</span></div></div>
+                    <div class="article-tags"><div class="tag-cloud"><span class="tag">Schottland</span> <span class="tag">Essen</span> <span class="tag">Kultur</span></div></div>
                 </div>
             </main>
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Neueste Artikel</h3>
-                    <ul><li><a href="https://whisky-magazin.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html">Schottische Kueche: Mehr als Haggis</a></li>
-<li><a href="https://whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html">Glenfiddich vs. Glenlivet: Der grosse Vergleich</a></li>
+                    <ul><li><a href="https://whisky-magazin.vercel.app/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html">Glenfiddich vs. Glenlivet: Der grosse Vergleich</a></li>
 <li><a href="https://whisky-magazin.vercel.app/artikel/burns-night-feiern-tradition-und-rezepte.html">Burns Night feiern: Tradition und Rezepte</a></li>
 <li><a href="https://whisky-magazin.vercel.app/artikel/wildlife-in-schottland-hirsche-adler-robben.html">Wildlife in Schottland: Hirsche, Adler und Robben</a></li>
 <li><a href="https://whisky-magazin.vercel.app/artikel/whisky-cocktails-mehr-als-nur-pur-geniessen.html">Whisky-Cocktails: Mehr als nur pur geniessen</a></li>
