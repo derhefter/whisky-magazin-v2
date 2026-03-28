@@ -845,3 +845,34 @@
         }
         html { scroll-behavior: smooth; }
         [id] { scroll-margin-top: 80px; }
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            background: var(--accent-amber);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            z-index: 200;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 8px;
+        }
+
+        /* --- CARD FADE-IN ANIMATION --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .article-card, .card {
+            animation: fadeInUp 0.5s ease both;
+        }
+        .article-card:nth-child(2), .card:nth-child(2) { animation-delay: 0.08s; }
+        .article-card:nth-child(3), .card:nth-child(3) { animation-delay: 0.16s; }
+        .article-card:nth-child(4), .card:nth-child(4) { animation-delay: 0.24s; }
+        .article-card:nth-child(5), .card:nth-child(5) { animation-delay: 0.32s; }
+        .article-card:nth-child(6), .card:nth-child(6) { animation-delay: 0.40s; }
