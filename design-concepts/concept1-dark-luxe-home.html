@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisky Magazin – Dark Luxe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #1a1a2e;
+    --bg-card: #16161a;
+    --bg-card-hover: #1c1c24;
+    --accent-gold: #c9a84c;
+    --accent-copper: #b87333;
+    --accent-warm: #d4a84c;
+    --text-primary: #e8e6e3;
+    --text-secondary: #9a9a9a;
+    --text-muted: #6b6b6b;
+    --border-subtle: rgba(201, 168, 76, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+    --shadow-glow: 0 0 20px rgba(201, 168, 76, 0.08);
+    --radius: 8px;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --glass-bg: rgba(26, 26, 46, 0.7);
+    --glass-border: rgba(201, 168, 76, 0.12);
+}
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.7;
+}
+a { color: var(--accent-gold); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-warm); }
+
+/* Header */
+header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 18px 32px;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+}
+.header-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5em; font-weight: 400;
+    color: var(--accent-gold);
+    letter-spacing: 4px;
+}
+.logo span { color: #fff; }
+nav a {
+    color: var(--text-secondary); margin-left: 28px;
+    font-size: 0.78em; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 500;
+}
+nav a:hover { color: var(--accent-gold); }
+
+/* Hero */
+.hero {
+    min-height: 460px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 80px 32px;
+    background:
+        radial-gradient(ellipse at 50% 80%, rgba(201,168,76,0.1) 0%, transparent 55%),
+        linear-gradient(160deg, #0d0d0d 0%, #1a1a2e 40%, #2a1a10 70%, #0d0d0d 100%);
+    position: relative;
+}
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: 3.2em; font-weight: 400; font-style: italic;
+    color: var(--accent-gold);
+    letter-spacing: 2px; line-height: 1.2;
+    max-width: 700px;
+}
+.hero-divider {
+    width: 60px; height: 2px;
+    background: var(--accent-gold);
+    margin: 24px auto;
+}
+.hero p {
+    font-size: 1.05em; color: var(--text-secondary);
+    max-width: 480px; line-height: 1.6;
+}
+
+/* Content Grid */
+.container { max-width: 1100px; margin: 0 auto; padding: 48px 32px; }
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+}
+
+/* Article Cards */
+.article-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 28px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.article-card:hover {
+    border-color: rgba(201, 168, 76, 0.3);
+    box-shadow: var(--shadow-glow);
+}
+.card-image {
+    height: 200px;
+    background: linear-gradient(135deg, #1a1209 0%, #2a1a10 40%, #3d2b1f 70%, #1a1209 100%);
+    position: relative;
+}
+.card-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(22,22,26,0.8) 100%);
+}
+.card-body { padding: 24px; }
+.card-category {
+    display: inline-block; font-size: 0.7em; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent-gold);
+    border: 1px solid rgba(201,168,76,0.3); padding: 2px 10px;
+    border-radius: 20px; margin-bottom: 10px;
+}
+.card-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.3em; font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 8px; line-height: 1.3;
+}
+.card-meta {
+    font-size: 0.8em; color: var(--text-muted);
+    margin-bottom: 10px;
+}
+.card-teaser {
+    font-size: 0.9em; color: var(--text-secondary);
+    line-height: 1.6;
+}
+.card-link {
+    display: inline-block; margin-top: 14px;
+    color: var(--accent-gold); font-size: 0.85em; font-weight: 500;
+}
+.card-link::after { content: ' →'; }
+
+/* Sidebar */
+.sidebar-box {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 24px; margin-bottom: 24px;
+}
+.sidebar-box h3 {
+    font-family: var(--font-display);
+    font-size: 1em; color: var(--accent-gold);
+    margin-bottom: 14px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.sidebar-box ul { list-style: none; }
+.sidebar-box li {
+    padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.sidebar-box li a { color: var(--text-secondary); font-size: 0.88em; }
+.sidebar-box li a:hover { color: var(--accent-gold); }
+
+/* CTA Box */
+.cta-box {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(184,115,51,0.08) 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: var(--radius);
+    padding: 28px; text-align: center; margin-bottom: 24px;
+}
+.cta-box h3 {
+    font-family: var(--font-display);
+    color: var(--accent-gold); font-size: 1.1em; margin-bottom: 10px;
+    border: none; padding: 0;
+}
+.cta-box p { font-size: 0.85em; color: var(--text-secondary); margin-bottom: 16px; }
+.cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-copper), var(--accent-gold));
+    color: #fff !important; padding: 10px 28px;
+    border-radius: 30px; font-weight: 700; font-size: 0.85em;
+    transition: background 0.2s;
+}
+.cta-btn:hover {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper));
+}
+
+/* Tags */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+    font-size: 0.75em; padding: 4px 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px; color: var(--text-secondary);
+    transition: all 0.2s;
+}
+.tag:hover {
+    border-color: var(--accent-gold); color: var(--accent-gold);
+}
+
+/* Footer */
+footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-muted); text-align: center;
+    padding: 40px 32px; margin-top: 60px;
+    font-size: 0.82em;
+}
+footer a { color: var(--accent-gold); }
+</style>
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <div class="logo">WHISKY<span>.MAGAZIN</span></div>
+        <nav>
+            <a href="#">Start</a>
+            <a href="#">Whisky</a>
+            <a href="#">Reise</a>
+            <a href="#">Karte</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">whisky.reise</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Whisky, Reisen &amp; Abenteuer</h1>
+    <div class="hero-divider"></div>
+    <p>18 Jahre Schottland-Erfahrung, 88 Destillerien und Geschichten, die nach Torf und Meersalz schmecken.</p>
+</section>
+
+<div class="container">
+    <div class="content-grid">
+        <main>
+            <div class="article-card">
+                <div class="card-image"></div>
+                <div class="card-body">
+                    <span class="card-category">Whisky</span>
+                    <h2>Macallan: Ist der Hype gerechtfertigt?</h2>
+                    <div class="card-meta">18. März 2026 · 12 Min. Lesezeit</div>
+                    <p class="card-teaser">The Macallan gehört zu den teuersten Single Malts der Welt. Aber ist der Whisky wirklich so gut, oder bezahlt man nur für den Namen?</p>
+                    <a href="#" class="card-link">Weiterlesen</a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="card-image" style="background: linear-gradient(135deg, #0a1a2a, #1a3a4a 50%, #0a1a2a);"></div>
+                <div class="card-body">
+                    <span class="card-category">Reise</span>
+                    <h2>Die besten Whisky-Destillerien auf Islay</h2>
+                    <div class="card-meta">22. Februar 2026 · 15 Min. Lesezeit</div>
+                    <p class="card-teaser">Islay ist das Mekka für Torfliebhaber. Lagavulin, Ardbeg, Laphroaig — und einige versteckte Perlen, die kaum jemand kennt.</p>
+                    <a href="#" class="card-link">Weiterlesen</a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="card-image" style="background: linear-gradient(135deg, #1a0a1a, #2a1a3a 50%, #1a0a1a);"></div>
+                <div class="card-body">
+                    <span class="card-category">Lifestyle</span>
+                    <h2>Whisky-Tasting für Einsteiger: Der komplette Guide</h2>
+                    <div class="card-meta">22. Februar 2026 · 10 Min. Lesezeit</div>
+                    <p class="card-teaser">Nosing, Tasting, die richtige Glasform und warum ein Tropfen Wasser den Unterschied macht. Alles, was du wissen musst.</p>
+                    <a href="#" class="card-link">Weiterlesen</a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="card-image" style="background: linear-gradient(135deg, #0d1a0d, #1a2a1a 50%, #0d1a0d);"></div>
+                <div class="card-body">
+                    <span class="card-category">Reise</span>
+                    <h2>Schottland im Winter: Lohnt sich eine Reise?</h2>
+                    <div class="card-meta">19. März 2026 · 9 Min. Lesezeit</div>
+                    <p class="card-teaser">Kurze Tage, leere Destillerien, magische Stimmung. Warum der schottische Winter für Whisky-Fans ein Geheimtipp ist.</p>
+                    <a href="#" class="card-link">Weiterlesen</a>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h3>Kategorien</h3>
+                <ul>
+                    <li><a href="#">🥃 Whisky</a></li>
+                    <li><a href="#">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Reise</a></li>
+                    <li><a href="#">✨ Lifestyle</a></li>
+                    <li><a href="#">🌿 Natur</a></li>
+                    <li><a href="#">🌄 Urlaub</a></li>
+                </ul>
+            </div>
+
+            <div class="cta-box">
+                <h3>Nächste Reise planen?</h3>
+                <p>Finde die besten Flüge, Hotels und Mietwagen für deine Schottland-Reise.</p>
+                <a href="#" class="cta-btn">Jetzt planen</a>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Beliebte Tags</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">Islay</a>
+                    <a href="#" class="tag">Speyside</a>
+                    <a href="#" class="tag">Talisker</a>
+                    <a href="#" class="tag">Glasgow</a>
+                    <a href="#" class="tag">Lagavulin</a>
+                    <a href="#" class="tag">Edinburgh</a>
+                    <a href="#" class="tag">Highlands</a>
+                    <a href="#" class="tag">Macallan</a>
+                    <a href="#" class="tag">Destillerien</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer>
+    <p>Ein Projekt von <a href="#">whisky.reise</a> — Whisky, Reisen & mehr.</p>
+    <p style="opacity: 0.5; margin-top: 8px;">* Affiliate-Links: Bei Käufen über gekennzeichnete Links erhalten wir eine kleine Provision.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>whisky · magazin — Steffens Schottland-Tagebuch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FAF8F4;
+      --bg-surface: #F0EBE1;
+      --bg-elevated: #FFFFFF;
+      --text-primary: #2A2520;
+      --text-secondary: #6B5E52;
+      --accent-copper: #B8762E;
+      --accent-terra: #C4583A;
+      --accent-muted: #8A7D6B;
+      --border: #DDD5C8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo .dot {
+      color: var(--accent-copper);
+      margin: 0 4px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .main-nav a {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .main-nav a:hover {
+      color: var(--accent-copper);
+    }
+
+    /* ===== HERO / PERSONAL INTRO ===== */
+    .hero-intro {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px 64px;
+      text-align: center;
+    }
+
+    .author-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-copper), var(--accent-terra));
+      margin: 0 auto 28px;
+      opacity: 0.85;
+    }
+
+    .hero-intro h1 {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 36px;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-intro .subtitle {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+
+    .hero-intro .byline {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--accent-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ===== DRAM DIARY ===== */
+    .dram-diary {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .dram-diary-inner {
+      background: var(--bg-surface);
+      border-radius: 6px;
+      padding: 48px 56px;
+      position: relative;
+    }
+
+    .dram-diary-date {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--accent-copper);
+      margin-bottom: 16px;
+    }
+
+    .dram-diary-inner p {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    /* ===== LATEST STORIES ===== */
+    .latest-stories {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-heading {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+      letter-spacing: -0.2px;
+    }
+
+    .story-card {
+      display: flex;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .story-card:first-of-type {
+      padding-top: 0;
+    }
+
+    .story-card:last-of-type {
+      border-bottom: none;
+    }
+
+    .story-image {
+      width: 180px;
+      min-width: 180px;
+      height: 140px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .story-image-1 {
+      background: linear-gradient(135deg, #8B7355, #C4A97D);
+    }
+
+    .story-image-2 {
+      background: linear-gradient(135deg, #5A7B6F, #8FA89C);
+    }
+
+    .story-image-3 {
+      background: linear-gradient(135deg, #7B6B5A, #A89878);
+    }
+
+    .story-image-4 {
+      background: linear-gradient(135deg, #6B5A4A, #9B8A7A);
+    }
+
+    .story-content {
+      flex: 1;
+    }
+
+    .story-date {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--accent-muted);
+      margin-bottom: 6px;
+    }
+
+    .story-title {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.35;
+      letter-spacing: -0.2px;
+    }
+
+    .story-teaser {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .read-more {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--accent-copper);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .read-more:hover {
+      color: var(--accent-terra);
+    }
+
+    /* ===== WHISKY DES MONATS ===== */
+    .whisky-month {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    .whisky-month-card {
+      background: var(--bg-elevated);
+      border-radius: 6px;
+      border-top: 3px solid var(--accent-copper);
+      box-shadow: 0 2px 12px rgba(42,37,32,0.06);
+      padding: 40px;
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .whisky-month-image {
+      width: 160px;
+      min-width: 160px;
+      height: 220px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #D4B896, #A08060);
+      flex-shrink: 0;
+    }
+
+    .whisky-month-content {
+      flex: 1;
+    }
+
+    .whisky-month-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-copper);
+      margin-bottom: 10px;
+    }
+
+    .whisky-month-name {
+      font-family: 'Bitter', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .whisky-month-desc {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .tasting-notes {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tasting-note {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 13px;
+    }
+
+    .tasting-note span {
+      font-weight: 500;
+      color: var(--accent-copper);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .tasting-note em {
+      font-style: normal;
+      color: var(--text-primary);
+      font-weight: 300;
+    }
+
+    .price-line {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .btn-copper {
+      display: inline-block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      background: var(--accent-copper);
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copper:hover {
+      background: #A06824;
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+      text-align: center;
+    }
+
+    .newsletter-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .newsletter-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--accent-muted);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent-copper);
+    }
+
+    .newsletter-disclaimer {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+    }
+
+    /* ===== REGION CARDS ===== */
+    .regions-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .region-card {
+      background: var(--bg-elevated);
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(42,37,32,0.06);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      transition: box-shadow 0.2s;
+    }
+
+    .region-card:hover {
+      box-shadow: 0 4px 20px rgba(42,37,32,0.1);
+    }
+
+    .region-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .region-thumb-1 { background: linear-gradient(135deg, #5A7B6F, #8FA89C); }
+    .region-thumb-2 { background: linear-gradient(135deg, #8B7355, #C4A97D); }
+    .region-thumb-3 { background: linear-gradient(135deg, #6B5A4A, #9B8A7A); }
+
+    .region-name {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .region-count {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: var(--bg-surface);
+      padding: 48px 0 32px;
+      margin-top: 0;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .footer-left .logo {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-left p {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav a {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-copper);
+    }
+
+    .footer-quote {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--accent-muted);
+      text-align: center;
+      padding: 24px 0 20px;
+      border-top: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .footer-legal {
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+    }
+
+    .footer-legal a {
+      color: var(--accent-muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">whisky<span class="dot"> · </span>magazin</a>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="#">Regionen</a></li>
+          <li><a href="#">Destillerien</a></li>
+          <li><a href="#">Empfehlungen</a></li>
+          <li><a href="#">Über mich</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO — PERSONAL INTRO -->
+  <section class="hero-intro">
+    <div class="author-photo"></div>
+    <h1>Willkommen im Tagebuch.</h1>
+    <p class="subtitle">
+      Seit 2007 reise ich nach Schottland — 88 Destillerien, hunderte Drams,
+      und Geschichten, die ich hier mit dir teile.
+    </p>
+    <p class="byline">Steffen, dein Reiseguide</p>
+  </section>
+
+  <!-- DRAM DIARY -->
+  <section class="dram-diary">
+    <div class="dram-diary-inner">
+      <p class="dram-diary-date">März 2026</p>
+      <p>
+        Gerade zurück von Islay. Der neue Port Charlotte hat mich überrascht — rauchig,
+        aber mit einer Süße, die ich nicht erwartet hätte. Im Bowmore Warehouse No. 1
+        durfte ich direkt aus dem Fass probieren: ein 18-jähriger Sherry Cask, der noch
+        nicht abgefüllt wurde. Unbeschreiblich. Nächsten Monat geht es nach Campbeltown,
+        und ich freue mich besonders auf Springbank — dort wird gerade ein neues
+        Limited Release vorbereitet, über das ich noch nicht viel verraten darf.
+      </p>
+    </div>
+  </section>
+
+  <!-- LATEST STORIES -->
+  <section class="latest-stories">
+    <h2 class="section-heading">Letzte Einträge</h2>
+
+    <article class="story-card">
+      <div class="story-image story-image-1"></div>
+      <div class="story-content">
+        <p class="story-date">18. März 2026</p>
+        <h3 class="story-title">Islay im Winter: Warum die stille Jahreszeit die beste ist</h3>
+        <p class="story-teaser">
+          Die meisten Besucher kommen im Sommer. Aber wer Islay wirklich spüren will,
+          muss im Februar kommen — wenn der Wind die Gischt über die Straße peitscht
+          und die Destillerien fast leer sind.
+        </p>
+        <a href="#" class="read-more">Weiterlesen &rarr;</a>
+      </div>
+    </article>
+
+    <article class="story-card">
+      <div class="story-image story-image-2"></div>
+      <div class="story-content">
+        <p class="story-date">12. März 2026</p>
+        <h3 class="story-title">Port Charlotte 10: Mein neuer Islay-Favorit?</h3>
+        <p class="story-teaser">
+          Bruichladdich hat mit dem reformulierten Port Charlotte 10 einen Volltreffer
+          gelandet. Torfig, maritim, aber mit überraschend fruchtiger Mitte.
+          Mein ausführlicher Tasting-Bericht.
+        </p>
+        <a href="#" class="read-more">Weiterlesen &rarr;</a>
+      </div>
+    </article>
+
+    <article class="story-card">
+      <div class="story-image story-image-3"></div>
+      <div class="story-content">
+        <p class="story-date">4. März 2026</p>
+        <h3 class="story-title">Die Speyside an einem Wochenende: Meine Route für Einsteiger</h3>
+        <p class="story-teaser">
+          Fünf Destillerien in drei Tagen — ohne Stress, mit den besten Stopps für
+          Essen und Übernachtung. So würde ich die Speyside einem Freund zeigen,
+          der zum ersten Mal nach Schottland reist.
+        </p>
+        <a href="#" class="read-more">Weiterlesen &rarr;</a>
+      </div>
+    </article>
+
+    <article class="story-card">
+      <div class="story-image story-image-4"></div>
+      <div class="story-content">
+        <p class="story-date">25. Februar 2026</p>
+        <h3 class="story-title">Macallan: Ist der Hype gerechtfertigt?</h3>
+        <p class="story-teaser">
+          Macallan polarisiert wie keine andere Destillerie. Die Preise steigen,
+          die Marketingmaschine läuft. Aber was steckt wirklich in der Flasche?
+          Ein ehrlicher Blick hinter die Kulissen.
+        </p>
+        <a href="#" class="read-more">Weiterlesen &rarr;</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- WHISKY DES MONATS -->
+  <section class="whisky-month">
+    <div class="whisky-month-card">
+      <div class="whisky-month-image"></div>
+      <div class="whisky-month-content">
+        <p class="whisky-month-label">Steffens Empfehlung</p>
+        <h3 class="whisky-month-name">Talisker 10 Years</h3>
+        <p class="whisky-month-desc">
+          Mein Go-to für Abende am Kamin. Talisker 10 ist wie ein alter Freund —
+          verlässlich, ehrlich und immer gut. Der pfeffrige Rauch, die salzige Brise,
+          ein Hauch von Honig. Für mich einer der besten Alltagswhiskys, die es gibt.
+        </p>
+        <div class="tasting-notes">
+          <div class="tasting-note">
+            <span>Nase</span>
+            <em>Rauch, Meersalz, Zitrus</em>
+          </div>
+          <div class="tasting-note">
+            <span>Gaumen</span>
+            <em>Pfeffer, Malz, maritime Süße</em>
+          </div>
+          <div class="tasting-note">
+            <span>Abgang</span>
+            <em>Lang, warm, rauchig</em>
+          </div>
+        </div>
+        <p class="price-line">ca. 32 &euro;</p>
+        <a href="#" class="btn-copper">Probier's selbst</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <p class="newsletter-text">
+        Ich schick dir einmal im Monat meine besten Tipps — versprochen.
+      </p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Deine E-Mail-Adresse">
+        <button class="btn-copper">Dabei sein</button>
+      </div>
+      <p class="newsletter-disclaimer">Kein Spam. Jederzeit kündbar.</p>
+    </div>
+  </section>
+
+  <!-- REGION CARDS -->
+  <section class="regions-section">
+    <h2 class="section-heading">Regionen durchstöbern</h2>
+    <div class="regions-grid">
+      <a href="#" class="region-card">
+        <div class="region-thumb region-thumb-1"></div>
+        <div>
+          <p class="region-name">Islay</p>
+          <p class="region-count">14 Einträge</p>
+        </div>
+      </a>
+      <a href="#" class="region-card">
+        <div class="region-thumb region-thumb-2"></div>
+        <div>
+          <p class="region-name">Speyside</p>
+          <p class="region-count">22 Einträge</p>
+        </div>
+      </a>
+      <a href="#" class="region-card">
+        <div class="region-thumb region-thumb-3"></div>
+        <div>
+          <p class="region-name">Highlands</p>
+          <p class="region-count">18 Einträge</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-left">
+          <a href="#" class="logo">whisky<span class="dot"> · </span>magazin</a>
+          <p>Ein persönliches Projekt von Steffen.</p>
+        </div>
+        <nav>
+          <ul class="footer-nav">
+            <li><a href="#">Über mich</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Impressum</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer-quote">&bdquo;Der beste Whisky ist der, den man mit Freunden teilt.&ldquo;</p>
+      <p class="footer-legal">
+        &copy; 2026 whisky · magazin. Alle Rechte vorbehalten. &middot;
+        <a href="#">Datenschutz</a> &middot; <a href="#">Impressum</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

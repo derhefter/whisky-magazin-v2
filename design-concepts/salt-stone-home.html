@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisky Magazin — Salt &amp; Stone</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FFFFFF;
+      --bg-surface: #F2F4F6;
+      --text-primary: #1B2332;
+      --text-secondary: #5C6B7A;
+      --accent-amber: #D4943A;
+      --accent-teal: #3D7A8A;
+      --accent-muted: #94A3B0;
+      --border: #E4E8EC;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+    }
+
+    .logo-whisky {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--text-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .logo-dot {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--accent-teal);
+    }
+
+    .logo-magazin {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--text-primary);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-secondary);
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links .nav-cta {
+      background: var(--accent-amber);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links .nav-cta:hover {
+      background: #c0852f;
+    }
+
+    /* ─── HERO SPLIT ─── */
+    .hero-split {
+      margin-top: 64px;
+      display: flex;
+      min-height: 600px;
+    }
+
+    .hero-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 0;
+      max-width: 570px;
+      margin-left: auto;
+    }
+
+    .hero-text-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .hero-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 20px;
+    }
+
+    .hero-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-teaser {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      font-weight: 300;
+      max-width: 460px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent-amber);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #c0852f;
+    }
+
+    .hero-image {
+      flex: 1;
+      background: linear-gradient(135deg, #8BA4B5 0%, #5C7A8A 30%, #4A6670 60%, #3D5560 100%);
+      min-height: 600px;
+      position: relative;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      width: 80px;
+      height: 3px;
+      background: var(--accent-amber);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 40px;
+    }
+
+    /* ─── FEATURED STORIES ─── */
+    .stories-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .stories-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .stories-bottom {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .story-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .story-card:hover {
+      border-color: var(--accent-muted);
+    }
+
+    .story-image {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      position: relative;
+    }
+
+    .story-image-lg {
+      background: linear-gradient(145deg, #7A8E9C 0%, #5A6E7C 50%, #48626E 100%);
+    }
+
+    .story-image-1 {
+      background: linear-gradient(135deg, #9AAFBB 0%, #6B8A96 50%, #4E707E 100%);
+    }
+
+    .story-image-2 {
+      background: linear-gradient(160deg, #88A0AE 0%, #667E8C 50%, #546A78 100%);
+    }
+
+    .story-image-3 {
+      background: linear-gradient(120deg, #A0B3BD 0%, #7A939F 50%, #5D7A88 100%);
+    }
+
+    .story-image-4 {
+      background: linear-gradient(150deg, #8DA1AD 0%, #6E8894 50%, #4F6E7C 100%);
+    }
+
+    .story-image-5 {
+      background: linear-gradient(130deg, #96ABB6 0%, #748F9B 50%, #587680 100%);
+    }
+
+    .story-content {
+      padding: 24px;
+    }
+
+    .story-category {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 10px;
+    }
+
+    .story-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .stories-top .story-title {
+      font-size: 24px;
+    }
+
+    .story-meta {
+      font-size: 12px;
+      color: var(--accent-muted);
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .story-excerpt {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ─── WHISKY OF THE MONTH ─── */
+    .wotm-section {
+      background: var(--bg-surface);
+    }
+
+    .wotm-card {
+      border-top: 3px solid var(--accent-teal);
+      background: var(--bg-primary);
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wotm-image {
+      width: 340px;
+      flex-shrink: 0;
+      background: linear-gradient(160deg, #B8C6CE 0%, #8AA0AC 40%, #607A86 100%);
+    }
+
+    .wotm-content {
+      flex: 1;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .wotm-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 16px;
+    }
+
+    .wotm-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .wotm-notes {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .wotm-price {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--accent-amber);
+      margin-bottom: 28px;
+    }
+
+    .wotm-cta {
+      width: 220px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+      padding: 32px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--text-primary);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--text-primary);
+      color: #fff;
+    }
+
+    /* ─── NEWSLETTER BAND ─── */
+    .newsletter-band {
+      background: var(--accent-teal);
+      padding: 64px 0;
+    }
+
+    .newsletter-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 32px;
+      text-align: center;
+    }
+
+    .newsletter-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-input {
+      width: 340px;
+      padding: 14px 20px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      outline: none;
+    }
+
+    .newsletter-input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .btn-amber {
+      display: inline-block;
+      background: var(--accent-amber);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-amber:hover {
+      background: #c0852f;
+    }
+
+    .newsletter-proof {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+    }
+
+    /* ─── REGION EXPLORER ─── */
+    .regions-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+    }
+
+    .regions-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .regions-scroll::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    .region-card {
+      flex-shrink: 0;
+      width: 260px;
+      aspect-ratio: 3 / 4;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .region-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,35,50,0.75) 0%, rgba(27,35,50,0) 50%);
+    }
+
+    .region-bg-1 { background: linear-gradient(160deg, #6C8A96 0%, #3D5A66 50%, #2A4450 100%); }
+    .region-bg-2 { background: linear-gradient(160deg, #7A9AA6 0%, #4E7280 50%, #365A66 100%); }
+    .region-bg-3 { background: linear-gradient(160deg, #88A6B0 0%, #5C7E8A 50%, #3E6270 100%); }
+    .region-bg-4 { background: linear-gradient(160deg, #748E98 0%, #4A6874 50%, #304E5A 100%); }
+    .region-bg-5 { background: linear-gradient(160deg, #8096A0 0%, #56747E 50%, #3A5862 100%); }
+
+    .region-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      z-index: 2;
+    }
+
+    .region-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .region-count {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+    }
+
+    .trust-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--accent-muted);
+      letter-spacing: 1px;
+    }
+
+    .trust-text span {
+      margin: 0 16px;
+      color: var(--border);
+    }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--text-primary);
+      padding: 80px 0 0;
+      color: #fff;
+    }
+
+    .footer-grid {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .logo-whisky,
+    .footer-brand .logo-dot,
+    .footer-brand .logo-magazin {
+      color: #fff;
+    }
+
+    .footer-brand .logo-dot {
+      color: var(--accent-teal);
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .footer-heading {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+
+    .footer-nav {
+      list-style: none;
+    }
+
+    .footer-nav li {
+      margin-bottom: 12px;
+    }
+
+    .footer-nav a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-amber);
+    }
+
+    .footer-newsletter-mini p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .footer-newsletter-mini input {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      color: #fff;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .footer-newsletter-mini input::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-bottom {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover {
+      color: rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-whisky">WHISKY</span><span class="logo-dot">.</span><span class="logo-magazin">MAGAZIN</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Geschichten</a></li>
+          <li><a href="#">Regionen</a></li>
+          <li><a href="#">Destillerien</a></li>
+          <li><a href="#">Tastings</a></li>
+          <li><a href="#">Reiseplanung</a></li>
+          <li><a href="#" class="nav-cta">Abonnieren</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HERO SPLIT ═══ -->
+  <section class="hero-split">
+    <div class="hero-text-wrap">
+      <div class="hero-text">
+        <div class="hero-label">FEATURED</div>
+        <h1 class="hero-headline">Von Islay bis Speyside: Eine Woche durch Schottlands Whisky-Herz</h1>
+        <p class="hero-teaser">Sieben Tage, vier Regionen, zwölf Destillerien — und die Erkenntnis, dass hinter jedem Dram eine Geschichte steckt, die sich nur vor Ort erschließt. Ein Reisebericht.</p>
+        <a href="#" class="btn-primary">Weiterlesen</a>
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <!-- ═══ FEATURED STORIES ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">AKTUELLE GESCHICHTEN</div>
+      <div class="stories-grid">
+        <div class="stories-top">
+          <article class="story-card">
+            <div class="story-image story-image-lg"></div>
+            <div class="story-content">
+              <div class="story-category">DESTILLERIE</div>
+              <h3 class="story-title">Bruichladdich: Wie eine Destillerie Islay neu definiert</h3>
+              <div class="story-meta">Von Steffen M. &middot; 18. März 2026 &middot; 8 Min.</div>
+              <p class="story-excerpt">Zwischen Tradition und Terroir — ein Besuch bei der unkonventionellsten Brennerei der Insel, die beweist, dass Herkunft schmeckbar ist.</p>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="story-image story-image-1"></div>
+            <div class="story-content">
+              <div class="story-category">REISE</div>
+              <h3 class="story-title">Edinburgh im Winter: Whisky-Bars, die sich lohnen</h3>
+              <div class="story-meta">Von Katharina L. &middot; 12. März 2026 &middot; 6 Min.</div>
+              <p class="story-excerpt">Abseits der Royal Mile: Neun Bars, die Edinburghs Whisky-Szene wirklich ausmachen — von der Kellerbar bis zur Rooftop-Lounge.</p>
+            </div>
+          </article>
+        </div>
+        <div class="stories-bottom">
+          <article class="story-card">
+            <div class="story-image story-image-2"></div>
+            <div class="story-content">
+              <div class="story-category">TASTING</div>
+              <h3 class="story-title">Blind Tasting: Fünf Sherryfass-Whiskys unter 50 Euro</h3>
+              <div class="story-meta">5. März 2026 &middot; 5 Min.</div>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="story-image story-image-3"></div>
+            <div class="story-content">
+              <div class="story-category">WISSEN</div>
+              <h3 class="story-title">Was bedeutet eigentlich &bdquo;cask strength&ldquo;?</h3>
+              <div class="story-meta">28. Feb. 2026 &middot; 4 Min.</div>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="story-image story-image-4"></div>
+            <div class="story-content">
+              <div class="story-category">REISE</div>
+              <h3 class="story-title">Campbeltown: Schottlands vergessene Whisky-Hauptstadt</h3>
+              <div class="story-meta">22. Feb. 2026 &middot; 7 Min.</div>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="story-image story-image-5"></div>
+            <div class="story-content">
+              <div class="story-category">INTERVIEW</div>
+              <h3 class="story-title">Jim McEwan: &bdquo;Whisky ist flüssige Landschaft.&ldquo;</h3>
+              <div class="story-meta">15. Feb. 2026 &middot; 10 Min.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHISKY OF THE MONTH ═══ -->
+  <section class="section wotm-section">
+    <div class="container">
+      <div class="wotm-card">
+        <div class="wotm-image"></div>
+        <div class="wotm-content">
+          <div class="wotm-label">WHISKY DES MONATS</div>
+          <h2 class="wotm-name">Talisker 10 Years</h2>
+          <p class="wotm-notes">Rauch, Meersalz, schwarzer Pfeffer — der Talisker 10 ist das Meer in einem Glas. Kräftig und maritim, mit einer überraschend süßen Honignote im Abgang. Perfekt für Abende, an denen man das Fenster öffnet und den Wind hört.</p>
+          <div class="wotm-price">Ab ca. 32 &euro;</div>
+        </div>
+        <div class="wotm-cta">
+          <a href="#" class="btn-outline">Zum Profil</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ NEWSLETTER BAND ═══ -->
+  <section class="newsletter-band">
+    <div class="newsletter-inner">
+      <h2 class="newsletter-headline">Schottland-Post: Die besten Stories, einmal im Monat.</h2>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="deine@email.de">
+        <button class="btn-amber">Anmelden</button>
+      </div>
+      <p class="newsletter-proof">Bereits 4.200+ Leser &middot; Kein Spam, nur Whisky &middot; Jederzeit abbestellbar</p>
+    </div>
+  </section>
+
+  <!-- ═══ REGION EXPLORER ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">REGIONEN</div>
+      <div class="regions-scroll">
+        <div class="region-card region-bg-1">
+          <div class="region-info">
+            <div class="region-name">Islay</div>
+            <div class="region-count">24 Artikel &middot; 8 Destillerien</div>
+          </div>
+        </div>
+        <div class="region-card region-bg-2">
+          <div class="region-info">
+            <div class="region-name">Speyside</div>
+            <div class="region-count">31 Artikel &middot; 12 Destillerien</div>
+          </div>
+        </div>
+        <div class="region-card region-bg-3">
+          <div class="region-info">
+            <div class="region-name">Highlands</div>
+            <div class="region-count">19 Artikel &middot; 9 Destillerien</div>
+          </div>
+        </div>
+        <div class="region-card region-bg-4">
+          <div class="region-info">
+            <div class="region-name">Campbeltown</div>
+            <div class="region-count">8 Artikel &middot; 3 Destillerien</div>
+          </div>
+        </div>
+        <div class="region-card region-bg-5">
+          <div class="region-info">
+            <div class="region-name">Edinburgh</div>
+            <div class="region-count">15 Artikel &middot; Bars &amp; Shops</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST BAR ═══ -->
+  <div class="trust-bar">
+    <div class="container">
+      <p class="trust-text">Seit 2007 <span>&middot;</span> 88 Destillerien <span>&middot;</span> 14 Jahre Schottland</p>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-whisky">WHISKY</span><span class="logo-dot">.</span><span class="logo-magazin">MAGAZIN</span>
+        </div>
+        <p class="footer-tagline">Das deutschsprachige Magazin für Whisky-Reisen, Destillerien und die Geschichten hinter dem Dram. Unabhängig seit 2007.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="#">Aktuelle Ausgabe</a></li>
+          <li><a href="#">Geschichten</a></li>
+          <li><a href="#">Destillerien</a></li>
+          <li><a href="#">Regionen</a></li>
+          <li><a href="#">Tastings</a></li>
+          <li><a href="#">Reiseplanung</a></li>
+          <li><a href="#">Über uns</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter-mini">
+        <div class="footer-heading">Newsletter</div>
+        <p>Einmal im Monat: Neue Artikel, Tasting-Empfehlungen und Reisetipps aus Schottland.</p>
+        <input type="email" placeholder="deine@email.de">
+        <button class="btn-amber" style="width:100%; padding:12px;">Anmelden</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Whisky Magazin. Alle Rechte vorbehalten.</span>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

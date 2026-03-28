@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macallan: Ist der Hype gerechtfertigt? — whisky · magazin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FAF8F4;
+      --bg-surface: #F0EBE1;
+      --bg-elevated: #FFFFFF;
+      --text-primary: #2A2520;
+      --text-secondary: #6B5E52;
+      --accent-copper: #B8762E;
+      --accent-terra: #C4583A;
+      --accent-muted: #8A7D6B;
+      --border: #DDD5C8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo .dot {
+      color: var(--accent-copper);
+      margin: 0 4px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .main-nav a {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .main-nav a:hover {
+      color: var(--accent-copper);
+    }
+
+    /* ===== ARTICLE LAYOUT ===== */
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb {
+      padding: 20px 0;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--accent-muted);
+    }
+
+    .breadcrumb a {
+      color: var(--accent-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-copper);
+    }
+
+    .breadcrumb span {
+      margin: 0 6px;
+    }
+
+    /* ===== ARTICLE HEADER ===== */
+    .article-header {
+      padding-bottom: 32px;
+    }
+
+    .article-category {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--accent-copper);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+
+    .article-header h1 {
+      font-family: 'Bitter', serif;
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--text-primary);
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .article-meta {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .trust-line {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--accent-muted);
+    }
+
+    .trust-line .check {
+      color: var(--accent-copper);
+      margin-right: 4px;
+    }
+
+    /* ===== HERO IMAGE ===== */
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #C4A97D, #8B7355, #D4B896);
+      margin-bottom: 40px;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-body p {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .article-body h2 {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--text-primary);
+      margin: 40px 0 20px;
+      line-height: 1.35;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .article-body h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-terra);
+      border-radius: 1px;
+    }
+
+    /* ===== BLOCKQUOTE ===== */
+    .article-body blockquote {
+      border-left: 3px solid var(--accent-copper);
+      padding: 4px 0 4px 24px;
+      margin: 32px 0;
+    }
+
+    .article-body blockquote p {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* ===== TASTING PANEL ===== */
+    .tasting-panel {
+      background: var(--bg-surface);
+      border-radius: 6px;
+      padding: 32px;
+      margin: 36px 0;
+    }
+
+    .tasting-panel-title {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-copper);
+      margin-bottom: 20px;
+    }
+
+    .tasting-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+      margin-bottom: 20px;
+    }
+
+    .tasting-item label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent-copper);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tasting-item span {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-primary);
+    }
+
+    .tasting-panel .btn-copper {
+      margin-top: 8px;
+    }
+
+    /* ===== REISE-INFOBOX ===== */
+    .reise-info {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+
+    .reise-info-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-copper);
+      margin-bottom: 16px;
+    }
+
+    .reise-info dl {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 10px 16px;
+    }
+
+    .reise-info dt {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .reise-info dd {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    /* ===== STEFFENS EMPFEHLUNG ===== */
+    .personal-rec {
+      background: var(--bg-surface);
+      border-left: 4px solid var(--accent-copper);
+      border-radius: 0 6px 6px 0;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+
+    .personal-rec-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-copper);
+      margin-bottom: 8px;
+    }
+
+    .personal-rec-name {
+      font-family: 'Bitter', serif;
+      font-weight: 700;
+      font-size: 19px;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .personal-rec p {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .personal-rec .price-line {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .btn-copper {
+      display: inline-block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      background: var(--accent-copper);
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copper:hover {
+      background: #A06824;
+    }
+
+    /* ===== ROUTE SNIPPET ===== */
+    .route-snippet {
+      background: var(--bg-surface);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+
+    .route-snippet-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-copper);
+      margin-bottom: 16px;
+    }
+
+    .route-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .route-item:last-child {
+      border-bottom: none;
+    }
+
+    .route-item a {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .route-item a:hover {
+      color: var(--accent-copper);
+    }
+
+    .route-item .distance {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--accent-muted);
+    }
+
+    /* ===== AUTHOR BOX ===== */
+    .author-box {
+      display: flex;
+      gap: 24px;
+      padding: 36px 0;
+      margin: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .author-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-copper), var(--accent-terra));
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+
+    .author-info {
+      flex: 1;
+    }
+
+    .author-name {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .author-bio {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .author-link {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--accent-copper);
+      text-decoration: none;
+    }
+
+    .author-link:hover {
+      color: var(--accent-terra);
+    }
+
+    /* ===== RELATED STORIES ===== */
+    .related-stories {
+      padding: 40px 0 64px;
+    }
+
+    .related-heading {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+
+    .story-card {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .story-card:last-of-type {
+      border-bottom: none;
+    }
+
+    .story-image {
+      width: 140px;
+      min-width: 140px;
+      height: 110px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .story-image-1 { background: linear-gradient(135deg, #5A7B6F, #8FA89C); }
+    .story-image-2 { background: linear-gradient(135deg, #8B7355, #C4A97D); }
+    .story-image-3 { background: linear-gradient(135deg, #6B5A4A, #9B8A7A); }
+
+    .story-content {
+      flex: 1;
+    }
+
+    .story-date {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+      margin-bottom: 4px;
+    }
+
+    .story-title {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .story-teaser {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .read-more {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--accent-copper);
+      text-decoration: none;
+    }
+
+    .read-more:hover {
+      color: var(--accent-terra);
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter-section {
+      padding: 0 0 64px;
+      text-align: center;
+    }
+
+    .newsletter-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--accent-muted);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent-copper);
+    }
+
+    .newsletter-disclaimer {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: var(--bg-surface);
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .footer-left .logo {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-left p {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav a {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-copper);
+    }
+
+    .footer-quote {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--accent-muted);
+      text-align: center;
+      padding: 24px 0 20px;
+      border-top: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .footer-legal {
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+    }
+
+    .footer-legal a {
+      color: var(--accent-muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">whisky<span class="dot"> · </span>magazin</a>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="#">Regionen</a></li>
+          <li><a href="#">Destillerien</a></li>
+          <li><a href="#">Empfehlungen</a></li>
+          <li><a href="#">Über mich</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ARTICLE -->
+  <main class="article-container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="#">Startseite</a> <span>/</span>
+      <a href="#">Destillerien</a> <span>/</span>
+      Macallan
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <p class="article-category">Whisky</p>
+      <h1>Macallan: Ist der Hype gerechtfertigt?</h1>
+      <p class="article-meta">Von Steffen &middot; 18. März 2026 &middot; 12 Min. Lesezeit</p>
+      <p class="trust-line"><span class="check">&#10003;</span> Persönlich besucht 2019</p>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="article-hero"></div>
+
+    <!-- Article Body -->
+    <div class="article-body">
+
+      <p>
+        Macallan ist eine jener Destillerien, bei denen sich die Geister scheiden. Für die
+        einen ist sie der Inbegriff schottischer Whisky-Handwerkskunst, für die anderen
+        vor allem eine Marketingmaschine mit immer höheren Preisen. Ich war 2019 dort
+        und habe mir ein eigenes Bild gemacht — hier ist, was ich erlebt habe.
+      </p>
+
+      <p>
+        Die Anfahrt von Craigellachie dauert keine zehn Minuten. Die Straße windet sich
+        durch die sanften Hügel der Speyside, und dann steht man plötzlich vor diesem
+        architektonischen Statement: das neue Macallan Distillery and Visitor Centre,
+        ein wellenförmiges Dach aus Holz und Gras, das sich in die Landschaft schmiegt.
+        Es kostet 140 Millionen Pfund, und ja — man sieht es.
+      </p>
+
+      <h2>Die Destillerie: Tradition trifft Architektur</h2>
+
+      <p>
+        Was mich sofort beeindruckt hat: Trotz der modernen Architektur bleibt die
+        Produktion überraschend traditionell. Macallan setzt weiterhin auf kleine
+        Kupferbrennblasen — die kleinsten in der gesamten Speyside. Das sorgt für
+        maximalen Kupferkontakt und letztlich für den schweren, öligen Charakter,
+        den Macallan-Kenner schätzen. Die Washbacks sind aus Edelstahl, was Puristen
+        stört, aber bei der Qualität des Destillats kaum einen Unterschied macht.
+      </p>
+
+      <p>
+        Der eigentliche Star bei Macallan ist aber nicht die Brennblase, sondern
+        das Holz. Macallan gibt nach eigenen Angaben mehr Geld für Fässer aus als
+        jede andere Destillerie in Schottland. Die hauseigenen Sherry-Fässer werden
+        in Jerez bei ausgewählten Bodegas hergestellt — ein Prozess, der pro Fass
+        rund 1.000 Pfund kostet. Zum Vergleich: Ein Standard-Bourbon-Fass schlägt
+        mit etwa 100 Pfund zu Buche.
+      </p>
+
+      <blockquote>
+        <p>
+          &bdquo;In dem Moment, als ich den 18-jährigen direkt aus dem Fass probiert
+          habe, war klar: Das Holzprogramm ist nicht nur Marketing — es schmeckt
+          man in jedem Schluck.&ldquo;
+        </p>
+      </blockquote>
+
+      <h2>Was steckt wirklich in der Flasche?</h2>
+
+      <p>
+        Hier wird es interessant. Die Standardabfüllungen — insbesondere die
+        Sherry Oak und Double Cask Reihen — sind solide, aber nicht unbedingt
+        ihr Geld wert, wenn man die aktuelle Preislage betrachtet. Der
+        Macallan 12 Sherry Oak liegt mittlerweile bei über 80 Euro, ein Preis,
+        für den man hervorragende Alternativen findet. Der GlenDronach 15 Revival
+        oder der Aberlour A'bunadh bieten vergleichbare Sherry-Power für deutlich
+        weniger Geld.
+      </p>
+
+      <p>
+        Anders sieht es bei den älteren Abfüllungen aus. Der Macallan 18 ist und
+        bleibt ein beeindruckender Whisky — komplex, tiefgründig, mit Schichten
+        von getrockneten Früchten, Eichengewürz und einer fast samtigen Textur.
+        Ob er seinen Preis von über 300 Euro wert ist, muss jeder für sich
+        entscheiden. Aber die Qualität ist unbestreitbar.
+      </p>
+
+      <!-- Quick Tasting Panel -->
+      <div class="tasting-panel">
+        <p class="tasting-panel-title">Tasting: Macallan 18 Sherry Oak (2023 Release)</p>
+        <div class="tasting-grid">
+          <div class="tasting-item">
+            <label>Nase</label>
+            <span>Rosinen, Orangenschale, Eichenholz, dezenter Zimt</span>
+          </div>
+          <div class="tasting-item">
+            <label>Gaumen</label>
+            <span>Vollmundig, Trockenfrüchte, Ingwer, dunkle Schokolade</span>
+          </div>
+          <div class="tasting-item">
+            <label>Abgang</label>
+            <span>Sehr lang, Gewürze, Eiche, angenehme Trockenheit</span>
+          </div>
+          <div class="tasting-item">
+            <label>Alkohol</label>
+            <span>43% Vol.</span>
+          </div>
+          <div class="tasting-item">
+            <label>Bewertung</label>
+            <span>88 / 100</span>
+          </div>
+          <div class="tasting-item">
+            <label>Preis</label>
+            <span>ca. 320 &euro;</span>
+          </div>
+        </div>
+        <a href="#" class="btn-copper">Probier's selbst</a>
+      </div>
+
+      <h2>Ein Besuch lohnt sich — trotzdem</h2>
+
+      <p>
+        Unabhängig davon, ob man Macallan für überbewertet hält oder nicht: Ein
+        Besuch der Destillerie lohnt sich allein wegen des neuen Visitor Centres.
+        Die Architektur ist atemberaubend, die Ausstellung gut gemacht, und die
+        Lage inmitten der Speyside-Landschaft ist wunderschön. Die Premium-Tour
+        mit Fassverkostung ist ihr Geld wert, die Standard-Tour dagegen eher
+        oberflächlich.
+      </p>
+
+      <!-- Reise-Infobox -->
+      <div class="reise-info">
+        <p class="reise-info-label">Reise-Info</p>
+        <dl>
+          <dt>Adresse</dt>
+          <dd>Easter Elchies, Craigellachie, Banffshire, AB38 9RX</dd>
+          <dt>Tour</dt>
+          <dd>Standard &pound;25, Premium &pound;50 (inkl. 4 Tastings)</dd>
+          <dt>Anreise</dt>
+          <dd>Ab Inverness ca. 1 Std. mit dem Auto. Kein ÖPNV.</dd>
+          <dt>Beste Zeit</dt>
+          <dd>April bis Oktober. Im Winter nur eingeschränkte Touren.</dd>
+        </dl>
+      </div>
+
+      <p>
+        Nach meinem Besuch hat sich mein Bild von Macallan etwas gewandelt. Ja,
+        die Preise sind hoch, und das Marketing ist allgegenwärtig. Aber hinter
+        dem Hochglanz steckt eine Destillerie, die ihr Handwerk ernst nimmt — vor
+        allem, was das Holzmanagement angeht. Das schmeckt man, wenn man es sich
+        leisten kann.
+      </p>
+
+      <!-- Steffens Empfehlung -->
+      <div class="personal-rec">
+        <p class="personal-rec-label">Steffens Empfehlung</p>
+        <p class="personal-rec-name">Macallan 18 Sherry Oak</p>
+        <p>
+          Wenn du nur eine Flasche Macallan kaufst, dann diese. Der 18-jährige
+          Sherry Oak ist der Whisky, der den Ruf der Destillerie begründet hat.
+          Ja, er ist teuer. Aber er ist auch verdammt gut. Gönn ihn dir für einen
+          besonderen Anlass.
+        </p>
+        <p class="price-line">ca. 320 &euro;</p>
+        <a href="#" class="btn-copper">Probier's selbst</a>
+      </div>
+
+      <h2>Fazit: Hype ja, aber mit Substanz</h2>
+
+      <p>
+        Macallan ist nicht perfekt, und nicht jede Flasche ist ihr Geld wert.
+        Aber den Ruf komplett als Marketing abzutun, wäre unfair. Die Destillerie
+        investiert massiv in Qualität — vor allem ins Holz — und das merkt man
+        bei den höherwertigen Abfüllungen. Mein Rat: Spar dir den 12er, gönn dir
+        den 18er, und besuche die Destillerie, wenn du in der Speyside bist. Es
+        lohnt sich.
+      </p>
+
+    </div>
+
+    <!-- Route Snippet -->
+    <div class="route-snippet">
+      <p class="route-snippet-label">Wenn du schon mal da bist...</p>
+      <div class="route-item">
+        <a href="#">Aberlour Distillery</a>
+        <span class="distance">3 km</span>
+      </div>
+      <div class="route-item">
+        <a href="#">Glenfiddich Distillery</a>
+        <span class="distance">8 km</span>
+      </div>
+      <div class="route-item">
+        <a href="#">Craigellachie Hotel (Bar &amp; Restaurant)</a>
+        <span class="distance">2 km</span>
+      </div>
+      <div class="route-item">
+        <a href="#">Speyside Cooperage</a>
+        <span class="distance">5 km</span>
+      </div>
+    </div>
+
+    <!-- Author Box -->
+    <div class="author-box">
+      <div class="author-photo"></div>
+      <div class="author-info">
+        <p class="author-name">Steffen</p>
+        <p class="author-bio">
+          Seit 2007 reise ich regelmäßig nach Schottland und habe mittlerweile
+          88 Destillerien besucht. Hier teile ich meine ehrlichen Eindrücke,
+          Reisetipps und Empfehlungen — ohne Sponsoring, ohne Beschönigung.
+          Wenn ich nicht gerade in Schottland bin, sitze ich in meinem Büro
+          und schreibe über Whisky.
+        </p>
+        <a href="#" class="author-link">Alle Einträge von Steffen &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Related Stories -->
+    <section class="related-stories">
+      <h2 class="related-heading">Das könnte dich auch interessieren</h2>
+
+      <article class="story-card">
+        <div class="story-image story-image-1"></div>
+        <div class="story-content">
+          <p class="story-date">12. März 2026</p>
+          <h3 class="story-title">GlenDronach 15 Revival: Die bessere Sherry-Bombe?</h3>
+          <p class="story-teaser">
+            Wer Sherry-Whiskys liebt, aber nicht Macallan-Preise zahlen will,
+            sollte diesen Highland-Malt kennen.
+          </p>
+          <a href="#" class="read-more">Weiterlesen &rarr;</a>
+        </div>
+      </article>
+
+      <article class="story-card">
+        <div class="story-image story-image-2"></div>
+        <div class="story-content">
+          <p class="story-date">4. März 2026</p>
+          <h3 class="story-title">Die Speyside an einem Wochenende: Meine Route</h3>
+          <p class="story-teaser">
+            Fünf Destillerien in drei Tagen — ohne Stress, mit den besten
+            Stopps für Essen und Übernachtung.
+          </p>
+          <a href="#" class="read-more">Weiterlesen &rarr;</a>
+        </div>
+      </article>
+
+      <article class="story-card">
+        <div class="story-image story-image-3"></div>
+        <div class="story-content">
+          <p class="story-date">18. Februar 2026</p>
+          <h3 class="story-title">Sherry Cask vs. Bourbon Cask: Was schmeckt besser?</h3>
+          <p class="story-teaser">
+            Der ewige Streit unter Whisky-Freunden. Ich habe zehn Paare
+            direkt verglichen — mit überraschendem Ergebnis.
+          </p>
+          <a href="#" class="read-more">Weiterlesen &rarr;</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="newsletter-inner">
+        <p class="newsletter-text">
+          Gefällt dir diese Geschichte? Einmal im Monat schicke ich dir
+          ähnliche — direkt ins Postfach.
+        </p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Deine E-Mail-Adresse">
+          <button class="btn-copper">Dabei sein</button>
+        </div>
+        <p class="newsletter-disclaimer">Kein Spam. Jederzeit kündbar.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-left">
+          <a href="#" class="logo">whisky<span class="dot"> · </span>magazin</a>
+          <p>Ein persönliches Projekt von Steffen.</p>
+        </div>
+        <nav>
+          <ul class="footer-nav">
+            <li><a href="#">Über mich</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Impressum</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer-quote">&bdquo;Der beste Whisky ist der, den man mit Freunden teilt.&ldquo;</p>
+      <p class="footer-legal">
+        &copy; 2026 whisky &middot; magazin. Alle Rechte vorbehalten. &middot;
+        <a href="#">Datenschutz</a> &middot; <a href="#">Impressum</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macallan: Ist der Hype gerechtfertigt? – Scottish Heritage</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --bg-primary: #f4ecd8;
+    --bg-card: #fffdf5;
+    --forest-deep: #1a3a2a;
+    --forest-mid: #2d5a3d;
+    --forest-light: #4a8c5e;
+    --slate-blue: #4a6fa5;
+    --parchment: #f4ecd8;
+    --parchment-dark: #e8dcc0;
+    --text-primary: #2a2a2a;
+    --text-secondary: #5c5c5c;
+    --accent-rust: #a0522d;
+    --accent-rust-light: #c06830;
+    --shadow-sm: 0 1px 4px rgba(26,58,42,0.06);
+    --shadow-md: 0 4px 16px rgba(26,58,42,0.08);
+    --radius: 4px;
+    --font-heading: 'Montserrat', system-ui, sans-serif;
+    --font-body: 'Merriweather', Georgia, serif;
+}
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 16px; line-height: 1.8;
+}
+a { color: var(--forest-mid); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-rust); }
+
+header {
+    background: var(--forest-deep);
+    padding: 16px 32px;
+    border-bottom: 3px solid var(--forest-mid);
+}
+.header-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.4em; font-weight: 800;
+    color: #fff; letter-spacing: 3px; text-transform: uppercase;
+}
+.logo .dot { color: var(--forest-light); }
+nav a {
+    color: var(--parchment); margin-left: 24px;
+    font-family: var(--font-heading);
+    font-size: 0.78em; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+}
+nav a:hover { color: #fff; }
+
+.breadcrumb {
+    max-width: 1100px; margin: 0 auto;
+    padding: 14px 32px; font-size: 0.78em;
+    color: var(--text-secondary);
+    font-family: var(--font-heading); font-weight: 400;
+}
+.breadcrumb a { color: var(--text-secondary); }
+.breadcrumb a:hover { color: var(--accent-rust); }
+
+.article-header {
+    background: var(--forest-deep);
+    padding: 50px 32px 45px;
+    position: relative; overflow: hidden;
+}
+.article-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(74,111,165,0.06) 40px, rgba(74,111,165,0.06) 42px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(74,111,165,0.06) 40px, rgba(74,111,165,0.06) 42px),
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(160,82,45,0.04) 80px, rgba(160,82,45,0.04) 83px),
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(160,82,45,0.04) 80px, rgba(160,82,45,0.04) 83px);
+    pointer-events: none;
+}
+.article-header-inner {
+    max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+}
+.article-header .category {
+    font-family: var(--font-heading);
+    font-size: 0.7em; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--forest-light); margin-bottom: 14px; display: block;
+}
+.article-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2em; font-weight: 800;
+    color: #fff; max-width: 700px; line-height: 1.15;
+    letter-spacing: -0.3px;
+}
+.article-header .meta {
+    color: var(--parchment); font-size: 0.82em;
+    margin-top: 14px; opacity: 0.7;
+    font-family: var(--font-heading); font-weight: 400;
+}
+
+.hero-image {
+    max-width: 1100px; margin: 0 auto;
+    height: 340px;
+    background: linear-gradient(135deg, #2d5a3d 0%, #4a6fa5 40%, #1a3a2a 80%);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+.image-credit {
+    text-align: right; max-width: 1100px; margin: 6px auto 0;
+    padding: 0 32px; font-size: 0.72em; color: var(--text-secondary);
+    font-family: var(--font-heading);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 32px; }
+.content-grid { display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
+
+.article-body {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 48px;
+    margin-top: -30px; position: relative; z-index: 2;
+}
+.article-body h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4em; font-weight: 700;
+    color: var(--forest-deep);
+    margin: 36px 0 16px; padding-left: 18px;
+    position: relative;
+}
+.article-body h2::before {
+    content: '';
+    position: absolute; left: 0; top: 6px;
+    width: 8px; height: 8px;
+    background: var(--forest-mid);
+}
+.article-body h2:first-child { margin-top: 0; }
+.article-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05em; font-weight: 600;
+    color: var(--slate-blue);
+    margin: 24px 0 10px;
+}
+.article-body p { margin-bottom: 18px; font-weight: 300; }
+
+blockquote {
+    background: var(--parchment-dark);
+    border-left: 4px solid var(--forest-mid);
+    padding: 24px 28px; margin: 32px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic; color: var(--forest-deep);
+    font-size: 1.05em; line-height: 1.7;
+}
+
+/* Pull Quote - special feature */
+.pull-quote {
+    text-align: center; padding: 36px 40px;
+    margin: 40px -48px;
+    background: var(--parchment);
+    border-top: 2px solid var(--forest-mid);
+    border-bottom: 2px solid var(--forest-mid);
+}
+.pull-quote p {
+    font-family: var(--font-heading);
+    font-size: 1.3em; font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 1.4; max-width: 550px;
+    margin: 0 auto;
+}
+.pull-quote cite {
+    display: block; margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 0.7em; font-weight: 400;
+    color: var(--text-secondary); font-style: normal;
+}
+
+.affiliate-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--accent-rust);
+    color: #fff !important; padding: 4px 12px;
+    border-radius: 2px; font-size: 0.85em; font-weight: 600;
+    font-family: var(--font-heading);
+    transition: background 0.2s;
+}
+.affiliate-link::before { content: '→ '; }
+.affiliate-link:hover { background: var(--accent-rust-light); }
+
+.empfehlung-box {
+    border: 2px solid var(--forest-mid);
+    border-radius: var(--radius);
+    padding: 24px; margin: 32px 0;
+    background: var(--parchment);
+    display: flex; gap: 16px; align-items: flex-start;
+}
+.empfehlung-icon { font-size: 2em; }
+.empfehlung-content { flex: 1; }
+.empfehlung-content strong {
+    display: block;
+    font-family: var(--font-heading); font-weight: 700;
+    color: var(--forest-deep); margin-bottom: 6px;
+}
+.empfehlung-content p { font-size: 0.9em; color: var(--text-secondary); margin: 0 0 12px; font-weight: 300; }
+.empfehlung-cta {
+    display: inline-block;
+    background: var(--accent-rust);
+    color: #fff !important; padding: 8px 20px;
+    border-radius: 2px; font-weight: 700; font-size: 0.8em;
+    font-family: var(--font-heading);
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+.empfehlung-cta:hover { background: var(--accent-rust-light); }
+
+.share-bar { display: flex; gap: 10px; margin: 28px 0; flex-wrap: wrap; }
+.share-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 16px; border-radius: 2px;
+    font-size: 0.78em; font-weight: 600; color: #fff !important;
+    font-family: var(--font-heading);
+}
+.share-whatsapp { background: #25D366; }
+.share-x { background: #000; }
+.share-email { background: var(--forest-deep); }
+
+.related-section {
+    margin-top: 40px; padding-top: 28px;
+    border-top: 2px solid var(--parchment-dark);
+}
+.related-section h3 {
+    font-family: var(--font-heading); font-weight: 700;
+    color: var(--forest-deep); margin-bottom: 16px;
+    font-size: 0.9em; text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.related-item {
+    display: block; background: var(--parchment);
+    border-left: 3px solid var(--forest-mid);
+    border-radius: var(--radius); padding: 14px;
+    color: var(--text-primary) !important; font-size: 0.88em;
+    font-weight: 300;
+    transition: background 0.2s, border-color 0.2s;
+}
+.related-item:hover { background: var(--parchment-dark); border-color: var(--accent-rust); }
+
+.tag-list {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px;
+}
+.tag {
+    font-family: var(--font-heading);
+    font-size: 0.72em; font-weight: 600;
+    padding: 5px 14px;
+    background: var(--parchment-dark);
+    color: var(--forest-deep);
+    border-radius: 2px; transition: all 0.2s;
+}
+.tag:hover { background: var(--forest-mid); color: #fff; }
+
+/* Sidebar */
+.sidebar-box {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 24px; margin-bottom: 24px;
+}
+.sidebar-box h3 {
+    font-family: var(--font-heading);
+    font-size: 0.85em; font-weight: 700;
+    color: var(--forest-deep);
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 14px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--parchment-dark);
+}
+.sidebar-box ul { list-style: none; }
+.sidebar-box li { padding: 8px 0; border-bottom: 1px solid var(--parchment-dark); }
+.sidebar-box li a { color: var(--text-primary); font-size: 0.88em; font-weight: 300; }
+.sidebar-box li a:hover { color: var(--accent-rust); }
+
+.cta-box {
+    background: var(--forest-deep);
+    border-radius: var(--radius);
+    padding: 28px; text-align: center; margin-bottom: 24px;
+    position: relative; overflow: hidden;
+}
+.cta-box::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(74,111,165,0.08) 30px, rgba(74,111,165,0.08) 31px),
+        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(74,111,165,0.08) 30px, rgba(74,111,165,0.08) 31px);
+    pointer-events: none;
+}
+.cta-box h3 {
+    color: #fff; font-size: 1em; border: none; padding: 0;
+    margin-bottom: 10px; position: relative;
+    text-transform: none; letter-spacing: 0;
+}
+.cta-box p {
+    font-size: 0.85em; color: var(--parchment); margin-bottom: 16px;
+    position: relative; font-weight: 300; font-style: italic;
+}
+.cta-btn {
+    display: inline-block; position: relative;
+    background: var(--accent-rust);
+    color: #fff !important; padding: 10px 28px;
+    border-radius: 2px; font-weight: 700; font-size: 0.82em;
+    font-family: var(--font-heading);
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.cta-btn:hover { background: var(--accent-rust-light); }
+
+footer {
+    background: var(--forest-deep);
+    color: var(--parchment);
+    text-align: center; padding: 40px 32px;
+    margin-top: 60px; font-size: 0.82em;
+    border-top: 3px solid var(--forest-mid);
+}
+footer a { color: var(--forest-light); }
+</style>
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <div class="logo">WHISKY<span class="dot">.</span>MAGAZIN</div>
+        <nav>
+            <a href="#">Start</a>
+            <a href="#">Whisky</a>
+            <a href="#">Reise</a>
+            <a href="#">Karte</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">whisky.reise</a>
+        </nav>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <a href="#">Start</a> › <a href="#">Whisky</a> › Macallan: Ist der Hype gerechtfertigt?
+</div>
+
+<div class="article-header">
+    <div class="article-header-inner">
+        <span class="category">Whisky</span>
+        <h1>Macallan: Ist der Hype gerechtfertigt?</h1>
+        <div class="meta">18. März 2026 · 12 Min. Lesezeit · Von Steffen & Elmar</div>
+    </div>
+</div>
+
+<div class="hero-image"></div>
+<div class="image-credit">Foto von John Doe auf Unsplash</div>
+
+<div class="container">
+    <div class="content-grid">
+        <main>
+            <div class="article-body">
+                <h2>Die Legende aus der Speyside</h2>
+                <p>The Macallan. Kaum ein Name in der Whisky-Welt polarisiert so sehr. Für die einen ist es der Inbegriff von Luxus-Whisky, für die anderen ein überbewertetes Marketing-Produkt. Wir haben uns auf die Suche nach der Wahrheit gemacht — mit einer Flasche Macallan 18 Sherry Oak und einem kritischen Gaumen.</p>
+
+                <p>Die Geschichte von Macallan beginnt 1824, als Alexander Reid die Lizenz für seine Destillerie in Craigellachie erhielt. Aber was die Marke heute ausmacht, ist nicht die Geschichte — es sind die Fässer. Macallan investiert mehr in Sherryfässer als jede andere Destillerie in Schottland.</p>
+
+                <div class="empfehlung-box">
+                    <div class="empfehlung-icon">🥃</div>
+                    <div class="empfehlung-content">
+                        <strong>Unsere Empfehlung</strong>
+                        <p>Macallan 12 Year Old Sherry Oak — der perfekte Einstieg in die Macallan-Welt. Reichhaltig, fruchtig, mit klassischen Sherry-Noten.</p>
+                        <a href="#" class="empfehlung-cta">Bei Amazon bestellen</a>
+                    </div>
+                </div>
+
+                <h2>Die Sherryfass-Philosophie</h2>
+                <p>Macallan bezieht seine Fässer direkt aus Jerez, Spanien. Die Eichenfässer werden zunächst zwei Jahre lang mit Oloroso-Sherry befüllt, bevor sie nach Schottland verschifft werden. Dieser Prozess kostet zehnmal mehr als die Verwendung von Ex-Bourbon-Fässern — aber er macht den Unterschied.</p>
+
+                <p>Das Ergebnis: Ein Whisky mit tiefer Bernsteinfarbe, Noten von getrockneten Früchten, Gewürzen und einem Hauch von Orangenschale. Die <a href="#" class="affiliate-link">Macallan Sherry Oak Serie bei Amazon</a> zeigt die ganze Bandbreite.</p>
+
+                <div class="pull-quote">
+                    <p>„Macallan schmeckt nicht nach Marketing. Macallan schmeckt nach Sherry, nach Zeit und nach einer Destillerie, die genau weiß, was sie tut."</p>
+                    <cite>— Aus unserem Tasting-Protokoll, Speyside 2014</cite>
+                </div>
+
+                <h2>Ist der Preis gerechtfertigt?</h2>
+                <p>Die ehrliche Antwort: Es kommt darauf an. Der Macallan 12 bietet hervorragendes Preis-Leistungs-Verhältnis. Der 18er ist großartig, aber der Aufpreis gegenüber anderen Speyside-Whiskys wie Glenfarclas 21 oder Aberlour A'bunadh ist erheblich.</p>
+
+                <p>Was man bei Macallan wirklich bezahlt, ist Konsistenz. Jede Flasche schmeckt wie erwartet. Keine Überraschungen — und das ist für viele Whisky-Trinker genau das Richtige.</p>
+
+                <h3>Unser Tasting-Urteil</h3>
+                <p>Macallan 12 Sherry Oak: <strong>88/100</strong>. Reichhaltig, komplex, mit einem langen Finish. Macallan 18: <strong>92/100</strong>. Hier zeigt sich die ganze Klasse — dunkle Schokolade, Orangenmarmelade und ein Hauch Rauch.</p>
+
+                <div class="share-bar">
+                    <a href="#" class="share-btn share-whatsapp">📱 WhatsApp</a>
+                    <a href="#" class="share-btn share-x">𝕏 Teilen</a>
+                    <a href="#" class="share-btn share-email">✉️ E-Mail</a>
+                </div>
+
+                <div class="tag-list">
+                    <a href="#" class="tag">Macallan</a>
+                    <a href="#" class="tag">Speyside</a>
+                    <a href="#" class="tag">Sherry Cask</a>
+                    <a href="#" class="tag">Single Malt</a>
+                    <a href="#" class="tag">Tasting</a>
+                </div>
+
+                <div class="related-section">
+                    <h3>Weiterlesen</h3>
+                    <div class="related-grid">
+                        <a href="#" class="related-item">🥃 Whisky-Tasting für Einsteiger: Der komplette Guide</a>
+                        <a href="#" class="related-item">🥃 Die Geschichte von Lagavulin: 200 Jahre Torfrauch</a>
+                        <a href="#" class="related-item">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Die besten Destillerien auf Islay</a>
+                        <a href="#" class="related-item">✨ Whisky und Käse: Überraschende Kombinationen</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h3>Neueste Artikel</h3>
+                <ul>
+                    <li><a href="#">Schottland im Winter: Lohnt sich eine Reise?</a></li>
+                    <li><a href="#">Wildlife: Hirsche, Adler und Robben</a></li>
+                    <li><a href="#">Glasgow im Winter: Weihnachten 2022</a></li>
+                    <li><a href="#">Frühling in Schottland: Die beste Reisezeit?</a></li>
+                </ul>
+            </div>
+
+            <div class="cta-box">
+                <h3>Macallan bestellen</h3>
+                <p>Entdecke die Macallan-Kollektion bei Amazon — versandkostenfrei mit Prime.</p>
+                <a href="#" class="cta-btn">Jetzt entdecken</a>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer>
+    <p>Ein Projekt von <a href="#">whisky.reise</a> — Whisky, Reisen & mehr.</p>
+    <p style="opacity: 0.5; margin-top: 8px;">* Affiliate-Links: Bei Käufen über gekennzeichnete Links erhalten wir eine kleine Provision.</p>
+</footer>
+</body>
+</html>

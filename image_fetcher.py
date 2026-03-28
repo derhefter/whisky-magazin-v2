@@ -13,113 +13,136 @@ Duplikat-Schutz: Einmal verwendete Unsplash-Photo-IDs werden
 """
 
 import re
-import requests
+import urllib.request
+import urllib.parse
+import json as _json
 from pathlib import Path
+
+# Kompatibilitäts-Shim: requests-ähnliche get()-Funktion via urllib
+class _FakeResponse:
+    def __init__(self, status_code, data):
+        self.status_code = status_code
+        self._data = data
+    def json(self):
+        return self._data
+
+class _Requests:
+    def get(self, url, params=None, headers=None, timeout=10):
+        if params:
+            url = url + '?' + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers=headers or {})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return _FakeResponse(resp.status, _json.loads(resp.read()))
+        except Exception:
+            return _FakeResponse(0, {})
+
+requests = _Requests()
 
 
 # ─────────────────────────────────────────────────────────────────
 # 1. Brand-spezifische Queries  →  was Unsplash wirklich findet
 # ─────────────────────────────────────────────────────────────────
 BRAND_QUERIES = {
-    # Islay
-    "lagavulin":     "lagavulin distillery islay",
-    "laphroaig":     "laphroaig distillery islay",
-    "ardbeg":        "ardbeg distillery islay",
-    "bowmore":       "bowmore distillery islay",
-    "bruichladdich": "bruichladdich distillery islay",
-    "bunnahabhain":  "bunnahabhain distillery islay",
-    "caol ila":      "caol ila distillery islay",
-    "kilchoman":     "kilchoman distillery islay",
-    # Speyside
-    "macallan":      "macallan scotch whisky",
-    "glenfiddich":   "glenfiddich whisky speyside",
-    "glenlivet":     "glenlivet whisky speyside valley",
-    "aberlour":      "aberlour speyside distillery",
-    "glenfarclas":   "speyside malt whisky distillery",
-    "balvenie":      "balvenie dufftown distillery",
-    "glen grant":    "glen grant speyside",
-    # Highlands
-    "glenmorangie":  "glenmorangie distillery highlands",
-    "dalmore":       "dalmore whisky highland",
-    "balblair":      "balblair highland distillery",
-    "edradour":      "edradour pitlochry distillery",
+    # Islay – Landschaften & Küsten, KEINE Flaschen
+    "lagavulin":     "lagavulin bay islay coast scotland",
+    "laphroaig":     "islay south coast rocky shore scotland",
+    "ardbeg":        "islay dramatic coastline atlantic waves",
+    "bowmore":       "bowmore village islay harbour scotland",
+    "bruichladdich": "islay west coast white buildings atlantic",
+    "bunnahabhain":  "islay north coast remote bay scotland",
+    "caol ila":      "islay sound view jura scotland coast",
+    "kilchoman":     "islay farm machir bay atlantic beach",
+    # Speyside – Flüsse, Täler, Natur
+    "macallan":      "speyside estate mansion river scotland",
+    "glenfiddich":   "dufftown speyside valley river scotland",
+    "glenlivet":     "glenlivet glen river valley green hills",
+    "aberlour":      "aberlour village speyside river autumn",
+    "glenfarclas":   "speyside ben rinnes mountain heather",
+    "balvenie":      "dufftown speyside castle ruins scotland",
+    "glen grant":    "speyside garden river peaceful landscape",
+    # Highlands – Berge, Glens, dramatische Natur
+    "glenmorangie":  "tain ross shire highland coast scotland",
+    "dalmore":       "cromarty firth highland scotland coast",
+    "balblair":      "dornoch firth highland landscape scotland",
+    "edradour":      "pitlochry highland autumn river scotland",
     # Skye & Inseln
-    "talisker":      "talisker distillery skye coast",
-    "tobermory":     "tobermory mull island",
-    "arran":         "arran island scotland distillery",
-    "isle of arran": "arran island scotland",
+    "talisker":      "isle of skye coast cliffs carbost bay",
+    "tobermory":     "tobermory colourful harbour mull scotland",
+    "arran":         "arran island goatfell mountain scotland",
+    "isle of arran": "arran island coast holy isle scotland",
     # Campbeltown
-    "springbank":    "springbank distillery campbeltown",
-    "glengyle":      "campbeltown kintyre scotland",
-    "glen scotia":   "campbeltown harbour scotland",
+    "springbank":    "campbeltown harbour kintyre coast",
+    "glengyle":      "kintyre peninsula coast campbeltown",
+    "glen scotia":   "campbeltown harbour fishing boats scotland",
     # Orkney / Nordost
-    "highland park": "highland park distillery orkney",
-    "scapa":         "scapa orkney distillery",
+    "highland park": "orkney kirkwall harbour cathedral scotland",
+    "scapa":         "scapa flow orkney coast dramatic sky",
     # Edinburgh / Glasgow
-    "holyrood":      "holyrood distillery edinburgh",
-    "auchentoshan":  "auchentoshan distillery glasgow",
-    "clydeside":     "clydeside distillery glasgow",
-    "glenkinchie":   "glenkinchie distillery lowlands",
+    "holyrood":      "edinburgh holyrood park arthurs seat",
+    "auchentoshan":  "glasgow riverside architecture scotland",
+    "clydeside":     "glasgow river clyde waterfront cityscape",
+    "glenkinchie":   "east lothian countryside rolling hills",
     # Oban
-    "oban":          "oban distillery harbour",
+    "oban":          "oban harbour bay boats scotland sunset",
     # Ben Nevis
-    "ben nevis":     "ben nevis fort william mountain",
+    "ben nevis":     "ben nevis mountain fort william snow",
     # Irland
-    "teeling":       "teeling distillery dublin",
-    "jameson":       "jameson distillery dublin ireland",
-    "bushmills":     "bushmills distillery antrim ireland",
-    "midleton":      "midleton distillery cork ireland",
-    "redbreast":     "ireland whiskey pot still",
-    # USA
-    "buffalo trace": "buffalo trace distillery kentucky",
-    "woodford":      "woodford reserve distillery kentucky",
-    "maker":         "makers mark distillery kentucky",
-    "jack daniel":   "jack daniels distillery tennessee",
-    "four roses":    "four roses distillery kentucky",
-    "wild turkey":   "wild turkey distillery kentucky",
+    "teeling":       "dublin liberties cobblestone streets",
+    "jameson":       "dublin architecture evening river liffey",
+    "bushmills":     "antrim coast giants causeway ireland",
+    "midleton":      "cork countryside green ireland river",
+    "redbreast":     "ireland countryside stone walls green",
+    # USA – Landschaft, keine Flaschen
+    "buffalo trace": "kentucky horse farm rolling green hills",
+    "woodford":      "kentucky bluegrass countryside stone fence",
+    "maker":         "kentucky red barn bourbon trail autumn",
+    "jack daniel":   "tennessee lynchburg countryside hills",
+    "four roses":    "kentucky bluegrass river countryside",
+    "wild turkey":   "kentucky river cliffs autumn foliage",
     # Japan
-    "nikka":         "nikka distillery japan",
-    "suntory":       "suntory yamazaki distillery japan",
-    "yamazaki":      "yamazaki distillery japan mountains",
-    "hakushu":       "hakushu distillery japan forest",
+    "nikka":         "hokkaido japan forest mountain stream",
+    "suntory":       "yamazaki japan bamboo forest mountain",
+    "yamazaki":      "japan mountains river valley autumn",
+    "hakushu":       "japan forest mountain stream minami alps",
 }
 
 # Wenn Unsplash für den Brand-Namen keine Treffer liefert,
 # wird diese generische (Unsplash-taugliche) Query probiert.
 BRAND_FALLBACK = {
-    "lagavulin":     "islay coast dramatic rocks scotland",
-    "laphroaig":     "islay coast sea spray rocks",
-    "ardbeg":        "islay coast whisky landscape",
-    "bowmore":       "islay village harbour boat",
-    "bruichladdich": "islay white building atlantic coast",
-    "bunnahabhain":  "islay north coast landscape",
-    "caol ila":      "islay sound ferry distillery",
-    "kilchoman":     "islay farm atlantic ocean",
-    "macallan":      "speyside single malt whisky amber glass",
-    "glenfiddich":   "speyside valley dufftown scotland river",
-    "glenlivet":     "speyside glen river valley green",
-    "aberlour":      "speyside river village autumn",
-    "talisker":      "isle of skye dramatic sea cliffs",
-    "arran":         "arran island sea scotland lighthouse",
-    "isle of arran": "arran island scotland loch",
-    "springbank":    "kintyre peninsula coast scotland sea",
-    "glengyle":      "campbeltown kintyre coast harbour",
-    "glen scotia":   "campbeltown scotland harbour sea",
-    "highland park": "orkney islands dramatic coast cliffs",
-    "scapa":         "orkney scotland green landscape sea",
-    "holyrood":      "edinburgh old town night lights",
-    "auchentoshan":  "glasgow cityscape river scotland",
-    "clydeside":     "glasgow river clyde waterfront night",
-    "oban":          "oban harbour boats scotland coast",
-    "ben nevis":     "glen nevis mountain scotland autumn",
-    "teeling":       "dublin ireland ha penny bridge night",
-    "jameson":       "dublin cobblestones pub ireland",
-    "bushmills":     "antrim coast ireland landscape",
-    "glenmorangie":  "ross shire highlands scotland coast",
-    "buffalo trace": "kentucky horse farm rolling hills",
-    "woodford":      "kentucky bluegrass hills autumn",
-    "maker":         "kentucky countryside bourbon trail",
-    "jack daniel":   "tennessee hills countryside",
+    "lagavulin":     "islay coast dramatic atlantic waves rocks",
+    "laphroaig":     "islay southern coast seashore landscape",
+    "ardbeg":        "islay rugged coast atlantic scotland",
+    "bowmore":       "islay loch indaal calm water evening",
+    "bruichladdich": "islay atlantic coast wild beach",
+    "bunnahabhain":  "islay northeast coast remote bay",
+    "caol ila":      "islay sound water crossing jura view",
+    "kilchoman":     "islay west beach atlantic sunset",
+    "macallan":      "speyside river spey landscape autumn",
+    "glenfiddich":   "dufftown village speyside autumn landscape",
+    "glenlivet":     "speyside glen river green valley hills",
+    "aberlour":      "speyside autumn river village scotland",
+    "talisker":      "skye dramatic coastline cuillin mountains",
+    "arran":         "arran scotland coast goatfell mountain",
+    "isle of arran": "arran island coast holy isle view",
+    "springbank":    "kintyre peninsula coast atlantic scotland",
+    "glengyle":      "campbeltown kintyre harbour fishing boats",
+    "glen scotia":   "campbeltown harbour boats kintyre coast",
+    "highland park": "orkney islands cliffs coast dramatic sky",
+    "scapa":         "orkney landscape green coast dramatic",
+    "holyrood":      "edinburgh old town calton hill view",
+    "auchentoshan":  "glasgow architecture kelvingrove park",
+    "clydeside":     "glasgow river clyde architecture evening",
+    "oban":          "oban bay boats scotland evening coast",
+    "ben nevis":     "glen nevis river mountain autumn colour",
+    "teeling":       "dublin bridges river liffey evening",
+    "jameson":       "dublin temple bar cobblestones evening",
+    "bushmills":     "antrim coast cliffs ireland dramatic",
+    "glenmorangie":  "tain highlands coast ross shire landscape",
+    "buffalo trace": "kentucky rolling green hills horse farm",
+    "woodford":      "kentucky autumn trees stone wall countryside",
+    "maker":         "kentucky red countryside rolling hills",
+    "jack daniel":   "tennessee rolling hills countryside green",
 }
 
 
@@ -163,47 +186,61 @@ TOPIC_QUERIES = {
     "hirsche":        "red deer stag highland scotland autumn",
     "adler":          "golden eagle scotland sky dramatic",
     "robben":         "grey seals scotland coast rocks",
-    "cocktail":       "whisky cocktail crystal glass amber",
-    "tasting":        "whisky tasting row glasses amber",
-    "käse":           "cheese board rustic wood wine",
-    "pairing":        "whisky food pairing table evening",
-    "bar":            "whisky bar dark oak interior moody",
+    "cocktail":       "cocktail bar evening warm atmosphere",
+    "tasting":        "whisky tasting flight glasses amber dark",
+    "tasting notes":  "whisky glass amber dram closeup wood",
+    "verkostung":     "whisky glass amber dram closeup",
+    "hype":           "whisky bottle glass elegant amber dark",
+    "review":         "whisky glass closeup amber dram bokeh",
+    "bewertung":      "whisky glass pouring amber dram dark",
+    "flasche":        "whisky bottle elegant dark amber glass",
+    "bottle":         "single malt whisky bottle glass amber",
+    "käse":           "cheese board rustic wooden table artisan",
+    "pairing":        "food tasting table evening candlelight",
+    "bar":            "cozy pub interior warm evening scotland",
     "wohnmobil":      "campervan scotland highland road trip",
     "mietwagen":      "road trip scotland single track highland",
     "fähre":          "ferry scotland sea island crossing",
     "faehre":         "ferry scotland sea crossing waves",
     "wandern":        "hiking scotland highland trail misty",
     "strand":         "white sand beach scotland hebrides",
-    "winter":         "scotland winter snow glen frost",
+    "winter":         "scotland winter snow glen frost mountains",
     "weihnacht":      "christmas market winter lights festive",
     "frühling":       "spring heather scotland hills blossom",
     "herbst":         "autumn trees scotland loch reflection",
     "luxus":          "scottish castle luxury loch reflection",
-    "schloss":        "castle scotland historic loch",
+    "schloss":        "castle scotland historic loch evening",
     "familie":        "scotland loch family landscape castle",
-    "halloween":      "edinburgh halloween ghost tour",
-    "destillerie":    "whisky distillery copper pot still",
-    "distillery":     "whisky distillery copper still interior",
-    "single malt":    "single malt scotch amber glass backlit",
-    "bourbon":        "bourbon barrel warehouse rick house",
-    "torfrauch":      "peat fire scotland smoky whisky",
-    "torf":           "peat cutting scotland islay",
-    "geschichte":     "whisky distillery historic stone scotland",
-    "marathon":       "speyside distillery trail landscape",
-    "tour":           "scotland whisky landscape driving tour",
-    "trail":          "scotland whisky trail landscape path",
+    "halloween":      "edinburgh night gothic architecture",
+    "destillerie":    "distillery copper pot still interior",
+    "distillery":     "distillery interior copper pot still",
+    "single malt":    "scotland landscape glen river atmospheric",
+    "bourbon":        "bourbon barrel rickhouse warehouse wood",
+    "torfrauch":      "peat bog scotland landscape islay",
+    "torf":           "peat cutting scotland islay landscape",
+    "geschichte":     "historic stone building scotland landscape",
+    "marathon":       "speyside landscape river trail scotland",
+    "tour":           "scotland driving landscape road highland",
+    "trail":          "scotland landscape path trail highland",
 }
 
 # ─────────────────────────────────────────────────────────────────
 # 4. Kategorie-Fallback (letzter Ausweg)
 # ─────────────────────────────────────────────────────────────────
 CATEGORY_FALLBACK = {
-    "whisky":    "scotch whisky amber glass barrel aged",
+    "whisky":    "whisky glass amber dram dark elegant",
     "reise":     "scotland landscape road highlands misty",
     "natur":     "scotland wilderness nature mountains loch",
-    "lifestyle": "whisky glass lifestyle evening moody",
+    "lifestyle": "cozy evening interior warm atmosphere table",
     "urlaub":    "scotland loch castle landscape reflection",
 }
+
+# Titel-Keywords die auf einen Tasting/Flasche-Artikel hinweisen
+TASTING_KEYWORDS = [
+    "hype", "gerechtfertigt", "review", "bewertung", "tasting", "verkostung",
+    "flasche", "bottle", "trinken", "dram", "notes", "aroma", "finish",
+    "ist es gut", "lohnt", "wert", "empfehlung", "guide", "einsteiger"
+]
 
 
 def find_image_queries(article):
@@ -217,9 +254,18 @@ def find_image_queries(article):
 
     queries = []
 
-    # 1. Brand → Brand-Fallback
+    # Erkennung: Ist das ein Tasting/Bewertungs-Artikel (nicht Reise)?
+    is_tasting_article = any(kw in all_text for kw in TASTING_KEYWORDS)
+    article_type = article.get("type", "")
+    is_travel = article_type in ("reisebericht", "reise") or "reise" in article.get("category", "").lower()
+
+    # 1. Brand → für Reise-Artikel: Landschaft | für Tasting-Artikel: Glas/Flasche
     for brand, query in BRAND_QUERIES.items():
         if brand in all_text:
+            if is_tasting_article and not is_travel:
+                # Glas/Tasting-Bild mit Brand-Region als Kontext
+                queries.append(f"whisky glass amber dram dark elegant closeup")
+                queries.append(f"single malt whisky bottle glass bokeh")
             queries.append(query)
             if brand in BRAND_FALLBACK:
                 queries.append(BRAND_FALLBACK[brand])

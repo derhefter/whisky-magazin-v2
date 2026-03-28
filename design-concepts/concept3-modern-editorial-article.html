@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macallan: Ist der Hype gerechtfertigt? – Whisky Magazin</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --bg-primary: #ffffff;
+    --black: #111111;
+    --whisky-accent: #c17817;
+    --whisky-accent-bg: #fdf5eb;
+    --text-secondary: #666666;
+    --border: #e0e0e0;
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
+}
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--black);
+    font-size: 16px; line-height: 1.7;
+}
+a { color: var(--black); text-decoration: none; }
+a:hover { color: var(--whisky-accent); }
+
+/* Header */
+header {
+    border-bottom: 2px solid var(--black);
+    padding: 20px 40px;
+}
+.header-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.3em; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+}
+.logo .dot { color: var(--whisky-accent); }
+nav a {
+    margin-left: 28px;
+    font-family: var(--font-heading);
+    font-size: 0.75em; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-secondary);
+}
+nav a:hover { color: var(--black); }
+
+/* Breadcrumb */
+.breadcrumb {
+    max-width: 680px; margin: 0 auto;
+    padding: 20px 40px 0;
+    font-family: var(--font-heading);
+    font-size: 0.72em; color: var(--text-secondary);
+    letter-spacing: 1px; text-transform: uppercase;
+}
+.breadcrumb a { color: var(--text-secondary); }
+.breadcrumb a:hover { color: var(--black); }
+.breadcrumb .sep { margin: 0 8px; }
+
+/* Article Header */
+.article-header {
+    max-width: 680px; margin: 0 auto;
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid var(--border);
+}
+.article-category {
+    font-family: var(--font-heading);
+    font-size: 0.72em; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--whisky-accent);
+    margin-bottom: 16px; display: block;
+}
+.article-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3em; font-weight: 700;
+    line-height: 1.05; letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+.article-header .meta {
+    font-family: var(--font-heading);
+    font-size: 0.8em; color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+.article-header .meta .author { color: var(--black); font-weight: 600; }
+
+/* Hero Image */
+.article-hero {
+    max-width: 680px; margin: 0 auto;
+    padding: 40px 40px 0;
+}
+.article-hero-image {
+    width: 100%; height: 380px;
+    background: linear-gradient(135deg, #e8e0d4, #d4c8b8 40%, #c0b4a4 70%, #e8e0d4);
+    border: 2px solid var(--black);
+}
+
+/* Article Body */
+.article-body {
+    max-width: 680px; margin: 0 auto;
+    padding: 40px 40px 60px;
+}
+.article-body p {
+    margin-bottom: 20px;
+    font-size: 1.05em; font-weight: 300;
+    line-height: 1.8;
+}
+.article-body h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6em; font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 48px; margin-bottom: 20px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+}
+.article-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15em; font-weight: 600;
+    margin-top: 32px; margin-bottom: 14px;
+}
+
+/* Blockquote */
+.article-body blockquote {
+    margin: 40px 0;
+    padding: 28px 0;
+    border-top: 1px solid var(--whisky-accent);
+    border-bottom: 1px solid var(--whisky-accent);
+    font-size: 1.4em; font-weight: 300;
+    font-style: italic;
+    color: var(--whisky-accent);
+    line-height: 1.5;
+}
+
+/* Empfehlung Box */
+.empfehlung-box {
+    margin: 40px 0;
+    padding: 28px 32px;
+    border: 2px solid var(--black);
+}
+.empfehlung-box h3 {
+    font-family: var(--font-heading);
+    font-size: 0.8em; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin: 0 0 12px;
+    padding: 0;
+    border: none;
+}
+.empfehlung-box p {
+    font-size: 0.95em; margin-bottom: 14px;
+}
+.empfehlung-box .price {
+    font-family: var(--font-heading);
+    font-size: 1.3em; font-weight: 700;
+    color: var(--whisky-accent);
+    margin-bottom: 14px;
+}
+.empfehlung-btn {
+    display: inline-block;
+    background: var(--whisky-accent);
+    color: #fff !important;
+    padding: 10px 28px;
+    font-family: var(--font-heading);
+    font-weight: 600; font-size: 0.78em;
+    letter-spacing: 2px; text-transform: uppercase;
+    transition: background 0.2s;
+}
+.empfehlung-btn:hover { background: #d48a20; }
+
+/* Share */
+.share-bar {
+    max-width: 680px; margin: 0 auto;
+    padding: 0 40px 40px;
+    display: flex; align-items: center; gap: 16px;
+    border-bottom: 2px solid var(--black);
+}
+.share-bar span {
+    font-family: var(--font-heading);
+    font-size: 0.72em; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+}
+.share-btn {
+    font-family: var(--font-heading);
+    font-size: 0.75em; font-weight: 500;
+    padding: 6px 16px;
+    border: 1px solid var(--black);
+    color: var(--black);
+    transition: all 0.2s;
+}
+.share-btn:hover { background: var(--black); color: #fff; }
+
+/* Related Articles */
+.related {
+    max-width: 1100px; margin: 0 auto;
+    padding: 60px 40px;
+}
+.related h2 {
+    font-family: var(--font-heading);
+    font-size: 0.8em; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 0;
+}
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+}
+.related-item {
+    padding: 24px 24px 24px 0;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+.related-item:nth-child(3n) { border-right: none; }
+.related-category {
+    font-family: var(--font-heading);
+    font-size: 0.65em; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--whisky-accent);
+    margin-bottom: 6px; display: block;
+}
+.related-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1em; font-weight: 600;
+    line-height: 1.3; margin-bottom: 6px;
+}
+.related-item h3 a { color: var(--black); }
+.related-item h3 a:hover { color: var(--whisky-accent); }
+.related-meta {
+    font-size: 0.78em; color: var(--text-secondary);
+    font-family: var(--font-heading);
+}
+
+/* Footer */
+footer {
+    border-top: 2px solid var(--black);
+    text-align: center; padding: 40px;
+    font-size: 0.82em;
+    color: var(--text-secondary);
+}
+footer a { color: var(--whisky-accent); }
+footer .note { opacity: 0.5; margin-top: 8px; }
+</style>
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <div class="logo">WHISKY<span class="dot">.</span>MAGAZIN</div>
+        <nav>
+            <a href="#">Start</a>
+            <a href="#">Whisky</a>
+            <a href="#">Reise</a>
+            <a href="#">Karte</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">whisky.reise</a>
+        </nav>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <a href="#">Start</a><span class="sep">/</span>
+    <a href="#">Whisky</a><span class="sep">/</span>
+    Macallan
+</div>
+
+<div class="article-header">
+    <span class="article-category">Whisky</span>
+    <h1>Macallan: Ist der Hype gerechtfertigt?</h1>
+    <div class="meta">Von <span class="author">Steffen</span> · 18. März 2026 · 12 Min. Lesezeit</div>
+</div>
+
+<div class="article-hero">
+    <div class="article-hero-image"></div>
+</div>
+
+<div class="article-body">
+    <p>The Macallan ist eine Legende. Kaum eine Destillerie polarisiert so sehr wie diese Speyside-Ikone. Für die einen ist Macallan der Inbegriff von Premium-Whisky — für andere ein überbewertetes Marketingprodukt. Zeit, genauer hinzuschauen.</p>
+
+    <p>Die Geschichte beginnt 1824, als Alexander Reid eine der ersten lizenzierten Destillerien Schottlands gründete. Easter Elchies House, das Herrenhaus auf dem Gelände, wurde zum Markenzeichen. Heute residiert Macallan in einem architektonischen Meisterwerk — einem wellenförmigen Gebäude, das sich in die Hügellandschaft der Speyside einfügt.</p>
+
+    <h2>Die Sherry-Fass-Philosophie</h2>
+
+    <p>Macallans Kernversprechen dreht sich um Sherry-Fässer. Die Destillerie unterhält Verträge mit Bodegas in Jerez, Spanien, und lässt dort eigene Fässer mit Oloroso- und Pedro-Ximénez-Sherry befüllen — ausschließlich für die spätere Whisky-Reifung. Diese „Sherry-Seasoned Oak Casks" kosten ein Vielfaches normaler Bourbon-Fässer.</p>
+
+    <blockquote>„Macallan hat verstanden, dass Whisky-Marketing mindestens so wichtig ist wie der Inhalt der Flasche. Ob das gut oder schlecht ist, hängt davon ab, wen man fragt."</blockquote>
+
+    <p>Das Ergebnis? Ein charakteristischer Stil: reichhaltig, fruchtig, mit Noten von Trockenfrüchten, Gewürzen und dunkler Schokolade. Die sogenannte „Natural Colour"-Serie verzichtet auf Farbstoff — ein Qualitätsmerkmal, das in der Branche selten ist.</p>
+
+    <h2>Die Preisfrage</h2>
+
+    <p>Und hier wird es kontrovers. Ein Macallan 12 Sherry Oak kostet heute deutlich mehr als vergleichbare 12-jährige Speyside-Malts. Die limitierten Editionen — Macallan in Lalique, Macallan M, The Reach — bewegen sich im fünf- bis sechsstelligen Bereich. Bei Auktionen erzielen seltene Abfüllungen Rekordpreise.</p>
+
+    <h3>Was man für das Geld bekommt</h3>
+
+    <p>Objektiv betrachtet: Macallan 12 Sherry Oak ist ein sehr guter Whisky. Komplex, ausgewogen, zugänglich. Aber ist er dreimal so gut wie ein GlenDronach 12 oder Aberlour 12? Die meisten Experten würden sagen: Nein. Der Aufpreis geht zu einem erheblichen Teil an die Marke, nicht an den Inhalt.</p>
+
+    <div class="empfehlung-box">
+        <h3>Unsere Empfehlung</h3>
+        <p>Wer Macallan probieren möchte, ohne das volle Premium zu zahlen: Der <strong>Macallan Double Cask 12 Years</strong> bietet den typischen Macallan-Charakter zu einem faireren Preis.</p>
+        <div class="price">Ab ca. 58 €</div>
+        <a href="#" class="empfehlung-btn">Bei Amazon ansehen *</a>
+    </div>
+
+    <h2>Fazit</h2>
+
+    <p>Macallan macht hervorragenden Whisky. Das steht außer Frage. Aber der Hype — die Sammlerstücke, die Auktionspreise, die Instagram-Inszenierung — hat einen Punkt erreicht, an dem die Marke mehr wiegt als das Produkt. Für Einsteiger ist Macallan ein guter Türöffner in die Welt der Sherry-gereiften Whiskys. Für erfahrene Trinker gibt es oft bessere Preis-Leistungs-Verhältnisse.</p>
+
+    <p>Unser Rat: Probiert den Whisky, nicht das Label. Und wenn euch Macallan schmeckt — dann ist er jeden Cent wert.</p>
+</div>
+
+<div class="share-bar">
+    <span>Teilen</span>
+    <a href="#" class="share-btn">Twitter</a>
+    <a href="#" class="share-btn">Facebook</a>
+    <a href="#" class="share-btn">WhatsApp</a>
+    <a href="#" class="share-btn">E-Mail</a>
+</div>
+
+<div class="related">
+    <h2>Weitere Artikel</h2>
+    <div class="related-grid">
+        <div class="related-item">
+            <span class="related-category">Reise</span>
+            <h3><a href="#">Die besten Whisky-Destillerien auf Islay</a></h3>
+            <div class="related-meta">22. Februar 2026 · 15 Min.</div>
+        </div>
+        <div class="related-item">
+            <span class="related-category">Lifestyle</span>
+            <h3><a href="#">Whisky-Tasting für Einsteiger: Der komplette Guide</a></h3>
+            <div class="related-meta">22. Februar 2026 · 10 Min.</div>
+        </div>
+        <div class="related-item">
+            <span class="related-category">Reise</span>
+            <h3><a href="#">Schottland im Winter: Lohnt sich eine Reise?</a></h3>
+            <div class="related-meta">19. März 2026 · 9 Min.</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Ein Projekt von <a href="#">whisky.reise</a> — Whisky, Reisen & mehr.</p>
+    <p class="note">* Affiliate-Links: Bei Käufen über gekennzeichnete Links erhalten wir eine kleine Provision.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter-Vorschau — Whisky Magazin</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FFFFFF;
+      --bg-surface: #F2F4F6;
+      --text-primary: #1B2332;
+      --text-secondary: #5C6B7A;
+      --accent-amber: #D4943A;
+      --accent-teal: #3D7A8A;
+      --accent-muted: #94A3B0;
+      --border: #E4E8EC;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-surface);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── PREVIEW BAR ─── */
+    .preview-bar {
+      background: var(--text-primary);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .preview-bar strong {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+
+    /* ─── EMAIL WRAPPER ─── */
+    .email-wrapper {
+      max-width: 640px;
+      margin: 40px auto;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ─── EMAIL HEADER ─── */
+    .email-header {
+      padding: 36px 48px 28px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent-teal);
+    }
+
+    .email-logo {
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    .email-logo-whisky {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: var(--text-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .email-logo-dot {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: var(--accent-teal);
+    }
+
+    .email-logo-magazin {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--text-primary);
+      letter-spacing: 1px;
+    }
+
+    .email-date {
+      font-size: 12px;
+      color: var(--accent-muted);
+      margin-top: 8px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── EMAIL BODY ─── */
+    .email-body {
+      padding: 0 48px;
+    }
+
+    /* ─── GREETING ─── */
+    .email-greeting {
+      padding: 40px 0 0;
+    }
+
+    .email-greeting h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    /* ─── EDITOR'S NOTE ─── */
+    .editors-note {
+      padding: 24px 0 36px;
+    }
+
+    .editors-note p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .editors-note p + p {
+      margin-top: 16px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ─── FEATURED ARTICLE ─── */
+    .featured-article {
+      padding: 36px 0;
+    }
+
+    .featured-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 16px;
+    }
+
+    .featured-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(145deg, #7A90A0 0%, #5A7080 30%, #4A5E6C 60%, #3A4E5C 100%);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .featured-img::after {
+      content: 'TITELSTORY';
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #fff;
+      background: rgba(27,35,50,0.6);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .featured-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .featured-teaser {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .btn-amber {
+      display: inline-block;
+      background: var(--accent-amber);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-amber:hover {
+      background: #c0852f;
+    }
+
+    /* ─── WHISKY DES MONATS ─── */
+    .wotm-email {
+      padding: 36px 0;
+    }
+
+    .wotm-email-card {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .wotm-email-img {
+      width: 180px;
+      flex-shrink: 0;
+      align-self: stretch;
+      background: linear-gradient(160deg, #B8C6CE 0%, #8AA0AC 40%, #607A86 100%);
+    }
+
+    .wotm-email-content {
+      padding: 24px 24px 24px 0;
+      flex: 1;
+    }
+
+    .wotm-email-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 8px;
+    }
+
+    .wotm-email-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .wotm-email-tasting {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .wotm-email-price {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--accent-amber);
+      margin-bottom: 14px;
+    }
+
+    .btn-outline-sm {
+      display: inline-block;
+      border: 1px solid var(--text-primary);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-outline-sm:hover {
+      background: var(--text-primary);
+      color: #fff;
+    }
+
+    /* ─── MORE STORIES ─── */
+    .more-stories {
+      padding: 36px 0;
+    }
+
+    .more-stories-list {
+      list-style: none;
+    }
+
+    .more-stories-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .more-stories-item:last-child {
+      border-bottom: none;
+    }
+
+    .story-bullet {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      background: rgba(61,122,138,0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .story-text {
+      flex: 1;
+    }
+
+    .story-text-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .story-text-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* ─── REISE-TIPP ─── */
+    .reise-tipp {
+      padding: 36px 0;
+    }
+
+    .reise-tipp-box {
+      background: var(--accent-teal);
+      border-radius: 8px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .reise-tipp-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .reise-tipp-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--accent-teal);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-white:hover {
+      background: var(--bg-surface);
+    }
+
+    /* ─── EMAIL FOOTER ─── */
+    .email-footer {
+      background: var(--text-primary);
+      padding: 36px 48px;
+      text-align: center;
+    }
+
+    .email-footer-signoff {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 4px;
+    }
+
+    .email-footer-name {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .email-footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 0 0 24px;
+    }
+
+    .email-footer-links {
+      margin-bottom: 16px;
+    }
+
+    .email-footer-links a {
+      font-size: 12px;
+      color: var(--accent-amber);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .email-footer-links a:hover {
+      color: #e8a84c;
+    }
+
+    .email-footer-disclaimer {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ─── BOTTOM PAGE NOTE ─── */
+    .page-note {
+      text-align: center;
+      padding: 32px 20px 48px;
+      font-size: 12px;
+      color: var(--accent-muted);
+      font-weight: 300;
+    }
+
+    .page-note a {
+      color: var(--accent-teal);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ PREVIEW BAR ═══ -->
+  <div class="preview-bar">
+    <strong>Newsletter-Vorschau</strong> &mdash; Ausgabe März 2026 &middot; Salt &amp; Stone Design
+  </div>
+
+  <!-- ═══ EMAIL WRAPPER ═══ -->
+  <div class="email-wrapper">
+
+    <!-- EMAIL HEADER -->
+    <div class="email-header">
+      <div class="email-logo">
+        <span class="email-logo-whisky">WHISKY</span><span class="email-logo-dot">.</span><span class="email-logo-magazin">MAGAZIN</span>
+      </div>
+      <div class="email-date">Schottland-Post &middot; März 2026</div>
+    </div>
+
+    <div class="email-body">
+
+      <!-- GREETING -->
+      <div class="email-greeting">
+        <h2>Moin zusammen,</h2>
+      </div>
+
+      <!-- EDITOR'S NOTE -->
+      <div class="editors-note">
+        <p>Die Küste von Islay im März — rau, leer, perfekt. Letzte Woche stand ich morgens um sieben am Strand von Machir Bay, allein mit dem Wind und dem Geruch von Torf und Salz. Kein Tourist, kein Guide, nur das Meer und die Gewissheit, dass irgendwo hinter den Dünen bei Kilchoman gerade frischer Spirit in die Fässer fließt.</p>
+        <p>In dieser Ausgabe nehmen wir euch mit auf eine Reise durch die Speyside, stellen den Whisky des Monats vor und haben drei Geschichten, die zeigen, warum Schottland auch im dritten Jahrzehnt des 21. Jahrhunderts das Maß aller Dinge bleibt, wenn es um Single Malt geht.</p>
+        <p>Aber zuerst: eine Geschichte über eine der umstrittensten Destillerien Schottlands.</p>
+      </div>
+
+      <hr class="divider">
+
+      <!-- FEATURED ARTICLE -->
+      <div class="featured-article">
+        <div class="featured-label">TITELSTORY</div>
+        <div class="featured-img"></div>
+        <h3 class="featured-title">Macallan: Ist der Hype gerechtfertigt?</h3>
+        <p class="featured-teaser">Zwischen astronomischen Auktionspreisen und dem neuen, 140 Millionen Pfund teuren Besucherzentrum stellt sich die Frage: Geht es hier noch um Whisky — oder längst nur noch um die Marke? Ein Besuch vor Ort, ein ehrliches Tasting und eine differenzierte Antwort.</p>
+        <a href="#" class="btn-amber">Weiterlesen</a>
+      </div>
+
+      <hr class="divider">
+
+      <!-- WHISKY DES MONATS -->
+      <div class="wotm-email">
+        <div class="featured-label">WHISKY DES MONATS</div>
+        <div class="wotm-email-card">
+          <div class="wotm-email-img"></div>
+          <div class="wotm-email-content">
+            <div class="wotm-email-name">Talisker 10 Years</div>
+            <p class="wotm-email-tasting">Rauch, Meersalz, schwarzer Pfeffer — das Meer in einem Glas. Kräftig und maritim, mit einer überraschend süßen Honignote im Abgang.</p>
+            <div class="wotm-email-price">Ab ca. 32 &euro;</div>
+            <a href="#" class="btn-outline-sm">Zum Profil</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- MORE STORIES -->
+      <div class="more-stories">
+        <div class="featured-label">WEITERE GESCHICHTEN</div>
+        <ul class="more-stories-list">
+          <li class="more-stories-item">
+            <span class="story-bullet">REISE</span>
+            <div class="story-text">
+              <div class="story-text-title">Edinburgh im Winter: Whisky-Bars, die sich lohnen</div>
+              <div class="story-text-desc">Neun Bars abseits der Royal Mile, die Edinburghs Whisky-Szene wirklich ausmachen.</div>
+            </div>
+          </li>
+          <li class="more-stories-item">
+            <span class="story-bullet">TASTING</span>
+            <div class="story-text">
+              <div class="story-text-title">Blind Tasting: Fünf Sherryfass-Whiskys unter 50 Euro</div>
+              <div class="story-text-desc">Wir haben probiert, bewertet und waren selbst überrascht vom Ergebnis.</div>
+            </div>
+          </li>
+          <li class="more-stories-item">
+            <span class="story-bullet">WISSEN</span>
+            <div class="story-text">
+              <div class="story-text-title">Campbeltown: Schottlands vergessene Whisky-Hauptstadt</div>
+              <div class="story-text-desc">Einst 30 Destillerien, heute drei — und ein Comeback, das sich gewaschen hat.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="divider">
+
+      <!-- REISE-TIPP -->
+      <div class="reise-tipp">
+        <div class="reise-tipp-box">
+          <div class="reise-tipp-headline">Planst du eine Schottland-Reise?</div>
+          <p class="reise-tipp-text">Unsere Reiseguides kombinieren Destillerie-Besuche mit den besten Unterkünften, Restaurants und Routen — von Islay bis Orkney.</p>
+          <a href="#" class="btn-white">Reiseplanung entdecken</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EMAIL FOOTER -->
+    <div class="email-footer">
+      <div class="email-footer-signoff">Bis zum nächsten Dram,</div>
+      <div class="email-footer-name">Steffen &amp; das Whisky Magazin Team</div>
+
+      <hr class="email-footer-divider">
+
+      <div class="email-footer-links">
+        <a href="#">Im Browser ansehen</a>
+        <a href="#">Einstellungen</a>
+        <a href="#">Abbestellen</a>
+      </div>
+
+      <p class="email-footer-disclaimer">Du erhältst diese E-Mail, weil du dich für den Newsletter des Whisky Magazins angemeldet hast. Whisky Magazin, Hamburg, Deutschland. &copy; 2026</p>
+    </div>
+
+  </div>
+
+  <!-- PAGE NOTE -->
+  <div class="page-note">
+    Dies ist eine Vorschau des Newsletters im Browser. <a href="#">Zurück zur Startseite</a>
+  </div>
+
+</body>
+</html>

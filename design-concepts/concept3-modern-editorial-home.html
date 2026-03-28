@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisky Magazin – Modern Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --bg-primary: #ffffff;
+    --black: #111111;
+    --whisky-accent: #c17817;
+    --whisky-accent-bg: #fdf5eb;
+    --text-secondary: #666666;
+    --border: #e0e0e0;
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
+}
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--black);
+    font-size: 16px; line-height: 1.7;
+}
+a { color: var(--black); text-decoration: none; }
+a:hover { color: var(--whisky-accent); }
+
+/* Header */
+header {
+    border-bottom: 2px solid var(--black);
+    padding: 20px 40px;
+}
+.header-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.3em; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+}
+.logo .dot { color: var(--whisky-accent); }
+nav a {
+    margin-left: 28px;
+    font-family: var(--font-heading);
+    font-size: 0.75em; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-secondary);
+}
+nav a:hover { color: var(--black); }
+
+/* Hero */
+.hero {
+    padding: 100px 40px 80px;
+    max-width: 1100px; margin: 0 auto;
+    border-bottom: 2px solid var(--black);
+}
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5em; font-weight: 700;
+    line-height: 1.0; letter-spacing: -2px;
+    max-width: 750px;
+}
+.hero h1 .accent { color: var(--whisky-accent); }
+.hero-sub {
+    font-family: var(--font-body);
+    font-size: 1.15em; font-weight: 300;
+    color: var(--text-secondary);
+    max-width: 500px; margin-top: 28px;
+    line-height: 1.6;
+}
+.hero-meta {
+    font-family: var(--font-heading);
+    font-size: 0.75em; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--whisky-accent);
+    margin-top: 32px;
+}
+
+/* Content */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+/* Article Row */
+.article-row {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+}
+.article-row:last-child { border-bottom: 2px solid var(--black); }
+.article-text {}
+.article-category {
+    font-family: var(--font-heading);
+    font-size: 0.7em; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--whisky-accent);
+    margin-bottom: 10px; display: block;
+}
+.article-text h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6em; font-weight: 700;
+    line-height: 1.2; letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+.article-text h2 a { color: var(--black); }
+.article-text h2 a:hover { color: var(--whisky-accent); }
+.article-meta {
+    font-family: var(--font-heading);
+    font-size: 0.78em; color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+.article-teaser {
+    font-size: 0.95em; font-weight: 300;
+    color: var(--text-secondary); line-height: 1.7;
+}
+.article-link {
+    display: inline-block; margin-top: 14px;
+    font-family: var(--font-heading);
+    font-size: 0.8em; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 2px solid var(--whisky-accent);
+    padding-bottom: 2px;
+}
+.article-link:hover { color: var(--whisky-accent); }
+.article-image {
+    height: 220px;
+    background: linear-gradient(135deg, #e8e0d4, #d4c8b8 50%, #c8bcac);
+    position: relative;
+}
+.article-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 2px solid var(--black);
+}
+
+/* Sidebar Section */
+.bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+}
+.bottom-box {}
+.bottom-box h3 {
+    font-family: var(--font-heading);
+    font-size: 0.8em; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 16px;
+}
+.bottom-box ul { list-style: none; }
+.bottom-box li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+}
+.bottom-box li a {
+    font-family: var(--font-body);
+    font-size: 0.9em; font-weight: 300;
+    color: var(--black);
+}
+.bottom-box li a:hover { color: var(--whisky-accent); }
+
+/* CTA */
+.cta-box {
+    background: var(--black);
+    padding: 32px;
+    text-align: center;
+}
+.cta-box h3 {
+    color: #fff; border: none; padding: 0;
+    margin-bottom: 10px; font-size: 0.9em;
+    letter-spacing: 1px;
+}
+.cta-box p {
+    font-size: 0.88em; color: #999;
+    margin-bottom: 18px; font-weight: 300;
+    font-style: italic;
+}
+.cta-btn {
+    display: inline-block;
+    background: var(--whisky-accent);
+    color: #fff !important; padding: 10px 32px;
+    font-family: var(--font-heading);
+    font-weight: 600; font-size: 0.78em;
+    letter-spacing: 2px; text-transform: uppercase;
+    transition: background 0.2s;
+}
+.cta-btn:hover { background: #d48a20; }
+
+/* Tags */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+    font-family: var(--font-heading);
+    font-size: 0.72em; font-weight: 500;
+    padding: 6px 16px;
+    border: 1px solid var(--black);
+    color: var(--black);
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+.tag:hover {
+    background: var(--black); color: #fff;
+}
+
+/* Footer */
+footer {
+    border-top: 2px solid var(--black);
+    text-align: center; padding: 40px;
+    margin-top: 0; font-size: 0.82em;
+    color: var(--text-secondary);
+}
+footer a { color: var(--whisky-accent); }
+footer .note { opacity: 0.5; margin-top: 8px; }
+</style>
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <div class="logo">WHISKY<span class="dot">.</span>MAGAZIN</div>
+        <nav>
+            <a href="#">Start</a>
+            <a href="#">Whisky</a>
+            <a href="#">Reise</a>
+            <a href="#">Karte</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">whisky.reise</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="hero">
+        <div class="hero-meta">Seit 2007 — 88 Destillerien</div>
+        <h1>Whisky<span class="accent">,</span> Reisen &amp; Abenteuer</h1>
+        <p class="hero-sub">18 Jahre Schottland-Erfahrung und Geschichten, die nach Torf und Meersalz schmecken.</p>
+    </div>
+
+    <div class="article-row">
+        <div class="article-text">
+            <span class="article-category">Whisky</span>
+            <h2><a href="#">Macallan: Ist der Hype gerechtfertigt?</a></h2>
+            <div class="article-meta">18. März 2026 · 12 Min. Lesezeit</div>
+            <p class="article-teaser">The Macallan gehört zu den teuersten Single Malts der Welt. Aber ist der Whisky wirklich so gut, oder bezahlt man nur für den Namen?</p>
+            <a href="#" class="article-link">Weiterlesen</a>
+        </div>
+        <div class="article-image"></div>
+    </div>
+
+    <div class="article-row">
+        <div class="article-text">
+            <span class="article-category">Reise</span>
+            <h2><a href="#">Die besten Whisky-Destillerien auf Islay</a></h2>
+            <div class="article-meta">22. Februar 2026 · 15 Min. Lesezeit</div>
+            <p class="article-teaser">Islay ist das Mekka für Torfliebhaber. Lagavulin, Ardbeg, Laphroaig — und einige versteckte Perlen, die kaum jemand kennt.</p>
+            <a href="#" class="article-link">Weiterlesen</a>
+        </div>
+        <div class="article-image" style="background: linear-gradient(135deg, #d4d8dc, #b8c0c8 50%, #a0a8b0);"></div>
+    </div>
+
+    <div class="article-row">
+        <div class="article-text">
+            <span class="article-category">Lifestyle</span>
+            <h2><a href="#">Whisky-Tasting für Einsteiger: Der komplette Guide</a></h2>
+            <div class="article-meta">22. Februar 2026 · 10 Min. Lesezeit</div>
+            <p class="article-teaser">Nosing, Tasting, die richtige Glasform und warum ein Tropfen Wasser den Unterschied macht.</p>
+            <a href="#" class="article-link">Weiterlesen</a>
+        </div>
+        <div class="article-image" style="background: linear-gradient(135deg, #e0d8cc, #c8c0b4 50%, #b0a898);"></div>
+    </div>
+
+    <div class="article-row">
+        <div class="article-text">
+            <span class="article-category">Reise</span>
+            <h2><a href="#">Schottland im Winter: Lohnt sich eine Reise?</a></h2>
+            <div class="article-meta">19. März 2026 · 9 Min. Lesezeit</div>
+            <p class="article-teaser">Kurze Tage, leere Destillerien, magische Stimmung. Warum der schottische Winter ein Geheimtipp ist.</p>
+            <a href="#" class="article-link">Weiterlesen</a>
+        </div>
+        <div class="article-image" style="background: linear-gradient(135deg, #c8d0c8, #b0b8b0 50%, #98a098);"></div>
+    </div>
+
+    <div class="bottom-section">
+        <div class="bottom-box">
+            <h3>Kategorien</h3>
+            <ul>
+                <li><a href="#">Whisky</a></li>
+                <li><a href="#">Reise</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Natur</a></li>
+                <li><a href="#">Urlaub</a></li>
+            </ul>
+        </div>
+
+        <div class="bottom-box">
+            <h3>Reise planen</h3>
+            <div class="cta-box">
+                <h3>Nächste Reise?</h3>
+                <p>Finde die besten Flüge, Hotels und Mietwagen für deine Schottland-Reise.</p>
+                <a href="#" class="cta-btn">Jetzt planen</a>
+            </div>
+        </div>
+
+        <div class="bottom-box">
+            <h3>Beliebte Tags</h3>
+            <div class="tag-cloud">
+                <a href="#" class="tag">Islay</a>
+                <a href="#" class="tag">Speyside</a>
+                <a href="#" class="tag">Talisker</a>
+                <a href="#" class="tag">Glasgow</a>
+                <a href="#" class="tag">Lagavulin</a>
+                <a href="#" class="tag">Edinburgh</a>
+                <a href="#" class="tag">Highlands</a>
+                <a href="#" class="tag">Macallan</a>
+                <a href="#" class="tag">Destillerien</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Ein Projekt von <a href="#">whisky.reise</a> — Whisky, Reisen & mehr.</p>
+    <p class="note">* Affiliate-Links: Bei Käufen über gekennzeichnete Links erhalten wir eine kleine Provision.</p>
+</footer>
+</body>
+</html>

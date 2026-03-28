@@ -1,0 +1,44 @@
+{
+  "_info": "Whisky des Monats - Konfigurationsdatei. Bearbeitung via: python wotm_generator.py",
+  "current": {
+    "id": "lagavulin-16-2026-03",
+    "month": "März 2026",
+    "name": "Lagavulin 16 Years",
+    "distillery": "Lagavulin",
+    "region": "Islay",
+    "age": 16,
+    "abv": 43.0,
+    "price_eur": 58,
+    "price_range": "50-65",
+    "image_url": "",
+    "affiliate_url": "https://www.amazon.de/s?k=Lagavulin+16+Years&tag=whiskyreise74-21",
+    "tasting": {
+      "aroma": "Kräftiger Torf, Meeresluft, leichter Rauch. Darunter verstecken sich Noten von dunkler Schokolade und Espresso.",
+      "geschmack": "Reichhaltig und ölig. Trockener Torf trifft auf süße Vanille und Gewürze. Langer, warmer Abgang.",
+      "abgang": "Außergewöhnlich lang. Torf und eine feine Süße bleiben noch Minuten nach dem letzten Schluck.",
+      "wertung": 96
+    },
+    "beschreibung": "Wenn es einen Whisky gibt, der Islay perfekt verkörpert, dann ist es der Lagavulin 16. Seit Jahrzehnten gehört er zu den bekanntesten Vertretern der Insel — und das vollkommen zu Recht.\n\nSteffen und Elmar haben die Destillerie 2019 besucht und waren überwältigt: Die Lage direkt am Meer, die alten Warehouses, der Geruch nach Torf und Salz — und dann dieser Whisky im Glas. Der Lagavulin 16 ist kein Anfänger-Whisky, aber er ist der perfekte Begleiter für alle, die Islay wirklich verstehen wollen.",
+    "newsletter_teaser": "Der Lagavulin 16 ist Islay in einer Flasche. Torf, Meersalz, Vanille — und ein Abgang, der einfach nicht aufhören will. Unser März-Tipp für alle, die echten Charakter suchen.",
+    "created_at": "2026-03-01",
+    "created_by": "manual",
+    "approved": true,
+    "approved_at": "2026-03-01"
+  },
+  "draft": null,
+  "archiv": [
+    {
+      "id": "talisker-10-2026-02",
+      "month": "Februar 2026",
+      "name": "Talisker 10 Years",
+      "distillery": "Talisker",
+      "region": "Isle of Skye",
+      "age": 10,
+      "abv": 45.8,
+      "price_eur": 32,
+      "affiliate_url": "https://www.amazon.de/s?k=Talisker+10+Years&tag=whiskyreise74-21",
+      "newsletter_teaser": "Rauch und Pfeffer von der stürmischsten Insel Schottlands.",
+      "approved": true
+    }
+  ]
+}

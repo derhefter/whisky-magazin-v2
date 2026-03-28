@@ -1,0 +1,5 @@
+WHISKY MAGAZIN V2 - Notebook Design
+Gebaut: 2026-03-27
+Builder: site_builder_v2.py
+Port: 8082
+Design: Notebook (Bitter + Work Sans), cream/copper tones

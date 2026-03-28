@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter-Vorschau — whisky · magazin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FAF8F4;
+      --bg-surface: #F0EBE1;
+      --bg-elevated: #FFFFFF;
+      --text-primary: #2A2520;
+      --text-secondary: #6B5E52;
+      --accent-copper: #B8762E;
+      --accent-terra: #C4583A;
+      --accent-muted: #8A7D6B;
+      --border: #DDD5C8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      color: var(--text-primary);
+      background-color: #E8E4DD;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== PREVIEW BAR ===== */
+    .preview-bar {
+      background: var(--text-primary);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 12px 24px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== EMAIL WRAPPER ===== */
+    .email-wrapper {
+      max-width: 600px;
+      margin: 40px auto;
+      background: var(--bg-primary);
+      border-radius: 6px;
+      box-shadow: 0 4px 24px rgba(42,37,32,0.1);
+      overflow: hidden;
+    }
+
+    /* ===== EMAIL HEADER ===== */
+    .email-header {
+      padding: 32px 40px 24px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent-copper);
+    }
+
+    .email-logo {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .email-logo .dot {
+      color: var(--accent-copper);
+      margin: 0 4px;
+    }
+
+    /* ===== EMAIL BODY ===== */
+    .email-body {
+      padding: 36px 40px;
+    }
+
+    /* ===== PERSONAL OPENING ===== */
+    .greeting {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .opening-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+    }
+
+    /* ===== DRAM DIARY ===== */
+    .diary-section {
+      background: var(--bg-surface);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+    }
+
+    .diary-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-copper);
+      margin-bottom: 12px;
+    }
+
+    .diary-date {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--accent-muted);
+      margin-bottom: 12px;
+    }
+
+    .diary-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    /* ===== FEATURED ARTICLE ===== */
+    .featured-article {
+      margin-bottom: 36px;
+    }
+
+    .featured-image {
+      width: 100%;
+      height: 220px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #8B7355, #C4A97D, #D4B896);
+      margin-bottom: 20px;
+    }
+
+    .featured-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--accent-copper);
+      margin-bottom: 6px;
+    }
+
+    .featured-title {
+      font-family: 'Bitter', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .featured-teaser {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .btn-copper {
+      display: inline-block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      background: var(--accent-copper);
+      padding: 11px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copper:hover {
+      background: #A06824;
+    }
+
+    /* ===== MEINE EMPFEHLUNG ===== */
+    .recommendation {
+      display: flex;
+      gap: 24px;
+      background: var(--bg-surface);
+      border-radius: 6px;
+      padding: 28px;
+      margin-bottom: 36px;
+      align-items: flex-start;
+    }
+
+    .rec-image {
+      width: 100px;
+      min-width: 100px;
+      height: 140px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #D4B896, #A08060);
+      flex-shrink: 0;
+    }
+
+    .rec-content {
+      flex: 1;
+    }
+
+    .rec-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-copper);
+      margin-bottom: 6px;
+    }
+
+    .rec-name {
+      font-family: 'Bitter', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .rec-reason-label {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .rec-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .rec-price {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .btn-copper-small {
+      display: inline-block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #FFFFFF;
+      background: var(--accent-copper);
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-copper-small:hover {
+      background: #A06824;
+    }
+
+    /* ===== WEITERE EINTRAEGE ===== */
+    .more-entries {
+      margin-bottom: 36px;
+    }
+
+    .more-entries-title {
+      font-family: 'Bitter', serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .entry-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .entry-item:last-child {
+      border-bottom: none;
+    }
+
+    .entry-item-title {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .entry-item-title a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .entry-item-title a:hover {
+      color: var(--accent-copper);
+    }
+
+    .entry-item-preview {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ===== CLOSING ===== */
+    .closing {
+      margin-bottom: 8px;
+    }
+
+    .closing-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      color: var(--text-primary);
+    }
+
+    /* ===== EMAIL FOOTER ===== */
+    .email-footer {
+      background: var(--bg-surface);
+      padding: 28px 40px;
+      text-align: center;
+    }
+
+    .email-footer p {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--accent-muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .email-footer a {
+      color: var(--accent-muted);
+      text-decoration: underline;
+    }
+
+    .email-footer a:hover {
+      color: var(--accent-copper);
+    }
+
+    .email-footer .unsubscribe {
+      margin-top: 4px;
+    }
+
+    .email-footer .address {
+      font-size: 11px;
+      margin-top: 12px;
+      color: var(--accent-muted);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BAR -->
+  <div class="preview-bar">
+    Newsletter-Vorschau — März 2026
+  </div>
+
+  <!-- EMAIL WRAPPER -->
+  <div class="email-wrapper">
+
+    <!-- EMAIL HEADER -->
+    <div class="email-header">
+      <span class="email-logo">whisky<span class="dot"> · </span>magazin</span>
+    </div>
+
+    <!-- EMAIL BODY -->
+    <div class="email-body">
+
+      <!-- Personal Opening -->
+      <h1 class="greeting">Moin!</h1>
+      <p class="opening-text">
+        Es ist März, draußen ist es grau, und ich sitze mit einem Lagavulin 16
+        am Schreibtisch. Perfekt, um dir zu erzählen, was diesen Monat passiert
+        ist. Spoiler: Es war viel — und es hat sich gelohnt.
+      </p>
+
+      <!-- Dram Diary -->
+      <div class="diary-section">
+        <p class="diary-label">Dram Diary</p>
+        <p class="diary-date">März 2026</p>
+        <p class="diary-text">
+          Ich war letzte Woche auf Islay — zum siebten Mal. Und es fühlt sich
+          jedes Mal anders an. Diesmal war es ruhiger als sonst, fast kontemplativ.
+          Im Lagerhaus von Bruichladdich habe ich einen 2012er Port Charlotte direkt
+          aus dem Fass probiert, der noch nicht abgefüllt wurde. Rauchig, ja — aber
+          darunter lag eine cremige Vanille, die mich überrascht hat. Bei Ardbeg
+          habe ich mit dem neuen Stillman über ihren veränderten Cut-Point gesprochen,
+          und bei Kilchoman konnte ich sehen, wie das neue Warehouse langsam Form
+          annimmt. Diese Insel hat einfach etwas, das mich nicht loslässt.
+        </p>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Featured Article -->
+      <div class="featured-article">
+        <div class="featured-image"></div>
+        <p class="featured-label">Neuer Eintrag</p>
+        <h2 class="featured-title">Macallan: Ist der Hype gerechtfertigt?</h2>
+        <p class="featured-teaser">
+          Macallan polarisiert wie keine andere Destillerie. Die Preise steigen,
+          die Marketingmaschine läuft. Ich war dort, habe probiert und mir ein
+          eigenes Bild gemacht — ehrlich und ohne Beschönigung.
+        </p>
+        <a href="#" class="btn-copper">Weiterlesen</a>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Meine Empfehlung -->
+      <div class="recommendation">
+        <div class="rec-image"></div>
+        <div class="rec-content">
+          <p class="rec-label">Meine Empfehlung</p>
+          <h3 class="rec-name">Talisker 10 Years</h3>
+          <p class="rec-reason-label">Warum ich ihn mag:</p>
+          <p class="rec-text">
+            Talisker 10 ist mein ehrlichster Whisky. Kein Schnickschnack, keine
+            Geschichte, die den Preis in die Höhe treibt — einfach pfeffriger
+            Rauch, Meersalz und ein warmer Abgang, der an Lagerfeuer am Strand
+            erinnert. Perfekt für den Feierabend.
+          </p>
+          <p class="rec-price">ca. 32 &euro;</p>
+          <a href="#" class="btn-copper-small">Probier's selbst</a>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 3 Weitere Einträge -->
+      <div class="more-entries">
+        <h3 class="more-entries-title">3 weitere Einträge</h3>
+
+        <div class="entry-item">
+          <p class="entry-item-title"><a href="#">Islay im Winter: Warum die stille Jahreszeit die beste ist</a></p>
+          <p class="entry-item-preview">
+            Wenn der Wind die Gischt über die Straße peitscht und die Destillerien fast leer sind — dann zeigt Islay sein wahres Gesicht.
+          </p>
+        </div>
+
+        <div class="entry-item">
+          <p class="entry-item-title"><a href="#">Port Charlotte 10: Mein neuer Islay-Favorit?</a></p>
+          <p class="entry-item-preview">
+            Bruichladdich hat mit dem reformulierten Port Charlotte einen Volltreffer gelandet. Mein ausführlicher Tasting-Bericht.
+          </p>
+        </div>
+
+        <div class="entry-item">
+          <p class="entry-item-title"><a href="#">Die Speyside an einem Wochenende: Meine Route für Einsteiger</a></p>
+          <p class="entry-item-preview">
+            Fünf Destillerien in drei Tagen, ohne Stress. So würde ich die Speyside einem Freund zeigen.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Closing -->
+      <div class="closing">
+        <p class="closing-text">
+          Bis zum nächsten Dram — pass auf dich auf.
+        </p>
+        <p class="signature">Steffen</p>
+      </div>
+
+    </div>
+
+    <!-- EMAIL FOOTER -->
+    <div class="email-footer">
+      <p>
+        Du bekommst diese Mail, weil du dich für die Schottland-Post angemeldet hast.
+      </p>
+      <p class="unsubscribe">
+        <a href="#">Abmelden</a> &middot; <a href="#">Im Browser ansehen</a>
+      </p>
+      <p>
+        Einige Links in diesem Newsletter sind Affiliate-Links. Wenn du darüber
+        kaufst, erhalte ich eine kleine Provision — für dich ändert sich am Preis
+        nichts.
+      </p>
+      <p class="address">
+        whisky &middot; magazin &middot; Ein Projekt von Steffen &middot; Deutschland
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

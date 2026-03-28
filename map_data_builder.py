@@ -64,7 +64,9 @@ def classify_stop(place_name):
                                          'isle', 'insel', 'bucht', 'bay', 'cliff']):
         return 'nature'
     if any(kw in name_lower for kw in ['pub', 'bar', 'restaurant', 'shop', 'market',
-                                         'museum', 'cathedral', 'kirk', 'stadium']):
+                                         'museum', 'cathedral', 'kirk', 'stadium',
+                                         'experience', 'visitor centre', 'visitor center',
+                                         'heritage', 'exhibition', 'gallery']):
         return 'poi'
     # Wenn nichts passt, pruefen ob es eine bekannte Stadt/Region ist
     return 'city'
@@ -297,9 +299,13 @@ def match_articles_to_locations(articles, locations):
     for loc in locations:
         name_lower = loc["name"].lower()
         name_index[name_lower] = loc
-        # Auch Teilnamen indexieren (z.B. "Lagavulin" aus "Lagavulin Distillery")
-        parts = name_lower.replace(" distillery", "").replace(" destillerie", "")
-        name_index[parts.strip()] = loc
+        # Kurzname: "Lagavulin" aus "Lagavulin Distillery"
+        parts = name_lower.replace(" distillery", "").replace(" destillerie", "").replace("the ", "").strip()
+        name_index[parts] = loc
+        # Auch ohne "the" am Anfang (z.B. "macallan" aus "The Macallan Distillery")
+        for prefix in ["the ", "glen ", "loch "]:
+            if name_lower.startswith(prefix):
+                name_index[name_lower[len(prefix):].replace(" distillery", "").strip()] = loc
 
     # Index: Region (lowercase) -> Locations
     region_index = {}
@@ -326,7 +332,11 @@ def match_articles_to_locations(articles, locations):
         # 1. Explizite locations im Artikel (falls vorhanden)
         if "locations" in article:
             for loc_data in article["locations"]:
-                loc_name = loc_data.get("name", "").lower()
+                # Supports both string ("Macallan Distillery") and dict ({"name": "..."})
+                if isinstance(loc_data, str):
+                    loc_name = loc_data.lower()
+                else:
+                    loc_name = loc_data.get("name", "").lower()
                 if loc_name in name_index:
                     target = name_index[loc_name]
                     if slug not in target["articles"]:
@@ -522,6 +532,14 @@ def build_map_data(config=None):
     debug_path = data_dir / "map-data-debug.json"
     with open(debug_path, "w", encoding="utf-8") as f:
         json.dump(map_data, f, ensure_ascii=False, indent=2)
+
+    # Auch in site-v2 schreiben (identische Kopie)
+    site_v2_data_dir = PROJECT_DIR / "site-v2" / "data"
+    if site_v2_data_dir.exists():
+        import shutil
+        shutil.copy2(output_path, site_v2_data_dir / "map-data.json")
+        shutil.copy2(debug_path, site_v2_data_dir / "map-data-debug.json")
+        print(f"  map-data.json auch in site-v2/data/ geschrieben")
 
     size_kb = output_path.stat().st_size / 1024
     print(f"  map-data.json geschrieben ({size_kb:.1f} KB)")

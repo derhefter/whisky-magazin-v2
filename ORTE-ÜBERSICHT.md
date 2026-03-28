@@ -7,13 +7,13 @@
 
 **Gesamt:** 179 einzigartige Orte · **88 Destillerien** · 16 Reisejahre · ca. 163 Besuche
 
-| Typ | Anzahl |
-|-----|--------|
-| 🥃 Destillerie | 88 |
-| 🏙️ Stadt/Ort | 44 |
-| 📍 Sehenswürdigkeit | 20 |
-| 🌿 Natur & Landschaft | 2 |
-| ✈️ Reisestopp & Hotel | 25 |
+| Typ                   | Anzahl |
+| --------------------- | ------ |
+| 🥃 Destillerie        | 88     |
+| 🏙️ Stadt/Ort         | 44     |
+| 📍 Sehenswürdigkeit   | 20     |
+| 🌿 Natur & Landschaft | 2      |
+| ✈️ Reisestopp & Hotel | 25     |
 
 **Jahre mit Reisen:** 2007, 2008, 2009, 2012, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025
 
@@ -22,15 +22,18 @@
 ## ⚠️ Offene Punkte / Zu prüfen
 
 ### Fehlende Reisejahre
+
 - **2010** – Artikel vorhanden (Speyside Marathon, 12 Destillerien), aber **keine Orte in der Karte** verknüpft!
   → Bitte travel-stops für 2010 in content-index ergänzen.
 - **2011** – Kein Artikel und keine Orte für 2011 vorhanden. Gab es 2011 eine Reise?
 
 ### Fußball-Tickets ohne passenden Artikel
+
 - **Rangers vs. Dundee United (18. Sep 2010)** – Ticket vorhanden, aber kein Artikel für September 2010.
   → Soll ein eigener Artikel entstehen? Oder im Speyside-Artikel 2010 erwähnt werden?
 
 ### Datenfehler
+
 - Edinburgh Castle ist als "Natur" kategorisiert → sollte "Sehenswürdigkeit" sein.
 - Einige Orte (Callander, Falkirk, Cumberland Hotel 2009) erscheinen doppelt → Duplikate in content-index bereinigen.
 

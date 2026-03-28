@@ -16,6 +16,8 @@ Nutzung:
   python main.py --build          -> Website neu bauen
   python main.py --auto           -> Artikel generieren + Website bauen
   python main.py --serve          -> Lokalen Webserver starten
+  python main.py --build-v2       -> Website v2 (Notebook-Design) bauen
+  python main.py --serve-v2       -> V2 lokalen Webserver starten
   python main.py --stats          -> Statistiken anzeigen
 """
 
@@ -25,6 +27,7 @@ import json
 import os
 import random
 import socketserver
+import subprocess
 import sys
 import time
 import webbrowser
@@ -37,10 +40,12 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).parent
 ARTICLES_DIR = PROJECT_DIR / "articles"
 SITE_DIR = PROJECT_DIR / "site"
+SITE_V2_DIR = PROJECT_DIR / "site-v2"
 
 sys.path.insert(0, str(PROJECT_DIR))
 
 from site_builder import build_site, load_all_articles
+from site_builder_v2 import build_site as build_site_v2
 from topic_library import WHISKY_TOPICS
 
 # Lazy-Import: content_generator erst bei Bedarf laden (braucht openai)
@@ -207,6 +212,37 @@ def cmd_build(config):
     build_site(config)
 
 
+def cmd_build_v2(config):
+    """Baut die Website v2 (Notebook-Design) neu."""
+    build_site_v2(config)
+
+
+def cmd_serve_v2():
+    """Startet einen lokalen Webserver fuer die v2-Website."""
+    if not SITE_V2_DIR.exists():
+        print("  FEHLER: Website v2 noch nicht gebaut!")
+        print("  Fuehre zuerst 'Website v2 bauen' aus.")
+        return
+
+    port = 8082
+    os.chdir(str(SITE_V2_DIR))
+
+    handler = http.server.SimpleHTTPRequestHandler
+    handler.extensions_map.update({".html": "text/html; charset=utf-8"})
+
+    print(f"\n  Lokaler Webserver (v2) gestartet!")
+    print(f"  Oeffne im Browser: http://localhost:{port}")
+    print(f"  Druecke Strg+C zum Beenden.\n")
+
+    webbrowser.open(f"http://localhost:{port}")
+
+    with socketserver.TCPServer(("", port), handler) as httpd:
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\n  Server beendet.")
+
+
 def cmd_auto(config, count=1):
     """Generiert Artikel UND baut die Website."""
     generated = cmd_generate(config, count)
@@ -337,18 +373,36 @@ def interactive_menu(config):
     articles = load_all_articles()
 
     print(f"\n  Was moechtest du tun?\n")
-    print(f"  [1] Verbindung testen")
-    print(f"  [2] Einen Artikel generieren")
-    print(f"  [3] Drei Artikel generieren")
-    print(f"  [4] Website bauen (aus {len(articles)} Artikeln)")
-    print(f"  [5] Artikel generieren + Website bauen (Komplett)")
-    print(f"  [6] Website im Browser anzeigen")
-    print(f"  [7] Statistiken")
-    print(f"  [8] Beenden")
+
+    print(f"  --- INHALTE ---")
+    print(f"  [1]  Verbindung testen")
+    print(f"  [2]  Einen Artikel generieren")
+    print(f"  [3]  Drei Artikel generieren")
+    print()
+
+    print(f"  --- WEBSITE ---")
+    print(f"  [4]  Website V1 bauen (Classic, aus {len(articles)} Artikeln)")
+    print(f"  [5]  Website V1 anzeigen")
+    print(f"  [9]  Website V2 bauen (Notebook)")
+    print(f"  [10] Website V2 anzeigen")
+    print()
+
+    print(f"  --- REDAKTION ---")
+    print(f"  [11] Whisky des Monats erstellen")
+    print(f"  [12] Newsletter Entwurf erstellen")
+    print(f"  [13] Newsletter Vorschau + Freigabe")
+    print(f"  [14] Newsletter senden")
+    print()
+
+    print(f"  --- SETUP ---")
+    print(f"  [15] Mailchimp einrichten")
+    print(f"  [16] Zeitplaner einrichten")
+    print(f"  [7]  Statistiken")
+    print(f"  [0]  Beenden")
     print()
 
     try:
-        choice = input("  Deine Wahl (1-8): ").strip()
+        choice = input("  Deine Wahl (0-16): ").strip()
     except (EOFError, KeyboardInterrupt):
         return
 
@@ -361,12 +415,36 @@ def interactive_menu(config):
     elif choice == "4":
         cmd_build(config)
     elif choice == "5":
-        cmd_auto(config, 3)
+        cmd_serve()
     elif choice == "6":
         cmd_serve()
     elif choice == "7":
         cmd_stats()
     elif choice == "8":
+        return
+    elif choice == "9":
+        cmd_build_v2(config)
+    elif choice == "10":
+        cmd_serve_v2()
+    elif choice == "11":
+        whisky_name = input("  Whisky-Name (z.B. 'Lagavulin 16'): ").strip()
+        subprocess.run([sys.executable, "wotm_generator.py", "--new", whisky_name], cwd=str(PROJECT_DIR))
+    elif choice == "12":
+        subprocess.run([sys.executable, "newsletter_generator.py", "--draft"], cwd=str(PROJECT_DIR))
+    elif choice == "13":
+        subprocess.run([sys.executable, "newsletter_generator.py", "--preview"], cwd=str(PROJECT_DIR))
+        freigabe = input("  Freigeben? (j/n): ").strip().lower()
+        if freigabe == "j":
+            subprocess.run([sys.executable, "newsletter_generator.py", "--approve"], cwd=str(PROJECT_DIR))
+    elif choice == "14":
+        confirm = input("  Wirklich senden? (j/n): ").strip().lower()
+        if confirm == "j":
+            subprocess.run([sys.executable, "newsletter_generator.py", "--send"], cwd=str(PROJECT_DIR))
+    elif choice == "15":
+        subprocess.run([sys.executable, "mailchimp_setup.py"], cwd=str(PROJECT_DIR))
+    elif choice == "16":
+        subprocess.run([sys.executable, "schedule_setup.py"], cwd=str(PROJECT_DIR))
+    elif choice == "0":
         return
     else:
         print("  Ungueltige Auswahl.")
@@ -385,6 +463,8 @@ def main():
     parser.add_argument("--build", action="store_true", help="Website bauen")
     parser.add_argument("--auto", action="store_true", help="Generieren + Bauen")
     parser.add_argument("--serve", action="store_true", help="Lokalen Webserver starten")
+    parser.add_argument("--build-v2", action="store_true", help="Website v2 (Notebook-Design) bauen")
+    parser.add_argument("--serve-v2", action="store_true", help="V2 lokalen Webserver starten")
     parser.add_argument("--stats", action="store_true", help="Statistiken anzeigen")
     parser.add_argument("--test", action="store_true", help="Verbindung testen")
     parser.add_argument("-n", "--count", type=int, default=1, help="Anzahl Artikel")
@@ -409,6 +489,10 @@ def main():
         cmd_auto(config, args.count)
     elif args.serve:
         cmd_serve()
+    elif args.build_v2:
+        cmd_build_v2(config)
+    elif args.serve_v2:
+        cmd_serve_v2()
     elif args.stats:
         cmd_stats()
     else:

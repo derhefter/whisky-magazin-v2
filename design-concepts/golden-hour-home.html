@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHISKY MAGAZIN — Start</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FAFAF7;
+      --bg-surface: #F5F0E8;
+      --bg-elevated: #FFFFFF;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5C5C5C;
+      --accent-amber: #C8963E;
+      --accent-sage: #4A7C5E;
+      --accent-warm: #8B7355;
+      --border: #E8DCC8;
+      --shadow: 0 2px 12px rgba(139,115,85,0.06);
+      --shadow-hover: 0 8px 24px rgba(139,115,85,0.12);
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-pill: 24px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Sticky Header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-whisky {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+    }
+    .logo-dot {
+      color: var(--accent-amber);
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 20px;
+      margin: 0 2px;
+    }
+    .logo-magazin {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .main-nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .main-nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .main-nav a:hover { color: var(--accent-amber); }
+    .btn-ghost {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-amber);
+      border: 1.5px solid var(--accent-amber);
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-ghost:hover {
+      background: var(--accent-amber);
+      color: #fff;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent-amber);
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover {
+      background: #b5862f;
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* ── Pill Badges ── */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+    .badge-amber {
+      background: var(--accent-amber);
+      color: #fff;
+    }
+    .badge-sage {
+      background: var(--accent-sage);
+      color: #fff;
+    }
+    .badge-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Section Label ── */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-bottom: 24px;
+    }
+    .section-heading {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      background: linear-gradient(135deg, #8B7355 0%, #C8963E 40%, #4A7C5E 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.3) 40%, transparent 70%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 56px;
+      width: 100%;
+    }
+    .hero .badge { margin-bottom: 16px; }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #fff;
+      line-height: 1.15;
+      max-width: 720px;
+      margin-bottom: 16px;
+    }
+    .hero-teaser {
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* ── Featured Stories Grid ── */
+    .stories-section {
+      padding: 72px 0;
+    }
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .story-card {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.3s, transform 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .story-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .story-card.large { grid-column: span 2; }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #C8963E 0%, #8B7355 100%);
+    }
+    .story-card.large .card-image { aspect-ratio: 16/9; }
+    .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .card-body .badge { margin-bottom: 10px; align-self: flex-start; }
+    .card-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .story-card.large .card-title { font-size: 26px; }
+    .card-meta {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .card-teaser {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Row 2 smaller cards */
+    .stories-grid-row2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .stories-grid-row2 .card-image { aspect-ratio: 16/10; }
+    .stories-grid-row2 .card-title { font-size: 18px; }
+
+    /* ── Whisky of the Month ── */
+    .wotm-section {
+      background: var(--bg-surface);
+      padding: 72px 0;
+    }
+    .wotm-card {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--accent-amber);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      overflow: hidden;
+    }
+    .wotm-image {
+      background: linear-gradient(180deg, #F5F0E8 0%, #E8DCC8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      padding: 40px;
+    }
+    .wotm-bottle {
+      width: 80px;
+      height: 240px;
+      background: linear-gradient(180deg, #8B7355 0%, #C8963E 100%);
+      border-radius: 8px 8px 4px 4px;
+      opacity: 0.4;
+    }
+    .wotm-content { padding: 40px; }
+    .wotm-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      margin-bottom: 8px;
+    }
+    .wotm-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+    .wotm-distillery {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .wotm-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+    .tasting-notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .tasting-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-bottom: 6px;
+    }
+    .tasting-col p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .wotm-price {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .wotm-affiliate {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 12px;
+    }
+
+    /* ── Regionen ── */
+    .regions-section {
+      padding: 72px 0;
+    }
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .region-card {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.3s, transform 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .region-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .region-image {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+    .region-image.islay { background: linear-gradient(135deg, #4A7C5E, #2a5a3e); }
+    .region-image.speyside { background: linear-gradient(135deg, #C8963E, #8B7355); }
+    .region-image.highlands { background: linear-gradient(135deg, #5C7C8A, #4A7C5E); }
+    .region-image.campbeltown { background: linear-gradient(135deg, #8B7355, #6B5B45); }
+    .region-body { padding: 16px 20px 20px; }
+    .region-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .region-count {
+      font-size: 13px;
+      color: var(--accent-sage);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .region-teaser {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Newsletter ── */
+    .newsletter-section {
+      background: var(--bg-surface);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .newsletter-inner { max-width: 560px; margin: 0 auto; }
+    .newsletter-inner h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .newsletter-inner p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 18px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: var(--bg-elevated);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input:focus { border-color: var(--accent-amber); }
+    .newsletter-form button {
+      padding: 14px 28px;
+      white-space: nowrap;
+    }
+    .newsletter-social-proof {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ── Trust Section ── */
+    .trust-section {
+      padding: 72px 0;
+      text-align: center;
+    }
+    .trust-numbers {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      margin-bottom: 28px;
+    }
+    .trust-item .number {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 40px;
+      color: var(--accent-amber);
+      display: block;
+    }
+    .trust-item .label {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .trust-about {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.7;
+    }
+    .link-amber {
+      color: var(--accent-amber);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .link-amber:hover { border-bottom-color: var(--accent-amber); }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 56px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .footer-col p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--accent-amber); }
+    .footer-mini-form {
+      display: flex;
+      gap: 8px;
+    }
+    .footer-mini-form input {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: var(--bg-elevated);
+      outline: none;
+    }
+    .footer-mini-form button {
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--accent-amber);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .footer-legal a:hover { color: var(--accent-amber); }
+    .footer-disclaimer {
+      width: 100%;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ HEADER ════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <span class="logo-whisky">WHISKY</span>
+        <span class="logo-dot">&middot;</span>
+        <span class="logo-magazin">MAGAZIN</span>
+      </a>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="#">Start</a></li>
+          <li><a href="#">Whisky</a></li>
+          <li><a href="#">Reise</a></li>
+          <li><a href="#">Karte</a></li>
+          <li><a href="#">Whisky Shoppen</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn-ghost">Newsletter</a>
+    </div>
+  </header>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge badge-amber">REISE</span>
+      <h1>Von Islay bis Speyside: Eine Woche durch Schottlands Whisky-Herz</h1>
+      <p class="hero-teaser">Sieben Tage, zwölf Destillerien und eine Handvoll Drams, die man nicht so schnell vergisst. Unser großer Roadtrip-Guide für die Saison 2026.</p>
+      <a href="#" class="btn-primary">Weiterlesen</a>
+    </div>
+  </section>
+
+  <!-- ════════ FEATURED STORIES ════════ -->
+  <section class="stories-section">
+    <div class="container">
+      <p class="section-label">Aktuelle Geschichten</p>
+
+      <!-- Row 1: 1 large + 1 medium -->
+      <div class="stories-grid">
+        <a href="#" class="story-card large">
+          <div class="card-image" style="background: linear-gradient(135deg, #4A7C5E 0%, #8B7355 100%);"></div>
+          <div class="card-body">
+            <span class="badge badge-sage">WHISKY</span>
+            <h3 class="card-title">Talisker 10 im Test: Warum dieser Klassiker immer noch begeistert</h3>
+            <p class="card-meta">22. M&auml;rz 2026 &middot; 8 Min. Lesezeit</p>
+            <p class="card-teaser">Rauch, Salz und ein Hauch von schwarzem Pfeffer &mdash; der Talisker 10 ist seit Jahrzehnten der Maßstab f&uuml;r maritime Single Malts. Wir erkl&auml;ren, warum er auch 2026 noch relevant ist.</p>
+          </div>
+        </a>
+        <a href="#" class="story-card">
+          <div class="card-image" style="background: linear-gradient(135deg, #C8963E 0%, #6B5B45 100%);"></div>
+          <div class="card-body">
+            <span class="badge badge-amber">REISE</span>
+            <h3 class="card-title">Campbeltown: Schottlands vergessene Whisky-Hauptstadt</h3>
+            <p class="card-meta">19. M&auml;rz 2026 &middot; 11 Min. Lesezeit</p>
+            <p class="card-teaser">Einst gab es hier &uuml;ber 30 Brennereien. Heute sind es drei &mdash; und jede einzelne ist eine Reise wert.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Row 2: 3 smaller cards -->
+      <div class="stories-grid-row2">
+        <a href="#" class="story-card">
+          <div class="card-image" style="background: linear-gradient(135deg, #5C7C8A 0%, #4A7C5E 100%);"></div>
+          <div class="card-body">
+            <span class="badge badge-outline">WISSEN</span>
+            <h3 class="card-title">Sherry-Fass vs. Bourbon-Fass: Der große Vergleich</h3>
+            <p class="card-meta">15. M&auml;rz 2026 &middot; 6 Min.</p>
+            <p class="card-teaser">Welches Fass pr&auml;gt den Whisky st&auml;rker? Wir probieren uns durch beide Welten.</p>
+          </div>
+        </a>
+        <a href="#" class="story-card">
+          <div class="card-image" style="background: linear-gradient(135deg, #8B7355 0%, #C8963E 100%);"></div>
+          <div class="card-body">
+            <span class="badge badge-amber">REISE</span>
+            <h3 class="card-title">Edinburgh f&uuml;r Whisky-Fans: Die 7 besten Bars</h3>
+            <p class="card-meta">12. M&auml;rz 2026 &middot; 5 Min.</p>
+            <p class="card-teaser">Von der versteckten Kellerbar bis zum legendären Scotch Malt Whisky Society.</p>
+          </div>
+        </a>
+        <a href="#" class="story-card">
+          <div class="card-image" style="background: linear-gradient(135deg, #4A6A5E 0%, #8B9355 100%);"></div>
+          <div class="card-body">
+            <span class="badge badge-sage">DESTILLERIE</span>
+            <h3 class="card-title">Ardbeg: Besuch in der Kathedrale des Rauchs</h3>
+            <p class="card-meta">8. M&auml;rz 2026 &middot; 9 Min.</p>
+            <p class="card-teaser">Wir haben die ikonische Islay-Brennerei besucht und mit Master Distiller Dr. Bill Lumsden gesprochen.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHISKY OF THE MONTH ════════ -->
+  <section class="wotm-section">
+    <div class="container">
+      <p class="section-label">Empfehlung des Monats</p>
+      <div class="wotm-card">
+        <div class="wotm-image">
+          <div class="wotm-bottle"></div>
+        </div>
+        <div class="wotm-content">
+          <p class="wotm-label">Whisky des Monats</p>
+          <h2 class="wotm-name">Talisker 10 Years</h2>
+          <p class="wotm-distillery">Talisker Distillery, Isle of Skye</p>
+          <span class="badge badge-sage" style="margin-bottom: 16px;">Isle of Skye</span>
+          <p class="wotm-desc">Ein maritimer Single Malt, der nach sturmumtoster K&uuml;ste schmeckt. Der Talisker 10 verbindet Rauch und S&uuml;&szlig;e auf eine Weise, die ihn seit Jahrzehnten zum Liebling von Whisky-Einsteigern und Kennern gleichermaßen macht.</p>
+          <div class="tasting-notes">
+            <div class="tasting-col">
+              <h4>Aroma</h4>
+              <p>Meersalz, Rauch, reife Birne, schwarzer Pfeffer, ein Hauch von Zitrusschale</p>
+            </div>
+            <div class="tasting-col">
+              <h4>Geschmack</h4>
+              <p>Kr&auml;ftig, malzig-s&uuml;&szlig;, dann rauchig-w&uuml;rzig mit maritimer Note und warmem Honig</p>
+            </div>
+            <div class="tasting-col">
+              <h4>Finish</h4>
+              <p>Lang, pfeffrig-warm, mit einer charakteristischen vulkanischen W&auml;rme im Abgang</p>
+            </div>
+          </div>
+          <p class="wotm-price">Ab ca. 32 &euro;</p>
+          <a href="#" class="btn-primary">Jetzt entdecken</a>
+          <p class="wotm-affiliate">* Affiliate-Link. Beim Kauf &uuml;ber diesen Link erhalten wir eine kleine Provision &mdash; f&uuml;r dich &auml;ndert sich am Preis nichts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ REGIONEN ════════ -->
+  <section class="regions-section">
+    <div class="container">
+      <h2 class="section-heading">Regionen entdecken</h2>
+      <div class="regions-grid">
+        <a href="#" class="region-card">
+          <div class="region-image islay"></div>
+          <div class="region-body">
+            <h3 class="region-name">Islay</h3>
+            <p class="region-count">9 Destillerien</p>
+            <p class="region-teaser">Die Insel des Rauchs &mdash; hier wird Whisky-Geschichte geschrieben, Torfrauch inklusive.</p>
+          </div>
+        </a>
+        <a href="#" class="region-card">
+          <div class="region-image speyside"></div>
+          <div class="region-body">
+            <h3 class="region-name">Speyside</h3>
+            <p class="region-count">52 Destillerien</p>
+            <p class="region-teaser">Schottlands dichteste Destillerie-Region: fruchtig, elegant, vielf&auml;ltig.</p>
+          </div>
+        </a>
+        <a href="#" class="region-card">
+          <div class="region-image highlands"></div>
+          <div class="region-body">
+            <h3 class="region-name">Highlands</h3>
+            <p class="region-count">31 Destillerien</p>
+            <p class="region-teaser">Von leicht und blumig bis schwer und torfig &mdash; die gr&ouml;&szlig;te Region bietet alles.</p>
+          </div>
+        </a>
+        <a href="#" class="region-card">
+          <div class="region-image campbeltown"></div>
+          <div class="region-body">
+            <h3 class="region-name">Campbeltown</h3>
+            <p class="region-count">3 Destillerien</p>
+            <p class="region-teaser">Klein, aber legend&auml;r. Springbank, Glen Scotia und Glengyle halten die Tradition am Leben.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ NEWSLETTER ════════ -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <h2>Schottland-Post</h2>
+        <p>Einmal im Monat: Destillerie-Berichte, Whisky-Empfehlungen und Reisetipps aus erster Hand. Kein Spam, versprochen &mdash; nur guter Stoff.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="deine@email.de">
+          <button class="btn-primary">Kostenlos anmelden</button>
+        </div>
+        <p class="newsletter-social-proof">2.400+ Whisky-Fans lesen mit</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ TRUST ════════ -->
+  <section class="trust-section">
+    <div class="container">
+      <h2 class="section-heading">Seit 2007 unterwegs</h2>
+      <div class="trust-numbers">
+        <div class="trust-item">
+          <span class="number">14</span>
+          <span class="label">Jahre Erfahrung</span>
+        </div>
+        <div class="trust-item">
+          <span class="number">88</span>
+          <span class="label">Destillerien besucht</span>
+        </div>
+        <div class="trust-item">
+          <span class="number">30+</span>
+          <span class="label">Artikel ver&ouml;ffentlicht</span>
+        </div>
+      </div>
+      <p class="trust-about">Was als Hobby begann, ist heute eine Leidenschaft mit System: Wir reisen nach Schottland, besuchen Destillerien und berichten ehrlich &mdash; ohne gesponserte Bewertungen, ohne Industriekontakte, die unsere Meinung beeinflussen.</p>
+      <a href="#" class="link-amber">Mehr &uuml;ber uns &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 16px;">
+            <span class="logo-whisky">WHISKY</span>
+            <span class="logo-dot">&middot;</span>
+            <span class="logo-magazin">MAGAZIN</span>
+          </div>
+          <p>Pers&ouml;nliche Destillerie-Berichte, ehrliche Whisky-Bewertungen und Reisetipps f&uuml;r Schottland &mdash; von einem Fan f&uuml;r Fans.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Whisky</a></li>
+            <li><a href="#">Reise</a></li>
+            <li><a href="#">Destillerie-Karte</a></li>
+            <li><a href="#">&Uuml;ber uns</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kategorien</h4>
+          <ul>
+            <li><a href="#">Single Malt</a></li>
+            <li><a href="#">Blended Scotch</a></li>
+            <li><a href="#">Destillerie-Besuche</a></li>
+            <li><a href="#">Reisef&uuml;hrer</a></li>
+            <li><a href="#">Whisky-Wissen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="margin-bottom: 12px;">Monatliche Updates direkt ins Postfach.</p>
+          <div class="footer-mini-form">
+            <input type="email" placeholder="deine@email.de">
+            <button>Anmelden</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Whisky Magazin. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+        </div>
+        <p class="footer-disclaimer">Diese Seite enth&auml;lt Affiliate-Links. Beim Kauf &uuml;ber einen solchen Link erhalten wir eine kleine Provision. F&uuml;r dich entstehen dadurch keine Mehrkosten. Unsere Empfehlungen bleiben davon unber&uuml;hrt.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
