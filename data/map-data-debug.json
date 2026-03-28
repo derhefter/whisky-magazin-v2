@@ -4979,6 +4979,27 @@
       "image": "/images/schottische-kueche-mehr-als-haggis.jpg",
       "category": "Reise",
       "date": "26. März 2026"
+    },
+    "das-beste-whisky-zubehoer-glaeser-dekanter-und-mehr": {
+      "title": "Das beste Whisky-Zubehör: Gläser, Dekanter und mehr",
+      "teaser": "Tauchen Sie ein in die Welt des Whisky-Zubehörs und erfahren Sie, welche Gläser und Dekanter Ihr Genusserlebnis auf das nächste Level heben.",
+      "image": "",
+      "category": "Lifestyle",
+      "date": "28. März 2026"
+    },
+    "die-10-besten-single-malts-unter-50-euro": {
+      "title": "Die 10 besten Single Malts unter 50 Euro",
+      "teaser": "Welcher Single Malt bietet den besten Geschmack unter 50 Euro? Entdecke unsere Top 10 Liste und finde deinen neuen Favoriten!",
+      "image": "",
+      "category": "Whisky",
+      "date": "28. März 2026"
+    },
+    "whisky-geschenke-15-ideen-fuer-liebhaber": {
+      "title": "Whisky-Geschenke: 15 Ideen für Liebhaber",
+      "teaser": "Suchst du das perfekte Geschenk für Whisky-Liebhaber? Entdecke 15 kreative Ideen, die jeden Genießer begeistern werden!",
+      "image": "",
+      "category": "Lifestyle",
+      "date": "28. März 2026"
     }
   },
   "regions": [
@@ -5066,7 +5087,7 @@
     "total_locations": 213,
     "total_distilleries": 120,
     "total_routes": 0,
-    "total_articles": 39,
+    "total_articles": 42,
     "years_covered": "2007-2025"
   }
 }

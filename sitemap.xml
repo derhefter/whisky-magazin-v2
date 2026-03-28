@@ -26,17 +26,17 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://whisky-magazin-new.vercel.app/kategorie/reise.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whisky-magazin-new.vercel.app/kategorie/whisky.html</loc>
     <lastmod>2026-03-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whisky-magazin-new.vercel.app/kategorie/lifestyle.html</loc>
-    <lastmod>2026-03-28</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whisky-magazin-new.vercel.app/kategorie/reise.html</loc>
+    <loc>https://whisky-magazin-new.vercel.app/kategorie/natur.html</loc>
     <lastmod>2026-03-28</lastmod>
     <priority>0.7</priority>
   </url>
@@ -46,9 +46,24 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whisky-magazin-new.vercel.app/kategorie/natur.html</loc>
+    <loc>https://whisky-magazin-new.vercel.app/kategorie/lifestyle.html</loc>
     <lastmod>2026-03-28</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whisky-magazin-new.vercel.app/artikel/whisky-geschenke-15-ideen-fuer-liebhaber.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://whisky-magazin-new.vercel.app/artikel/die-10-besten-single-malts-unter-50-euro.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://whisky-magazin-new.vercel.app/artikel/das-beste-whisky-zubehoer-glaeser-dekanter-und-mehr.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whisky-magazin-new.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html</loc>
