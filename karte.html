@@ -792,15 +792,30 @@
             <h1>Unsere Reisekarte</h1>
             <p class="map-subtitle">18 Jahre Destillerien, Reisen & Abenteuer &mdash; von Schottland bis Kentucky</p>
         </div>
-        <div class="map-controls" id="map-controls">
-            <div class="filter-group" style="flex:1;min-width:200px;">
-                <label for="search-input" style="white-space:nowrap;">🔍 Suche:</label>
-                <input type="text" id="search-input" placeholder="Destillerie oder Ort suchen…"
-                    style="flex:1;padding:6px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);
-                           font-size:0.85em;font-family:'Inter',sans-serif;color:var(--text-primary);
-                           background:var(--bg-primary);min-width:180px;transition:border-color 0.2s;"
-                    oninput="applyFilters()">
+        <!-- Prominente Suchleiste -->
+        <div class="map-search-bar" id="map-search-bar">
+            <div class="search-inner">
+                <span class="search-icon">🔍</span>
+                <div style="position:relative;flex:1;">
+                    <input type="text" id="search-input"
+                        placeholder="Destillerie oder Ort suchen … z.B. Bowmore, Lagavulin, Orkney"
+                        autocomplete="off"
+                        oninput="handleSearchInput(this.value)"
+                        onkeydown="handleSearchKey(event)">
+                    <button id="search-clear" onclick="clearSearch()" title="Suche löschen"
+                        style="display:none;position:absolute;right:8px;top:50%;transform:translateY(-50%);
+                               background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-secondary);
+                               line-height:1;padding:0 4px;">×</button>
+                    <div id="search-suggestions" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;
+                        background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);
+                        box-shadow:var(--shadow-hover);z-index:1000;max-height:280px;overflow-y:auto;">
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="applyFilters()" style="white-space:nowrap;padding:10px 20px;font-size:14px;">Suchen</button>
             </div>
+        </div>
+        <!-- Filter-Leiste -->
+        <div class="map-controls" id="map-controls">
             <div class="filter-group">
                 <label for="filter-year">Jahr:</label>
                 <select id="filter-year"><option value="">Alle Jahre</option></select>
@@ -831,6 +846,40 @@
 
     <style>
         .map-page { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        /* Prominente Suchleiste */
+        .map-search-bar {
+            background: var(--bg-elevated);
+            border: 2px solid var(--accent-amber);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-hover);
+        }
+        .search-inner {
+            display: flex; align-items: center; gap: 10px;
+        }
+        .search-icon { font-size: 20px; flex-shrink: 0; }
+        #search-input {
+            width: 100%; padding: 10px 36px 10px 12px;
+            border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+            font-size: 15px; font-family: 'Inter', sans-serif;
+            color: var(--text-primary); background: var(--bg-primary);
+            transition: border-color 0.2s; outline: none;
+        }
+        #search-input:focus { border-color: var(--accent-amber); }
+        #search-input::placeholder { color: var(--text-secondary); }
+        .suggestion-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 14px; cursor: pointer;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+        .suggestion-item:last-child { border-bottom: none; }
+        .suggestion-item:hover { background: var(--bg-surface); }
+        .suggestion-item.active { background: var(--bg-surface); }
+        .suggestion-name { font-weight: 600; font-size: 14px; color: var(--text-primary); font-family: 'Fraunces', serif; }
+        .suggestion-meta { font-size: 12px; color: var(--text-secondary); font-family: 'Inter', sans-serif; }
+        .suggestion-type { font-size: 18px; flex-shrink: 0; }
         .breadcrumb {
             font-family: 'Inter', sans-serif; font-size: 13px;
             color: var(--text-secondary); margin-bottom: 12px;
@@ -973,6 +1022,8 @@
             .map-stats { margin-left: 0; }
             .dir-items { flex-direction: column; }
             #map { height: 50vh !important; }
+            .search-inner { flex-wrap: wrap; }
+            .search-inner .btn { width: 100%; }
         }
     </style>
 
@@ -1141,8 +1192,16 @@
 
             let html = '';
             SECTIONS.forEach(sec => {
+                // Deduplizierung: gleicher Name innerhalb derselben Sektion = nur einmal zeigen
+                const seenNames = new Set();
                 const items = locations
-                    .filter(l => l.type === sec.key)
+                    .filter(l => {
+                        if (l.type !== sec.key) return false;
+                        const key = l.name.toLowerCase();
+                        if (seenNames.has(key)) return false;
+                        seenNames.add(key);
+                        return true;
+                    })
                     .sort((a, b) => a.name.localeCompare(b.name, 'de'));
                 if (items.length === 0) return;
 
@@ -1237,9 +1296,12 @@
         function applyFilters() {
             if (!mapData) return;
             const visible = getVisibleLocations(mapData.locations);
+            // Sichtbare Orte als Set (Name|Typ) für schnellen Vergleich
+            const visibleKeys = new Set(visible.map(l => l.name.toLowerCase() + '|' + l.type));
             markerCluster.clearLayers();
             allMarkers.forEach(m => {
-                if (visible.includes(m._locData)) {
+                const key = m._locData.name.toLowerCase() + '|' + m._locData.type;
+                if (visibleKeys.has(key)) {
                     markerCluster.addLayer(m);
                 }
             });
@@ -1247,6 +1309,110 @@
             renderCards(visible);
             updateStats(mapData.locations);
         }
+
+        // ---- AUTOCOMPLETE SUCHE ----
+        const TYPE_ICONS = {
+            distillery: '🥃', city: '🏙️', nature: '🌿', poi: '📍', travel_stop: '✈️'
+        };
+        let suggestionIndex = -1;
+
+        function handleSearchInput(val) {
+            document.getElementById('search-clear').style.display = val ? 'block' : 'none';
+            applyFilters();
+            showSuggestions(val.trim());
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('search-clear').style.display = 'none';
+            document.getElementById('search-suggestions').style.display = 'none';
+            suggestionIndex = -1;
+            applyFilters();
+        }
+
+        function showSuggestions(query) {
+            const box = document.getElementById('search-suggestions');
+            if (!mapData || query.length < 1) { box.style.display = 'none'; return; }
+            const q = query.toLowerCase();
+            // Deduplizierte Vorschlagsliste
+            const seen = new Set();
+            const matches = mapData.locations.filter(l => {
+                const key = l.name.toLowerCase() + '|' + l.type;
+                if (seen.has(key)) return false;
+                if (!l.name.toLowerCase().includes(q) && !(l.region || '').toLowerCase().includes(q)) return false;
+                seen.add(key);
+                return true;
+            }).slice(0, 10);
+
+            if (matches.length === 0) { box.style.display = 'none'; return; }
+
+            box.innerHTML = matches.map((l, i) => `
+                <div class="suggestion-item" data-index="${i}" data-name="${l.name}" data-lat="${l.lat}" data-lon="${l.lon}" data-type="${l.type}">
+                    <span class="suggestion-type">${TYPE_ICONS[l.type] || '📍'}</span>
+                    <div>
+                        <div class="suggestion-name">${l.name}</div>
+                        <div class="suggestion-meta">${TYPE_LABELS[l.type] || l.type} · ${l.region}${l.country && l.country !== 'Schottland' ? ', ' + l.country : ''}</div>
+                    </div>
+                </div>
+            `).join('');
+            box.style.display = 'block';
+            suggestionIndex = -1;
+
+            box.querySelectorAll('.suggestion-item').forEach(item => {
+                item.addEventListener('click', () => selectSuggestion(item));
+                item.addEventListener('mouseenter', () => {
+                    box.querySelectorAll('.suggestion-item').forEach(s => s.classList.remove('active'));
+                    item.classList.add('active');
+                    suggestionIndex = parseInt(item.dataset.index);
+                });
+            });
+        }
+
+        function selectSuggestion(item) {
+            const name = item.dataset.name;
+            const lat = parseFloat(item.dataset.lat);
+            const lon = parseFloat(item.dataset.lon);
+            document.getElementById('search-input').value = name;
+            document.getElementById('search-clear').style.display = 'block';
+            document.getElementById('search-suggestions').style.display = 'none';
+            suggestionIndex = -1;
+            applyFilters();
+            // Karte auf Location zoomen
+            map.setView([lat, lon], 13);
+            setTimeout(() => {
+                const marker = allMarkers.find(m => m._locData.name.toLowerCase() === name.toLowerCase());
+                if (marker) markerCluster.zoomToShowLayer(marker, () => marker.openPopup());
+            }, 300);
+        }
+
+        function handleSearchKey(e) {
+            const box = document.getElementById('search-suggestions');
+            const items = box.querySelectorAll('.suggestion-item');
+            if (!items.length || box.style.display === 'none') return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                suggestionIndex = Math.min(suggestionIndex + 1, items.length - 1);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                suggestionIndex = Math.max(suggestionIndex - 1, 0);
+            } else if (e.key === 'Enter' && suggestionIndex >= 0) {
+                e.preventDefault();
+                selectSuggestion(items[suggestionIndex]);
+                return;
+            } else if (e.key === 'Escape') {
+                box.style.display = 'none'; return;
+            }
+            items.forEach((it, i) => it.classList.toggle('active', i === suggestionIndex));
+        }
+
+        // Klick außerhalb schließt Vorschläge
+        document.addEventListener('click', e => {
+            const inp = document.getElementById('search-input');
+            const box = document.getElementById('search-suggestions');
+            if (box && inp && !box.contains(e.target) && e.target !== inp) {
+                box.style.display = 'none';
+            }
+        });
 
         // Filter-Events
         ['filter-year', 'filter-region', 'filter-country'].forEach(id => {
