@@ -1,0 +1,5 @@
+WHISKY MAGAZIN V1 - Originaldesign (Warm Amber/Brown)
+Gebaut: 2026-03-27
+Builder: site_builder.py
+Port: 8080
+Design: Classic warm, Georgia serif, amber/brown tones
