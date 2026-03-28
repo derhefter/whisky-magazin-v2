@@ -13,24 +13,24 @@
     <link rel="canonical" href="https://whisky-magazin.vercel.app/artikel/special-edition-dublin-irland-2015.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #FAF8F4;
-            --bg-surface: #F0EBE1;
+            --bg-primary: #FAFAF7;
+            --bg-surface: #F5F0E8;
             --bg-elevated: #FFFFFF;
-            --text-primary: #2A2520;
-            --text-secondary: #6B5E52;
-            --accent-copper: #B8762E;
-            --accent-terra: #C4583A;
-            --accent-sage: #5B7B6A;
-            --accent-muted: #8A7D6B;
-            --border: #DDD5C8;
-            --shadow-sm: 0 2px 12px rgba(42,37,32,0.06);
-            --shadow-hover: 0 4px 20px rgba(42,37,32,0.10);
+            --text-primary: #1A1A1A;
+            --text-secondary: #5C5C5C;
+            --accent-amber: #C8963E;
+            --accent-warm: #8B7355;
+            --accent-sage: #4A7C5E;
+            --accent-muted: #8B7355;
+            --border: #E8DCC8;
+            --shadow-sm: 0 2px 12px rgba(139,115,85,0.08);
+            --shadow-hover: 0 4px 24px rgba(139,115,85,0.14);
             --radius-sm: 6px;
             --radius-pill: 24px;
-            --max-width: 1100px;
+            --max-width: 1200px;
             --article-max: 720px;
             --sidebar-width: 300px;
         }
@@ -38,7 +38,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 400;
             color: var(--text-primary);
             background-color: var(--bg-primary);
@@ -54,7 +54,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(250,248,244,0.92);
+            background: rgba(250,250,247,0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
@@ -70,7 +70,7 @@
             height: 100%;
         }
         .site-logo {
-            font-family: 'Bitter', Georgia, serif;
+            font-family: 'Fraunces', Georgia, serif;
             font-weight: 600;
             font-size: 22px;
             color: var(--text-primary);
@@ -78,12 +78,12 @@
             letter-spacing: -0.5px;
         }
         .site-logo .logo-dot {
-            color: var(--accent-copper);
+            color: var(--accent-amber);
             font-size: 28px;
             line-height: 1;
         }
         .site-logo .logo-magazin {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 13px;
             text-transform: uppercase;
@@ -92,18 +92,18 @@
         }
         .site-nav { display: flex; align-items: center; gap: 28px; }
         .site-nav a {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             font-weight: 500;
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.2s;
         }
-        .site-nav a:hover { color: var(--accent-copper); }
+        .site-nav a:hover { color: var(--accent-amber); }
 
         /* --- HEADINGS --- */
         h1, h2, h3, h4 {
-            font-family: 'Bitter', Georgia, serif;
+            font-family: 'Fraunces', Georgia, serif;
             color: var(--text-primary);
             line-height: 1.3;
         }
@@ -116,23 +116,23 @@
             top: 8px;
             width: 8px;
             height: 8px;
-            background: var(--accent-terra);
+            background: var(--accent-warm);
         }
         h3 { font-size: 18px; font-weight: 600; }
 
         /* --- BUTTONS --- */
-        .btn { display: inline-block; padding: 10px 24px; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; border-radius: var(--radius-sm); text-decoration: none; cursor: pointer; transition: all 0.2s; border: none; }
-        .btn-primary { background: var(--accent-copper); color: #fff; }
-        .btn-primary:hover { background: #a06828; }
-        .btn-ghost { background: transparent; border: 1.5px solid var(--accent-copper); color: var(--accent-copper); }
-        .btn-ghost:hover { background: var(--accent-copper); color: #fff; }
+        .btn { display: inline-block; padding: 10px 24px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; border-radius: var(--radius-sm); text-decoration: none; cursor: pointer; transition: all 0.2s; border: none; }
+        .btn-primary { background: var(--accent-amber); color: #fff; }
+        .btn-primary:hover { background: #A67A2E; }
+        .btn-ghost { background: transparent; border: 1.5px solid var(--accent-amber); color: var(--accent-amber); }
+        .btn-ghost:hover { background: var(--accent-amber); color: #fff; }
         .btn-secondary { background: transparent; border: 1.5px solid var(--accent-sage); color: var(--accent-sage); }
         .btn-secondary:hover { background: var(--accent-sage); color: #fff; }
 
         /* --- BADGES --- */
-        .badge { display: inline-block; padding: 4px 12px; font-family: 'Work Sans', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: var(--radius-pill); }
-        .badge-copper { background: var(--accent-copper); color: #fff; }
-        .badge-terra { background: var(--accent-terra); color: #fff; }
+        .badge { display: inline-block; padding: 4px 12px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: var(--radius-pill); }
+        .badge-amber { background: var(--accent-amber); color: #fff; }
+        .badge-warm { background: var(--accent-warm); color: #fff; }
         .badge-sage { background: var(--accent-sage); color: #fff; }
         .badge-outline { background: transparent; border: 1px solid var(--border); color: var(--text-secondary); }
 
@@ -152,19 +152,19 @@
         .card-image { width: 100%; aspect-ratio: 3/2; object-fit: cover; background: linear-gradient(135deg, var(--bg-surface) 0%, var(--border) 100%); }
         .card-body { padding: 20px; }
         .card-body .badge { margin-bottom: 8px; }
-        .card-title { font-family: 'Bitter', serif; font-size: 18px; font-weight: 600; margin: 0 0 8px; line-height: 1.3; }
+        .card-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; margin: 0 0 8px; line-height: 1.3; }
         .card-title a { color: var(--text-primary); text-decoration: none; }
-        .card-title a:hover { color: var(--accent-copper); }
+        .card-title a:hover { color: var(--accent-amber); }
         .card-meta { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
         .card-teaser { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
 
         /* --- BLOCKQUOTE --- */
         blockquote {
-            font-family: 'Bitter', serif;
+            font-family: 'Fraunces', serif;
             font-style: italic;
             font-size: 18px;
             color: var(--text-primary);
-            border-left: 3px solid var(--accent-copper);
+            border-left: 3px solid var(--accent-amber);
             padding: 4px 0 4px 24px;
             margin: 32px 0;
             background: none;
@@ -172,7 +172,7 @@
 
         /* --- HERO (nur Startseite) --- */
         .hero {
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--accent-copper) 100%);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--accent-amber) 100%);
             color: #fff;
             text-align: center;
             padding: 80px 24px 70px;
@@ -223,7 +223,7 @@
             padding: 20px;
         }
         .article-card .card-meta {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 13px;
             color: var(--text-secondary);
             margin-bottom: 8px;
@@ -241,7 +241,7 @@
             letter-spacing: 1px;
         }
         .article-card h2 {
-            font-family: 'Bitter', serif;
+            font-family: 'Fraunces', serif;
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 10px;
@@ -254,7 +254,7 @@
             text-decoration: none;
         }
         .article-card h2 a:hover {
-            color: var(--accent-copper);
+            color: var(--accent-amber);
         }
         .article-card .teaser {
             color: var(--text-secondary);
@@ -263,8 +263,8 @@
             line-height: 1.6;
         }
         .read-more {
-            font-family: 'Work Sans', sans-serif;
-            color: var(--accent-copper);
+            font-family: 'Inter', sans-serif;
+            color: var(--accent-amber);
             text-decoration: none;
             font-weight: 500;
             font-size: 14px;
@@ -285,7 +285,7 @@
             line-height: 1.3;
         }
         .article-header .meta-line {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             opacity: 0.75;
         }
@@ -305,7 +305,7 @@
             border-bottom: 2px solid var(--bg-surface);
         }
         .article-body h3 {
-            color: var(--accent-copper);
+            color: var(--accent-amber);
             font-size: 18px;
             margin: 28px 0 12px;
         }
@@ -316,19 +316,19 @@
         }
         .article-body li { margin-bottom: 8px; }
         .article-body blockquote {
-            font-family: 'Bitter', serif;
+            font-family: 'Fraunces', serif;
             font-style: italic;
             font-size: 18px;
             color: var(--text-primary);
-            border-left: 3px solid var(--accent-copper);
+            border-left: 3px solid var(--accent-amber);
             padding: 4px 0 4px 24px;
             margin: 32px 0;
             background: none;
         }
         .article-body a {
-            color: var(--accent-copper);
+            color: var(--accent-amber);
             text-decoration: underline;
-            text-decoration-color: var(--accent-copper);
+            text-decoration-color: var(--accent-amber);
         }
         .article-body a:hover { color: var(--text-primary); }
 
@@ -336,7 +336,7 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            background: var(--accent-copper);
+            background: var(--accent-amber);
             color: #fff !important;
             padding: 3px 10px 3px 8px;
             border-radius: var(--radius-sm);
@@ -344,13 +344,13 @@
             border-bottom: none !important;
             font-size: 14px;
             font-weight: 500;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             transition: background 0.2s, transform 0.1s;
             white-space: nowrap;
         }
         .affiliate-link::before { content: "→"; font-size: 0.8em; }
         .affiliate-link:hover {
-            background: #a06828;
+            background: #A67A2E;
             transform: translateY(-1px);
             color: #fff !important;
         }
@@ -372,7 +372,7 @@
 
         /* --- SIDEBAR --- */
         .sidebar {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         .sidebar-box {
             background: var(--bg-elevated);
@@ -388,7 +388,7 @@
             margin-bottom: 14px;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--bg-surface);
-            font-family: 'Bitter', Georgia, serif;
+            font-family: 'Fraunces', Georgia, serif;
             padding-left: 0;
         }
         .sidebar-box h3::before { display: none; }
@@ -399,7 +399,7 @@
             text-decoration: none;
             font-size: 14px;
         }
-        .sidebar-box a:hover { color: var(--accent-copper); }
+        .sidebar-box a:hover { color: var(--accent-amber); }
 
         .tag-cloud {
             display: flex;
@@ -416,7 +416,7 @@
             transition: background 0.2s;
         }
         .tag:hover {
-            background: var(--accent-copper);
+            background: var(--accent-amber);
             color: #fff;
         }
 
@@ -427,21 +427,21 @@
             padding: 28px;
             text-align: center;
         }
-        .cta-box h3 { color: var(--accent-copper); border: none; padding-left: 0; }
+        .cta-box h3 { color: var(--accent-amber); border: none; padding-left: 0; }
         .cta-box h3::before { display: none; }
         .cta-box p { font-size: 14px; margin: 10px 0 16px; opacity: 0.85; }
         .cta-box a {
             display: inline-block;
-            background: var(--accent-copper);
+            background: var(--accent-amber);
             color: #fff;
             padding: 10px 28px;
             border-radius: var(--radius-sm);
             text-decoration: none;
             font-weight: 500;
             font-size: 14px;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-        .cta-box a:hover { background: #a06828; }
+        .cta-box a:hover { background: #A67A2E; }
 
         /* --- TAGS --- */
         .article-tags {
@@ -464,12 +464,12 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: 48px;
         }
-        .footer-logo { font-family: 'Bitter', serif; font-weight: 600; font-size: 20px; color: var(--bg-primary); margin-bottom: 12px; }
+        .footer-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; color: var(--bg-primary); margin-bottom: 12px; }
         .footer-tagline { font-size: 14px; color: var(--accent-muted); line-height: 1.6; }
-        .footer-nav h4 { font-family: 'Bitter', serif; font-size: 14px; font-weight: 600; color: var(--bg-primary); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; padding-left: 0; }
+        .footer-nav h4 { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; color: var(--bg-primary); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; padding-left: 0; }
         .footer-nav h4::before { display: none; }
         .footer-nav a { display: block; font-size: 14px; color: var(--accent-muted); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
-        .footer-nav a:hover { color: var(--accent-copper); }
+        .footer-nav a:hover { color: var(--accent-amber); }
         .footer-bottom {
             max-width: var(--max-width);
             margin: 48px auto 0;
@@ -480,7 +480,7 @@
             font-size: 13px;
             color: var(--accent-muted);
         }
-        .footer-quote { font-family: 'Bitter', serif; font-style: italic; font-size: 14px; color: var(--accent-muted); }
+        .footer-quote { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--accent-muted); }
 
         /* --- CARD IMAGE --- */
         .card-image-wrapper {
@@ -511,7 +511,7 @@
             width: 100%; height: 210px;
             background: linear-gradient(135deg, var(--bg-surface) 0%, var(--border) 100%);
             display: flex; align-items: center; justify-content: center;
-            font-size: 3em; color: var(--accent-copper);
+            font-size: 3em; color: var(--accent-amber);
             border-radius: var(--radius-sm) var(--radius-sm) 0 0;
         }
 
@@ -520,7 +520,7 @@
             width: 100%; max-height: 480px; object-fit: cover; display: block;
         }
         .article-image-credit {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 12px; color: var(--text-secondary);
             text-align: right; padding: 4px 8px; background: var(--bg-surface);
         }
@@ -528,14 +528,14 @@
 
         /* --- EMPFEHLUNG BOX --- */
         .empfehlung-box {
-            border-left: 4px solid var(--accent-copper);
+            border-left: 4px solid var(--accent-amber);
             background: var(--bg-surface);
             border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
             padding: 24px 28px; margin: 32px 0;
             display: flex; align-items: flex-start; gap: 16px;
         }
         .empfehlung-box h3 {
-            font-family: 'Bitter', serif;
+            font-family: 'Fraunces', serif;
             font-size: 16px;
             margin: 0 0 8px;
             padding-left: 0;
@@ -544,21 +544,21 @@
         .empfehlung-box .emp-icon { font-size: 2em; flex-shrink: 0; margin-top: 2px; }
         .empfehlung-box .emp-content { flex: 1; }
         .empfehlung-box .emp-title {
-            font-family: 'Bitter', serif; font-weight: 600;
+            font-family: 'Fraunces', serif; font-weight: 600;
             color: var(--text-primary); font-size: 16px; margin-bottom: 6px;
         }
         .empfehlung-box .emp-text {
             font-size: 14px; color: var(--text-secondary); margin-bottom: 12px;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         .empfehlung-box .emp-cta {
-            display: inline-block; background: var(--accent-copper);
+            display: inline-block; background: var(--accent-amber);
             color: #fff !important; padding: 8px 20px; border-radius: var(--radius-sm);
             text-decoration: none !important; font-weight: 500; font-size: 14px;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             transition: background 0.2s; margin-right: 8px; margin-bottom: 4px;
         }
-        .empfehlung-box .emp-cta:hover { background: #a06828; color: #fff !important; }
+        .empfehlung-box .emp-cta:hover { background: #A67A2E; color: #fff !important; }
 
         /* --- SHARE BUTTONS --- */
         .share-bar {
@@ -567,13 +567,13 @@
         }
         .share-label {
             font-size: 13px; color: var(--text-secondary);
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         .share-btn {
             display: inline-flex; align-items: center; gap: 6px;
             padding: 8px 16px; border-radius: var(--radius-pill);
             text-decoration: none !important; font-size: 12px;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 500; transition: opacity 0.2s; color: #fff !important;
         }
         .share-btn:hover { opacity: 0.85; }
@@ -585,31 +585,31 @@
         /* --- BREADCRUMB --- */
         .breadcrumb {
             background: var(--bg-surface); padding: 10px 24px;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 13px; color: var(--text-secondary);
         }
         .breadcrumb-inner { max-width: var(--max-width); margin: 0 auto; }
         .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent-copper); }
+        .breadcrumb a:hover { color: var(--accent-amber); }
 
         /* --- RELATED GRID --- */
         .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
         .related-item {
             background: var(--bg-primary); border-radius: var(--radius-sm);
             padding: 12px 14px; text-decoration: none !important;
-            border-left: 3px solid var(--accent-copper);
+            border-left: 3px solid var(--accent-amber);
             color: var(--text-primary) !important; font-size: 14px;
             line-height: 1.4; transition: background 0.2s, border-color 0.2s; display: block;
         }
-        .related-item:hover { background: var(--bg-surface); border-left-color: var(--accent-terra); }
+        .related-item:hover { background: var(--bg-surface); border-left-color: var(--accent-warm); }
 
         /* --- PERSONAL PHOTO BADGE --- */
         .personal-photo-wrapper { position: relative; display: block; }
         .personal-photo-badge {
             position: absolute; bottom: 8px; left: 8px;
-            background: rgba(42,37,32,0.85); color: var(--accent-copper);
+            background: rgba(42,37,32,0.85); color: var(--accent-amber);
             font-size: 12px; padding: 2px 8px; border-radius: var(--radius-pill);
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             pointer-events: none;
         }
 
@@ -663,7 +663,7 @@
             padding: 10px 16px;
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             background: var(--bg-elevated);
         }
@@ -686,7 +686,7 @@
             background: url('/images/authors-steffen-elmar.jpg') center/cover;
             flex-shrink: 0;
         }
-        .author-info h4 { font-family: 'Bitter', serif; margin: 0 0 4px; font-size: 16px; padding-left: 0; }
+        .author-info h4 { font-family: 'Fraunces', serif; margin: 0 0 4px; font-size: 16px; padding-left: 0; }
         .author-info h4::before { display: none; }
         .author-info p { font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
 
@@ -709,12 +709,12 @@
             margin-bottom: 24px;
         }
         .tasting-panel h3 {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--accent-copper);
+            color: var(--accent-amber);
             margin: 0 0 16px;
             padding-left: 0;
         }
@@ -748,7 +748,7 @@
             gap: 48px;
             flex-wrap: wrap;
         }
-        .trust-stat-number { font-family: 'Bitter', serif; font-size: 32px; font-weight: 700; color: var(--accent-copper); }
+        .trust-stat-number { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: var(--accent-amber); }
         .trust-stat-label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
 
         /* --- RESPONSIVE --- */
@@ -786,14 +786,14 @@
     </header>
     
     <nav style="max-width:var(--max-width);margin:0 auto;padding:16px 24px;font-size:13px;color:var(--text-secondary);">
-        <a href="/" style="color:var(--accent-copper);text-decoration:none;">Startseite</a>
+        <a href="/" style="color:var(--accent-amber);text-decoration:none;">Startseite</a>
         <span style="margin:0 8px;">&#8250;</span>
-        <a href="/kategorie/reise.html" style="color:var(--accent-copper);text-decoration:none;">Reise</a>
+        <a href="/kategorie/reise.html" style="color:var(--accent-amber);text-decoration:none;">Reise</a>
         <span style="margin:0 8px;">&#8250;</span>
         <span>Special Edition: Dublin & Irish Whiskey 2015</span>
     </nav>
     <div style="max-width:var(--article-max);margin:0 auto;padding:16px 24px 24px;text-align:center;">
-        <span class="badge badge-copper">Reise</span>
+        <span class="badge badge-amber">Reise</span>
         <h1 style="font-size:34px;margin:16px 0 12px;padding-left:0;">Special Edition: Dublin & Irish Whiskey 2015</h1>
         <p style="color:var(--text-secondary);font-size:14px;">Von Steffen &amp; Elmar &#183; 17. März 2026 &#183; 2 Min. Lesezeit</p>
         <div style="margin-top:12px;"><span class="trust-badge">&#10003; Persönlich besucht</span></div>
@@ -819,8 +819,8 @@
         <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
             <span style="font-size:1.2em;">📍</span>
             <a href="https://whisky-magazin.vercel.app/karte.html?highlight=special-edition-dublin-irland-2015"
-               style="color:var(--accent-copper); text-decoration:none; font-size:0.9em;
-                      font-family:'Work Sans',sans-serif;">
+               style="color:var(--accent-amber); text-decoration:none; font-size:0.9em;
+                      font-family:'Inter',sans-serif;">
                 Auf der Karte anzeigen &rarr;
             </a>
         </div>
@@ -862,7 +862,7 @@
     </div>
 
             <div style="background:var(--bg-surface);border-radius:var(--radius-sm);padding:32px;text-align:center;margin:40px 0;">
-        <h3 style="font-family:'Bitter',serif;font-size:20px;margin:0 0 8px;padding-left:0;">Gefällt dir diese Geschichte?</h3>
+        <h3 style="font-family:'Fraunces',serif;font-size:20px;margin:0 0 8px;padding-left:0;">Gefällt dir diese Geschichte?</h3>
         <p style="font-size:14px;color:var(--text-secondary);margin:0 0 16px;">Hol dir die besten Whisky-Stories direkt ins Postfach.</p>
         <form action="#" data-newsletter class="newsletter-form" style="justify-content:center;">
             <input type="email" placeholder="Deine E-Mail" required>
@@ -904,10 +904,10 @@
             <div class="sidebar-sticky">
                 
                 <div style="background:var(--bg-surface);border-radius:var(--radius-sm);padding:24px;margin-bottom:24px;text-align:center;">
-                    <h4 style="font-family:'Bitter',serif;font-size:16px;margin:0 0 8px;padding-left:0;">Schottland-Post</h4>
+                    <h4 style="font-family:'Fraunces',serif;font-size:16px;margin:0 0 8px;padding-left:0;">Schottland-Post</h4>
                     <p style="font-size:13px;color:var(--text-secondary);margin:0 0 16px;">Einmal im Monat die besten Stories.</p>
                     <form action="#" data-newsletter style="display:flex;flex-direction:column;gap:8px;">
-                        <input type="email" placeholder="E-Mail" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Work Sans',sans-serif;">
+                        <input type="email" placeholder="E-Mail" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Inter',sans-serif;">
                         <button type="submit" class="btn btn-primary" style="font-size:13px;padding:8px 16px;">Anmelden</button>
                     </form>
                 </div>
@@ -927,7 +927,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div>
-                <div class="footer-logo">whisky<span style="color:var(--accent-copper)">.</span>Magazin</div>
+                <div class="footer-logo">whisky<span style="color:var(--accent-amber)">.</span>Magazin</div>
                 <p class="footer-tagline">Seit 2007 unterwegs durch Schottlands Whisky-Welt. Echte Reisen, echte Geschichten, ehrliche Empfehlungen.</p>
             </div>
             <div class="footer-nav">
