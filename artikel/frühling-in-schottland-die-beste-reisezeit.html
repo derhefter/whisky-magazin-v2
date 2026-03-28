@@ -214,7 +214,7 @@
         .then(function(r){return r.json()})
         .then(function(d){
           if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
-          else{btn.textContent='✓ Angemeldet!';btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
+          else{btn.textContent='✓ Check dein Postfach!';btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
         })
         .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
     });
