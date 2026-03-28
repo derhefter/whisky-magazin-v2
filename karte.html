@@ -697,6 +697,12 @@
         });
 
         // URL-Parameter verarbeiten
+        // Funktionen global verfuegbar machen (fuer inline onclick/oninput)
+        window.handleSearchInput = handleSearchInput;
+        window.handleSearchKey = handleSearchKey;
+        window.clearSearch = clearSearch;
+        window.applyFilters = applyFilters;
+
         function handleUrlParams() {
             const params = new URLSearchParams(window.location.search);
             if (params.get('year')) {

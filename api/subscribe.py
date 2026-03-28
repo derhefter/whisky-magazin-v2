@@ -1,6 +1,9 @@
 """Vercel Serverless Function: Newsletter-Anmeldung via Brevo API (Double Opt-In)."""
 import json
 import os
+import re
+import time
+from collections import defaultdict
 from http.server import BaseHTTPRequestHandler
 try:
     from urllib.request import Request, urlopen
@@ -21,14 +24,36 @@ ALLOWED_ORIGINS = [
     "http://localhost:8000",
 ]
 
+# Simple in-memory rate limiting (resets on cold start)
+_rate_store = defaultdict(list)
+RATE_LIMIT_PER_MINUTE = 5
+
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$')
+
 
 def _cors_headers(origin=""):
-    allowed = origin if origin in ALLOWED_ORIGINS else ALLOWED_ORIGINS[0]
+    """Returns CORS headers only for allowed origins. Returns None for unknown origins."""
+    if origin in ALLOWED_ORIGINS:
+        return {
+            "Access-Control-Allow-Origin": origin,
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        }
+    # Unknown origin: return restrictive headers (no ACAO = browser blocks response)
     return {
-        "Access-Control-Allow-Origin": allowed,
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
     }
+
+
+def _is_rate_limited(client_ip):
+    """Basic rate limiting: max N requests per minute per IP."""
+    now = time.time()
+    _rate_store[client_ip] = [t for t in _rate_store[client_ip] if now - t < 60]
+    if len(_rate_store[client_ip]) >= RATE_LIMIT_PER_MINUTE:
+        return True
+    _rate_store[client_ip].append(now)
+    return False
 
 
 class handler(BaseHTTPRequestHandler):
@@ -43,15 +68,29 @@ class handler(BaseHTTPRequestHandler):
         origin = self.headers.get("Origin", "")
         cors = _cors_headers(origin)
 
+        # Rate limiting
+        client_ip = self.client_address[0] if self.client_address else "unknown"
+        if _is_rate_limited(client_ip):
+            self._respond(429, {"error": "Zu viele Anfragen. Bitte warte kurz."}, cors)
+            return
+
+        # Reject requests without valid Origin header
+        if origin and origin not in ALLOWED_ORIGINS:
+            self._respond(403, {"error": "Zugriff verweigert."}, cors)
+            return
+
         try:
             length = int(self.headers.get("Content-Length", 0))
+            if length > 1024:  # Max 1KB payload
+                self._respond(400, {"error": "Anfrage zu gross."}, cors)
+                return
             body = json.loads(self.rfile.read(length)) if length else {}
         except (json.JSONDecodeError, ValueError):
             self._respond(400, {"error": "Ungueltige Anfrage."}, cors)
             return
 
         email = (body.get("email") or "").strip().lower()
-        if not email or "@" not in email or "." not in email.split("@")[-1]:
+        if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
             self._respond(400, {"error": "Bitte gib eine gueltige E-Mail-Adresse ein."}, cors)
             return
 
