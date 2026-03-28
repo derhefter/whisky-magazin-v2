@@ -16,11 +16,14 @@
         2021
       ],
       "articles": [
+        "glasgow-winter-citybreak-2025",
+        "arran-ayrshire-celtic-vs-bayern-2017",
         "campbeltown-springbank-glengyle-glen-scotia-2016",
         "glasgow-fife-football-2013",
         "glasgow-islay-erste-schottlandreise-2007",
         "trossachs-oban-hadrians-wall-2009",
-        "westküste-mull-zurück-in-schottland-2021"
+        "westküste-mull-zurück-in-schottland-2021",
+        "glasgow-winter-weihnachten-2022"
       ],
       "photos": [
         {
@@ -104,6 +107,7 @@
         2007
       ],
       "articles": [
+        "islay-erreichen-fähre-flug-oder-beides",
         "glasgow-islay-erste-schottlandreise-2007"
       ],
       "photos": [
@@ -284,6 +288,7 @@
         2008
       ],
       "articles": [
+        "edinburgh-halloween-holyrood-2019",
         "edinburgh-orkney-scapa-private-tour-2008"
       ],
       "photos": [
@@ -959,6 +964,7 @@
         2013
       ],
       "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017",
         "glasgow-fife-football-2013"
       ],
       "photos": [
@@ -1109,7 +1115,8 @@
         2015
       ],
       "articles": [
-        "special-edition-dublin-irland-2015"
+        "special-edition-dublin-irland-2015",
+        "teeling-distillery-dublin-ein-besuch-lohnt-sich"
       ],
       "photos": [
         {
@@ -1161,7 +1168,8 @@
         2015
       ],
       "articles": [
-        "special-edition-dublin-irland-2015"
+        "special-edition-dublin-irland-2015",
+        "teeling-distillery-dublin-ein-besuch-lohnt-sich"
       ],
       "photos": [
         {
@@ -1450,134 +1458,49 @@
           "src": "/images/map/loc-girvan-distillery_0.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-girvan-distillery-2017",
-      "name": "Girvan Distillery",
-      "lat": 55.69775,
-      "lon": -5.27553,
-      "type": "distillery",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
+        },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_0.jpg",
+          "src": "/images/map/loc-girvan-distillery_1.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
         },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_1.jpg",
-          "year": 2017,
-          "caption": "Girvan Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-girvan-distillery-2017",
-      "name": "Girvan Distillery",
-      "lat": 55.58002,
-      "lon": -5.13677,
-      "type": "distillery",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-girvan-distillery-2017_0.jpg",
+          "src": "/images/map/loc-girvan-distillery_2.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
         },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_1.jpg",
-          "year": 2017,
-          "caption": "Girvan Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-girvan-distillery-2017",
-      "name": "Girvan Distillery",
-      "lat": 55.245,
-      "lon": -4.853,
-      "type": "distillery",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-girvan-distillery-2017_0.jpg",
+          "src": "/images/map/loc-girvan-distillery_3.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
         },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_1.jpg",
+          "src": "/images/map/loc-girvan-distillery_4.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
         },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_2.jpg",
+          "src": "/images/map/loc-girvan-distillery_5.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-girvan-distillery-2017",
-      "name": "Girvan Distillery",
-      "lat": 55.63859,
-      "lon": -4.81592,
-      "type": "distillery",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
+        },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_0.jpg",
+          "src": "/images/map/loc-girvan-distillery_6.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-girvan-distillery-2017",
-      "name": "Girvan Distillery",
-      "lat": 55.92211,
-      "lon": -4.43834,
-      "type": "distillery",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
+        },
         {
-          "src": "/images/map/loc-girvan-distillery-2017_0.jpg",
+          "src": "/images/map/loc-girvan-distillery_7.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_8.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_9.jpg",
           "year": 2017,
           "caption": "Girvan Distillery"
         }
@@ -1607,80 +1530,29 @@
           "src": "/images/map/loc-annandale-distillery_1.jpg",
           "year": 2017,
           "caption": "Annandale Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-annandale-distillery-2017",
-      "name": "Annandale Distillery",
-      "lat": 55.008,
-      "lon": -3.263,
-      "type": "distillery",
-      "region": "Dumfries",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
+        },
         {
-          "src": "/images/map/loc-annandale-distillery-2017_0.jpg",
+          "src": "/images/map/loc-annandale-distillery_2.jpg",
           "year": 2017,
           "caption": "Annandale Distillery"
         },
         {
-          "src": "/images/map/loc-annandale-distillery-2017_1.jpg",
-          "year": 2017,
-          "caption": "Annandale Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-annandale-distillery-2017",
-      "name": "Annandale Distillery",
-      "lat": 55.85161,
-      "lon": -4.2073,
-      "type": "distillery",
-      "region": "Dumfries",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-annandale-distillery-2017_0.jpg",
-          "year": 2017,
-          "caption": "Annandale Distillery"
-        }
-      ]
-    },
-    {
-      "id": "loc-annandale-distillery-2017",
-      "name": "Annandale Distillery",
-      "lat": 55.8611,
-      "lon": -4.25008,
-      "type": "distillery",
-      "region": "Dumfries",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-annandale-distillery-2017_0.jpg",
+          "src": "/images/map/loc-annandale-distillery_3.jpg",
           "year": 2017,
           "caption": "Annandale Distillery"
         },
         {
-          "src": "/images/map/loc-annandale-distillery-2017_1.jpg",
+          "src": "/images/map/loc-annandale-distillery_4.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_5.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_6.jpg",
           "year": 2017,
           "caption": "Annandale Distillery"
         }
@@ -1905,6 +1777,7 @@
         2021
       ],
       "articles": [
+        "glasgow-winter-citybreak-2025",
         "westküste-mull-zurück-in-schottland-2021"
       ],
       "photos": [
@@ -2051,7 +1924,9 @@
         2023
       ],
       "articles": [
-        "highlands-whisky-trail-2023"
+        "highlands-whisky-trail-2023",
+        "special-edition-deutsche-whisky-tour-2020",
+        "special-edition-deutschland-berlin-dresden-2022"
       ],
       "photos": [
         {
@@ -3351,7 +3226,28 @@
       "articles": [
         "bourbon-trail-kentucky-tennessee-2024"
       ],
-      "photos": []
+      "photos": [
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_0.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        },
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_1.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        },
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_2.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        },
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_3.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        }
+      ]
     },
     {
       "id": "loc-cascade-hollow-distilling-co-george-dickel",
@@ -3511,7 +3407,28 @@
       "articles": [
         "bourbon-trail-kentucky-tennessee-2024"
       ],
-      "photos": []
+      "photos": [
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_0.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        },
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_1.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        },
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_2.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        },
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_3.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        }
+      ]
     },
     {
       "id": "loc-four-roses-distillery",
@@ -3701,7 +3618,8 @@
         2024
       ],
       "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
+        "bourbon-trail-kentucky-tennessee-2024",
+        "special-edition-dublin-irland-2015"
       ],
       "photos": []
     },
@@ -4415,11 +4333,24 @@
       "type": "distillery",
       "region": "Perthshire",
       "country": "Schottland",
-      "years_visited": [],
+      "years_visited": [
+        2012
+      ],
       "articles": [
         "highlands-skye-talisker-2012"
       ],
-      "photos": []
+      "photos": [
+        {
+          "src": "/images/map/loc-edradour-distillery-manual_0.jpg",
+          "year": 2012,
+          "caption": "Edradour Distillery"
+        },
+        {
+          "src": "/images/map/loc-edradour-distillery-manual_1.jpg",
+          "year": 2012,
+          "caption": "Edradour Distillery"
+        }
+      ]
     },
     {
       "id": "loc-ben-nevis-distillery",
@@ -4496,6 +4427,146 @@
       "years_visited": [],
       "articles": [
         "glasgow-winter-citybreak-2025"
+      ],
+      "photos": []
+    },
+    {
+      "id": "loc-glen-scotia-distillery",
+      "name": "Glen Scotia Distillery",
+      "lat": 55.4238,
+      "lon": -5.6057,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "campbeltown-springbank-glengyle-glen-scotia-2016"
+      ],
+      "photos": []
+    },
+    {
+      "id": "loc-isle-of-jura-distillery",
+      "name": "Isle of Jura Distillery",
+      "lat": 55.8494,
+      "lon": -5.9994,
+      "type": "distillery",
+      "region": "Isle of Jura",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-dalmore-distillery",
+      "name": "Dalmore Distillery",
+      "lat": 57.6742,
+      "lon": -4.1793,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-arran-distillery",
+      "name": "Arran Distillery",
+      "lat": 55.7155,
+      "lon": -5.305,
+      "type": "distillery",
+      "region": "Isle of Arran",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017"
+      ],
+      "photos": []
+    },
+    {
+      "id": "loc-fettercairn-distillery",
+      "name": "Fettercairn Distillery",
+      "lat": 56.855,
+      "lon": -2.5728,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-glen-grant-distillery",
+      "name": "Glen Grant Distillery",
+      "lat": 57.5128,
+      "lon": -3.2029,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-aberfeldy-distillery",
+      "name": "Aberfeldy Distillery",
+      "lat": 56.6166,
+      "lon": -3.8655,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-glen-moray-distillery",
+      "name": "Glen Moray Distillery",
+      "lat": 57.6471,
+      "lon": -3.3083,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-bladnoch-distillery",
+      "name": "Bladnoch Distillery",
+      "lat": 54.8427,
+      "lon": -4.422,
+      "type": "distillery",
+      "region": "Lowlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017"
+      ],
+      "photos": []
+    },
+    {
+      "id": "loc-benriach-distillery",
+      "name": "BenRiach Distillery",
+      "lat": 57.6042,
+      "lon": -3.3008,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": []
+    },
+    {
+      "id": "loc-kingsbarns-distillery",
+      "name": "Kingsbarns Distillery",
+      "lat": 56.2731,
+      "lon": -2.6737,
+      "type": "distillery",
+      "region": "Fife",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "nordost-tour-14-destillerien-2018"
       ],
       "photos": []
     }
@@ -4804,6 +4875,8 @@
     "Highlands",
     "Inverness",
     "Islay",
+    "Isle of Arran",
+    "Isle of Jura",
     "Isle of Mull",
     "Isle of Skye",
     "Kentucky",
@@ -4856,8 +4929,8 @@
     "USA"
   ],
   "stats": {
-    "total_locations": 201,
-    "total_distilleries": 110,
+    "total_locations": 204,
+    "total_distilleries": 113,
     "total_routes": 0,
     "total_articles": 39,
     "years_covered": "2007-2025"
