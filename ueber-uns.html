@@ -398,5 +398,29 @@
   });
 })();
 </script>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--text-primary);color:#fff;box-shadow:0 -4px 24px rgba(0,0,0,0.25);">
+  <div style="max-width:960px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
+    <div style="flex:1;min-width:280px;">
+      <p style="margin:0 0 4px;font-size:15px;font-weight:600;font-family:'Fraunces',serif;">Cookie-Einstellungen</p>
+      <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.5;">Wir nutzen Cookies fuer Affiliate-Partner (Amazon, Booking.com) und Google Fonts. Details in unserer <a href="/datenschutz.html" style="color:var(--accent-amber);text-decoration:underline;">Datenschutzerklaerung</a>.</p>
+    </div>
+    <div style="display:flex;gap:8px;flex-shrink:0;">
+      <button onclick="cookieConsent('essential')" style="padding:10px 20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#fff;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;">Nur notwendige</button>
+      <button onclick="cookieConsent('all')" style="padding:10px 20px;border:none;background:var(--accent-amber);color:#fff;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;">Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var consent=localStorage.getItem('cookie_consent');
+  if(!consent){document.getElementById('cookie-banner').style.display='block'}
+  window.cookieConsent=function(level){
+    localStorage.setItem('cookie_consent',level);
+    localStorage.setItem('cookie_consent_date',new Date().toISOString());
+    document.getElementById('cookie-banner').style.display='none';
+  };
+})();
+</script>
 </body>
 </html>
