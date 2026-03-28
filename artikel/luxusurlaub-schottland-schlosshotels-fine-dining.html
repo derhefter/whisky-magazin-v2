@@ -797,7 +797,7 @@
         <span class="badge badge-amber">Urlaub</span>
         <h1 style="font-size:34px;margin:16px 0 12px;padding-left:0;">Luxusurlaub in Schottland: Schlosshotels und Fine Dining</h1>
         <p style="color:var(--text-secondary);font-size:14px;">Von Steffen &amp; Elmar &#183; 28. Februar 2026 &#183; 3 Min. Lesezeit</p>
-        
+        <div style="margin-top:12px;"><span class="trust-badge">&#10003; Persönlich besucht</span></div>
     </div>
     <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
         <img src="/images/luxusurlaub-schottland-schlosshotels-fine-dining.jpg" alt="Luxusurlaub in Schottland: Schlosshotels und Fine Dining" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-sm);display:block;" loading="lazy"><div class="article-image-credit">Foto von <a href="https://unsplash.com/photos/a-white-castle-reflected-in-calm-water-a8Fk-Yw5iIQ?utm_source=whisky_magazin&utm_medium=referral">Wolfgang Weiser</a> auf <a href="https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral">Unsplash</a></div>
@@ -811,6 +811,51 @@
 </ul> <h2>Fazit</h2> <p>Ein Luxusurlaub in Schottland ist die perfekte Wahl für alle, die historisches Erbe, atemberaubende Landschaften und kulinarische Exzellenz erleben möchten. Mit seinen majestätischen Schlosshotels und erstklassigen Restaurants bietet Schottland ein unvergleichliches Erlebnis, das sowohl den Geist als auch die Sinne anspricht. Also, pack deine Koffer und mach dich auf, ein Stück schottische Geschichte und Gastfreundschaft zu erleben!</p> 
 
             
+    <div class="article-mini-map" style="margin: 20px 0;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:1.2em;">📍</span>
+            <a href="https://whisky-magazin.vercel.app/karte.html?highlight=luxusurlaub-schottland-schlosshotels-fine-dining"
+               style="color:var(--accent-amber); text-decoration:none; font-size:0.9em;
+                      font-family:'Inter',sans-serif;">
+                Auf der Karte anzeigen &rarr;
+            </a>
+        </div>
+        <div id="mini-map" style="height:220px; border-radius:10px; box-shadow:var(--shadow-sm);"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+        (function() {
+            var localBase = window.location.origin;
+            fetch(localBase + '/data/map-data.json')
+                .then(r => r.json())
+                .then(data => {
+                    var locs = data.locations.filter(function(l) {
+                        return l.articles && l.articles.indexOf('luxusurlaub-schottland-schlosshotels-fine-dining') !== -1;
+                    });
+                    if (locs.length === 0) return;
+                    var m = L.map('mini-map', { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OSM', maxZoom: 16
+                    }).addTo(m);
+                    var bounds = [];
+                    locs.forEach(function(loc) {
+                        var icon = loc.type === 'distillery'
+                            ? L.divIcon({ className:'', html:'<div style="font-size:20px">🥃</div>', iconSize:[24,24], iconAnchor:[12,12] })
+                            : L.divIcon({ className:'', html:'<div style="font-size:18px">📍</div>', iconSize:[24,24], iconAnchor:[12,12] });
+                        L.marker([loc.lat, loc.lon], { icon: icon })
+                            .bindTooltip(loc.name, { permanent: locs.length <= 5 })
+                            .addTo(m);
+                        bounds.push([loc.lat, loc.lon]);
+                    });
+                    if (bounds.length === 1) {
+                        m.setView(bounds[0], 10);
+                    } else {
+                        m.fitBounds(bounds, { padding: [30, 30] });
+                    }
+                });
+        })();
+        </script>
+    </div>
 
             <div style="background:var(--bg-surface);border-radius:var(--radius-sm);padding:32px;text-align:center;margin:40px 0;">
         <h3 style="font-family:'Fraunces',serif;font-size:20px;margin:0 0 8px;padding-left:0;">Gefällt dir diese Geschichte?</h3>
