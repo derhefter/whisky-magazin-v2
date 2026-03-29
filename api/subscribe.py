@@ -130,7 +130,8 @@ class handler(BaseHTTPRequestHandler):
                 self._respond(200, {"message": "Du bist bereits angemeldet!"}, cors)
             else:
                 self._respond(500, {
-                    "error": "Anmeldung fehlgeschlagen. Bitte versuche es spaeter."
+                    "error": "Anmeldung fehlgeschlagen. Bitte versuche es spaeter.",
+                    "debug": "brevo_status={} body={}".format(e.code, error_body[:300])
                 }, cors)
         except Exception:
             self._respond(500, {
