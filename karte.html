@@ -7,7 +7,7 @@
     <meta name="description" content="Interaktive Karte aller Destillerien, Reiseziele und Orte aus dem Whisky Magazin">
     <meta name="keywords" content="Whisky Karte, Destillerien Schottland, Reisekarte, Whisky Trail">
     <meta property="og:title" content="Karte">
-    <meta property="og:description" content="18 Jahre Whisky-Reisen auf einer interaktiven Karte: Destillerien, Städte und Routenn">
+    <meta property="og:description" content="18 Jahre Whisky-Reisen auf einer interaktiven Karte: Destillerien, Städte und Routen">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://whisky-magazin-new.vercel.app/images/default.jpg">
     <link rel="canonical" href="https://whisky-magazin-new.vercel.app/karte.html">
@@ -89,7 +89,7 @@
             </div>
             <div class="map-stats" id="map-stats"></div>
         </div>
-        <div id="map" style="height: 65vh; min-height: 400px; border-radius: 12px; box-shadow: var(--shadow-hover); z-index: 1;"></div>
+        <div id="map" style="height: 65vh; min-height: 400px; border-radius: 12px; box-shadow: 0 4px 32px rgba(139,115,85,0.15); border: 1px solid var(--border); z-index: 1;"></div>
         <div class="location-directory" id="location-cards"></div>
     </div>
 
@@ -141,9 +141,9 @@
         }
         .breadcrumb a { color: var(--accent-amber); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
-        /* Map tile warm filter */
+        /* Map tile warm filter – Editorial Whisky-Palette */
         #map .leaflet-tile-pane {
-            filter: saturate(0.85) sepia(0.12) brightness(1.02);
+            filter: saturate(0.7) sepia(0.18) brightness(1.04) contrast(0.95) hue-rotate(-5deg);
         }
         #map .leaflet-control-attribution {
             background: rgba(245,240,232,0.9) !important;
@@ -155,13 +155,35 @@
             color: var(--accent-amber) !important;
         }
         .leaflet-popup-content-wrapper {
-            border-radius: var(--radius-sm) !important;
-            box-shadow: var(--shadow-hover) !important;
+            border-radius: 10px !important;
+            box-shadow: 0 8px 32px rgba(139,115,85,0.18) !important;
             border: 1px solid var(--border);
             font-family: 'Inter', sans-serif;
+            padding: 4px !important;
         }
         .leaflet-popup-tip {
             border-top-color: var(--bg-elevated) !important;
+            box-shadow: 0 4px 12px rgba(139,115,85,0.1);
+        }
+        .leaflet-control-zoom a {
+            background: var(--bg-elevated) !important;
+            color: var(--text-primary) !important;
+            border-color: var(--border) !important;
+            font-family: 'Inter', sans-serif !important;
+            width: 34px !important;
+            height: 34px !important;
+            line-height: 34px !important;
+            border-radius: var(--radius-sm) !important;
+        }
+        .leaflet-control-zoom a:hover {
+            background: var(--bg-surface) !important;
+            color: var(--accent-amber) !important;
+        }
+        .leaflet-control-zoom {
+            border: 1px solid var(--border) !important;
+            border-radius: var(--radius-sm) !important;
+            box-shadow: var(--shadow-sm) !important;
+            overflow: hidden;
         }
         .map-controls {
             display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
@@ -286,10 +308,27 @@
 
         /* Leaflet-Anpassungen */
         .leaflet-popup-content-wrapper { border-radius: var(--radius-sm); box-shadow: var(--shadow-hover); }
-        .marker-cluster-small { background-color: rgba(200, 150, 62, 0.45); }
-        .marker-cluster-small div { background-color: rgba(200, 150, 62, 0.85); color: #fff; font-family: 'Inter', sans-serif; }
-        .marker-cluster-medium { background-color: rgba(200, 150, 62, 0.55); }
-        .marker-cluster-medium div { background-color: rgba(200, 150, 62, 0.92); color: #fff; font-family: 'Inter', sans-serif; }
+        .marker-cluster-small { background-color: rgba(200, 150, 62, 0.3); }
+        .marker-cluster-small div {
+            background-color: var(--accent-amber); color: #fff;
+            font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px;
+            width: 32px; height: 32px; line-height: 32px; border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(200,150,62,0.35);
+        }
+        .marker-cluster-medium { background-color: rgba(200, 150, 62, 0.35); }
+        .marker-cluster-medium div {
+            background-color: var(--accent-warm); color: #fff;
+            font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px;
+            width: 36px; height: 36px; line-height: 36px; border-radius: 50%;
+            box-shadow: 0 2px 12px rgba(139,115,85,0.4);
+        }
+        .marker-cluster-large { background-color: rgba(139, 115, 85, 0.35); }
+        .marker-cluster-large div {
+            background-color: var(--text-primary); color: var(--accent-amber);
+            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px;
+            width: 40px; height: 40px; line-height: 40px; border-radius: 50%;
+            box-shadow: 0 3px 16px rgba(26,26,26,0.3);
+        }
 
         @media (max-width: 768px) {
             .map-controls { flex-direction: column; align-items: flex-start; }
@@ -304,7 +343,7 @@
     <script>
     (function() {
         const BASE_URL = 'https://whisky-magazin-new.vercel.app';
-        // Fuer lokales Testen: Daten und Bilder relativ laden
+        // Für lokales Testen: Daten und Bilder relativ laden
         const LOCAL_BASE = window.location.origin;
         const CENTER = [57.0, -4.5];
         const ZOOM = 6;
@@ -328,7 +367,7 @@
 
         const TYPE_LABELS = {
             distillery: 'Destillerie', city: 'Stadt', nature: 'Natur',
-            poi: 'Sehenswuerdigkeit', travel_stop: 'Reisestopp'
+            poi: 'Sehenswürdigkeit', travel_stop: 'Reisestopp'
         };
 
         let mapData = null;
@@ -339,9 +378,11 @@
 
         // Karte initialisieren
         map = L.map('map').setView(CENTER, ZOOM);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            maxZoom: 18
+        // CartoDB Voyager: eleganter, minimalistischer Kartenstil
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
         }).addTo(map);
 
         markerCluster = L.markerClusterGroup({
@@ -697,7 +738,7 @@
         });
 
         // URL-Parameter verarbeiten
-        // Funktionen global verfuegbar machen (fuer inline onclick/oninput)
+        // Funktionen global verfügbar machen (für inline onclick/oninput)
         window.handleSearchInput = handleSearchInput;
         window.handleSearchKey = handleSearchKey;
         window.clearSearch = clearSearch;
@@ -805,7 +846,7 @@
   <div style="max-width:960px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
     <div style="flex:1;min-width:280px;">
       <p style="margin:0 0 4px;font-size:15px;font-weight:600;font-family:'Fraunces',serif;">Cookie-Einstellungen</p>
-      <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.5;">Wir nutzen Cookies fuer Affiliate-Partner (Amazon, Booking.com) und Google Fonts. Details in unserer <a href="/datenschutz.html" style="color:var(--accent-amber);text-decoration:underline;">Datenschutzerklaerung</a>.</p>
+      <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.5;">Wir nutzen Cookies für Affiliate-Partner (Amazon, Booking.com) und Google Fonts. Details in unserer <a href="/datenschutz.html" style="color:var(--accent-amber);text-decoration:underline;">Datenschutzerklärung</a>.</p>
     </div>
     <div style="display:flex;gap:8px;flex-shrink:0;">
       <button onclick="cookieConsent('essential')" style="padding:10px 20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#fff;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;">Nur notwendige</button>

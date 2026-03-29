@@ -71,7 +71,7 @@ class handler(BaseHTTPRequestHandler):
         # Rate limiting
         client_ip = self.client_address[0] if self.client_address else "unknown"
         if _is_rate_limited(client_ip):
-            self._respond(429, {"error": "Zu viele Anfragen. Bitte warte kurz."}, cors)
+            self._respond(429, {"error": "Zu viele Anfragen. Bitte warte einen Moment."}, cors)
             return
 
         # Reject requests without valid Origin header
@@ -82,16 +82,16 @@ class handler(BaseHTTPRequestHandler):
         try:
             length = int(self.headers.get("Content-Length", 0))
             if length > 1024:  # Max 1KB payload
-                self._respond(400, {"error": "Anfrage zu gross."}, cors)
+                self._respond(400, {"error": "Anfrage zu groß."}, cors)
                 return
             body = json.loads(self.rfile.read(length)) if length else {}
         except (json.JSONDecodeError, ValueError):
-            self._respond(400, {"error": "Ungueltige Anfrage."}, cors)
+            self._respond(400, {"error": "Ungültige Anfrage."}, cors)
             return
 
         email = (body.get("email") or "").strip().lower()
         if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
-            self._respond(400, {"error": "Bitte gib eine gueltige E-Mail-Adresse ein."}, cors)
+            self._respond(400, {"error": "Bitte gib eine gültige E-Mail-Adresse ein."}, cors)
             return
 
         if not BREVO_API_KEY:
@@ -120,7 +120,7 @@ class handler(BaseHTTPRequestHandler):
         try:
             urlopen(req)
             self._respond(200, {
-                "message": "Fast geschafft! Bitte checke dein Postfach und bestaetige deine Anmeldung."
+                "message": "Fast geschafft! Bitte checke dein Postfach und bestätige deine Anmeldung."
             }, cors)
         except HTTPError as e:
             error_body = e.read().decode("utf-8", errors="replace")
@@ -128,7 +128,7 @@ class handler(BaseHTTPRequestHandler):
                 self._respond(200, {"message": "Du bist bereits angemeldet!"}, cors)
             else:
                 self._respond(500, {
-                    "error": "Anmeldung fehlgeschlagen. Bitte versuche es spaeter."
+                    "error": "Anmeldung fehlgeschlagen. Bitte versuche es später."
                 }, cors)
 
     def _respond(self, status, data, cors):
