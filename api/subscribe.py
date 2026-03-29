@@ -12,7 +12,7 @@ from urllib.error import HTTPError
 from urllib.parse import urlparse, parse_qs
 
 
-BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
+BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID = int(os.environ.get("BREVO_LIST_ID", "3"))
 REDIRECT_URL = os.environ.get("BREVO_REDIRECT_URL", "https://whisky-magazin-new.vercel.app/?subscribed=1")
 BASE_URL = os.environ.get("BASE_URL", "https://whisky-magazin-new.vercel.app")
@@ -195,19 +195,9 @@ class handler(BaseHTTPRequestHandler):
             return self._json(200, {
                 "message": "Fast geschafft! Bitte checke dein Postfach und best\u00e4tige deine Anmeldung."
             }, cors)
-        except HTTPError as he:
-            try:
-                detail = he.read().decode("utf-8", errors="replace")
-            except Exception:
-                detail = ""
+        except Exception:
             return self._json(500, {
-                "error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter.",
-                "_debug": "HTTP {}: {}".format(he.code, detail[:200])
-            }, cors)
-        except Exception as ex:
-            return self._json(500, {
-                "error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter.",
-                "_debug": str(ex)[:200]
+                "error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter."
             }, cors)
 
     def _json(self, status, data, cors):
