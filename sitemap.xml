@@ -36,17 +36,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://whisky-magazin-new.vercel.app/kategorie/urlaub.html</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://whisky-magazin-new.vercel.app/kategorie/natur.html</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whisky-magazin-new.vercel.app/kategorie/whisky.html</loc>
     <lastmod>2026-03-29</lastmod>
     <priority>0.7</priority>
   </url>
@@ -57,6 +47,16 @@
   </url>
   <url>
     <loc>https://whisky-magazin-new.vercel.app/kategorie/reise.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whisky-magazin-new.vercel.app/kategorie/whisky.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whisky-magazin-new.vercel.app/kategorie/urlaub.html</loc>
     <lastmod>2026-03-29</lastmod>
     <priority>0.7</priority>
   </url>

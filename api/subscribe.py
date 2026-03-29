@@ -195,9 +195,19 @@ class handler(BaseHTTPRequestHandler):
             return self._json(200, {
                 "message": "Fast geschafft! Bitte checke dein Postfach und best\u00e4tige deine Anmeldung."
             }, cors)
-        except Exception:
+        except HTTPError as he:
+            try:
+                detail = he.read().decode("utf-8", errors="replace")
+            except Exception:
+                detail = ""
             return self._json(500, {
-                "error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter."
+                "error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter.",
+                "_debug": "HTTP {}: {}".format(he.code, detail[:200])
+            }, cors)
+        except Exception as ex:
+            return self._json(500, {
+                "error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter.",
+                "_debug": str(ex)[:200]
             }, cors)
 
     def _json(self, status, data, cors):
