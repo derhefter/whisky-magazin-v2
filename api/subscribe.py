@@ -4,6 +4,7 @@ import os
 import re
 import time
 from collections import defaultdict
+from http.server import BaseHTTPRequestHandler
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
@@ -21,14 +22,14 @@ ALLOWED_ORIGINS = [
 ]
 
 # Simple in-memory rate limiting (resets on cold start)
-_rate_store: dict[str, list[float]] = defaultdict(list)
+_rate_store = defaultdict(list)
 RATE_LIMIT_PER_MINUTE = 5
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$')
 
 
 def _cors_headers(origin=""):
-    """Returns CORS headers for allowed origins."""
+    """Returns CORS headers only for allowed origins."""
     base = {
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
@@ -48,109 +49,102 @@ def _is_rate_limited(client_ip):
     return False
 
 
-def _response(status_code, body, cors_headers):
-    """Build a Vercel-compatible response dict."""
-    headers = {"Content-Type": "application/json; charset=utf-8"}
-    headers.update(cors_headers)
-    return {
-        "statusCode": status_code,
-        "headers": headers,
-        "body": json.dumps(body, ensure_ascii=False),
-    }
+class handler(BaseHTTPRequestHandler):
+    def do_OPTIONS(self):
+        origin = self.headers.get("Origin", "")
+        self.send_response(204)
+        for k, v in _cors_headers(origin).items():
+            self.send_header(k, v)
+        self.end_headers()
 
+    def do_POST(self):
+        origin = self.headers.get("Origin", "")
+        cors = _cors_headers(origin)
 
-def handler(request):
-    """Vercel Python Serverless Function handler."""
-    method = request.method if hasattr(request, 'method') else "GET"
-    origin = ""
+        # Rate limiting - use X-Forwarded-For header (safe for Vercel)
+        try:
+            client_ip = self.headers.get("X-Forwarded-For", "unknown")
+            if "," in client_ip:
+                client_ip = client_ip.split(",")[0].strip()
+        except Exception:
+            client_ip = "unknown"
 
-    # Extract origin from headers
-    if hasattr(request, 'headers'):
-        if isinstance(request.headers, dict):
-            origin = request.headers.get("origin", request.headers.get("Origin", ""))
-        else:
-            origin = request.headers.get("Origin", "")
+        if _is_rate_limited(client_ip):
+            self._respond(429, {"error": "Zu viele Anfragen. Bitte warte einen Moment."}, cors)
+            return
 
-    cors = _cors_headers(origin)
+        # Reject requests without valid Origin header
+        if origin and origin not in ALLOWED_ORIGINS:
+            self._respond(403, {"error": "Zugriff verweigert."}, cors)
+            return
 
-    # Handle OPTIONS (CORS preflight)
-    if method == "OPTIONS":
-        return _response(204, {}, cors)
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 1024:  # Max 1KB payload
+                self._respond(400, {"error": "Anfrage zu gross."}, cors)
+                return
+            body = json.loads(self.rfile.read(length)) if length else {}
+        except (json.JSONDecodeError, ValueError):
+            self._respond(400, {"error": "Ungueltige Anfrage."}, cors)
+            return
 
-    # Only allow POST
-    if method != "POST":
-        return _response(405, {"error": "Method not allowed."}, cors)
+        email = (body.get("email") or "").strip().lower()
+        if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
+            self._respond(400, {"error": "Bitte gib eine gueltige E-Mail-Adresse ein."}, cors)
+            return
 
-    # Rate limiting
-    client_ip = "unknown"
-    if hasattr(request, 'headers'):
-        if isinstance(request.headers, dict):
-            client_ip = request.headers.get("x-forwarded-for", request.headers.get("x-real-ip", "unknown"))
-        else:
-            client_ip = request.headers.get("X-Forwarded-For", request.headers.get("X-Real-Ip", "unknown"))
-    if isinstance(client_ip, str) and "," in client_ip:
-        client_ip = client_ip.split(",")[0].strip()
-    if _is_rate_limited(client_ip):
-        return _response(429, {"error": "Zu viele Anfragen. Bitte warte einen Moment."}, cors)
+        if not BREVO_API_KEY:
+            self._respond(500, {"error": "Newsletter-Service nicht konfiguriert."}, cors)
+            return
 
-    # Reject unknown origins
-    if origin and origin not in ALLOWED_ORIGINS:
-        return _response(403, {"error": "Zugriff verweigert."}, cors)
+        # Double Opt-In: Sends confirmation email, adds to list only after click
+        payload = json.dumps({
+            "email": email,
+            "includeListIds": [BREVO_LIST_ID],
+            "templateId": BREVO_DOI_TEMPLATE_ID,
+            "redirectionUrl": REDIRECT_URL,
+        }).encode("utf-8")
 
-    # Parse body
-    try:
-        raw_body = ""
-        if hasattr(request, 'body'):
-            raw_body = request.body if isinstance(request.body, str) else request.body.decode("utf-8")
-        elif hasattr(request, 'data'):
-            raw_body = request.data if isinstance(request.data, str) else request.data.decode("utf-8")
+        api_req = Request(
+            "https://api.brevo.com/v3/contacts/doubleOptinConfirmation",
+            data=payload,
+            headers={
+                "api-key": BREVO_API_KEY,
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            method="POST",
+        )
 
-        if len(raw_body) > 1024:
-            return _response(400, {"error": "Anfrage zu groß."}, cors)
+        try:
+            urlopen(api_req)
+            self._respond(200, {
+                "message": "Fast geschafft! Bitte checke dein Postfach und bestaetige deine Anmeldung."
+            }, cors)
+        except HTTPError as e:
+            try:
+                error_body = e.read().decode("utf-8", errors="replace")
+            except Exception:
+                error_body = ""
+            if e.code == 400 and "already exist" in error_body.lower():
+                self._respond(200, {"message": "Du bist bereits angemeldet!"}, cors)
+            else:
+                self._respond(500, {
+                    "error": "Anmeldung fehlgeschlagen. Bitte versuche es spaeter."
+                }, cors)
+        except Exception:
+            self._respond(500, {
+                "error": "Anmeldung fehlgeschlagen. Bitte versuche es spaeter."
+            }, cors)
 
-        body = json.loads(raw_body) if raw_body else {}
-    except (json.JSONDecodeError, ValueError):
-        return _response(400, {"error": "Ungültige Anfrage."}, cors)
+    def _respond(self, status, data, cors):
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        for k, v in cors.items():
+            self.send_header(k, v)
+        self.end_headers()
+        self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
 
-    email = (body.get("email") or "").strip().lower()
-    if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
-        return _response(400, {"error": "Bitte gib eine gültige E-Mail-Adresse ein."}, cors)
-
-    if not BREVO_API_KEY:
-        return _response(500, {"error": "Newsletter-Service nicht konfiguriert."}, cors)
-
-    # Double Opt-In via Brevo API
-    payload = json.dumps({
-        "email": email,
-        "includeListIds": [BREVO_LIST_ID],
-        "templateId": BREVO_DOI_TEMPLATE_ID,
-        "redirectionUrl": REDIRECT_URL,
-    }).encode("utf-8")
-
-    api_req = Request(
-        "https://api.brevo.com/v3/contacts/doubleOptinConfirmation",
-        data=payload,
-        headers={
-            "api-key": BREVO_API_KEY,
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        },
-        method="POST",
-    )
-
-    try:
-        urlopen(api_req)
-        return _response(200, {
-            "message": "Fast geschafft! Bitte checke dein Postfach und bestätige deine Anmeldung."
-        }, cors)
-    except HTTPError as e:
-        error_body = e.read().decode("utf-8", errors="replace")
-        if e.code == 400 and "already exist" in error_body.lower():
-            return _response(200, {"message": "Du bist bereits angemeldet!"}, cors)
-        return _response(500, {
-            "error": "Anmeldung fehlgeschlagen. Bitte versuche es später."
-        }, cors)
-    except Exception:
-        return _response(500, {
-            "error": "Anmeldung fehlgeschlagen. Bitte versuche es später."
-        }, cors)
+    def log_message(self, format, *args):
+        """Suppress default logging to avoid encoding issues."""
+        pass
