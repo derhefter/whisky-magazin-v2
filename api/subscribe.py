@@ -14,7 +14,7 @@ from urllib.parse import urlparse, parse_qs
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID = int(os.environ.get("BREVO_LIST_ID", "3"))
-REDIRECT_URL = os.environ.get("BREVO_REDIRECT_URL", "https://whisky-magazin-new.vercel.app/?subscribed=1")
+REDIRECT_URL = os.environ.get("BREVO_REDIRECT_URL", "https://whisky-magazin-new.vercel.app/danke.html")
 BASE_URL = os.environ.get("BASE_URL", "https://whisky-magazin-new.vercel.app")
 
 ALLOWED_ORIGINS = [
