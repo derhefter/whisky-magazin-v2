@@ -20,6 +20,7 @@ from collections import defaultdict
 from http.server import BaseHTTPRequestHandler
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+from urllib.parse import urlparse, parse_qs
 
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
@@ -129,7 +130,6 @@ class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         """Handle DOI confirmation clicks."""
-        from urllib.parse import urlparse, parse_qs
         parsed = urlparse(self.path)
         params = parse_qs(parsed.query)
 
