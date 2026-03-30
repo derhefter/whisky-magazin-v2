@@ -162,7 +162,7 @@ def _send_welcome_email(email):
         'Ob Whisky-Tour durch die Speyside, Roadtrip &uuml;ber die Inseln oder Highland-Wandern &ndash; '
         'Elmar plant deine individuelle Reise mit Profi-Wissen und echtem Schottland-Enthusiasmus.</p>'
         '<div style="text-align:center;">'
-        '<a href="mailto:rosenhefter@gmail.com?subject=Schottland-Reiseplanung" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">Reiseplanung anfragen &rarr;</a>'
+        '<a href="mailto:rosenhefter@gmail.com?cc=whisky-news@whisky-reise.com&amp;subject=Schottland-Reiseplanung" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">Reiseplanung anfragen &rarr;</a>'
         '<p style="font-size:12px;color:#777777;margin:16px 0 0;">110+ besuchte Destillerien &middot; 18+ Jahre Schottland-Erfahrung</p>'
         '</div></div></td></tr>'
         # FOOTER
@@ -354,7 +354,7 @@ class handler(BaseHTTPRequestHandler):
             resp = urlopen(req)
             contact = json.loads(resp.read().decode())
             if BREVO_LIST_ID in contact.get("listIds", []):
-                return self._json(200, {"message": "Du bist bereits angemeldet!"}, cors)
+                return self._json(200, {"message": "Du bist bereits angemeldet! Du erh\u00e4ltst unseren Newsletter schon."}, cors)
             # Contact exists but not in list = DOI was sent but not confirmed, or unsubscribed
             # Allow re-send of DOI email (user may have missed it)
         except HTTPError as e:
