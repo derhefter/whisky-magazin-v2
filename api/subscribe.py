@@ -85,8 +85,8 @@ def _send_welcome_email(email):
         '<tr><td style="background:#2C2C2C;padding:32px 32px 28px;text-align:center;">'
         '<span style="font-family:Georgia,serif;font-size:26px;color:#fff;font-weight:700;">whisky</span>'
         '<span style="color:#C8963E;font-size:26px;">.</span>'
-        '<span style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-left:4px;">MAGAZIN</span>'
-        '<p style="font-size:12px;color:rgba(255,255,255,0.4);margin:12px 0 0;letter-spacing:1px;text-transform:uppercase;">Schottland-Post &middot; Willkommensausgabe</p>'
+        '<span style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#999999;margin-left:4px;">MAGAZIN</span>'
+        '<p style="font-size:12px;color:#777777;margin:12px 0 0;letter-spacing:1px;text-transform:uppercase;">Schottland-Post &middot; Willkommensausgabe</p>'
         '</td></tr>'
         # GREETING
         '<tr><td style="padding:36px 32px 24px;">'
@@ -154,16 +154,16 @@ def _send_welcome_email(email):
         '<div style="background:#2C2C2C;border-radius:8px;padding:32px;">'
         '<p style="font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 16px;text-align:center;">Schottland-Reise planen</p>'
         '<h3 style="font-family:Georgia,serif;font-size:20px;color:#fff;margin:0 0 16px;text-align:center;">Deine Reise. Von einem, der Schottland kennt.</h3>'
-        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 8px;text-align:left;">'
+        '<p style="font-size:14px;color:#c8c8c8;line-height:1.7;margin:0 0 8px;text-align:left;">'
         'Elmar ist ausgebildeter <strong style="color:#fff;">Reisekaufmann</strong> und seit &uuml;ber '
         '18 Jahren regelm&auml;&szlig;ig in Schottland unterwegs. Er kennt die versteckten '
         'Destillerien, die sch&ouml;nsten K&uuml;stenstra&szlig;en und die Pubs, in denen noch G&auml;lisch gesprochen wird.</p>'
-        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:16px 0 24px;text-align:left;">'
+        '<p style="font-size:14px;color:#c8c8c8;line-height:1.7;margin:16px 0 24px;text-align:left;">'
         'Ob Whisky-Tour durch die Speyside, Roadtrip &uuml;ber die Inseln oder Highland-Wandern &ndash; '
         'Elmar plant deine individuelle Reise mit Profi-Wissen und echtem Schottland-Enthusiasmus.</p>'
         '<div style="text-align:center;">'
         '<a href="mailto:rosenhefter@gmail.com?subject=Schottland-Reiseplanung" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">Reiseplanung anfragen &rarr;</a>'
-        '<p style="font-size:12px;color:rgba(255,255,255,0.4);margin:16px 0 0;">110+ besuchte Destillerien &middot; 18+ Jahre Schottland-Erfahrung</p>'
+        '<p style="font-size:12px;color:#777777;margin:16px 0 0;">110+ besuchte Destillerien &middot; 18+ Jahre Schottland-Erfahrung</p>'
         '</div></div></td></tr>'
         # FOOTER
         '<tr><td style="padding:32px;border-top:1px solid #E8E4DF;margin-top:32px;text-align:center;">'
@@ -233,7 +233,20 @@ class handler(BaseHTTPRequestHandler):
             if action == "confirm" and email and token:
                 expected = _make_token(email)
                 if hmac.compare_digest(token, expected):
-                    # Valid token - add to Brevo list
+                    # Check if already in list (prevent duplicate welcome emails on re-click)
+                    already_subscribed = False
+                    try:
+                        check_req = Request("https://api.brevo.com/v3/contacts/" + email, headers={
+                            "api-key": BREVO_API_KEY, "Accept": "application/json",
+                        }, method="GET")
+                        check_resp = urlopen(check_req)
+                        check_data = json.loads(check_resp.read().decode())
+                        if BREVO_LIST_ID in check_data.get("listIds", []):
+                            already_subscribed = True
+                    except Exception:
+                        pass
+
+                    # Add to Brevo list (updateEnabled=True prevents duplicates)
                     try:
                         payload = json.dumps({"email": email, "listIds": [BREVO_LIST_ID], "updateEnabled": True}).encode("utf-8")
                         req = Request("https://api.brevo.com/v3/contacts", data=payload, headers={
@@ -243,11 +256,12 @@ class handler(BaseHTTPRequestHandler):
                     except Exception:
                         pass
 
-                    # Send welcome email
-                    try:
-                        _send_welcome_email(email)
-                    except Exception:
-                        pass  # Don't block redirect if welcome email fails
+                    # Send welcome email only for first-time confirmations
+                    if not already_subscribed:
+                        try:
+                            _send_welcome_email(email)
+                        except Exception:
+                            pass  # Don't block redirect if welcome email fails
 
                     self.send_response(302)
                     self.send_header("Location", REDIRECT_URL)
@@ -332,7 +346,7 @@ class handler(BaseHTTPRequestHandler):
         if not BREVO_API_KEY:
             return self._json(500, {"error": "Newsletter-Service nicht konfiguriert."}, cors)
 
-        # Check if already subscribed
+        # Check if already subscribed or DOI pending
         try:
             req = Request("https://api.brevo.com/v3/contacts/" + email, headers={
                 "api-key": BREVO_API_KEY, "Accept": "application/json",
@@ -341,8 +355,15 @@ class handler(BaseHTTPRequestHandler):
             contact = json.loads(resp.read().decode())
             if BREVO_LIST_ID in contact.get("listIds", []):
                 return self._json(200, {"message": "Du bist bereits angemeldet!"}, cors)
+            # Contact exists but not in list = DOI was sent but not confirmed, or unsubscribed
+            # Allow re-send of DOI email (user may have missed it)
+        except HTTPError as e:
+            if e.code == 404:
+                pass  # New contact, proceed with DOI
+            else:
+                return self._json(500, {"error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter."}, cors)
         except Exception:
-            pass
+            return self._json(500, {"error": "Anmeldung fehlgeschlagen. Bitte versuche es sp\u00e4ter."}, cors)
 
         # Send DOI email via Brevo transactional API
         try:
