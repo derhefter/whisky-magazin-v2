@@ -14,11 +14,11 @@ from urllib.parse import urlparse, parse_qs
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID = int(os.environ.get("BREVO_LIST_ID", "3"))
-REDIRECT_URL = os.environ.get("BREVO_REDIRECT_URL", "https://whisky-magazin-new.vercel.app/danke.html")
-BASE_URL = os.environ.get("BASE_URL", "https://whisky-magazin-new.vercel.app")
+REDIRECT_URL = os.environ.get("BREVO_REDIRECT_URL", "https://www.whisky-reise.com/danke.html")
+BASE_URL = os.environ.get("BASE_URL", "https://www.whisky-reise.com")
 
 ALLOWED_ORIGINS = [
-    "https://whisky-magazin-new.vercel.app",
+    "https://www.whisky-reise.com",
     "https://www.whisky-magazin.de",
     "https://whisky-magazin.de",
     "http://localhost:3000",
