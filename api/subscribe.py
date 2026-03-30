@@ -68,6 +68,129 @@ def _make_token(email):
     return hmac.new(secret.encode(), email.lower().strip().encode(), hashlib.sha256).hexdigest()
 
 
+def _send_welcome_email(email):
+    """Send a welcome newsletter to newly confirmed subscribers."""
+    B = BASE_URL
+    welcome_html = (
+        '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1.0">'
+        '<title>Willkommen beim Whisky Magazin</title></head>'
+        '<body style="margin:0;padding:0;background:#FAFAF7;font-family:Inter,Helvetica,Arial,sans-serif;">'
+        '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FAFAF7;">'
+        '<tr><td align="center" style="padding:32px 16px;">'
+        '<table width="560" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);">'
+        # HEADER
+        '<tr><td style="background:#2C2C2C;padding:32px 32px 28px;text-align:center;">'
+        '<span style="font-family:Georgia,serif;font-size:26px;color:#fff;font-weight:700;">whisky</span>'
+        '<span style="color:#C8963E;font-size:26px;">.</span>'
+        '<span style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-left:4px;">MAGAZIN</span>'
+        '<p style="font-size:12px;color:rgba(255,255,255,0.4);margin:12px 0 0;letter-spacing:1px;text-transform:uppercase;">Schottland-Post &middot; Willkommensausgabe</p>'
+        '</td></tr>'
+        # GREETING
+        '<tr><td style="padding:36px 32px 24px;">'
+        '<h1 style="font-family:Georgia,serif;font-size:24px;color:#2C2C2C;margin:0 0 12px;">Willkommen bei der Schottland-Post!</h1>'
+        '<p style="font-size:15px;color:#5C5C5C;line-height:1.7;margin:0;">'
+        'Sch&ouml;n, dass du dabei bist! Ab sofort erh&auml;ltst du einmal im Monat die besten '
+        'Whisky-Geschichten und Reise-Tipps direkt in dein Postfach. '
+        'Hier ist deine erste Ausgabe &ndash; viel Spa&szlig; beim Lesen!</p>'
+        '</td></tr>'
+        '<tr><td style="padding:0 32px;"><div style="border-top:2px solid #C8963E;width:48px;"></div></td></tr>'
+        # ARTICLES
+        '<tr><td style="padding:28px 32px 8px;">'
+        '<h2 style="font-family:Georgia,serif;font-size:18px;color:#2C2C2C;margin:0 0 4px;">Unsere neuesten Geschichten</h2>'
+        '<p style="font-size:13px;color:#8A8A8A;margin:0;">Frisch aus der Redaktion</p>'
+        '</td></tr>'
+        '<tr><td style="padding:0 32px;">'
+        '<table width="100%" cellpadding="0" cellspacing="0" border="0">'
+        # Article 1
+        '<tr><td style="padding:20px 0;">'
+        '<a href="' + B + '/artikel/whisky-geschenke-15-ideen-fuer-liebhaber.html" style="text-decoration:none;color:#2C2C2C;">'
+        '<strong style="font-family:Georgia,serif;font-size:16px;">Whisky-Geschenke: 15 Ideen f&uuml;r Liebhaber</strong></a>'
+        '<p style="font-size:13px;color:#5C5C5C;line-height:1.6;margin:6px 0 0;">Suchst du das perfekte Geschenk f&uuml;r Whisky-Fans? Von Gl&auml;sern bis zum Tasting-Set.</p>'
+        '</td></tr>'
+        # Article 2
+        '<tr><td style="padding:20px 0;border-top:1px solid #E8E4DF;">'
+        '<a href="' + B + '/artikel/die-10-besten-single-malts-unter-50-euro.html" style="text-decoration:none;color:#2C2C2C;">'
+        '<strong style="font-family:Georgia,serif;font-size:16px;">Die 10 besten Single Malts unter 50 Euro</strong></a>'
+        '<p style="font-size:13px;color:#5C5C5C;line-height:1.6;margin:6px 0 0;">Herausragender Whisky muss nicht teuer sein. Unsere Top 10 f&uuml;r jedes Budget.</p>'
+        '</td></tr>'
+        # Article 3
+        '<tr><td style="padding:20px 0;border-top:1px solid #E8E4DF;">'
+        '<a href="' + B + '/artikel/schottische-k%C3%BCche-mehr-als-haggis.html" style="text-decoration:none;color:#2C2C2C;">'
+        '<strong style="font-family:Georgia,serif;font-size:16px;">Schottische K&uuml;che: Mehr als Haggis</strong></a>'
+        '<p style="font-size:13px;color:#5C5C5C;line-height:1.6;margin:6px 0 0;">Von frischem Seafood bis zum perfekten Shortbread &ndash; schottische Kulinarik &uuml;berrascht.</p>'
+        '</td></tr>'
+        # Article 4
+        '<tr><td style="padding:20px 0;border-top:1px solid #E8E4DF;">'
+        '<a href="' + B + '/artikel/glenfiddich-vs-glenlivet-der-grosse-vergleich.html" style="text-decoration:none;color:#2C2C2C;">'
+        '<strong style="font-family:Georgia,serif;font-size:16px;">Glenfiddich vs. Glenlivet: Der gro&szlig;e Vergleich</strong></a>'
+        '<p style="font-size:13px;color:#5C5C5C;line-height:1.6;margin:6px 0 0;">Zwei Speyside-Giganten im direkten Duell. Wer gewinnt?</p>'
+        '</td></tr>'
+        '</table></td></tr>'
+        '<tr><td style="padding:8px 32px 28px;text-align:center;">'
+        '<a href="' + B + '" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">Alle Artikel lesen &rarr;</a>'
+        '</td></tr>'
+        # WHISKY TIPP
+        '<tr><td style="padding:0 32px;">'
+        '<div style="background:#FAF6F0;border-radius:8px;padding:28px;border-left:4px solid #C8963E;">'
+        '<p style="font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 12px;">&#127867; Whisky-Tipp des Monats</p>'
+        '<h3 style="font-family:Georgia,serif;font-size:20px;color:#2C2C2C;margin:0 0 8px;">Talisker 10 Jahre</h3>'
+        '<p style="font-size:12px;color:#8A8A8A;margin:0 0 12px;">Isle of Skye &middot; ca. 28&ndash;35 &euro;</p>'
+        '<p style="font-size:14px;color:#5C5C5C;line-height:1.7;margin:0 0 16px;">Der klassische Einstieg in die Welt der Insel-Whiskys. Rauchig, maritim und mit einer w&uuml;rzigen Pfeffer-Note im Abgang.</p>'
+        '<a href="https://www.amazon.de/s?k=Talisker+10&tag=whiskyreise74-21" style="display:inline-block;background:#2C2C2C;color:#fff;text-decoration:none;padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;">Bei Amazon ansehen &rarr;</a>'
+        '</div></td></tr>'
+        # REISE TIPP
+        '<tr><td style="padding:24px 32px 0;">'
+        '<div style="background:#F4F7F4;border-radius:8px;padding:28px;border-left:4px solid #7A9E7E;">'
+        '<p style="font-size:11px;color:#7A9E7E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 12px;">&#9992; Reise-Tipp des Monats</p>'
+        '<h3 style="font-family:Georgia,serif;font-size:20px;color:#2C2C2C;margin:0 0 12px;">Die North Coast 500</h3>'
+        '<p style="font-size:14px;color:#5C5C5C;line-height:1.7;margin:0 0 16px;">Schottlands Antwort auf die Route 66: 500 Meilen entlang der spektakul&auml;ren Nordk&uuml;ste, vorbei an einsamen Str&auml;nden und versteckten Destillerien.</p>'
+        '<a href="' + B + '/kategorie/reise.html" style="display:inline-block;background:#7A9E7E;color:#fff;text-decoration:none;padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;">Reise-Artikel lesen &rarr;</a>'
+        '</div></td></tr>'
+        # ELMAR REISEPLANUNG
+        '<tr><td style="padding:24px 32px 0;">'
+        '<div style="background:#2C2C2C;border-radius:8px;padding:32px;text-align:center;">'
+        '<p style="font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 16px;">Schottland-Reise planen</p>'
+        '<h3 style="font-family:Georgia,serif;font-size:20px;color:#fff;margin:0 0 16px;">Deine Reise. Von einem, der Schottland kennt.</h3>'
+        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 8px;">'
+        'Elmar ist ausgebildeter <strong style="color:#fff;">Reisekaufmann</strong> und seit &uuml;ber '
+        '18 Jahren regelm&auml;&szlig;ig in Schottland unterwegs. Er kennt die versteckten '
+        'Destillerien, die sch&ouml;nsten K&uuml;stenstra&szlig;en und die Pubs, in denen noch G&auml;lisch gesprochen wird.</p>'
+        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:16px 0 24px;">'
+        'Ob Whisky-Tour durch die Speyside, Roadtrip &uuml;ber die Inseln oder Highland-Wandern &ndash; '
+        'Elmar plant deine individuelle Reise mit Profi-Wissen und echtem Schottland-Enthusiasmus.</p>'
+        '<a href="mailto:rosenhefter@gmail.com?subject=Schottland-Reiseplanung" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">Reiseplanung anfragen &rarr;</a>'
+        '<p style="font-size:12px;color:rgba(255,255,255,0.4);margin:16px 0 0;">110+ besuchte Destillerien &middot; 18+ Jahre Schottland-Erfahrung</p>'
+        '</div></td></tr>'
+        # FOOTER
+        '<tr><td style="padding:32px;border-top:1px solid #E8E4DF;margin-top:32px;text-align:center;">'
+        '<span style="font-family:Georgia,serif;font-size:18px;color:#2C2C2C;font-weight:700;">whisky</span>'
+        '<span style="color:#C8963E;font-size:18px;">.</span>'
+        '<span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8A8A8A;margin-left:3px;">MAGAZIN</span>'
+        '<p style="font-size:12px;color:#8A8A8A;line-height:1.6;margin:12px 0 0;">'
+        'Du erh&auml;ltst diese E-Mail, weil du dich f&uuml;r den<br>Whisky Magazin Newsletter angemeldet hast.</p>'
+        '<p style="font-size:12px;margin:16px 0 0;">'
+        '<a href="' + B + '" style="color:#C8963E;text-decoration:none;">Website</a>'
+        ' &middot; <a href="' + B + '/karte.html" style="color:#C8963E;text-decoration:none;">Whisky-Karte</a>'
+        ' &middot; <a href="' + B + '/ueber-uns.html" style="color:#C8963E;text-decoration:none;">&Uuml;ber uns</a></p>'
+        '<p style="font-size:11px;color:#B0B0B0;margin:20px 0 0;">&copy; 2007&ndash;2026 Whisky Magazin &middot; Steffen &amp; Elmar</p>'
+        '</td></tr>'
+        '</table></td></tr></table></body></html>'
+    )
+
+    payload = json.dumps({
+        "sender": {"name": "Steffen & Elmar", "email": "whisky-news@whisky-reise.com"},
+        "to": [{"email": email}],
+        "subject": "Willkommen beim Whisky Magazin \u2013 Deine erste Schottland-Post!",
+        "htmlContent": welcome_html,
+    }).encode("utf-8")
+
+    req = Request("https://api.brevo.com/v3/smtp/email", data=payload, headers={
+        "api-key": BREVO_API_KEY, "Content-Type": "application/json", "Accept": "application/json",
+    }, method="POST")
+    urlopen(req)
+
+
 def _cors_headers(origin=""):
     base = {"Access-Control-Allow-Methods": "POST, GET, OPTIONS", "Access-Control-Allow-Headers": "Content-Type"}
     if origin in ALLOWED_ORIGINS:
@@ -114,6 +237,12 @@ class handler(BaseHTTPRequestHandler):
                         urlopen(req)
                     except Exception:
                         pass
+
+                    # Send welcome email
+                    try:
+                        _send_welcome_email(email)
+                    except Exception:
+                        pass  # Don't block redirect if welcome email fails
 
                     self.send_response(302)
                     self.send_header("Location", REDIRECT_URL)

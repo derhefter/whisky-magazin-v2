@@ -336,6 +336,14 @@
             text-decoration-color: var(--accent-amber);
         }
         .article-body a:hover { color: var(--text-primary); }
+        .article-body a.btn-primary,
+        .article-body a.btn-primary:hover {
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+        .article-body a.btn-primary:hover {
+            background: #b8860b !important;
+        }
 
         .affiliate-link {
             display: inline-flex;
