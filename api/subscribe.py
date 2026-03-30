@@ -71,6 +71,8 @@ def _make_token(email):
 def _send_welcome_email(email):
     """Send a welcome newsletter to newly confirmed subscribers."""
     B = BASE_URL
+    unsub_token = _make_token(email)
+    unsub_url = B + "/api/subscribe?action=unsubscribe&email=" + email + "&token=" + unsub_token
     welcome_html = (
         '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1.0">'
@@ -149,19 +151,20 @@ def _send_welcome_email(email):
         '</div></td></tr>'
         # ELMAR REISEPLANUNG
         '<tr><td style="padding:24px 32px 0;">'
-        '<div style="background:#2C2C2C;border-radius:8px;padding:32px;text-align:center;">'
-        '<p style="font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 16px;">Schottland-Reise planen</p>'
-        '<h3 style="font-family:Georgia,serif;font-size:20px;color:#fff;margin:0 0 16px;">Deine Reise. Von einem, der Schottland kennt.</h3>'
-        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 8px;">'
+        '<div style="background:#2C2C2C;border-radius:8px;padding:32px;">'
+        '<p style="font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 16px;text-align:center;">Schottland-Reise planen</p>'
+        '<h3 style="font-family:Georgia,serif;font-size:20px;color:#fff;margin:0 0 16px;text-align:center;">Deine Reise. Von einem, der Schottland kennt.</h3>'
+        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 8px;text-align:left;">'
         'Elmar ist ausgebildeter <strong style="color:#fff;">Reisekaufmann</strong> und seit &uuml;ber '
         '18 Jahren regelm&auml;&szlig;ig in Schottland unterwegs. Er kennt die versteckten '
         'Destillerien, die sch&ouml;nsten K&uuml;stenstra&szlig;en und die Pubs, in denen noch G&auml;lisch gesprochen wird.</p>'
-        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:16px 0 24px;">'
+        '<p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:16px 0 24px;text-align:left;">'
         'Ob Whisky-Tour durch die Speyside, Roadtrip &uuml;ber die Inseln oder Highland-Wandern &ndash; '
         'Elmar plant deine individuelle Reise mit Profi-Wissen und echtem Schottland-Enthusiasmus.</p>'
+        '<div style="text-align:center;">'
         '<a href="mailto:rosenhefter@gmail.com?subject=Schottland-Reiseplanung" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">Reiseplanung anfragen &rarr;</a>'
         '<p style="font-size:12px;color:rgba(255,255,255,0.4);margin:16px 0 0;">110+ besuchte Destillerien &middot; 18+ Jahre Schottland-Erfahrung</p>'
-        '</div></td></tr>'
+        '</div></div></td></tr>'
         # FOOTER
         '<tr><td style="padding:32px;border-top:1px solid #E8E4DF;margin-top:32px;text-align:center;">'
         '<span style="font-family:Georgia,serif;font-size:18px;color:#2C2C2C;font-weight:700;">whisky</span>'
@@ -173,7 +176,9 @@ def _send_welcome_email(email):
         '<a href="' + B + '" style="color:#C8963E;text-decoration:none;">Website</a>'
         ' &middot; <a href="' + B + '/karte.html" style="color:#C8963E;text-decoration:none;">Whisky-Karte</a>'
         ' &middot; <a href="' + B + '/ueber-uns.html" style="color:#C8963E;text-decoration:none;">&Uuml;ber uns</a></p>'
-        '<p style="font-size:11px;color:#B0B0B0;margin:20px 0 0;">&copy; 2007&ndash;2026 Whisky Magazin &middot; Steffen &amp; Elmar</p>'
+        '<p style="margin:20px 0 0;">'
+        '<a href="' + unsub_url + '" style="color:#8A8A8A;font-size:12px;text-decoration:underline;">Newsletter abbestellen</a></p>'
+        '<p style="font-size:11px;color:#B0B0B0;margin:12px 0 0;">&copy; 2007&ndash;2026 Whisky Magazin &middot; Steffen &amp; Elmar</p>'
         '</td></tr>'
         '</table></td></tr></table></body></html>'
     )
@@ -217,7 +222,7 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        """Handle DOI confirmation link clicks."""
+        """Handle DOI confirmation and unsubscribe link clicks."""
         try:
             parsed = urlparse(self.path)
             params = parse_qs(parsed.query)
@@ -247,6 +252,42 @@ class handler(BaseHTTPRequestHandler):
                     self.send_response(302)
                     self.send_header("Location", REDIRECT_URL)
                     self.end_headers()
+                    return
+
+            elif action == "unsubscribe" and email and token:
+                expected = _make_token(email)
+                if hmac.compare_digest(token, expected):
+                    # Remove from Brevo list
+                    try:
+                        payload = json.dumps({"emails": [email]}).encode("utf-8")
+                        req = Request(
+                            f"https://api.brevo.com/v3/contacts/lists/{BREVO_LIST_ID}/contacts/remove",
+                            data=payload, headers={
+                                "api-key": BREVO_API_KEY, "Content-Type": "application/json", "Accept": "application/json",
+                            }, method="POST")
+                        urlopen(req)
+                    except Exception:
+                        pass
+
+                    # Show unsubscribe confirmation page
+                    unsub_html = (
+                        '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">'
+                        '<meta name="viewport" content="width=device-width,initial-scale=1.0">'
+                        '<title>Abmeldung best&auml;tigt</title></head>'
+                        '<body style="margin:0;padding:0;background:#FAFAF7;font-family:Inter,Helvetica,Arial,sans-serif;">'
+                        '<div style="max-width:520px;margin:80px auto;padding:48px 32px;background:#fff;border-radius:12px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.08);">'
+                        '<h1 style="font-family:Georgia,serif;font-size:24px;color:#2C2C2C;margin:0 0 16px;">Abmeldung best&auml;tigt</h1>'
+                        '<p style="font-size:15px;color:#5C5C5C;line-height:1.7;margin:0 0 28px;">'
+                        'Du wurdest erfolgreich vom Whisky Magazin Newsletter abgemeldet. '
+                        'Schade, dass du gehst!</p>'
+                        '<a href="' + BASE_URL + '" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;">'
+                        'Zur&uuml;ck zum Magazin</a>'
+                        '</div></body></html>'
+                    )
+                    self.send_response(200)
+                    self.send_header("Content-Type", "text/html; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(unsub_html.encode("utf-8"))
                     return
 
             self.send_response(400)
