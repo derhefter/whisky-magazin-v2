@@ -56,10 +56,10 @@
         <div class="cat-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
             
             <div class="card">
-                <div class="card-image" style="background-image:url(/images/schottische-küche-mehr-als-haggis.jpg);background-size:cover;background-position:center;height:200px;"></div>
+                <div class="card-image" style="background-image:url(/images/schottische-kueche-mehr-als-haggis.jpg);background-size:cover;background-position:center;height:200px;"></div>
                 <div class="card-body">
                     <span class="badge badge-outline">Reise</span>
-                    <h3 class="card-title"><a href="https://whisky-magazin-new.vercel.app/artikel/schottische-küche-mehr-als-haggis.html">Schottische Küche: Mehr als Haggis</a></h3>
+                    <h3 class="card-title"><a href="https://whisky-magazin-new.vercel.app/artikel/schottische-kueche-mehr-als-haggis.html">Schottische Küche: Mehr als Haggis</a></h3>
                     <p class="card-meta">26. März 2026 · 2 Min. Lesezeit</p>
                     <p class="card-teaser">Tauchen Sie ein in die schottische Küche und entdecken Sie kulinarische Schätze jenseits von Haggis. Lassen Sie sich übe...</p>
                 </div>
@@ -335,7 +335,7 @@
         .then(function(r){return r.json()})
         .then(function(d){
           if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
-          else{btn.textContent='✓ Check dein Postfach!';btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
+          else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
         })
         .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
     });
