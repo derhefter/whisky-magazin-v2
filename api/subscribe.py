@@ -354,7 +354,7 @@ class handler(BaseHTTPRequestHandler):
             resp = urlopen(req)
             contact = json.loads(resp.read().decode())
             if BREVO_LIST_ID in contact.get("listIds", []):
-                return self._json(200, {"message": "Du bist bereits angemeldet! Du erh\u00e4ltst unseren Newsletter schon."}, cors)
+                return self._json(200, {"message": "Du bist bereits angemeldet!"}, cors)
             # Contact exists but not in list = DOI was sent but not confirmed, or unsubscribed
             # Allow re-send of DOI email (user may have missed it)
         except HTTPError as e:
@@ -384,7 +384,7 @@ class handler(BaseHTTPRequestHandler):
             urlopen(req)
 
             return self._json(200, {
-                "message": "Fast geschafft! Bitte checke dein Postfach und best\u00e4tige deine Anmeldung."
+                "message": "Bitte E-Mail best\u00e4tigen!"
             }, cors)
         except Exception:
             return self._json(500, {
