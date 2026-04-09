@@ -94,11 +94,18 @@ def _get_newsletter_data():
     except Exception as e:
         recent_contacts = []
 
+    total = list_info.get("totalSubscribers", 0) if not list_info.get("error") else 0
     return {
-        "total_subscribers": list_info.get("totalSubscribers", list_info.get("totalBlacklisted", None)),
-        "list_name": list_info.get("name", ""),
-        "list_info": list_info,
-        "recent_contacts": recent_contacts,
+        # JS liest: data.count, data.total, data.total_subscribers
+        "count":             total,
+        "total":             total,
+        "total_subscribers": total,
+        # JS liest: data.subscribers, data.abonnenten
+        "subscribers":       recent_contacts,
+        "abonnenten":        recent_contacts,
+        "recent_contacts":   recent_contacts,
+        "list_name":         list_info.get("name", ""),
+        "list_error":        list_info.get("error", None),
     }
 
 
@@ -200,26 +207,23 @@ def _get_topics_data():
 
 
 def _get_stats_data():
-    """Summary of all sections."""
+    """Summary — flat structure matching the dashboard JS field names."""
     newsletter = _get_newsletter_data()
-    articles = _get_articles_data()
-    topics = _get_topics_data()
+    articles   = _get_articles_data()
+    topics     = _get_topics_data()
+
+    drafts_list   = articles.get("drafts", []) if isinstance(articles, dict) else []
+    topics_stats  = topics.get("stats", {}) if isinstance(topics, dict) else {}
 
     return {
-        "newsletter": {
-            "total_subscribers": newsletter.get("total_subscribers"),
-        },
-        "articles": {
-            "drafts_count": articles.get("drafts_count", 0),
-            "published_count": articles.get("published_count", 0),
-            "approved_drafts": sum(
-                1 for d in articles.get("drafts", []) if d.get("status") == "approved"
-            ),
-            "pending_drafts": sum(
-                1 for d in articles.get("drafts", []) if d.get("status") == "pending"
-            ),
-        },
-        "topics": topics.get("stats", {}),
+        # Übersicht-Karten (JS liest: s.subscribers, s.drafts, s.topics_open, s.topics_done)
+        "subscribers":  newsletter.get("total_subscribers", 0) if isinstance(newsletter, dict) else 0,
+        "drafts":       len(drafts_list),
+        "topics_open":  topics_stats.get("pending", 0),
+        "topics_done":  topics_stats.get("done", 0),
+        # Zusätzliche Details
+        "published_count": articles.get("published_count", 0) if isinstance(articles, dict) else 0,
+        "topics_in_progress": topics_stats.get("in_progress", 0),
     }
 
 
