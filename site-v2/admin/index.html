@@ -1081,6 +1081,10 @@ async function loadArtikel() {
   container.innerHTML = '<div class="loading-text">Lädt Artikel…</div>';
   try {
     const data = await apiGet(API.data + '?section=articles');
+    if (data && data.error) {
+      container.innerHTML = `<div class="error-box">&#9888; API-Fehler: ${esc(data.error)}<br><small>Bitte GITHUB_TOKEN in Vercel prüfen.</small></div>`;
+      return;
+    }
     artikelData = data;
     renderArtikel(data);
   } catch (err) {
@@ -1090,8 +1094,8 @@ async function loadArtikel() {
 
 function renderArtikel(data) {
   const container = document.getElementById('artikel-container');
-  const drafts    = data.drafts ?? data.entwuerfe ?? [];
-  const published = data.published ?? data.veroeffentlicht ?? [];
+  const drafts    = Array.isArray(data.drafts) ? data.drafts : (Array.isArray(data.entwuerfe) ? data.entwuerfe : []);
+  const published = Array.isArray(data.published) ? data.published : (Array.isArray(data.veroeffentlicht) ? data.veroeffentlicht : []);
 
   let draftsHtml = '';
   if (drafts.length === 0) {
@@ -1280,7 +1284,18 @@ async function loadThemen() {
   container.innerHTML = '<div class="loading-text">Lädt Themen…</div>';
   try {
     const data = await apiGet(API.data + '?section=topics');
-    themenData = data.topics ?? data.themen ?? data ?? [];
+    // Fehlerfall abfangen: data ist kein Array und enthält .error
+    if (data && data.error) {
+      container.innerHTML = `<div class="error-box">&#9888; API-Fehler: ${esc(data.error)}<br><small>Bitte GITHUB_TOKEN in Vercel prüfen.</small></div>`;
+      return;
+    }
+    // Sicherstellen dass themenData immer ein Array ist
+    const raw = data.topics ?? data.themen ?? data;
+    themenData = Array.isArray(raw) ? raw : [];
+    if (themenData.length === 0 && !Array.isArray(raw)) {
+      container.innerHTML = `<div class="error-box">&#9888; Keine Themen-Daten empfangen. Bitte GITHUB_TOKEN + GITHUB_REPO in Vercel prüfen.</div>`;
+      return;
+    }
     renderThemen();
   } catch (err) {
     container.innerHTML = `<div class="error-box">&#9888; Fehler beim Laden: ${esc(err.message)}</div>`;
