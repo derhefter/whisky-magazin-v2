@@ -20,6 +20,7 @@ BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID = os.environ.get("BREVO_LIST_ID", "3").strip()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "derhefter/whisky-magazin-v2").strip()
+GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main").strip()
 
 TOKEN_TTL = 86400
 
@@ -55,6 +56,9 @@ def _cors_headers():
 
 
 def _github_get(path):
+    if path.startswith("contents/"):
+        sep = "&" if "?" in path else "?"
+        path = f"{path}{sep}ref={GITHUB_BRANCH}"
     url = f"https://api.github.com/repos/{GITHUB_REPO}/{path}"
     req = Request(url, headers={
         "Authorization": f"token {GITHUB_TOKEN}",
