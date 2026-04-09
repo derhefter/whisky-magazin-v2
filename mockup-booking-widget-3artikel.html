@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup: Booking-Widget — 3 weitere Artikel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF7;
+            --bg-surface: #F5F0E8;
+            --bg-elevated: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #5C5C5C;
+            --accent-amber: #C8963E;
+            --accent-warm: #8B7355;
+            --accent-sage: #4A7C5E;
+            --border: #E8DCC8;
+            --shadow-sm: 0 2px 12px rgba(139,115,85,0.08);
+            --radius-sm: 6px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ECEBE6;
+            color: var(--text-primary);
+            padding: 32px 24px 60px;
+            font-size: 15px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .page-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .page-header p { color: var(--text-secondary); font-size: 14px; margin-bottom: 4px; }
+        .page-header a {
+            font-size: 13px;
+            color: var(--accent-amber);
+            text-decoration: none;
+        }
+        .page-header a:hover { text-decoration: underline; }
+
+        /* ---- SECTION PER ARTICLE ---- */
+        .article-section {
+            max-width: 960px;
+            margin: 40px auto 0;
+        }
+
+        .article-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .article-num {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--accent-amber);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .article-title-line {
+            font-family: 'Fraunces', serif;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .article-context {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 18px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+        .article-context strong { color: var(--text-primary); }
+        .yes { color: var(--accent-amber); font-weight: 600; }
+        .no { color: #aaa; }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 680px) {
+            .comparison { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            background: var(--bg-primary);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+        }
+        .panel-label {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+        .label-vorher { background: #e0e0e0; color: #555; }
+        .label-nachher { background: var(--accent-amber); color: #fff; }
+
+        /* ---- CURRENT SIDEBAR (generic) ---- */
+        .nl-box {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+        .nl-box h4 { font-family: 'Fraunces', serif; font-size: 14px; margin-bottom: 6px; }
+        .nl-box p { font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+        .nl-box input {
+            width: 100%; padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 12px; margin-bottom: 6px;
+        }
+        .nl-box button {
+            width: 100%; background: var(--accent-amber);
+            color: #fff; border: none; padding: 7px;
+            border-radius: var(--radius-sm);
+            font-size: 12px; cursor: pointer;
+        }
+        .cta-box {
+            background: var(--text-primary);
+            color: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 18px; text-align: center;
+            margin-bottom: 10px;
+        }
+        .cta-box h3 {
+            color: var(--accent-amber);
+            font-family: 'Fraunces', serif;
+            font-size: 14px; margin-bottom: 6px;
+        }
+        .cta-box p { font-size: 12px; margin-bottom: 12px; opacity: 0.85; }
+        .cta-box a {
+            display: inline-block;
+            background: var(--accent-amber); color: #fff;
+            padding: 7px 18px; border-radius: var(--radius-sm);
+            text-decoration: none; font-size: 12px; font-weight: 500;
+        }
+        .mismatch-note {
+            margin-top: 12px;
+            font-size: 11px;
+            color: #b03030;
+            line-height: 1.5;
+            text-align: center;
+            padding: 8px 10px;
+            background: rgba(176,48,48,0.05);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(176,48,48,0.15);
+        }
+
+        /* ---- NEW WIDGET ---- */
+        .booking-widget {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        .booking-widget-header {
+            background: var(--text-primary);
+            padding: 14px 18px;
+        }
+        .booking-widget-header .eyebrow {
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--accent-amber); margin-bottom: 3px;
+        }
+        .booking-widget-header h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 15px; font-weight: 600;
+            color: #fff; margin-bottom: 3px;
+        }
+        .booking-widget-header p {
+            font-size: 11px; color: rgba(255,255,255,0.55);
+        }
+        .booking-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none; color: var(--text-primary);
+            transition: background 0.15s; cursor: pointer;
+        }
+        .booking-item:last-child { border-bottom: none; }
+        .booking-item:hover { background: var(--bg-surface); }
+        .booking-item-icon { font-size: 18px; width: 28px; text-align: center; flex-shrink: 0; }
+        .booking-item-content { flex: 1; }
+        .booking-item-label {
+            font-size: 10px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--text-secondary); margin-bottom: 1px;
+        }
+        .booking-item-name { font-size: 13px; font-weight: 500; line-height: 1.3; }
+        .booking-item-sub { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+        .booking-item-arrow {
+            font-size: 13px; color: var(--accent-amber);
+            flex-shrink: 0; transition: transform 0.15s;
+        }
+        .booking-item:hover .booking-item-arrow { transform: translateX(3px); }
+        .aff-note {
+            padding: 8px 18px;
+            font-size: 11px; color: var(--text-secondary);
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .nl-below {
+            margin-top: 12px;
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px; text-align: center;
+        }
+        .nl-below h4 { font-family: 'Fraunces', serif; font-size: 13px; margin-bottom: 4px; }
+        .nl-below p { font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; }
+        .nl-below input {
+            width: 100%; padding: 6px 10px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm); font-size: 11px; margin-bottom: 5px;
+        }
+        .nl-below button {
+            width: 100%; background: var(--accent-amber);
+            color: #fff; border: none; padding: 6px;
+            border-radius: var(--radius-sm); font-size: 11px; cursor: pointer;
+        }
+
+        /* ---- DIVIDER ---- */
+        .divider {
+            max-width: 960px;
+            margin: 48px auto 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ---- FOOTER NOTE ---- */
+        .footer-note {
+            max-width: 960px;
+            margin: 36px auto 0;
+            background: #FFF8EC;
+            border: 1px solid #F0C870;
+            border-radius: var(--radius-sm);
+            padding: 14px 20px;
+            font-size: 13px;
+            color: #7A5C00;
+        }
+        .footer-note strong { color: #5A4000; }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <h1>Booking-Widget — 3 weitere Artikel</h1>
+    <p>Jeweils: Aktuelle Sidebar (links) vs. neues artikelspezifisches Widget (rechts)</p>
+    <a href="mockup-booking-widget.html">← Zurück zum Edinburgh-Mockup (Artikel 1)</a>
+</div>
+
+<!-- ========================================================
+     ARTIKEL 2: Bourbon Trail
+     ======================================================== -->
+<div class="article-section">
+    <div class="article-label">
+        <div class="article-num">2</div>
+        <div class="article-title-line">Special Edition: Bourbon Trail Kentucky &amp; Tennessee 2024</div>
+    </div>
+
+    <div class="article-context">
+        <strong>Was der Artikel erwähnt:</strong>&nbsp;
+        <span class="yes">✈️ Flüge</span> (Düsseldorf → Philadelphia, TradeDoubler) &nbsp;·&nbsp;
+        <span class="yes">🚗 Mietwagen</span> (absolut notwendig, 11 Tage) &nbsp;·&nbsp;
+        <span class="yes">🎟️ Baseball</span> (Louisville Bats, Louisville Slugger Field, ab $16) &nbsp;·&nbsp;
+        <span class="yes">🏈 NFL</span> (Tennessee Titans, Nashville) &nbsp;·&nbsp;
+        <span class="no">Kein Hotel genannt</span> &nbsp;·&nbsp;
+        <span class="no">Keine Fähre</span>
+    </div>
+
+    <div class="comparison">
+        <!-- Vorher -->
+        <div class="panel">
+            <span class="panel-label label-vorher">Aktuelle Version</span>
+            <div class="nl-box">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+            <div class="cta-box">
+                <h3>Schottland-Reise planen</h3>
+                <p>Fähren, Flüge &amp; Hotels auf einen Blick</p>
+                <a href="#">Fähre buchen →</a>
+            </div>
+            <div class="cta-box">
+                <h3>Whisky entdecken</h3>
+                <p>Die besten Single Malts bei Amazon</p>
+                <a href="#">Whisky shoppen →</a>
+            </div>
+            <div class="mismatch-note">
+                Artikel handelt von Kentucky/USA — Sidebar empfiehlt Schottland-Fähre. Kein Mietwagen-Link, keine Sport-Tickets.
+            </div>
+        </div>
+
+        <!-- Nachher -->
+        <div class="panel">
+            <span class="panel-label label-nachher">Neue Version</span>
+            <div class="booking-widget">
+                <div class="booking-widget-header">
+                    <div class="eyebrow">Direkt buchen</div>
+                    <h3>Route selbst zusammenstellen</h3>
+                    <p>Alle Highlights des Bourbon Trails</p>
+                </div>
+
+                <!-- TradeDoubler Affiliate ✅ -->
+                <a class="booking-item" href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank">
+                    <div class="booking-item-icon">✈️</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Hinflug</div>
+                        <div class="booking-item-name">Flüge nach Louisville / Nashville</div>
+                        <div class="booking-item-sub">Preisvergleich via TradeDoubler</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- whisky.reise/mietwagen/ Affiliate ✅ -->
+                <a class="booking-item" href="https://www.whisky.reise/mietwagen/" target="_blank">
+                    <div class="booking-item-icon">🚗</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Mietwagen</div>
+                        <div class="booking-item-name">Mietwagen USA — 11 Tage</div>
+                        <div class="booking-item-sub">Unbedingt nötig für den Trail</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- Direkt-Link, kein Affiliate -->
+                <a class="booking-item" href="https://www.mlb.com/bats/tickets" target="_blank">
+                    <div class="booking-item-icon">⚾</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Sport-Ticket</div>
+                        <div class="booking-item-name">Louisville Bats Baseball</div>
+                        <div class="booking-item-sub">Louisville Slugger Field · ab $16</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- Direkt-Link, kein Affiliate -->
+                <a class="booking-item" href="https://www.tennesseetitans.com/tickets/" target="_blank">
+                    <div class="booking-item-icon">🏈</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Sport-Ticket</div>
+                        <div class="booking-item-name">Tennessee Titans NFL</div>
+                        <div class="booking-item-sub">Nashville · Nissan Stadium</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <div class="aff-note">Affiliate-Links wo verfügbar — für dich kostenlos</div>
+            </div>
+            <div class="nl-below">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- ========================================================
+     ARTIKEL 3: Islay erreichen
+     ======================================================== -->
+<div class="article-section">
+    <div class="article-label">
+        <div class="article-num">3</div>
+        <div class="article-title-line">Islay erreichen: Fähre, Flug oder beides?</div>
+    </div>
+
+    <div class="article-context">
+        <strong>Was der Artikel erwähnt:</strong>&nbsp;
+        <span class="yes">⛴️ Fähre</span> (CalMac: Kennacraig → Port Ellen/Port Askaig, TradeDoubler) &nbsp;·&nbsp;
+        <span class="yes">✈️ Flüge</span> (Loganair nach ILY, TradeDoubler) &nbsp;·&nbsp;
+        <span class="yes">🚗 Mietwagen</span> (als Option erwähnt) &nbsp;·&nbsp;
+        <span class="yes">🏨 Unterkunft</span> auf Islay (allgemein) &nbsp;·&nbsp;
+        <span class="yes">🥃 Destillerie-Touren</span> (allgemein Islay)
+    </div>
+
+    <div class="comparison">
+        <!-- Vorher -->
+        <div class="panel">
+            <span class="panel-label label-vorher">Aktuelle Version</span>
+            <div class="nl-box">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+            <div class="cta-box">
+                <h3>Schottland-Reise planen</h3>
+                <p>Fähren, Flüge &amp; Hotels auf einen Blick</p>
+                <a href="#">Fähre buchen →</a>
+            </div>
+            <div class="cta-box">
+                <h3>Whisky entdecken</h3>
+                <p>Die besten Single Malts bei Amazon</p>
+                <a href="#">Whisky shoppen →</a>
+            </div>
+            <div class="mismatch-note">
+                Fähren-Link passt — aber er ist generisch, ohne Islay-Bezug. Kein Flug-Link, kein Unterkunft-Link, keine Destillerie-Touren.
+            </div>
+        </div>
+
+        <!-- Nachher -->
+        <div class="panel">
+            <span class="panel-label label-nachher">Neue Version</span>
+            <div class="booking-widget">
+                <div class="booking-widget-header">
+                    <div class="eyebrow">Direkt buchen</div>
+                    <h3>Route selbst zusammenstellen</h3>
+                    <p>Alle Wege nach Islay</p>
+                </div>
+
+                <!-- TradeDoubler CalMac Affiliate ✅ -->
+                <a class="booking-item" href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank">
+                    <div class="booking-item-icon">⛴️</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Fähre</div>
+                        <div class="booking-item-name">CalMac: Kennacraig → Islay</div>
+                        <div class="booking-item-sub">Port Ellen oder Port Askaig · ~2,5 Std.</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- TradeDoubler Flüge Affiliate ✅ -->
+                <a class="booking-item" href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank">
+                    <div class="booking-item-icon">✈️</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Flug</div>
+                        <div class="booking-item-name">Loganair: Glasgow → Islay (ILY)</div>
+                        <div class="booking-item-sub">~45 Minuten · Preisvergleich via TradeDoubler</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- whisky.reise/mietwagen/ Affiliate ✅ -->
+                <a class="booking-item" href="https://www.whisky.reise/mietwagen/" target="_blank">
+                    <div class="booking-item-icon">🚗</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Mietwagen</div>
+                        <div class="booking-item-name">Mietwagen auf Islay</div>
+                        <div class="booking-item-sub">Empfohlen für die Destillerie-Runde</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- Booking.com CJ Affiliate ✅ — Suche Islay -->
+                <a class="booking-item" href="https://www.dpbolvw.net/click-101498134-13397410?url=https%3A%2F%2Fwww.booking.com%2Fsearchresults.html%3Fss%3DIslay" target="_blank">
+                    <div class="booking-item-icon">🏨</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Unterkunft</div>
+                        <div class="booking-item-name">Hotels &amp; B&amp;Bs auf Islay</div>
+                        <div class="booking-item-sub">Booking.com · Früh buchen</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- whisky.reise/touren/ Affiliate ✅ -->
+                <a class="booking-item" href="https://www.whisky.reise/touren/" target="_blank">
+                    <div class="booking-item-icon">🥃</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Whisky-Touren</div>
+                        <div class="booking-item-name">Islay Destillerie-Touren</div>
+                        <div class="booking-item-sub">Laphroaig, Ardbeg, Bruichladdich &amp; mehr</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <div class="aff-note">Affiliate-Links wo verfügbar — für dich kostenlos</div>
+            </div>
+            <div class="nl-below">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- ========================================================
+     ARTIKEL 4: Wohnmobil-Reise
+     ======================================================== -->
+<div class="article-section">
+    <div class="article-label">
+        <div class="article-num">4</div>
+        <div class="article-title-line">Wohnmobil-Reise durch Schottland: Was du wissen musst</div>
+    </div>
+
+    <div class="article-context">
+        <strong>Was der Artikel erwähnt:</strong>&nbsp;
+        <span class="yes">🚐 Wohnmobil mieten</span> &nbsp;·&nbsp;
+        <span class="yes">⛴️ Fähre</span> (für Inseln wie Skye/Islay, TradeDoubler) &nbsp;·&nbsp;
+        <span class="yes">🥃 Glenfiddich</span> (Dufftown) &nbsp;·&nbsp;
+        <span class="yes">🥃 Talisker</span> (Isle of Skye) &nbsp;·&nbsp;
+        <span class="yes">🥃 Laphroaig</span> (Islay) &nbsp;·&nbsp;
+        <span class="no">Kein Hotel</span> (Campingplätze/Wildcamping) &nbsp;·&nbsp;
+        <span class="no">Kein Flug erwähnt</span>
+    </div>
+
+    <div class="comparison">
+        <!-- Vorher -->
+        <div class="panel">
+            <span class="panel-label label-vorher">Aktuelle Version</span>
+            <div class="nl-box">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+            <div class="cta-box">
+                <h3>Schottland-Reise planen</h3>
+                <p>Fähren, Flüge &amp; Hotels auf einen Blick</p>
+                <a href="#">Fähre buchen →</a>
+            </div>
+            <div class="cta-box">
+                <h3>Whisky entdecken</h3>
+                <p>Die besten Single Malts bei Amazon</p>
+                <a href="#">Whisky shoppen →</a>
+            </div>
+            <div class="mismatch-note">
+                Kein Wohnmobil-Buchungs-Link. Keine Destillerie-Touren. „Hotels" passt nicht — der Artikel dreht sich ums Wildcampen.
+            </div>
+        </div>
+
+        <!-- Nachher -->
+        <div class="panel">
+            <span class="panel-label label-nachher">Neue Version</span>
+            <div class="booking-widget">
+                <div class="booking-widget-header">
+                    <div class="eyebrow">Direkt buchen</div>
+                    <h3>Route selbst zusammenstellen</h3>
+                    <p>Alles für deine Wohnmobil-Tour</p>
+                </div>
+
+                <!-- whisky.reise/wohnmobil/ Affiliate ✅ -->
+                <a class="booking-item" href="https://www.whisky.reise/wohnmobil/" target="_blank">
+                    <div class="booking-item-icon">🚐</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Fahrzeug</div>
+                        <div class="booking-item-name">Wohnmobil Schottland mieten</div>
+                        <div class="booking-item-sub">Preise &amp; Verfügbarkeit prüfen</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- TradeDoubler CalMac Affiliate ✅ -->
+                <a class="booking-item" href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank">
+                    <div class="booking-item-icon">⛴️</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Fähre</div>
+                        <div class="booking-item-name">Fähren zu den Inseln (CalMac)</div>
+                        <div class="booking-item-sub">Skye, Islay, Mull &amp; mehr</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- GetYourGuide Affiliate ✅ partner_id=HSJFS7E -->
+                <a class="booking-item" href="https://www.getyourguide.de/dufftown-l97877/glenfiddich-distillery-tour-t1/?partner_id=HSJFS7E&utm_medium=online_publisher" target="_blank">
+                    <div class="booking-item-icon">🥃</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Destillerie-Tour</div>
+                        <div class="booking-item-name">Glenfiddich Distillery</div>
+                        <div class="booking-item-sub">Dufftown, Speyside · GetYourGuide</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- GetYourGuide Affiliate ✅ partner_id=HSJFS7E -->
+                <a class="booking-item" href="https://www.getyourguide.de/isle-of-skye-l1588/talisker-distillery-tour-t1/?partner_id=HSJFS7E&utm_medium=online_publisher" target="_blank">
+                    <div class="booking-item-icon">🥃</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Destillerie-Tour</div>
+                        <div class="booking-item-name">Talisker Distillery</div>
+                        <div class="booking-item-sub">Isle of Skye · GetYourGuide</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- GetYourGuide Affiliate ✅ partner_id=HSJFS7E -->
+                <a class="booking-item" href="https://www.getyourguide.de/islay-l96862/laphroaig-distillery-tour-t1/?partner_id=HSJFS7E&utm_medium=online_publisher" target="_blank">
+                    <div class="booking-item-icon">🥃</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Destillerie-Tour</div>
+                        <div class="booking-item-name">Laphroaig Distillery</div>
+                        <div class="booking-item-sub">Islay · GetYourGuide</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <div class="aff-note">Affiliate-Links wo verfügbar — für dich kostenlos</div>
+            </div>
+            <div class="nl-below">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer note -->
+<div class="footer-note">
+    <strong>Logik aller Booking-Buttons:</strong> Jeder Reisebaustein aus dem Artikel erscheint im Widget — unabhängig davon, ob ein Affiliate-Link vorhanden ist.<br><br>
+    ✅ <strong>Mit Affiliate:</strong> TradeDoubler Flüge, TradeDoubler CalMac-Fähre, whisky.reise/mietwagen/, whisky.reise/hotels/, whisky.reise/touren/, whisky.reise/wohnmobil/<br>
+    ⬜ <strong>Ohne Affiliate (Direkt-Link):</strong> Baseball-Tickets, NFL-Tickets<br>
+    ✅ <strong>Booking.com</strong> — CJ Affiliate aktiv (Publisher 101498134), hotel-spezifische Deeplinks eingebaut<br><br>
+    GetYourGuide ist jetzt aktiv (partner_id=HSJFS7E) — alle Destillerie-Touren laufen über Affiliate.
+</div>
+
+</body>
+</html>
