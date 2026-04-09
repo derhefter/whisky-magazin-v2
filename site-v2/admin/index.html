@@ -271,6 +271,14 @@
       box-shadow: var(--shadow);
       text-align: center;
     }
+    .stat-card-link {
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .stat-card-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
     .stat-card .stat-icon {
       font-size: 1.75rem;
       margin-bottom: 8px;
@@ -290,6 +298,16 @@
       font-weight: 500;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+    }
+    .stat-card .stat-hint {
+      font-size: 0.7rem;
+      color: var(--color-amber);
+      margin-top: 6px;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .stat-card-link:hover .stat-hint {
+      opacity: 1;
     }
 
     /* ===== SECTION TITLES ===== */
@@ -999,6 +1017,12 @@ function switchTab(name, btn) {
   }
 }
 
+/* Tab per Name wechseln (ohne Button-Referenz) */
+function goToTab(name) {
+  const btn = document.querySelector(`.tab-btn[onclick*="'${name}'"]`);
+  if (btn) switchTab(name, btn);
+}
+
 function loadActiveTab() {
   loadTab(activeTab);
 }
@@ -1024,25 +1048,29 @@ async function loadUebersicht() {
     const s = data.stats || data;
     container.innerHTML = `
       <div class="stats-grid">
-        <div class="stat-card">
+        <div class="stat-card stat-card-link" onclick="goToTab('newsletter')" title="Newsletter-Tab öffnen">
           <span class="stat-icon">&#9993;&#65039;</span>
           <div class="stat-number">${fmt(s.subscribers ?? s.abonnenten ?? 0)}</div>
           <div class="stat-label">Abonnenten</div>
+          <div class="stat-hint">&#8594; Newsletter</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card stat-card-link" onclick="goToTab('artikel')" title="Artikel-Tab öffnen">
           <span class="stat-icon">&#128221;</span>
           <div class="stat-number">${fmt(s.drafts ?? s.entwerfe_wartend ?? 0)}</div>
           <div class="stat-label">Entwürfe wartend</div>
+          <div class="stat-hint">&#8594; Artikel</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card stat-card-link" onclick="goToTab('themen')" title="Themen-Tab öffnen">
           <span class="stat-icon">&#128203;</span>
           <div class="stat-number">${fmt(s.topics_open ?? s.themen_offen ?? 0)}</div>
           <div class="stat-label">Themen offen</div>
+          <div class="stat-hint">&#8594; Themen</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card stat-card-link" onclick="goToTab('themen')" title="Themen-Tab öffnen">
           <span class="stat-icon">&#9989;</span>
           <div class="stat-number">${fmt(s.topics_done ?? s.themen_erledigt ?? 0)}</div>
           <div class="stat-label">Themen erledigt</div>
+          <div class="stat-hint">&#8594; Themen</div>
         </div>
       </div>
     `;
@@ -1453,10 +1481,10 @@ function renderThemen() {
 function normalizeStatus(s) {
   if (!s) return 'open';
   s = s.toLowerCase();
-  if (s === 'open' || s === 'offen') return 'open';
-  if (s === 'inprogress' || s === 'in_progress' || s === 'in bearbeitung' || s === 'editing') return 'inprogress';
+  if (s === 'open' || s === 'offen' || s === 'pending') return 'open';
+  if (s === 'inprogress' || s === 'in_progress' || s === 'in bearbeitung' || s === 'in bearbeitung' || s === 'editing') return 'inprogress';
   if (s === 'done' || s === 'erledigt' || s === 'approved') return 'done';
-  return s;
+  return 'open'; // Fallback: unbekannte Status als offen behandeln
 }
 
 function setSaisonFilter(v) {

@@ -72,6 +72,7 @@ def _github_update_file(path, content_bytes, sha, message):
         "message": message,
         "content": base64.b64encode(content_bytes).decode("ascii"),
         "sha": sha,
+        "branch": GITHUB_BRANCH,
     }).encode("utf-8")
     req = Request(url, data=payload, headers={
         "Authorization": f"token {GITHUB_TOKEN}",
@@ -88,7 +89,7 @@ def _github_update_file(path, content_bytes, sha, message):
 
 def _github_delete_file(path, sha, message):
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
-    payload = json.dumps({"message": message, "sha": sha}).encode("utf-8")
+    payload = json.dumps({"message": message, "sha": sha, "branch": GITHUB_BRANCH}).encode("utf-8")
     req = Request(url, data=payload, headers={
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json",

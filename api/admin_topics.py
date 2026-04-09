@@ -75,6 +75,7 @@ def _github_update_file(path, content_bytes, sha, message):
         "message": message,
         "content": base64.b64encode(content_bytes).decode("ascii"),
         "sha": sha,
+        "branch": GITHUB_BRANCH,
     }).encode("utf-8")
     req = Request(url, data=payload, headers={
         "Authorization": f"token {GITHUB_TOKEN}",
