@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup: Booking-Widget — Vorher / Nachher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF7;
+            --bg-surface: #F5F0E8;
+            --bg-elevated: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #5C5C5C;
+            --accent-amber: #C8963E;
+            --accent-warm: #8B7355;
+            --accent-sage: #4A7C5E;
+            --border: #E8DCC8;
+            --shadow-sm: 0 2px 12px rgba(139,115,85,0.08);
+            --shadow-hover: 0 4px 24px rgba(139,115,85,0.14);
+            --radius-sm: 6px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ECEBE6;
+            color: var(--text-primary);
+            padding: 32px 24px;
+            font-size: 15px;
+        }
+
+        /* --- PAGE HEADER --- */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .label-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .label-vorher { background: #e0e0e0; color: #555; }
+        .label-nachher { background: var(--accent-amber); color: #fff; }
+
+        /* --- COMPARISON GRID --- */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (max-width: 700px) {
+            .comparison { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            background: var(--bg-primary);
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .panel-title {
+            font-family: 'Fraunces', serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ===========================
+           AKTUELLE VERSION (Vorher)
+           =========================== */
+
+        /* Newsletter Box */
+        .nl-box {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .nl-box h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .nl-box p { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+        .nl-box input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 8px;
+        }
+        .nl-box button {
+            width: 100%;
+            background: var(--accent-amber);
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* CTA Box (aktuell) */
+        .cta-box {
+            background: var(--text-primary);
+            color: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .cta-box h3 {
+            color: var(--accent-amber);
+            font-family: 'Fraunces', serif;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .cta-box p { font-size: 13px; margin-bottom: 16px; opacity: 0.85; }
+        .cta-box a {
+            display: inline-block;
+            background: var(--accent-amber);
+            color: #fff;
+            padding: 9px 22px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        /* ===========================
+           NEUE VERSION (Nachher)
+           =========================== */
+
+        .booking-widget {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .booking-widget-header {
+            background: var(--text-primary);
+            padding: 16px 20px;
+        }
+        .booking-widget-header .eyebrow {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-amber);
+            margin-bottom: 4px;
+        }
+        .booking-widget-header h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .booking-widget-header p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .booking-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: background 0.15s;
+            cursor: pointer;
+        }
+        .booking-item:last-child { border-bottom: none; }
+        .booking-item:hover { background: var(--bg-surface); }
+
+        .booking-item-icon {
+            font-size: 20px;
+            width: 32px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .booking-item-content { flex: 1; }
+        .booking-item-label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+        .booking-item-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        .booking-item-sub {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 1px;
+        }
+
+        .booking-item-arrow {
+            font-size: 14px;
+            color: var(--accent-amber);
+            flex-shrink: 0;
+            transition: transform 0.15s;
+        }
+        .booking-item:hover .booking-item-arrow {
+            transform: translateX(3px);
+        }
+
+        /* Affiliate note */
+        .aff-note {
+            padding: 10px 20px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        /* Newsletter (new, below widget) */
+        .nl-below {
+            margin-top: 16px;
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 18px 20px;
+            text-align: center;
+        }
+        .nl-below h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .nl-below p { font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+        .nl-below input {
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .nl-below button {
+            width: 100%;
+            background: var(--accent-amber);
+            color: #fff;
+            border: none;
+            padding: 7px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+
+        /* --- ARTICLE CONTEXT STRIP --- */
+        .article-context {
+            max-width: 900px;
+            margin: 0 auto 28px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .article-context strong { color: var(--text-primary); }
+
+        /* --- WHAT CHANGED NOTES --- */
+        .changes {
+            max-width: 900px;
+            margin: 36px auto 0;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 24px 28px;
+            border-left: 4px solid var(--accent-amber);
+        }
+        .changes h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 17px;
+            margin-bottom: 14px;
+        }
+        .changes ul { padding-left: 20px; }
+        .changes li { margin-bottom: 8px; font-size: 14px; line-height: 1.5; }
+        .changes li span.new { color: var(--accent-sage); font-weight: 600; }
+        .changes li span.old { color: #999; text-decoration: line-through; }
+        .changes .placeholder-note {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: #FFF8EC;
+            border: 1px solid #F0C870;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            color: #7A5C00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>Booking-Widget — Vorher / Nachher</h1>
+        <p>Beispiel-Artikel: <strong>Edinburgh Halloween 2019: Holyrood Distillery und die Altstadt</strong></p>
+    </div>
+
+    <div class="article-context">
+        <strong>Was der Artikel erwähnt:</strong> ibis Styles St Andrews Square (Hotel) &nbsp;·&nbsp; Holyrood Distillery (Führung) &nbsp;·&nbsp; Edinburgh Castle &nbsp;·&nbsp; Flüge nach Edinburgh &nbsp;·&nbsp;
+        <strong style="color:var(--accent-sage);">Kein Mietwagen</strong> (explizit: „Kein Auto nötig") &nbsp;·&nbsp; <strong style="color:var(--accent-sage);">Keine Fähre</strong> (nicht erwähnt)
+    </div>
+
+    <div class="comparison">
+
+        <!-- ======== VORHER ======== -->
+        <div class="panel">
+            <div style="text-align:center;margin-bottom:16px;">
+                <span class="label-badge label-vorher">Aktuelle Version</span>
+            </div>
+            <div class="panel-title">Sidebar — wie sie heute aussieht</div>
+
+            <!-- Newsletter -->
+            <div class="nl-box">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+
+            <!-- CTA 1 -->
+            <div class="cta-box">
+                <h3>Schottland-Reise planen</h3>
+                <p>Fähren, Flüge &amp; Hotels auf einen Blick</p>
+                <a href="#">Fähre buchen →</a>
+            </div>
+
+            <!-- CTA 2 -->
+            <div class="cta-box">
+                <h3>Whisky entdecken</h3>
+                <p>Die besten Single Malts bei Amazon</p>
+                <a href="#">Whisky shoppen →</a>
+            </div>
+
+            <div style="margin-top:16px;font-size:12px;color:var(--text-secondary);text-align:center;line-height:1.5;">
+                Probleme: Fähren-Link erscheint, obwohl dieser<br>
+                Artikel kein Schiff erwähnt. Kein Hotel-Link.<br>
+                Kein Destillerie-Link. Generisch statt spezifisch.
+            </div>
+        </div>
+
+        <!-- ======== NACHHER ======== -->
+        <div class="panel">
+            <div style="text-align:center;margin-bottom:16px;">
+                <span class="label-badge label-nachher">Neue Version</span>
+            </div>
+            <div class="panel-title">Sidebar — Booking-Widget (artikelspezifisch)</div>
+
+            <!-- Booking Widget -->
+            <div class="booking-widget">
+                <div class="booking-widget-header">
+                    <div class="eyebrow">Direkt buchen</div>
+                    <h3>Route selbst zusammenstellen</h3>
+                    <p>Alles, was wir für Edinburgh empfehlen</p>
+                </div>
+
+                <!-- Hotel: ibis Styles (spezifisch!) -->
+                <a class="booking-item" href="#" title="ibis Styles St Andrews Square auf Booking.com">
+                    <div class="booking-item-icon">🏨</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Hotel</div>
+                        <div class="booking-item-name">ibis Styles St Andrews Square</div>
+                        <div class="booking-item-sub">Unser Tipp · via Booking.com</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- Destillerie: Holyrood (spezifisch!) -->
+                <a class="booking-item" href="#" title="Holyrood Distillery Tour auf GetYourGuide">
+                    <div class="booking-item-icon">🥃</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Destillerie-Führung</div>
+                        <div class="booking-item-name">Holyrood Distillery Tour</div>
+                        <div class="booking-item-sub">Täglich · via GetYourGuide</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- Flüge: Edinburgh (aus TradeDoubler) -->
+                <a class="booking-item" href="#" title="Flüge nach Edinburgh vergleichen">
+                    <div class="booking-item-icon">✈️</div>
+                    <div class="booking-item-content">
+                        <div class="booking-item-label">Anreise</div>
+                        <div class="booking-item-name">Flüge nach Edinburgh</div>
+                        <div class="booking-item-sub">Preise vergleichen</div>
+                    </div>
+                    <div class="booking-item-arrow">→</div>
+                </a>
+
+                <!-- KEIN Mietwagen-Eintrag, KEINE Fähre — weil der Artikel das nicht erwähnt -->
+
+                <div class="aff-note">
+                    * Affiliate-Links — für dich kostenlos, hilft uns
+                </div>
+            </div>
+
+            <!-- Newsletter bleibt erhalten, aber kleiner darunter -->
+            <div class="nl-below">
+                <h4>Schottland-Post</h4>
+                <p>Einmal im Monat die besten Stories.</p>
+                <input type="email" placeholder="E-Mail">
+                <button>Anmelden</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Was sich ändert -->
+    <div class="changes">
+        <h2>Was sich konkret ändert</h2>
+        <ul>
+            <li><span class="new">Neu:</span> Hotel-Link direkt zum ibis Styles St Andrews Square auf Booking.com — <span class="old">bisher: kein Hotel-Link</span></li>
+            <li><span class="new">Neu:</span> Destillerie-Führung Holyrood auf GetYourGuide — <span class="old">bisher: kein Touren-Link</span></li>
+            <li><span class="new">Beibehalten:</span> Flüge-Link via TradeDoubler (bereits aktiv)</li>
+            <li><span class="new">Entfernt:</span> generischer Fähren-Link — <em>Fähre kommt in diesem Artikel nicht vor</em></li>
+            <li><span class="new">Kein</span> Mietwagen-Button — <em>Artikel sagt explizit: „Kein Auto nötig"</em></li>
+            <li>Newsletter-Box bleibt, rückt aber unter das Booking-Widget</li>
+            <li>Neues Widget-Design: kompakte Listenzeilen statt dunkler Block-CTAs</li>
+        </ul>
+        <div class="placeholder-note">
+            <strong>Hinweis zu den Links:</strong> Booking.com und GetYourGuide-Links sind aktuell Platzhalter.
+            Sobald die Affiliate-IDs vorliegen, werden echte Deeplinks eingesetzt —
+            z.B. <code>booking.com/hotel/gb/ibis-styles-edinburgh-st-andrews-square.html?aid=DEINE_ID</code>
+        </div>
+    </div>
+
+</body>
+</html>
