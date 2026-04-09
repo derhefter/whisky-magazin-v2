@@ -921,7 +921,31 @@ async function doLogin() {
   document.getElementById('login-error').style.display = 'none';
 
   try {
-    const data = await apiPost(API.auth, { password: pw });
+    // Login direkt ohne handleResponse, damit Fehlermeldungen klar sind
+    const res = await fetch(API.auth, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw }),
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (res.status === 401) {
+      showLoginError('Falsches Passwort. Bitte prüfe den Wert von DASHBOARD_PASSWORD in den Vercel-Umgebungsvariablen.');
+      return;
+    }
+    if (res.status === 429) {
+      showLoginError('Zu viele Versuche. Bitte 15 Minuten warten.');
+      return;
+    }
+    if (res.status === 500) {
+      showLoginError(`Server-Fehler: ${data.error || 'Unbekannter Fehler'}. Bitte prüfe, ob DASHBOARD_PASSWORD in Vercel gesetzt ist, und deploye neu.`);
+      return;
+    }
+    if (!res.ok) {
+      showLoginError(data.error || `Fehler ${res.status} – bitte Vercel-Logs prüfen.`);
+      return;
+    }
+
     if (data.token) {
       setToken(data.token);
       showDashboard();
@@ -930,7 +954,7 @@ async function doLogin() {
       showLoginError('Ungültige Antwort vom Server.');
     }
   } catch (err) {
-    showLoginError(err.message || 'Falsches Passwort.');
+    showLoginError('Netzwerkfehler – bitte Internetverbindung prüfen.');
   } finally {
     btn.disabled = false;
     btn.textContent = 'Anmelden';
