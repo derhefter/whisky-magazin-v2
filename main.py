@@ -39,10 +39,12 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).parent
 ARTICLES_DIR = PROJECT_DIR / "articles"
+DRAFTS_DIR   = PROJECT_DIR / "articles" / "drafts"
 SITE_DIR = PROJECT_DIR / "site"
 SITE_V2_DIR = PROJECT_DIR / "site-v2"
 
 sys.path.insert(0, str(PROJECT_DIR))
+sys.path.insert(0, str(PROJECT_DIR / "_v1-archive"))  # V1-Builder im Archiv
 
 from site_builder import build_site, load_all_articles
 from site_builder_v2 import build_site as build_site_v2
@@ -106,6 +108,54 @@ def save_used_topic(topic_title):
 
 
 def pick_next_topic():
+    """Wählt das nächste Thema.
+    Priorisiert Themen aus data/topics_queue.json (pending),
+    saisonal passend, fällt auf topic_library.py zurück wenn Queue leer.
+    Gibt (topic_dict, topic_id_or_None) zurück.
+    """
+    from datetime import date as _date
+    queue_path = PROJECT_DIR / "data" / "topics_queue.json"
+    topic_id = None
+
+    # --- Topics-Queue prüfen ---
+    if queue_path.exists():
+        with open(queue_path, "r", encoding="utf-8") as f:
+            queue_data = json.load(f)
+        pending = [t for t in queue_data["topics"] if t["status"] == "pending"]
+
+        if pending:
+            month = _date.today().month
+            # Saisonale Priorität
+            season_map = {
+                "fruehling": range(3, 6),   # März–Mai
+                "sommer":    range(6, 9),   # Juni–Aug
+                "herbst":    range(9, 12),  # Sept–Nov
+                "winter":    [12, 1, 2],    # Dez–Feb
+            }
+            occasion_map = {
+                "ostern":      [3, 4],
+                "weihnachten": [11, 12],
+                "silvester":   [12],
+            }
+            seasonal = [t for t in pending if (
+                (t["occasion"] and month in occasion_map.get(t["occasion"], []))
+                or (t["season"] and month in season_map.get(t["season"], range(0)))
+            )]
+            candidates = seasonal if seasonal else pending
+            # Nach Priorität sortieren, dann zufällig wählen
+            candidates.sort(key=lambda x: -x["priority"])
+            top_prio = candidates[0]["priority"]
+            top_candidates = [t for t in candidates if t["priority"] == top_prio]
+            chosen = random.choice(top_candidates)
+            topic_id = chosen["id"]
+            topic = {
+                "title":    chosen["title"],
+                "type":     chosen["type"],
+                "category": chosen["category"],
+            }
+            return topic, topic_id
+
+    # --- Fallback: topic_library.py ---
     used = load_used_topics()
     used_titles = {t["title"] for t in used}
     available = [t for t in WHISKY_TOPICS if t["title"] not in used_titles]
@@ -114,7 +164,6 @@ def pick_next_topic():
         print("  HINWEIS: Alle Themen verwendet! Starte von vorne...")
         available = WHISKY_TOPICS
 
-    # Abwechslung bei Kategorien
     if len(available) > 5:
         recent_cats = []
         for t in reversed(used[-5:]):
@@ -126,7 +175,24 @@ def pick_next_topic():
         if preferred:
             available = preferred
 
-    return random.choice(available)
+    return random.choice(available), None
+
+
+def mark_topic_in_progress(topic_id):
+    """Markiert ein Thema in der Queue als 'in_progress'."""
+    if not topic_id:
+        return
+    queue_path = PROJECT_DIR / "data" / "topics_queue.json"
+    if not queue_path.exists():
+        return
+    with open(queue_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    for t in data["topics"]:
+        if t["id"] == topic_id:
+            t["status"] = "in_progress"
+            break
+    with open(queue_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
 
 # ============================================================
@@ -134,17 +200,38 @@ def pick_next_topic():
 # ============================================================
 
 def save_article(article_data):
-    """Speichert einen Artikel als JSON im articles-Ordner."""
+    """Speichert einen fertigen Artikel direkt im articles-Ordner (Legacy/manuell)."""
     ARTICLES_DIR.mkdir(exist_ok=True)
     slug = article_data.get("meta", {}).get("slug", "artikel")
     date_str = article_data.get("date", datetime.now().strftime("%Y-%m-%d"))
     filename = f"{date_str}_{slug}.json"
     filepath = ARTICLES_DIR / filename
-
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(article_data, f, indent=2, ensure_ascii=False)
-
     print(f"  Gespeichert: {filepath.name}")
+    return filepath
+
+
+def save_draft(article_data, topic_id=None):
+    """Speichert einen auto-generierten Artikel als Entwurf in articles/drafts/.
+    Fügt Status-Metadaten hinzu. Entwürfe müssen im Dashboard genehmigt werden.
+    """
+    DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
+    slug = article_data.get("meta", {}).get("slug", "entwurf")
+    date_str = article_data.get("date", datetime.now().strftime("%Y-%m-%d"))
+    filename = f"{date_str}_{slug}.json"
+    filepath = DRAFTS_DIR / filename
+
+    # Status-Felder hinzufügen
+    draft = dict(article_data)
+    draft["_status"] = "pending"
+    draft["_generated_at"] = datetime.now().isoformat()
+    draft["_topic_id"] = topic_id
+
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(draft, f, indent=2, ensure_ascii=False)
+
+    print(f"  Entwurf gespeichert: {filepath.name}")
     return filepath
 
 
@@ -166,20 +253,25 @@ def log_action(action, details=""):
 # Hauptfunktionen
 # ============================================================
 
-def cmd_generate(config, count=1):
-    """Generiert neue Artikel."""
+def cmd_generate(config, count=1, as_draft=False):
+    """Generiert neue Artikel.
+    as_draft=True: speichert in articles/drafts/ (für Auto-Modus).
+    as_draft=False: speichert direkt in articles/ (manuell/legacy).
+    Gibt Liste der gespeicherten Artikeldaten zurück.
+    """
     global generate_article
     if generate_article is None:
         from content_generator import generate_article as _gen
         generate_article = _gen
 
-    print(f"\n  Generiere {count} Artikel...\n")
+    mode = "Entwürfe" if as_draft else "Artikel"
+    print(f"\n  Generiere {count} {mode}...\n")
 
-    success = 0
+    results = []
     for i in range(count):
         print(f"  --- Artikel {i + 1} von {count} ---\n")
 
-        topic = pick_next_topic()
+        topic, topic_id = pick_next_topic()
         print(f"  Thema:     {topic['title']}")
         print(f"  Kategorie: {topic.get('category', 'Allgemein')}")
         print(f"  Typ:       {topic.get('type', 'article')}")
@@ -187,11 +279,15 @@ def cmd_generate(config, count=1):
 
         try:
             article_data = generate_article(topic, config)
-            save_article(article_data)
-            save_used_topic(topic["title"])
-            log_action("GENERATED", topic["title"])
-            success += 1
-            print(f"  Artikel erfolgreich generiert!\n")
+            if as_draft:
+                filepath = save_draft(article_data, topic_id=topic_id)
+                mark_topic_in_progress(topic_id)
+            else:
+                filepath = save_article(article_data)
+                save_used_topic(topic["title"])
+            log_action("GENERATED" if not as_draft else "DRAFT", topic["title"])
+            results.append({"article": article_data, "file": filepath.name, "topic_id": topic_id})
+            print(f"  Erfolgreich generiert!\n")
         except Exception as e:
             print(f"\n  FEHLER: {e}\n")
             log_action("ERROR", f"{topic['title']} | {e}")
@@ -202,9 +298,9 @@ def cmd_generate(config, count=1):
             time.sleep(wait)
 
     print(f"  ====================================")
-    print(f"  ERGEBNIS: {success}/{count} Artikel generiert")
+    print(f"  ERGEBNIS: {len(results)}/{count} {mode} generiert")
     print(f"  ====================================\n")
-    return success
+    return results
 
 
 def cmd_build(config):
@@ -243,13 +339,72 @@ def cmd_serve_v2():
             print("\n  Server beendet.")
 
 
-def cmd_auto(config, count=1):
-    """Generiert Artikel UND baut die Website."""
-    generated = cmd_generate(config, count)
-    if generated > 0:
-        print()
-        cmd_build(config)
-    return generated
+def git_push_drafts():
+    """Committed und pusht neue Entwürfe zu GitHub."""
+    try:
+        result = subprocess.run(
+            ["git", "add", "articles/drafts/", "data/topics_queue.json"],
+            cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=30
+        )
+        if result.returncode != 0:
+            print(f"  [Git] Fehler bei git add: {result.stderr}")
+            return False
+
+        status = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=10
+        )
+        if not status.stdout.strip():
+            print("  [Git] Keine neuen Entwürfe zu committen.")
+            return True
+
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+        msg = f"Auto: Neue Artikel-Entwürfe ({timestamp})"
+        commit = subprocess.run(
+            ["git", "commit", "-m", msg],
+            cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=30
+        )
+        if commit.returncode != 0:
+            print(f"  [Git] Fehler bei git commit: {commit.stderr}")
+            return False
+
+        push = subprocess.run(
+            ["git", "push"],
+            cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=60
+        )
+        if push.returncode != 0:
+            print(f"  [Git] Fehler bei git push: {push.stderr}")
+            return False
+
+        print("  [Git] Entwürfe erfolgreich gepusht.")
+        return True
+    except Exception as e:
+        print(f"  [Git] Fehler: {e}")
+        return False
+
+
+def cmd_auto(config, count=2):
+    """Generiert Artikel-Entwürfe, pusht zu GitHub und sendet E-Mail-Benachrichtigung.
+    Kein automatischer Build — Artikel müssen im Dashboard freigegeben werden.
+    """
+    results = cmd_generate(config, count, as_draft=True)
+    if not results:
+        return 0
+
+    # Git Push
+    print("\n  Pushe Entwürfe zu GitHub...")
+    git_push_drafts()
+
+    # E-Mail-Benachrichtigung
+    print("\n  Sende Benachrichtigung...")
+    try:
+        from notifier import notify_new_drafts
+        articles_data = [r["article"] for r in results]
+        notify_new_drafts(articles_data)
+    except Exception as e:
+        print(f"  [Notifier] Fehler: {e}")
+
+    return len(results)
 
 
 def cmd_serve():
@@ -482,11 +637,16 @@ def main():
     if args.test:
         cmd_test(config)
     elif args.generate:
-        cmd_generate(config, args.count)
+        # --generate: direkt in articles/ (manuell, kein Draft-Workflow)
+        results = cmd_generate(config, args.count, as_draft=False)
+        if results:
+            print("\n  Baue Website v2 neu...")
+            cmd_build_v2(config)
     elif args.build:
-        cmd_build(config)
+        cmd_build_v2(config)
     elif args.auto:
-        cmd_auto(config, args.count)
+        # --auto: Entwürfe generieren + push + E-Mail (kein Build!)
+        cmd_auto(config, args.count if args.count != 1 else 2)
     elif args.serve:
         cmd_serve()
     elif args.build_v2:

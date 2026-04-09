@@ -5,7 +5,7 @@
 =============================================================
 
 Sendet automatische E-Mail-Benachrichtigungen an
-rosenhefter@gmail.com bei wichtigen Redaktionsereignissen:
+whisky-news@whisky-reise.com bei wichtigen Redaktionsereignissen:
 
   - Newsletter-Entwurf bereit zur Freigabe
   - Whisky des Monats Entwurf bereit
@@ -14,7 +14,7 @@ rosenhefter@gmail.com bei wichtigen Redaktionsereignissen:
 
 Konfiguration in config.json:
   "notifications": {
-    "email": "rosenhefter@gmail.com",
+    "email": "whisky-news@whisky-reise.com",
     "smtp_sender": "sender@gmail.com",
     "smtp_app_password": "xxxx xxxx xxxx xxxx",
     "enabled": true
@@ -163,7 +163,7 @@ def send_notification(subject, html_body, text_body=None):
 
     sender   = notif["smtp_sender"]
     password = notif["smtp_app_password"]
-    recipient = notif.get("email", "rosenhefter@gmail.com")
+    recipient = notif.get("email", "whisky-news@whisky-reise.com")
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
@@ -421,6 +421,182 @@ def notify_monthly_reminder():
 
 
 # ============================================================
+# Neue Entwürfe Benachrichtigung (Brevo Transactional API)
+# ============================================================
+
+def notify_new_drafts(articles_data):
+    """
+    Sendet eine E-Mail-Benachrichtigung wenn neue Artikel-Entwürfe generiert wurden.
+    Nutzt die Brevo Transactional API (nicht SMTP).
+    Empfänger: rosenhefter@gmail.com
+    """
+    import os
+    import requests as _requests
+    from datetime import date as _date, timedelta
+
+    brevo_key = os.environ.get("BREVO_API_KEY", "")
+    if not brevo_key:
+        # Aus .env laden
+        env_path = PROJECT_DIR / ".env"
+        if env_path.exists():
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("BREVO_API_KEY="):
+                        brevo_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                        break
+
+    if not brevo_key:
+        print("  [Notifier] BREVO_API_KEY nicht gefunden – E-Mail übersprungen.")
+        return False
+
+    recipient = "rosenhefter@gmail.com"
+    dashboard_url = "https://www.whisky-reise.com/admin"
+    count = len(articles_data)
+
+    # Nächste Mittwoch + Samstag berechnen
+    today = _date.today()
+    days_to_wed = (2 - today.weekday()) % 7
+    days_to_sat = (5 - today.weekday()) % 7
+    if days_to_wed == 0:
+        days_to_wed = 7
+    if days_to_sat == 0:
+        days_to_sat = 7
+    next_wed = (today + timedelta(days=days_to_wed)).strftime("%d.%m.%Y")
+    next_sat = (today + timedelta(days=days_to_sat)).strftime("%d.%m.%Y")
+
+    # Artikel-Blöcke für E-Mail
+    article_blocks_html = ""
+    article_blocks_text = ""
+    for i, art in enumerate(articles_data, 1):
+        title = art.get("title", "Ohne Titel")
+        category = art.get("category", "–")
+        teaser = art.get("meta", {}).get("teaser", "")
+        html_content = art.get("html_content", "")
+        words = len(html_content.split()) if html_content else 0
+
+        article_blocks_html += f"""
+        <div style="background:#F2EDE6;padding:16px 20px;margin:0 0 16px 0;border-left:4px solid #C8963E;">
+          <p style="margin:0 0 4px 0;font-size:12px;color:#B8762E;text-transform:uppercase;letter-spacing:1px;">
+            Entwurf {i} &bull; {category} &bull; ~{words} Wörter
+          </p>
+          <p style="margin:0 0 8px 0;font-size:17px;font-weight:bold;color:#2A2520;">{title}</p>
+          <p style="margin:0;font-size:14px;color:#4A4440;font-style:italic;">{teaser}</p>
+        </div>"""
+        article_blocks_text += f"\n{i}. {title}\n   Kategorie: {category} | ~{words} Wörter\n   {teaser}\n"
+
+    html_body = f"""<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="UTF-8"><title>Neue Artikel-Entwürfe</title></head>
+<body style="margin:0;padding:0;background-color:#EDE9E3;font-family:Georgia,'Times New Roman',serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"
+         style="background-color:#EDE9E3;padding:30px 0;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" border="0"
+             style="max-width:600px;width:100%;background-color:#FAF8F4;">
+
+        <tr>
+          <td style="background-color:#2A2520;padding:24px 40px;text-align:center;">
+            <p style="margin:0 0 4px 0;font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:3px;">
+              Redaktionssystem
+            </p>
+            <h1 style="margin:0;font-size:22px;font-weight:bold;color:#FAF8F4;letter-spacing:2px;">
+              WHISKY MAGAZIN
+            </h1>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:32px 40px;">
+            <p style="margin:0 0 8px 0;font-size:12px;color:#B8762E;text-transform:uppercase;letter-spacing:1px;">
+              Neue Entwürfe bereit
+            </p>
+            <h2 style="margin:0 0 20px 0;font-size:22px;color:#2A2520;">
+              {count} neue Artikel warten auf deine Freigabe
+            </h2>
+            <p style="margin:0 0 24px 0;font-size:15px;color:#4A4440;line-height:1.7;">
+              Hallo Steffen und Elmar,<br><br>
+              diese Woche wurden automatisch <strong>{count} neue Artikel</strong> erstellt.
+              Bitte prüft die Entwürfe im Dashboard und gebt sie frei:
+            </p>
+
+            {article_blocks_html}
+
+            <div style="margin:24px 0;padding:20px;background:#2A2520;text-align:center;border-radius:4px;">
+              <a href="{dashboard_url}"
+                 style="color:#C8963E;font-size:16px;font-weight:bold;text-decoration:none;letter-spacing:1px;">
+                &#9654; Zum Dashboard — Vorschau, Bearbeiten & Freigeben
+              </a>
+              <p style="margin:8px 0 0 0;font-size:12px;color:#8A8480;">
+                {dashboard_url}
+              </p>
+            </div>
+
+            <div style="border-top:1px solid #D8D4CE;margin:24px 0;padding-top:20px;">
+              <p style="margin:0 0 6px 0;font-size:14px;color:#4A4440;">
+                <strong>Geplante Veröffentlichungen:</strong>
+              </p>
+              <p style="margin:0 0 4px 0;font-size:14px;color:#4A4440;">
+                &bull; Mittwoch, {next_wed} um 10:00 Uhr
+              </p>
+              <p style="margin:0;font-size:14px;color:#4A4440;">
+                &bull; Samstag, {next_sat} um 10:00 Uhr
+              </p>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="background-color:#F2EDE6;padding:16px 40px;text-align:center;border-top:3px solid #C8963E;">
+            <p style="margin:0;font-size:11px;color:#8A8480;">
+              Whisky Magazin Redaktionssystem &bull; {datetime.now().strftime("%d.%m.%Y %H:%M")}
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>"""
+
+    text_body = (
+        f"Hallo Steffen und Elmar,\n\n"
+        f"{count} neue Artikel-Entwürfe wurden erstellt und warten auf Freigabe:\n"
+        f"{article_blocks_text}\n"
+        f"Dashboard: {dashboard_url}\n\n"
+        f"Geplante Veröffentlichungen:\n"
+        f"  Mittwoch, {next_wed} um 10:00 Uhr\n"
+        f"  Samstag, {next_sat} um 10:00 Uhr\n"
+    )
+
+    payload = {
+        "sender": {"name": "Whisky Magazin", "email": "whisky-news@whisky-reise.com"},
+        "to": [{"email": recipient, "name": "Steffen"}],
+        "subject": f"📝 {count} neue Whisky-Artikel warten auf Freigabe",
+        "htmlContent": html_body,
+        "textContent": text_body,
+    }
+
+    try:
+        resp = _requests.post(
+            "https://api.brevo.com/v3/smtp/email",
+            headers={"api-key": brevo_key, "Content-Type": "application/json"},
+            json=payload,
+            timeout=15,
+        )
+        if resp.status_code in (200, 201):
+            print(f"  [Notifier] E-Mail gesendet an {recipient}")
+            return True
+        else:
+            print(f"  [Notifier] Fehler {resp.status_code}: {resp.text[:200]}")
+            return False
+    except Exception as exc:
+        print(f"  [Notifier] Anfrage-Fehler: {exc}")
+        return False
+
+
+# ============================================================
 # Test-Funktion
 # ============================================================
 
@@ -429,7 +605,7 @@ def test_notifications():
     print_box([
         "NOTIFIER - Test",
         "",
-        "Sendet Test-E-Mail an rosenhefter@gmail.com",
+        "Sendet Test-E-Mail an whisky-news@whisky-reise.com",
     ])
 
     notif = load_notif_config()
@@ -438,7 +614,7 @@ def test_notifications():
         print()
         print("  Bitte in config.json eintragen:")
         print('  "notifications": {')
-        print('    "email": "rosenhefter@gmail.com",')
+        print('    "email": "whisky-news@whisky-reise.com",')
         print('    "smtp_sender": "dein-sender@gmail.com",')
         print('    "smtp_app_password": "xxxx xxxx xxxx xxxx",')
         print('    "enabled": true')

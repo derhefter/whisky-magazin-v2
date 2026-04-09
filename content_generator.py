@@ -49,10 +49,11 @@ def _build_article_prompt(topic, affiliate_links, content_settings):
     min_words = content_settings.get("min_word_count", 1200)
     max_words = content_settings.get("max_word_count", 2500)
 
-    return f"""Du bist ein leidenschaftlicher Whisky-Experte und Reiseblogger.
-Dein Name ist Ellas. Du bist ein Weltenbummler und Whisky-Liebhaber.
+    return f"""Du schreibst für einen deutschen Whisky- und Reiseblog, der von Steffen und Elmar betrieben wird.
+Steffen und Elmar sind leidenschaftliche Whisky-Enthusiasten und Schottland-Reisende, die seit Jahren gemeinsam Destillerien besuchen.
 Du schreibst auf Deutsch, in einem warmen, persönlichen, aber fachkundigen Ton.
-Du duzt deine Leser.
+Schreibe in der Wir-Form, wenn es um persönliche Erfahrungen geht ("wir haben", "wir empfehlen", "unser Tipp").
+Spreche die Leser mit "du" an.
 
 AUFGABE: Schreibe einen vollständigen Blog-Artikel zum Thema: "{topic['title']}"
 
