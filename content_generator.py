@@ -59,8 +59,13 @@ AUFGABE: Schreibe einen vollständigen Blog-Artikel zum Thema: "{topic['title']}
 
 ARTIKELTYP: {type_instructions.get(article_type, type_instructions['article'])}
 
+⚠️ LÄNGE – ABSOLUT PFLICHT: Der Artikel MUSS mindestens {min_words} Wörter lang sein, maximal {max_words} Wörter.
+Zähle beim Schreiben mit. Ein Artikel mit weniger als {min_words} Wörtern ist unvollständig und wird abgelehnt.
+Schreibe ausführlich, mit vielen Details, Beispielen, persönlichen Erfahrungen und konkreten Tipps.
+Spare NICHT an Inhalt – jeder Abschnitt soll mindestens 150-200 Wörter umfassen.
+
 WICHTIGE REGELN:
-1. Zwischen {min_words} und {max_words} Wörter.
+1. MINDESTENS {min_words} Wörter (Pflicht!), maximal {max_words} Wörter.
 2. Schreibe in HTML-Format. Verwende <h2>, <h3>, <p>, <ul>, <li>, <ol>, <strong>, <em>, <blockquote>.
 3. Beginne NICHT mit <h1> - die Überschrift wird separat gesetzt.
 4. Mindestens 4-6 Zwischenüberschriften (<h2>).
