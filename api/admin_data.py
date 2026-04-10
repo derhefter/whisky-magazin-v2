@@ -86,11 +86,11 @@ def _get_newsletter_data():
     except Exception as e:
         list_info = {"error": str(e)}
 
-    # Get recent contacts
+    # Get recent contacts – use the list-specific endpoint to reliably filter by list
     recent_contacts = []
     try:
         req = Request(
-            f"https://api.brevo.com/v3/contacts?listId={BREVO_LIST_ID}&limit=20&sort=desc",
+            f"https://api.brevo.com/v3/contacts/lists/{BREVO_LIST_ID}/contacts?limit=50&sort=desc",
             headers=headers,
         )
         with urlopen(req, timeout=10) as resp:
