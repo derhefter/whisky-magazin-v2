@@ -836,6 +836,75 @@
   </div>
 </div>
 
+<!-- ===== EDIT TOPIC MODAL ===== -->
+<div class="modal-overlay" id="edit-topic-modal" role="dialog" aria-modal="true" aria-labelledby="edit-topic-modal-title">
+  <div class="modal-box" style="max-width:540px">
+    <div class="modal-header">
+      <h3 id="edit-topic-modal-title">Thema bearbeiten</h3>
+      <button class="modal-close" onclick="closeEditTopicModal()" aria-label="Schließen">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="edit-topic-error" class="error-box" style="display:none"></div>
+      <input type="hidden" id="et-id">
+      <input type="hidden" id="et-idx">
+      <div class="form-group">
+        <label for="et-titel">Titel *</label>
+        <input type="text" id="et-titel" placeholder="Thema-Titel" required>
+      </div>
+      <div class="form-group">
+        <label for="et-typ">Typ</label>
+        <select id="et-typ">
+          <option value="article">article</option>
+          <option value="guide">guide</option>
+          <option value="review">review</option>
+          <option value="listicle">listicle</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="et-kategorie">Kategorie</label>
+        <select id="et-kategorie">
+          <option value="Whisky">Whisky</option>
+          <option value="Reise">Reise</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Natur">Natur</option>
+          <option value="Urlaub">Urlaub</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="et-saison">Saison</label>
+        <select id="et-saison">
+          <option value="">(keine)</option>
+          <option value="fruehling">Frühling</option>
+          <option value="sommer">Sommer</option>
+          <option value="herbst">Herbst</option>
+          <option value="winter">Winter</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="et-anlass">Anlass</label>
+        <select id="et-anlass">
+          <option value="">(keiner)</option>
+          <option value="ostern">Ostern</option>
+          <option value="weihnachten">Weihnachten</option>
+          <option value="silvester">Silvester</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="et-prioritaet">Priorität (1–20)</label>
+        <input type="number" id="et-prioritaet" min="1" max="20" value="5">
+      </div>
+      <div class="form-group">
+        <label for="et-notizen">Notizen</label>
+        <textarea id="et-notizen" placeholder="Optionale Notizen…"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeEditTopicModal()">Abbrechen</button>
+      <button class="btn btn-primary" onclick="submitEditTopic()" id="edit-topic-submit-btn">Änderungen speichern</button>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ============================================================
    API CONFIGURATION
@@ -1434,7 +1503,8 @@ function renderThemen() {
           <td>${statusBadge}</td>
           <td>
             <div class="topic-actions">
-              <button class="btn btn-success btn-sm" ${doneDisabled} onclick="markTopicDone('${esc(String(id))}', ${idx})">&#10003; Erledigt</button>
+              <button class="btn btn-secondary btn-sm" onclick="openEditTopicModal('${esc(String(id))}', ${idx})">&#9998;</button>
+              <button class="btn btn-success btn-sm" ${doneDisabled} onclick="markTopicDone('${esc(String(id))}', ${idx})">&#10003;</button>
               <button class="btn btn-danger btn-sm" onclick="deleteTopic('${esc(String(id))}', ${idx})">&#128465;</button>
             </div>
           </td>
@@ -1533,6 +1603,92 @@ function openNewTopicModal() {
 
 function closeNewTopicModal() {
   document.getElementById('new-topic-modal').classList.remove('open');
+}
+
+/* EDIT TOPIC MODAL */
+function openEditTopicModal(id, idx) {
+  const t = themenData[idx];
+  if (!t) return;
+
+  document.getElementById('et-id').value    = id;
+  document.getElementById('et-idx').value   = idx;
+  document.getElementById('et-titel').value = t.title ?? t.titel ?? '';
+  document.getElementById('et-prioritaet').value = t.priority ?? t.prioritaet ?? 5;
+  document.getElementById('et-notizen').value    = t.notes ?? t.notizen ?? '';
+  document.getElementById('edit-topic-error').style.display = 'none';
+
+  // Select-Felder vorbelegen
+  function setSelect(elId, val) {
+    const el = document.getElementById(elId);
+    el.value = val || '';
+    if (el.value !== (val || '') && val) {
+      // Wert nicht in Liste → Option hinzufügen
+      const opt = document.createElement('option');
+      opt.value = val; opt.textContent = val;
+      el.appendChild(opt);
+      el.value = val;
+    }
+  }
+  setSelect('et-typ',       t.type ?? t.typ ?? 'article');
+  setSelect('et-kategorie', t.category ?? t.kategorie ?? 'Whisky');
+  setSelect('et-saison',    t.season ?? t.saison ?? '');
+  setSelect('et-anlass',    t.occasion ?? t.anlass ?? '');
+
+  document.getElementById('edit-topic-modal').classList.add('open');
+  document.getElementById('et-titel').focus();
+}
+
+function closeEditTopicModal() {
+  document.getElementById('edit-topic-modal').classList.remove('open');
+}
+
+async function submitEditTopic() {
+  const id    = document.getElementById('et-id').value;
+  const idx   = parseInt(document.getElementById('et-idx').value, 10);
+  const titel = document.getElementById('et-titel').value.trim();
+  const errEl = document.getElementById('edit-topic-error');
+
+  if (!titel) {
+    errEl.textContent = 'Bitte einen Titel eingeben.';
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  const btn = document.getElementById('edit-topic-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Speichert…';
+
+  try {
+    const updated = await apiPut(API.topics, {
+      id,
+      title:    titel,
+      type:     document.getElementById('et-typ').value,
+      category: document.getElementById('et-kategorie').value,
+      season:   document.getElementById('et-saison').value,
+      occasion: document.getElementById('et-anlass').value,
+      priority: parseInt(document.getElementById('et-prioritaet').value, 10) || 5,
+      notes:    document.getElementById('et-notizen').value.trim(),
+    });
+    // Lokale Daten sofort aktualisieren
+    if (themenData[idx]) Object.assign(themenData[idx], updated.topic ?? {
+      title:    titel,
+      type:     document.getElementById('et-typ').value,
+      category: document.getElementById('et-kategorie').value,
+      season:   document.getElementById('et-saison').value,
+      occasion: document.getElementById('et-anlass').value,
+      priority: parseInt(document.getElementById('et-prioritaet').value, 10) || 5,
+      notes:    document.getElementById('et-notizen').value.trim(),
+    });
+    closeEditTopicModal();
+    renderThemen();
+  } catch (err) {
+    errEl.textContent = 'Fehler: ' + err.message;
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Änderungen speichern';
+  }
 }
 
 async function submitNewTopic() {

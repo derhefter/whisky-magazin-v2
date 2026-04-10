@@ -241,11 +241,29 @@ class handler(BaseHTTPRequestHandler):
         if target is None:
             return self._json(404, {"error": f"Topic {topic_id} not found"}, cors)
 
-        # Update only provided fields
-        updatable = ["status", "priority", "title", "notes", "article_slug"]
-        for field in updatable:
-            if field in body:
-                target[field] = body[field]
+        # Update only provided fields (accept German + English names)
+        field_map = {
+            "title":    ["title", "titel"],
+            "type":     ["type", "typ"],
+            "category": ["category", "kategorie"],
+            "season":   ["season", "saison"],
+            "occasion": ["occasion", "anlass"],
+            "priority": ["priority", "prioritaet"],
+            "notes":    ["notes", "notizen"],
+            "status":   ["status"],
+            "article_slug": ["article_slug"],
+        }
+        for canonical, aliases in field_map.items():
+            for alias in aliases:
+                if alias in body:
+                    val = body[alias]
+                    if canonical == "priority":
+                        try:
+                            val = int(val)
+                        except (ValueError, TypeError):
+                            val = 5
+                    target[canonical] = val
+                    break
         target["updated_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
         if isinstance(data, dict):
