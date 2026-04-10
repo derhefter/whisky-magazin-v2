@@ -34,7 +34,7 @@
       "season": "fruehling",
       "occasion": "ostern",
       "priority": 15,
-      "status": "pending",
+      "status": "in_progress",
       "article_slug": null,
       "created_at": "2026-04-09",
       "notes": ""
@@ -47,7 +47,7 @@
       "season": "fruehling",
       "occasion": "ostern",
       "priority": 12,
-      "status": "pending",
+      "status": "in_progress",
       "article_slug": null,
       "created_at": "2026-04-09",
       "notes": ""
@@ -60,7 +60,7 @@
       "season": "fruehling",
       "occasion": "ostern",
       "priority": 11,
-      "status": "pending",
+      "status": "in_progress",
       "article_slug": null,
       "created_at": "2026-04-09",
       "notes": ""
