@@ -95,11 +95,15 @@ def _get_newsletter_data():
         )
         with urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode("utf-8"))
-            recent_contacts = data.get("contacts", [])
+            all_contacts = data.get("contacts", [])
+            # Only show contacts that are still actively subscribed (not blacklisted)
+            recent_contacts = [c for c in all_contacts if not c.get("emailBlacklisted", False)]
     except Exception as e:
         recent_contacts = []
 
-    total = list_info.get("totalSubscribers", 0) if not list_info.get("error") else 0
+    total_subscribers = list_info.get("totalSubscribers", 0) if not list_info.get("error") else 0
+    total_blacklisted = list_info.get("totalBlacklisted", 0) if not list_info.get("error") else 0
+    total = max(0, total_subscribers - total_blacklisted)
     return {
         # JS liest: data.count, data.total, data.total_subscribers
         "count":             total,
