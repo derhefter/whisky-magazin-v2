@@ -163,7 +163,8 @@ class handler(BaseHTTPRequestHandler):
         }, cors)
 
     def do_POST(self):
-        """Add a new topic."""
+        """Add a new topic. Accepts both German (titel/typ/kategorie/saison/anlass/prioritaet/notizen)
+        and English (title/type/category/season/occasion/priority/notes) field names."""
         cors = _cors_headers()
         token = self.headers.get("x-admin-token", "")
         if not _verify_token(token):
@@ -173,23 +174,30 @@ class handler(BaseHTTPRequestHandler):
         if err:
             return self._json(400, {"error": err}, cors)
 
-        title = (body.get("title") or "").strip()
+        # Accept German and English field names
+        title = (body.get("titel") or body.get("title") or "").strip()
         if not title:
-            return self._json(400, {"error": "title is required"}, cors)
+            return self._json(400, {"error": "Titel ist erforderlich"}, cors)
 
         topics_list, data, sha, err = _load_topics()
         if err:
             return self._json(500, {"error": err}, cors)
 
+        prio_raw = body.get("prioritaet") or body.get("priority") or 5
+        try:
+            priority = int(prio_raw)
+        except (ValueError, TypeError):
+            priority = 5
+
         new_topic = {
             "id": str(uuid.uuid4()),
             "title": title,
-            "type": body.get("type", "article"),
-            "category": body.get("category", ""),
-            "season": body.get("season", ""),
-            "occasion": body.get("occasion", ""),
-            "priority": body.get("priority", "medium"),
-            "notes": body.get("notes", ""),
+            "type": body.get("typ") or body.get("type") or "article",
+            "category": body.get("kategorie") or body.get("category") or "",
+            "season": body.get("saison") or body.get("season") or "",
+            "occasion": body.get("anlass") or body.get("occasion") or "",
+            "priority": priority,
+            "notes": body.get("notizen") or body.get("notes") or "",
             "status": "pending",
             "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         }
