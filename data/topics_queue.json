@@ -649,6 +649,18 @@
       "article_slug": null,
       "created_at": "2026-04-09",
       "notes": ""
+    },
+    {
+      "id": "99e7639c-b167-4810-83af-75d3870092a0",
+      "title": "Whisky-Test",
+      "type": "article",
+      "category": "Whisky",
+      "season": "",
+      "occasion": "",
+      "priority": 1,
+      "notes": "test - kein Artikel",
+      "status": "pending",
+      "created_at": "2026-04-10T10:21:17Z"
     }
   ]
 }
