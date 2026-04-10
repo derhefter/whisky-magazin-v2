@@ -1310,7 +1310,7 @@ function renderDraftCard(d, i) {
         </div>
         <div class="form-group">
           <label>HTML-Inhalt</label>
-          <textarea class="tall" id="ef-html-${i}">${esc(d.html_content ?? d.content ?? '')}</textarea>
+          <textarea class="tall" id="ef-html-${i}"></textarea>
         </div>
         <div class="form-actions">
           <button class="btn btn-primary btn-sm" onclick="saveEdit('${esc(filename)}', '${esc(sha)}', ${i})">Speichern</button>
@@ -1327,6 +1327,13 @@ let _drafts = [];
 function toggleEdit(i) {
   const ef = document.getElementById(`edit-${i}`);
   ef.classList.toggle('open');
+  // Populate textarea via .value to avoid innerHTML truncation of long HTML content
+  const ta = document.getElementById('ef-html-' + i);
+  if (ta && !ta.dataset.filled) {
+    const draft = artikelData && (artikelData.drafts ?? artikelData.entwuerfe ?? [])[i];
+    ta.value = (draft && (draft.html_content || draft.content)) || '';
+    ta.dataset.filled = '1';
+  }
 }
 
 function openPreview(i) {
