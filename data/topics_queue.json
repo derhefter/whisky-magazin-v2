@@ -528,10 +528,11 @@
       "season": null,
       "occasion": null,
       "priority": 7,
-      "status": "pending",
+      "status": "done",
       "article_slug": null,
       "created_at": "2026-04-09",
-      "notes": ""
+      "notes": "",
+      "updated_at": "2026-04-11T23:14:43Z"
     },
     {
       "id": "9ec859f9-f432-44e8-b8d5-acefd8982c2f",
