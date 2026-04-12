@@ -5000,6 +5000,13 @@
       "image": "/images/whisky-geschenke-15-ideen-fuer-liebhaber.jpg",
       "category": "Lifestyle",
       "date": "28. März 2026"
+    },
+    "whisky-etikett-richtig-lesen": {
+      "title": "Whisky-Etikett richtig lesen: Was steckt wirklich drauf und dahinter?",
+      "teaser": "Altersangabe, NAS, Cask Strength, Non-Chill Filtered – Whisky-Etiketten sind voll mit Fachbegriffen. Wir erklären, was sie wirklich bedeuten und worauf es beim Kauf ankommt.",
+      "image": "",
+      "category": "Whisky",
+      "date": "2026-04-12"
     }
   },
   "regions": [
@@ -5087,7 +5094,7 @@
     "total_locations": 213,
     "total_distilleries": 120,
     "total_routes": 0,
-    "total_articles": 42,
+    "total_articles": 43,
     "years_covered": "2007-2025"
   }
 }

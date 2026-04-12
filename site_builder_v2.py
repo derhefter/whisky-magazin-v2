@@ -3954,9 +3954,13 @@ def build_site(config):
 
     # 2. Artikelseiten erstellen (pre-loaded articles durchreichen → O(N) statt O(N²))
     for article in articles:
-        slug = article.get("meta", {}).get("slug", "")
+        # Slug fallback: meta.slug → article.slug → skip
+        slug = article.get("meta", {}).get("slug", "") or article.get("slug", "")
         if not slug:
             continue
+        # Keep meta.slug in sync for downstream use
+        if not article.get("meta", {}).get("slug"):
+            article.setdefault("meta", {})["slug"] = slug
         html = build_article_page(article, config, all_articles=articles)
         _write_html(SITE_DIR / "artikel" / f"{slug}.html", html)
     print(f"  {len(articles)} Artikelseiten erstellt.")

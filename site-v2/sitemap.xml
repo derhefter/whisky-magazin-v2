@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.whisky-reise.com/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/karte.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/ueber-uns.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/impressum.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/datenschutz.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.whisky-reise.com/guide.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.whisky-reise.com/suche.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/kategorie/reise.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.whisky-reise.com/kategorie/whisky.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.whisky-reise.com/kategorie/urlaub.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.whisky-reise.com/kategorie/natur.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/kategorie/lifestyle.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.whisky-reise.com/kategorie/natur.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.whisky-reise.com/kategorie/whisky.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.whisky-reise.com/kategorie/urlaub.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.whisky-reise.com/artikel/whisky-etikett-richtig-lesen.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whisky-reise.com/artikel/whisky-geschenke-15-ideen-fuer-liebhaber.html</loc>
