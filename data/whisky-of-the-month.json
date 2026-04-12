@@ -1,12 +1,20 @@
 {
   "entries": {
     "2026-05": {
-      "whisky_name": "Glengoyne",
-      "destillerie": "https://www.glengoyne.com/",
-      "region": "",
-      "kommentar": "https://www.glengoyne.com/visit eine wunderschöne Destille auf dem Weg von Glasgow in die Highlands, bzw. nach Islay und auch bis in alle anderen Regionen Speyside, immer wieder ein Besuch wert, da die malerische Kulisse tatsächlich genau das ist, was ein Whisky-Freund von Schottland erwartet.",
+      "whisky_name": "Glengoyne 12 Jahre",
+      "destillerie": "Glengoyne",
+      "destillerie_url": "https://www.glengoyne.com",
+      "region": "Highlands",
+      "alter": 12,
+      "abv": 43.0,
+      "preis_eur": 44,
+      "bewertung": 86,
+      "aroma": "Süßlich mit Kokosnuss, Honig und frischen Zitrusnoten. Abgerundet durch feines Malz und Trockenfrüchte.",
+      "geschmack": "Vollmundig mit Karamell und Zimt. Spuren von Ingwer und Orange. Weich und cremig mit Sahne und Vanille.",
+      "abgang": "Mittellang und mild mit dezenten Sherry- und Holznoten. Trockenes, würziges Eichenholz.",
+      "kommentar": "Eine wunderschöne Destillerie auf dem Weg von Glasgow in die Highlands – immer wieder einen Stopp wert. Die malerische Kulisse ist genau das, was ein Whisky-Freund von Schottland erwartet.",
       "specials": "",
-      "affiliate_link": "https://www.amazon.de/s?k=Glengoyne&tag=whiskyreise74-21",
+      "affiliate_link": "https://www.amazon.de/s?k=Glengoyne+12+Jahre&tag=whiskyreise74-21",
       "photo_urls": [
         "/images/wotm/2026-05.jpg"
       ],

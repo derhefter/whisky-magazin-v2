@@ -99,14 +99,25 @@ def _inject_product_boxes(html_content, tag="whiskyreise74-21"):
     for section in ["whiskys", "zubehoer"]:
         all_products.update(products.get(section, {}))
 
+    # Generische Begriffe die in fast jedem Whisky-Artikel vorkommen –
+    # als Suchwort ungeeignet, weil sie sonst überall matchen.
+    _GENERIC = {
+        "Whisky", "Whiskey", "Single", "Malt", "Scotch", "Bourbon",
+        "Irish", "Das", "Die", "Der", "Ein", "Set", "Glas", "Tasting",
+    }
+
     # Finde Stellen wo ein Produkt in einer Überschrift erwähnt wird
     inserted = set()
     for key, prod in all_products.items():
-        # Suche nach Produktname in h2/h3 Überschriften
+        # Suche nach dem spezifischsten Wort im Produktnamen (kein generischer Begriff)
         name_parts = prod["name"].split()
-        # Nutze ersten markanten Teil des Namens (z.B. "Glenfiddich", "Talisker", "Glencairn")
-        search_term = name_parts[0]
-        if len(search_term) < 4:
+        search_term = ""
+        for part in name_parts:
+            clean = part.strip("()")
+            if len(clean) >= 5 and clean not in _GENERIC:
+                search_term = clean
+                break
+        if not search_term:
             continue
 
         # Suche nach </h2> oder </h3> nach einer Überschrift die den Produktnamen enthält
