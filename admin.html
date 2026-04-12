@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Whisky Magazin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --color-dark:    #2A2520;
+      --color-amber:   #C8963E;
+      --color-amber-dark: #A87830;
+      --color-bg:      #FAF8F4;
+      --color-beige:   #EDE9E3;
+      --color-text:    #2A2520;
+      --color-muted:   #6B6460;
+      --color-white:   #FFFFFF;
+      --color-red:     #C0392B;
+      --color-red-bg:  #FDEDEC;
+      --color-green:   #27AE60;
+      --color-green-bg:#EAFAF1;
+      --color-blue:    #2980B9;
+      --color-blue-bg: #EBF5FB;
+      --color-yellow:  #F39C12;
+      --color-yellow-bg:#FEF9E7;
+      --radius:        8px;
+      --shadow:        0 2px 8px rgba(42,37,32,0.10);
+      --shadow-lg:     0 8px 32px rgba(42,37,32,0.18);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    a { color: var(--color-amber); text-decoration: none; }
+    h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== LAYOUT ===== */
+    #login-screen,
+    #dashboard {
+      min-height: 100vh;
+    }
+
+    /* ===== LOGIN ===== */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-dark);
+      padding: 24px;
+    }
+    .login-box {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .login-logo {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .login-logo .logo-dot { color: var(--color-amber); }
+    .login-logo .logo-sub { color: var(--color-amber); }
+    .login-subtitle {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-bottom: 32px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .login-box label {
+      display: block;
+      text-align: left;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--color-beige);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: border-color 0.2s;
+      margin-bottom: 16px;
+    }
+    .login-box input[type="password"]:focus {
+      outline: none;
+      border-color: var(--color-amber);
+    }
+    #login-error {
+      display: none;
+      background: var(--color-red-bg);
+      color: var(--color-red);
+      border: 1px solid #F5C6C2;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      transition: all 0.2s;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--color-amber);
+      color: var(--color-white);
+    }
+    .btn-primary:hover { background: var(--color-amber-dark); }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .btn-secondary {
+      background: var(--color-beige);
+      color: var(--color-text);
+    }
+    .btn-secondary:hover { background: #DDD8D0; }
+    .btn-danger {
+      background: var(--color-red);
+      color: var(--color-white);
+    }
+    .btn-danger:hover { background: #A93226; }
+    .btn-success {
+      background: var(--color-green);
+      color: var(--color-white);
+    }
+    .btn-success:hover { background: #229954; }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+    .btn-full { width: 100%; justify-content: center; }
+
+    /* ===== DASHBOARD HEADER ===== */
+    #dashboard {
+      display: none;
+      flex-direction: column;
+    }
+    .dash-header {
+      background: var(--color-dark);
+      color: var(--color-white);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .dash-logo {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-white);
+      letter-spacing: -0.3px;
+    }
+    .dash-logo span { color: var(--color-amber); }
+    .dash-logo small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .btn-logout {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 7px 14px;
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .btn-logout:hover {
+      background: rgba(255,255,255,0.2);
+      color: var(--color-white);
+    }
+
+    /* ===== TABS ===== */
+    .tabs-bar {
+      background: var(--color-white);
+      border-bottom: 2px solid var(--color-beige);
+      display: flex;
+      padding: 0 24px;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .tabs-bar::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 16px 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .tab-btn:hover { color: var(--color-text); }
+    .tab-btn.active {
+      color: var(--color-amber);
+      border-bottom-color: var(--color-amber);
+    }
+
+    /* ===== TAB CONTENT ===== */
+    .tab-content { display: none; padding: 28px 24px; max-width: 1100px; margin: 0 auto; width: 100%; }
+    .tab-content.active { display: block; }
+
+    /* ===== STAT CARDS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--color-white);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .stat-card-link {
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .stat-card-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .stat-card .stat-icon {
+      font-size: 1.75rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .stat-card .stat-number {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--color-amber);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .stat-card .stat-hint {
+      font-size: 0.7rem;
+      color: var(--color-amber);
+      margin-top: 6px;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .stat-card-link:hover .stat-hint {
+      opacity: 1;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-beige);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-beige);
+    }
+    .section-header .section-title { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+    /* ===== TABLES ===== */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .data-table th {
+      background: var(--color-beige);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+    .data-table td {
+      padding: 13px 16px;
+      border-top: 1px solid var(--color-beige);
+      font-size: 0.875rem;
+      vertical-align: middle;
+    }
+    .data-table tr:hover td { background: #FAFAF8; }
+    .data-table .empty-row td {
+      text-align: center;
+      color: var(--color-muted);
+      font-style: italic;
+      padding: 32px;
+    }
+
+    /* ===== BADGES ===== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-pending   { background: var(--color-yellow-bg); color: #A57C00; }
+    .badge-editing   { background: var(--color-blue-bg);   color: var(--color-blue); }
+    .badge-approved  { background: var(--color-green-bg);  color: #1E8449; }
+    .badge-open      { background: var(--color-red-bg);    color: var(--color-red); }
+    .badge-inprogress{ background: var(--color-blue-bg);   color: var(--color-blue); }
+    .badge-done      { background: var(--color-green-bg);  color: #1E8449; }
+    .badge-neutral   { background: var(--color-beige);     color: var(--color-muted); }
+    .badge-amber     { background: #FEF3E0;                color: var(--color-amber-dark); }
+
+    /* ===== SUBSCRIBER COUNT ===== */
+    .subscriber-hero {
+      background: var(--color-dark);
+      color: var(--color-white);
+      border-radius: 10px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .subscriber-hero .big-number {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 4rem;
+      font-weight: 600;
+      color: var(--color-amber);
+      line-height: 1;
+    }
+    .subscriber-hero .big-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ===== ARTICLE CARDS ===== */
+    .article-card {
+      background: var(--color-white);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+    }
+    .article-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .article-card h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      flex: 1;
+      min-width: 0;
+    }
+    .article-meta {
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      margin-bottom: 8px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .article-teaser {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .article-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* ===== EDIT FORM ===== */
+    .edit-form {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--color-beige);
+    }
+    .edit-form.open { display: block; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid var(--color-beige);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-amber);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-group textarea.tall { min-height: 220px; font-family: 'Courier New', monospace; font-size: 0.82rem; }
+    .form-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    /* ===== PUBLISHED LIST ===== */
+    .published-section { margin-top: 32px; }
+    .pub-list { list-style: none; }
+    .pub-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-beige);
+      font-size: 0.875rem;
+    }
+    .pub-list li:last-child { border-bottom: none; }
+    .pub-list .pub-date {
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      white-space: nowrap;
+    }
+
+    /* ===== TOPICS ===== */
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .filter-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-label {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .filter-btn {
+      background: var(--color-beige);
+      color: var(--color-text);
+      border: 2px solid transparent;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { background: #DDD8D0; }
+    .filter-btn.active {
+      background: var(--color-amber);
+      color: var(--color-white);
+      border-color: var(--color-amber);
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(42,37,32,0.75);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--color-white);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 780px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-lg);
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--color-beige);
+    }
+    .modal-header h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--color-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: var(--radius);
+      line-height: 1;
+      transition: all 0.15s;
+    }
+    .modal-close:hover { background: var(--color-beige); color: var(--color-text); }
+    .modal-body {
+      overflow-y: auto;
+      padding: 24px;
+      flex: 1;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--color-beige);
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    /* ===== LOADING & ERROR ===== */
+    .loading-text {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--color-muted);
+      font-size: 0.9rem;
+    }
+    .loading-text::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-beige);
+      border-top-color: var(--color-amber);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .error-box {
+      background: var(--color-red-bg);
+      color: var(--color-red);
+      border: 1px solid #F5C6C2;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
+    .info-box {
+      background: var(--color-blue-bg);
+      color: var(--color-blue);
+      border: 1px solid #AED6F1;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
+
+    /* ===== PREVIEW CONTENT ===== */
+    .preview-content {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+    .preview-content h1, .preview-content h2, .preview-content h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      margin: 1.2em 0 0.5em;
+    }
+    .preview-content p { margin-bottom: 1em; }
+    .preview-content ul, .preview-content ol { margin-bottom: 1em; padding-left: 1.5em; }
+
+    /* ===== TOPIC TABLE ACTIONS ===== */
+    .topic-actions { display: flex; gap: 6px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .stat-card { padding: 16px; }
+      .stat-card .stat-number { font-size: 1.8rem; }
+      .tab-btn { padding: 14px 14px; font-size: 0.8rem; }
+      .tab-content { padding: 20px 16px; }
+      .dash-header { padding: 0 16px; }
+      .tabs-bar { padding: 0 16px; }
+      .data-table { font-size: 0.8rem; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+      .article-actions { gap: 6px; }
+      .btn { padding: 8px 12px; font-size: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .filter-row { flex-direction: column; gap: 10px; }
+    }
+    @media (min-width: 900px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== LOGIN SCREEN ===== -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">
+      whisky<span class="logo-dot">.</span><span class="logo-sub">Magazin</span>
+    </div>
+    <p class="login-subtitle">Admin Dashboard</p>
+    <div id="login-error" role="alert"></div>
+    <label for="login-password">Passwort</label>
+    <input type="password" id="login-password" placeholder="••••••••••••" autocomplete="current-password">
+    <button class="btn btn-primary btn-full" id="login-btn" onclick="doLogin()">
+      Anmelden
+    </button>
+  </div>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<div id="dashboard">
+
+  <!-- Header -->
+  <header class="dash-header">
+    <div class="dash-logo">
+      whisky<span>.</span>Magazin<small>Admin</small>
+    </div>
+    <button class="btn-logout" onclick="doLogout()">Abmelden</button>
+  </header>
+
+  <!-- Tabs -->
+  <nav class="tabs-bar" role="tablist">
+    <button class="tab-btn active" role="tab" aria-selected="true"  onclick="switchTab('uebersicht', this)">&#128202; Übersicht</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('newsletter', this)">&#9993;&#65039; Newsletter</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('artikel', this)">&#9999;&#65039; Artikel</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('themen', this)">&#128203; Themen</button>
+  </nav>
+
+  <!-- TAB: Übersicht -->
+  <div id="tab-uebersicht" class="tab-content active">
+    <div id="stats-container">
+      <div class="loading-text">Lädt Übersicht…</div>
+    </div>
+  </div>
+
+  <!-- TAB: Newsletter -->
+  <div id="tab-newsletter" class="tab-content">
+    <div id="newsletter-container">
+      <div class="loading-text">Lädt Newsletter-Daten…</div>
+    </div>
+  </div>
+
+  <!-- TAB: Artikel -->
+  <div id="tab-artikel" class="tab-content">
+    <div id="artikel-container">
+      <div class="loading-text">Lädt Artikel…</div>
+    </div>
+  </div>
+
+  <!-- TAB: Themen -->
+  <div id="tab-themen" class="tab-content">
+    <div id="themen-container">
+      <div class="loading-text">Lädt Themen…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PREVIEW MODAL ===== -->
+<div class="modal-overlay" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="preview-modal-title">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="preview-modal-title">Vorschau</h3>
+      <button class="modal-close" onclick="closePreview()" aria-label="Schließen">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="preview-modal-content" class="preview-content"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closePreview()">Schließen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEW TOPIC MODAL ===== -->
+<div class="modal-overlay" id="new-topic-modal" role="dialog" aria-modal="true" aria-labelledby="new-topic-modal-title">
+  <div class="modal-box" style="max-width:540px">
+    <div class="modal-header">
+      <h3 id="new-topic-modal-title">Neues Thema</h3>
+      <button class="modal-close" onclick="closeNewTopicModal()" aria-label="Schließen">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="new-topic-error" class="error-box" style="display:none"></div>
+      <div class="form-group">
+        <label for="nt-titel">Titel *</label>
+        <input type="text" id="nt-titel" placeholder="Thema-Titel" required>
+      </div>
+      <div class="form-group">
+        <label for="nt-typ">Typ</label>
+        <select id="nt-typ">
+          <option value="article">article</option>
+          <option value="guide">guide</option>
+          <option value="review">review</option>
+          <option value="listicle">listicle</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nt-kategorie">Kategorie</label>
+        <select id="nt-kategorie">
+          <option value="Whisky">Whisky</option>
+          <option value="Reise">Reise</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Natur">Natur</option>
+          <option value="Urlaub">Urlaub</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nt-saison">Saison</label>
+        <select id="nt-saison">
+          <option value="">(keine)</option>
+          <option value="fruehling">Frühling</option>
+          <option value="sommer">Sommer</option>
+          <option value="herbst">Herbst</option>
+          <option value="winter">Winter</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nt-anlass">Anlass</label>
+        <select id="nt-anlass">
+          <option value="">(keiner)</option>
+          <option value="ostern">Ostern</option>
+          <option value="weihnachten">Weihnachten</option>
+          <option value="silvester">Silvester</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nt-prioritaet">Priorität (1–20)</label>
+        <input type="number" id="nt-prioritaet" min="1" max="20" value="5">
+      </div>
+      <div class="form-group">
+        <label for="nt-notizen">Notizen</label>
+        <textarea id="nt-notizen" placeholder="Optionale Notizen…"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeNewTopicModal()">Abbrechen</button>
+      <button class="btn btn-primary" onclick="submitNewTopic()" id="new-topic-submit-btn">Thema hinzufügen</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   API CONFIGURATION
+   ============================================================ */
+const API = {
+  auth:     '/api/admin_auth',
+  data:     '/api/admin_data',
+  articles: '/api/admin_articles',
+  topics:   '/api/admin_topics',
+};
+
+/* ============================================================
+   TOKEN HELPERS
+   ============================================================ */
+function getToken() { return sessionStorage.getItem('adminToken'); }
+function setToken(t) { sessionStorage.setItem('adminToken', t); }
+function clearToken() { sessionStorage.removeItem('adminToken'); }
+
+function authHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    'x-admin-token': getToken(),
+  };
+}
+
+/* ============================================================
+   API HELPERS
+   ============================================================ */
+async function handleResponse(res) {
+  if (res.status === 401) {
+    clearToken();
+    showLogin();
+    throw new Error('Nicht autorisiert – bitte erneut anmelden.');
+  }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(data.error || data.message || `Fehler ${res.status}`);
+  }
+  return data;
+}
+
+async function apiGet(url) {
+  const res = await fetch(url, { headers: authHeaders() });
+  return handleResponse(res);
+}
+
+async function apiPost(url, body) {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: authHeaders(),
+    body: JSON.stringify(body),
+  });
+  return handleResponse(res);
+}
+
+async function apiPut(url, body) {
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: authHeaders(),
+    body: JSON.stringify(body),
+  });
+  return handleResponse(res);
+}
+
+async function apiDelete(url, body) {
+  const res = await fetch(url, {
+    method: 'DELETE',
+    headers: authHeaders(),
+    body: JSON.stringify(body),
+  });
+  return handleResponse(res);
+}
+
+/* ============================================================
+   AUTH / LOGIN / LOGOUT
+   ============================================================ */
+function showLogin() {
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('dashboard').style.display = 'none';
+}
+
+function showDashboard() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'flex';
+  document.getElementById('dashboard').style.flexDirection = 'column';
+}
+
+function showLoginError(msg) {
+  const el = document.getElementById('login-error');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+async function doLogin() {
+  const pw = document.getElementById('login-password').value;
+  const btn = document.getElementById('login-btn');
+  if (!pw) { showLoginError('Bitte Passwort eingeben.'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Anmelden…';
+  document.getElementById('login-error').style.display = 'none';
+
+  try {
+    // Login direkt ohne handleResponse, damit Fehlermeldungen klar sind
+    const res = await fetch(API.auth, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw }),
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (res.status === 401) {
+      showLoginError('Falsches Passwort. Bitte prüfe den Wert von DASHBOARD_PASSWORD in den Vercel-Umgebungsvariablen.');
+      return;
+    }
+    if (res.status === 429) {
+      showLoginError('Zu viele Versuche. Bitte 15 Minuten warten.');
+      return;
+    }
+    if (res.status === 500) {
+      showLoginError(`Server-Fehler: ${data.error || 'Unbekannter Fehler'}. Bitte prüfe, ob DASHBOARD_PASSWORD in Vercel gesetzt ist, und deploye neu.`);
+      return;
+    }
+    if (!res.ok) {
+      showLoginError(data.error || `Fehler ${res.status} – bitte Vercel-Logs prüfen.`);
+      return;
+    }
+
+    if (data.token) {
+      setToken(data.token);
+      showDashboard();
+      loadActiveTab();
+    } else {
+      showLoginError('Ungültige Antwort vom Server.');
+    }
+  } catch (err) {
+    showLoginError('Netzwerkfehler – bitte Internetverbindung prüfen.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Anmelden';
+  }
+}
+
+async function verifyToken() {
+  try {
+    await apiGet(API.data + '?section=stats');
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function doLogout() {
+  clearToken();
+  showLogin();
+  document.getElementById('login-password').value = '';
+}
+
+/* ============================================================
+   TAB SWITCHING
+   ============================================================ */
+let activeTab = 'uebersicht';
+const tabLoaded = { uebersicht: false, newsletter: false, artikel: false, themen: false };
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => {
+    el.classList.remove('active');
+    el.setAttribute('aria-selected', 'false');
+  });
+
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  activeTab = name;
+
+  if (!tabLoaded[name]) {
+    loadTab(name);
+  }
+}
+
+/* Tab per Name wechseln (ohne Button-Referenz) */
+function goToTab(name) {
+  const btn = document.querySelector(`.tab-btn[onclick*="'${name}'"]`);
+  if (btn) switchTab(name, btn);
+}
+
+function loadActiveTab() {
+  loadTab(activeTab);
+}
+
+function loadTab(name) {
+  tabLoaded[name] = true;
+  switch (name) {
+    case 'uebersicht':  loadUebersicht();  break;
+    case 'newsletter':  loadNewsletter();  break;
+    case 'artikel':     loadArtikel();     break;
+    case 'themen':      loadThemen();      break;
+  }
+}
+
+/* ============================================================
+   TAB: ÜBERSICHT
+   ============================================================ */
+async function loadUebersicht() {
+  const container = document.getElementById('stats-container');
+  container.innerHTML = '<div class="loading-text">Lädt Übersicht…</div>';
+  try {
+    const data = await apiGet(API.data + '?section=stats');
+    const s = data.stats || data;
+    container.innerHTML = `
+      <div class="stats-grid">
+        <div class="stat-card stat-card-link" onclick="goToTab('newsletter')" title="Newsletter-Tab öffnen">
+          <span class="stat-icon">&#9993;&#65039;</span>
+          <div class="stat-number">${fmt(s.subscribers ?? s.abonnenten ?? 0)}</div>
+          <div class="stat-label">Abonnenten</div>
+          <div class="stat-hint">&#8594; Newsletter</div>
+        </div>
+        <div class="stat-card stat-card-link" onclick="goToTab('artikel')" title="Artikel-Tab öffnen">
+          <span class="stat-icon">&#128221;</span>
+          <div class="stat-number">${fmt(s.drafts ?? s.entwerfe_wartend ?? 0)}</div>
+          <div class="stat-label">Entwürfe wartend</div>
+          <div class="stat-hint">&#8594; Artikel</div>
+        </div>
+        <div class="stat-card stat-card-link" onclick="goToTab('themen')" title="Themen-Tab öffnen">
+          <span class="stat-icon">&#128203;</span>
+          <div class="stat-number">${fmt(s.topics_open ?? s.themen_offen ?? 0)}</div>
+          <div class="stat-label">Themen offen</div>
+          <div class="stat-hint">&#8594; Themen</div>
+        </div>
+        <div class="stat-card stat-card-link" onclick="goToTab('themen')" title="Themen-Tab öffnen">
+          <span class="stat-icon">&#9989;</span>
+          <div class="stat-number">${fmt(s.topics_done ?? s.themen_erledigt ?? 0)}</div>
+          <div class="stat-label">Themen erledigt</div>
+          <div class="stat-hint">&#8594; Themen</div>
+        </div>
+      </div>
+    `;
+  } catch (err) {
+    container.innerHTML = `<div class="error-box">&#9888; Fehler beim Laden: ${esc(err.message)}</div>`;
+  }
+}
+
+/* ============================================================
+   TAB: NEWSLETTER
+   ============================================================ */
+async function loadNewsletter() {
+  const container = document.getElementById('newsletter-container');
+  container.innerHTML = '<div class="loading-text">Lädt Newsletter-Daten…</div>';
+  try {
+    const data = await apiGet(API.data + '?section=newsletter');
+    const subscribers = data.subscribers ?? data.abonnenten ?? [];
+    const count = data.count ?? data.total ?? subscribers.length;
+
+    let rows = '';
+    if (subscribers.length === 0) {
+      rows = `<tr class="empty-row"><td colspan="2">Keine Abonnenten gefunden.</td></tr>`;
+    } else {
+      rows = subscribers.map(s => `
+        <tr>
+          <td>${esc(s.email ?? s.Email ?? '–')}</td>
+          <td style="color:var(--color-muted); font-size:0.82rem">${fmtDate(s.date ?? s.Date ?? s.created_at ?? '')}</td>
+        </tr>
+      `).join('');
+    }
+
+    container.innerHTML = `
+      <div class="subscriber-hero">
+        <div class="big-number">${fmt(count)}</div>
+        <div class="big-label">Newsletter-Abonnenten</div>
+      </div>
+      <h2 class="section-title">Letzte Anmeldungen</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>E-Mail</th>
+            <th>Datum</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  } catch (err) {
+    container.innerHTML = `<div class="error-box">&#9888; Fehler beim Laden: ${esc(err.message)}</div>`;
+  }
+}
+
+/* ============================================================
+   TAB: ARTIKEL
+   ============================================================ */
+let artikelData = null;
+
+async function loadArtikel() {
+  const container = document.getElementById('artikel-container');
+  container.innerHTML = '<div class="loading-text">Lädt Artikel…</div>';
+  try {
+    const data = await apiGet(API.data + '?section=articles');
+    if (data && data.error) {
+      container.innerHTML = `<div class="error-box">&#9888; API-Fehler: ${esc(data.error)}<br><small>Bitte GITHUB_TOKEN in Vercel prüfen.</small></div>`;
+      return;
+    }
+    artikelData = data;
+    renderArtikel(data);
+  } catch (err) {
+    container.innerHTML = `<div class="error-box">&#9888; Fehler beim Laden: ${esc(err.message)}</div>`;
+  }
+}
+
+function renderArtikel(data) {
+  const container = document.getElementById('artikel-container');
+  const drafts    = Array.isArray(data.drafts) ? data.drafts : (Array.isArray(data.entwuerfe) ? data.entwuerfe : []);
+  const published = Array.isArray(data.published) ? data.published : (Array.isArray(data.veroeffentlicht) ? data.veroeffentlicht : []);
+
+  let draftsHtml = '';
+  if (drafts.length === 0) {
+    draftsHtml = `<div class="info-box">Keine ausstehenden Entwürfe.</div>`;
+  } else {
+    draftsHtml = drafts.map((d, i) => renderDraftCard(d, i)).join('');
+  }
+
+  let pubHtml = '';
+  if (published.length === 0) {
+    pubHtml = `<div class="info-box">Noch keine veröffentlichten Artikel.</div>`;
+  } else {
+    const items = published.map(p => {
+      const fn = typeof p === 'string' ? p : (p.filename ?? p.name ?? '');
+      const dateMatch = fn.match(/(\d{4}-\d{2}-\d{2})/);
+      const dateStr = dateMatch ? dateMatch[1] : '';
+      return `<li>
+        <span class="badge badge-approved">&#10003;</span>
+        <span style="flex:1; font-size:0.875rem">${esc(fn)}</span>
+        <span class="pub-date">${esc(dateStr)}</span>
+      </li>`;
+    }).join('');
+    pubHtml = `<ul class="pub-list">${items}</ul>`;
+  }
+
+  container.innerHTML = `
+    <div class="section-header">
+      <h2 class="section-title">Entwürfe</h2>
+      <button class="btn btn-secondary btn-sm" onclick="reloadArtikel()">&#8635; Aktualisieren</button>
+    </div>
+    <div id="drafts-list">${draftsHtml}</div>
+    <div class="published-section">
+      <h2 class="section-title">Veröffentlichte Artikel</h2>
+      ${pubHtml}
+    </div>
+  `;
+}
+
+function reloadArtikel() {
+  tabLoaded.artikel = false;
+  loadArtikel();
+}
+
+function renderDraftCard(d, i) {
+  const status    = d.status ?? 'pending';
+  const filename  = d.filename ?? d.name ?? '';
+  const sha       = d.sha ?? '';
+  const title     = d.title ?? d.titel ?? 'Ohne Titel';
+  const category  = d.category ?? d.kategorie ?? '';
+  const generated = d.generated ?? d.date ?? d.created_at ?? '';
+  const teaser    = d.teaser ?? d.description ?? '';
+  const teaserShort = teaser.length > 150 ? teaser.slice(0, 150) + '…' : teaser;
+  const hasContent  = !!(d.html_content ?? d.content ?? '');
+
+  const statusBadge = {
+    pending:    '<span class="badge badge-pending">&#128993; Ausstehend</span>',
+    editing:    '<span class="badge badge-editing">&#128309; In Bearbeitung</span>',
+    approved:   '<span class="badge badge-approved">&#128994; Freigegeben</span>',
+  }[status] || `<span class="badge badge-neutral">${esc(status)}</span>`;
+
+  const cardId  = `card-${i}`;
+  const editId  = `edit-${i}`;
+  const dataAttr = encodeURIComponent(JSON.stringify(d));
+
+  return `
+    <div class="article-card" id="${cardId}">
+      <div class="article-card-header">
+        ${statusBadge}
+        ${category ? `<span class="badge badge-amber">${esc(category)}</span>` : ''}
+      </div>
+      <h3>${esc(title)}</h3>
+      <div class="article-meta">
+        <span>&#128197; ${esc(generated ? fmtDate(generated) : '')}</span>
+        ${filename ? `<span>&#128196; ${esc(filename)}</span>` : ''}
+      </div>
+      ${teaser ? `<p class="article-teaser">${esc(teaserShort)}</p>` : ''}
+      <div class="article-actions">
+        ${hasContent ? `<button class="btn btn-secondary btn-sm" onclick="openPreview(${i})">&#128065;&#65039; Vorschau</button>` : ''}
+        <button class="btn btn-secondary btn-sm" onclick="toggleEdit(${i})">&#9998; Bearbeiten</button>
+        ${status !== 'approved' ? `<button class="btn btn-success btn-sm" onclick="approveArticle('${esc(filename)}', ${i})">&#10003; Freigeben</button>` : ''}
+        <button class="btn btn-danger btn-sm" onclick="rejectArticle('${esc(filename)}', '${esc(sha)}', ${i})">&#10005; Ablehnen</button>
+      </div>
+      <div class="edit-form" id="${editId}">
+        <div class="form-group">
+          <label>Titel</label>
+          <input type="text" id="ef-title-${i}" value="${esc(title)}">
+        </div>
+        <div class="form-group">
+          <label>Teaser</label>
+          <textarea id="ef-teaser-${i}">${esc(teaser)}</textarea>
+        </div>
+        <div class="form-group">
+          <label>HTML-Inhalt</label>
+          <textarea class="tall" id="ef-html-${i}">${esc(d.html_content ?? d.content ?? '')}</textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary btn-sm" onclick="saveEdit('${esc(filename)}', '${esc(sha)}', ${i})">Speichern</button>
+          <button class="btn btn-secondary btn-sm" onclick="toggleEdit(${i})">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Store drafts array for quick access
+let _drafts = [];
+
+function toggleEdit(i) {
+  const ef = document.getElementById(`edit-${i}`);
+  ef.classList.toggle('open');
+}
+
+function openPreview(i) {
+  const draft = artikelData && (artikelData.drafts ?? artikelData.entwuerfe ?? [])[i];
+  if (!draft) return;
+  const content = draft.html_content ?? draft.content ?? '<p><em>Kein Inhalt verfügbar.</em></p>';
+  document.getElementById('preview-modal-content').innerHTML = content;
+  document.getElementById('preview-modal-title').textContent = draft.title ?? draft.titel ?? 'Vorschau';
+  document.getElementById('preview-modal').classList.add('open');
+}
+
+function closePreview() {
+  document.getElementById('preview-modal').classList.remove('open');
+  document.getElementById('preview-modal-content').innerHTML = '';
+}
+
+async function approveArticle(filename, i) {
+  if (!filename) return;
+  const btn = event.target;
+  btn.disabled = true;
+  btn.textContent = '…';
+  try {
+    await apiPost(API.articles, { filename });
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch (err) {
+    alert('Fehler beim Freigeben: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '✓ Freigeben';
+  }
+}
+
+async function rejectArticle(filename, sha, i) {
+  if (!filename) return;
+  if (!confirm(`Entwurf "${filename}" wirklich ablehnen und löschen?`)) return;
+  const card = document.getElementById(`card-${i}`);
+  if (card) card.style.opacity = '0.5';
+  try {
+    await apiDelete(API.articles, { filename, sha });
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch (err) {
+    alert('Fehler beim Ablehnen: ' + err.message);
+    if (card) card.style.opacity = '1';
+  }
+}
+
+async function saveEdit(filename, sha, i) {
+  const title       = document.getElementById(`ef-title-${i}`).value;
+  const teaser      = document.getElementById(`ef-teaser-${i}`).value;
+  const html_content = document.getElementById(`ef-html-${i}`).value;
+
+  const btn = event.target;
+  btn.disabled = true;
+  btn.textContent = 'Speichert…';
+  try {
+    await apiPut(API.articles, { filename, sha, title, teaser, html_content, status: 'editing' });
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch (err) {
+    alert('Fehler beim Speichern: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = 'Speichern';
+  }
+}
+
+/* ============================================================
+   TAB: THEMEN
+   ============================================================ */
+let themenData = [];
+let themenFilterSaison  = 'alle';
+let themenFilterStatus  = 'alle';
+
+async function loadThemen() {
+  const container = document.getElementById('themen-container');
+  container.innerHTML = '<div class="loading-text">Lädt Themen…</div>';
+  try {
+    const data = await apiGet(API.data + '?section=topics');
+    // Fehlerfall abfangen: data ist kein Array und enthält .error
+    if (data && data.error) {
+      container.innerHTML = `<div class="error-box">&#9888; API-Fehler: ${esc(data.error)}<br><small>Bitte GITHUB_TOKEN in Vercel prüfen.</small></div>`;
+      return;
+    }
+    // Sicherstellen dass themenData immer ein Array ist
+    const raw = data.topics ?? data.themen ?? data;
+    themenData = Array.isArray(raw) ? raw : [];
+    if (themenData.length === 0 && !Array.isArray(raw)) {
+      container.innerHTML = `<div class="error-box">&#9888; Keine Themen-Daten empfangen. Bitte GITHUB_TOKEN + GITHUB_REPO in Vercel prüfen.</div>`;
+      return;
+    }
+    renderThemen();
+  } catch (err) {
+    container.innerHTML = `<div class="error-box">&#9888; Fehler beim Laden: ${esc(err.message)}</div>`;
+  }
+}
+
+function renderThemen() {
+  const container = document.getElementById('themen-container');
+
+  const saisonBtns = [
+    ['alle','Alle'],
+    ['fruehling','&#127807; Frühling'],
+    ['sommer','&#9728;&#65039; Sommer'],
+    ['herbst','&#127810; Herbst'],
+    ['winter','&#10052;&#65039; Winter'],
+    ['ostern','&#128039; Ostern'],
+    ['weihnachten','&#127876; Weihnachten'],
+    ['silvester','&#127842; Silvester'],
+  ].map(([v, label]) =>
+    `<button class="filter-btn ${themenFilterSaison===v?'active':''}" onclick="setSaisonFilter('${v}')">${label}</button>`
+  ).join('');
+
+  const statusBtns = [
+    ['alle','Alle'],
+    ['open','&#11093; Offen'],
+    ['inprogress','&#128260; In Bearbeitung'],
+    ['done','&#9989; Erledigt'],
+  ].map(([v, label]) =>
+    `<button class="filter-btn ${themenFilterStatus===v?'active':''}" onclick="setStatusFilter('${v}')">${label}</button>`
+  ).join('');
+
+  // Filter
+  let filtered = themenData;
+  if (themenFilterSaison !== 'alle') {
+    filtered = filtered.filter(t => {
+      const saison  = t.saison ?? t.season ?? '';
+      const anlass  = t.anlass ?? t.occasion ?? '';
+      return saison === themenFilterSaison || anlass === themenFilterSaison;
+    });
+  }
+  if (themenFilterStatus !== 'alle') {
+    filtered = filtered.filter(t => {
+      const status = normalizeStatus(t.status ?? '');
+      return status === themenFilterStatus;
+    });
+  }
+
+  // Sort by priority desc
+  filtered = [...filtered].sort((a, b) => (b.prioritaet ?? b.priority ?? 5) - (a.prioritaet ?? a.priority ?? 5));
+
+  let tableRows = '';
+  if (filtered.length === 0) {
+    tableRows = `<tr class="empty-row"><td colspan="7">Keine Themen gefunden.</td></tr>`;
+  } else {
+    tableRows = filtered.map((t, i) => {
+      const idx     = themenData.indexOf(t);
+      const status  = normalizeStatus(t.status ?? '');
+      const saison  = t.saison ?? t.season ?? '';
+      const anlass  = t.anlass ?? t.occasion ?? '';
+      const prio    = t.prioritaet ?? t.priority ?? 5;
+      const id      = t.id ?? t._id ?? idx;
+
+      const statusBadge = {
+        open:       '<span class="badge badge-open">&#11093; Offen</span>',
+        inprogress: '<span class="badge badge-inprogress">&#128260; In Bearbeitung</span>',
+        done:       '<span class="badge badge-done">&#9989; Erledigt</span>',
+      }[status] || `<span class="badge badge-neutral">${esc(t.status)}</span>`;
+
+      const saisonBadge = saison  ? `<span class="badge badge-neutral">${esc(saison)}</span>` : '';
+      const anlassBadge = anlass  ? `<span class="badge badge-amber">${esc(anlass)}</span>` : '';
+      const catBadge    = (t.kategorie ?? t.category ?? '') ? `<span class="badge badge-amber">${esc(t.kategorie ?? t.category)}</span>` : '';
+
+      const doneDisabled = status === 'done' ? 'disabled' : '';
+
+      return `
+        <tr>
+          <td style="max-width:260px">
+            <strong>${esc(t.titel ?? t.title ?? '–')}</strong>
+            ${t.notizen ?? t.notes ? `<div style="font-size:0.75rem;color:var(--color-muted);margin-top:3px">${esc((t.notizen ?? t.notes).slice(0,80))}</div>` : ''}
+          </td>
+          <td>${catBadge}</td>
+          <td>${saisonBadge}${anlassBadge}</td>
+          <td style="text-align:center"><strong>${prio}</strong></td>
+          <td>${statusBadge}</td>
+          <td>
+            <div class="topic-actions">
+              <button class="btn btn-success btn-sm" ${doneDisabled} onclick="markTopicDone('${esc(String(id))}', ${idx})">&#10003; Erledigt</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteTopic('${esc(String(id))}', ${idx})">&#128465;</button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  container.innerHTML = `
+    <div class="section-header">
+      <h2 class="section-title">Themen (${filtered.length} / ${themenData.length})</h2>
+      <button class="btn btn-primary btn-sm" onclick="openNewTopicModal()">+ Neues Thema</button>
+    </div>
+    <div class="filter-row">
+      <div class="filter-group">
+        <span class="filter-label">Saison:</span>
+        ${saisonBtns}
+      </div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-group">
+        <span class="filter-label">Status:</span>
+        ${statusBtns}
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Titel</th>
+            <th>Kategorie</th>
+            <th>Saison / Anlass</th>
+            <th style="text-align:center">Prio</th>
+            <th>Status</th>
+            <th>Aktionen</th>
+          </tr>
+        </thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function normalizeStatus(s) {
+  if (!s) return 'open';
+  s = s.toLowerCase();
+  if (s === 'open' || s === 'offen' || s === 'pending') return 'open';
+  if (s === 'inprogress' || s === 'in_progress' || s === 'in bearbeitung' || s === 'in bearbeitung' || s === 'editing') return 'inprogress';
+  if (s === 'done' || s === 'erledigt' || s === 'approved') return 'done';
+  return 'open'; // Fallback: unbekannte Status als offen behandeln
+}
+
+function setSaisonFilter(v) {
+  themenFilterSaison = v;
+  renderThemen();
+}
+function setStatusFilter(v) {
+  themenFilterStatus = v;
+  renderThemen();
+}
+
+async function markTopicDone(id, idx) {
+  const btn = event.target;
+  btn.disabled = true;
+  btn.textContent = '…';
+  try {
+    await apiPut(API.topics, { id, status: 'done' });
+    if (themenData[idx]) themenData[idx].status = 'done';
+    renderThemen();
+  } catch (err) {
+    alert('Fehler: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '✓ Erledigt';
+  }
+}
+
+async function deleteTopic(id, idx) {
+  const topic = themenData[idx];
+  const title = topic ? (topic.titel ?? topic.title ?? id) : id;
+  if (!confirm(`Thema "${title}" wirklich löschen?`)) return;
+  try {
+    await apiDelete(API.topics, { id });
+    themenData.splice(idx, 1);
+    renderThemen();
+  } catch (err) {
+    alert('Fehler beim Löschen: ' + err.message);
+  }
+}
+
+/* NEW TOPIC MODAL */
+function openNewTopicModal() {
+  document.getElementById('new-topic-error').style.display = 'none';
+  document.getElementById('new-topic-modal').classList.add('open');
+  document.getElementById('nt-titel').focus();
+}
+
+function closeNewTopicModal() {
+  document.getElementById('new-topic-modal').classList.remove('open');
+}
+
+async function submitNewTopic() {
+  const titel      = document.getElementById('nt-titel').value.trim();
+  const typ        = document.getElementById('nt-typ').value;
+  const kategorie  = document.getElementById('nt-kategorie').value;
+  const saison     = document.getElementById('nt-saison').value;
+  const anlass     = document.getElementById('nt-anlass').value;
+  const prioritaet = parseInt(document.getElementById('nt-prioritaet').value, 10) || 5;
+  const notizen    = document.getElementById('nt-notizen').value.trim();
+
+  const errEl = document.getElementById('new-topic-error');
+  if (!titel) {
+    errEl.textContent = 'Bitte einen Titel eingeben.';
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  const btn = document.getElementById('new-topic-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Speichert…';
+
+  try {
+    const newTopic = await apiPost(API.topics, { titel, typ, kategorie, saison, anlass, prioritaet, notizen });
+    themenData.unshift(newTopic.topic ?? newTopic ?? { titel, typ, kategorie, saison, anlass, prioritaet, notizen, status: 'open' });
+    closeNewTopicModal();
+    renderThemen();
+    // Clear form
+    document.getElementById('nt-titel').value = '';
+    document.getElementById('nt-notizen').value = '';
+    document.getElementById('nt-prioritaet').value = '5';
+  } catch (err) {
+    errEl.textContent = 'Fehler: ' + err.message;
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Thema hinzufügen';
+  }
+}
+
+/* ============================================================
+   UTILITY FUNCTIONS
+   ============================================================ */
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function fmt(n) {
+  return Number(n).toLocaleString('de-DE');
+}
+
+function fmtDate(str) {
+  if (!str) return '';
+  try {
+    const d = new Date(str);
+    if (isNaN(d)) return str;
+    return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  } catch {
+    return str;
+  }
+}
+
+/* ============================================================
+   KEYBOARD & ACCESSIBILITY
+   ============================================================ */
+document.getElementById('login-password').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doLogin();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePreview();
+    closeNewTopicModal();
+  }
+});
+
+// Close modals on overlay click
+document.getElementById('preview-modal').addEventListener('click', function(e) {
+  if (e.target === this) closePreview();
+});
+document.getElementById('new-topic-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeNewTopicModal();
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+(async function init() {
+  const token = getToken();
+  if (token) {
+    const valid = await verifyToken();
+    if (valid) {
+      showDashboard();
+      loadActiveTab();
+    } else {
+      clearToken();
+      showLogin();
+    }
+  } else {
+    showLogin();
+  }
+})();
+</script>
+</body>
+</html>
