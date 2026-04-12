@@ -1116,10 +1116,29 @@ def _base_template():
             .site-nav {{ gap: 16px; }}
             .newsletter-form {{ flex-direction: column; }}
             .trust-stats {{ gap: 24px; }}
+            /* Homepage grids: 2 columns on tablet */
+            .home-cat-grid {{ grid-template-columns: repeat(2, 1fr) !important; }}
         }}
         @media (max-width: 600px) {{
             .hero h1 {{ font-size: 1.8em; }}
             .article-header h1 {{ font-size: 1.5em; }}
+            /* Homepage article grid: single column */
+            .articles-grid {{ grid-template-columns: 1fr !important; }}
+            .featured-card {{
+                grid-column: span 1 !important;
+                grid-template-columns: 1fr !important;
+            }}
+            .featured-card-img {{ min-height: 200px !important; }}
+            /* Homepage category grid: 2 columns */
+            .home-cat-grid {{ grid-template-columns: repeat(2, 1fr) !important; }}
+            /* WotM section: less vertical padding on mobile */
+            .wotm-section {{ padding: 40px 16px !important; }}
+            /* WotM card: single column, less padding */
+            .wotm-card {{
+                padding: 20px 16px !important;
+                grid-template-columns: 1fr !important;
+            }}
+            .wotm-emoji-col {{ display: none !important; }}
             .article-body {{ padding: 24px; }}
             .nav-toggle {{ display: block; }}
             .header-inner {{ position: relative; }}
@@ -1887,8 +1906,8 @@ def build_index_page(articles, config):
             # Zweiter Artikel als großes Landscape-Card (span 2)
             teaser_short = teaser[:160] + "..." if len(teaser) > 160 else teaser
             featured_cards_html += f"""
-        <div class="card" style="grid-column:span 2;display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden;">
-            <div style="{img_bg}background-size:cover;background-position:center;min-height:280px;"></div>
+        <div class="card featured-card" style="grid-column:span 2;display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden;">
+            <div class="featured-card-img" style="{img_bg}background-size:cover;background-position:center;min-height:280px;"></div>
             <div class="card-body" style="padding:28px 32px;display:flex;flex-direction:column;justify-content:center;">
                 <span class="badge badge-amber" style="margin-bottom:10px;">{category}</span>
                 <h3 class="card-title" style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin:0 0 10px;line-height:1.3;"><a href="{base_url}/artikel/{slug}.html" style="color:var(--text-primary);text-decoration:none;">{article['title']}</a></h3>
@@ -1916,7 +1935,7 @@ def build_index_page(articles, config):
             <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;padding-left:0;margin:0;">Aktuelle Geschichten</h2>
             <a href="{base_url}/kategorie/whisky.html" style="font-size:14px;color:var(--accent-amber);text-decoration:none;font-weight:500;">Alle ansehen →</a>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div class="articles-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
             {featured_cards_html}
         </div>
     </section>"""
@@ -1986,13 +2005,13 @@ def build_index_page(articles, config):
             cta_html += f'<a href="{wotm_article_link}" class="btn btn-ghost">Mehr erfahren</a>'
 
         whisky_section_html = f"""
-    <section style="background:var(--bg-surface);padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <section class="wotm-section" style="background:var(--bg-surface);padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
         <div style="max-width:var(--max-width);margin:0 auto;">
             <div style="text-align:center;margin-bottom:32px;">
                 <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent-amber);margin:0 0 6px;">&#9733; Whisky des Monats &#9733;</p>
                 <p style="font-size:14px;color:var(--text-secondary);margin:0;">{wotm_month}</p>
             </div>
-            <div class="card" style="max-width:760px;margin:0 auto;border-left:4px solid var(--accent-amber);padding:32px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;">
+            <div class="card wotm-card" style="max-width:760px;margin:0 auto;border-left:4px solid var(--accent-amber);padding:32px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;">
                 <div>
                     <h3 style="font-family:'Fraunces',serif;font-size:30px;font-weight:600;margin:0 0 4px;line-height:1.2;">{wotm_name}</h3>
                     <p style="font-size:13px;color:var(--accent-muted);margin:0 0 20px;letter-spacing:0.5px;text-transform:uppercase;">{sub_line}</p>
@@ -2017,7 +2036,7 @@ def build_index_page(articles, config):
                     {f'<p style="font-size:15px;font-weight:600;color:var(--accent-amber);margin:0 0 20px;">Ab ca. {wotm_price} €</p>' if wotm_price else ""}
                     <div style="display:flex;flex-wrap:wrap;gap:12px;">{cta_html}</div>
                 </div>
-                <div style="text-align:center;min-width:80px;">
+                <div class="wotm-emoji-col" style="text-align:center;min-width:80px;">
                     <div style="font-size:48px;line-height:1;">🥃</div>
                     <p style="font-size:11px;color:var(--accent-muted);margin-top:8px;text-transform:uppercase;letter-spacing:1px;">Steffens<br>Empfehlung</p>
                 </div>
@@ -2040,10 +2059,10 @@ def build_index_page(articles, config):
             w_img_bg = f"background-image:url({w_img_url});" if w_img_url else "background:linear-gradient(135deg, var(--bg-surface) 0%, var(--border) 100%);"
 
             whisky_section_html = f"""
-    <section style="background:var(--bg-surface);padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <section class="wotm-section" style="background:var(--bg-surface);padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
         <div style="max-width:var(--max-width);margin:0 auto;">
             <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent-amber);margin:0 0 24px;text-align:center;">&#9733; Whisky des Monats &#9733;</p>
-            <div class="card" style="max-width:760px;margin:0 auto;display:grid;grid-template-columns:220px 1fr;border-left:4px solid var(--accent-amber);overflow:hidden;">
+            <div class="card wotm-card" style="max-width:760px;margin:0 auto;display:grid;grid-template-columns:220px 1fr;border-left:4px solid var(--accent-amber);overflow:hidden;">
                 <div style="{w_img_bg}background-size:cover;background-position:center;min-height:220px;"></div>
                 <div class="card-body" style="padding:28px 32px;">
                     <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin:0 0 12px;">{whisky_article['title']}</h3>
@@ -2085,7 +2104,7 @@ def build_index_page(articles, config):
     regions_html = f"""
     <section style="max-width:var(--max-width);margin:0 auto;padding:64px 24px;">
         <h2 style="text-align:center;padding-left:0;font-size:22px;font-weight:600;">Regionen entdecken</h2>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;">
+        <div class="home-cat-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;">
             {region_cards_html}
         </div>
     </section>"""
