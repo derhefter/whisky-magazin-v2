@@ -1007,6 +1007,7 @@ const API = {
   articles: '/api/admin_articles',
   topics:   '/api/admin_topics',
   generate: '/api/generate_article',
+  publish:  '/api/admin_publish',
   wotm:     '/api/admin_wotm',
 };
 
@@ -1392,6 +1393,7 @@ function renderDraftCard(d, i) {
         ${hasContent ? `<button class="btn btn-secondary btn-sm" onclick="openPreview(${i})">&#128065;&#65039; Vorschau</button>` : ''}
         <button class="btn btn-secondary btn-sm" onclick="toggleEdit(${i})">&#9998; Bearbeiten</button>
         ${status !== 'approved' ? `<button class="btn btn-success btn-sm" onclick="approveArticle('${esc(filename)}', ${i})">&#10003; Freigeben</button>` : ''}
+        ${status === 'approved' ? `<button class="btn btn-primary btn-sm" onclick="publishNow('${esc(filename)}', ${i})" title="Jetzt sofort veröffentlichen">&#128640; Jetzt veröffentlichen</button>` : ''}
         <button class="btn btn-danger btn-sm" onclick="rejectArticle('${esc(filename)}', '${esc(sha)}', ${i})">&#10005; Ablehnen</button>
       </div>
       <div class="edit-form" id="${editId}">
@@ -1458,6 +1460,31 @@ async function approveArticle(filename, i) {
     alert('Fehler beim Freigeben: ' + err.message);
     btn.disabled = false;
     btn.textContent = '✓ Freigeben';
+  }
+}
+
+async function publishNow(filename, i) {
+  if (!filename) return;
+  const title = artikelData?.drafts?.[i]?.title || filename;
+  if (!confirm(`"${title}" jetzt sofort veröffentlichen?\n\nDer Artikel erscheint live auf der Website.`)) return;
+  const btn = event.target;
+  btn.disabled = true;
+  btn.textContent = '⏳ Veröffentliche…';
+  try {
+    const url = API.publish + '?filename=' + encodeURIComponent(filename);
+    const result = await apiGet(url);
+    if (result && result.success) {
+      const details = result.details || {};
+      alert(`✅ Artikel veröffentlicht!\n\n${details.filename || filename}\n\nDie Website wird automatisch neu gebaut (ca. 1–2 Minuten).`);
+    } else {
+      alert(`⚠️ ${result?.message || 'Unbekannter Status'}`);
+    }
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch (err) {
+    alert('Fehler beim Veröffentlichen: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '🚀 Jetzt veröffentlichen';
   }
 }
 

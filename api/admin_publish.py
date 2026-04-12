@@ -12,7 +12,7 @@ import os
 import time
 from http.server import BaseHTTPRequestHandler
 from urllib.error import HTTPError
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
@@ -176,8 +176,13 @@ def _mark_topic_done(topic_id, article_slug):
     )
 
 
-def _run_publish():
-    """Core publish logic: find oldest approved draft and publish it."""
+def _run_publish(target_filename=None):
+    """Core publish logic: find oldest approved draft (or a specific one) and publish it.
+
+    Args:
+        target_filename: If provided, publish this specific file (must be approved).
+                         If None, publish the oldest approved draft.
+    """
     # 1. List draft directory
     drafts_dir = _github_get("contents/articles/drafts")
     if "error" in drafts_dir:
@@ -192,6 +197,9 @@ def _run_publish():
         name = item.get("name", "")
         if not name.endswith(".json") or name == ".gitkeep":
             continue
+        # If a specific file is requested, skip others
+        if target_filename and name != target_filename:
+            continue
 
         file_data = _github_get(f"contents/articles/drafts/{name}")
         if "error" in file_data:
@@ -204,6 +212,8 @@ def _run_publish():
             continue
 
         if article.get("_status") != "approved":
+            if target_filename:
+                return False, f"Draft '{target_filename}' is not approved (status: {article.get('_status', 'unknown')})", None
             continue
 
         approved.append({
@@ -214,9 +224,10 @@ def _run_publish():
         })
 
     if not approved:
-        return False, "No approved drafts found", None
+        msg = f"Draft '{target_filename}' not found" if target_filename else "No approved drafts found"
+        return False, msg, None
 
-    # 3. Pick the oldest approved draft
+    # 3. Pick the target or oldest approved draft
     approved.sort(key=lambda d: d["sort_key"])
     candidate = approved[0]
     filename = candidate["filename"]
@@ -294,8 +305,13 @@ class handler(BaseHTTPRequestHandler):
         if not is_authed and not is_cron:
             return self._json(401, {"error": "Unauthorized"}, cors)
 
+        # Optional: ?filename=2026-04-12_some-slug.json to publish a specific draft
+        parsed = urlparse(self.path)
+        params = parse_qs(parsed.query)
+        target_filename = (params.get("filename", [None])[0] or "").strip() or None
+
         try:
-            success, message, details = _run_publish()
+            success, message, details = _run_publish(target_filename=target_filename)
         except Exception as e:
             return self._json(500, {"error": str(e)}, cors)
 
