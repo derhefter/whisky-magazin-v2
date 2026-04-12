@@ -18,6 +18,8 @@ BREVO_API_KEY   = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID   = os.environ.get("BREVO_LIST_ID", "3").strip()
 SITE_URL        = os.environ.get("SITE_URL", "https://www.whiskyreise.de").strip()
 AMAZON_TAG      = "whiskyreise74-21"
+OPENAI_API_KEY  = os.environ.get("OPENAI_API_KEY", "").strip()
+OPENAI_MODEL    = "gpt-4o-mini"
 
 TOKEN_TTL = 86400
 WOTM_FILE = "data/whisky-of-the-month.json"
@@ -124,6 +126,136 @@ def _make_affiliate_link(whisky_name):
     return f"https://www.amazon.de/s?k={encoded}&tag={AMAZON_TAG}"
 
 
+# ── OpenAI text helpers ────────────────────────────────────────────────────────
+
+def _call_openai(messages, max_tokens=400):
+    """Call OpenAI chat completions API. Returns text or None on error."""
+    if not OPENAI_API_KEY:
+        return None
+    payload = json.dumps({
+        "model": OPENAI_MODEL,
+        "messages": messages,
+        "max_tokens": max_tokens,
+        "temperature": 0.7,
+    }).encode("utf-8")
+    req = Request(
+        "https://api.openai.com/v1/chat/completions",
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    try:
+        with urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            return data["choices"][0]["message"]["content"].strip()
+    except Exception:
+        return None
+
+
+def _polish_kommentar(raw_text, whisky_name):
+    """Reformulate rough notes into polished Steffen & Ellas newsletter style."""
+    if not raw_text.strip():
+        return raw_text
+    result = _call_openai([
+        {"role": "system", "content": (
+            "Du schreibst für den monatlichen Newsletter 'Whisky & Schottland' von Steffen und Ellas, "
+            "zwei leidenschaftlichen Whisky-Enthusiasten und Schottland-Reisenden. "
+            "Stil: warm, persönlich, Wir-Form ('wir haben', 'uns hat'), wie ein Brief von Freunden. "
+            "Max. 3–4 kurze, flüssige Sätze. Keine Überschriften, kein Fettdruck, nur fließender Text. "
+            "Korrekte deutsche Umlaute (ä/ö/ü/ß) verwenden."
+        )},
+        {"role": "user", "content": (
+            f"Formuliere diesen Kommentar zum Whisky des Monats '{whisky_name}' aus. "
+            f"Die groben Notizen sollen zu einem persönlichen, einladenden Text werden:\n\n{raw_text}"
+        )},
+    ], max_tokens=300)
+    return result or raw_text
+
+
+def _polish_specials(raw_text):
+    """Reformulate rough specials notes into polished newsletter prose."""
+    if not raw_text.strip():
+        return raw_text
+    result = _call_openai([
+        {"role": "system", "content": (
+            "Du schreibst für den monatlichen Newsletter 'Whisky & Schottland' von Steffen und Ellas. "
+            "Stil: warm, persönlich, Wir-Form. Formuliere die Stichpunkte zu einladenden, kurzen Absätzen aus. "
+            "Je Stichpunkt ein Absatz. Korrekte deutsche Umlaute (ä/ö/ü/ß)."
+        )},
+        {"role": "user", "content": (
+            f"Formuliere diese Specials & News aus (je Stichpunkt/Zeile ein kurzer Absatz):\n\n{raw_text}"
+        )},
+    ], max_tokens=400)
+    return result or raw_text
+
+
+def _generate_intro(month_label, whisky_name, article_titles):
+    """Generate a warm, personal newsletter intro for the given month."""
+    articles_str = ", ".join(f'„{t}"' for t in article_titles[:3]) if article_titles else ""
+    fallback = (
+        f"der {month_label} ist da – und wir haben wieder einiges für euch: "
+        f"unseren Whisky des Monats, neue Artikel und den üblichen Schottland-Moment."
+    )
+    if not OPENAI_API_KEY:
+        return fallback
+    result = _call_openai([
+        {"role": "system", "content": (
+            "Du schreibst den Einleitungstext des monatlichen Newsletters 'Whisky & Schottland' "
+            "von Steffen und Ellas, zwei leidenschaftlichen Whisky-Enthusiasten und Schottland-Reisenden. "
+            "Der Text kommt direkt nach 'Hallo ihr Lieben,' – also kein eigenes Hallo mehr. "
+            "Stil: wie ein Brief von Freunden, die gerade aus Schottland schreiben. Warm, neugierig-machend. "
+            "Max. 2–3 Sätze. Korrekte deutsche Umlaute (ä/ö/ü/ß)."
+        )},
+        {"role": "user", "content": (
+            f"Schreibe den Einleitungstext für den {month_label}-Newsletter. "
+            f"Unser Whisky des Monats ist der {whisky_name}."
+            + (f" Neue Artikel diesen Monat: {articles_str}." if articles_str else "")
+            + " Mach es persönlich und einladend, ohne zu viel vorwegzunehmen."
+        )},
+    ], max_tokens=120)
+    return result or fallback
+
+
+# ── GitHub: auto-fetch articles for a given month ─────────────────────────────
+
+def _fetch_month_articles(month_key):
+    """Return up to 3 published articles from the given month (YYYY-MM).
+    Each item: {title, url, teaser}
+    """
+    dir_data = _github_get("contents/articles")
+    if not isinstance(dir_data, list):
+        return []
+    prefix = month_key + "-"   # e.g. "2026-05-"
+    month_files = [
+        item for item in dir_data
+        if (item.get("name", "").startswith(prefix)
+            and item.get("name", "").endswith(".json")
+            and item.get("type") == "file")
+    ][:3]
+    teasers = []
+    for item in month_files:
+        file_data = _github_get(f"contents/{item['path']}")
+        if isinstance(file_data, dict) and "error" not in file_data:
+            try:
+                raw = base64.b64decode(
+                    file_data["content"].replace("\n", "")
+                ).decode("utf-8")
+                art = json.loads(raw)
+                title  = art.get("title", "")
+                meta   = art.get("meta", {}) or {}
+                slug   = art.get("slug", "") or meta.get("slug", "")
+                teaser = meta.get("teaser", "") or art.get("teaser", "")
+                url    = f"{SITE_URL}/artikel/{slug}.html" if slug else SITE_URL
+                if title:
+                    teasers.append({"title": title, "url": url, "teaser": teaser})
+            except Exception:
+                pass
+    return teasers
+
+
 # ── Brevo Newsletter ───────────────────────────────────────────────────────────
 
 def _brevo_create_campaign(subject, html_content, sender_name, sender_email):
@@ -171,12 +303,21 @@ def _brevo_send_now(campaign_id):
 # ── Newsletter HTML builder ────────────────────────────────────────────────────
 
 def _build_newsletter_html(entry, month_label, article_teasers):
-    whisky_name    = entry.get("whisky_name", "")
-    destillerie    = entry.get("destillerie", "")
-    region         = entry.get("region", "")
-    kommentar      = entry.get("kommentar", "")
-    specials       = entry.get("specials", "")
-    affiliate_link = entry.get("affiliate_link", "") or _make_affiliate_link(whisky_name)
+    whisky_name     = entry.get("whisky_name", "")
+    destillerie     = entry.get("destillerie", "")
+    destillerie_url = entry.get("destillerie_url", "")
+    region          = entry.get("region", "")
+    kommentar       = entry.get("kommentar", "")
+    specials        = entry.get("specials", "")
+    intro_text      = entry.get("intro_text", "")
+    affiliate_link  = entry.get("affiliate_link", "") or _make_affiliate_link(whisky_name)
+
+    if not intro_text:
+        intro_text = (
+            f"der {month_label} ist da \u2013 und wir haben wieder einiges f\u00fcr euch: "
+            f"unseren Whisky des Monats, neue Artikel und den \u00fcblichen Schottland-Moment. "
+            f"Kurz, knapp, hoffentlich lohnenswert."
+        )
 
     # Photos – support both old single photo_url and new photo_urls array
     photo_urls = entry.get("photo_urls") or []
@@ -191,7 +332,6 @@ def _build_newsletter_html(entry, month_label, article_teasers):
             full_url = url if url.startswith("http") else f"{SITE_URL}{url}"
             photos_html = f'<img src="{full_url}" alt="{whisky_name}" style="width:100%;max-width:560px;border-radius:8px;margin:12px 0 16px;">'
         else:
-            # Grid layout for multiple photos
             thumb_w = 260
             cells = ""
             for url in photo_urls[:4]:
@@ -199,12 +339,25 @@ def _build_newsletter_html(entry, month_label, article_teasers):
                 cells += f'<td style="padding:4px;"><img src="{full_url}" alt="{whisky_name}" style="width:{thumb_w}px;max-width:100%;border-radius:6px;display:block;"></td>'
             photos_html = f'<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:12px 0 16px;"><tr>{cells}</tr></table>'
 
+    # Destillerie – link if URL provided
+    if destillerie and destillerie_url:
+        destillerie_html = f'<a href="{destillerie_url}" style="color:#C8963E;text-decoration:none;" target="_blank" rel="noopener noreferrer">{destillerie}</a>'
+    else:
+        destillerie_html = destillerie
+
+    # Sub-header: destillerie · region
+    subheader_parts = []
+    if destillerie_html:
+        subheader_parts.append(destillerie_html)
+    if region:
+        subheader_parts.append(region)
+    subheader = " &middot; ".join(subheader_parts)
+
     # Article teasers
     articles_html = ""
     for a in article_teasers[:3]:
         title  = a.get("title", "")
         teaser = a.get("teaser", "")
-        # Support both 'url' (direct) and 'slug' (legacy)
         url    = a.get("url", "")
         if not url:
             slug = a.get("slug", "")
@@ -218,10 +371,9 @@ def _build_newsletter_html(entry, month_label, article_teasers):
           <a href="{url}" style="font-size:0.82rem;color:#C8963E;">Weiterlesen &#8594;</a>
         </div>"""
 
-    # Specials block
+    # Specials block – convert polished text to paragraphs
     specials_block = ""
     if specials and specials.strip():
-        # Convert plain-text specials to simple HTML paragraphs
         specials_paras = "".join(
             f'<p style="margin:0 0 10px;color:#2A2520;line-height:1.7;">{line.strip()}</p>'
             for line in specials.strip().split("\n") if line.strip()
@@ -283,9 +435,7 @@ def _build_newsletter_html(entry, month_label, article_teasers):
               Hallo ihr Lieben,
             </p>
             <p style="margin:0;color:#6B6460;line-height:1.7;">
-              der neue Monat ist da &#8211; und wir haben wieder einiges f&#252;r euch: einen Whisky,
-              der uns gerade nicht losla&#776;sst, ein paar neue Artikel und den u&#776;blichen
-              Schottland-Moment des Monats. Kurz, knapp, hoffentlich lohnenswert.
+              {intro_text}
             </p>
           </td>
         </tr>
@@ -298,7 +448,7 @@ def _build_newsletter_html(entry, month_label, article_teasers):
                 &#129347; Whisky des Monats
               </p>
               <h2 style="margin:0 0 4px;font-family:Georgia,serif;font-size:1.3rem;color:#2A2520;">{whisky_name}</h2>
-              <p style="margin:0 0 12px;font-size:0.82rem;color:#9E9690;">{destillerie}{' &middot; ' + region if region else ''}</p>
+              <p style="margin:0 0 12px;font-size:0.82rem;color:#9E9690;">{subheader}</p>
               {photos_html}
               <p style="margin:12px 0;color:#2A2520;line-height:1.7;">{kommentar.replace(chr(10), '<br>')}</p>
               <a href="{affiliate_link}" style="display:inline-block;background:#C8963E;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.88rem;text-decoration:none;font-weight:600;">Auf Amazon ansehen &#8594;</a>
@@ -416,7 +566,9 @@ class handler(BaseHTTPRequestHandler):
             entry = {
                 "whisky_name":    whisky_name,
                 "destillerie":    (body.get("destillerie") or "").strip(),
+                "destillerie_url":(body.get("destillerie_url") or "").strip(),
                 "region":         (body.get("region") or "").strip(),
+                "intro_text":     (body.get("intro_text") or "").strip(),
                 "kommentar":      (body.get("kommentar") or "").strip(),
                 "specials":       (body.get("specials") or "").strip(),
                 "affiliate_link": affiliate_link,
@@ -502,23 +654,57 @@ class handler(BaseHTTPRequestHandler):
         if action == "preview_html":
             month_key     = (body.get("month_key") or "").strip()
             month_label   = (body.get("month_label") or month_key).strip()
-            article_teasers = body.get("article_teasers") or []
 
             entry = {
                 "whisky_name":    (body.get("whisky_name") or "").strip(),
                 "destillerie":    (body.get("destillerie") or "").strip(),
+                "destillerie_url":(body.get("destillerie_url") or "").strip(),
                 "region":         (body.get("region") or "").strip(),
                 "kommentar":      (body.get("kommentar") or "").strip(),
                 "specials":       (body.get("specials") or "").strip(),
+                "intro_text":     (body.get("intro_text") or "").strip(),
                 "affiliate_link": (body.get("affiliate_link") or "").strip(),
                 "photo_urls":     body.get("photo_urls") or [],
             }
-            # Auto-generate affiliate link if missing
             if not entry["affiliate_link"] and entry["whisky_name"]:
                 entry["affiliate_link"] = _make_affiliate_link(entry["whisky_name"])
 
+            # Auto-fetch articles for this month if no manual override provided
+            article_teasers = [
+                a for a in (body.get("article_teasers") or [])
+                if (a.get("title") or "").strip()
+            ]
+            if not article_teasers and month_key:
+                article_teasers = _fetch_month_articles(month_key)
+
+            # Polish texts via AI
+            polished_kommentar = entry["kommentar"]
+            polished_specials  = entry["specials"]
+            polished_intro     = entry["intro_text"]
+
+            if entry["kommentar"]:
+                polished_kommentar = _polish_kommentar(entry["kommentar"], entry["whisky_name"])
+                entry["kommentar"] = polished_kommentar
+
+            if entry["specials"]:
+                polished_specials = _polish_specials(entry["specials"])
+                entry["specials"] = polished_specials
+
+            if not entry["intro_text"]:
+                article_titles = [a.get("title", "") for a in article_teasers]
+                polished_intro = _generate_intro(month_label, entry["whisky_name"], article_titles)
+                entry["intro_text"] = polished_intro
+
             html = _build_newsletter_html(entry, month_label, article_teasers)
-            return self._json(200, {"html": html})
+            return self._json(200, {
+                "html": html,
+                "polished": {
+                    "kommentar":  polished_kommentar,
+                    "specials":   polished_specials,
+                    "intro_text": polished_intro,
+                },
+                "article_teasers": article_teasers,
+            })
 
         # ── Send Newsletter ──────────────────────────────────────────────────
         if action == "send_newsletter":

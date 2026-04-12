@@ -1927,12 +1927,20 @@ function renderWotm() {
           <input type="text" id="wotm-destillerie" placeholder="z.B. GlenDronach Distillery">
         </div>
         <div class="form-group">
+          <label>Destillerie-Website <span style="font-weight:400;text-transform:none;">(optional – macht den Destillerie-Namen im Newsletter klickbar)</span></label>
+          <input type="url" id="wotm-destillerie-url" placeholder="https://www.glengoyne.com">
+        </div>
+        <div class="form-group">
           <label>Region <span style="font-weight:400;text-transform:none;">(optional)</span></label>
           <input type="text" id="wotm-region" placeholder="z.B. Highlands, Speyside, Islay…">
         </div>
         <div class="form-group">
           <label>Euer Kommentar (erscheint im Newsletter)</label>
           <textarea id="wotm-kommentar" rows="5" placeholder="Warum habt ihr diesen Whisky gewählt? Persönliche Note, Erinnerung an die Destillerie, Verkostungsnotiz…"></textarea>
+        </div>
+        <div class="form-group">
+          <label>&#9993; Newsletter-Einleitung <span style="font-weight:400;text-transform:none;">(wird beim Generieren automatisch erstellt – hier anpassbar)</span></label>
+          <textarea id="wotm-intro-text" rows="3" placeholder="Wird automatisch generiert, wenn ihr auf &quot;Newsletter generieren&quot; klickt. Hier könnt ihr den Text danach noch anpassen."></textarea>
         </div>
         <div class="form-group">
           <label>&#10024; Specials / Sonderthemen <span style="font-weight:400;text-transform:none;">(optional – erscheint als eigene Rubrik im Newsletter)</span></label>
@@ -2075,6 +2083,8 @@ function wotmMonthChanged() {
   document.getElementById('wotm-region').value      = entry.region         || '';
   document.getElementById('wotm-kommentar').value   = entry.kommentar      || '';
   document.getElementById('wotm-specials').value    = entry.specials       || '';
+  document.getElementById('wotm-destillerie-url').value = entry.destillerie_url || '';
+  document.getElementById('wotm-intro-text').value      = entry.intro_text      || '';
 
   const affEl = document.getElementById('wotm-affiliate');
   affEl.value = entry.affiliate_link || '';
@@ -2156,6 +2166,8 @@ async function wotmSave() {
     region:                 document.getElementById('wotm-region').value.trim(),
     kommentar:              document.getElementById('wotm-kommentar').value.trim(),
     specials:               document.getElementById('wotm-specials').value.trim(),
+    destillerie_url:        document.getElementById('wotm-destillerie-url').value.trim(),
+    intro_text:             document.getElementById('wotm-intro-text').value.trim(),
     affiliate_link:         document.getElementById('wotm-affiliate').value.trim(),
     newsletter_html_final:  (document.getElementById('wotm-newsletter-editor')?.value || ''),
     article_teasers:        _getRecentArticleTeasers(),
@@ -2233,16 +2245,18 @@ async function wotmGenerateNewsletter(force) {
 
   const existingEntry = (wotmData?.entries?.[monthKey]) || {};
   const payload = {
-    month_key:      monthKey,
-    month_label:    monthLabel,
-    whisky_name:    document.getElementById('wotm-name').value.trim(),
-    destillerie:    document.getElementById('wotm-destillerie').value.trim(),
-    region:         document.getElementById('wotm-region').value.trim(),
-    kommentar:      document.getElementById('wotm-kommentar').value.trim(),
-    specials:       document.getElementById('wotm-specials').value.trim(),
-    affiliate_link: document.getElementById('wotm-affiliate').value.trim(),
-    photo_urls:     existingEntry.photo_urls || (existingEntry.photo_url ? [existingEntry.photo_url] : []),
-    article_teasers: _getRecentArticleTeasers(),
+    month_key:       monthKey,
+    month_label:     monthLabel,
+    whisky_name:     document.getElementById('wotm-name').value.trim(),
+    destillerie:     document.getElementById('wotm-destillerie').value.trim(),
+    destillerie_url: document.getElementById('wotm-destillerie-url').value.trim(),
+    region:          document.getElementById('wotm-region').value.trim(),
+    kommentar:       document.getElementById('wotm-kommentar').value.trim(),
+    specials:        document.getElementById('wotm-specials').value.trim(),
+    intro_text:      document.getElementById('wotm-intro-text').value.trim(),
+    affiliate_link:  document.getElementById('wotm-affiliate').value.trim(),
+    photo_urls:      existingEntry.photo_urls || (existingEntry.photo_url ? [existingEntry.photo_url] : []),
+    article_teasers: _getRecentArticleTeasers(),  // manual override; empty = auto-fetch on server
   };
 
   const genBtn = document.querySelector('[onclick="wotmGenerateNewsletter()"]') ||
@@ -2252,6 +2266,29 @@ async function wotmGenerateNewsletter(force) {
   try {
     const result = await apiPost(API.wotm + '?action=preview_html', payload);
     editorEl.value = result.html || '';
+
+    // Update form fields with AI-polished texts
+    if (result.polished) {
+      if (result.polished.kommentar)
+        document.getElementById('wotm-kommentar').value = result.polished.kommentar;
+      if (result.polished.specials)
+        document.getElementById('wotm-specials').value = result.polished.specials;
+      if (result.polished.intro_text)
+        document.getElementById('wotm-intro-text').value = result.polished.intro_text;
+    }
+
+    // Show auto-fetched articles info
+    if (result.article_teasers && result.article_teasers.length > 0) {
+      const rows = document.querySelectorAll('#wotm-articles-list .wotm-article-row');
+      result.article_teasers.forEach((art, i) => {
+        if (rows[i]) {
+          rows[i].querySelector('.wotm-art-title').value  = art.title  || '';
+          rows[i].querySelector('.wotm-art-url').value    = art.url    || '';
+          rows[i].querySelector('.wotm-art-teaser').value = art.teaser || '';
+        }
+      });
+    }
+
     editorSection.style.display = 'block';
     editorSection.scrollIntoView({ behavior: 'smooth' });
     // Update preview iframe if visible
