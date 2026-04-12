@@ -1006,6 +1006,7 @@ const API = {
   data:     '/api/admin_data',
   articles: '/api/admin_articles',
   topics:   '/api/admin_topics',
+  generate: '/api/generate_article',
   wotm:     '/api/admin_wotm',
 };
 
@@ -1604,9 +1605,10 @@ function renderThemen() {
           <td>${statusBadge}</td>
           <td>
             <div class="topic-actions">
-              <button class="btn btn-secondary btn-sm" onclick="openEditTopicModal('${esc(String(id))}', ${idx})">&#9998;</button>
-              <button class="btn btn-success btn-sm" ${doneDisabled} onclick="markTopicDone('${esc(String(id))}', ${idx})">&#10003;</button>
-              <button class="btn btn-danger btn-sm" onclick="deleteTopic('${esc(String(id))}', ${idx})">&#128465;</button>
+              <button class="btn btn-secondary btn-sm" onclick="openEditTopicModal('${esc(String(id))}', ${idx})" title="Bearbeiten">&#9998;</button>
+              <button class="btn btn-success btn-sm" ${doneDisabled} onclick="markTopicDone('${esc(String(id))}', ${idx})" title="Als erledigt markieren">&#10003;</button>
+              <button class="btn btn-primary btn-sm" onclick="generateArticleFromTopic('${esc(String(id))}', ${idx})" title="Artikel-Entwurf jetzt generieren (KI)">&#9889;</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteTopic('${esc(String(id))}', ${idx})" title="Löschen">&#128465;</button>
             </div>
           </td>
         </tr>
@@ -1679,6 +1681,42 @@ async function markTopicDone(id, idx) {
     alert('Fehler: ' + err.message);
     btn.disabled = false;
     btn.textContent = '✓ Erledigt';
+  }
+}
+
+async function generateArticleFromTopic(id, idx) {
+  const topic = themenData[idx];
+  if (!topic) return;
+  const title    = topic.titel ?? topic.title ?? '';
+  const category = topic.kategorie ?? topic.category ?? 'Whisky';
+  const notes    = topic.notizen ?? topic.notes ?? '';
+
+  if (!confirm(`Artikel-Entwurf für "${title}" jetzt per KI generieren?\n\nDas dauert ca. 20–30 Sekunden.`)) return;
+
+  // Find the ⚡ button (4th button in actions)
+  const row = document.querySelector(`button[onclick*="generateArticleFromTopic('${id}'"]`)?.closest('tr');
+  const btn = row?.querySelector('button[title*="generieren"]');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳'; }
+
+  try {
+    const result = await apiPost(API.generate, {
+      title,
+      category,
+      notes,
+    });
+    // Mark topic as done if not already
+    if (topic.status !== 'done') {
+      await apiPut(API.topics, { id, status: 'done' });
+      topic.status = 'done';
+    }
+    topic.article_slug = result.slug;
+    renderThemen();
+    // Refresh article tab
+    tabLoaded.artikel = false;
+    alert(`✅ Artikel-Entwurf erstellt!\n\nTitel: ${result.title}\nPfad: ${result.path}\n\nIm Artikel-Tab zur Freigabe verfügbar.`);
+  } catch (err) {
+    alert('Fehler beim Generieren: ' + err.message);
+    if (btn) { btn.disabled = false; btn.textContent = '⚡'; }
   }
 }
 

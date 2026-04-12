@@ -722,13 +722,21 @@ class handler(BaseHTTPRequestHandler):
             if not entry["affiliate_link"] and entry["whisky_name"]:
                 entry["affiliate_link"] = _make_affiliate_link(entry["whisky_name"])
 
-            # Article teasers: manual override > auto-fetch from month
+            # Article teasers: manual override > auto-fetch from PREVIOUS month
+            # (Newsletter geht Anfang des Monats raus → zeige Artikel aus dem Vormonat)
             article_teasers = [
                 a for a in (body.get("article_teasers") or [])
                 if (a.get("title") or "").strip()
             ]
             if not article_teasers and month_key:
-                article_teasers = _fetch_month_articles(month_key)
+                try:
+                    nl_year, nl_month = map(int, month_key.split("-"))
+                    prev_month = nl_month - 1 if nl_month > 1 else 12
+                    prev_year  = nl_year if nl_month > 1 else nl_year - 1
+                    prev_key   = f"{prev_year}-{prev_month:02d}"
+                except Exception:
+                    prev_key = month_key
+                article_teasers = _fetch_month_articles(prev_key)
 
             # Polish texts via AI – skipped when skip_polish=True
             ai_active = bool(OPENAI_API_KEY) and not skip_polish
