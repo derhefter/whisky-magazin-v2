@@ -204,13 +204,18 @@ def _build_newsletter_html(entry, month_label, article_teasers):
     for a in article_teasers[:3]:
         title  = a.get("title", "")
         teaser = a.get("teaser", "")
-        slug   = a.get("slug", "")
-        link   = f"{SITE_URL}/artikel/{slug}.html" if slug else SITE_URL
+        # Support both 'url' (direct) and 'slug' (legacy)
+        url    = a.get("url", "")
+        if not url:
+            slug = a.get("slug", "")
+            url  = f"{SITE_URL}/artikel/{slug}.html" if slug else SITE_URL
+        if not title:
+            continue
         articles_html += f"""
         <div style="margin-bottom:16px;padding:16px;background:#FAF8F4;border-radius:8px;">
-          <a href="{link}" style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#2A2520;text-decoration:none;">{title}</a>
-          <p style="margin:6px 0 0;font-size:0.88rem;color:#6B6460;">{teaser}</p>
-          <a href="{link}" style="font-size:0.82rem;color:#C8963E;">Weiterlesen &#8594;</a>
+          <a href="{url}" style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#2A2520;text-decoration:none;">{title}</a>
+          {'<p style="margin:6px 0 0;font-size:0.88rem;color:#6B6460;">' + teaser + '</p>' if teaser else ''}
+          <a href="{url}" style="font-size:0.82rem;color:#C8963E;">Weiterlesen &#8594;</a>
         </div>"""
 
     # Specials block
@@ -399,6 +404,15 @@ class handler(BaseHTTPRequestHandler):
             if not affiliate_link:
                 affiliate_link = _make_affiliate_link(whisky_name)
 
+            # Save article teasers (list of {title, url, teaser})
+            raw_articles = body.get("article_teasers") or []
+            article_teasers_clean = [
+                {"title": (a.get("title") or "").strip(),
+                 "url":   (a.get("url")   or "").strip(),
+                 "teaser":(a.get("teaser") or "").strip()}
+                for a in raw_articles if (a.get("title") or "").strip()
+            ]
+
             entry = {
                 "whisky_name":    whisky_name,
                 "destillerie":    (body.get("destillerie") or "").strip(),
@@ -406,6 +420,7 @@ class handler(BaseHTTPRequestHandler):
                 "kommentar":      (body.get("kommentar") or "").strip(),
                 "specials":       (body.get("specials") or "").strip(),
                 "affiliate_link": affiliate_link,
+                "article_teasers": article_teasers_clean,
                 "photo_urls":     [],
                 "erstellt_am":    time.strftime("%Y-%m-%d"),
                 "newsletter_gesendet": False,
@@ -449,6 +464,10 @@ class handler(BaseHTTPRequestHandler):
                 entry["photo_urls"] = existing_entry.get("photo_urls") or []
                 if not entry["photo_urls"] and existing_entry.get("photo_url"):
                     entry["photo_urls"] = [existing_entry["photo_url"]]
+
+            # Keep existing article_teasers if no new ones provided
+            if not article_teasers_clean:
+                entry["article_teasers"] = existing_entry.get("article_teasers", [])
 
             # Preserve newsletter sent status and saved HTML
             if existing_entry.get("newsletter_gesendet"):
@@ -503,9 +522,8 @@ class handler(BaseHTTPRequestHandler):
 
         # ── Send Newsletter ──────────────────────────────────────────────────
         if action == "send_newsletter":
-            month_key     = (body.get("month_key") or "").strip()
-            month_label   = (body.get("month_label") or month_key).strip()
-            article_teasers = body.get("article_teasers") or []
+            month_key   = (body.get("month_key") or "").strip()
+            month_label = (body.get("month_label") or month_key).strip()
 
             data, sha = _load_wotm_data()
             if not data or month_key not in data.get("entries", {}):
@@ -514,8 +532,10 @@ class handler(BaseHTTPRequestHandler):
             entry = data["entries"][month_key]
 
             # Use saved final HTML if available, otherwise generate fresh
+            # Article teasers come from the saved entry (set at save time)
             html = entry.get("newsletter_html_final") or ""
             if not html:
+                article_teasers = entry.get("article_teasers") or []
                 html = _build_newsletter_html(entry, month_label, article_teasers)
 
             subject = f"Whisky & Schottland | {month_label} - Unser Whisky des Monats"

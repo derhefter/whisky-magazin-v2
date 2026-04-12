@@ -1938,6 +1938,36 @@ function renderWotm() {
           <label>&#10024; Specials / Sonderthemen <span style="font-weight:400;text-transform:none;">(optional – erscheint als eigene Rubrik im Newsletter)</span></label>
           <textarea id="wotm-specials" rows="4" placeholder="z.B. Ankündigung einer Schottland-Reise, Gewinnspiel, besondere Neuigkeit… Jede Zeile wird ein eigener Absatz."></textarea>
         </div>
+
+        <!-- Artikel-Empfehlungen für den Newsletter -->
+        <div class="form-group">
+          <label>&#128240; Artikel im Newsletter <span style="font-weight:400;text-transform:none;">(bis zu 3 – erscheinen als &bdquo;Neue Artikel&ldquo;-Sektion)</span></label>
+          <div id="wotm-articles-list" style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px;">
+            <div class="wotm-article-row" style="border:1px solid var(--color-beige);border-radius:var(--radius);padding:12px;background:#FAFAF8;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
+                <input type="text" class="wotm-art-title" placeholder="Artikel-Titel" style="padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;">
+                <input type="url"  class="wotm-art-url"   placeholder="https://www.whisky-reise.com/artikel/..." style="padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;">
+              </div>
+              <input type="text" class="wotm-art-teaser" placeholder="Kurzer Teaser-Satz (optional)" style="width:100%;padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;box-sizing:border-box;">
+            </div>
+            <div class="wotm-article-row" style="border:1px solid var(--color-beige);border-radius:var(--radius);padding:12px;background:#FAFAF8;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
+                <input type="text" class="wotm-art-title" placeholder="Artikel-Titel" style="padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;">
+                <input type="url"  class="wotm-art-url"   placeholder="https://www.whisky-reise.com/artikel/..." style="padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;">
+              </div>
+              <input type="text" class="wotm-art-teaser" placeholder="Kurzer Teaser-Satz (optional)" style="width:100%;padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;box-sizing:border-box;">
+            </div>
+            <div class="wotm-article-row" style="border:1px solid var(--color-beige);border-radius:var(--radius);padding:12px;background:#FAFAF8;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
+                <input type="text" class="wotm-art-title" placeholder="Artikel-Titel" style="padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;">
+                <input type="url"  class="wotm-art-url"   placeholder="https://www.whisky-reise.com/artikel/..." style="padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;">
+              </div>
+              <input type="text" class="wotm-art-teaser" placeholder="Kurzer Teaser-Satz (optional)" style="width:100%;padding:6px 8px;border:1px solid var(--color-beige);border-radius:4px;font-size:0.85rem;box-sizing:border-box;">
+            </div>
+          </div>
+          <p style="margin:0;font-size:0.78rem;color:var(--color-muted);">Felder leer lassen = kein Artikel erscheint im Newsletter.</p>
+        </div>
+
         <div class="form-group">
           <label>Affiliate-Link (Amazon) <span style="font-weight:400;text-transform:none;">(wird auto-generiert)</span></label>
           <input type="url" id="wotm-affiliate" placeholder="https://www.amazon.de/s?k=...&tag=whiskyreise74-21">
@@ -2075,6 +2105,16 @@ function wotmMonthChanged() {
   if (editorEl) {
     editorEl.value = entry.newsletter_html_final || '';
   }
+
+  // Populate article input fields from saved data
+  const savedArticles = entry.article_teasers || [];
+  const rows = document.querySelectorAll('#wotm-articles-list .wotm-article-row');
+  rows.forEach((row, i) => {
+    const art = savedArticles[i] || {};
+    row.querySelector('.wotm-art-title').value  = art.title  || '';
+    row.querySelector('.wotm-art-url').value    = art.url    || '';
+    row.querySelector('.wotm-art-teaser').value = art.teaser || '';
+  });
 }
 
 function wotmPhotosSelected(input) {
@@ -2118,6 +2158,7 @@ async function wotmSave() {
     specials:               document.getElementById('wotm-specials').value.trim(),
     affiliate_link:         document.getElementById('wotm-affiliate').value.trim(),
     newsletter_html_final:  (document.getElementById('wotm-newsletter-editor')?.value || ''),
+    article_teasers:        _getRecentArticleTeasers(),
     photo_b64_list: [],
     photo_ext_list: [],
   };
@@ -2279,16 +2320,18 @@ function wotmEdit(monthKey) {
 }
 
 function _getRecentArticleTeasers() {
-  if (!artikelData) return [];
-  const published = artikelData.published || artikelData.veroeffentlicht || [];
-  return published.slice(0, 3).map(p => {
-    if (typeof p === 'string') return { title: p, teaser: '', slug: '' };
-    return {
-      title:  p.title  || p.titel  || '',
-      teaser: p.teaser || p.meta?.teaser || '',
-      slug:   p.slug   || p.meta?.slug   || '',
-    };
+  // Read from the manual article input fields in the WotM form
+  const rows = document.querySelectorAll('#wotm-articles-list .wotm-article-row');
+  const teasers = [];
+  rows.forEach(row => {
+    const title  = (row.querySelector('.wotm-art-title')?.value  || '').trim();
+    const url    = (row.querySelector('.wotm-art-url')?.value    || '').trim();
+    const teaser = (row.querySelector('.wotm-art-teaser')?.value || '').trim();
+    if (title) {
+      teasers.push({ title, teaser, url });
+    }
   });
+  return teasers;
 }
 
 function _fileToBase64(file) {
