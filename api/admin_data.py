@@ -146,7 +146,7 @@ def _get_articles_data():
                 "status": article.get("_status", "pending"),
                 "generated_at": article.get("_generated_at", ""),
                 "date": article.get("date", ""),
-                "html_content": (article.get("html_content", "") or "")[:500],
+                "html_content": article.get("html_content", "") or article.get("content", "") or "",
             })
 
     # Sort drafts: oldest first (by generated_at or date)
