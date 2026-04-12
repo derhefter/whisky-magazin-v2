@@ -2030,27 +2030,30 @@ function renderWotm() {
       </div>
     </div>
 
-    <!-- Newsletter-Editor -->
+    <!-- Newsletter-Vorschau -->
     <div class="wotm-newsletter-box" id="wotm-editor-section" style="display:none;">
-      <div class="section-header" style="margin-bottom:4px;">
-        <h3 style="margin:0;font-size:1rem;">&#9998; Newsletter bearbeiten &amp; speichern</h3>
+      <div class="section-header" style="margin-bottom:6px;">
+        <h3 style="margin:0;font-size:1rem;">&#128065; Newsletter-Vorschau</h3>
         <button class="btn btn-secondary btn-sm" onclick="document.getElementById('wotm-editor-section').style.display='none'">Schlie&#223;en</button>
       </div>
-      <p style="font-size:0.82rem;color:var(--color-muted);margin:0 0 8px;line-height:1.5;">
-        Der generierte Newsletter-HTML kann hier direkt bearbeitet werden.
-        Klicke auf <strong>Newsletter speichern</strong>, um den finalen Stand zu sichern –
-        dieser wird dann beim Versand verwendet.
+      <p style="font-size:0.82rem;color:var(--color-muted);margin:0 0 10px;line-height:1.5;">
+        So sieht der Newsletter aus. Texte anpassen: <strong>Einleitung, Kommentar oder Specials</strong> oben im Formular &#228;ndern, dann
+        <strong>&#8222;Neu generieren&#8220;</strong> klicken. Danach <strong>speichern</strong> &#8211; erst dann wird er beim Versand verwendet.
       </p>
-      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center;">
         <button class="btn btn-primary btn-sm" onclick="wotmSaveNewsletter()">&#128190; Newsletter speichern</button>
-        <button class="btn btn-secondary btn-sm" onclick="wotmTogglePreview()">&#128065; HTML-Vorschau</button>
-        <button class="btn btn-secondary btn-sm" onclick="wotmGenerateNewsletter(true)">&#9889; Neu generieren (überschreibt Änderungen)</button>
+        <button class="btn btn-secondary btn-sm" onclick="wotmGenerateNewsletter(true)">&#9889; Neu generieren (aktuelle Felder &#252;bernehmen)</button>
       </div>
       <div id="wotm-nl-save-success" class="success-box" style="display:none;margin-bottom:8px;"></div>
-      <textarea id="wotm-newsletter-editor" style="width:100%;min-height:420px;font-family:'Courier New',monospace;font-size:0.78rem;padding:12px;border:2px solid var(--color-beige);border-radius:var(--radius);resize:vertical;"></textarea>
-      <div id="wotm-nl-preview-wrap" style="display:none;margin-top:12px;">
-        <iframe id="wotm-nl-preview-iframe" style="width:100%;height:500px;border:1px solid var(--color-beige);border-radius:var(--radius);" title="Vorschau"></iframe>
+      <!-- Gerenderte Vorschau – Hauptansicht -->
+      <div style="border:2px solid var(--color-beige);border-radius:var(--radius);overflow:hidden;">
+        <iframe id="wotm-nl-preview-iframe" style="width:100%;height:640px;border:none;display:block;" title="Newsletter Vorschau"></iframe>
       </div>
+      <!-- HTML-Quellcode – eingeklappt, nur f&#252;r technische Zwecke -->
+      <details style="margin-top:10px;">
+        <summary style="cursor:pointer;font-size:0.78rem;color:var(--color-muted);user-select:none;padding:4px 0;">&#128295; HTML-Quellcode (technisch &#8211; wird automatisch beim Speichern verwendet)</summary>
+        <textarea id="wotm-newsletter-editor" style="width:100%;min-height:260px;font-family:'Courier New',monospace;font-size:0.72rem;padding:10px;border:1px solid var(--color-beige);border-radius:var(--radius);resize:vertical;margin-top:6px;box-sizing:border-box;"></textarea>
+      </details>
     </div>
   `;
 
@@ -2218,17 +2221,6 @@ async function wotmSaveNewsletter() {
   }
 }
 
-function wotmTogglePreview() {
-  const wrap   = document.getElementById('wotm-nl-preview-wrap');
-  const iframe = document.getElementById('wotm-nl-preview-iframe');
-  if (wrap.style.display === 'none') {
-    iframe.srcdoc = document.getElementById('wotm-newsletter-editor').value;
-    wrap.style.display = 'block';
-  } else {
-    wrap.style.display = 'none';
-  }
-}
-
 async function wotmGenerateNewsletter(force) {
   const MONATE = ['Januar','Februar','März','April','Mai','Juni',
                   'Juli','August','September','Oktober','November','Dezember'];
@@ -2238,10 +2230,14 @@ async function wotmGenerateNewsletter(force) {
 
   const editorSection = document.getElementById('wotm-editor-section');
   const editorEl      = document.getElementById('wotm-newsletter-editor');
+  const iframeEl      = document.getElementById('wotm-nl-preview-iframe');
 
-  if (force && editorEl.value) {
-    if (!confirm('Aktuelle Änderungen im Editor werden überschrieben. Fortfahren?')) return;
-  }
+  // Disable both buttons while loading
+  const allGenBtns = [
+    document.querySelector('[onclick="wotmGenerateNewsletter()"]'),
+    document.querySelector('[onclick="wotmGenerateNewsletter(true)"]'),
+  ].filter(Boolean);
+  allGenBtns.forEach(b => { b.disabled = true; b.textContent = '⏳ Generiert…'; });
 
   const existingEntry = (wotmData?.entries?.[monthKey]) || {};
   const payload = {
@@ -2256,19 +2252,22 @@ async function wotmGenerateNewsletter(force) {
     intro_text:      document.getElementById('wotm-intro-text').value.trim(),
     affiliate_link:  document.getElementById('wotm-affiliate').value.trim(),
     photo_urls:      existingEntry.photo_urls || (existingEntry.photo_url ? [existingEntry.photo_url] : []),
-    article_teasers: _getRecentArticleTeasers(),  // manual override; empty = auto-fetch on server
+    article_teasers: _getRecentArticleTeasers(),
+    // force=true: Texte aus den Feldern 1:1 verwenden, KEIN KI-Polishing
+    skip_polish:     !!force,
   };
-
-  const genBtn = document.querySelector('[onclick="wotmGenerateNewsletter()"]') ||
-                 document.querySelector('[onclick="wotmGenerateNewsletter(true)"]');
-  if (genBtn) { genBtn.disabled = true; genBtn.textContent = 'Generiert…'; }
 
   try {
     const result = await apiPost(API.wotm + '?action=preview_html', payload);
-    editorEl.value = result.html || '';
+    const html = result.html || '';
 
-    // Update form fields with AI-polished texts
-    if (result.polished) {
+    // Schreibe HTML in versteckten Textarea (für Speichern/Versand)
+    editorEl.value = html;
+    // Zeige gerenderte Vorschau im iframe
+    iframeEl.srcdoc = html;
+
+    // Beim ersten Generieren (force=false): KI-Texte in die Felder schreiben
+    if (!force && result.polished) {
       if (result.polished.kommentar)
         document.getElementById('wotm-kommentar').value = result.polished.kommentar;
       if (result.polished.specials)
@@ -2277,8 +2276,8 @@ async function wotmGenerateNewsletter(force) {
         document.getElementById('wotm-intro-text').value = result.polished.intro_text;
     }
 
-    // Show auto-fetched articles info
-    if (result.article_teasers && result.article_teasers.length > 0) {
+    // Beim ersten Generieren: auto-gefundene Artikel in die Felder eintragen
+    if (!force && result.article_teasers && result.article_teasers.length > 0) {
       const rows = document.querySelectorAll('#wotm-articles-list .wotm-article-row');
       result.article_teasers.forEach((art, i) => {
         if (rows[i]) {
@@ -2291,20 +2290,15 @@ async function wotmGenerateNewsletter(force) {
 
     editorSection.style.display = 'block';
     editorSection.scrollIntoView({ behavior: 'smooth' });
-    // Update preview iframe if visible
-    const wrap = document.getElementById('wotm-nl-preview-wrap');
-    if (wrap && wrap.style.display !== 'none') {
-      document.getElementById('wotm-nl-preview-iframe').srcdoc = result.html;
-    }
   } catch (err) {
     alert('Fehler beim Generieren: ' + err.message);
   } finally {
-    if (genBtn) {
-      genBtn.disabled = false;
-      genBtn.textContent = genBtn.onclick?.toString().includes('true')
-        ? '⚡ Neu generieren (überschreibt Änderungen)'
+    allGenBtns.forEach(b => {
+      b.disabled = false;
+      b.textContent = b.getAttribute('onclick')?.includes('true')
+        ? '⚡ Neu generieren (aktuelle Felder übernehmen)'
         : '⚡ Newsletter generieren';
-    }
+    });
   }
 }
 

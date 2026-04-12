@@ -652,8 +652,10 @@ class handler(BaseHTTPRequestHandler):
 
         # ── Preview Newsletter HTML ──────────────────────────────────────────
         if action == "preview_html":
-            month_key     = (body.get("month_key") or "").strip()
-            month_label   = (body.get("month_label") or month_key).strip()
+            month_key    = (body.get("month_key") or "").strip()
+            month_label  = (body.get("month_label") or month_key).strip()
+            # skip_polish=True: use texts exactly as provided (user edited them)
+            skip_polish  = bool(body.get("skip_polish", False))
 
             entry = {
                 "whisky_name":    (body.get("whisky_name") or "").strip(),
@@ -669,7 +671,7 @@ class handler(BaseHTTPRequestHandler):
             if not entry["affiliate_link"] and entry["whisky_name"]:
                 entry["affiliate_link"] = _make_affiliate_link(entry["whisky_name"])
 
-            # Auto-fetch articles for this month if no manual override provided
+            # Article teasers: manual override > auto-fetch from month
             article_teasers = [
                 a for a in (body.get("article_teasers") or [])
                 if (a.get("title") or "").strip()
@@ -677,22 +679,26 @@ class handler(BaseHTTPRequestHandler):
             if not article_teasers and month_key:
                 article_teasers = _fetch_month_articles(month_key)
 
-            # Polish texts via AI
+            # Polish texts via AI – skipped when skip_polish=True
             polished_kommentar = entry["kommentar"]
             polished_specials  = entry["specials"]
             polished_intro     = entry["intro_text"]
 
-            if entry["kommentar"]:
-                polished_kommentar = _polish_kommentar(entry["kommentar"], entry["whisky_name"])
-                entry["kommentar"] = polished_kommentar
+            if not skip_polish:
+                if entry["kommentar"]:
+                    polished_kommentar = _polish_kommentar(
+                        entry["kommentar"], entry["whisky_name"])
+                    entry["kommentar"] = polished_kommentar
 
-            if entry["specials"]:
-                polished_specials = _polish_specials(entry["specials"])
-                entry["specials"] = polished_specials
+                if entry["specials"]:
+                    polished_specials = _polish_specials(entry["specials"])
+                    entry["specials"] = polished_specials
 
+            # Generate intro if still empty (always, even on re-generate)
             if not entry["intro_text"]:
                 article_titles = [a.get("title", "") for a in article_teasers]
-                polished_intro = _generate_intro(month_label, entry["whisky_name"], article_titles)
+                polished_intro = _generate_intro(
+                    month_label, entry["whisky_name"], article_titles)
                 entry["intro_text"] = polished_intro
 
             html = _build_newsletter_html(entry, month_label, article_teasers)
