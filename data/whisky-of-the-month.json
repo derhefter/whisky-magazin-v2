@@ -4,11 +4,15 @@
       "whisky_name": "Glengoyne",
       "destillerie": "",
       "region": "",
-      "kommentar": "",
-      "affiliate_link": "",
-      "photo_url": "/images/wotm/2026-05.jpg",
+      "kommentar": "https://www.glengoyne.com/visit eine wunderschöne Destille auf dem Weg von Glasgow in die Highlands, bzw. nach Islay und auch bis in alle anderen Regionen Speyside, immer wieder ein Besuch wert, da die malerische Kulisse tatsächlich genau das ist, was ein Whisky-Freund von Schottland erwartet.",
+      "specials": "",
+      "affiliate_link": "https://www.amazon.de/s?k=Glengoyne&tag=whiskyreise74-21",
+      "photo_urls": [
+        "/images/wotm/2026-05.jpg"
+      ],
       "erstellt_am": "2026-04-12",
-      "newsletter_gesendet": false
+      "newsletter_gesendet": false,
+      "newsletter_html_final": ""
     }
   }
 }
