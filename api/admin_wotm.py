@@ -16,7 +16,7 @@ GITHUB_REPO     = os.environ.get("GITHUB_REPO", "derhefter/whisky-magazin-v2").s
 GITHUB_BRANCH   = os.environ.get("GITHUB_BRANCH", "main").strip()
 BREVO_API_KEY   = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID   = os.environ.get("BREVO_LIST_ID", "3").strip()
-SITE_URL        = os.environ.get("SITE_URL", "https://www.whiskyreise.de").strip()
+SITE_URL        = os.environ.get("SITE_URL", "https://www.whisky-reise.com").strip()
 AMAZON_TAG      = "whiskyreise74-21"
 OPENAI_API_KEY  = os.environ.get("OPENAI_API_KEY", "").strip()
 OPENAI_MODEL    = "gpt-4o-mini"
@@ -165,6 +165,8 @@ def _polish_kommentar(raw_text, whisky_name):
             "zwei leidenschaftlichen Whisky-Enthusiasten und Schottland-Reisenden. "
             "Stil: warm, persönlich, Wir-Form ('wir haben', 'uns hat'), wie ein Brief von Freunden. "
             "Max. 3–4 kurze, flüssige Sätze. Keine Überschriften, kein Fettdruck, nur fließender Text. "
+            "WICHTIG: Enthält der Text eine URL (http://... oder https://...), ignoriere sie vollständig – "
+            "die Destillerie wird im Newsletter bereits separat verlinkt. "
             "Korrekte deutsche Umlaute (ä/ö/ü/ß) verwenden."
         )},
         {"role": "user", "content": (
@@ -335,11 +337,24 @@ def _build_newsletter_html(entry, month_label, article_teasers):
     intro_text      = entry.get("intro_text", "")
     affiliate_link  = entry.get("affiliate_link", "") or _make_affiliate_link(whisky_name)
 
+    # Tasting notes (optional)
+    aroma      = (entry.get("aroma", "") or "").strip()
+    geschmack  = (entry.get("geschmack", "") or "").strip()
+    abgang     = (entry.get("abgang", "") or "").strip()
+    bewertung  = entry.get("bewertung")   # 0–100
+    alter      = entry.get("alter")       # Jahre
+    abv        = entry.get("abv")         # %
+    preis      = entry.get("preis_eur")   # €
+
     # Auto-detect: if destillerie field accidentally contains a URL, move it
     if destillerie and _re.match(r'https?://', destillerie):
         if not destillerie_url:
             destillerie_url = destillerie
         destillerie = ""
+
+    # If destillerie name is empty but URL is set, use whisky_name as anchor
+    if not destillerie and destillerie_url:
+        destillerie = whisky_name
 
     if not intro_text:
         intro_text = (
@@ -348,7 +363,7 @@ def _build_newsletter_html(entry, month_label, article_teasers):
             f"Kurz, knapp, hoffentlich lohnenswert."
         )
 
-    # Make bare URLs in kommentar clickable
+    # Make bare URLs in kommentar clickable (remaining ones after AI polishing)
     kommentar_html = _linkify(kommentar.replace("\n", "<br>")) if kommentar else ""
 
     # Photos – support data: URLs (local preview), relative paths, and full URLs
@@ -356,12 +371,11 @@ def _build_newsletter_html(entry, month_label, article_teasers):
     if not photo_urls and entry.get("photo_url"):
         photo_urls = [entry["photo_url"]]
 
-    # Build photo gallery HTML
     photos_html = ""
     valid_photos = []
     for url in photo_urls[:4]:
         if url.startswith("data:"):
-            valid_photos.append(url)        # inline preview
+            valid_photos.append(url)
         elif url.startswith("http"):
             valid_photos.append(url)
         elif url.startswith("/"):
@@ -371,7 +385,7 @@ def _build_newsletter_html(entry, month_label, article_teasers):
         if len(valid_photos) == 1:
             photos_html = (
                 f'<img src="{valid_photos[0]}" alt="{whisky_name}" '
-                f'style="width:100%;max-width:560px;border-radius:8px;margin:12px 0 16px;">'
+                f'style="width:100%;max-width:560px;border-radius:8px;margin:12px 0 16px;display:block;">'
             )
         else:
             thumb_w = 260
@@ -396,7 +410,7 @@ def _build_newsletter_html(entry, month_label, article_teasers):
     else:
         destillerie_html = ""
 
-    # Sub-header: destillerie · region  (never show raw URL here)
+    # Sub-header: destillerie · region (never show raw URL)
     subheader_parts = []
     if destillerie_html:
         subheader_parts.append(destillerie_html)
@@ -404,7 +418,72 @@ def _build_newsletter_html(entry, month_label, article_teasers):
         subheader_parts.append(region)
     subheader = " &middot; ".join(subheader_parts)
 
-    # Article teasers
+    # ── Tasting card ──────────────────────────────────────────────────────────
+    tasting_card = ""
+    if aroma or geschmack or abgang or bewertung or preis:
+        # Info line: REGION · X JAHRE · ABV% ABV
+        info_parts = []
+        if region:
+            info_parts.append(region.upper())
+        if alter:
+            info_parts.append(f"{alter} JAHRE")
+        if abv:
+            info_parts.append(f"{abv}% ABV")
+        info_line = " &middot; ".join(info_parts)
+
+        # Tasting rows
+        tasting_rows = ""
+        for icon, label, text in [
+            ("&#127800;", "Aroma",      aroma),
+            ("&#9749;",   "Geschmack",  geschmack),
+            ("&#10024;",  "Abgang",     abgang),
+        ]:
+            if not text:
+                continue
+            tasting_rows += f"""
+              <tr>
+                <td width="28" style="vertical-align:top;padding:0 10px 12px 0;font-size:1.1rem;white-space:nowrap;">{icon}</td>
+                <td style="vertical-align:top;padding:0 0 12px 0;">
+                  <p style="margin:0 0 3px;font-size:0.72rem;color:#C8963E;text-transform:uppercase;letter-spacing:1px;font-weight:700;">{label}</p>
+                  <p style="margin:0;color:#2A2520;font-size:0.88rem;line-height:1.5;">{text}</p>
+                </td>
+              </tr>"""
+
+        # Rating stars
+        rating_html = ""
+        if bewertung is not None:
+            try:
+                score = int(bewertung)
+                filled = min(5, max(0, round(score / 20)))
+                stars = "&#9733;" * filled + "&#9734;" * (5 - filled)
+                rating_html = (
+                    f'<p style="margin:10px 0 0;font-size:1.1rem;color:#C8963E;line-height:1;">'
+                    f'{stars} '
+                    f'<span style="font-size:0.88rem;font-weight:700;color:#2A2520;">{score}/100</span>'
+                    f'</p>'
+                )
+            except Exception:
+                pass
+
+        # Price
+        price_html = ""
+        if preis:
+            price_html = (
+                f'<p style="margin:8px 0 0;font-size:0.88rem;color:#C8963E;font-weight:600;">'
+                f'Ab ca. {preis}\u00a0\u20ac</p>'
+            )
+
+        tasting_card = f"""
+              <div style="background:#FAF8F4;border-radius:8px;padding:18px 20px;margin:16px 0 4px;">
+                {f'<p style="margin:0 0 14px;font-size:0.75rem;color:#9E9690;letter-spacing:0.5px;">{info_line}</p>' if info_line else ''}
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  {tasting_rows}
+                </table>
+                {rating_html}
+                {price_html}
+              </div>"""
+
+    # ── Article teasers ───────────────────────────────────────────────────────
     articles_html = ""
     for a in article_teasers[:3]:
         title  = a.get("title", "")
@@ -418,11 +497,11 @@ def _build_newsletter_html(entry, month_label, article_teasers):
         articles_html += f"""
         <div style="margin-bottom:16px;padding:16px;background:#FAF8F4;border-radius:8px;">
           <a href="{url}" style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#2A2520;text-decoration:none;">{title}</a>
-          {'<p style="margin:6px 0 0;font-size:0.88rem;color:#6B6460;">' + teaser + '</p>' if teaser else ''}
-          <a href="{url}" style="font-size:0.82rem;color:#C8963E;">Weiterlesen &#8594;</a>
+          {'<p style="margin:6px 0 0;font-size:0.88rem;color:#6B6460;line-height:1.5;">' + teaser + '</p>' if teaser else ''}
+          <p style="margin:8px 0 0;"><a href="{url}" style="font-size:0.82rem;color:#C8963E;text-decoration:none;">Weiterlesen &#8594;</a></p>
         </div>"""
 
-    # Specials block – convert polished text to paragraphs
+    # ── Specials block ────────────────────────────────────────────────────────
     specials_block = ""
     if specials and specials.strip():
         specials_paras = "".join(
@@ -454,6 +533,13 @@ def _build_newsletter_html(entry, month_label, article_teasers):
             </div>
           </td>
         </tr>"""
+
+    # ── Footer URL (derive display name from SITE_URL) ────────────────────────
+    site_display = (SITE_URL
+                    .replace("https://www.", "")
+                    .replace("https://", "")
+                    .replace("http://www.", "")
+                    .rstrip("/"))
 
     html = f"""<!DOCTYPE html>
 <html lang="de">
@@ -498,11 +584,12 @@ def _build_newsletter_html(entry, month_label, article_teasers):
               <p style="margin:0 0 4px;font-size:0.75rem;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:600;">
                 &#129347; Whisky des Monats
               </p>
-              <h2 style="margin:0 0 4px;font-family:Georgia,serif;font-size:1.3rem;color:#2A2520;">{whisky_name}</h2>
-              <p style="margin:0 0 12px;font-size:0.82rem;color:#9E9690;">{subheader}</p>
+              <h2 style="margin:0 0 4px;font-family:Georgia,serif;font-size:1.4rem;color:#2A2520;">{whisky_name}</h2>
+              <p style="margin:0 0 8px;font-size:0.82rem;color:#9E9690;">{subheader}</p>
               {photos_html}
-              <p style="margin:12px 0;color:#2A2520;line-height:1.7;">{kommentar_html}</p>
-              <a href="{affiliate_link}" style="display:inline-block;background:#C8963E;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.88rem;text-decoration:none;font-weight:600;">Auf Amazon ansehen &#8594;</a>
+              {tasting_card}
+              {'<p style="margin:16px 0 12px;color:#2A2520;line-height:1.7;">' + kommentar_html + '</p>' if kommentar_html else ''}
+              <a href="{affiliate_link}" style="display:inline-block;background:#C8963E;color:#fff;padding:10px 22px;border-radius:6px;font-size:0.88rem;text-decoration:none;font-weight:600;margin-top:8px;">Auf Amazon ansehen &#8594;</a>
             </div>
           </td>
         </tr>
@@ -514,12 +601,12 @@ def _build_newsletter_html(entry, month_label, article_teasers):
         <tr>
           <td style="background:#2A2520;padding:20px 32px;border-radius:0 0 12px 12px;text-align:center;">
             <p style="margin:0 0 8px;color:#9E9690;font-size:0.78rem;">
-              <a href="{SITE_URL}" style="color:#C8963E;text-decoration:none;">whiskyreise.de</a>
+              <a href="{SITE_URL}" style="color:#C8963E;text-decoration:none;">{site_display}</a>
               &nbsp;&middot;&nbsp;
               Steffen &amp; Ellas
             </p>
             <p style="margin:0;font-size:0.72rem;color:#6B6460;">
-              Du erh&#228;ltst diesen Newsletter, weil du dich auf whiskyreise.de angemeldet hast.<br>
+              Du erh&#228;ltst diesen Newsletter, weil du dich auf {site_display} angemeldet hast.<br>
               <a href="{{{{ unsubscribe }}}}" style="color:#6B6460;">Abmelden</a>
             </p>
           </td>
@@ -614,6 +701,18 @@ class handler(BaseHTTPRequestHandler):
                 for a in raw_articles if (a.get("title") or "").strip()
             ]
 
+            def _safe_float(val):
+                try:
+                    return float(val) if val not in (None, "") else None
+                except Exception:
+                    return None
+
+            def _safe_int(val):
+                try:
+                    return int(val) if val not in (None, "") else None
+                except Exception:
+                    return None
+
             entry = {
                 "whisky_name":    whisky_name,
                 "destillerie":    (body.get("destillerie") or "").strip(),
@@ -623,6 +722,14 @@ class handler(BaseHTTPRequestHandler):
                 "kommentar":      (body.get("kommentar") or "").strip(),
                 "specials":       (body.get("specials") or "").strip(),
                 "affiliate_link": affiliate_link,
+                # Tasting notes (optional)
+                "aroma":          (body.get("aroma") or "").strip(),
+                "geschmack":      (body.get("geschmack") or "").strip(),
+                "abgang":         (body.get("abgang") or "").strip(),
+                "bewertung":      _safe_int(body.get("bewertung")),
+                "alter":          _safe_int(body.get("alter")),
+                "abv":            _safe_float(body.get("abv")),
+                "preis_eur":      _safe_float(body.get("preis_eur")),
                 "article_teasers": article_teasers_clean,
                 "photo_urls":     [],
                 "erstellt_am":    time.strftime("%Y-%m-%d"),
@@ -718,6 +825,14 @@ class handler(BaseHTTPRequestHandler):
                 "intro_text":     (body.get("intro_text") or "").strip(),
                 "affiliate_link": (body.get("affiliate_link") or "").strip(),
                 "photo_urls":     body.get("photo_urls") or [],
+                # Tasting notes
+                "aroma":          (body.get("aroma") or "").strip(),
+                "geschmack":      (body.get("geschmack") or "").strip(),
+                "abgang":         (body.get("abgang") or "").strip(),
+                "bewertung":      body.get("bewertung"),
+                "alter":          body.get("alter"),
+                "abv":            body.get("abv"),
+                "preis_eur":      body.get("preis_eur"),
             }
             if not entry["affiliate_link"] and entry["whisky_name"]:
                 entry["affiliate_link"] = _make_affiliate_link(entry["whisky_name"])

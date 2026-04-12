@@ -1988,11 +1988,11 @@ function renderWotm() {
           </div>
         </div>
         <div class="form-group">
-          <label>Destillerie <span style="font-weight:400;text-transform:none;">(optional, ergibt sich meist aus dem Namen)</span></label>
-          <input type="text" id="wotm-destillerie" placeholder="z.B. GlenDronach Distillery">
+          <label>Destillerie <span style="font-weight:400;text-transform:none;">(optional – nur Name, keine URL!)</span></label>
+          <input type="text" id="wotm-destillerie" placeholder="z.B. Glengoyne, GlenDronach, Lagavulin…">
         </div>
         <div class="form-group">
-          <label>Destillerie-Website <span style="font-weight:400;text-transform:none;">(optional – macht den Destillerie-Namen im Newsletter klickbar)</span></label>
+          <label>Destillerie-Website <span style="font-weight:400;text-transform:none;">(optional – macht den Namen klickbar)</span></label>
           <input type="url" id="wotm-destillerie-url" placeholder="https://www.glengoyne.com">
         </div>
         <div class="form-group">
@@ -2001,8 +2001,47 @@ function renderWotm() {
         </div>
         <div class="form-group">
           <label>Euer Kommentar (erscheint im Newsletter)</label>
-          <textarea id="wotm-kommentar" rows="5" placeholder="Warum habt ihr diesen Whisky gewählt? Persönliche Note, Erinnerung an die Destillerie, Verkostungsnotiz…"></textarea>
+          <textarea id="wotm-kommentar" rows="5" placeholder="Warum habt ihr diesen Whisky gewählt? Persönliche Note, Erinnerung an die Destillerie… Keine URLs hier – Website-Link bitte in &quot;Destillerie-Website&quot; eintragen."></textarea>
         </div>
+
+        <!-- TASTING NOTES - collapsible -->
+        <details style="margin-bottom:16px;">
+          <summary style="cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--color-muted);padding:8px 0;user-select:none;">
+            &#127800; Verkostungsnotizen <span style="font-weight:400;">(optional – erscheinen als Tasting-Karte im Newsletter, wie auf der Website)</span>
+          </summary>
+          <div style="padding-top:12px;display:flex;flex-direction:column;gap:10px;">
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.8rem;">Aroma</label>
+              <textarea id="wotm-aroma" rows="2" placeholder="z.B. Kräftiger Torf, Meeresluft, leichter Rauch…"></textarea>
+            </div>
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.8rem;">Geschmack</label>
+              <textarea id="wotm-geschmack" rows="2" placeholder="z.B. Reichhaltig, süße Vanille trifft auf Gewürze…"></textarea>
+            </div>
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.8rem;">Abgang</label>
+              <textarea id="wotm-abgang" rows="2" placeholder="z.B. Lang und warm, Torf und Süße halten an…"></textarea>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+              <div class="form-group" style="margin:0;">
+                <label style="font-size:0.8rem;">Bewertung (0–100)</label>
+                <input type="number" id="wotm-bewertung" min="0" max="100" placeholder="z.B. 92">
+              </div>
+              <div class="form-group" style="margin:0;">
+                <label style="font-size:0.8rem;">Alter (Jahre)</label>
+                <input type="number" id="wotm-alter" min="0" max="50" placeholder="z.B. 12">
+              </div>
+              <div class="form-group" style="margin:0;">
+                <label style="font-size:0.8rem;">ABV (%)</label>
+                <input type="number" id="wotm-abv" min="0" max="80" step="0.1" placeholder="z.B. 46.0">
+              </div>
+              <div class="form-group" style="margin:0;">
+                <label style="font-size:0.8rem;">Preis ca. (€)</label>
+                <input type="number" id="wotm-preis" min="0" step="0.5" placeholder="z.B. 45">
+              </div>
+            </div>
+          </div>
+        </details>
         <div class="form-group">
           <label>&#9993; Newsletter-Einleitung <span style="font-weight:400;text-transform:none;">(wird beim Generieren automatisch erstellt – hier anpassbar)</span></label>
           <textarea id="wotm-intro-text" rows="3" placeholder="Wird automatisch generiert, wenn ihr auf &quot;Newsletter generieren&quot; klickt. Hier könnt ihr den Text danach noch anpassen."></textarea>
@@ -2153,6 +2192,14 @@ function wotmMonthChanged() {
   document.getElementById('wotm-specials').value    = entry.specials       || '';
   document.getElementById('wotm-destillerie-url').value = entry.destillerie_url || '';
   document.getElementById('wotm-intro-text').value      = entry.intro_text      || '';
+  // Tasting fields
+  document.getElementById('wotm-aroma').value      = entry.aroma      || '';
+  document.getElementById('wotm-geschmack').value  = entry.geschmack  || '';
+  document.getElementById('wotm-abgang').value     = entry.abgang     || '';
+  document.getElementById('wotm-bewertung').value  = entry.bewertung  != null ? entry.bewertung : '';
+  document.getElementById('wotm-alter').value      = entry.alter      != null ? entry.alter      : '';
+  document.getElementById('wotm-abv').value        = entry.abv        != null ? entry.abv        : '';
+  document.getElementById('wotm-preis').value      = entry.preis_eur  != null ? entry.preis_eur  : '';
 
   const affEl = document.getElementById('wotm-affiliate');
   affEl.value = entry.affiliate_link || '';
@@ -2227,6 +2274,7 @@ async function wotmSave() {
     return;
   }
 
+  const _toNum = id => { const v = document.getElementById(id)?.value; return v ? Number(v) : null; };
   const payload = {
     month_key:              monthKey,
     whisky_name:            whiskyName,
@@ -2239,6 +2287,14 @@ async function wotmSave() {
     affiliate_link:         document.getElementById('wotm-affiliate').value.trim(),
     newsletter_html_final:  (document.getElementById('wotm-newsletter-editor')?.value || ''),
     article_teasers:        _getRecentArticleTeasers(),
+    // Tasting notes
+    aroma:      document.getElementById('wotm-aroma')?.value.trim() || '',
+    geschmack:  document.getElementById('wotm-geschmack')?.value.trim() || '',
+    abgang:     document.getElementById('wotm-abgang')?.value.trim() || '',
+    bewertung:  _toNum('wotm-bewertung'),
+    alter:      _toNum('wotm-alter'),
+    abv:        _toNum('wotm-abv'),
+    preis_eur:  _toNum('wotm-preis'),
     photo_b64_list: [],
     photo_ext_list: [],
   };
@@ -2318,6 +2374,7 @@ async function wotmGenerateNewsletter(force) {
     } catch(e) { /* nutze gespeicherte URLs als Fallback */ }
   }
 
+  const _toNumG = id => { const v = document.getElementById(id)?.value; return v ? Number(v) : null; };
   const payload = {
     month_key:       monthKey,
     month_label:     monthLabel,
@@ -2331,8 +2388,16 @@ async function wotmGenerateNewsletter(force) {
     affiliate_link:  document.getElementById('wotm-affiliate').value.trim(),
     photo_urls:      previewPhotoUrls,
     article_teasers: _getRecentArticleTeasers(),
+    // Tasting notes
+    aroma:      document.getElementById('wotm-aroma')?.value.trim() || '',
+    geschmack:  document.getElementById('wotm-geschmack')?.value.trim() || '',
+    abgang:     document.getElementById('wotm-abgang')?.value.trim() || '',
+    bewertung:  _toNumG('wotm-bewertung'),
+    alter:      _toNumG('wotm-alter'),
+    abv:        _toNumG('wotm-abv'),
+    preis_eur:  _toNumG('wotm-preis'),
     // force=true → Texte aus Feldern 1:1, KEIN KI-Polishing
-    skip_polish:     !!force,
+    skip_polish: !!force,
   };
 
   try {
