@@ -219,24 +219,36 @@ def _generate_intro(month_label, whisky_name, article_titles):
     return result or fallback
 
 
-# ── GitHub: auto-fetch articles for a given month ─────────────────────────────
+# ── GitHub: auto-fetch articles for newsletter ────────────────────────────────
 
 def _fetch_month_articles(month_key):
-    """Return up to 3 published articles from the given month (YYYY-MM).
+    """Return up to 3 published articles for the newsletter.
+    First tries the target month (YYYY-MM), then falls back to the 3 most
+    recently published articles from any month.
     Each item: {title, url, teaser}
     """
     dir_data = _github_get("contents/articles")
     if not isinstance(dir_data, list):
         return []
-    prefix = month_key + "-"   # e.g. "2026-05-"
-    month_files = [
-        item for item in dir_data
-        if (item.get("name", "").startswith(prefix)
-            and item.get("name", "").endswith(".json")
-            and item.get("type") == "file")
-    ][:3]
+
+    # All published JSON files (exclude drafts folder, dotfiles)
+    all_files = sorted(
+        [item for item in dir_data
+         if (item.get("type") == "file"
+             and item.get("name", "").endswith(".json")
+             and not item.get("name", "").startswith(".")
+             and "/drafts/" not in item.get("path", ""))],
+        key=lambda x: x.get("name", ""),
+        reverse=True,
+    )
+
+    # Prefer articles from the target month; fall back to most recent 3
+    prefix = month_key + "-"
+    month_files = [f for f in all_files if f["name"].startswith(prefix)]
+    source_files = (month_files or all_files)[:3]
+
     teasers = []
-    for item in month_files:
+    for item in source_files:
         file_data = _github_get(f"contents/{item['path']}")
         if isinstance(file_data, dict) and "error" not in file_data:
             try:
@@ -302,15 +314,32 @@ def _brevo_send_now(campaign_id):
 
 # ── Newsletter HTML builder ────────────────────────────────────────────────────
 
+import re as _re
+
+def _linkify(text):
+    """Convert bare URLs in text to clickable HTML links."""
+    return _re.sub(
+        r'(https?://[^\s<>"\']+)',
+        r'<a href="\1" style="color:#C8963E;" target="_blank" rel="noopener noreferrer">\1</a>',
+        text,
+    )
+
+
 def _build_newsletter_html(entry, month_label, article_teasers):
     whisky_name     = entry.get("whisky_name", "")
-    destillerie     = entry.get("destillerie", "")
-    destillerie_url = entry.get("destillerie_url", "")
+    destillerie     = (entry.get("destillerie", "") or "").strip()
+    destillerie_url = (entry.get("destillerie_url", "") or "").strip()
     region          = entry.get("region", "")
     kommentar       = entry.get("kommentar", "")
     specials        = entry.get("specials", "")
     intro_text      = entry.get("intro_text", "")
     affiliate_link  = entry.get("affiliate_link", "") or _make_affiliate_link(whisky_name)
+
+    # Auto-detect: if destillerie field accidentally contains a URL, move it
+    if destillerie and _re.match(r'https?://', destillerie):
+        if not destillerie_url:
+            destillerie_url = destillerie
+        destillerie = ""
 
     if not intro_text:
         intro_text = (
@@ -319,33 +348,55 @@ def _build_newsletter_html(entry, month_label, article_teasers):
             f"Kurz, knapp, hoffentlich lohnenswert."
         )
 
-    # Photos – support both old single photo_url and new photo_urls array
+    # Make bare URLs in kommentar clickable
+    kommentar_html = _linkify(kommentar.replace("\n", "<br>")) if kommentar else ""
+
+    # Photos – support data: URLs (local preview), relative paths, and full URLs
     photo_urls = entry.get("photo_urls") or []
     if not photo_urls and entry.get("photo_url"):
         photo_urls = [entry["photo_url"]]
 
     # Build photo gallery HTML
     photos_html = ""
-    if photo_urls:
-        if len(photo_urls) == 1:
-            url = photo_urls[0]
-            full_url = url if url.startswith("http") else f"{SITE_URL}{url}"
-            photos_html = f'<img src="{full_url}" alt="{whisky_name}" style="width:100%;max-width:560px;border-radius:8px;margin:12px 0 16px;">'
+    valid_photos = []
+    for url in photo_urls[:4]:
+        if url.startswith("data:"):
+            valid_photos.append(url)        # inline preview
+        elif url.startswith("http"):
+            valid_photos.append(url)
+        elif url.startswith("/"):
+            valid_photos.append(f"{SITE_URL}{url}")
+
+    if valid_photos:
+        if len(valid_photos) == 1:
+            photos_html = (
+                f'<img src="{valid_photos[0]}" alt="{whisky_name}" '
+                f'style="width:100%;max-width:560px;border-radius:8px;margin:12px 0 16px;">'
+            )
         else:
             thumb_w = 260
-            cells = ""
-            for url in photo_urls[:4]:
-                full_url = url if url.startswith("http") else f"{SITE_URL}{url}"
-                cells += f'<td style="padding:4px;"><img src="{full_url}" alt="{whisky_name}" style="width:{thumb_w}px;max-width:100%;border-radius:6px;display:block;"></td>'
-            photos_html = f'<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:12px 0 16px;"><tr>{cells}</tr></table>'
+            cells = "".join(
+                f'<td style="padding:4px;"><img src="{u}" alt="{whisky_name}" '
+                f'style="width:{thumb_w}px;max-width:100%;border-radius:6px;display:block;"></td>'
+                for u in valid_photos
+            )
+            photos_html = (
+                f'<table width="100%" cellpadding="0" cellspacing="0" border="0" '
+                f'style="margin:12px 0 16px;"><tr>{cells}</tr></table>'
+            )
 
     # Destillerie – link if URL provided
     if destillerie and destillerie_url:
-        destillerie_html = f'<a href="{destillerie_url}" style="color:#C8963E;text-decoration:none;" target="_blank" rel="noopener noreferrer">{destillerie}</a>'
-    else:
+        destillerie_html = (
+            f'<a href="{destillerie_url}" style="color:#C8963E;text-decoration:none;" '
+            f'target="_blank" rel="noopener noreferrer">{destillerie}</a>'
+        )
+    elif destillerie:
         destillerie_html = destillerie
+    else:
+        destillerie_html = ""
 
-    # Sub-header: destillerie · region
+    # Sub-header: destillerie · region  (never show raw URL here)
     subheader_parts = []
     if destillerie_html:
         subheader_parts.append(destillerie_html)
@@ -450,7 +501,7 @@ def _build_newsletter_html(entry, month_label, article_teasers):
               <h2 style="margin:0 0 4px;font-family:Georgia,serif;font-size:1.3rem;color:#2A2520;">{whisky_name}</h2>
               <p style="margin:0 0 12px;font-size:0.82rem;color:#9E9690;">{subheader}</p>
               {photos_html}
-              <p style="margin:12px 0;color:#2A2520;line-height:1.7;">{kommentar.replace(chr(10), '<br>')}</p>
+              <p style="margin:12px 0;color:#2A2520;line-height:1.7;">{kommentar_html}</p>
               <a href="{affiliate_link}" style="display:inline-block;background:#C8963E;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.88rem;text-decoration:none;font-weight:600;">Auf Amazon ansehen &#8594;</a>
             </div>
           </td>
@@ -680,30 +731,36 @@ class handler(BaseHTTPRequestHandler):
                 article_teasers = _fetch_month_articles(month_key)
 
             # Polish texts via AI – skipped when skip_polish=True
+            ai_active = bool(OPENAI_API_KEY) and not skip_polish
             polished_kommentar = entry["kommentar"]
             polished_specials  = entry["specials"]
             polished_intro     = entry["intro_text"]
 
-            if not skip_polish:
+            if ai_active:
                 if entry["kommentar"]:
-                    polished_kommentar = _polish_kommentar(
-                        entry["kommentar"], entry["whisky_name"])
-                    entry["kommentar"] = polished_kommentar
+                    result = _polish_kommentar(entry["kommentar"], entry["whisky_name"])
+                    if result:
+                        polished_kommentar = result
+                        entry["kommentar"] = result
 
                 if entry["specials"]:
-                    polished_specials = _polish_specials(entry["specials"])
-                    entry["specials"] = polished_specials
+                    result = _polish_specials(entry["specials"])
+                    if result:
+                        polished_specials = result
+                        entry["specials"] = result
 
-            # Generate intro if still empty (always, even on re-generate)
+            # Generate intro if still empty
             if not entry["intro_text"]:
                 article_titles = [a.get("title", "") for a in article_teasers]
-                polished_intro = _generate_intro(
+                generated = _generate_intro(
                     month_label, entry["whisky_name"], article_titles)
-                entry["intro_text"] = polished_intro
+                polished_intro = generated
+                entry["intro_text"] = generated
 
             html = _build_newsletter_html(entry, month_label, article_teasers)
             return self._json(200, {
                 "html": html,
+                "ai_active": ai_active,
                 "polished": {
                     "kommentar":  polished_kommentar,
                     "specials":   polished_specials,

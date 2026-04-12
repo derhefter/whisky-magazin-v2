@@ -2240,6 +2240,19 @@ async function wotmGenerateNewsletter(force) {
   allGenBtns.forEach(b => { b.disabled = true; b.textContent = '⏳ Generiert…'; });
 
   const existingEntry = (wotmData?.entries?.[monthKey]) || {};
+
+  // Lokale Foto-Vorschau: neu ausgewählte Fotos als data:-URL übergeben
+  // (erscheinen sofort im Preview, ohne erst zu speichern)
+  let previewPhotoUrls = existingEntry.photo_urls ||
+                         (existingEntry.photo_url ? [existingEntry.photo_url] : []);
+  if (_wotmPhotoFiles.length > 0) {
+    try {
+      previewPhotoUrls = await Promise.all(
+        _wotmPhotoFiles.slice(0, 4).map(f => _fileToBase64(f))
+      );
+    } catch(e) { /* nutze gespeicherte URLs als Fallback */ }
+  }
+
   const payload = {
     month_key:       monthKey,
     month_label:     monthLabel,
@@ -2251,9 +2264,9 @@ async function wotmGenerateNewsletter(force) {
     specials:        document.getElementById('wotm-specials').value.trim(),
     intro_text:      document.getElementById('wotm-intro-text').value.trim(),
     affiliate_link:  document.getElementById('wotm-affiliate').value.trim(),
-    photo_urls:      existingEntry.photo_urls || (existingEntry.photo_url ? [existingEntry.photo_url] : []),
+    photo_urls:      previewPhotoUrls,
     article_teasers: _getRecentArticleTeasers(),
-    // force=true: Texte aus den Feldern 1:1 verwenden, KEIN KI-Polishing
+    // force=true → Texte aus Feldern 1:1, KEIN KI-Polishing
     skip_polish:     !!force,
   };
 
@@ -2261,12 +2274,12 @@ async function wotmGenerateNewsletter(force) {
     const result = await apiPost(API.wotm + '?action=preview_html', payload);
     const html = result.html || '';
 
-    // Schreibe HTML in versteckten Textarea (für Speichern/Versand)
+    // HTML in verstecktem Textarea speichern (für Versand)
     editorEl.value = html;
-    // Zeige gerenderte Vorschau im iframe
+    // Gerenderte Vorschau anzeigen
     iframeEl.srcdoc = html;
 
-    // Beim ersten Generieren (force=false): KI-Texte in die Felder schreiben
+    // Beim ersten Generieren: KI-Texte in die Felder schreiben
     if (!force && result.polished) {
       if (result.polished.kommentar)
         document.getElementById('wotm-kommentar').value = result.polished.kommentar;
@@ -2276,7 +2289,7 @@ async function wotmGenerateNewsletter(force) {
         document.getElementById('wotm-intro-text').value = result.polished.intro_text;
     }
 
-    // Beim ersten Generieren: auto-gefundene Artikel in die Felder eintragen
+    // Beim ersten Generieren: gefundene Artikel in die Override-Felder eintragen
     if (!force && result.article_teasers && result.article_teasers.length > 0) {
       const rows = document.querySelectorAll('#wotm-articles-list .wotm-article-row');
       result.article_teasers.forEach((art, i) => {
@@ -2286,6 +2299,16 @@ async function wotmGenerateNewsletter(force) {
           rows[i].querySelector('.wotm-art-teaser').value = art.teaser || '';
         }
       });
+    }
+
+    // Info-Hinweis wenn KI nicht aktiv war
+    if (!force && result.ai_active === false) {
+      const infoEl = document.getElementById('wotm-nl-save-success');
+      infoEl.textContent = 'ℹ️ KI-Text-Polishing nicht aktiv (OPENAI_API_KEY fehlt). Texte wurden unverändert übernommen.';
+      infoEl.style.background = '#FFF8E1';
+      infoEl.style.color = '#7B6200';
+      infoEl.style.display = 'block';
+      setTimeout(() => { infoEl.style.display = 'none'; infoEl.style.background = ''; infoEl.style.color = ''; }, 8000);
     }
 
     editorSection.style.display = 'block';
