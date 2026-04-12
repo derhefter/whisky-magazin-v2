@@ -822,10 +822,29 @@
             .site-nav { gap: 16px; }
             .newsletter-form { flex-direction: column; }
             .trust-stats { gap: 24px; }
+            /* Homepage grids: 2 columns on tablet */
+            .home-cat-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8em; }
             .article-header h1 { font-size: 1.5em; }
+            /* Homepage article grid: single column */
+            .articles-grid { grid-template-columns: 1fr !important; }
+            .featured-card {
+                grid-column: span 1 !important;
+                grid-template-columns: 1fr !important;
+            }
+            .featured-card-img { min-height: 200px !important; }
+            /* Homepage category grid: 2 columns */
+            .home-cat-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            /* WotM section: less vertical padding on mobile */
+            .wotm-section { padding: 40px 16px !important; }
+            /* WotM card: single column, less padding */
+            .wotm-card {
+                padding: 20px 16px !important;
+                grid-template-columns: 1fr !important;
+            }
+            .wotm-emoji-col { display: none !important; }
             .article-body { padding: 24px; }
             .nav-toggle { display: block; }
             .header-inner { position: relative; }
