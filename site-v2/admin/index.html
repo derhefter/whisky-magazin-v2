@@ -1834,7 +1834,8 @@ async function submitNewTopic() {
 /* ============================================================
    TAB: WHISKY OF THE MONTH & NEWSLETTER
    ============================================================ */
-let wotmData = null;  // { entries: { "2026-05": {...}, ... } }
+let wotmData = null;        // { entries: { "2026-05": {...}, ... } }
+let _wotmPhotoFiles = [];   // FileList accumulator for multiple photos
 
 function _nextMonths(n) {
   /* Returns array of { key: "2026-05", label: "Mai 2026" } for next n months */
@@ -1863,6 +1864,7 @@ async function loadWotm() {
 }
 
 function renderWotm() {
+  _wotmPhotoFiles = [];
   const container = document.getElementById('wotm-container');
   const months    = _nextMonths(4);
   const entries   = (wotmData && wotmData.entries) || {};
@@ -1897,7 +1899,7 @@ function renderWotm() {
 
   container.innerHTML = `
     <div class="section-header">
-      <h2 class="section-title">🥃 Whisky des Monats &amp; Newsletter</h2>
+      <h2 class="section-title">&#129347; Whisky des Monats &amp; Newsletter</h2>
     </div>
 
     <div class="wotm-grid">
@@ -1914,14 +1916,18 @@ function renderWotm() {
 
         <div class="form-group">
           <label>Whisky-Name *</label>
-          <input type="text" id="wotm-name" placeholder="z.B. GlenDronach 18 Jahre Allardice">
+          <input type="text" id="wotm-name" placeholder="z.B. GlenDronach 18 Jahre Allardice"
+                 oninput="wotmNameChanged(this.value)">
+          <div style="font-size:0.75rem;color:var(--color-muted);margin-top:4px;">
+            Destillerie, Region und Affiliate-Link werden automatisch ausgefüllt.
+          </div>
         </div>
         <div class="form-group">
-          <label>Destillerie</label>
+          <label>Destillerie <span style="font-weight:400;text-transform:none;">(optional, ergibt sich meist aus dem Namen)</span></label>
           <input type="text" id="wotm-destillerie" placeholder="z.B. GlenDronach Distillery">
         </div>
         <div class="form-group">
-          <label>Region</label>
+          <label>Region <span style="font-weight:400;text-transform:none;">(optional)</span></label>
           <input type="text" id="wotm-region" placeholder="z.B. Highlands, Speyside, Islay…">
         </div>
         <div class="form-group">
@@ -1929,34 +1935,39 @@ function renderWotm() {
           <textarea id="wotm-kommentar" rows="5" placeholder="Warum habt ihr diesen Whisky gewählt? Persönliche Note, Erinnerung an die Destillerie, Verkostungsnotiz…"></textarea>
         </div>
         <div class="form-group">
-          <label>Affiliate-Link (Amazon)</label>
+          <label>&#10024; Specials / Sonderthemen <span style="font-weight:400;text-transform:none;">(optional – erscheint als eigene Rubrik im Newsletter)</span></label>
+          <textarea id="wotm-specials" rows="4" placeholder="z.B. Ankündigung einer Schottland-Reise, Gewinnspiel, besondere Neuigkeit… Jede Zeile wird ein eigener Absatz."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Affiliate-Link (Amazon) <span style="font-weight:400;text-transform:none;">(wird auto-generiert)</span></label>
           <input type="url" id="wotm-affiliate" placeholder="https://www.amazon.de/s?k=...&tag=whiskyreise74-21">
         </div>
         <div class="form-group">
-          <label>Foto von der Destillerie oder der Flasche</label>
-          <input type="file" id="wotm-photo-file" accept="image/jpeg,image/png,image/webp" onchange="wotmPhotoSelected(this)">
-          <img id="wotm-photo-preview" class="wotm-photo-preview" alt="Vorschau">
+          <label>Fotos (bis zu 4 – von der Destillerie oder der Flasche)</label>
+          <input type="file" id="wotm-photo-files" accept="image/jpeg,image/png,image/webp"
+                 multiple onchange="wotmPhotosSelected(this)">
+          <div id="wotm-photo-thumbs" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;"></div>
           <div id="wotm-photo-existing" style="font-size:0.78rem;color:var(--color-muted);margin-top:4px;"></div>
         </div>
         <div id="wotm-save-error" class="error-box" style="display:none;margin-bottom:12px;"></div>
         <div class="form-actions">
-          <button class="btn btn-primary" onclick="wotmSave()">💾 Speichern</button>
-          <button class="btn btn-secondary" onclick="wotmPreviewNewsletter()">👁 Newsletter-Vorschau</button>
+          <button class="btn btn-primary" onclick="wotmSave()">&#128190; Speichern</button>
+          <button class="btn btn-secondary" onclick="wotmGenerateNewsletter()">&#9889; Newsletter generieren</button>
         </div>
       </div>
 
       <!-- RECHTE SPALTE: Versand & Zeitplan -->
       <div class="wotm-panel">
-        <h3 style="margin:0 0 12px;font-size:1rem;">📅 Newsletter-Zeitplan</h3>
+        <h3 style="margin:0 0 12px;font-size:1rem;">&#128197; Newsletter-Zeitplan</h3>
         <div class="info-box" style="margin-bottom:16px;">
           <p style="margin:0;font-size:0.875rem;line-height:1.6;">
             <strong>Rhythmus:</strong> Immer am <strong>ersten Montag des Monats</strong><br>
             <strong>Deadline Eingabe:</strong> bis zum <strong>15. des Vormonats</strong><br>
-            <strong>Rubriken:</strong> WotM · Neue Artikel · Whisky-Wissen · Ausblick
+            <strong>Rubriken:</strong> WotM · Specials · Neue Artikel
           </p>
         </div>
 
-        <h3 style="margin:16px 0 12px;font-size:1rem;">📬 Newsletter senden</h3>
+        <h3 style="margin:16px 0 12px;font-size:1rem;">&#128140; Newsletter senden</h3>
         <div class="form-group">
           <label>Für Monat</label>
           <select id="wotm-send-month">
@@ -1964,14 +1975,14 @@ function renderWotm() {
           </select>
         </div>
         <p style="font-size:0.82rem;color:var(--color-muted);margin:0 0 12px;line-height:1.5;">
-          Der Newsletter wird als Brevo-Kampagne erstellt und sofort an alle Abonnenten gesendet.
-          Stelle sicher, dass der WotM-Eintrag für den Monat gespeichert ist.
+          Sendet den gespeicherten finalen Newsletter an alle Abonnenten via Brevo.
+          Bitte zuerst generieren, prüfen und speichern.
         </p>
         <div id="wotm-send-error" class="error-box" style="display:none;margin-bottom:12px;"></div>
         <div id="wotm-send-success" class="success-box" style="display:none;margin-bottom:12px;"></div>
-        <button class="btn btn-success" onclick="wotmSendNewsletter()">📧 Newsletter jetzt senden</button>
+        <button class="btn btn-success" onclick="wotmSendNewsletter()">&#128140; Newsletter jetzt senden</button>
 
-        <h3 style="margin:24px 0 12px;font-size:1rem;">📋 Bisherige Einträge</h3>
+        <h3 style="margin:24px 0 12px;font-size:1rem;">&#128203; Bisherige Einträge</h3>
         <table class="wotm-history-table">
           <thead>
             <tr><th>Monat</th><th>Whisky</th><th>Gesendet</th><th></th></tr>
@@ -1981,19 +1992,32 @@ function renderWotm() {
       </div>
     </div>
 
-    <!-- Newsletter-Vorschau -->
-    <div class="wotm-newsletter-box" id="wotm-preview-section" style="display:none;">
-      <div class="section-header" style="margin-bottom:12px;">
-        <h3 style="margin:0;font-size:1rem;">👁 Newsletter-Vorschau</h3>
-        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('wotm-preview-section').style.display='none'">Schließen</button>
+    <!-- Newsletter-Editor -->
+    <div class="wotm-newsletter-box" id="wotm-editor-section" style="display:none;">
+      <div class="section-header" style="margin-bottom:4px;">
+        <h3 style="margin:0;font-size:1rem;">&#9998; Newsletter bearbeiten &amp; speichern</h3>
+        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('wotm-editor-section').style.display='none'">Schlie&#223;en</button>
       </div>
-      <p style="font-size:0.82rem;color:var(--color-muted);margin:0 0 8px;">Dies ist eine Vorschau des Newsletters. Die Vorschau zeigt den aktuellen Formularinhalt.</p>
-      <iframe id="wotm-preview-frame" class="newsletter-preview-frame" title="Newsletter-Vorschau"></iframe>
+      <p style="font-size:0.82rem;color:var(--color-muted);margin:0 0 8px;line-height:1.5;">
+        Der generierte Newsletter-HTML kann hier direkt bearbeitet werden.
+        Klicke auf <strong>Newsletter speichern</strong>, um den finalen Stand zu sichern –
+        dieser wird dann beim Versand verwendet.
+      </p>
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+        <button class="btn btn-primary btn-sm" onclick="wotmSaveNewsletter()">&#128190; Newsletter speichern</button>
+        <button class="btn btn-secondary btn-sm" onclick="wotmTogglePreview()">&#128065; HTML-Vorschau</button>
+        <button class="btn btn-secondary btn-sm" onclick="wotmGenerateNewsletter(true)">&#9889; Neu generieren (überschreibt Änderungen)</button>
+      </div>
+      <div id="wotm-nl-save-success" class="success-box" style="display:none;margin-bottom:8px;"></div>
+      <textarea id="wotm-newsletter-editor" style="width:100%;min-height:420px;font-family:'Courier New',monospace;font-size:0.78rem;padding:12px;border:2px solid var(--color-beige);border-radius:var(--radius);resize:vertical;"></textarea>
+      <div id="wotm-nl-preview-wrap" style="display:none;margin-top:12px;">
+        <iframe id="wotm-nl-preview-iframe" style="width:100%;height:500px;border:1px solid var(--color-beige);border-radius:var(--radius);" title="Vorschau"></iframe>
+      </div>
     </div>
   `;
 
-  // Pre-select first upcoming month that has no entry yet
-  const firstEmpty = months.find(m => !entries[m.key]);
+  // Pre-select first upcoming month that has no entry yet, or the first month
+  const firstEmpty = months.find(m => !entries[m.key]) || months[0];
   if (firstEmpty) {
     document.getElementById('wotm-month-select').value = firstEmpty.key;
     document.getElementById('wotm-send-month').value   = firstEmpty.key;
@@ -2001,47 +2025,83 @@ function renderWotm() {
   }
 }
 
+function wotmNameChanged(name) {
+  const affEl = document.getElementById('wotm-affiliate');
+  // Auto-generate affiliate link from whisky name if field is empty
+  if (name.trim() && (!affEl.value || affEl.dataset.autoFilled === '1')) {
+    const encoded = encodeURIComponent(name.trim());
+    affEl.value = `https://www.amazon.de/s?k=${encoded}&tag=whiskyreise74-21`;
+    affEl.dataset.autoFilled = '1';
+  }
+}
+
 function wotmMonthChanged() {
-  const key = document.getElementById('wotm-month-select').value;
+  _wotmPhotoFiles = [];
+  const key   = document.getElementById('wotm-month-select').value;
   const entry = (wotmData && wotmData.entries && wotmData.entries[key]) || {};
+
   document.getElementById('wotm-name').value        = entry.whisky_name    || '';
   document.getElementById('wotm-destillerie').value = entry.destillerie    || '';
   document.getElementById('wotm-region').value      = entry.region         || '';
   document.getElementById('wotm-kommentar').value   = entry.kommentar      || '';
-  document.getElementById('wotm-affiliate').value   = entry.affiliate_link || '';
-  // Show existing photo info
+  document.getElementById('wotm-specials').value    = entry.specials       || '';
+
+  const affEl = document.getElementById('wotm-affiliate');
+  affEl.value = entry.affiliate_link || '';
+  affEl.dataset.autoFilled = entry.affiliate_link ? '0' : '1';
+
+  // Show existing photos
+  const thumbsEl   = document.getElementById('wotm-photo-thumbs');
   const existingEl = document.getElementById('wotm-photo-existing');
-  const previewEl  = document.getElementById('wotm-photo-preview');
-  if (entry.photo_url) {
-    existingEl.textContent = `Aktuelles Foto: ${entry.photo_url}`;
-    previewEl.src = entry.photo_url;
-    previewEl.classList.add('visible');
+  thumbsEl.innerHTML = '';
+  const photoUrls = entry.photo_urls || (entry.photo_url ? [entry.photo_url] : []);
+  if (photoUrls.length > 0) {
+    existingEl.textContent = `Aktuelle Fotos: ${photoUrls.length}`;
+    photoUrls.forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.style.cssText = 'width:80px;height:60px;object-fit:cover;border-radius:4px;border:1px solid var(--color-beige)';
+      thumbsEl.appendChild(img);
+    });
   } else {
-    existingEl.textContent = '';
-    previewEl.src = '';
-    previewEl.classList.remove('visible');
+    existingEl.textContent = 'Noch keine Fotos hochgeladen.';
   }
+
   // Reset file input
-  document.getElementById('wotm-photo-file').value = '';
+  document.getElementById('wotm-photo-files').value = '';
+
+  // Load saved newsletter HTML into editor if available
+  const editorEl = document.getElementById('wotm-newsletter-editor');
+  if (editorEl) {
+    editorEl.value = entry.newsletter_html_final || '';
+  }
 }
 
-function wotmPhotoSelected(input) {
-  const file    = input.files[0];
-  const preview = document.getElementById('wotm-photo-preview');
-  if (!file) { preview.classList.remove('visible'); return; }
-  const reader  = new FileReader();
-  reader.onload = e => {
-    preview.src = e.target.result;
-    preview.classList.add('visible');
-  };
-  reader.readAsDataURL(file);
+function wotmPhotosSelected(input) {
+  _wotmPhotoFiles = Array.from(input.files).slice(0, 4);
+  const thumbsEl = document.getElementById('wotm-photo-thumbs');
+  thumbsEl.innerHTML = '';
+  _wotmPhotoFiles.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.style.cssText = 'width:80px;height:60px;object-fit:cover;border-radius:4px;border:2px solid var(--color-amber)';
+      thumbsEl.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  });
+  if (_wotmPhotoFiles.length > 0) {
+    document.getElementById('wotm-photo-existing').textContent =
+      `${_wotmPhotoFiles.length} neue Foto(s) ausgewählt – werden beim Speichern hochgeladen.`;
+  }
 }
 
 async function wotmSave() {
   const errEl = document.getElementById('wotm-save-error');
   errEl.style.display = 'none';
 
-  const monthKey  = document.getElementById('wotm-month-select').value;
+  const monthKey   = document.getElementById('wotm-month-select').value;
   const whiskyName = document.getElementById('wotm-name').value.trim();
   if (!whiskyName) {
     errEl.textContent = 'Bitte den Whisky-Namen eingeben.';
@@ -2050,30 +2110,32 @@ async function wotmSave() {
   }
 
   const payload = {
-    month_key:     monthKey,
-    whisky_name:   whiskyName,
-    destillerie:   document.getElementById('wotm-destillerie').value.trim(),
-    region:        document.getElementById('wotm-region').value.trim(),
-    kommentar:     document.getElementById('wotm-kommentar').value.trim(),
-    affiliate_link:document.getElementById('wotm-affiliate').value.trim(),
+    month_key:              monthKey,
+    whisky_name:            whiskyName,
+    destillerie:            document.getElementById('wotm-destillerie').value.trim(),
+    region:                 document.getElementById('wotm-region').value.trim(),
+    kommentar:              document.getElementById('wotm-kommentar').value.trim(),
+    specials:               document.getElementById('wotm-specials').value.trim(),
+    affiliate_link:         document.getElementById('wotm-affiliate').value.trim(),
+    newsletter_html_final:  (document.getElementById('wotm-newsletter-editor')?.value || ''),
+    photo_b64_list: [],
+    photo_ext_list: [],
   };
 
-  // Photo
-  const photoFile = document.getElementById('wotm-photo-file').files[0];
-  if (photoFile) {
-    const b64 = await _fileToBase64(photoFile);
-    payload.photo_b64 = b64;
-    payload.photo_ext = photoFile.name.split('.').pop().toLowerCase();
+  // Encode all selected photos
+  for (const file of _wotmPhotoFiles) {
+    const b64 = await _fileToBase64(file);
+    payload.photo_b64_list.push(b64);
+    payload.photo_ext_list.push(file.name.split('.').pop().toLowerCase());
   }
 
-  const btn = document.querySelector('.wotm-panel .btn-primary');
+  const btn = document.getElementById('wotm-save-btn');
   if (btn) { btn.disabled = true; btn.textContent = 'Speichert…'; }
 
   try {
     const result = await apiPost(API.wotm + '?action=save', payload);
     if (!wotmData) wotmData = { entries: {} };
     wotmData.entries[monthKey] = result.entry || payload;
-    // Update history table
     tabLoaded.wotm = false;
     await loadWotm();
   } catch (err) {
@@ -2081,6 +2143,90 @@ async function wotmSave() {
     errEl.style.display = 'block';
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = '💾 Speichern'; }
+  }
+}
+
+async function wotmSaveNewsletter() {
+  const monthKey = document.getElementById('wotm-month-select').value;
+  const html     = document.getElementById('wotm-newsletter-editor').value;
+  const successEl = document.getElementById('wotm-nl-save-success');
+  successEl.style.display = 'none';
+
+  try {
+    await apiPost(API.wotm + '?action=save_newsletter', { month_key: monthKey, newsletter_html: html });
+    if (!wotmData) wotmData = { entries: {} };
+    if (!wotmData.entries[monthKey]) wotmData.entries[monthKey] = {};
+    wotmData.entries[monthKey].newsletter_html_final = html;
+    successEl.textContent = '✓ Newsletter gespeichert! Er kann jetzt gesendet werden.';
+    successEl.style.display = 'block';
+    setTimeout(() => { successEl.style.display = 'none'; }, 4000);
+  } catch (err) {
+    alert('Fehler beim Speichern: ' + err.message);
+  }
+}
+
+function wotmTogglePreview() {
+  const wrap   = document.getElementById('wotm-nl-preview-wrap');
+  const iframe = document.getElementById('wotm-nl-preview-iframe');
+  if (wrap.style.display === 'none') {
+    iframe.srcdoc = document.getElementById('wotm-newsletter-editor').value;
+    wrap.style.display = 'block';
+  } else {
+    wrap.style.display = 'none';
+  }
+}
+
+async function wotmGenerateNewsletter(force) {
+  const MONATE = ['Januar','Februar','März','April','Mai','Juni',
+                  'Juli','August','September','Oktober','November','Dezember'];
+  const monthKey = document.getElementById('wotm-month-select').value;
+  const [y, m]   = monthKey.split('-').map(Number);
+  const monthLabel = `${MONATE[m-1]} ${y}`;
+
+  const editorSection = document.getElementById('wotm-editor-section');
+  const editorEl      = document.getElementById('wotm-newsletter-editor');
+
+  if (force && editorEl.value) {
+    if (!confirm('Aktuelle Änderungen im Editor werden überschrieben. Fortfahren?')) return;
+  }
+
+  const existingEntry = (wotmData?.entries?.[monthKey]) || {};
+  const payload = {
+    month_key:      monthKey,
+    month_label:    monthLabel,
+    whisky_name:    document.getElementById('wotm-name').value.trim(),
+    destillerie:    document.getElementById('wotm-destillerie').value.trim(),
+    region:         document.getElementById('wotm-region').value.trim(),
+    kommentar:      document.getElementById('wotm-kommentar').value.trim(),
+    specials:       document.getElementById('wotm-specials').value.trim(),
+    affiliate_link: document.getElementById('wotm-affiliate').value.trim(),
+    photo_urls:     existingEntry.photo_urls || (existingEntry.photo_url ? [existingEntry.photo_url] : []),
+    article_teasers: _getRecentArticleTeasers(),
+  };
+
+  const genBtn = document.querySelector('[onclick="wotmGenerateNewsletter()"]') ||
+                 document.querySelector('[onclick="wotmGenerateNewsletter(true)"]');
+  if (genBtn) { genBtn.disabled = true; genBtn.textContent = 'Generiert…'; }
+
+  try {
+    const result = await apiPost(API.wotm + '?action=preview_html', payload);
+    editorEl.value = result.html || '';
+    editorSection.style.display = 'block';
+    editorSection.scrollIntoView({ behavior: 'smooth' });
+    // Update preview iframe if visible
+    const wrap = document.getElementById('wotm-nl-preview-wrap');
+    if (wrap && wrap.style.display !== 'none') {
+      document.getElementById('wotm-nl-preview-iframe').srcdoc = result.html;
+    }
+  } catch (err) {
+    alert('Fehler beim Generieren: ' + err.message);
+  } finally {
+    if (genBtn) {
+      genBtn.disabled = false;
+      genBtn.textContent = genBtn.onclick?.toString().includes('true')
+        ? '⚡ Neu generieren (überschreibt Änderungen)'
+        : '⚡ Newsletter generieren';
+    }
   }
 }
 
@@ -2095,25 +2241,27 @@ async function wotmSendNewsletter() {
 
   const MONATE = ['Januar','Februar','März','April','Mai','Juni',
                   'Juli','August','September','Oktober','November','Dezember'];
-  const [y, m] = monthKey.split('-').map(Number);
+  const [y, m]     = monthKey.split('-').map(Number);
   const monthLabel = `${MONATE[m-1]} ${y}`;
 
-  if (!confirm(`Newsletter für ${monthLabel} wirklich jetzt an alle Abonnenten senden?`)) return;
+  const entry = wotmData?.entries?.[monthKey];
+  const hasFinalHtml = !!(entry?.newsletter_html_final);
+  const confirmMsg = hasFinalHtml
+    ? `Newsletter für ${monthLabel} jetzt an alle Abonnenten senden?`
+    : `Newsletter für ${monthLabel} senden? Noch kein gespeicherter Newsletter vorhanden – es wird ein frischer generiert.`;
+  if (!confirm(confirmMsg)) return;
 
   const btn = document.querySelector('#wotm-container .btn-success');
   if (btn) { btn.disabled = true; btn.textContent = 'Sendet…'; }
 
   try {
-    // Get recent article teasers for newsletter
-    const articleTeasers = _getRecentArticleTeasers();
     const result = await apiPost(API.wotm + '?action=send_newsletter', {
-      month_key: monthKey,
-      month_label: monthLabel,
-      article_teasers: articleTeasers,
+      month_key:       monthKey,
+      month_label:     monthLabel,
+      article_teasers: _getRecentArticleTeasers(),
     });
-    successEl.textContent = `✓ Newsletter erfolgreich gesendet! Kampagnen-ID: ${result.campaign_id}`;
+    successEl.textContent = `✓ Newsletter gesendet! Kampagnen-ID: ${result.campaign_id}`;
     successEl.style.display = 'block';
-    // Refresh to show sent status
     tabLoaded.wotm = false;
     await loadWotm();
   } catch (err) {
@@ -2124,37 +2272,6 @@ async function wotmSendNewsletter() {
   }
 }
 
-async function wotmPreviewNewsletter() {
-  const MONATE = ['Januar','Februar','März','April','Mai','Juni',
-                  'Juli','August','September','Oktober','November','Dezember'];
-  const monthKey = document.getElementById('wotm-month-select').value;
-  const [y, m] = monthKey.split('-').map(Number);
-  const monthLabel = `${MONATE[m-1]} ${y}`;
-
-  const payload = {
-    month_key:     monthKey,
-    month_label:   monthLabel,
-    whisky_name:   document.getElementById('wotm-name').value.trim(),
-    destillerie:   document.getElementById('wotm-destillerie').value.trim(),
-    region:        document.getElementById('wotm-region').value.trim(),
-    kommentar:     document.getElementById('wotm-kommentar').value.trim(),
-    affiliate_link:document.getElementById('wotm-affiliate').value.trim(),
-    photo_url:     (wotmData?.entries?.[monthKey]?.photo_url) || '',
-    article_teasers: _getRecentArticleTeasers(),
-  };
-
-  try {
-    const result = await apiPost(API.wotm + '?action=preview_html', payload);
-    const frame  = document.getElementById('wotm-preview-frame');
-    const section = document.getElementById('wotm-preview-section');
-    frame.srcdoc = result.html || '<p>Kein HTML erzeugt.</p>';
-    section.style.display = 'block';
-    section.scrollIntoView({ behavior: 'smooth' });
-  } catch (err) {
-    alert('Fehler bei der Vorschau: ' + err.message);
-  }
-}
-
 function wotmEdit(monthKey) {
   document.getElementById('wotm-month-select').value = monthKey;
   wotmMonthChanged();
@@ -2162,7 +2279,6 @@ function wotmEdit(monthKey) {
 }
 
 function _getRecentArticleTeasers() {
-  /* Pull up to 3 recent published articles from artikelData if available */
   if (!artikelData) return [];
   const published = artikelData.published || artikelData.veroeffentlicht || [];
   return published.slice(0, 3).map(p => {
@@ -2178,7 +2294,7 @@ function _getRecentArticleTeasers() {
 function _fileToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload  = e => resolve(e.target.result); // data-URL with prefix
+    reader.onload  = e => resolve(e.target.result);
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
