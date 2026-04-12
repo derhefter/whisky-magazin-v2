@@ -1,3 +1,14 @@
 {
-  "entries": {}
+  "entries": {
+    "2026-05": {
+      "whisky_name": "Glengoyne",
+      "destillerie": "",
+      "region": "",
+      "kommentar": "",
+      "affiliate_link": "",
+      "photo_url": "/images/wotm/2026-05.jpg",
+      "erstellt_am": "2026-04-12",
+      "newsletter_gesendet": false
+    }
+  }
 }
