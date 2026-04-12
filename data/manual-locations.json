@@ -910,6 +910,114 @@
       "type": "distillery",
       "region": "Lowlands",
       "country": "Schottland"
+    },
+    {
+      "name": "Glen Scotia Distillery",
+      "lat": 55.4238,
+      "lon": -5.6057,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "rating": 4.6
+    },
+    {
+      "name": "Isle of Jura Distillery",
+      "lat": 55.8494,
+      "lon": -5.9994,
+      "type": "distillery",
+      "region": "Isle of Jura",
+      "country": "Schottland",
+      "rating": 4.5
+    },
+    {
+      "name": "Glengyle Distillery",
+      "lat": 55.4262,
+      "lon": -5.6048,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "rating": 4.5
+    },
+    {
+      "name": "Dalmore Distillery",
+      "lat": 57.6742,
+      "lon": -4.1793,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "Arran Distillery",
+      "lat": 55.7155,
+      "lon": -5.3050,
+      "type": "distillery",
+      "region": "Isle of Arran",
+      "country": "Schottland",
+      "rating": 4.8
+    },
+    {
+      "name": "Fettercairn Distillery",
+      "lat": 56.8550,
+      "lon": -2.5728,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "rating": 4.5
+    },
+    {
+      "name": "Glen Grant Distillery",
+      "lat": 57.5128,
+      "lon": -3.2029,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.6
+    },
+    {
+      "name": "Aberfeldy Distillery",
+      "lat": 56.6166,
+      "lon": -3.8655,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "rating": 4.7
+    },
+    {
+      "name": "Glen Moray Distillery",
+      "lat": 57.6471,
+      "lon": -3.3083,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.5
+    },
+    {
+      "name": "Bladnoch Distillery",
+      "lat": 54.8427,
+      "lon": -4.4220,
+      "type": "distillery",
+      "region": "Lowlands",
+      "country": "Schottland",
+      "rating": 4.5
+    },
+    {
+      "name": "BenRiach Distillery",
+      "lat": 57.6042,
+      "lon": -3.3008,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "rating": 4.6
+    },
+    {
+      "name": "Kingsbarns Distillery",
+      "lat": 56.2731,
+      "lon": -2.6737,
+      "type": "distillery",
+      "region": "Fife",
+      "country": "Schottland",
+      "rating": 4.7
     }
   ]
 }

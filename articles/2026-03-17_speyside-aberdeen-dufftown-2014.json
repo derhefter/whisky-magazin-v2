@@ -27,5 +27,9 @@
   "image_alt": "Speyside & Aberdeen 2014: Dufftown, Aberlour und Fußball",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-large-house-sitting-on-top-of-a-lush-green-hillside-VqKwkddp0ac?utm_source=whisky_magazin&utm_medium=referral\">Abhishek Banik</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "VqKwkddp0ac",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Springbank Distillery",
+    "The Glenlivet Distillery"
+  ]
 }

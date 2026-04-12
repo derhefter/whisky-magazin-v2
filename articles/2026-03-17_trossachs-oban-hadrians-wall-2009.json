@@ -27,5 +27,9 @@
   "image_alt": "Trossachs, Oban & Hadrian's Wall 2009: Schottlands Vielfalt",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-uqRHWCoIjQg?utm_source=whisky_magazin&utm_medium=referral\">Tomasz Kardasz</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "uqRHWCoIjQg",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "The Glenturret Distillery",
+    "Oban Distillery"
+  ]
 }

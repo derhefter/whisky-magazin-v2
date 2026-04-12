@@ -21,5 +21,9 @@
   "image_alt": "Luxusurlaub in Schottland: Schlosshotels und Fine Dining",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-white-castle-reflected-in-calm-water-a8Fk-Yw5iIQ?utm_source=whisky_magazin&utm_medium=referral\">Wolfgang Weiser</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "a8Fk-Yw5iIQ",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Lagavulin Distillery",
+    "Glenfiddich Distillery"
+  ]
 }

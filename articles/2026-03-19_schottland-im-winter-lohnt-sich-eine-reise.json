@@ -25,5 +25,8 @@
   "image_alt": "Schottland im Winter: Lohnt sich eine Reise?",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/white-concrete-building-near-body-of-water-2PoiUVLqK1I?utm_source=whisky_magazin&utm_medium=referral\">Sander Lenaerts</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "2PoiUVLqK1I",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Lagavulin Distillery"
+  ]
 }

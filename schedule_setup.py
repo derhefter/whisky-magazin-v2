@@ -106,7 +106,7 @@ TASKS = [
         "command":     f'"{PYTHON_EXE}" newsletter_generator.py --auto-draft',
         "hint": (
             "Prueft WOTM, erstellt Newsletter-Entwurf und\n"
-            "  sendet Benachrichtigung an rosenhefter@gmail.com."
+            "  sendet Benachrichtigung an whisky-news@whisky-reise.com."
         ),
     },
     {

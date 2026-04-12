@@ -296,16 +296,42 @@ def match_articles_to_locations(articles, locations):
     """Verknuepft Artikel mit Locations ueber Tags und Year-Matching."""
     # Index: Ortsname (lowercase) -> Location
     name_index = {}
+
+    def add_index(key, loc):
+        key = key.strip()
+        if len(key) >= 3 and key not in name_index:
+            name_index[key] = loc
+
     for loc in locations:
         name_lower = loc["name"].lower()
-        name_index[name_lower] = loc
-        # Kurzname: "Lagavulin" aus "Lagavulin Distillery"
-        parts = name_lower.replace(" distillery", "").replace(" destillerie", "").replace("the ", "").strip()
-        name_index[parts] = loc
-        # Auch ohne "the" am Anfang (z.B. "macallan" aus "The Macallan Distillery")
-        for prefix in ["the ", "glen ", "loch "]:
-            if name_lower.startswith(prefix):
-                name_index[name_lower[len(prefix):].replace(" distillery", "").strip()] = loc
+        add_index(name_lower, loc)
+
+        # Schrittweises Stripping von Suffixen und Präfixen
+        cleaned = name_lower
+        # 1. Trailing company suffixes
+        for suf in [" co.", " co", " company", " ltd", " llc"]:
+            if cleaned.endswith(suf):
+                cleaned = cleaned[:-len(suf)].strip()
+                add_index(cleaned, loc)
+                break
+        # 2. Distillery-type suffixes
+        for suf in [" distillery", " distilling", " destillerie", " brewery", " brewing", " whisky"]:
+            if cleaned.endswith(suf):
+                cleaned = cleaned[:-len(suf)].strip()
+                add_index(cleaned, loc)
+                break
+        # 3. Leading articles / prefixes
+        for pre in ["the ", "isle of ", "loch "]:
+            if cleaned.startswith(pre):
+                short = cleaned[len(pre):]
+                add_index(short, loc)
+        # 4. Also index key words individually for compound names like "Glasgow Distillery"
+        # so that tag "Glasgow Distillery" matches "Glasgow Distillery Co"
+        words = name_lower.split()
+        for i in range(1, len(words)):
+            partial = " ".join(words[:i])
+            if len(partial) >= 5:
+                add_index(partial, loc)
 
     # Index: Region (lowercase) -> Locations
     region_index = {}
@@ -329,7 +355,7 @@ def match_articles_to_locations(articles, locations):
         tags = [t.lower() for t in article.get("tags", [])]
         article_type = article.get("type", "")
 
-        # 1. Explizite locations im Artikel (falls vorhanden)
+        # 1. Explizite locations im Artikel (falls vorhanden) — kein continue, läuft zusätzlich
         if "locations" in article:
             for loc_data in article["locations"]:
                 # Supports both string ("Macallan Distillery") and dict ({"name": "..."})
@@ -342,10 +368,11 @@ def match_articles_to_locations(articles, locations):
                     if slug not in target["articles"]:
                         target["articles"].append(slug)
                         matched_count += 1
-            continue
 
-        # 2. Tag-basiertes Matching
-        for tag in tags:
+        # 2. Tag-basiertes Matching (inkl. title-Wörter)
+        title_words = [w.lower() for w in article.get("title", "").split() if len(w) >= 5]
+        search_terms = list(set(tags + title_words))
+        for tag in search_terms:
             if tag in name_index:
                 target = name_index[tag]
                 if slug not in target["articles"]:
@@ -445,12 +472,14 @@ def build_map_data(config=None):
         if not name or not lat or not lon:
             continue
         loc_type = ml.get("type", "distillery")
-        # Pruefen ob schon vorhanden (gleicher Typ, < 300m Entfernung)
+        # Pruefen ob schon vorhanden (gleicher Typ + gleicher Name + < 300m Entfernung)
+        # Name-Check verhindert, dass benachbarte Destillerien (z.B. Springbank/Glengyle)
+        # fälschlicherweise zusammengeführt werden.
         already_exists = False
         for existing in locations:
             if existing["type"] == loc_type:
                 dist = haversine_m(lat, lon, existing["lat"], existing["lon"])
-                if dist < DEDUP_DISTANCE_M:
+                if dist < DEDUP_DISTANCE_M and name.lower() == existing["name"].lower():
                     already_exists = True
                     break
         if not already_exists:
@@ -473,6 +502,35 @@ def build_map_data(config=None):
             })
             added_manual += 1
     print(f"  {added_manual} neue manuelle Locations hinzugefuegt ({len(manual_locs) - added_manual} bereits vorhanden).")
+
+    # 3b. Name-basierte Deduplizierung für Destillerien:
+    # Wenn GPS-Stops dieselbe Destillerie mehrfach an verschiedenen Koordinaten haben
+    # (z.B. Annandale 4×, Girvan 6×), behalten wir nur den besten Eintrag.
+    name_best = {}  # key -> best location
+    for loc in locations:
+        if loc["type"] != "distillery":
+            continue
+        key = loc["name"].lower()
+        if key not in name_best:
+            name_best[key] = loc
+        else:
+            existing = name_best[key]
+            # Daten zusammenführen (Jahre, Fotos)
+            for y in loc["years_visited"]:
+                if y not in existing["years_visited"]:
+                    existing["years_visited"].append(y)
+            existing["_photos"].extend(loc.get("_photos", []))
+            # Manuelle Einträge haben korrektere Koordinaten → bevorzugen
+            if loc.get("_manual") and not existing.get("_manual"):
+                loc["years_visited"] = existing["years_visited"][:]
+                loc["_photos"] = existing["_photos"][:]
+                loc["articles"] = list(set(existing.get("articles", []) + loc.get("articles", [])))
+                name_best[key] = loc
+
+    # Locations neu aufbauen: Nicht-Destillerien bleiben, Destillerien → je 1 pro Name
+    non_distilleries = [l for l in locations if l["type"] != "distillery"]
+    locations = non_distilleries + list(name_best.values())
+    print(f"  Deduplizierung: {len(name_best)} einzigartige Destillerien (Name-basiert).")
 
     # 4. Artikel laden & matchen
     articles = load_all_articles()

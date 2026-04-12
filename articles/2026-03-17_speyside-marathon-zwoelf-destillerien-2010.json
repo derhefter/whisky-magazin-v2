@@ -27,5 +27,13 @@
   "image_alt": "Speyside Marathon 2010: Zwölf Destillerien in drei Tagen",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-lush-green-valley-with-mountains-under-a-blue-sky-5AJF-MYZaUU?utm_source=whisky_magazin&utm_medium=referral\">𝕡𝕒𝕨𝕤 𝕒𝕟𝕕 𝕡𝕣𝕚𝕟𝕥𝕤</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "5AJF-MYZaUU",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Glen Grant Distillery",
+    "BenRiach Distillery",
+    "Glen Moray Distillery",
+    "Fettercairn Distillery",
+    "Aberlour Distillery",
+    "Craigellachie Distillery"
+  ]
 }

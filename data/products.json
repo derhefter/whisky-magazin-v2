@@ -1,0 +1,153 @@
+{
+  "_comment": "Whisky-Produkte mit Amazon ASINs für Affiliate-Links (tag: whiskyreise74-21)",
+  "whiskys": {
+    "glenmorangie-original-10": {
+      "name": "Glenmorangie The Original 10 Jahre",
+      "asin": "B001TZBIBY",
+      "price_range": "30-38",
+      "region": "Highlands",
+      "category": "Single Malt",
+      "short": "Fruchtiger, eleganter Highland-Klassiker"
+    },
+    "aberlour-12": {
+      "name": "Aberlour 12 Jahre Double Cask",
+      "asin": "B004MPQH16",
+      "price_range": "28-35",
+      "region": "Speyside",
+      "category": "Single Malt",
+      "short": "Sherrysüße trifft Honig und Trockenfrüchte"
+    },
+    "glendronach-12": {
+      "name": "GlenDronach 12 Jahre Original",
+      "asin": "B005LRCX1I",
+      "price_range": "35-45",
+      "region": "Highlands",
+      "category": "Single Malt",
+      "short": "Reichhaltiger Sherry-Malt mit Tiefgang"
+    },
+    "talisker-10": {
+      "name": "Talisker 10 Jahre",
+      "asin": "B001TZ3A2W",
+      "price_range": "28-35",
+      "region": "Islands (Skye)",
+      "category": "Single Malt",
+      "short": "Maritimer Rauch mit Pfeffer und Meersalz"
+    },
+    "highland-park-12": {
+      "name": "Highland Park 12 Jahre Viking Honour",
+      "asin": "B001TZ6EGK",
+      "price_range": "30-40",
+      "region": "Islands (Orkney)",
+      "category": "Single Malt",
+      "short": "Ausgewogener Rauch mit Heidehonig"
+    },
+    "glenfiddich-12": {
+      "name": "Glenfiddich 12 Jahre",
+      "asin": "B001TZ3FME",
+      "price_range": "25-32",
+      "region": "Speyside",
+      "category": "Single Malt",
+      "short": "Der meistverkaufte Single Malt der Welt"
+    },
+    "laphroaig-10": {
+      "name": "Laphroaig 10 Jahre",
+      "asin": "B001TZBIHA",
+      "price_range": "28-36",
+      "region": "Islay",
+      "category": "Single Malt",
+      "short": "Intensiver Torfrauch, Jod und Meeresluft"
+    },
+    "aberfeldy-12": {
+      "name": "Aberfeldy 12 Jahre",
+      "asin": "B008BJNRO8",
+      "price_range": "28-35",
+      "region": "Highlands",
+      "category": "Single Malt",
+      "short": "Honigsüßer Highland-Geheimtipp"
+    },
+    "old-pulteney-12": {
+      "name": "Old Pulteney 12 Jahre",
+      "asin": "B001TZ67OI",
+      "price_range": "25-33",
+      "region": "Highlands",
+      "category": "Single Malt",
+      "short": "Maritimer, salziger Charakter vom Nordmeer"
+    },
+    "benriach-10": {
+      "name": "BenRiach The Original Ten",
+      "asin": "B08WPGRB9B",
+      "price_range": "35-45",
+      "region": "Speyside",
+      "category": "Single Malt",
+      "short": "Fruchtiger Speyside-Malt mit Triple Cask"
+    },
+    "lagavulin-16": {
+      "name": "Lagavulin 16 Jahre",
+      "asin": "B003ZSNQFE",
+      "price_range": "55-70",
+      "region": "Islay",
+      "category": "Single Malt",
+      "short": "Der Islay-Klassiker schlechthin"
+    },
+    "macallan-12-sherry": {
+      "name": "The Macallan 12 Sherry Oak",
+      "asin": "B007BMEWTQ",
+      "price_range": "60-80",
+      "region": "Speyside",
+      "category": "Single Malt",
+      "short": "Premium Sherry-Malt, reichhaltig und komplex"
+    },
+    "ardbeg-10": {
+      "name": "Ardbeg Ten",
+      "asin": "B001TZ8KZO",
+      "price_range": "38-48",
+      "region": "Islay",
+      "category": "Single Malt",
+      "short": "Intensiver Rauch mit überraschender Süße"
+    }
+  },
+  "zubehoer": {
+    "glencairn-glas": {
+      "name": "Glencairn Whisky Glas (4er Set)",
+      "asin": "B003QX2JMA",
+      "price_range": "20-28",
+      "category": "Gläser",
+      "short": "Das offizielle Nosing-Glas der Whisky-Industrie"
+    },
+    "glencairn-glas-einzeln": {
+      "name": "Glencairn Whisky Glas",
+      "asin": "B004NNZXLM",
+      "price_range": "8-12",
+      "category": "Gläser",
+      "short": "Einzelnes Nosing-Glas für Einsteiger"
+    },
+    "whisky-dekanter": {
+      "name": "Whisky Dekanter Karaffe (Globe)",
+      "asin": "B07WR5YKQ3",
+      "price_range": "30-50",
+      "category": "Dekanter",
+      "short": "Stilvolle Globus-Karaffe für die Whisky-Bar"
+    },
+    "whisky-steine": {
+      "name": "Whisky Steine Set (9 Stück)",
+      "asin": "B075KKGTGC",
+      "price_range": "12-18",
+      "category": "Zubehör",
+      "short": "Kühlen ohne Verwässern"
+    },
+    "whisky-buch-malt-whisky": {
+      "name": "Malt Whisky Yearbook 2026",
+      "asin": "B0DCLZ1QHX",
+      "price_range": "15-20",
+      "category": "Bücher",
+      "short": "Das Standardwerk für Whisky-Enthusiasten"
+    },
+    "tasting-set-islay": {
+      "name": "Islay Single Malt Tasting Collection",
+      "asin": "B0CKH8JMRN",
+      "price_range": "40-55",
+      "category": "Tasting Sets",
+      "short": "Probiersets mit Islay-Klassikern"
+    }
+  }
+}

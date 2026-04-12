@@ -27,5 +27,10 @@
   "image_alt": "Campbeltown 2016: Springbank, Glengyle und Glen Scotia",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/brown-and-green-mountain-beside-body-of-water-during-daytime-YDDHmeOmj9U?utm_source=whisky_magazin&utm_medium=referral\">K. Mitch Hodge</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "YDDHmeOmj9U",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Springbank Distillery",
+    "Glengyle Distillery",
+    "Glen Scotia Distillery"
+  ]
 }

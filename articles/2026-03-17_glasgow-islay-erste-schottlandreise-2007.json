@@ -28,5 +28,10 @@
   "image_alt": "Glasgow & Islay 2007: Wo alles begann",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/city-skyline-across-body-of-water-during-daytime-MDO4BrD1m94?utm_source=whisky_magazin&utm_medium=referral\">K. Mitch Hodge</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "MDO4BrD1m94",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Bowmore Distillery",
+    "Caol Ila Distillery",
+    "Laphroaig Distillery"
+  ]
 }

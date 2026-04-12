@@ -191,7 +191,7 @@ WHISKY · MAGAZIN
 {
   "openai":        { "api_key": "sk-..." },
   "site":          { "base_url": "https://whisky-magazin.vercel.app" },
-  "notifications": { "enabled": false, "email": "rosenhefter@gmail.com",
+  "notifications": { "enabled": false, "email": "whisky-news@whisky-reise.com",
                      "smtp_sender": "...", "smtp_app_password": "..." },
   "mailchimp":     { "api_key": "", "list_id": "" },
   "affiliate":     { "amazon_tag": "...", "tradedoubler_id": "..." }

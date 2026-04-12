@@ -22,5 +22,15 @@
   "image_alt": "Die besten Whisky-Destillerien auf Islay",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-body-of-water-with-hills-in-the-background-tv-wzuJqCek?utm_source=whisky_magazin&utm_medium=referral\">Andrew Hall</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "tv-wzuJqCek",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Lagavulin Distillery",
+    "Ardbeg Distillery",
+    "Laphroaig Distillery",
+    "Bowmore Distillery",
+    "Bunnahabhain Distillery",
+    "Caol Ila Distillery",
+    "Bruichladdich Distillery",
+    "Kilchoman Distillery"
+  ]
 }

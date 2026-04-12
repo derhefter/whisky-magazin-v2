@@ -6,6 +6,7 @@ __pycache__/
 
 # Config mit Secrets
 config.json
+.env
 
 # Temp
 temp/
@@ -16,3 +17,4 @@ used_topics.json
 .DS_Store
 Thumbs.db
 desktop.ini
+.vercel

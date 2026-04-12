@@ -17,9 +17,13 @@
   },
   "date": "2026-02-28",
   "date_display": "28. February 2026",
-  "image_url": "/images/whisky-und-kaese-ueberraschende-kombinationen.jpg",
+  "image_url": "/images/whisky-und-käse-überraschende-kombinationen.jpg",
   "image_alt": "Whisky und Käse: Überraschende Kombinationen",
   "image_credit": "Foto von <a href=\"https://unsplash.com/photos/a-wooden-tray-filled-with-pieces-of-cheese-rmx-y6UJBV8?utm_source=whisky_magazin&utm_medium=referral\">Trần Quang Phú</a> auf <a href=\"https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral\">Unsplash</a>",
   "image_photo_id": "rmx-y6UJBV8",
-  "image_source": "unsplash"
+  "image_source": "unsplash",
+  "locations": [
+    "Lagavulin Distillery",
+    "Aberlour Distillery"
+  ]
 }
