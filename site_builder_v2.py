@@ -1338,7 +1338,12 @@ def load_all_articles():
         try:
             with open(json_file, "r", encoding="utf-8") as f:
                 article = json.load(f)
-                articles.append(article)
+            # Normalisierung: meta.slug aus Top-Level slug ableiten falls fehlend
+            if not article.get("meta", {}).get("slug"):
+                top_slug = article.get("slug", "")
+                if top_slug:
+                    article.setdefault("meta", {})["slug"] = top_slug
+            articles.append(article)
         except Exception as e:
             print(f"  Warnung: Konnte {json_file.name} nicht laden: {e}")
     return articles
