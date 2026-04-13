@@ -33,21 +33,77 @@ jobs:
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
 
+      - name: Config erstellen
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          config = {
+            "site": {
+              "name": "Whisky Magazin",
+              "tagline": "Dein Guide fuer Whisky, Destillerien & Reisen",
+              "base_url": "https://www.whisky-reise.com",
+              "language": "de",
+              "author": "Steffen & Elmar"
+            },
+            "openai": {
+              "api_key": os.environ.get("OPENAI_API_KEY", ""),
+              "model": "gpt-4o",
+              "temperature": 0.7,
+              "max_tokens": 16000
+            },
+            "affiliate_links": {
+              "amazon_tag": "whiskyreise74-21",
+              "tradedoubler_id": "2205846",
+              "whisky_shops": [
+                {
+                  "name": "Amazon Whisky",
+                  "url_template": "https://www.amazon.de/s?k={keyword}&tag=whiskyreise74-21",
+                  "priority": 1
+                }
+              ],
+              "travel_links": {
+                "faehre": "https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448",
+                "flug": "https://clk.tradedoubler.com/click?p=227718&a=2205846",
+                "hotel": "https://www.whisky.reise/hotels/",
+                "mietwagen": "https://www.whisky.reise/mietwagen/",
+                "touren": "https://www.whisky.reise/touren/",
+                "versicherung": "https://www.whisky.reise/reiseversicherung/",
+                "wohnmobil": "https://www.whisky.reise/wohnmobil/"
+              }
+            },
+            "map": {
+              "default_center": [57.0, -4.5],
+              "default_zoom": 6
+            },
+            "content_settings": {
+              "articles_per_run": 1,
+              "min_word_count": 1200,
+              "max_word_count": 2500,
+              "unsplash_api_key": ""
+            },
+            "notifications": {
+              "email": "whisky-news@whisky-reise.com",
+              "smtp_sender": "",
+              "smtp_app_password": "",
+              "enabled": False
+            }
+          }
+          with open("config.json", "w", encoding="utf-8") as f:
+              json.dump(config, f, ensure_ascii=False, indent=2)
+          print("config.json erstellt.")
+          EOF
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
       - name: Website bauen
         run: |
-          python -c "
+          python3 -c "
           import json
           from site_builder_v2 import build_site
           with open('config.json', 'r', encoding='utf-8') as f:
               config = json.load(f)
-          # API-Keys aus Env-Vars überschreiben falls vorhanden
-          import os
-          if os.environ.get('OPENAI_API_KEY'):
-              config['openai']['api_key'] = os.environ['OPENAI_API_KEY']
           build_site(config)
           "
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Gebaute Site committen
         run: |

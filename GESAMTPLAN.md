@@ -1,6 +1,6 @@
 # Whisky Magazin — Gesamtplan
 
-> Zuletzt aktualisiert: März 2026
+> Zuletzt aktualisiert: April 2026
 
 ---
 
@@ -78,7 +78,7 @@ topic_library.py     →  73+ vorbereitete Themen (kontinuierlich erweiterbar)
 ↓
 OpenAI GPT-4o        →  1.200–2.500 Wörter, deutsch, SEO-optimiert
 ↓
-articles/ (JSON)     →  Artikel-Archiv (aktuell 36 Artikel)
+articles/ (JSON)     →  Artikel-Archiv (aktuell 46 Artikel)
 ↓
 site_builder_v2.py   →  Statische HTML-Seiten
 ```
@@ -143,27 +143,36 @@ WHISKY · MAGAZIN
 | **KI-Artikelgenerierung** | GPT-4o, 1.200–2.500 Wörter, SEO-Tags | `content_generator.py` |
 | **V2 Site Builder** | Statische HTML, Fraunces/Inter, Amber-Design | `site_builder_v2.py` |
 | **Interaktive Karte** | 201 Orte, 110 Destillerien, Leaflet.js | `map_data_builder.py` |
-| **Whisky des Monats** | KI-Tasting-Notes, Freigabe-Workflow, JSON-Archiv | `wotm_generator.py` |
-| **Newsletter-System** | Entwurf generieren, Mailchimp-Versand | `newsletter_generator.py` |
-| **E-Mail-Benachrichtigungen** | Gmail SMTP, monatliche Erinnerungen | `notifier.py` |
+| **Whisky des Monats** | KI-Tasting-Notes, Freigabe-Workflow, JSON-Archiv | `api/admin_wotm.py` |
+| **Newsletter-System** | Entwurf generieren, Brevo-Versand, Double Opt-In | `api/admin_wotm.py` |
+| **E-Mail-Benachrichtigungen** | Brevo Transactional API | `notifier.py` |
 | **Auto-Push GitHub** | Nach jedem Build automatisch | `site_builder_v2.py` |
 | **Affiliate-Links** | Amazon/Tradedoubler, automatisch eingebaut | `content_generator.py` |
 | **Sitemap** | Für Google-Indexierung | `site_builder_v2.py` |
-| **Artikel-Archiv** | 36 JSON-Artikel, alle Umlaute korrekt | `articles/` |
+| **Artikel-Archiv** | 46 JSON-Artikel, alle Umlaute korrekt | `articles/` |
 
 ### Geplant / Nächste Schritte 🔜
 
 | Funktion | Priorität | Aufwand |
 |---|---|---|
-| **Vercel V2 live schalten** | 🔴 Hoch | 5 Min |
-| **E-Mail-Benachrichtigungen aktivieren** | 🔴 Hoch | 5 Min |
-| **Mailchimp einrichten** | 🟡 Mittel | 10 Min |
-| **Eigene Domain** (z.B. whisky-magazin.de) | 🟡 Mittel | 30 Min + ~10 EUR/Jahr |
 | **Newsletter-Abonnenten gewinnen** | 🟡 Mittel | Ongoing |
 | **Kommentar-Funktion** (z.B. Giscus) | 🟢 Low | 2–3h |
-| **Suchfunktion** (clientseitig, Lunr.js) | 🟢 Low | 4–6h |
 | **Foto-Galerie** aus Scotland-Archive | 🟢 Low | 4–6h |
 | **Social-Media-Posting** (automatisch) | 🟢 Low | 3–4h |
+
+### Bereits erledigt (seit März 2026) ✅
+
+| Funktion | Status |
+|---|---|
+| Vercel V2 live auf whisky-reise.com | ✅ Erledigt |
+| E-Mail-Benachrichtigungen (Brevo) | ✅ Erledigt |
+| Newsletter-System (Brevo Double Opt-In) | ✅ Erledigt |
+| Eigene Domain whisky-reise.com | ✅ Erledigt |
+| Suchfunktion (clientseitig) | ✅ Erledigt |
+| Admin-Dashboard mit 5 Tabs | ✅ Erledigt |
+| Automatische Artikel-Generierung (Dashboard + Cron) | ✅ Erledigt |
+| Whisky des Monats + Newsletter-Versand via Dashboard | ✅ Erledigt |
+| Security-Audit + Fixes (CORS, Auth, CSP) | ✅ Erledigt April 2026 |
 
 ---
 
@@ -173,30 +182,17 @@ WHISKY · MAGAZIN
 
 | Service | Zweck | Status |
 |---|---|---|
-| **OpenAI GPT-4o** | Artikelgenerierung, WOTM-Tasting-Notes | ✅ API-Key eingetragen |
-| **GitHub** (derhefter) | Versionskontrolle + Hosting-Quelle | ✅ Auto-Push aktiv |
-| **Vercel** | Hosting V1 (whisky-magazin.vercel.app) | ✅ Live |
+| **OpenAI GPT-4o** | Artikelgenerierung, WOTM-Tasting-Notes | ✅ Live |
+| **GitHub** (derhefter/whisky-magazin-v2) | Versionskontrolle + Hosting-Quelle | ✅ Auto-Push + Actions |
+| **Vercel** | Hosting V2 (whisky-reise.com) | ✅ Live |
+| **Brevo** | Newsletter Double Opt-In + Versand | ✅ Live |
 
-### Bereit, aber noch nicht aktiviert
+### Konfiguration
 
-| Service | Zweck | Status |
-|---|---|---|
-| **Vercel V2** | Hosting neues Design | ⏳ Einrichten nötig |
-| **Gmail SMTP** | E-Mail-Benachrichtigungen | ⏳ App-Passwort nötig |
-| **Mailchimp** | Newsletter-Versand | ⏳ Konto + API-Key nötig |
+**Lokal:** `config.json` (API-Keys, URLs — in `.gitignore`)
+**Vercel:** Environment Variables (DASHBOARD_PASSWORD, GITHUB_TOKEN, BREVO_API_KEY, OPENAI_API_KEY, CRON_SECRET)
 
-### Konfiguration (`config.json`)
-
-```json
-{
-  "openai":        { "api_key": "sk-..." },
-  "site":          { "base_url": "https://whisky-magazin.vercel.app" },
-  "notifications": { "enabled": false, "email": "whisky-news@whisky-reise.com",
-                     "smtp_sender": "...", "smtp_app_password": "..." },
-  "mailchimp":     { "api_key": "", "list_id": "" },
-  "affiliate":     { "amazon_tag": "...", "tradedoubler_id": "..." }
-}
-```
+→ Vollständige Konfigurationsübersicht: siehe [BETRIEBSHANDBUCH.md](BETRIEBSHANDBUCH.md), Abschnitt 5
 
 ### Lokale Ordnerstruktur
 
@@ -206,24 +202,21 @@ Whisky_Ideen/
 │   ├── 2009/ … 2024/
 │   └── locations.json         # Geo-Daten zu den Foto-Standorten
 │
-├── whisky-magazin/            # Entwicklungsprojekt (V2, aktiv)
-│   ├── articles/              # 36 Artikel (JSON)
-│   ├── data/                  # WOTM, Newsletter-History, Karten-Daten
-│   ├── site-v2/               # Generierte V2-Website (→ GitHub V2)
-│   ├── design-concepts/       # Redesign-Konzept (Referenz)
-│   ├── _v1-archive/           # Archiv: V1 Builder & V1 Site
-│   └── [Python-Skripte]
-│
-└── whisky-magazin-v1/         # Standalone V1-Referenz-Snapshot
-    └── site/                  # Statische V1-Website (read-only)
+└── whisky-magazin/            # Entwicklungsprojekt (V2, aktiv)
+    ├── articles/              # 46 Artikel (JSON)
+    ├── articles/drafts/       # Entwürfe (vom Dashboard verwaltet)
+    ├── data/                  # WOTM, Newsletter-History, Karten-Daten
+    ├── api/                   # Vercel Serverless Functions (8 Endpoints)
+    ├── site-v2/               # Generierte V2-Website (→ Vercel)
+    │   └── admin/index.html   # Admin-Dashboard
+    └── [Python-Skripte]
 ```
 
 ### GitHub Repos
 
 | Repo | Branch | Inhalt | Vercel |
 |---|---|---|---|
-| `derhefter/whisky-magazin` | master | V1-Site (`site/`) | whisky-magazin.vercel.app |
-| `derhefter/whisky-magazin-v2` | master | V2-Site (`site-v2/`) | ⏳ einrichten |
+| `derhefter/whisky-magazin-v2` | main | V2-Site + API | ✅ whisky-reise.com |
 
 ---
 
@@ -252,31 +245,27 @@ Whisky_Ideen/
 | OpenAI API (12 Artikel/Monat) | ca. 1–2 EUR/Monat |
 | Hosting (Vercel Free Tier) | 0 EUR |
 | Domain (optional) | ca. 10 EUR/Jahr |
-| Mailchimp (bis 500 Kontakte) | 0 EUR |
+| Brevo (bis 300 E-Mails/Tag) | 0 EUR |
 
 ---
 
 ## 7. Redaktions-Workflow (monatlich, ab Einrichtung automatisch)
 
 ```
-Jeden 1. des Monats
-    └── E-Mail an Steffen: "Welchen Whisky nehmen wir diesen Monat?"
+Montags automatisch
+    └── Windows Task Scheduler generiert 2 Artikel-Entwürfe
+    └── E-Mail-Benachrichtigung an rosenhefter@gmail.com
 
-Steffen wählt
-    └── python main.py → Menü [11]  oder  python wotm_generator.py --new "Name"
+Steffen prüft im Dashboard (whisky-reise.com/admin)
+    └── Tab "Artikel" → Entwürfe prüfen, bearbeiten, freigeben
 
-OpenAI generiert
-    └── Tasting Notes, Teaser, Beschreibung → Entwurf per E-Mail
+Mittwoch + Samstag 10:00 CEST automatisch
+    └── Vercel Cron veröffentlicht freigegebene Artikel
+    └── GitHub Actions baut Website neu
 
-Steffen genehmigt
-    └── Menü [12]  oder  python wotm_generator.py --approve
-    └── → Site-Rebuild + GitHub-Push (automatisch)
-
-Newsletter-Entwurf kommt per E-Mail
-    └── 3 neueste Artikel + Whisky des Monats + persönlicher Intro-Text
-
-Steffen gibt frei
-    └── Menü [14] → Direktversand via Mailchimp
+Monatlich: Whisky des Monats (Dashboard)
+    └── Tab "WotM & Newsletter" → Formular ausfüllen
+    └── KI poliert Tasting Notes → Newsletter generieren → Vorschau → Senden via Brevo
 ```
 
 ---
@@ -285,15 +274,17 @@ Steffen gibt frei
 
 | Version | Design | Status | URL |
 |---|---|---|---|
-| **V1 Classic** | Original-Design (2024) | Live, eingefroren | whisky-magazin.vercel.app |
-| **V2 Notebook / Golden Hour** | Bright Highland Editorial | GitHub, Vercel ausstehend | — |
+| **V1 Classic** | Original-Design (2024) | Archiviert | — |
+| **V2 Bright Highland Editorial** | Fraunces/Inter, Amber-Palette | ✅ Live | whisky-reise.com |
 
 ---
 
 ## 9. Offene Entscheidungen
 
-1. **Domain:** Eigene Domain (whisky-magazin.de) oder bei Vercel-Subdomain bleiben?
-2. **V1 abschalten?** Oder weiterhin als „Classic"-Version erreichbar lassen?
-3. **Kommentare:** Giscus (GitHub-basiert) oder ohne?
-4. **Sprache:** Rein deutsch bleiben, oder perspektivisch englische Artikel?
-5. **Social Media:** Instagram (Fotos) oder primär Newsletter-Fokus?
+1. **Kommentare:** Giscus (GitHub-basiert) oder ohne?
+2. **Sprache:** Rein deutsch bleiben, oder perspektivisch englische Artikel?
+3. **Social Media:** Instagram (Fotos) oder primär Newsletter-Fokus?
+
+### Bereits entschieden ✅
+- ~~Domain~~ → whisky-reise.com (live)
+- ~~V1 abschalten~~ → V1 archiviert, V2 ist live

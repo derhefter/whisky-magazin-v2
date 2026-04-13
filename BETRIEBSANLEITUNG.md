@@ -1,4 +1,4 @@
-# Betriebsanleitung — Whisky Magazin
+# Whisky Magazin V2 – Betriebsanleitung
 
 > **Dieses Dokument wurde durch das konsolidierte Betriebshandbuch ersetzt.**
 

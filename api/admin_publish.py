@@ -16,6 +16,7 @@ from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
+CRON_SECRET = os.environ.get("CRON_SECRET", "").strip()
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID = os.environ.get("BREVO_LIST_ID", "3").strip()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
@@ -29,6 +30,8 @@ TOPICS_WRITE_PATH = "data/topics_queue.json"
 
 
 def _verify_token(token: str) -> bool:
+    if not ADMIN_PASSWORD:
+        return False
     if not token or "." not in token:
         return False
     parts = token.split(".", 1)
@@ -41,15 +44,23 @@ def _verify_token(token: str) -> bool:
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    key = (ADMIN_PASSWORD or "fallback").encode()
+    key = ADMIN_PASSWORD.encode()
     sig = hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()
     expected = f"{ts_str}.{sig}"
     return hmac.compare_digest(token, expected)
 
 
-def _cors_headers():
+ALLOWED_ORIGINS = [
+    "https://www.whisky-reise.com",
+    "https://whisky-reise.com",
+    "http://localhost:8000",
+]
+
+
+def _cors_headers(origin=""):
+    allowed = origin if origin in ALLOWED_ORIGINS else ALLOWED_ORIGINS[0]
     return {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": allowed,
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, x-admin-token",
     }
@@ -283,7 +294,7 @@ class handler(BaseHTTPRequestHandler):
 
     def do_OPTIONS(self):
         self.send_response(204)
-        for k, v in _cors_headers().items():
+        for k, v in _cors_headers(self.headers.get("Origin", "")).items():
             self.send_header(k, v)
         self.end_headers()
 
@@ -292,14 +303,15 @@ class handler(BaseHTTPRequestHandler):
 
         Auth logic:
         - If x-admin-token is present and valid → allow (manual trigger from dashboard)
-        - If request comes from Vercel cron (User-Agent contains "vercel" case-insensitively) → allow
+        - If Authorization header matches Bearer <CRON_SECRET> → allow (Vercel cron)
         - Otherwise → 401
         """
-        cors = _cors_headers()
+        cors = _cors_headers(self.headers.get("Origin", ""))
 
         token = self.headers.get("x-admin-token", "")
-        user_agent = self.headers.get("User-Agent", "")
-        is_cron = "vercel" in user_agent.lower()
+        auth_header = self.headers.get("Authorization", "")
+        is_cron = (CRON_SECRET
+                   and auth_header == f"Bearer {CRON_SECRET}")
         is_authed = _verify_token(token)
 
         if not is_authed and not is_cron:

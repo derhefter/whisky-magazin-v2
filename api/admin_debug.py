@@ -11,7 +11,15 @@ BREVO_API_KEY  = os.environ.get("BREVO_API_KEY", "").strip()
 BREVO_LIST_ID  = os.environ.get("BREVO_LIST_ID", "3").strip()
 TOKEN_TTL      = 86400
 
+ALLOWED_ORIGINS = [
+    "https://www.whisky-reise.com",
+    "https://whisky-reise.com",
+    "http://localhost:8000",
+]
+
 def _verify_token(token):
+    if not ADMIN_PASSWORD:
+        return False
     if not token or "." not in token:
         return False
     parts = token.split(".", 1)
@@ -24,7 +32,7 @@ def _verify_token(token):
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    key = (ADMIN_PASSWORD or "fallback").encode()
+    key = ADMIN_PASSWORD.encode()
     sig = hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()
     expected = f"{ts_str}.{sig}"
     return hmac.compare_digest(token, expected)
@@ -43,9 +51,9 @@ class handler(BaseHTTPRequestHandler):
         # ENV VARS vorhanden?
         results["env"] = {
             "DASHBOARD_PASSWORD": "gesetzt" if ADMIN_PASSWORD else "FEHLT",
-            "GITHUB_TOKEN": f"gesetzt ({GITHUB_TOKEN[:8]}...)" if GITHUB_TOKEN else "FEHLT",
+            "GITHUB_TOKEN": "gesetzt" if GITHUB_TOKEN else "FEHLT",
             "GITHUB_REPO": GITHUB_REPO or "FEHLT",
-            "BREVO_API_KEY": f"gesetzt ({BREVO_API_KEY[:8]}...)" if BREVO_API_KEY else "FEHLT",
+            "BREVO_API_KEY": "gesetzt" if BREVO_API_KEY else "FEHLT",
             "BREVO_LIST_ID": BREVO_LIST_ID or "FEHLT",
         }
 
@@ -107,16 +115,20 @@ class handler(BaseHTTPRequestHandler):
         self._send(200, results)
 
     def _send(self, code, data):
+        origin = self.headers.get("Origin", "")
         body = json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")
         self.send_response(code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Access-Control-Allow-Origin", "*")
+        allowed = origin if origin in ALLOWED_ORIGINS else ALLOWED_ORIGINS[0]
+        self.send_header("Access-Control-Allow-Origin", allowed)
         self.send_header("Access-Control-Allow-Headers", "x-admin-token")
         self.end_headers()
         self.wfile.write(body)
 
     def do_OPTIONS(self):
+        origin = self.headers.get("Origin", "")
+        allowed = origin if origin in ALLOWED_ORIGINS else ALLOWED_ORIGINS[0]
         self.send_response(204)
-        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Origin", allowed)
         self.send_header("Access-Control-Allow-Headers", "x-admin-token")
         self.end_headers()
