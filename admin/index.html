@@ -769,9 +769,85 @@
     @media (min-width: 900px) {
       .stats-grid { grid-template-columns: repeat(4, 1fr); }
     }
+
+    /* ===== TOAST NOTIFICATIONS ===== */
+    #toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .toast {
+      pointer-events: auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 300px;
+      max-width: 440px;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.9rem;
+      line-height: 1.4;
+      animation: toastIn 0.3s ease-out;
+      cursor: pointer;
+    }
+    .toast.toast-success { background: var(--color-green-bg); border-left: 4px solid var(--color-green); color: #1a5632; }
+    .toast.toast-error   { background: var(--color-red-bg);   border-left: 4px solid var(--color-red);   color: #922b21; }
+    .toast.toast-info    { background: var(--color-blue-bg);  border-left: 4px solid var(--color-blue);  color: #1a5276; }
+    .toast.toast-warn    { background: var(--color-yellow-bg);border-left: 4px solid var(--color-yellow);color: #7d6608; }
+    .toast .toast-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .toast .toast-msg { flex: 1; }
+    .toast.removing { animation: toastOut 0.25s ease-in forwards; }
+    @keyframes toastIn { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes toastOut { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(40px); } }
+    @media (max-width: 480px) {
+      #toast-container { right: 10px; left: 10px; }
+      .toast { min-width: auto; max-width: none; }
+    }
+
+    /* ===== LOADING OVERLAY ===== */
+    .loading-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(42,37,32,0.4);
+      z-index: 9000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loading-overlay .spinner-box {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 32px 40px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .loading-overlay .spinner {
+      width: 40px; height: 40px;
+      border: 4px solid var(--color-beige);
+      border-top-color: var(--color-amber);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== MOBILE LOGIN FIX ===== */
+    @media (max-width: 640px) {
+      #login-screen { align-items: flex-start; padding-top: 60px; }
+      .login-box { padding: 32px 24px; }
+    }
   </style>
 </head>
 <body>
+
+<!-- ===== TOAST CONTAINER ===== -->
+<div id="toast-container"></div>
 
 <!-- ===== LOGIN SCREEN ===== -->
 <div id="login-screen">
@@ -1012,11 +1088,55 @@ const API = {
 };
 
 /* ============================================================
-   TOKEN HELPERS
+   TOAST NOTIFICATIONS
    ============================================================ */
-function getToken() { return sessionStorage.getItem('adminToken'); }
-function setToken(t) { sessionStorage.setItem('adminToken', t); }
-function clearToken() { sessionStorage.removeItem('adminToken'); }
+const TOAST_ICONS = { success: '✅', error: '❌', info: 'ℹ️', warn: '⚠️' };
+function showToast(message, type = 'info', duration = 4500) {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `<span class="toast-icon">${TOAST_ICONS[type] || ''}</span><span class="toast-msg">${message}</span>`;
+  toast.onclick = () => removeToast(toast);
+  container.appendChild(toast);
+  setTimeout(() => removeToast(toast), duration);
+}
+function removeToast(el) {
+  if (!el || el.classList.contains('removing')) return;
+  el.classList.add('removing');
+  setTimeout(() => el.remove(), 250);
+}
+
+/* ============================================================
+   LOADING OVERLAY
+   ============================================================ */
+let _loadingOverlay = null;
+function showLoading(text = 'Wird verarbeitet…') {
+  if (_loadingOverlay) return;
+  _loadingOverlay = document.createElement('div');
+  _loadingOverlay.className = 'loading-overlay';
+  _loadingOverlay.innerHTML = `<div class="spinner-box"><div class="spinner"></div><div style="font-size:0.9rem;color:var(--color-muted)">${text}</div></div>`;
+  document.body.appendChild(_loadingOverlay);
+}
+function hideLoading() {
+  if (_loadingOverlay) { _loadingOverlay.remove(); _loadingOverlay = null; }
+}
+
+/* ============================================================
+   TOKEN HELPERS (localStorage with TTL)
+   ============================================================ */
+function getToken() {
+  const raw = localStorage.getItem('adminToken');
+  if (!raw) return null;
+  try {
+    const { token, expires } = JSON.parse(raw);
+    if (Date.now() / 1000 > expires) { clearToken(); return null; }
+    return token;
+  } catch { clearToken(); return null; }
+}
+function setToken(t, expires) {
+  localStorage.setItem('adminToken', JSON.stringify({ token: t, expires: expires || (Date.now()/1000 + 86400) }));
+}
+function clearToken() { localStorage.removeItem('adminToken'); }
 
 function authHeaders() {
   return {
@@ -1129,7 +1249,7 @@ async function doLogin() {
     }
 
     if (data.token) {
-      setToken(data.token);
+      setToken(data.token, data.expires);
       showDashboard();
       loadActiveTab();
     } else {
@@ -1457,7 +1577,7 @@ async function approveArticle(filename, i) {
     tabLoaded.artikel = false;
     await loadArtikel();
   } catch (err) {
-    alert('Fehler beim Freigeben: ' + err.message);
+    showToast('Fehler beim Freigeben: ' + err.message, 'error');
     btn.disabled = false;
     btn.textContent = '✓ Freigeben';
   }
@@ -1475,14 +1595,14 @@ async function publishNow(filename, i) {
     const result = await apiGet(url);
     if (result && result.success) {
       const details = result.details || {};
-      alert(`✅ Artikel veröffentlicht!\n\n${details.filename || filename}\n\nDie Website wird automatisch neu gebaut (ca. 1–2 Minuten).`);
+      showToast(`Artikel veröffentlicht: ${details.filename || filename}. Website wird automatisch neu gebaut (ca. 1–2 Min.).`, 'success', 6000);
     } else {
-      alert(`⚠️ ${result?.message || 'Unbekannter Status'}`);
+      showToast(result?.message || 'Unbekannter Status', 'warn');
     }
     tabLoaded.artikel = false;
     await loadArtikel();
   } catch (err) {
-    alert('Fehler beim Veröffentlichen: ' + err.message);
+    showToast('Fehler beim Veröffentlichen: ' + err.message, 'error');
     btn.disabled = false;
     btn.textContent = '🚀 Jetzt veröffentlichen';
   }
@@ -1498,7 +1618,7 @@ async function rejectArticle(filename, sha, i) {
     tabLoaded.artikel = false;
     await loadArtikel();
   } catch (err) {
-    alert('Fehler beim Ablehnen: ' + err.message);
+    showToast('Fehler beim Ablehnen: ' + err.message, 'error');
     if (card) card.style.opacity = '1';
   }
 }
@@ -1513,10 +1633,11 @@ async function saveEdit(filename, sha, i) {
   btn.textContent = 'Speichert…';
   try {
     await apiPut(API.articles, { filename, sha, title, teaser, html_content, status: 'editing' });
+    showToast('Artikel gespeichert', 'success');
     tabLoaded.artikel = false;
     await loadArtikel();
   } catch (err) {
-    alert('Fehler beim Speichern: ' + err.message);
+    showToast('Fehler beim Speichern: ' + err.message, 'error');
     btn.disabled = false;
     btn.textContent = 'Speichern';
   }
@@ -1705,7 +1826,7 @@ async function markTopicDone(id, idx) {
     if (themenData[idx]) themenData[idx].status = 'done';
     renderThemen();
   } catch (err) {
-    alert('Fehler: ' + err.message);
+    showToast('Fehler: ' + err.message, 'error');
     btn.disabled = false;
     btn.textContent = '✓ Erledigt';
   }
@@ -1724,6 +1845,7 @@ async function generateArticleFromTopic(id, idx) {
   const row = document.querySelector(`button[onclick*="generateArticleFromTopic('${id}'"]`)?.closest('tr');
   const btn = row?.querySelector('button[title*="generieren"]');
   if (btn) { btn.disabled = true; btn.textContent = '⏳'; }
+  showLoading('Artikel wird generiert…');
 
   try {
     const result = await apiPost(API.generate, {
@@ -1740,10 +1862,12 @@ async function generateArticleFromTopic(id, idx) {
     renderThemen();
     // Refresh article tab
     tabLoaded.artikel = false;
-    alert(`✅ Artikel-Entwurf erstellt!\n\nTitel: ${result.title}\nPfad: ${result.path}\n\nIm Artikel-Tab zur Freigabe verfügbar.`);
+    showToast(`Artikel-Entwurf erstellt: ${result.title}. Im Artikel-Tab zur Freigabe verfügbar.`, 'success', 6000);
   } catch (err) {
-    alert('Fehler beim Generieren: ' + err.message);
+    showToast('Fehler beim Generieren: ' + err.message, 'error');
     if (btn) { btn.disabled = false; btn.textContent = '⚡'; }
+  } finally {
+    hideLoading();
   }
 }
 
@@ -1755,8 +1879,9 @@ async function deleteTopic(id, idx) {
     await apiDelete(API.topics, { id });
     themenData.splice(idx, 1);
     renderThemen();
+    showToast('Thema gelöscht', 'success');
   } catch (err) {
-    alert('Fehler beim Löschen: ' + err.message);
+    showToast('Fehler beim Löschen: ' + err.message, 'error');
   }
 }
 
@@ -2334,11 +2459,12 @@ async function wotmSaveNewsletter() {
     if (!wotmData) wotmData = { entries: {} };
     if (!wotmData.entries[monthKey]) wotmData.entries[monthKey] = {};
     wotmData.entries[monthKey].newsletter_html_final = html;
-    successEl.textContent = '✓ Newsletter gespeichert! Er kann jetzt gesendet werden.';
+    showToast('Newsletter gespeichert! Er kann jetzt gesendet werden.', 'success');
+    successEl.textContent = '✓ Newsletter gespeichert!';
     successEl.style.display = 'block';
     setTimeout(() => { successEl.style.display = 'none'; }, 4000);
   } catch (err) {
-    alert('Fehler beim Speichern: ' + err.message);
+    showToast('Fehler beim Speichern: ' + err.message, 'error');
   }
 }
 
@@ -2359,6 +2485,7 @@ async function wotmGenerateNewsletter(force) {
     document.querySelector('[onclick="wotmGenerateNewsletter(true)"]'),
   ].filter(Boolean);
   allGenBtns.forEach(b => { b.disabled = true; b.textContent = '⏳ Generiert…'; });
+  showLoading('Newsletter wird generiert…');
 
   const existingEntry = (wotmData?.entries?.[monthKey]) || {};
 
@@ -2444,8 +2571,9 @@ async function wotmGenerateNewsletter(force) {
     editorSection.style.display = 'block';
     editorSection.scrollIntoView({ behavior: 'smooth' });
   } catch (err) {
-    alert('Fehler beim Generieren: ' + err.message);
+    showToast('Fehler beim Generieren: ' + err.message, 'error');
   } finally {
+    hideLoading();
     allGenBtns.forEach(b => {
       b.disabled = false;
       b.textContent = b.getAttribute('onclick')?.includes('true')
@@ -2478,6 +2606,7 @@ async function wotmSendNewsletter() {
 
   const btn = document.querySelector('#wotm-container .btn-success');
   if (btn) { btn.disabled = true; btn.textContent = 'Sendet…'; }
+  showLoading('Newsletter wird gesendet…');
 
   try {
     const result = await apiPost(API.wotm + '?action=send_newsletter', {
@@ -2487,12 +2616,15 @@ async function wotmSendNewsletter() {
     });
     successEl.textContent = `✓ Newsletter gesendet! Kampagnen-ID: ${result.campaign_id}`;
     successEl.style.display = 'block';
+    showToast(`Newsletter für ${monthLabel} erfolgreich gesendet!`, 'success', 6000);
     tabLoaded.wotm = false;
     await loadWotm();
   } catch (err) {
     errEl.textContent = 'Fehler beim Senden: ' + err.message;
     errEl.style.display = 'block';
+    showToast('Fehler beim Newsletter-Versand: ' + err.message, 'error');
   } finally {
+    hideLoading();
     if (btn) { btn.disabled = false; btn.textContent = '📧 Newsletter jetzt senden'; }
   }
 }

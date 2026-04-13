@@ -21,6 +21,8 @@ TOKEN_TTL = 86400
 
 
 def _verify_token(token: str) -> bool:
+    if not ADMIN_PASSWORD:
+        return False
     if not token or "." not in token:
         return False
     parts = token.split(".", 1)
@@ -33,15 +35,23 @@ def _verify_token(token: str) -> bool:
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    key = (ADMIN_PASSWORD or "fallback").encode()
+    key = ADMIN_PASSWORD.encode()
     sig = hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()
     expected = f"{ts_str}.{sig}"
     return hmac.compare_digest(token, expected)
 
 
-def _cors_headers():
+ALLOWED_ORIGINS = [
+    "https://www.whisky-reise.com",
+    "https://whisky-reise.com",
+    "http://localhost:8000",
+]
+
+
+def _cors_headers(origin=""):
+    allowed = origin if origin in ALLOWED_ORIGINS else ALLOWED_ORIGINS[0]
     return {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": allowed,
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, x-admin-token",
     }
@@ -240,12 +250,12 @@ class handler(BaseHTTPRequestHandler):
 
     def do_OPTIONS(self):
         self.send_response(204)
-        for k, v in _cors_headers().items():
+        for k, v in _cors_headers(self.headers.get("Origin", "")).items():
             self.send_header(k, v)
         self.end_headers()
 
     def do_GET(self):
-        cors = _cors_headers()
+        cors = _cors_headers(self.headers.get("Origin", ""))
         token = self.headers.get("x-admin-token", "")
         if not _verify_token(token):
             return self._json(401, {"error": "Unauthorized"}, cors)

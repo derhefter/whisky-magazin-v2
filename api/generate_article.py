@@ -24,6 +24,8 @@ TOKEN_TTL      = 86400
 # ── Auth ──────────────────────────────────────────────────────────────────────
 
 def _verify_token(token: str) -> bool:
+    if not ADMIN_PASSWORD:
+        return False
     if not token or "." not in token:
         return False
     parts = token.split(".", 1)
@@ -36,14 +38,22 @@ def _verify_token(token: str) -> bool:
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    key = (ADMIN_PASSWORD or "fallback").encode()
+    key = ADMIN_PASSWORD.encode()
     sig = hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()
     return hmac.compare_digest(token, f"{ts_str}.{sig}")
 
 
-def _cors_headers():
+ALLOWED_ORIGINS = [
+    "https://www.whisky-reise.com",
+    "https://whisky-reise.com",
+    "http://localhost:8000",
+]
+
+
+def _cors_headers(origin=""):
+    allowed = origin if origin in ALLOWED_ORIGINS else ALLOWED_ORIGINS[0]
     return {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": allowed,
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, x-admin-token",
     }
@@ -198,7 +208,7 @@ class handler(BaseHTTPRequestHandler):
 
     def do_OPTIONS(self):
         self.send_response(204)
-        for k, v in _cors_headers().items():
+        for k, v in _cors_headers(self.headers.get("Origin", "")).items():
             self.send_header(k, v)
         self.end_headers()
 
@@ -217,7 +227,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
-        for k, v in _cors_headers().items():
+        for k, v in _cors_headers(self.headers.get("Origin", "")).items():
             self.send_header(k, v)
         self.end_headers()
         self.wfile.write(body)

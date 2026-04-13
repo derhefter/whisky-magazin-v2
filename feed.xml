@@ -5,8 +5,16 @@
     <link>https://www.whisky-reise.com</link>
     <description>Dein Guide fuer Whisky, Destillerien &amp; Reisen</description>
     <language>de-de</language>
-    <lastBuildDate>Sun, 12 Apr 2026 19:06:51 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 18:52:43 +0100</lastBuildDate>
     <atom:link href="https://www.whisky-reise.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Whisky für verregnete April-Tage: Unsere Lieblinge für graue Stunden</title>
+      <link>https://www.whisky-reise.com/artikel/whiskys-fuer-verregnete-april-tage.html</link>
+      <description></description>
+      <pubDate>Sun, 12 Apr 2026 08:00:00 +0100</pubDate>
+      <category>Whisky</category>
+      <guid isPermaLink="true">https://www.whisky-reise.com/artikel/whiskys-fuer-verregnete-april-tage.html</guid>
+    </item>
     <item>
       <title>Whisky-Etikett richtig lesen: Was steckt wirklich drauf und dahinter?</title>
       <link>https://www.whisky-reise.com/artikel/whisky-etikett-richtig-lesen.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Tue, 17 Mar 2026 08:00:00 +0100</pubDate>
       <category>Reise</category>
       <guid isPermaLink="true">https://www.whisky-reise.com/artikel/speyside-aberdeen-dufftown-2014.html</guid>
-    </item>
-    <item>
-      <title>Special Edition: Dublin &amp; Irish Whiskey 2015</title>
-      <link>https://www.whisky-reise.com/artikel/special-edition-dublin-irland-2015.html</link>
-      <description>Special Edition Dublin 2015: Teeling Whiskey Distillery und Guinness Storehouse. Unser erster Trip nach Irland statt Schottland. Irish Whiskey mit e!</description>
-      <pubDate>Tue, 17 Mar 2026 08:00:00 +0100</pubDate>
-      <category>Reise</category>
-      <guid isPermaLink="true">https://www.whisky-reise.com/artikel/special-edition-dublin-irland-2015.html</guid>
     </item>
   </channel>
 </rss>
