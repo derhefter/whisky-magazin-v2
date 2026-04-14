@@ -20,13 +20,13 @@ jobs:
       - name: Repository auschecken
         uses: actions/checkout@v4
 
-      - name: Python 3.11 einrichten
+      - name: Python 3.12 einrichten
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
 
-      - name: Abhaengigkeiten installieren
+      - name: Abhängigkeiten installieren
         run: |
           python -m pip install --upgrade pip
           pip install pylint
@@ -37,7 +37,7 @@ jobs:
           pylint \
             --disable=C0301,C0303,W0611,R0903,C0114 \
             --output-format=colorized \
-            main.py content_generator.py site_builder.py topic_library.py
+            main.py content_generator.py site_builder_v2.py
         continue-on-error: true
 
       - name: Pylint Score ermitteln
@@ -45,8 +45,7 @@ jobs:
           SCORE=$(pylint \
             --disable=C0301,C0303,W0611,R0903,C0114 \
             --score=yes \
-            main.py content_generator.py site_builder.py topic_library.py \
+            main.py content_generator.py site_builder_v2.py \
             2>&1 | grep "Your code has been rated" | awk '{print $7}' | cut -d'/' -f1)
           echo "Pylint Score: $SCORE / 10.00"
-          echo "PYLINT_SCORE=$SCORE" >> $GITHUB_ENV
         continue-on-error: true

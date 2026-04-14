@@ -1,18 +1,29 @@
-name: Auto-Generate Articles (Weekly)
+name: Auto-Generate Articles (DEAKTIVIERT)
+
+# DEAKTIVIERT: Artikel-Generierung läuft über Windows Task Scheduler (Montag 07:00 Uhr)
+# → python main.py --auto -n 2  (erstellt Entwürfe im Dashboard zur Freigabe)
+#
+# Dieser Workflow wurde ersetzt, weil:
+# - Er Artikel direkt veröffentlicht (kein Draft-Workflow)
+# - Er den Windows Task Scheduler dupliziert (→ Konflikte)
+# - Er eine veraltete URL und Konfiguration hatte
+#
+# Manueller Trigger bleibt erhalten für Notfälle.
 
 on:
-  schedule:
-    # Jeden Donnerstag um 10:00 Uhr UTC (11:00 CET / 12:00 CEST)
-    - cron: '0 10 * * 4'
-  workflow_dispatch:  # Manueller Trigger
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Anzahl zu generierender Artikel'
+        required: false
+        default: '2'
 
-# WICHTIG: Schreibrechte fuer git push
 permissions:
   contents: write
 
 jobs:
   generate-and-deploy:
-    name: Generate 3 Articles & Build Site
+    name: Generate Articles & Build Site
     runs-on: ubuntu-latest
 
     steps:
@@ -21,126 +32,91 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Python 3.11 einrichten
+      - name: Python 3.12 einrichten
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
 
-      - name: Abhaengigkeiten installieren
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          echo "Installierte Pakete:"
-          pip list | grep -i openai
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
 
-      - name: Pruefen ob OpenAI Key gesetzt ist
+      - name: OpenAI Key prüfen
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           if [ -z "$OPENAI_API_KEY" ]; then
-            echo "::error::OPENAI_API_KEY Secret ist nicht gesetzt! Bitte unter Settings > Secrets > Actions hinzufuegen."
+            echo "::error::OPENAI_API_KEY ist nicht gesetzt!"
             exit 1
           fi
-          echo "OpenAI Key ist gesetzt (Laenge: ${#OPENAI_API_KEY} Zeichen)."
+          echo "OpenAI Key gesetzt (${#OPENAI_API_KEY} Zeichen)."
 
-      - name: config.json aus Secrets erstellen
+      - name: config.json erstellen
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 << 'PYEOF'
-          import json
-          import os
-
-          api_key = os.environ['OPENAI_API_KEY']
-
+          python3 - <<'EOF'
+          import json, os
           config = {
-              'site': {
-                  'name': 'Whisky Magazin',
-                  'tagline': 'Dein Guide fuer Whisky, Destillerien & Reisen',
-                  'author': 'Ellas',
-                  'base_url': 'https://whisky-magazin.vercel.app',
-                  'language': 'de'
-              },
-              'openai': {
-                  'api_key': api_key,
-                  'model': 'gpt-4o',
-                  'temperature': 0.7,
-                  'max_tokens': 4000
-              },
-              'affiliate_links': {
-                  'amazon_tag': 'whiskyreise74-21',
-                  'tradedoubler_id': '2205846',
-                  'whisky_shops': [
-                      {
-                          'name': 'Amazon Whisky',
-                          'url_template': 'https://www.amazon.de/s?k={keyword}&tag=whiskyreise74-21',
-                          'priority': 1
-                      }
-                  ],
-                  'travel_links': {
-                      'faehre': 'https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448',
-                      'flug': 'https://clk.tradedoubler.com/click?p=227718&a=2205846',
-                      'hotel': 'https://www.whisky.reise/hotels/',
-                      'mietwagen': 'https://www.whisky.reise/mietwagen/',
-                      'touren': 'https://www.whisky.reise/touren/',
-                      'versicherung': 'https://www.whisky.reise/reiseversicherung/',
-                      'wohnmobil': 'https://www.whisky.reise/wohnmobil/'
-                  }
-              },
-              'content_settings': {
-                  'articles_per_run': 1,
-                  'min_word_count': 1200,
-                  'max_word_count': 2500
+            "site": {
+              "name": "Whisky Magazin",
+              "tagline": "Dein Guide fuer Whisky, Destillerien & Reisen",
+              "base_url": "https://www.whisky-reise.com",
+              "language": "de",
+              "author": "Steffen & Elmar"
+            },
+            "openai": {
+              "api_key": os.environ.get("OPENAI_API_KEY", ""),
+              "model": "gpt-4o",
+              "temperature": 0.7,
+              "max_tokens": 16000
+            },
+            "affiliate_links": {
+              "amazon_tag": "whiskyreise74-21",
+              "tradedoubler_id": "2205846",
+              "whisky_shops": [
+                {
+                  "name": "Amazon Whisky",
+                  "url_template": "https://www.amazon.de/s?k={keyword}&tag=whiskyreise74-21",
+                  "priority": 1
+                }
+              ],
+              "travel_links": {
+                "faehre": "https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448",
+                "flug": "https://clk.tradedoubler.com/click?p=227718&a=2205846",
+                "hotel": "https://www.whisky.reise/hotels/",
+                "mietwagen": "https://www.whisky.reise/mietwagen/",
+                "touren": "https://www.whisky.reise/touren/",
+                "versicherung": "https://www.whisky.reise/reiseversicherung/",
+                "wohnmobil": "https://www.whisky.reise/wohnmobil/"
               }
+            },
+            "content_settings": {
+              "articles_per_run": 1,
+              "min_word_count": 1200,
+              "max_word_count": 2500,
+              "unsplash_api_key": ""
+            },
+            "notifications": {
+              "email": "whisky-news@whisky-reise.com",
+              "smtp_sender": "",
+              "smtp_app_password": "",
+              "enabled": False
+            }
           }
+          with open("config.json", "w", encoding="utf-8") as f:
+              json.dump(config, f, ensure_ascii=False, indent=2)
+          EOF
 
-          with open('config.json', 'w') as f:
-              json.dump(config, f, indent=2, ensure_ascii=False)
-
-          print(f"config.json erstellt. API-Key: {api_key[:8]}...{api_key[-4:]}")
-          PYEOF
-
-      - name: OpenAI API-Verbindung testen
-        run: |
-          python3 << 'PYEOF'
-          import json
-          with open('config.json', 'r') as f:
-              config = json.load(f)
-
-          from openai import OpenAI
-          client = OpenAI(api_key=config['openai']['api_key'])
-          try:
-              response = client.chat.completions.create(
-                  model='gpt-4o',
-                  max_tokens=10,
-                  messages=[{'role': 'user', 'content': 'Say OK'}],
-              )
-              print(f"OpenAI API Test OK: {response.choices[0].message.content}")
-          except Exception as e:
-              print(f"::error::OpenAI API Test fehlgeschlagen: {e}")
-              raise
-          PYEOF
-
-      - name: 3 Artikel generieren + Website bauen
-        run: |
-          python main.py --auto -n 3
+      - name: Artikel als Entwürfe generieren
+        run: python main.py --auto -n ${{ github.event.inputs.count || '2' }}
         env:
           PYTHONIOENCODING: utf-8
 
-      - name: Git Konfiguration
+      - name: Änderungen committen
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-
-      - name: Aenderungen committen und pushen
-        run: |
-          git add articles/ site/ used_topics.json
-          if ! git diff --staged --quiet; then
-            ARTICLE_COUNT=$(find articles/ -name "*.json" | wc -l)
-            git commit -m "chore: Auto-generate 3 new articles [$(date +%Y-%m-%d)] (total: $ARTICLE_COUNT)"
-            git push
-            echo "Erfolgreich gepusht!"
-          else
-            echo "Keine Aenderungen zu committen"
-          fi
+          git add articles/drafts/ data/
+          git diff --cached --quiet || git commit -m "Auto-Generate: ${{ github.event.inputs.count || '2' }} Entwürfe erstellt [$(date +%Y-%m-%d)]"
+          git push
