@@ -31,12 +31,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.whisky-reise.com/kategorie/reise.html</loc>
+    <loc>https://www.whisky-reise.com/kategorie/lifestyle.html</loc>
     <lastmod>2026-04-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.whisky-reise.com/kategorie/lifestyle.html</loc>
+    <loc>https://www.whisky-reise.com/kategorie/whisky.html</loc>
     <lastmod>2026-04-14</lastmod>
     <priority>0.7</priority>
   </url>
@@ -46,7 +46,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.whisky-reise.com/kategorie/whisky.html</loc>
+    <loc>https://www.whisky-reise.com/kategorie/reise.html</loc>
     <lastmod>2026-04-14</lastmod>
     <priority>0.7</priority>
   </url>
