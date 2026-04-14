@@ -431,7 +431,8 @@ def notify_new_drafts(articles_data):
     Empfänger: rosenhefter@gmail.com
     """
     import os
-    import requests as _requests
+    import urllib.request as _urllib
+    import json as _json_mod
     from datetime import date as _date, timedelta
 
     brevo_key = os.environ.get("BREVO_API_KEY", "")
@@ -579,17 +580,24 @@ def notify_new_drafts(articles_data):
     }
 
     try:
-        resp = _requests.post(
+        body = _json_mod.dumps(payload, ensure_ascii=False).encode("utf-8")
+        req = _urllib.Request(
             "https://api.brevo.com/v3/smtp/email",
-            headers={"api-key": brevo_key, "Content-Type": "application/json"},
-            json=payload,
-            timeout=15,
+            data=body,
+            headers={
+                "api-key": brevo_key,
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            method="POST",
         )
-        if resp.status_code in (200, 201):
+        with _urllib.urlopen(req, timeout=15) as resp:
+            status = resp.status
+        if status in (200, 201):
             print(f"  [Notifier] E-Mail gesendet an {recipient}")
             return True
         else:
-            print(f"  [Notifier] Fehler {resp.status_code}: {resp.text[:200]}")
+            print(f"  [Notifier] Fehler HTTP {status}")
             return False
     except Exception as exc:
         print(f"  [Notifier] Anfrage-Fehler: {exc}")
