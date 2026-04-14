@@ -3402,7 +3402,7 @@ def build_impressum_page(config):
 
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
         <p>
-            Steffen Rosenhefter<br>
+            Steffen Hefter<br>
             Wilhelm-Schrader-Stra&szlig;e 27A<br>
             06120 Halle (Saale)
         </p>
@@ -3414,7 +3414,7 @@ def build_impressum_page(config):
 
         <h2>Verantwortlich f&uuml;r den Inhalt nach &sect; 55 Abs. 2 RSt V</h2>
         <p>
-            Steffen Rosenhefter<br>
+            Steffen Hefter<br>
             Wilhelm-Schrader-Stra&szlig;e 27A, 06120 Halle (Saale)
         </p>
 
