@@ -286,25 +286,38 @@ Konfiguriert in `vercel.json`:
 
 Datei: `.github/workflows/build.yml`
 
-**Trigger:** Wenn Dateien in `articles/*.json` oder `data/topics_queue.json` geaendert werden.
+**Trigger:** Wenn Dateien in `articles/*.json` oder `data/topics_queue.json` geaendert werden (Push auf `main`).
 
 **Ablauf:**
 1. Checkout des Repos
 2. Python + Abhaengigkeiten installieren
-3. `python site_builder_v2.py` ausfuehren
-4. Generierte `site-v2/` Dateien committen und pushen
-5. Vercel erkennt den Push und deployt automatisch
+3. `config.json` wird zur Laufzeit aus fest hinterlegten Werten erstellt (die Datei ist in `.gitignore` und nicht im Repo)
+4. `build_site()` aus `site_builder_v2.py` ausfuehren
+5. Generierte `site-v2/` Dateien committen (Commit-Nachricht: "Auto-Build: Artikel veroeffentlicht [skip ci]") und pushen
+6. Vercel erkennt den Push und deployt automatisch
+
+**Hinweis:** Das `[skip ci]` im Commit-Nachricht verhindert, dass der Build sich selbst in einer Endlosschleife aufruft.
+
+**Zweiter Workflow – `auto-generate.yml`:** Kein automatischer Zeitplan mehr (deaktiviert April 2026). Nur noch manuell ueber "workflow_dispatch" ausfuehren falls der Windows Task Scheduler ausnahmesweise ausfaellt. Der Workflow erstellt dann Entwuerfe (nicht direkt veroeffentlichte Artikel).
 
 ### 3.4 E-Mail-Benachrichtigungen
 
-Jedes Mal wenn `python main.py --auto` laeuft, sendet das System eine HTML-E-Mail:
+Jedes Mal wenn `python main.py --auto` laeuft (Montag 07:00 per Task Scheduler), sendet das System eine HTML-E-Mail via Brevo Transactional API:
 
 | Eigenschaft | Wert |
 |------------|------|
 | **Empfaenger** | rosenhefter@gmail.com |
 | **Absender** | whisky-news@whisky-reise.com (via Brevo) |
-| **Betreff** | "Neue Whisky-Artikel bereit zur Freigabe" |
-| **Inhalt** | Titel + Kategorie + Wortanzahl + Link zum Dashboard |
+| **Betreff** | "X neue Whisky-Artikel warten auf Freigabe" |
+| **Inhalt** | Titel, Kategorie, Teaser und Wortanzahl jedes Entwurfs; Direktlink zum Dashboard; naechste Veroeffentlichungstermine (Mi + Sa) |
+
+**Voraussetzung:** `BREVO_API_KEY` muss in der lokalen `.env`-Datei stehen.
+
+**E-Mail manuell testen:**
+```bash
+cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
+python -c "from notifier import notify_new_drafts; notify_new_drafts([{'title':'Test','category':'Whisky','meta':{'teaser':'Testteaser'},'html_content':'<p>Test</p>'}])"
+```
 
 ---
 
@@ -444,13 +457,14 @@ Alle hier aufgefuehrten Variablen muessen in Vercel unter **Settings -> Environm
 | Variable | Beschreibung | Beispielwert |
 |----------|-------------|--------------|
 | `DASHBOARD_PASSWORD` | Login-Passwort fuer /admin | (frei waehlbar, sicher!) |
-| `CRON_SECRET` | Absicherung der Cron-Jobs | (beliebiger langer String) |
+| `CRON_SECRET` | Absicherung der Mi/Sa-Cron-Jobs gegen unberechtigte Aufrufe | (langer Zufalls-String, mind. 32 Zeichen) |
 | `GITHUB_TOKEN` | Fine-grained PAT mit read+write auf das Repo | ghp_... |
 | `GITHUB_REPO` | Repository-Pfad | `derhefter/whisky-magazin-v2` |
 | `GITHUB_BRANCH` | Branch (Standard: main) | `main` |
-| `BREVO_API_KEY` | Brevo API-Key fuer Newsletter | xkeysib-... |
+| `BREVO_API_KEY` | Brevo API-Key fuer Newsletter + Abonnenten-Statistik | xkeysib-... |
 | `BREVO_LIST_ID` | Brevo Newsletter-Listen-ID | `3` |
-| `OPENAI_API_KEY` | OpenAI Key fuer KI-Texte (WotM-Polishing) | sk-... |
+| `OPENAI_API_KEY` | OpenAI Key fuer KI-Texte (WotM-Polishing + Dashboard-Generierung) | sk-... |
+| `UNSPLASH_API_KEY` | Unsplash Key fuer automatische Artikelbilder (Dashboard-Generierung) | (Unsplash Developer Key) |
 | `SITE_URL` | Basis-URL der Seite | `https://www.whisky-reise.com` |
 
 **Wichtig:** Nach jeder Aenderung an Environment Variables muss Vercel **neu deployt** werden!
@@ -464,9 +478,11 @@ Alle hier aufgefuehrten Variablen muessen in Vercel unter **Settings -> Environm
 
 #### `.env` (im Projektordner, nicht in Git)
 ```
-BREVO_API_KEY=xkeysib-...
+BREVO_API_KEY=xkeysib-...        # Pflicht: fuer E-Mail-Benachrichtigungen (montags)
+OPENAI_API_KEY=sk-proj-...       # Optional: wird auch aus config.json gelesen
+CRON_SECRET=...                  # Nur fuer Vercel noetig, lokal nicht benoetigt
 ```
-Wird fuer lokale E-Mail-Benachrichtigungen bei `python main.py --auto` benoetigt.
+`BREVO_API_KEY` ist Pflicht fuer die montaegliche E-Mail-Benachrichtigung an rosenhefter@gmail.com. Ohne diesen Key wird die E-Mail uebersprungen (kein Fehler, nur kein Versand).
 
 #### `config.json` (im Projektordner, nicht in Git)
 
@@ -557,13 +573,16 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 | Dashboard zeigt Nullen ueberall | Env Vars fehlen oder falsch | `/api/admin_debug` aufrufen (nach Login) |
 | Artikel werden nicht veroeffentlicht | Keine freigegebenen Entwuerfe | Im Artikel-Tab pruefen und freigeben |
 | Artikel werden nicht veroeffentlicht | Cron-Job laeuft nicht | Vercel Dashboard -> Cron Jobs pruefen |
-| E-Mail kommt nicht | `.env` fehlt lokal | `.env` Datei pruefen: `BREVO_API_KEY=...` |
+| Artikel ist im Dashboard "veroeffentlicht" aber nicht auf der Seite | `meta.slug` fehlte in der JSON-Datei | `python main.py --build-v2` ausfuehren — der Builder normalisiert fehlende Slugs automatisch seit April 2026 |
+| Artikel hat kein Bild | `UNSPLASH_API_KEY` fehlt in Vercel | In Vercel setzen + neu deployen; dann Artikel im Dashboard neu generieren |
+| E-Mail kommt nicht (montags) | `BREVO_API_KEY` fehlt in `.env` | `.env` Datei pruefen: `BREVO_API_KEY=xkeysib-...` |
 | /admin zeigt 404 | Deployment veraltet | Vercel manuell neu deployen |
 | Thema wird nicht gespeichert | GITHUB_TOKEN abgelaufen | Neuen Token setzen + neu deployen |
 | Newsletter-Versand schlaegt fehl | BREVO_API_KEY fehlt in Vercel | In Vercel setzen + neu deployen |
 | KI-Texte werden nicht poliert | OPENAI_API_KEY fehlt in Vercel | In Vercel setzen + neu deployen |
 | Bilder fehlen auf der Seite | Bild nicht in `site-v2/images/` | Bild ablegen + `python main.py --build-v2` |
-| Website nicht aktuell | Build nicht gelaufen | Manuell: `python main.py --build-v2` |
+| Website nicht aktuell | Build nicht gelaufen | Manuell: `python main.py --build-v2` + `git push` |
+| GitHub Actions Build schlaegt fehl | `OPENAI_API_KEY` Secret fehlt in GitHub | GitHub -> Repo -> Settings -> Secrets -> `OPENAI_API_KEY` setzen |
 
 ### 7.2 Debug-Endpoint
 
@@ -585,7 +604,12 @@ Zeigt:
 #### Seite ist komplett down
 1. Vercel Dashboard pruefen -> Deployments
 2. Letztes funktionierendes Deployment -> "Redeploy" klicken
-3. Falls Git-Problem: `cd ../whisky-magazin-v2 && git push` manuell
+3. Falls Git-Problem:
+```bash
+cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
+git status
+git push
+```
 
 #### GitHub Token abgelaufen (Dashboard funktioniert nicht)
 1. https://github.com/settings/tokens -> Neuen Token erstellen
@@ -637,8 +661,9 @@ whisky-magazin/
 |   +-- images/             Bilder
 |   +-- style.css           Globales Stylesheet
 +-- .github/workflows/
-|   +-- build.yml           Auto-Rebuild bei Artikel-Aenderungen
-|   +-- auto-generate.yml   Wochenautomatik (legacy)
+|   +-- build.yml           Auto-Rebuild bei Artikel-Aenderungen (aktiv)
+|   +-- auto-generate.yml   Notfall-Backup fuer Artikel-Generierung (nur manuell, kein Zeitplan)
+|   +-- pylint.yml          Code-Qualitaetspruefung bei Python-Aenderungen
 +-- main.py                 CLI-Hauptskript
 +-- content_generator.py    GPT-4o Artikel-Generator
 +-- site_builder_v2.py      Statischer Site-Builder
