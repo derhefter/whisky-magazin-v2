@@ -59,7 +59,7 @@ DOI_HTML = (
 
 def _get_secret():
     if not BREVO_API_KEY:
-        return "fallback-secret"
+        raise RuntimeError("BREVO_API_KEY nicht gesetzt")
     return hashlib.sha256(BREVO_API_KEY.encode()).hexdigest()[:32]
 
 

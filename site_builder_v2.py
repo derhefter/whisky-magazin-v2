@@ -1057,8 +1057,8 @@ def _base_template():
             margin: 0 auto;
             padding: 0 24px;
         }}
-        .article-body {{ max-width: var(--article-max); }}
-        .article-sidebar {{ position: relative; }}
+        .article-body {{ max-width: var(--article-max); min-width: 0; }}
+        .article-sidebar {{ position: relative; min-width: 0; }}
         .sidebar-sticky {{ position: sticky; top: 88px; }}
         .tasting-panel {{
             background: var(--bg-surface);
