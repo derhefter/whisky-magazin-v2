@@ -18,6 +18,24 @@ ARTICLES_DIR = PROJECT_DIR / "articles"
 # Flag: CSS wurde bereits extrahiert und geschrieben
 _CSS_EXTRACTED = False
 
+# Pinterest Tracking Tag (wird auf jeder Seite vor </head> eingefügt)
+_PINTEREST_TAG = """    <!-- Pinterest Tag -->
+    <script>
+    !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2613413631015');
+    pintrk('page');
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt=""
+      src="https://ct.pinterest.com/v3/?event=init&tid=2613413631015&noscript=1" />
+    </noscript>
+    <!-- end Pinterest Tag -->"""
+
 
 def _externalize_css(html_content):
     """Extrahiert inline-CSS aus HTML, schreibt es einmalig als style.css,
@@ -3630,6 +3648,10 @@ def build_danke_page(config):
             Du kannst dich jederzeit &uuml;ber den Link in jeder E-Mail abmelden.
         </p>
     </div>
+    <script>
+    /* Pinterest Lead-Event: Newsletter-Anmeldung als Conversion tracken */
+    if (window.pintrk) { pintrk('track', 'lead'); }
+    </script>
     """
 
     return _base_template().format(
@@ -3917,8 +3939,9 @@ def build_sitemap(articles, config):
 # ============================================================
 
 def _write_html(filepath, html_content):
-    """Schreibt HTML-Datei mit CSS-Externalisierung."""
+    """Schreibt HTML-Datei mit CSS-Externalisierung und Pinterest-Tag."""
     html = _externalize_css(html_content)
+    html = html.replace('</head>', _PINTEREST_TAG + '\n</head>', 1)
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(html)
 

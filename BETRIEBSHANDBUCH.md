@@ -456,7 +456,23 @@ Im `<head>`-Bereich jeder Seite sind aktuell folgende Verification-Tags hinterle
 | Google Search Console | `<meta name="google-site-verification" content="3OKzP9zKRrZV5V4-chXaN7GG39fdLAEeymXqKeqn4Rw">` |
 | Pinterest | `<meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">` |
 
-Neuen Tag hinzufuegen: Einfach in `_base_template()` unterhalb der bestehenden Tags eintragen, dann `python main.py --build-v2` ausfuehren. Der Tag erscheint automatisch auf **allen** generierten Seiten.
+Neuen Verification-Tag hinzufuegen: Einfach in `_base_template()` unterhalb der bestehenden Tags eintragen, dann `python main.py --build-v2` ausfuehren. Der Tag erscheint automatisch auf **allen** generierten Seiten.
+
+#### Pinterest Tracking Tag (Pixel)
+
+Zusaetzlich zum Verification-Tag ist der **Pinterest Pixel** (Tag-ID: `2613413631015`) auf allen Seiten aktiv. Er wird durch die Konstante `_PINTEREST_TAG` in `site_builder_v2.py` (Zeile ~22) definiert und von `_write_html()` automatisch vor `</head>` jeder HTML-Datei eingefuegt.
+
+| Event | Seite | Zweck |
+|-------|-------|-------|
+| `PageView` | Alle Seiten | Seitenaufrufe tracken, Zielgruppe aufbauen |
+| `lead` | `danke.html` | Newsletter-Anmeldung als Conversion zaehlen |
+
+**Pinterest Tag-ID aendern oder deaktivieren:** Konstante `_PINTEREST_TAG` in `site_builder_v2.py` anpassen, dann neu bauen.
+
+**Naechster Schritt (Auto-Pinnen):** Artikel koennen automatisch beim Veroeffentlichen als Pinterest-Pin erstellt werden. Dafuer werden benoetigt:
+- `PINTEREST_ACCESS_TOKEN` (aus Pinterest Developer App)
+- `PINTEREST_BOARD_ID` (Ziel-Pinnwand)
+Beide als Vercel Environment Variables setzen.
 
 ---
 
