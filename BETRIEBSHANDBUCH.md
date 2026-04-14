@@ -443,8 +443,20 @@ Alle Seiten werden von `site_builder_v2.py` generiert:
 | Impressum | `build_impressum_page()` (~Zeile 3250) | Bei Adress- oder Kontaktaenderungen |
 | Datenschutz | `build_datenschutz_page()` (~Zeile 3340) | Bei neuen Trackern/Affiliates |
 | Navigation | `_base_template()` (~Zeile 1150) | Bei neuen Menue-Eintraegen |
+| `<head>`-Meta-Tags | `_base_template()` (~Zeile 265) | Bei neuen Verification-Tags (Google, Pinterest, etc.) |
 
 Nach jeder Aenderung: `python main.py --build-v2`
+
+#### Webmaster-Verification-Tags
+
+Im `<head>`-Bereich jeder Seite sind aktuell folgende Verification-Tags hinterlegt (in `_base_template()`, ~Zeile 271 in `site_builder_v2.py`):
+
+| Dienst | Meta-Tag |
+|--------|---------|
+| Google Search Console | `<meta name="google-site-verification" content="3OKzP9zKRrZV5V4-chXaN7GG39fdLAEeymXqKeqn4Rw">` |
+| Pinterest | `<meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">` |
+
+Neuen Tag hinzufuegen: Einfach in `_base_template()` unterhalb der bestehenden Tags eintragen, dann `python main.py --build-v2` ausfuehren. Der Tag erscheint automatisch auf **allen** generierten Seiten.
 
 ---
 
