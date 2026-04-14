@@ -11,14 +11,15 @@ from urllib.error import HTTPError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
-ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
-GITHUB_TOKEN   = os.environ.get("GITHUB_TOKEN", "").strip()
-GITHUB_REPO    = os.environ.get("GITHUB_REPO", "derhefter/whisky-magazin-v2").strip()
-GITHUB_BRANCH  = os.environ.get("GITHUB_BRANCH", "main").strip()
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
-OPENAI_MODEL   = os.environ.get("OPENAI_MODEL", "gpt-4o").strip()
-AMAZON_TAG     = "whiskyreise74-21"
-TOKEN_TTL      = 86400
+ADMIN_PASSWORD    = os.environ.get("DASHBOARD_PASSWORD", "").strip()
+GITHUB_TOKEN      = os.environ.get("GITHUB_TOKEN", "").strip()
+GITHUB_REPO       = os.environ.get("GITHUB_REPO", "derhefter/whisky-magazin-v2").strip()
+GITHUB_BRANCH     = os.environ.get("GITHUB_BRANCH", "main").strip()
+OPENAI_API_KEY    = os.environ.get("OPENAI_API_KEY", "").strip()
+OPENAI_MODEL      = os.environ.get("OPENAI_MODEL", "gpt-4o").strip()
+UNSPLASH_API_KEY  = os.environ.get("UNSPLASH_API_KEY", "").strip()
+AMAZON_TAG        = "whiskyreise74-21"
+TOKEN_TTL         = 86400
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
@@ -126,6 +127,125 @@ def _github_get(path):
             return json.loads(resp.read().decode("utf-8"))
     except Exception:
         return {"error": "not_found"}
+
+
+# ── Unsplash image fetch ─────────────────────────────────────────────────────
+
+# Brand → landschaftliche Suchanfragen für Unsplash
+_BRAND_QUERIES = {
+    "lagavulin": "lagavulin bay islay coast scotland",
+    "laphroaig": "islay south coast rocky shore scotland",
+    "ardbeg": "islay dramatic coastline atlantic waves",
+    "bowmore": "bowmore village islay harbour scotland",
+    "bruichladdich": "islay west coast white buildings atlantic",
+    "talisker": "isle of skye coast cliffs carbost bay",
+    "macallan": "speyside estate mansion river scotland",
+    "glenfiddich": "dufftown speyside valley river scotland",
+    "glenlivet": "glenlivet glen river valley green hills",
+    "glenfarclas": "speyside ben rinnes mountain heather",
+    "springbank": "campbeltown harbour kintyre coast",
+    "highland park": "orkney kirkwall harbour cathedral scotland",
+    "glenmorangie": "tain ross shire highland coast scotland",
+    "dalmore": "cromarty firth highland scotland coast",
+    "benromach": "speyside river valley forres scotland",
+    "glengoyne": "campsie fells waterfall highland scotland",
+    "aberfeldy": "perthshire river tay autumn scotland",
+    "oban": "oban harbour bay boats scotland sunset",
+}
+
+_TOPIC_QUERIES = {
+    "tasting": "whisky glass amber dram dark elegant closeup",
+    "verkostung": "whisky glass amber dram closeup bokeh",
+    "review": "whisky glass amber dram closeup bokeh",
+    "bewertung": "whisky glass amber dram dark elegant",
+    "etikett": "whisky bottle label detail elegant dark",
+    "geschenk": "whisky bottle gift box elegant dark amber",
+    "zubehör": "whisky accessories glass decanter dark wood",
+    "gläser": "whisky glasses crystal dark elegant table",
+    "winter": "scotland winter snow glen frost mountains",
+    "herbst": "autumn trees scotland loch reflection",
+    "frühling": "spring heather scotland hills blossom",
+    "sommer": "scotland summer loch sun mountains",
+    "regen": "scotland rainy day cozy pub interior warm",
+    "april": "scotland april spring loch misty morning",
+    "cocktail": "cocktail bar evening warm atmosphere",
+    "reise": "scotland landscape road highlands misty",
+    "roadtrip": "scotland highland road trip single track",
+    "destillerie": "distillery copper pot still interior",
+    "wandern": "hiking scotland highland trail misty",
+    "karte": "scotland map whisky regions illustrated",
+}
+
+_CATEGORY_FALLBACK = {
+    "whisky": "whisky glass amber dram dark elegant",
+    "reise": "scotland landscape road highlands misty",
+    "natur": "scotland wilderness nature mountains loch",
+    "lifestyle": "cozy evening interior warm atmosphere table",
+}
+
+
+def _build_unsplash_queries(title: str, category: str) -> list:
+    """Baut priorisierte Suchanfragen-Liste für Unsplash."""
+    title_lower = title.lower()
+    queries = []
+    # 1. Brand-Name im Titel
+    for brand, q in _BRAND_QUERIES.items():
+        if brand in title_lower:
+            queries.append(q)
+            break
+    # 2. Themen-Keywords
+    for keyword, q in _TOPIC_QUERIES.items():
+        if keyword in title_lower and q not in queries:
+            queries.append(q)
+    # 3. Kategorie-Fallback
+    fallback = _CATEGORY_FALLBACK.get(category.lower(), "scotland whisky landscape highland")
+    if fallback not in queries:
+        queries.append(fallback)
+    return queries
+
+
+def _fetch_unsplash_image(title: str, category: str) -> dict:
+    """Holt ein passendes Bild von Unsplash. Gibt Dict mit url/alt/credit oder {} zurück."""
+    if not UNSPLASH_API_KEY:
+        return {}
+    queries = _build_unsplash_queries(title, category)
+    from urllib.parse import urlencode
+    for query in queries:
+        try:
+            params = urlencode({
+                "query": query,
+                "per_page": 10,
+                "orientation": "landscape",
+                "content_filter": "high",
+            })
+            req = Request(
+                f"https://api.unsplash.com/search/photos?{params}",
+                headers={"Authorization": f"Client-ID {UNSPLASH_API_KEY}"},
+            )
+            with urlopen(req, timeout=10) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            results = data.get("results", [])
+            if results:
+                best = sorted(results, key=lambda p: p.get("downloads", 0), reverse=True)[0]
+                img_url = (
+                    best["urls"]["raw"]
+                    + "?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=80"
+                )
+                photographer = best["user"]["name"]
+                photo_link = best["links"]["html"]
+                return {
+                    "url": img_url,
+                    "alt": title,
+                    "credit": (
+                        f'Foto von <a href="{photo_link}?utm_source=whisky_magazin'
+                        f'&utm_medium=referral">{photographer}</a> auf '
+                        f'<a href="https://unsplash.com/?utm_source=whisky_magazin'
+                        f'&utm_medium=referral">Unsplash</a>'
+                    ),
+                }
+        except Exception:
+            continue
+    return {}
 
 
 # ── Article generation ────────────────────────────────────────────────────────
@@ -261,25 +381,32 @@ class handler(BaseHTTPRequestHandler):
             meta = _generate_meta(title)
             slug = meta.get("slug") or _make_slug(title)
 
-            # Step 3: Build article JSON
+            # Step 3: Fetch Unsplash image
+            image_data = _fetch_unsplash_image(title, category)
+
+            # Step 4: Build article JSON
             today = time.strftime("%Y-%m-%d")
             article = {
                 "title":       title,
                 "slug":        slug,
                 "category":    category,
                 "date":        today,
+                "image_url":   image_data.get("url", ""),
+                "image_alt":   image_data.get("alt", title),
+                "image_credit": image_data.get("credit", ""),
                 "meta": {
-                    "teaser":      meta.get("teaser", ""),
-                    "description": meta.get("description", ""),
-                    "slug":        slug,
-                    "keywords":    meta.get("keywords", ""),
+                    "teaser":          meta.get("teaser", ""),
+                    "description":     meta.get("description", ""),
+                    "meta_description": meta.get("description", ""),
+                    "slug":            slug,
+                    "keywords":        meta.get("keywords", ""),
                 },
                 "_status":       "pending",
                 "_generated_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
                 "html_content":  html_content,
             }
 
-            # Step 4: Save to GitHub as draft
+            # Step 5: Save to GitHub as draft
             draft_path = f"articles/drafts/{today}_{slug}.json"
             existing   = _github_get(draft_path)
             sha        = existing.get("sha") if "error" not in existing else None
