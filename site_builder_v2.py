@@ -3016,51 +3016,23 @@ def build_map_page(config):
 
 
 def _push_to_v2_repo(project_dir):
-    """Kopiert site-v2/ ins whisky-magazin-v2 Repo und pusht zu GitHub."""
+    """Pusht die gebaute site-v2/ direkt aus dem Projektverzeichnis nach GitHub."""
     try:
-        v2_repo = Path("C:/Users/steff/Documents lokal/Business-Ideen/whisky-magazin-v2")
-        if not v2_repo.exists():
-            print("  WARNUNG: whisky-magazin-v2 Verzeichnis nicht gefunden, Push übersprungen.")
-            return
-
-        src_dir = Path(project_dir) / "site-v2"
-        if not src_dir.exists():
-            print("  WARNUNG: site-v2 Verzeichnis nicht gefunden, Push übersprungen.")
-            return
-
-        # Copy all files from site-v2/ to whisky-magazin-v2/, excluding .git
-        for item in src_dir.rglob("*"):
-            if item.is_file():
-                rel = item.relative_to(src_dir)
-                dest = v2_repo / rel
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(str(item), str(dest))
-
-        # Copy api/ serverless functions
-        api_dir = Path(project_dir) / "api"
-        if api_dir.exists():
-            dest_api = v2_repo / "api"
-            dest_api.mkdir(exist_ok=True)
-            for item in api_dir.rglob("*"):
-                if item.is_file():
-                    rel = item.relative_to(api_dir)
-                    dest = dest_api / rel
-                    dest.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copy2(str(item), str(dest))
-
-        # Git add, commit, push
+        repo_str = str(project_dir)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        repo_str = str(v2_repo)
-        subprocess.run(["git", "-C", repo_str, "add", "."], check=True, capture_output=True)
+
+        subprocess.run(
+            ["git", "-C", repo_str, "add", "site-v2/"],
+            check=True, capture_output=True
+        )
         result = subprocess.run(
-            ["git", "-C", repo_str, "commit", "-m", f"Auto-update V2: {timestamp}"],
+            ["git", "-C", repo_str, "commit", "-m", f"build: Site-Rebuild {timestamp}"],
             capture_output=True, text=True
         )
         if result.returncode == 0:
             subprocess.run(["git", "-C", repo_str, "push"], check=True, capture_output=True)
             print(f"  V2 gepusht nach GitHub ({timestamp})")
         else:
-            # Nothing to commit
             print("  V2: Keine Änderungen zum Pushen.")
     except Exception as e:
         print(f"  WARNUNG: V2 Push fehlgeschlagen: {e}")
