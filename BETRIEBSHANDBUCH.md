@@ -437,13 +437,17 @@ Alle Seiten werden von `site_builder_v2.py` generiert:
 |-------|-------------------|-------------|
 | Startseite | `build_index_page()` (~Zeile 1800) | Hero-Text, Trust-Stats, Anzahl Artikel |
 | Artikel | `build_article_page()` | Automatisch aus JSON |
-| Kategorie-Seiten | `build_category_page()` | Automatisch |
+| Kategorie-Seiten | `build_category_page()` | Automatisch; Meta-Descriptions im Dict `_category_descriptions` innerhalb der Funktion pflegen |
 | Karte | `build_map_page()` (~Zeile 2100) | Bei Kartendesign-Aenderungen |
 | Ueber uns | `build_about_page()` (~Zeile 3030) | Autoren-Info, Statistiken |
-| Impressum | `build_impressum_page()` (~Zeile 3250) | Bei Adress- oder Kontaktaenderungen |
-| Datenschutz | `build_datenschutz_page()` (~Zeile 3340) | Bei neuen Trackern/Affiliates |
+| Impressum | `build_impressum_page()` (~Zeile 3388) | Bei Adress- oder Kontaktaenderungen -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
+| Datenschutz | `build_datenschutz_page()` (~Zeile 3468) | Bei neuen Trackern/Affiliates -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
+| Suche | `build_suche_page()` (~Zeile 3740) | Selten -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
+| Sitemap | `build_sitemap()` (~Zeile 3894) | Bewusst ohne impressum, datenschutz, suche. Neue SEO-irrelevante Seiten hier ebenfalls weglassen |
 | Navigation | `_base_template()` (~Zeile 1150) | Bei neuen Menue-Eintraegen |
-| `<head>`-Meta-Tags | `_base_template()` (~Zeile 265) | Bei neuen Verification-Tags (Google, Pinterest, etc.) |
+| `<head>`-Meta-Tags | `_base_template()` (~Zeile 282) | Bei neuen Verification-Tags (Google, Pinterest, etc.) |
+
+**SEO-Hinweis:** Neue Seiten, die nicht indexiert werden sollen (Utility-, Legal- oder Duplikat-Seiten), muessen zwei Dinge bekommen: (1) `<meta name="robots" content="noindex, follow">` im `<head>` und (2) keinen Eintrag in `build_sitemap()`. Beides wird im Builder per Post-Processing (`.replace()`-Aufruf nach `.format()`) und durch Weglassen in der `static_pages`-Liste geloest -- analog zu impressum/datenschutz/suche.
 
 Nach jeder Aenderung: `python main.py --build-v2`
 
@@ -743,6 +747,7 @@ whisky-magazin/
 - [ ] Content-Strategie ueberpruefen: Welche Artikel performen gut? Welche Themen fehlen?
 - [ ] Neue Themen in die Queue eintragen (Dashboard -> Themen -> Neues Thema)
 - [ ] Defekte Links pruefen (z.B. mit einem Online Dead Link Checker)
+- [ ] **SEO-Grundcheck**: `curl -s https://www.whisky-reise.com/sitemap.xml | grep -c "<url>"` -- Anzahl sollte den tatsaechlichen Artikel+Kategorie+Kern-Seiten entsprechen, keine Legal-Seiten enthalten. Ausserdem: Google Search Console -> Abdeckung -> auf "Ausgeschlossen" pruefen, ob noindex-Seiten (impressum, datenschutz, suche) korrekt herausgefiltert sind.
 
 ---
 
