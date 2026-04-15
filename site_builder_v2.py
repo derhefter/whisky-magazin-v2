@@ -2166,7 +2166,7 @@ def build_index_page(articles, config):
         keywords="Whisky, Scotch, Single Malt, Reise, Schottland, Destillerien",
         og_description=tagline,
         og_image=f"{base_url}/images/default.jpg",
-        canonical_url=f"{base_url}/index.html",
+        canonical_url=f"{base_url}/",
         base_url=base_url,
         content=content,
         json_ld=_json_ld_website(base_url),
@@ -2242,6 +2242,18 @@ def build_category_page(category_name, articles, config):
         </div>
     </div>"""
 
+    _category_descriptions = {
+        "whisky": "Whisky-Wissen, Destillerie-Porträts und Verkostungsnotizen – alles rund um Scotch, Single Malt und mehr im Whisky Magazin.",
+        "reise": "Reiseberichte und Insider-Tipps für Schottland, Whisky-Regionen und Destillerie-Besuche – direkt von Steffen & Elmar.",
+        "lifestyle": "Whisky-Kultur, Geschenkideen und Genuss-Tipps für Enthusiasten – Lifestyle rund ums Thema Scotch im Whisky Magazin.",
+        "natur": "Schottlands wilde Natur: Highlands, Inseln und Küsten – Naturerlebnisse aus dem Whisky Magazin.",
+        "urlaub": "Urlaub mit Whisky: Reisepläne, Destillerie-Touren und Insidertipps für Schottland-Reisende.",
+    }
+    cat_description = _category_descriptions.get(
+        category_name.lower(),
+        f"Alle Artikel und Berichte rund um das Thema {category_name} im Whisky Magazin.",
+    )
+
     breadcrumb_ld = _json_ld_breadcrumb([
         ("Startseite", "/"),
         (category_name, f"/kategorie/{category_name.lower()}.html"),
@@ -2249,9 +2261,9 @@ def build_category_page(category_name, articles, config):
     return _base_template().format(
         title=f"Kategorie: {category_name}",
         site_name=site_name,
-        meta_description=f"Alle Artikel in der Kategorie {category_name}",
+        meta_description=cat_description,
         keywords=category_name,
-        og_description=f"Alle Artikel in der Kategorie {category_name}",
+        og_description=cat_description,
         og_image=f"{base_url}/images/default.jpg",
         canonical_url=f"{base_url}/kategorie/{category_name.lower()}.html",
         base_url=base_url,
@@ -3451,7 +3463,7 @@ def build_impressum_page(config):
     </div>
     """
 
-    return _base_template().format(
+    html = _base_template().format(
         title="Impressum",
         site_name=site_name,
         meta_description="Impressum des Whisky Magazin – Angaben gemäß § 5 TMG.",
@@ -3462,6 +3474,12 @@ def build_impressum_page(config):
         base_url=base_url,
         content=content,
         json_ld="",
+    )
+    # Impressum soll nicht indexiert werden
+    return html.replace(
+        '<meta name="viewport"',
+        '<meta name="robots" content="noindex, follow">\n    <meta name="viewport"',
+        1,
     )
 
 
@@ -3556,7 +3574,7 @@ def build_datenschutz_page(config):
     </div>
     """
 
-    return _base_template().format(
+    html = _base_template().format(
         title="Datenschutz",
         site_name=site_name,
         meta_description="Datenschutzerklärung des Whisky Magazin – Informationen zur Datenverarbeitung, Google Fonts, Newsletter und Affiliate-Links.",
@@ -3567,6 +3585,12 @@ def build_datenschutz_page(config):
         base_url=base_url,
         content=content,
         json_ld="",
+    )
+    # Datenschutz soll nicht indexiert werden
+    return html.replace(
+        '<meta name="viewport"',
+        '<meta name="robots" content="noindex, follow">\n    <meta name="viewport"',
+        1,
     )
 
 
@@ -3802,7 +3826,7 @@ def build_search_page(config):
     </script>
     """
 
-    return _base_template().format(
+    html = _base_template().format(
         title="Suche",
         site_name=site_name,
         meta_description="Durchsuche alle Whisky-Artikel, Reiseberichte und Destillerie-Empfehlungen im Whisky Magazin.",
@@ -3813,6 +3837,12 @@ def build_search_page(config):
         base_url=base_url,
         content=content,
         json_ld="",
+    )
+    # Suchergebnisseite soll nicht indexiert werden
+    return html.replace(
+        '<meta name="viewport"',
+        '<meta name="robots" content="noindex, follow">\n    <meta name="viewport"',
+        1,
     )
 
 
@@ -3898,14 +3928,12 @@ def build_sitemap(articles, config):
     base_url = config["site"].get("base_url", "")
     today = datetime.now().strftime("%Y-%m-%d")
 
-    # Statische Seiten
+    # Statische Seiten (impressum, datenschutz, suche absichtlich ausgelassen –
+    # noindex-Seiten gehören nicht in die Sitemap)
     static_pages = [
         (f"{base_url}/", today, "1.0"),
         (f"{base_url}/karte.html", today, "0.8"),
         (f"{base_url}/ueber-uns.html", today, "0.6"),
-        (f"{base_url}/impressum.html", today, "0.3"),
-        (f"{base_url}/datenschutz.html", today, "0.3"),
-        (f"{base_url}/suche.html", today, "0.5"),
     ]
 
     # Kategorie-Seiten
