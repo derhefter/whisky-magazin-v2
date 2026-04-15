@@ -3922,14 +3922,16 @@ def build_guide_page(config):
 
 
 def build_sitemap(articles, config):
-    """Erstellt eine XML-Sitemap mit lastmod und allen Seitentypen."""
+    """Erstellt eine XML-Sitemap mit lastmod, Prioritäten und image:image-Erweiterung."""
     from urllib.parse import quote
+    from xml.sax.saxutils import escape as xml_escape
 
     base_url = config["site"].get("base_url", "")
     today = datetime.now().strftime("%Y-%m-%d")
 
-    # Statische Seiten (impressum, datenschutz, suche absichtlich ausgelassen –
-    # noindex-Seiten gehören nicht in die Sitemap)
+    # Statische Seiten ohne Bilder (impressum, datenschutz, suche absichtlich
+    # ausgelassen – noindex-Seiten gehören nicht in die Sitemap)
+    # Format: (url, lastmod, priority)
     static_pages = [
         (f"{base_url}/", today, "1.0"),
         (f"{base_url}/karte.html", today, "0.8"),
@@ -3939,27 +3941,62 @@ def build_sitemap(articles, config):
     # Kategorie-Seiten
     categories = set(a.get("category", "Allgemein") for a in articles)
     categories.update(["Whisky", "Reise", "Lifestyle", "Natur", "Urlaub"])
-    for cat in categories:
+    for cat in sorted(categories):
         cat_slug = quote(cat.lower())
         static_pages.append((f"{base_url}/kategorie/{cat_slug}.html", today, "0.7"))
 
-    # Artikel
-    article_entries = []
+    # Statische Seiten als XML-Einträge (ohne image:image)
+    xml_entries = ""
+    for url, lastmod, priority in static_pages:
+        xml_entries += (
+            f"  <url>\n"
+            f"    <loc>{xml_escape(url)}</loc>\n"
+            f"    <lastmod>{lastmod}</lastmod>\n"
+            f"    <priority>{priority}</priority>\n"
+            f"  </url>\n"
+        )
+
+    # Artikel mit image:image-Erweiterung
     for article in articles:
         slug = article.get("meta", {}).get("slug", "")
-        if slug:
-            date = article.get("date", today)
-            safe_slug = quote(slug)
-            article_entries.append((f"{base_url}/artikel/{safe_slug}.html", date, "0.8"))
+        if not slug:
+            continue
+        date = article.get("date", today)
+        safe_slug = quote(slug)
+        page_url = f"{base_url}/artikel/{safe_slug}.html"
 
-    all_urls = static_pages + article_entries
-    xml_entries = ""
-    for url, lastmod, priority in all_urls:
-        xml_entries += f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{lastmod}</lastmod>\n    <priority>{priority}</priority>\n  </url>\n"
+        image_url = article.get("image_url", "")
+        # Relative Pfade (/images/...) auf absolute URL ergänzen
+        if image_url and image_url.startswith("/"):
+            image_url = base_url + image_url
+        image_alt = article.get("image_alt", "") or article.get("title", "")
+        article_title = article.get("title", "")
 
-    return f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{xml_entries}</urlset>"""
+        image_block = ""
+        if image_url:
+            image_block = (
+                f"    <image:image>\n"
+                f"      <image:loc>{xml_escape(image_url)}</image:loc>\n"
+                f"      <image:title>{xml_escape(image_alt or article_title)}</image:title>\n"
+                f"    </image:image>\n"
+            )
+
+        xml_entries += (
+            f"  <url>\n"
+            f"    <loc>{xml_escape(page_url)}</loc>\n"
+            f"    <lastmod>{date}</lastmod>\n"
+            f"    <priority>0.8</priority>\n"
+            f"{image_block}"
+            f"  </url>\n"
+        )
+
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+        '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+        f'{xml_entries}'
+        '</urlset>'
+    )
 
 
 # ============================================================
