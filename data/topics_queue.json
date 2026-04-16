@@ -447,13 +447,14 @@
       "title": "Whisky-Fasser: Wie das Holz den Geschmack bestimmt",
       "type": "article",
       "category": "Whisky",
-      "season": null,
-      "occasion": null,
+      "season": "",
+      "occasion": "",
       "priority": 7,
       "status": "pending",
       "article_slug": null,
       "created_at": "2026-04-09",
-      "notes": ""
+      "notes": "The Wood makes the Whisky / die unterschiedlichen Holzarten durch die unterschiedlichen Fässer / die Möglichkeit, einen Whisky in unterschiedlichen Fässern reifen zu lassen",
+      "updated_at": "2026-04-16T14:11:57Z"
     },
     {
       "id": "272b959d-c6f3-4778-abbd-f36f991f46b1",
