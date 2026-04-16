@@ -627,6 +627,18 @@
       "notes": "",
       "status": "pending",
       "created_at": "2026-04-16T14:09:25Z"
+    },
+    {
+      "id": "11092d76-fd5c-4312-a40a-12a144095eb4",
+      "title": "Scapa",
+      "type": "article",
+      "category": "Whisky",
+      "season": "",
+      "occasion": "",
+      "priority": 5,
+      "notes": "Scapa ist ein sehr besonderer Tropfen. Er wird uns immer an unseren ersten Whisky erinnern. Diesen haben wir in einer wunderbaren Bar in Halle zum ersten Mal zu uns genommen.",
+      "status": "pending",
+      "created_at": "2026-04-16T18:00:50Z"
     }
   ]
 }
