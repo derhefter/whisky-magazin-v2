@@ -540,13 +540,14 @@
       "title": "Die Orkney-Inseln: Highlanders, Highland Park und Wildnis",
       "type": "guide",
       "category": "Reise",
-      "season": null,
-      "occasion": null,
+      "season": "",
+      "occasion": "",
       "priority": 8,
       "status": "pending",
       "article_slug": null,
       "created_at": "2026-04-09",
-      "notes": ""
+      "notes": "Neben Highland Park ist unsere Lieblingsdestille Scappa auch auf den Orkney-Inseln, und mittlerweile sollte es auch eine neue geben.",
+      "updated_at": "2026-04-16T14:12:35Z"
     },
     {
       "id": "5188479f-d01c-43a4-ab17-929b1b1f55c0",
