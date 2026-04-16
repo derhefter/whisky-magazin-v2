@@ -136,12 +136,13 @@
       "type": "article",
       "category": "Reise",
       "season": "herbst",
-      "occasion": null,
+      "occasion": "",
       "priority": 10,
       "status": "pending",
       "article_slug": null,
       "created_at": "2026-04-09",
-      "notes": ""
+      "notes": "Eigentlich ein Wetter, um zu Hause auf dem Sofa zu bleiben und einen gemütlichen, leckeren Whisky zu trinken, aber dennoch macht es mir wieder Spaß, zu sehen, wie alles draußen ist und wie das Gras saftig wächst.",
+      "updated_at": "2026-04-16T14:13:21Z"
     },
     {
       "id": "e5d43704-14a1-4375-982e-4a51b84e36d4",
