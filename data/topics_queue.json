@@ -627,6 +627,18 @@
       "notes": "",
       "status": "pending",
       "created_at": "2026-04-16T14:09:25Z"
+    },
+    {
+      "id": "0f8e91c4-37e6-4fb7-9947-0226720a6644",
+      "title": "Scapa",
+      "type": "article",
+      "category": "Whisky",
+      "season": "",
+      "occasion": "",
+      "priority": 5,
+      "notes": "Scapa war der erste Whisky, den wir jemals verkostet haben, in einer wunderbaren Distille in Halle. Deshalb bleibt er uns immer sehr in Erinnerung.",
+      "status": "pending",
+      "created_at": "2026-04-16T17:48:22Z"
     }
   ]
 }
