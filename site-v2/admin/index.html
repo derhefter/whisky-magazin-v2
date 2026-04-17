@@ -2527,7 +2527,8 @@ async function wotmFetchWhiskyDe() {
       setIfFound('wotm-preis',     result.preis_eur);
 
       if (filled > 0) {
-        statusEl.textContent = `✓ ${filled} Felder von whisky.de befüllt`;
+        const src = result.source || 'whisky.de';
+        statusEl.textContent = `✓ ${filled} Felder befüllt (Quelle: ${src})`;
         statusEl.style.color = 'var(--color-green)';
         if (result.product_url) {
           statusEl.innerHTML += ` <a href="${result.product_url}" target="_blank" rel="noopener" style="color:var(--color-amber);font-size:0.75rem;">Quelle ↗</a>`;

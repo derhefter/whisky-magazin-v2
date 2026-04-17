@@ -630,101 +630,140 @@ def _build_newsletter_html(entry, month_label, article_teasers):
     return html
 
 
-# ── whisky.de tasting notes scraper ──────────────────────────────────────────
+# ── whisky.de tasting notes scraper + OpenAI fallback ────────────────────────
 
 def _fetch_whisky_de_tasting(whisky_name: str) -> dict:
-    """Scrape whisky.de for tasting notes. Returns dict with aroma/geschmack/abgang/bewertung/alter/abv/preis."""
-    from urllib.parse import urlencode
+    """Fetch tasting notes: tries whisky.de first, falls back to OpenAI if blocked."""
 
-    def _get(url, timeout=10):
-        req = Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (compatible; WhiskyMagazinBot/1.0)",
-            "Accept": "text/html,application/xhtml+xml",
-            "Accept-Language": "de-DE,de;q=0.9",
-        })
-        try:
-            with urlopen(req, timeout=timeout) as r:
-                return r.read().decode("utf-8", errors="replace")
-        except Exception:
-            return ""
-
-    # Step 1: search whisky.de
-    search_url = "https://www.whisky.de/shop/search/?query=" + quote(whisky_name, safe="")
-    html = _get(search_url)
-    if not html:
-        return {"error": "whisky.de nicht erreichbar", "source": "whisky.de"}
-
-    # Step 2: find first product link from search results
-    product_path = _re.search(
-        r'href="(/shop/produkt/[^"]+\.html)"',
-        html,
-    )
-    if not product_path:
-        # Try alternate pattern
-        product_path = _re.search(r'href="(/online-shop/[^"]+\.html)"', html)
-
-    if not product_path:
-        return {"error": f"Kein Produkt auf whisky.de für '{whisky_name}' gefunden", "source": "whisky.de"}
-
-    product_url = "https://www.whisky.de" + product_path.group(1)
-    detail_html = _get(product_url)
-    if not detail_html:
-        return {"error": "Produktseite nicht erreichbar", "source": "whisky.de"}
-
-    result = {"source": "whisky.de", "product_url": product_url}
+    def _strip_tags(s):
+        return _re.sub(r'<[^>]+>', ' ', s).strip()
 
     def _extract(pattern, html, group=1, flags=_re.IGNORECASE | _re.DOTALL):
         m = _re.search(pattern, html, flags)
         return m.group(group).strip() if m else ""
 
-    def _strip_tags(s):
-        return _re.sub(r'<[^>]+>', '', s).strip()
+    def _http_get(url, timeout=12):
+        req = Request(url, headers={
+            # Real browser UA to avoid bot blocking
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "de-DE,de;q=0.9,en;q=0.8",
+            "Accept-Encoding": "identity",
+            "Cache-Control": "no-cache",
+        })
+        try:
+            with urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", errors="replace"), None
+        except HTTPError as e:
+            return "", f"HTTP {e.code}"
+        except Exception as exc:
+            return "", str(exc)
 
-    # Aroma
-    aroma = _extract(r'(?:Nase|Aroma|Nose)[^<]*</[^>]+>\s*<[^>]+>([^<]{10,})', detail_html)
-    if not aroma:
-        aroma = _extract(r'class="[^"]*aroma[^"]*"[^>]*>([^<]{10,})', detail_html)
-    result["aroma"] = _strip_tags(aroma)
+    # ── Attempt 1: whisky.de search ───────────────────────────────────────────
+    # Try several known URL patterns for whisky.de search
+    search_candidates = [
+        f"https://www.whisky.de/suche/?suchbegriff={quote(whisky_name, safe='')}",
+        f"https://www.whisky.de/online-shop/search.html?q={quote(whisky_name, safe='')}",
+        f"https://www.whisky.de/shop/search.html?q={quote(whisky_name, safe='')}",
+    ]
 
-    # Geschmack/Gaumen
-    geschmack = _extract(r'(?:Gaumen|Geschmack|Palate)[^<]*</[^>]+>\s*<[^>]+>([^<]{10,})', detail_html)
-    if not geschmack:
-        geschmack = _extract(r'class="[^"]*geschmack[^"]*"[^>]*>([^<]{10,})', detail_html)
-    result["geschmack"] = _strip_tags(geschmack)
+    search_html = ""
+    search_err  = ""
+    for url in search_candidates:
+        search_html, search_err = _http_get(url)
+        if search_html:
+            break
 
-    # Abgang/Finish
-    abgang = _extract(r'(?:Abgang|Finish)[^<]*</[^>]+>\s*<[^>]+>([^<]{10,})', detail_html)
-    result["abgang"] = _strip_tags(abgang)
+    if search_html:
+        # Find first product link
+        product_path = (
+            _re.search(r'href="(/(?:shop|online-shop)/(?:produkt|product)/[^"]+\.html)"', search_html)
+            or _re.search(r'href="(/[^"]+/(?:whisky|whiskey)/[^"]+\.html)"', search_html)
+        )
+        if product_path:
+            product_url  = "https://www.whisky.de" + product_path.group(1)
+            detail_html, _ = _http_get(product_url)
+            if detail_html:
+                result = {"source": "whisky.de", "product_url": product_url}
 
-    # Bewertung (Punkte, 0–100)
-    bewertung = _extract(r'(\d{2,3})\s*(?:Punkte|Pkt|/100)', detail_html)
-    try:
-        result["bewertung"] = int(bewertung) if bewertung else None
-    except Exception:
-        result["bewertung"] = None
+                aroma = _extract(
+                    r'(?:Nase|Aroma|Nose)\s*</[^>]+>\s*(?:<[^>]+>)?\s*([^<]{15,})', detail_html)
+                if not aroma:
+                    aroma = _extract(r'class="[^"]*(?:aroma|nose)[^"]*"[^>]*>([^<]{15,})', detail_html)
+                result["aroma"] = _strip_tags(aroma)
 
-    # Alter
-    alter = _extract(r'(\d+)\s*(?:Jahre|Years?)\b', detail_html)
-    try:
-        result["alter"] = int(alter) if alter else None
-    except Exception:
-        result["alter"] = None
+                geschmack = _extract(
+                    r'(?:Gaumen|Geschmack|Palate)\s*</[^>]+>\s*(?:<[^>]+>)?\s*([^<]{15,})', detail_html)
+                if not geschmack:
+                    geschmack = _extract(r'class="[^"]*(?:geschmack|palate)[^"]*"[^>]*>([^<]{15,})', detail_html)
+                result["geschmack"] = _strip_tags(geschmack)
 
-    # ABV
-    abv = _extract(r'(\d+[,.]?\d*)\s*%\s*(?:vol|Vol|ABV)', detail_html)
-    try:
-        result["abv"] = float(abv.replace(",", ".")) if abv else None
-    except Exception:
-        result["abv"] = None
+                abgang = _extract(
+                    r'(?:Abgang|Finish)\s*</[^>]+>\s*(?:<[^>]+>)?\s*([^<]{15,})', detail_html)
+                result["abgang"] = _strip_tags(abgang)
 
-    # Preis
-    preis = _extract(r'(\d+[,.]?\d*)\s*€', detail_html)
-    try:
-        result["preis_eur"] = float(preis.replace(",", ".")) if preis else None
-    except Exception:
-        result["preis_eur"] = None
+                try:
+                    b = _extract(r'(\d{2,3})\s*(?:Punkte|Pkt|/100)', detail_html)
+                    result["bewertung"] = int(b) if b else None
+                except Exception:
+                    result["bewertung"] = None
 
-    return result
+                try:
+                    a = _extract(r'(\d{1,2})\s*(?:Jahre|Years?|YO|yo)\b', detail_html)
+                    result["alter"] = int(a) if a else None
+                except Exception:
+                    result["alter"] = None
+
+                try:
+                    abv = _extract(r'(\d{2,3}[,.]?\d*)\s*%\s*(?:vol|Vol|ABV)', detail_html)
+                    result["abv"] = float(abv.replace(",", ".")) if abv else None
+                except Exception:
+                    result["abv"] = None
+
+                try:
+                    preis = _extract(r'(\d+[,.]?\d+)\s*€', detail_html)
+                    result["preis_eur"] = float(preis.replace(",", ".")) if preis else None
+                except Exception:
+                    result["preis_eur"] = None
+
+                # Return whisky.de result if we got at least one tasting note
+                if result.get("aroma") or result.get("geschmack") or result.get("abgang"):
+                    return result
+
+    # ── Attempt 2: OpenAI fallback ────────────────────────────────────────────
+    if OPENAI_API_KEY:
+        prompt = (
+            f"Erstelle realistische Tasting Notes für den Whisky '{whisky_name}'. "
+            "Antworte NUR als JSON-Objekt mit diesen Feldern (alle auf Deutsch, Strings):\n"
+            '{"aroma": "...", "geschmack": "...", "abgang": "...", '
+            '"bewertung": <Zahl 0-100 oder null>, "alter": <Zahl in Jahren oder null>, '
+            '"abv": <Zahl in % oder null>, "preis_eur": <Zahl in EUR oder null>}\n'
+            "Bewertung, Alter, ABV und Preis nur wenn du dir sicher bist, sonst null."
+        )
+        ai_text = _call_openai(
+            [{"role": "system", "content": "Du bist ein Whisky-Experte. Antworte ausschließlich mit gültigem JSON."},
+             {"role": "user",   "content": prompt}],
+            max_tokens=300,
+        )
+        if ai_text:
+            try:
+                # Strip markdown fences if present
+                clean = _re.sub(r'^```(?:json)?\s*|\s*```$', '', ai_text.strip())
+                parsed = json.loads(clean)
+                parsed["source"] = "KI (OpenAI)"
+                return parsed
+            except Exception:
+                pass
+
+    # ── Both failed ───────────────────────────────────────────────────────────
+    detail = f"whisky.de: {search_err or 'kein Produkt gefunden'}"
+    if not OPENAI_API_KEY:
+        detail += " | OpenAI-Fallback nicht verfügbar (OPENAI_API_KEY fehlt)"
+    return {"error": f"Keine Daten gefunden – {detail}", "source": "whisky.de"}
 
 
 # ── Handler ───────────────────────────────────────────────────────────────────
