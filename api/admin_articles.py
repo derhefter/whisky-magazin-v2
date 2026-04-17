@@ -192,7 +192,7 @@ class handler(BaseHTTPRequestHandler):
         return self._json(200, {"success": True, "filename": filename}, cors)
 
     def do_POST(self):
-        """Approve a draft article (set _status to 'approved')."""
+        """Approve a draft article (set _status to 'approved', optionally with _publish_at date)."""
         cors = _cors_headers(self.headers.get("Origin", ""))
         token = self.headers.get("x-admin-token", "")
         if not _verify_token(token):
@@ -211,17 +211,30 @@ class handler(BaseHTTPRequestHandler):
             return self._json(404, {"error": err}, cors)
 
         article["_status"] = "approved"
+
+        # Optional scheduled publish date (YYYY-MM-DD)
+        publish_at = (body.get("publish_at") or "").strip()
+        if publish_at:
+            if not re.match(r'^\d{4}-\d{2}-\d{2}$', publish_at):
+                return self._json(400, {"error": "publish_at muss im Format YYYY-MM-DD sein"}, cors)
+            article["_publish_at"] = publish_at
+        else:
+            article.pop("_publish_at", None)
+
         sha = file_data.get("sha", "")
         content_bytes = json.dumps(article, ensure_ascii=False, indent=2).encode("utf-8")
         result = _github_update_file(
             f"articles/drafts/{filename}",
             content_bytes,
             sha,
-            f"dashboard: approve draft {filename}",
+            f"dashboard: approve draft {filename}" + (f" (publish at {publish_at})" if publish_at else ""),
         )
         if "error" in result:
             return self._json(500, {"error": result["error"]}, cors)
-        return self._json(200, {"success": True, "filename": filename, "status": "approved"}, cors)
+        return self._json(200, {
+            "success": True, "filename": filename, "status": "approved",
+            "publish_at": publish_at or None,
+        }, cors)
 
     def do_DELETE(self):
         """Reject (delete) a draft article from GitHub."""

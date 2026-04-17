@@ -227,6 +227,15 @@ def _run_publish(target_filename=None):
                 return False, f"Draft '{target_filename}' is not approved (status: {article.get('_status', 'unknown')})", None
             continue
 
+        # Respect scheduled publish date: skip if _publish_at is in the future
+        publish_at = (article.get("_publish_at") or "").strip()
+        if publish_at:
+            today = time.strftime("%Y-%m-%d", time.gmtime())
+            if publish_at > today:
+                if target_filename:
+                    return False, f"Draft '{target_filename}' is scheduled for {publish_at} (today: {today})", None
+                continue
+
         approved.append({
             "filename": name,
             "sha": file_data.get("sha", ""),
@@ -247,7 +256,7 @@ def _run_publish(target_filename=None):
     topic_id = article.get("_topic_id", "")
 
     # 4. Strip internal metadata fields
-    for field in ("_status", "_generated_at", "_topic_id"):
+    for field in ("_status", "_generated_at", "_topic_id", "_publish_at"):
         article.pop(field, None)
 
     # 5. Publish: create file in articles/

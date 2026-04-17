@@ -11,6 +11,18 @@
     {
       "path": "/api/admin_publish",
       "schedule": "0 8 * * 6"
+    },
+    {
+      "path": "/api/newsletter_reminder?day=15",
+      "schedule": "0 8 15 * *"
+    },
+    {
+      "path": "/api/newsletter_reminder?day=20",
+      "schedule": "0 8 20 * *"
+    },
+    {
+      "path": "/api/newsletter_reminder?day=30",
+      "schedule": "0 8 30 * *"
     }
   ],
   "functions": {

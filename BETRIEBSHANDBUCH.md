@@ -54,6 +54,10 @@ Das System laeuft weitgehend automatisch:
 | **Nach Generierung** | E-Mail an rosenhefter@gmail.com | Brevo Transactional API |
 | **Mittwoch 10:00 CEST** | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job |
 | **Samstag 10:00 CEST** | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job |
+| **15. des Monats 10:00 CEST** | Newsletter-Erinnerung an rosenhefter@gmail.com | Vercel Cron-Job |
+| **20. des Monats 10:00 CEST** | Erinnerung: Newsletter generieren | Vercel Cron-Job |
+| **30. des Monats 10:00 CEST** | Erinnerung: Newsletter fertigstellen | Vercel Cron-Job |
+| **1. Montag des Monats** | Newsletter-Versand (manuell via Admin-Dashboard) | Steffen |
 | **Bei Artikel-Aenderung** | Website wird automatisch neu gebaut | GitHub Actions |
 
 **Du musst nur:** Entwuerfe im Dashboard pruefen und freigeben. Alles andere laeuft automatisch.
@@ -106,16 +110,18 @@ Hier siehst du alle Entwuerfe und veroeffentlichten Artikel.
 |--------|-----------|-------------|
 | **Ausstehend** | Neu generiert, wartet auf Pruefung | Gelb |
 | **In Bearbeitung** | Wurde bearbeitet, noch nicht freigegeben | Blau |
-| **Freigegeben** | Wird beim naechsten Cron-Lauf veroeffentlicht (Mi/Sa 10:00) | Gruen |
+| **Freigegeben** | Wird beim naechsten Cron-Lauf veroeffentlicht (Mi/Sa 10:00) oder zum geplanten Datum | Gruen |
 
-#### Workflow: Artikel pruefen und freigeben
+#### Workflow: Artikel pruefen und veroeffentlichen
 
 1. Oeffne den **Artikel**-Tab
 2. Fuer jeden Entwurf hast du folgende Aktionen:
    - **Vorschau** (Auge-Icon): Zeigt den Artikel so, wie er spaeter aussehen wird
    - **Bearbeiten** (Stift-Icon): Oeffnet ein Formular zum Aendern von Titel, Teaser und HTML-Inhalt
-   - **Freigeben** (Haekchen): Setzt den Status auf "Freigegeben" -- der Artikel wird beim naechsten Cron-Lauf veroeffentlicht
-   - **Jetzt veroeffentlichen** (Rakete, nur bei freigegebenen): Veroeffentlicht sofort, ohne auf den Cron zu warten
+   - **Veroeffentlichen** (Haekchen): Oeffnet einen Dialog mit zwei Optionen:
+     - **Sofort veroeffentlichen**: Veroeffentlicht unmittelbar (ca. 1-2 Min. bis live)
+     - **Termin planen**: Datumsauswahl -- der Cron-Job veroeffentlicht automatisch am gewaehlten Tag
+   - **Jetzt veroeffentlichen** (Rakete, nur bei bereits freigegebenen): Veroeffentlicht sofort
    - **Ablehnen** (X): Loescht den Entwurf unwiderruflich
 
 3. **Bearbeiten-Formular:**
@@ -172,6 +178,17 @@ Klicke das ⚡-Icon neben einem Thema, um sofort einen KI-Entwurf erstellen zu l
 
 Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Versand.
 
+#### Monatlicher Zeitplan
+
+| Datum | Aufgabe |
+|-------|---------|
+| **15. des Monats** | Erinnerungs-E-Mail kommt automatisch an rosenhefter@gmail.com |
+| **20. des Monats** | Vorstellung: Daten eintragen, Newsletter generieren und pruefen |
+| **30. des Monats** | Fertigstellung: Newsletter freigeben und speichern |
+| **1. Montag des Folgemonats** | Versand an alle Abonnenten via "Newsletter jetzt senden" |
+
+**Konkretes Beispiel Mai 2026:** Daten bis 20.04. eintragen → 30.04. fertigstellen → 04.05. (1. Montag) versenden.
+
 #### Schritt 1: WotM-Eintrag erstellen
 
 1. **Monat waehlen** im Dropdown oben
@@ -187,6 +204,7 @@ Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Ver
    - **Intro-Text**: Persoenlicher Einfuehrungstext fuer den Newsletter. Wird automatisch von der KI generiert, kann aber ueberschrieben werden.
    - **Affiliate-Link**: Amazon-Link zum Whisky (wird automatisch generiert wenn der Whisky-Name bekannt ist)
    - **Tasting Notes** (aufklappbar):
+     - **Von whisky.de laden**: Klicke den Button um Aroma, Geschmack, Abgang, Bewertung, Alter, ABV und Preis automatisch von whisky.de zu laden -- Quelle-Link wird angezeigt
      - **Aroma**: Geruchsbeschreibung
      - **Geschmack**: Geschmacksbeschreibung
      - **Abgang**: Nachklang
@@ -195,7 +213,7 @@ Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Ver
      - **ABV**: Alkoholgehalt in %
      - **Preis**: in EUR
 
-4. **Fotos** (bis zu 4): Klicke "Fotos waehlen" und waehle JPG/PNG-Dateien aus. Werden als Base64 gespeichert.
+4. **Fotos** (bis zu 4): Klicke "Fotos waehlen" und waehle beliebige Bild-Dateien aus. Werden automatisch auf max. 1600px skaliert und als JPEG komprimiert (funktioniert auf allen Geraeten und Browsern).
 
 5. **Artikel-Teaser** (bis zu 3): Werden automatisch mit den neuesten Artikeln befuellt. Titel, URL und Teaser koennen manuell ueberschrieben werden.
 
@@ -225,12 +243,14 @@ Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Ver
 
 ---
 
-### 2.6 Tab: Newsletter
+### 2.6 Tab: Abonnenten
 
 Zeigt die aktuelle Abonnenten-Statistik:
 - Gesamtzahl der Newsletter-Abonnenten
 - Liste der letzten Anmeldungen mit E-Mail und Datum
 - Daten kommen direkt von der Brevo-API
+
+**Hinweis:** Der Tab heisst jetzt "Abonnenten" (vorher "Newsletter"), da hier ausschliesslich die Abonnenten-Daten aus Brevo angezeigt werden. Den Newsletter erstellt und versendet man im Tab "WotM & Newsletter".
 
 ---
 
@@ -264,7 +284,7 @@ python main.py --auto -n 3
 3. Task `WhiskyMagazin-AutoGenerate` suchen
 4. Rechtsklick -> "Eigenschaften" zum Aendern, "Ausfuehren" zum manuellen Start
 
-### 3.2 Vercel Cron-Jobs (automatische Veroeffentlichung)
+### 3.2 Vercel Cron-Jobs (automatische Veroeffentlichung + Erinnerungen)
 
 Konfiguriert in `vercel.json`:
 
@@ -272,6 +292,13 @@ Konfiguriert in `vercel.json`:
 |-----------|---------------|--------|
 | **Mittwoch 10:00 CEST** | `0 8 * * 3` | Aeltesten freigegebenen Entwurf veroeffentlichen |
 | **Samstag 10:00 CEST** | `0 8 * * 6` | Aeltesten freigegebenen Entwurf veroeffentlichen |
+| **15. des Monats 10:00 CEST** | `0 8 15 * *` | Newsletter-Erinnerung an rosenhefter@gmail.com |
+| **20. des Monats 10:00 CEST** | `0 8 20 * *` | Vorstellungs-Erinnerung (Newsletter generieren) |
+| **30. des Monats 10:00 CEST** | `0 8 30 * *` | Fertigstellungs-Erinnerung (Newsletter speichern) |
+
+**Geplante Veroeffentlichung:** Artikel koennen jetzt mit einem Wunschdatum freigegeben werden. Der Cron-Job prueft taeglich ob das Datum erreicht ist und veroeffentlicht dann automatisch.
+
+**Erinnerungs-Endpoint:** `/api/newsletter_reminder` -- sendet je nach Tag die passende E-Mail an rosenhefter@gmail.com.
 
 **Ablauf:**
 1. Cron ruft `/api/admin_publish` auf

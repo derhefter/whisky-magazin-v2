@@ -879,7 +879,7 @@
   <!-- Tabs -->
   <nav class="tabs-bar" role="tablist">
     <button class="tab-btn active" role="tab" aria-selected="true"  onclick="switchTab('uebersicht', this)">&#128202; Übersicht</button>
-    <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('newsletter', this)">&#9993;&#65039; Newsletter</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('newsletter', this)">&#9993;&#65039; Abonnenten</button>
     <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('artikel', this)">&#9999;&#65039; Artikel</button>
     <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('themen', this)">&#128203; Themen</button>
     <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('wotm', this)">&#129347; WotM &amp; Newsletter</button>
@@ -917,6 +917,39 @@
   <div id="tab-wotm" class="tab-content">
     <div id="wotm-container">
       <div class="loading-text">Lädt WotM-Daten…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PUBLISH MODAL ===== -->
+<div class="modal-overlay" id="publish-modal" role="dialog" aria-modal="true" aria-labelledby="publish-modal-title">
+  <div class="modal-box" style="max-width:460px">
+    <div class="modal-header">
+      <h3 id="publish-modal-title">Artikel veröffentlichen</h3>
+      <button class="modal-close" onclick="closePublishModal()" aria-label="Schließen">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin:0 0 16px;color:var(--color-muted);font-size:0.9rem;" id="publish-modal-desc"></p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button class="btn btn-success" style="justify-content:flex-start;padding:14px 18px;font-size:0.95rem;"
+                onclick="publishModalSofort()">
+          &#128640; Sofort veröffentlichen
+          <span style="display:block;font-size:0.78rem;font-weight:400;color:rgba(255,255,255,0.8);margin-top:2px;">Artikel erscheint innerhalb von 1–2 Minuten live</span>
+        </button>
+        <div style="border:1px solid var(--color-beige);border-radius:var(--radius);padding:14px 18px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:8px;">&#128197; Termin planen</label>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input type="date" id="publish-date-input" style="flex:1;padding:8px 10px;border:2px solid var(--color-beige);border-radius:var(--radius);font-size:0.9rem;font-family:inherit;"
+                   min="">
+            <button class="btn btn-primary" onclick="publishModalDatum()">Planen</button>
+          </div>
+          <p style="margin:6px 0 0;font-size:0.78rem;color:var(--color-muted);">Der Cron-Job veröffentlicht den Artikel automatisch am gewählten Datum.</p>
+        </div>
+      </div>
+      <div id="publish-modal-error" class="error-box" style="display:none;margin-top:12px;"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closePublishModal()">Abbrechen</button>
     </div>
   </div>
 </div>
@@ -1512,7 +1545,7 @@ function renderDraftCard(d, i) {
       <div class="article-actions">
         ${hasContent ? `<button class="btn btn-secondary btn-sm" onclick="openPreview(${i})">&#128065;&#65039; Vorschau</button>` : ''}
         <button class="btn btn-secondary btn-sm" onclick="toggleEdit(${i})">&#9998; Bearbeiten</button>
-        ${status !== 'approved' ? `<button class="btn btn-success btn-sm" onclick="approveArticle('${esc(filename)}', ${i})">&#10003; Freigeben</button>` : ''}
+        ${status !== 'approved' ? `<button class="btn btn-success btn-sm" onclick="openPublishModal('${esc(filename)}', ${i}, '${esc(title)}')">&#10003; Veröffentlichen</button>` : ''}
         ${status === 'approved' ? `<button class="btn btn-primary btn-sm" onclick="publishNow('${esc(filename)}', ${i})" title="Jetzt sofort veröffentlichen">&#128640; Jetzt veröffentlichen</button>` : ''}
         <button class="btn btn-danger btn-sm" onclick="rejectArticle('${esc(filename)}', '${esc(sha)}', ${i})">&#10005; Ablehnen</button>
       </div>
@@ -1567,6 +1600,73 @@ function closePreview() {
   document.getElementById('preview-modal-content').innerHTML = '';
 }
 
+// ── Publish Modal ─────────────────────────────────────────────────────────────
+let _publishModalFilename = null;
+let _publishModalIndex    = null;
+
+function openPublishModal(filename, i, title) {
+  _publishModalFilename = filename;
+  _publishModalIndex    = i;
+  document.getElementById('publish-modal-desc').textContent =
+    `"${title || filename}" – wie soll der Artikel veröffentlicht werden?`;
+  const today = new Date().toISOString().split('T')[0];
+  const dateInput = document.getElementById('publish-date-input');
+  dateInput.min   = today;
+  dateInput.value = today;
+  document.getElementById('publish-modal-error').style.display = 'none';
+  document.getElementById('publish-modal').classList.add('open');
+}
+
+function closePublishModal() {
+  document.getElementById('publish-modal').classList.remove('open');
+  _publishModalFilename = null;
+  _publishModalIndex    = null;
+}
+
+async function publishModalSofort() {
+  const filename = _publishModalFilename;
+  const i        = _publishModalIndex;
+  if (!filename) return;
+  closePublishModal();
+  // Approve first, then immediately publish
+  try {
+    await apiPost(API.articles, { filename });
+  } catch(e) {
+    showToast('Fehler beim Freigeben: ' + e.message, 'error'); return;
+  }
+  try {
+    const url = API.publish + '?filename=' + encodeURIComponent(filename);
+    const result = await apiGet(url);
+    if (result && result.success) {
+      showToast(`Artikel veröffentlicht! Website wird automatisch neu gebaut (ca. 1–2 Min.).`, 'success', 6000);
+    } else {
+      showToast(result?.message || 'Veröffentlichung fehlgeschlagen', 'warn');
+    }
+  } catch(e) {
+    showToast('Fehler beim Veröffentlichen: ' + e.message, 'error');
+  }
+  tabLoaded.artikel = false;
+  await loadArtikel();
+}
+
+async function publishModalDatum() {
+  const filename  = _publishModalFilename;
+  const publishAt = document.getElementById('publish-date-input').value;
+  if (!filename || !publishAt) return;
+  const errEl = document.getElementById('publish-modal-error');
+  errEl.style.display = 'none';
+  try {
+    await apiPost(API.articles, { filename, publish_at: publishAt });
+    closePublishModal();
+    showToast(`Artikel geplant für ${publishAt}. Wird am Termin automatisch veröffentlicht.`, 'success', 6000);
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch(err) {
+    errEl.textContent = 'Fehler: ' + err.message;
+    errEl.style.display = 'block';
+  }
+}
+
 async function approveArticle(filename, i) {
   if (!filename) return;
   const btn = event.target;
@@ -1579,7 +1679,7 @@ async function approveArticle(filename, i) {
   } catch (err) {
     showToast('Fehler beim Freigeben: ' + err.message, 'error');
     btn.disabled = false;
-    btn.textContent = '✓ Freigeben';
+    btn.textContent = '✓ Veröffentlichen';
   }
 }
 
@@ -2130,11 +2230,18 @@ function renderWotm() {
         </div>
 
         <!-- TASTING NOTES - collapsible -->
-        <details style="margin-bottom:16px;">
+        <details style="margin-bottom:16px;" id="wotm-tasting-details">
           <summary style="cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--color-muted);padding:8px 0;user-select:none;">
             &#127800; Verkostungsnotizen <span style="font-weight:400;">(optional – erscheinen als Tasting-Karte im Newsletter, wie auf der Website)</span>
           </summary>
           <div style="padding-top:12px;display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:var(--color-beige);border-radius:var(--radius);">
+              <button class="btn btn-secondary btn-sm" onclick="wotmFetchWhiskyDe()" id="wotm-whisky-de-btn">
+                &#128269; Von whisky.de laden
+              </button>
+              <span style="font-size:0.78rem;color:var(--color-muted);">Automatisch Aroma, Geschmack &amp; Abgang von whisky.de holen</span>
+              <span id="wotm-whisky-de-status" style="font-size:0.78rem;font-weight:600;"></span>
+            </div>
             <div class="form-group" style="margin:0;">
               <label style="font-size:0.8rem;">Aroma</label>
               <textarea id="wotm-aroma" rows="2" placeholder="z.B. Kräftiger Torf, Meeresluft, leichter Rauch…"></textarea>
@@ -2211,7 +2318,7 @@ function renderWotm() {
         </div>
         <div class="form-group">
           <label>Fotos (bis zu 4 – von der Destillerie oder der Flasche)</label>
-          <input type="file" id="wotm-photo-files" accept="image/jpeg,image/png,image/webp"
+          <input type="file" id="wotm-photo-files" accept="image/*"
                  multiple onchange="wotmPhotosSelected(this)">
           <div id="wotm-photo-thumbs" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;"></div>
           <div id="wotm-photo-existing" style="font-size:0.78rem;color:var(--color-muted);margin-top:4px;"></div>
@@ -2226,10 +2333,26 @@ function renderWotm() {
       <!-- RECHTE SPALTE: Versand & Zeitplan -->
       <div class="wotm-panel">
         <h3 style="margin:0 0 12px;font-size:1rem;">&#128197; Newsletter-Zeitplan</h3>
-        <div class="info-box" style="margin-bottom:16px;">
-          <p style="margin:0;font-size:0.875rem;line-height:1.6;">
-            <strong>Rhythmus:</strong> Immer am <strong>ersten Montag des Monats</strong><br>
-            <strong>Deadline Eingabe:</strong> bis zum <strong>15. des Vormonats</strong><br>
+        <div class="info-box" style="margin-bottom:16px;padding:14px 16px;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.82rem;line-height:1.7;">
+            <tr>
+              <td style="padding:2px 10px 2px 0;white-space:nowrap;color:var(--color-amber);font-weight:700;">15. des Monats</td>
+              <td style="color:var(--color-muted);">&#128276; Erinnerungs-E-Mail an rosenhefter@gmail.com</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 10px 2px 0;white-space:nowrap;color:var(--color-amber);font-weight:700;">20. des Monats</td>
+              <td style="color:var(--color-muted);">&#9997; Vorstellung – Whisky &amp; Daten eintragen, Newsletter generieren</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 10px 2px 0;white-space:nowrap;color:var(--color-amber);font-weight:700;">30. des Monats</td>
+              <td style="color:var(--color-muted);">&#10003; Fertigstellung – Freigabe &amp; Newsletter speichern</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 10px 2px 0;white-space:nowrap;color:var(--color-amber);font-weight:700;">1. Montag</td>
+              <td style="color:var(--color-muted);">&#128140; Newsletter-Versand an alle Abonnenten via Brevo</td>
+            </tr>
+          </table>
+          <p style="margin:10px 0 0;font-size:0.75rem;color:var(--color-muted);border-top:1px solid var(--color-beige);padding-top:8px;">
             <strong>Rubriken:</strong> WotM · Specials · Neue Artikel
           </p>
         </div>
@@ -2367,6 +2490,62 @@ function wotmMonthChanged() {
   });
 }
 
+async function wotmFetchWhiskyDe() {
+  const whiskyName = document.getElementById('wotm-name').value.trim();
+  if (!whiskyName) {
+    showToast('Bitte zuerst den Whisky-Namen eingeben.', 'warn'); return;
+  }
+  const btn      = document.getElementById('wotm-whisky-de-btn');
+  const statusEl = document.getElementById('wotm-whisky-de-status');
+  btn.disabled   = true;
+  btn.textContent = '⏳ Lädt…';
+  statusEl.textContent = '';
+  statusEl.style.color = '';
+
+  try {
+    const result = await apiPost(API.wotm + '?action=fetch_tasting_notes', { whisky_name: whiskyName });
+
+    if (result.error) {
+      statusEl.textContent = '⚠ ' + result.error;
+      statusEl.style.color = 'var(--color-red)';
+    } else {
+      // Open the details panel so user sees the filled fields
+      document.getElementById('wotm-tasting-details').open = true;
+
+      let filled = 0;
+      const setIfFound = (id, val) => {
+        if (val != null && val !== '') {
+          document.getElementById(id).value = val; filled++;
+        }
+      };
+      setIfFound('wotm-aroma',     result.aroma);
+      setIfFound('wotm-geschmack', result.geschmack);
+      setIfFound('wotm-abgang',    result.abgang);
+      setIfFound('wotm-bewertung', result.bewertung);
+      setIfFound('wotm-alter',     result.alter);
+      setIfFound('wotm-abv',       result.abv);
+      setIfFound('wotm-preis',     result.preis_eur);
+
+      if (filled > 0) {
+        statusEl.textContent = `✓ ${filled} Felder von whisky.de befüllt`;
+        statusEl.style.color = 'var(--color-green)';
+        if (result.product_url) {
+          statusEl.innerHTML += ` <a href="${result.product_url}" target="_blank" rel="noopener" style="color:var(--color-amber);font-size:0.75rem;">Quelle ↗</a>`;
+        }
+      } else {
+        statusEl.textContent = '⚠ Keine Daten gefunden – bitte manuell eintragen.';
+        statusEl.style.color = 'var(--color-yellow)';
+      }
+    }
+  } catch (err) {
+    statusEl.textContent = '⚠ Fehler: ' + err.message;
+    statusEl.style.color = 'var(--color-red)';
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = '🔍 Von whisky.de laden';
+  }
+}
+
 function wotmPhotosSelected(input) {
   _wotmPhotoFiles = Array.from(input.files).slice(0, 4);
   const thumbsEl = document.getElementById('wotm-photo-thumbs');
@@ -2449,10 +2628,22 @@ async function wotmSave() {
 }
 
 async function wotmSaveNewsletter() {
-  const monthKey = document.getElementById('wotm-month-select').value;
-  const html     = document.getElementById('wotm-newsletter-editor').value;
+  const monthKey  = document.getElementById('wotm-month-select').value;
+  const html      = document.getElementById('wotm-newsletter-editor').value;
   const successEl = document.getElementById('wotm-nl-save-success');
   successEl.style.display = 'none';
+
+  if (!html || html.trim().length < 100) {
+    showToast('Newsletter noch nicht generiert. Bitte zuerst auf "Newsletter generieren" klicken.', 'warn', 5000);
+    return;
+  }
+
+  // Ensure WotM entry exists first (auto-save if needed)
+  const whiskyName = document.getElementById('wotm-name').value.trim();
+  if (!wotmData?.entries?.[monthKey] && whiskyName) {
+    showToast('Speichere WotM-Eintrag zuerst…', 'info');
+    try { await wotmSave(); } catch(e) { /* best-effort */ }
+  }
 
   try {
     await apiPost(API.wotm + '?action=save_newsletter', { month_key: monthKey, newsletter_html: html });
@@ -2464,7 +2655,14 @@ async function wotmSaveNewsletter() {
     successEl.style.display = 'block';
     setTimeout(() => { successEl.style.display = 'none'; }, 4000);
   } catch (err) {
-    showToast('Fehler beim Speichern: ' + err.message, 'error');
+    const msg = err.message || '';
+    if (msg.includes('nicht gefunden') || msg.includes('404')) {
+      showToast('WotM-Eintrag nicht gefunden – bitte zuerst Whisky-Daten speichern, dann erneut versuchen.', 'error', 7000);
+    } else if (msg.includes('409') || msg.includes('sha')) {
+      showToast('Speichern fehlgeschlagen (Konflikt). Bitte Seite neu laden und erneut versuchen.', 'error', 7000);
+    } else {
+      showToast('Fehler beim Speichern: ' + msg, 'error');
+    }
   }
 }
 
@@ -2651,10 +2849,32 @@ function _getRecentArticleTeasers() {
 }
 
 function _fileToBase64(file) {
+  // Compress & resize before upload: max 1600px on longest side, JPEG 85%
+  // This ensures large mobile/camera photos stay within the server's 10 MB limit
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload  = e => resolve(e.target.result);
     reader.onerror = reject;
+    reader.onload = e => {
+      const img = new Image();
+      img.onerror = () => resolve(e.target.result); // fallback: use original
+      img.onload = () => {
+        const MAX = 1600;
+        let { width, height } = img;
+        if (width <= MAX && height <= MAX && file.size < 800_000) {
+          // Small enough — use original
+          resolve(e.target.result);
+          return;
+        }
+        if (width > height) { height = Math.round(height * MAX / width); width = MAX; }
+        else                 { width  = Math.round(width  * MAX / height); height = MAX; }
+        const canvas = document.createElement('canvas');
+        canvas.width  = width;
+        canvas.height = height;
+        canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL('image/jpeg', 0.85));
+      };
+      img.src = e.target.result;
+    };
     reader.readAsDataURL(file);
   });
 }
@@ -2698,6 +2918,7 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closePreview();
     closeNewTopicModal();
+    closePublishModal();
   }
 });
 
@@ -2707,6 +2928,9 @@ document.getElementById('preview-modal').addEventListener('click', function(e) {
 });
 document.getElementById('new-topic-modal').addEventListener('click', function(e) {
   if (e.target === this) closeNewTopicModal();
+});
+document.getElementById('publish-modal').addEventListener('click', function(e) {
+  if (e.target === this) closePublishModal();
 });
 
 /* ============================================================

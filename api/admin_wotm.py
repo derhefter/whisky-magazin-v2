@@ -630,6 +630,103 @@ def _build_newsletter_html(entry, month_label, article_teasers):
     return html
 
 
+# ── whisky.de tasting notes scraper ──────────────────────────────────────────
+
+def _fetch_whisky_de_tasting(whisky_name: str) -> dict:
+    """Scrape whisky.de for tasting notes. Returns dict with aroma/geschmack/abgang/bewertung/alter/abv/preis."""
+    from urllib.parse import urlencode
+
+    def _get(url, timeout=10):
+        req = Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; WhiskyMagazinBot/1.0)",
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Language": "de-DE,de;q=0.9",
+        })
+        try:
+            with urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", errors="replace")
+        except Exception:
+            return ""
+
+    # Step 1: search whisky.de
+    search_url = "https://www.whisky.de/shop/search/?query=" + quote(whisky_name, safe="")
+    html = _get(search_url)
+    if not html:
+        return {"error": "whisky.de nicht erreichbar", "source": "whisky.de"}
+
+    # Step 2: find first product link from search results
+    product_path = _re.search(
+        r'href="(/shop/produkt/[^"]+\.html)"',
+        html,
+    )
+    if not product_path:
+        # Try alternate pattern
+        product_path = _re.search(r'href="(/online-shop/[^"]+\.html)"', html)
+
+    if not product_path:
+        return {"error": f"Kein Produkt auf whisky.de für '{whisky_name}' gefunden", "source": "whisky.de"}
+
+    product_url = "https://www.whisky.de" + product_path.group(1)
+    detail_html = _get(product_url)
+    if not detail_html:
+        return {"error": "Produktseite nicht erreichbar", "source": "whisky.de"}
+
+    result = {"source": "whisky.de", "product_url": product_url}
+
+    def _extract(pattern, html, group=1, flags=_re.IGNORECASE | _re.DOTALL):
+        m = _re.search(pattern, html, flags)
+        return m.group(group).strip() if m else ""
+
+    def _strip_tags(s):
+        return _re.sub(r'<[^>]+>', '', s).strip()
+
+    # Aroma
+    aroma = _extract(r'(?:Nase|Aroma|Nose)[^<]*</[^>]+>\s*<[^>]+>([^<]{10,})', detail_html)
+    if not aroma:
+        aroma = _extract(r'class="[^"]*aroma[^"]*"[^>]*>([^<]{10,})', detail_html)
+    result["aroma"] = _strip_tags(aroma)
+
+    # Geschmack/Gaumen
+    geschmack = _extract(r'(?:Gaumen|Geschmack|Palate)[^<]*</[^>]+>\s*<[^>]+>([^<]{10,})', detail_html)
+    if not geschmack:
+        geschmack = _extract(r'class="[^"]*geschmack[^"]*"[^>]*>([^<]{10,})', detail_html)
+    result["geschmack"] = _strip_tags(geschmack)
+
+    # Abgang/Finish
+    abgang = _extract(r'(?:Abgang|Finish)[^<]*</[^>]+>\s*<[^>]+>([^<]{10,})', detail_html)
+    result["abgang"] = _strip_tags(abgang)
+
+    # Bewertung (Punkte, 0–100)
+    bewertung = _extract(r'(\d{2,3})\s*(?:Punkte|Pkt|/100)', detail_html)
+    try:
+        result["bewertung"] = int(bewertung) if bewertung else None
+    except Exception:
+        result["bewertung"] = None
+
+    # Alter
+    alter = _extract(r'(\d+)\s*(?:Jahre|Years?)\b', detail_html)
+    try:
+        result["alter"] = int(alter) if alter else None
+    except Exception:
+        result["alter"] = None
+
+    # ABV
+    abv = _extract(r'(\d+[,.]?\d*)\s*%\s*(?:vol|Vol|ABV)', detail_html)
+    try:
+        result["abv"] = float(abv.replace(",", ".")) if abv else None
+    except Exception:
+        result["abv"] = None
+
+    # Preis
+    preis = _extract(r'(\d+[,.]?\d*)\s*€', detail_html)
+    try:
+        result["preis_eur"] = float(preis.replace(",", ".")) if preis else None
+    except Exception:
+        result["preis_eur"] = None
+
+    return result
+
+
 # ── Handler ───────────────────────────────────────────────────────────────────
 
 class handler(BaseHTTPRequestHandler):
@@ -686,6 +783,14 @@ class handler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         params = parse_qs(parsed.query)
         action = params.get("action", ["save"])[0]
+
+        # ── Fetch tasting notes from whisky.de ───────────────────────────────
+        if action == "fetch_tasting_notes":
+            whisky_name = (body.get("whisky_name") or "").strip()
+            if not whisky_name:
+                return self._json(400, {"error": "whisky_name erforderlich"})
+            result = _fetch_whisky_de_tasting(whisky_name)
+            return self._json(200, result)
 
         # ── Save WotM entry ──────────────────────────────────────────────────
         if action == "save":
@@ -804,16 +909,28 @@ class handler(BaseHTTPRequestHandler):
 
         # ── Save final newsletter HTML ────────────────────────────────────────
         if action == "save_newsletter":
-            month_key      = (body.get("month_key") or "").strip()
+            month_key       = (body.get("month_key") or "").strip()
             newsletter_html = (body.get("newsletter_html") or "").strip()
 
-            data, sha = _load_wotm_data()
-            if not data or month_key not in data.get("entries", {}):
-                return self._json(404, {"error": "WotM-Eintrag nicht gefunden"})
+            if not month_key:
+                return self._json(400, {"error": "month_key fehlt"})
+            if not newsletter_html:
+                return self._json(400, {"error": "newsletter_html ist leer – bitte zuerst generieren"})
 
-            data["entries"][month_key]["newsletter_html_final"] = newsletter_html
-            save_err = _save_wotm_data(data, sha, f"Newsletter-HTML gespeichert {month_key}")
-            if save_err:
+            # Retry once on SHA mismatch (409 conflict)
+            for attempt in range(2):
+                data, sha = _load_wotm_data()
+                if data is None:
+                    return self._json(502, {"error": "GitHub nicht erreichbar – bitte erneut versuchen"})
+                if month_key not in data.get("entries", {}):
+                    return self._json(404, {"error": "WotM-Eintrag nicht gefunden – bitte zuerst Whisky-Daten speichern"})
+
+                data["entries"][month_key]["newsletter_html_final"] = newsletter_html
+                save_err = _save_wotm_data(data, sha, f"Newsletter-HTML gespeichert {month_key}")
+                if not save_err:
+                    break
+                if attempt == 0 and ("409" in str(save_err) or "sha" in str(save_err).lower()):
+                    continue  # retry with fresh SHA
                 return self._json(500, {"error": save_err})
 
             return self._json(200, {"ok": True})
