@@ -1,0 +1,47 @@
+[
+  {
+    "id": "scotland",
+    "slug": "schottland",
+    "name_de": "Schottland",
+    "name_en": "Scotland",
+    "short_description": "Schottland ist die Heimat des Single Malt Scotch Whisky und verfügt über mehr als 140 aktive Destillerien, verteilt auf fünf gesetzlich definierte Regionen.",
+    "long_description": "Schottland gilt als das Mutterland des Whiskys. Seit Jahrhunderten wird hier Single Malt produziert – aus Gerste, reinem Quellwasser und dem unverwechselbaren schottischen Klima. Die gesetzlichen Regionen Highlands, Lowlands, Islay, Speyside und Campbeltown prägen jeweils eigene Stilwelten, von sanft-blumig bis zur kraftvoll-torfig. Über 140 Destillerien sind heute in Betrieb, Tendenz steigend.",
+    "travel_context": "Für Whisky-Reisende ist Schottland das ultimative Ziel: Destillerietouren, Fassverkostungen und die raue Naturlandschaft machen jeden Besuch unvergesslich.",
+    "image": null,
+    "seo_title": "Whisky aus Schottland – Regionen, Destillerien & Abfüllungen",
+    "seo_description": "Entdecke alle schottischen Whisky-Regionen, Destillerien und Abfüllungen. Von Islay über Speyside bis zu den Highlands.",
+    "published": true,
+    "created_at": "2026-04-17T00:00:00Z",
+    "last_updated": "2026-04-17T00:00:00Z"
+  },
+  {
+    "id": "ireland",
+    "slug": "irland",
+    "name_de": "Irland",
+    "name_en": "Ireland",
+    "short_description": "Irland ist eine der ältesten Whisky-Nationen der Welt und steht für dreifach destillierte, sanfte Single Malts und Blends.",
+    "long_description": "Irischer Whiskey (mit 'e' geschrieben) ist bekannt für seine Geschmeidigkeit und dreifache Destillation in Pot Stills. Destillerien wie Jameson, Bushmills und Teeling haben irischen Whiskey zu weltweitem Ansehen gebracht. Die Industrie erlebt seit rund zwei Jahrzehnten eine bemerkenswerte Renaissance.",
+    "travel_context": "Dublin und der Norden Irlands bieten exzellente Destillerietouren, kombinierbar mit Kulturreisen durch das grüne Inselland.",
+    "image": null,
+    "seo_title": "Whiskey aus Irland – Destillerien & irische Abfüllungen",
+    "seo_description": "Alles über irischen Whiskey: Destillerien, Stile, Abfüllungen und Reistipps für Irland.",
+    "published": true,
+    "created_at": "2026-04-17T00:00:00Z",
+    "last_updated": "2026-04-17T00:00:00Z"
+  },
+  {
+    "id": "germany",
+    "slug": "deutschland",
+    "name_de": "Deutschland",
+    "name_en": "Germany",
+    "short_description": "Deutschland hat sich als aufstrebende Whisky-Nation etabliert – mit über 200 Brennereien, die eigenständige Stile entwickeln.",
+    "long_description": "Deutscher Whisky ist jung, experimentierfreudig und überraschend vielfältig. Seit den 1990er Jahren entstehen in Bayern, Baden-Württemberg und anderen Regionen Destillerien, die Whisky nach eigenen Regeln produzieren – oft mit regionalen Rohstoffen und ungewöhnlichen Fasstypen. Der Verband der Deutschen Whiskydestillerien zählt heute über 200 Mitglieder.",
+    "travel_context": "Viele deutsche Brennereien sind direkt besucht werden und bieten Verkostungen und Führungen an – ideal für Tagesausflüge.",
+    "image": null,
+    "seo_title": "Whisky aus Deutschland – Destillerien, Regionen & Abfüllungen",
+    "seo_description": "Deutscher Whisky im Überblick: Destillerien, Stilrichtungen und die besten Abfüllungen aus Deutschland.",
+    "published": true,
+    "created_at": "2026-04-17T00:00:00Z",
+    "last_updated": "2026-04-17T00:00:00Z"
+  }
+]

@@ -1287,6 +1287,7 @@ def _base_template():
                 <a href="/ueber-uns.html">Über uns</a>
                 <a href="/suche.html">Suche</a>
                 <a href="/feed.xml" title="RSS Feed abonnieren">RSS Feed</a>
+                <a href="/whisky-glossar/">Whisky-Glossar</a>
                 <a href="/datenschutz.html">Datenschutz</a>
                 <a href="/impressum.html">Impressum</a>
             </div>
@@ -4133,7 +4134,14 @@ def build_site(config):
         f.write(sitemap_xml)
     print("  Sitemap erstellt.")
 
-    # 14. robots.txt erstellen
+    # 14. Whisky-Glossar erstellen
+    try:
+        from glossary_builder import build_glossary_pages
+        build_glossary_pages(config)
+    except Exception as e:
+        print(f"  WARNUNG: Glossar-Seiten konnten nicht erstellt werden: {e}")
+
+    # 15. robots.txt erstellen
     base_url = config["site"].get("base_url", "")
     robots_txt = f"""User-agent: *
 Allow: /

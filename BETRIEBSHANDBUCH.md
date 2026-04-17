@@ -1,6 +1,6 @@
 # Whisky Magazin -- Betriebshandbuch
 
-Stand: April 2026
+Stand: April 2026 (aktualisiert: Whisky-Glossar hinzugefuegt)
 
 ---
 
@@ -703,6 +703,15 @@ whisky-magazin/
 |   +-- whisky-of-the-month.json  WotM-Archiv
 |   +-- wotm.json           Aktuelles WotM
 |   +-- newsletter_history.json  Newsletter-Verlauf
+|   +-- glossary/           Whisky-Glossar-Daten
+|       +-- countries.json      Laender (Schottland, Irland, Deutschland)
+|       +-- regions.json        Regionen (Islay, Speyside, Highlands, ...)
+|       +-- distilleries.json   Destillerien
+|       +-- whiskies.json       Whisky-Abfuellungen
+|       +-- review/queue.json   Review-Queue fuer Imports
+|       +-- imports/raw/        Roh-Importdaten (unveraendert)
+|       +-- imports/validated/  Validierte Importdaten
+|       +-- imports/reports/    Import-Protokolle + Fehlerberichte
 +-- api/                    Vercel Serverless Functions
 |   +-- admin_auth.py           Login/Token
 |   +-- admin_data.py           Dashboard-Daten
@@ -711,12 +720,14 @@ whisky-magazin/
 |   +-- admin_publish.py        Cron: Artikel veroeffentlichen
 |   +-- admin_wotm.py           WotM + Newsletter
 |   +-- admin_debug.py          Debug-Endpoint
+|   +-- admin_glossary.py       Glossar CRUD + Import/Review-Workflow
 |   +-- generate_article.py     KI-Artikelgenerierung
 |   +-- subscribe.py            Newsletter-Anmeldung
 +-- site-v2/                Gebaute Website (von Vercel deployed)
-|   +-- admin/index.html    Admin-Dashboard
+|   +-- admin/index.html    Admin-Dashboard (inkl. Glossar-Tab)
 |   +-- artikel/            Artikel-HTML-Seiten
 |   +-- kategorie/          Kategorie-Seiten
+|   +-- whisky-glossar/     Glossar-Seiten (statisch generiert)
 |   +-- images/             Bilder
 |   +-- style.css           Globales Stylesheet
 +-- .github/workflows/
@@ -726,6 +737,7 @@ whisky-magazin/
 +-- main.py                 CLI-Hauptskript
 +-- content_generator.py    GPT-4o Artikel-Generator
 +-- site_builder_v2.py      Statischer Site-Builder
++-- glossary_builder.py     Glossar-Seiten-Generator
 +-- notifier.py             E-Mail-Benachrichtigungen
 +-- newsletter_generator.py Newsletter-Template-Generator
 +-- wotm_generator.py       WotM-Generator
@@ -740,7 +752,252 @@ whisky-magazin/
 
 ---
 
-## 9. Checklisten
+---
+
+## 9. Whisky-Glossar
+
+### 9.1 Ueberblick
+
+Das Whisky-Glossar ist ein datengetriebenes Verzeichnis fuer Laender, Regionen, Destillerien und Abfuellungen. Es wird als statische Seite in die bestehende Website integriert und ist zunaechst nur im Footer verlinkt (kein Hauptmenue-Eintrag).
+
+**Oeffentliche URLs:**
+
+| Seite | URL |
+|-------|-----|
+| Glossar-Startseite | /whisky-glossar/ |
+| Laenderseite | /whisky-glossar/laender/{slug}/ |
+| Regionen-Uebersicht | /whisky-glossar/regionen/ |
+| Regionsseite | /whisky-glossar/regionen/{slug}/ |
+| Destillerie-Uebersicht | /whisky-glossar/destillerien/ |
+| Destillerieseite | /whisky-glossar/destillerien/{slug}/ |
+| Whisky-Detailseite | /whisky-glossar/whiskys/{slug}/ |
+
+**Technische Architektur:**
+
+- Daten: dateibasiert als JSON in `data/glossary/`
+- Seiten werden von `glossary_builder.py` statisch generiert (als Teil von `python main.py --build-v2`)
+- API-Endpunkt: `api/admin_glossary.py` (Vercel Serverless)
+- Admin-Verwaltung: Dashboard -> Tab "Glossar"
+
+---
+
+### 9.2 Admin-Tab: Glossar
+
+Der Glossar-Tab im Admin-Dashboard hat sechs Unter-Tabs:
+
+| Unter-Tab | Funktion |
+|-----------|---------|
+| **Laender** | Liste + CRUD fuer Laender-Eintraege |
+| **Regionen** | Liste + CRUD fuer Regionen |
+| **Destillerien** | Liste + CRUD fuer Destillerien |
+| **Whiskys** | Liste + CRUD fuer Whisky-Abfuellungen |
+| **Import** | CSV/JSON-Dateien hochladen oder einfuegen |
+| **Review** | Importierte Datensaetze pruefen, freigeben oder ablehnen |
+
+#### Neuen Eintrag anlegen (manuell)
+
+1. Dashboard -> Tab "Glossar"
+2. Unter-Tab der gewuenschten Entitaet waehlen (z.B. "Destillerien")
+3. "+ Neue Destillerie" klicken
+4. Pflichtfelder ausfuellen (mit * markiert)
+5. "Speichern" klicken
+6. Danach: `python main.py --build-v2` ausfuehren (oder beim naechsten regulaeren Build)
+
+#### Eintrag bearbeiten
+
+Stift-Icon (✏️) in der Tabellenzeile -> Felder anpassen -> Speichern.
+
+#### Eintrag loeschen
+
+Papierkorb-Icon (🗑️) -> Bestaetigung -> Soft-Delete (published=false, deleted=true). Der Eintrag bleibt in der Datei erhalten, wird aber nicht mehr auf der Website angezeigt.
+
+---
+
+### 9.3 Import-Workflow
+
+**Wichtig: Importierte Datensaetze werden NICHT sofort veroeffentlicht.** Sie durchlaufen immer die Review-Stufe.
+
+#### Statusfluss
+
+```
+imported (raw) → Review-Queue (pending) → approved / rejected → published (live)
+```
+
+#### Importformate
+
+- **JSON**: Array von Objekten `[{...}, {...}]` oder einzelnes Objekt
+- **CSV**: Erste Zeile = Spaltennamen (muessen Feldnamen aus dem Datenmodell entsprechen)
+
+#### Import-Schritte im Dashboard
+
+1. Dashboard -> Glossar -> Import
+2. **Entitaet waehlen** (Whiskys / Destillerien / Regionen / Laender)
+3. **Format waehlen** (JSON oder CSV)
+4. **Datei hochladen** oder Text direkt einfuegen
+5. "Import starten" klicken
+6. Ergebnis wird angezeigt: Gesamt / Neu / Update-Kandidaten / Fehler
+7. Wechsel zu "Review" zum Pruefen der Eintraege
+
+#### Was passiert beim Import?
+
+1. Roh-Daten werden in `data/glossary/imports/raw/{batch-id}.json` gespeichert
+2. Automatische Validierung (Pflichtfelder, Slug-Format, ABV-Bereich)
+3. Normalisierung (Slug-Generierung, ID-Generierung, Timestamps)
+4. Dublettenpruefung (ID/Slug bereits vorhanden?)
+5. Bericht wird in `data/glossary/imports/reports/{batch-id}_report.json` gespeichert
+6. Alle Eintraege kommen in die Review-Queue (`data/glossary/review/queue.json`)
+
+#### Item-Status nach Import
+
+| Status | Bedeutung |
+|--------|-----------|
+| `new` | Neuer Datensatz, ID/Slug nicht vorhanden |
+| `update_candidate` | ID oder Slug bereits vorhanden -> wird bestehenden Datensatz ueberschreiben |
+| `error` | Pflichtfeld fehlt oder Validierungsfehler |
+| `incomplete` | Warnung: einzelne optionale Felder fehlen oder sind ungueltig |
+
+---
+
+### 9.4 Review-Workflow
+
+#### Review-Queue aufrufen
+
+Dashboard -> Glossar -> Review
+
+Die Queue zeigt alle importierten Datensaetze mit Statusfiltern (Offen / Freigegeben / Abgelehnt / Veroeffentlicht).
+
+#### Review-Entscheidungen
+
+| Aktion | Ergebnis |
+|--------|---------|
+| **Freigeben** (✓) | review_status = "approved"; Datensatz bereit zur Veroeffentlichung |
+| **Ablehnen** (✗) | review_status = "rejected"; Datensatz wird nicht veroeffentlicht |
+
+Optional: Notiz zur Begruendung eingeben.
+
+#### Veroeffentlichen
+
+Nach der Freigabe erscheint ein gruener Balken am unteren Rand der Review-Queue:
+"X Datensaetze freigegeben – bereit zur Veroeffentlichung"
+
+1. Entitaet waehlen (Whiskys / Destillerien / etc.)
+2. "In Live-Daten uebernehmen" klicken
+3. Freigegebene Datensaetze werden in die jeweilige JSON-Datei geschrieben (`data/glossary/whiskies.json` etc.)
+4. Danach: Website neu bauen (`python main.py --build-v2`) damit die Seiten generiert werden
+
+**Wichtig:** Das Veroeffentlichen schreibt nur die Daten. Die statischen HTML-Seiten entstehen erst beim naechsten Build-Lauf.
+
+---
+
+### 9.5 Datenmodell
+
+#### Pflichtfelder je Entitaet
+
+| Entitaet | Pflichtfelder |
+|---------|--------------|
+| Land | id, slug, name_de |
+| Region | id, slug, name, country_id |
+| Destillerie | id, slug, name, country_id, region_id |
+| Whisky | id, slug, name, country_id, distillery_id, whisky_type, abv |
+
+#### Whisky: wichtige Felder
+
+| Feld | Typ | Bedeutung |
+|------|-----|-----------|
+| `whisky_type` | string | single_malt / blended_malt / blended / single_grain / pot_still |
+| `smoke_profile` | string | none / light / medium / heavy / very_heavy |
+| `abv` | float | Alkoholgehalt in Prozent (20–95) |
+| `age_statement` | int | Reifejahre; leer = NAS |
+| `nas` | bool | No Age Statement |
+| `cask_types` | array | z.B. ["ex-bourbon", "sherry"] |
+| `style_tags` | array | z.B. ["torfig", "rauchig", "salzig"] |
+| `review_status` | string | approved / pending / rejected / published |
+| `published` | bool | true = live auf der Website |
+| `source_status` | string | verified / unverified / estimated |
+
+#### IDs und Slugs
+
+- IDs und Slugs muessen **eindeutig** innerhalb einer Entitaet sein
+- Slugs: nur Kleinbuchstaben, Zahlen, Bindestriche (a-z, 0-9, -)
+- Umlaute werden automatisch umgeschrieben (ae, oe, ue, ss)
+- ID wird automatisch aus dem Slug generiert wenn leer
+
+---
+
+### 9.6 Seiten-Generator
+
+Die Glossar-Seiten werden von `glossary_builder.py` generiert und sind Teil des normalen Build-Prozesses:
+
+```bash
+python main.py --build-v2
+```
+
+Dabei werden automatisch generiert:
+- `/whisky-glossar/index.html` (Startseite mit Statistikband)
+- Pro Land: `/whisky-glossar/laender/{slug}/index.html`
+- Pro Region: `/whisky-glossar/regionen/{slug}/index.html`
+- Pro Destillerie: `/whisky-glossar/destillerien/{slug}/index.html`
+- Pro Whisky: `/whisky-glossar/whiskys/{slug}/index.html`
+- Index-Seiten: `/whisky-glossar/regionen/index.html` + `/whisky-glossar/destillerien/index.html`
+
+Nur Eintraege mit `"published": true` und ohne `"deleted": true` werden generiert.
+
+Alle Glossar-Seiten enthalten:
+- Breadcrumb-Navigation
+- JSON-LD Structured Data (BreadcrumbList, Product, LocalBusiness)
+- SEO-Titel und Meta-Description aus den Datensaetzen
+- Interne Verlinkung zwischen Entitaeten
+
+---
+
+### 9.7 KI-gestuetzte Datenpflege (vorbereitet)
+
+Das System ist fuer externe KI-Agenten optimiert:
+
+- **Eindeutige IDs und Slugs** als stabiler Anker
+- **Klare Pflichtfelder** mit Validierung
+- **Deterministischer Import-Workflow**: Roh -> Review -> Live (kein Direktschreiben)
+- **Feldnamen** konsistent und selbsterklaerend (snake_case)
+- **source_status-Feld**: KI-generierte Datensaetze koennen als "ai_generated" oder "unverified" markiert werden
+
+Empfohlenes Format fuer KI-generierte Importe:
+
+```json
+[
+  {
+    "name": "Destilleriebeispiel",
+    "country_id": "scotland",
+    "region_id": "speyside",
+    "founded": 1887,
+    "owner": "Eigentuemergruppe",
+    "short_description": "Kurze Beschreibung...",
+    "source_status": "ai_generated",
+    "review_status": "pending"
+  }
+]
+```
+
+Der Import-Workflow erzeugt automatisch `id`, `slug` und `created_at` wenn diese fehlen.
+
+---
+
+### 9.8 Erweiterung auf neue Laender
+
+Version 1 enthaelt Schottland, Irland und Deutschland. So wird ein neues Land hinzugefuegt:
+
+1. **Land anlegen**: Dashboard -> Glossar -> Laender -> "+ Neues Land"
+   - `id`: z.B. "japan"
+   - `slug`: z.B. "japan"
+   - `name_de`: z.B. "Japan"
+2. **Regionen anlegen**: Glossar -> Regionen -> "+ Neue Region" mit `country_id: "japan"`
+3. **Destillerien anlegen**: Glossar -> Destillerien mit `country_id: "japan"` und `region_id`
+4. **Website neu bauen**: `python main.py --build-v2`
+
+Alternativ: JSON-Datei direkt bearbeiten und per Import-Workflow einspielen.
+
+---
+
+## 11. Checklisten
 
 ### Woechentlich (ca. 10 Minuten)
 
@@ -778,7 +1035,7 @@ whisky-magazin/
 
 ---
 
-## 10. Schnellreferenz
+## 12. Schnellreferenz
 
 ### CLI-Befehle
 
@@ -807,7 +1064,7 @@ python main.py --stats          # Statistiken anzeigen
 
 ---
 
-## 11. Rechtliches (DSGVO / TMG)
+## 13. Rechtliches (DSGVO / TMG)
 
 ### Pflichtseiten (alle vorhanden)
 

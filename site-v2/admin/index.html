@@ -842,6 +842,75 @@
       #login-screen { align-items: flex-start; padding-top: 60px; }
       .login-box { padding: 32px 24px; }
     }
+
+    /* ===== GLOSSAR SUB-TABS ===== */
+    .glossar-sub-btn {
+      background: none;
+      border: none;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .glossar-sub-btn:hover { color: var(--color-text); }
+    .glossar-sub-btn.active {
+      color: var(--color-amber);
+      border-bottom-color: var(--color-amber);
+    }
+    .glossar-sub { display: none; }
+    .glossar-sub.active { display: block; }
+
+    /* ===== GLOSSAR TABLE ===== */
+    .glossar-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .glossar-table th {
+      text-align: left; padding: 10px 14px;
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--color-muted); border-bottom: 2px solid var(--color-beige);
+      background: var(--color-bg);
+    }
+    .glossar-table td { padding: 12px 14px; border-bottom: 1px solid var(--color-beige); vertical-align: middle; }
+    .glossar-table tr:hover td { background: #FAFAF4; }
+    .glossar-badge {
+      display: inline-block; padding: 2px 8px; border-radius: 999px;
+      font-size: 0.72rem; font-weight: 600;
+    }
+    .badge-green  { background: var(--color-green-bg);  color: var(--color-green); }
+    .badge-yellow { background: var(--color-yellow-bg); color: var(--color-yellow); }
+    .badge-red    { background: var(--color-red-bg);    color: var(--color-red); }
+    .badge-blue   { background: var(--color-blue-bg);   color: var(--color-blue); }
+    .badge-grey   { background: var(--color-beige);     color: var(--color-muted); }
+
+    /* ===== REVIEW CARD ===== */
+    .review-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-beige);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow);
+    }
+    .review-card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 10px; gap: 12px; flex-wrap: wrap;
+    }
+    .review-card-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; }
+    .review-card-meta  { font-size: 0.78rem; color: var(--color-muted); margin-top: 2px; }
+    .review-card-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .review-fields {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: 8px; margin-top: 10px; padding-top: 10px;
+      border-top: 1px solid var(--color-beige); font-size: 0.82rem;
+    }
+    .review-field-label { font-weight: 600; color: var(--color-muted); font-size: 0.72rem; text-transform: uppercase; }
+    .review-errors { margin-top:8px; }
+    .review-error-item { color: var(--color-red); font-size: 0.8rem; margin-bottom: 2px; }
   </style>
 </head>
 <body>
@@ -883,6 +952,7 @@
     <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('artikel', this)">&#9999;&#65039; Artikel</button>
     <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('themen', this)">&#128203; Themen</button>
     <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('wotm', this)">&#129347; WotM &amp; Newsletter</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('glossar', this)">&#128218; Glossar</button>
   </nav>
 
   <!-- TAB: Übersicht -->
@@ -917,6 +987,130 @@
   <div id="tab-wotm" class="tab-content">
     <div id="wotm-container">
       <div class="loading-text">Lädt WotM-Daten…</div>
+    </div>
+  </div>
+
+  <!-- TAB: Glossar -->
+  <div id="tab-glossar" class="tab-content">
+    <!-- Sub-Tabs -->
+    <div style="display:flex;gap:0;border-bottom:2px solid var(--color-beige);margin-bottom:24px;overflow-x:auto;">
+      <button class="glossar-sub-btn active" onclick="switchGlossarSub('laender',this)">🌍 Länder</button>
+      <button class="glossar-sub-btn" onclick="switchGlossarSub('regionen',this)">🗺️ Regionen</button>
+      <button class="glossar-sub-btn" onclick="switchGlossarSub('destillerien',this)">🏭 Destillerien</button>
+      <button class="glossar-sub-btn" onclick="switchGlossarSub('whiskys',this)">🥃 Whiskys</button>
+      <button class="glossar-sub-btn" onclick="switchGlossarSub('import',this)">📥 Import</button>
+      <button class="glossar-sub-btn" onclick="switchGlossarSub('review',this)" id="glossar-review-btn">🔍 Review</button>
+    </div>
+
+    <!-- Sub: Länder -->
+    <div id="glossar-sub-laender" class="glossar-sub active">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h2 class="section-title" style="margin:0;">Länder</h2>
+        <button class="btn btn-primary btn-sm" onclick="openGlossarModal('countries')">+ Neues Land</button>
+      </div>
+      <div id="glossar-list-countries"><div class="loading-text">Lädt…</div></div>
+    </div>
+
+    <!-- Sub: Regionen -->
+    <div id="glossar-sub-regionen" class="glossar-sub">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h2 class="section-title" style="margin:0;">Regionen</h2>
+        <button class="btn btn-primary btn-sm" onclick="openGlossarModal('regions')">+ Neue Region</button>
+      </div>
+      <div id="glossar-list-regions"><div class="loading-text">Lädt…</div></div>
+    </div>
+
+    <!-- Sub: Destillerien -->
+    <div id="glossar-sub-destillerien" class="glossar-sub">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h2 class="section-title" style="margin:0;">Destillerien</h2>
+        <button class="btn btn-primary btn-sm" onclick="openGlossarModal('distilleries')">+ Neue Destillerie</button>
+      </div>
+      <div id="glossar-list-distilleries"><div class="loading-text">Lädt…</div></div>
+    </div>
+
+    <!-- Sub: Whiskys -->
+    <div id="glossar-sub-whiskys" class="glossar-sub">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h2 class="section-title" style="margin:0;">Whiskys</h2>
+        <button class="btn btn-primary btn-sm" onclick="openGlossarModal('whiskies')">+ Neuer Whisky</button>
+      </div>
+      <div id="glossar-list-whiskies"><div class="loading-text">Lädt…</div></div>
+    </div>
+
+    <!-- Sub: Import -->
+    <div id="glossar-sub-import" class="glossar-sub">
+      <h2 class="section-title">Import</h2>
+      <div class="info-box" style="margin-bottom:20px;">
+        Importierte Datensätze werden <strong>nicht sofort veröffentlicht</strong>. Sie landen in der Review-Queue zur manuellen Prüfung.
+      </div>
+      <div style="background:var(--color-white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);max-width:600px;">
+        <div class="form-group">
+          <label>Entität</label>
+          <select id="import-entity">
+            <option value="whiskies">Whiskys</option>
+            <option value="distilleries">Destillerien</option>
+            <option value="regions">Regionen</option>
+            <option value="countries">Länder</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Format</label>
+          <select id="import-format">
+            <option value="json">JSON</option>
+            <option value="csv">CSV</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Datei auswählen</label>
+          <input type="file" id="import-file" accept=".json,.csv" style="padding:6px 0;font-size:0.875rem;">
+        </div>
+        <div class="form-group">
+          <label>Oder direkt einfügen (JSON/CSV-Text)</label>
+          <textarea id="import-text" placeholder='[{"name":"Beispiel","slug":"beispiel",...}]' style="height:120px;font-family:monospace;font-size:0.8rem;"></textarea>
+        </div>
+        <div id="import-result" style="display:none;margin-bottom:16px;"></div>
+        <button class="btn btn-primary" onclick="doGlossarImport()" id="import-btn">📥 Import starten</button>
+      </div>
+
+      <h3 style="margin:32px 0 12px;font-family:'Fraunces',serif;font-size:1.1rem;">Letzte Import-Batches</h3>
+      <div id="import-batches-list"><div class="loading-text">Lädt…</div></div>
+    </div>
+
+    <!-- Sub: Review -->
+    <div id="glossar-sub-review" class="glossar-sub">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h2 class="section-title" style="margin:0;">Review-Queue</h2>
+        <div style="display:flex;gap:8px;">
+          <select id="review-filter-entity" onchange="renderReviewQueue()" style="padding:6px 10px;border:1px solid var(--color-beige);border-radius:var(--radius);font-family:inherit;font-size:0.85rem;">
+            <option value="">Alle Entitäten</option>
+            <option value="whiskies">Whiskys</option>
+            <option value="distilleries">Destillerien</option>
+            <option value="regions">Regionen</option>
+            <option value="countries">Länder</option>
+          </select>
+          <select id="review-filter-status" onchange="renderReviewQueue()" style="padding:6px 10px;border:1px solid var(--color-beige);border-radius:var(--radius);font-family:inherit;font-size:0.85rem;">
+            <option value="pending">Offen</option>
+            <option value="">Alle</option>
+            <option value="approved">Freigegeben</option>
+            <option value="rejected">Abgelehnt</option>
+            <option value="published">Veröffentlicht</option>
+          </select>
+        </div>
+      </div>
+      <div id="review-queue-container"><div class="loading-text">Lädt Review-Queue…</div></div>
+      <div id="review-publish-bar" style="display:none;margin-top:16px;padding:16px 20px;background:var(--color-green-bg);border:1px solid #A9DFBF;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-size:0.9rem;color:#1a5632;"><strong id="review-approved-count">0</strong> Datensätze freigegeben – bereit zur Veröffentlichung</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <select id="review-publish-entity" style="padding:6px 10px;border:1px solid #A9DFBF;border-radius:var(--radius);font-family:inherit;font-size:0.85rem;background:white;">
+            <option value="whiskies">Whiskys</option>
+            <option value="distilleries">Destillerien</option>
+            <option value="regions">Regionen</option>
+            <option value="countries">Länder</option>
+          </select>
+          <button class="btn btn-success btn-sm" onclick="publishApproved()">🚀 In Live-Daten übernehmen</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1106,6 +1300,46 @@
   </div>
 </div>
 
+<!-- ===== GLOSSAR ENTRY MODAL ===== -->
+<div class="modal-overlay" id="glossar-entry-modal" role="dialog" aria-modal="true">
+  <div class="modal-box" style="max-width:720px">
+    <div class="modal-header">
+      <h3 id="glossar-entry-modal-title">Eintrag bearbeiten</h3>
+      <button class="modal-close" onclick="closeGlossarModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="glossar-entry-modal-body">
+      <!-- Dynamisch befüllt -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeGlossarModal()">Abbrechen</button>
+      <button class="btn btn-primary" id="glossar-entry-save-btn" onclick="saveGlossarEntry()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== REVIEW DECISION MODAL ===== -->
+<div class="modal-overlay" id="review-decision-modal" role="dialog" aria-modal="true">
+  <div class="modal-box" style="max-width:560px">
+    <div class="modal-header">
+      <h3>Review-Entscheidung</h3>
+      <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin:0 0 12px;font-size:0.9rem;color:var(--color-muted);" id="review-decision-desc"></p>
+      <div class="form-group">
+        <label>Notiz (optional)</label>
+        <textarea id="review-decision-notes" placeholder="Begründung oder Korrekturhinweis…" style="height:80px;"></textarea>
+      </div>
+      <div id="review-decision-error" class="error-box" style="display:none;"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeReviewModal()">Abbrechen</button>
+      <button class="btn btn-danger"   id="review-reject-btn"  onclick="submitReviewDecision('reject')">✗ Ablehnen</button>
+      <button class="btn btn-primary"  id="review-approve-btn" onclick="submitReviewDecision('approve')">✓ Freigeben</button>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ============================================================
    API CONFIGURATION
@@ -1118,6 +1352,7 @@ const API = {
   generate: '/api/generate_article',
   publish:  '/api/admin_publish',
   wotm:     '/api/admin_wotm',
+  glossar:  '/api/admin_glossary',
 };
 
 /* ============================================================
@@ -1315,7 +1550,7 @@ function doLogout() {
    TAB SWITCHING
    ============================================================ */
 let activeTab = 'uebersicht';
-const tabLoaded = { uebersicht: false, newsletter: false, artikel: false, themen: false, wotm: false };
+const tabLoaded = { uebersicht: false, newsletter: false, artikel: false, themen: false, wotm: false, glossar: false };
 
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -1352,6 +1587,7 @@ function loadTab(name) {
     case 'artikel':     loadArtikel();     break;
     case 'themen':      loadThemen();      break;
     case 'wotm':        loadWotm();        break;
+    case 'glossar':     loadGlossar();     break;
   }
 }
 
@@ -2957,6 +3193,588 @@ function fmtDate(str) {
 }
 
 /* ============================================================
+   TAB: GLOSSAR
+   ============================================================ */
+let glossarReviewQueue = null;
+let glossarCurrentEntity = null;
+let glossarCurrentEntry  = null;
+let glossarReviewItem    = null;
+
+// Cache für alle geladenen Listen
+const glossarCache = { countries: null, regions: null, distilleries: null, whiskies: null };
+
+const GLOSSAR_ENTITY_LABELS = {
+  countries:     'Länder',
+  regions:       'Regionen',
+  distilleries:  'Destillerien',
+  whiskies:      'Whiskys',
+};
+
+const SMOKE_LABELS = { none:'Kein Torf', light:'Leicht', medium:'Mittel', heavy:'Stark', very_heavy:'Sehr stark' };
+const TYPE_LABELS  = { single_malt:'Single Malt', blended_malt:'Blended Malt', blended:'Blended',
+                       single_grain:'Single Grain', pot_still:'Single Pot Still' };
+
+// ---- Sub-Tab switching ----
+function switchGlossarSub(name, btn) {
+  document.querySelectorAll('.glossar-sub').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.glossar-sub-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('glossar-sub-' + name).classList.add('active');
+  btn.classList.add('active');
+
+  if (name === 'laender'      && !glossarCache.countries)    loadGlossarEntity('countries');
+  if (name === 'regionen'     && !glossarCache.regions)      loadGlossarEntity('regions');
+  if (name === 'destillerien' && !glossarCache.distilleries) loadGlossarEntity('distilleries');
+  if (name === 'whiskys'      && !glossarCache.whiskies)     loadGlossarEntity('whiskies');
+  if (name === 'import')  loadImportBatches();
+  if (name === 'review')  loadReviewQueue();
+}
+
+// ---- Initial load ----
+async function loadGlossar() {
+  // Preload all entities in background
+  loadGlossarEntity('countries');
+  loadGlossarEntity('regions');
+  loadGlossarEntity('distilleries');
+  loadGlossarEntity('whiskies');
+  loadReviewQueue();
+}
+
+// ---- Load entity list ----
+async function loadGlossarEntity(entity) {
+  const listId = 'glossar-list-' + entity;
+  const container = document.getElementById(listId);
+  if (!container) return;
+  container.innerHTML = '<div class="loading-text">Lädt…</div>';
+  try {
+    const data = await apiGet(`${API.glossar}?action=list&entity=${entity}`);
+    glossarCache[entity] = data.items || [];
+    renderGlossarTable(entity, glossarCache[entity]);
+  } catch (e) {
+    container.innerHTML = `<div class="error-box">${esc(e.message)}</div>`;
+  }
+}
+
+// ---- Render entity table ----
+function renderGlossarTable(entity, items) {
+  const container = document.getElementById('glossar-list-' + entity);
+  if (!container) return;
+
+  // Filter out deleted entries for display
+  const visible = items.filter(i => !i.deleted);
+
+  if (!visible.length) {
+    container.innerHTML = '<div class="info-box">Noch keine Einträge vorhanden.</div>';
+    return;
+  }
+
+  let headers, rowFn;
+
+  if (entity === 'countries') {
+    headers = ['Name', 'Slug', 'Status', 'Aktionen'];
+    rowFn = i => `<td><strong>${esc(i.name_de)}</strong></td>
+      <td style="font-family:monospace;font-size:0.78rem;">${esc(i.slug)}</td>
+      <td>${pubBadge(i.published)}</td>
+      <td>${rowActions(entity, i)}</td>`;
+  } else if (entity === 'regions') {
+    headers = ['Name', 'Land', 'Slug', 'Status', 'Aktionen'];
+    rowFn = i => `<td><strong>${esc(i.name)}</strong></td>
+      <td style="font-size:0.8rem;color:var(--color-muted);">${esc(i.country_id)}</td>
+      <td style="font-family:monospace;font-size:0.78rem;">${esc(i.slug)}</td>
+      <td>${pubBadge(i.published)}</td>
+      <td>${rowActions(entity, i)}</td>`;
+  } else if (entity === 'distilleries') {
+    headers = ['Name', 'Region', 'Land', 'Gegründet', 'Status', 'Aktionen'];
+    rowFn = i => `<td><strong>${esc(i.name)}</strong></td>
+      <td style="font-size:0.8rem;color:var(--color-muted);">${esc(i.region_id)}</td>
+      <td style="font-size:0.8rem;color:var(--color-muted);">${esc(i.country_id)}</td>
+      <td style="font-size:0.8rem;">${i.founded || '–'}</td>
+      <td>${pubBadge(i.published)}</td>
+      <td>${rowActions(entity, i)}</td>`;
+  } else {
+    headers = ['Name', 'Destillerie', 'Typ', 'ABV', 'Rauch', 'Status', 'Aktionen'];
+    rowFn = i => `<td><strong>${esc(i.name)}</strong></td>
+      <td style="font-size:0.8rem;color:var(--color-muted);">${esc(i.distillery_id)}</td>
+      <td style="font-size:0.8rem;">${esc(TYPE_LABELS[i.whisky_type] || i.whisky_type || '–')}</td>
+      <td style="font-size:0.8rem;">${i.abv ? i.abv + '%' : '–'}</td>
+      <td style="font-size:0.8rem;">${esc(SMOKE_LABELS[i.smoke_profile] || i.smoke_profile || '–')}</td>
+      <td>${pubBadge(i.published)}</td>
+      <td>${rowActions(entity, i)}</td>`;
+  }
+
+  const ths = headers.map(h => `<th>${h}</th>`).join('');
+  const rows = visible.map(i => `<tr>${rowFn(i)}</tr>`).join('');
+  container.innerHTML = `
+    <div style="overflow-x:auto;">
+      <table class="glossar-table">
+        <thead><tr>${ths}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <p style="margin-top:8px;font-size:0.78rem;color:var(--color-muted);">${visible.length} Einträge</p>`;
+}
+
+function pubBadge(pub) {
+  return pub
+    ? '<span class="glossar-badge badge-green">Live</span>'
+    : '<span class="glossar-badge badge-yellow">Entwurf</span>';
+}
+
+function rowActions(entity, item) {
+  const id = esc(item.id);
+  return `<span style="display:flex;gap:6px;">
+    <button class="btn btn-secondary btn-sm" title="Bearbeiten"
+      onclick='openGlossarModalWithData("${entity}", ${JSON.stringify(item).replace(/'/g,"&#39;")})'>✏️</button>
+    <button class="btn btn-danger btn-sm" title="Löschen"
+      onclick='deleteGlossarEntry("${entity}", "${id}")'>🗑️</button>
+  </span>`;
+}
+
+// ---- Modal: open for new entry ----
+function openGlossarModal(entity) {
+  glossarCurrentEntity = entity;
+  glossarCurrentEntry  = null;
+  document.getElementById('glossar-entry-modal-title').textContent =
+    'Neuer Eintrag – ' + GLOSSAR_ENTITY_LABELS[entity];
+  document.getElementById('glossar-entry-modal-body').innerHTML = buildEntryForm(entity, null);
+  document.getElementById('glossar-entry-modal').classList.add('open');
+}
+
+// ---- Modal: open with existing data ----
+function openGlossarModalWithData(entity, item) {
+  glossarCurrentEntity = entity;
+  glossarCurrentEntry  = item;
+  document.getElementById('glossar-entry-modal-title').textContent =
+    'Bearbeiten – ' + esc(item.name || item.name_de || item.id);
+  document.getElementById('glossar-entry-modal-body').innerHTML = buildEntryForm(entity, item);
+  document.getElementById('glossar-entry-modal').classList.add('open');
+}
+
+function closeGlossarModal() {
+  document.getElementById('glossar-entry-modal').classList.remove('open');
+}
+
+// ---- Build entry form dynamically ----
+function buildEntryForm(entity, d) {
+  d = d || {};
+  const fg = (id, label, el, hint) =>
+    `<div class="form-group"><label for="${id}">${label}</label>${el}${hint ? `<small style="color:var(--color-muted);font-size:0.75rem;">${hint}</small>` : ''}</div>`;
+  const inp  = (id, val, ph, type='text') =>
+    `<input type="${type}" id="${id}" value="${esc(val||'')}" placeholder="${ph||''}">`;
+  const ta   = (id, val, ph, h=80)  =>
+    `<textarea id="${id}" placeholder="${ph||''}" style="height:${h}px;">${esc(val||'')}</textarea>`;
+  const chk  = (id, val, label) =>
+    `<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400;">
+       <input type="checkbox" id="${id}" ${val?'checked':''} style="width:auto;margin:0;">
+       <span>${label}</span></label>`;
+  const sel  = (id, val, opts) =>
+    `<select id="${id}">${opts.map(([v,l])=>`<option value="${v}"${val===v?' selected':''}>${l}</option>`).join('')}</select>`;
+
+  const common = `
+    ${fg('ef-id',    'ID (Slug-Basis) *',    inp('ef-id',    d.id,    'z.B. lagavulin'),    'Wird automatisch aus dem Namen generiert wenn leer')}
+    ${fg('ef-slug',  'Slug *',               inp('ef-slug',  d.slug,  'z.B. lagavulin'),    'Nur Kleinbuchstaben, Zahlen und Bindestriche')}
+    ${fg('ef-pub',   'Veröffentlicht',        chk('ef-pub',   d.published, 'Sofort live schalten'))}`;
+
+  if (entity === 'countries') return `
+    ${fg('ef-name-de', 'Name (Deutsch) *', inp('ef-name-de', d.name_de, 'z.B. Schottland'))}
+    ${fg('ef-name-en', 'Name (Englisch)',  inp('ef-name-en', d.name_en, 'z.B. Scotland'))}
+    ${common}
+    ${fg('ef-short',   'Kurzbeschreibung', ta('ef-short', d.short_description, '', 60))}
+    ${fg('ef-long',    'Langbeschreibung', ta('ef-long',  d.long_description,  '', 100))}
+    ${fg('ef-travel',  'Reisetipp',        ta('ef-travel',d.travel_context, '', 60))}
+    ${fg('ef-seo-t',   'SEO-Titel',        inp('ef-seo-t', d.seo_title, ''))}
+    ${fg('ef-seo-d',   'SEO-Beschreibung', inp('ef-seo-d', d.seo_description, ''))}`;
+
+  if (entity === 'regions') return `
+    ${fg('ef-name',    'Name *',           inp('ef-name',    d.name,       'z.B. Islay'))}
+    ${fg('ef-country', 'Land-ID *',        inp('ef-country', d.country_id, 'z.B. scotland'))}
+    ${common}
+    ${fg('ef-short',   'Kurzbeschreibung', ta('ef-short', d.short_description, '', 60))}
+    ${fg('ef-long',    'Langbeschreibung', ta('ef-long',  d.long_description,  '', 100))}
+    ${fg('ef-style',   'Stil-Profil',      inp('ef-style',   d.style_notes, 'z.B. Stark torfig, maritim'))}
+    ${fg('ef-travel',  'Reisetipp',        ta('ef-travel',   d.travel_context, '', 60))}
+    ${fg('ef-seo-t',   'SEO-Titel',        inp('ef-seo-t',   d.seo_title, ''))}
+    ${fg('ef-seo-d',   'SEO-Beschreibung', inp('ef-seo-d',   d.seo_description, ''))}`;
+
+  if (entity === 'distilleries') return `
+    ${fg('ef-name',    'Name *',           inp('ef-name',    d.name,       'z.B. Lagavulin'))}
+    ${fg('ef-country', 'Land-ID *',        inp('ef-country', d.country_id, 'z.B. scotland'))}
+    ${fg('ef-region',  'Region-ID *',      inp('ef-region',  d.region_id,  'z.B. islay'))}
+    ${fg('ef-founded', 'Gegründet',        inp('ef-founded', d.founded,    'z.B. 1816', 'number'))}
+    ${fg('ef-owner',   'Eigentümer',       inp('ef-owner',   d.owner,      'z.B. Diageo'))}
+    ${fg('ef-status',  'Status',           sel('ef-status',  d.status || 'active',
+      [['active','Aktiv'],['silent','Still gelegt'],['closed','Geschlossen']]))}
+    ${common}
+    ${fg('ef-short',   'Kurzbeschreibung', ta('ef-short', d.short_description, '', 60))}
+    ${fg('ef-long',    'Langbeschreibung', ta('ef-long',  d.long_description,  '', 100))}
+    ${fg('ef-visit',   'Besucherinfo',     ta('ef-visit', d.visit_info,  '', 60))}
+    ${fg('ef-travel',  'Reisetipp',        ta('ef-travel',d.travel_context, '', 60))}
+    ${fg('ef-seo-t',   'SEO-Titel',        inp('ef-seo-t', d.seo_title, ''))}
+    ${fg('ef-seo-d',   'SEO-Beschreibung', inp('ef-seo-d', d.seo_description, ''))}`;
+
+  // whiskies
+  return `
+    ${fg('ef-name',       'Name *',           inp('ef-name',       d.name,        'z.B. Lagavulin 16 Jahre'))}
+    ${fg('ef-country',    'Land-ID *',         inp('ef-country',    d.country_id,  'z.B. scotland'))}
+    ${fg('ef-region',     'Region-ID',         inp('ef-region',     d.region_id,   'z.B. islay'))}
+    ${fg('ef-distillery', 'Destillerie-ID *',  inp('ef-distillery', d.distillery_id,'z.B. lagavulin'))}
+    ${fg('ef-type',       'Whisky-Typ *',      sel('ef-type', d.whisky_type || 'single_malt',
+      [['single_malt','Single Malt'],['blended_malt','Blended Malt'],['blended','Blended'],
+       ['single_grain','Single Grain'],['pot_still','Single Pot Still']]))}
+    ${fg('ef-abv',        'ABV % *',           inp('ef-abv',        d.abv,         '43.0', 'number'))}
+    ${fg('ef-age',        'Alter (Jahre)',      inp('ef-age',        d.age_statement,'', 'number'), 'Leer lassen für NAS')}
+    ${fg('ef-smoke',      'Rauchprofil',        sel('ef-smoke', d.smoke_profile || 'none',
+      [['none','Kein Torf'],['light','Leicht'],['medium','Mittel'],['heavy','Stark'],['very_heavy','Sehr stark']]))}
+    ${fg('ef-casks',      'Fasstypen',         inp('ef-casks', (d.cask_types||[]).join(', '), 'ex-bourbon, sherry'), 'Komma-getrennt')}
+    ${fg('ef-tags',       'Style-Tags',        inp('ef-tags',  (d.style_tags||[]).join(', '),  'torfig, rauchig'), 'Komma-getrennt')}
+    ${common}
+    ${fg('ef-short',      'Kurzbeschreibung',  ta('ef-short', d.short_description, '', 60))}
+    ${fg('ef-long',       'Langbeschreibung',  ta('ef-long',  d.long_description,  '', 100))}
+    ${fg('ef-nose',       'Nase',              ta('ef-nose',  d.tasting_notes_nose,'', 60))}
+    ${fg('ef-palate',     'Gaumen',            ta('ef-palate',d.tasting_notes_palate,'',60))}
+    ${fg('ef-finish',     'Abgang',            ta('ef-finish',d.tasting_notes_finish,'',60))}
+    ${fg('ef-editorial',  'Redaktionelle Notiz',ta('ef-editorial',d.editorial_notes,'',60))}
+    ${fg('ef-travel',     'Reise-Kontext',     ta('ef-travel',d.travel_context,'',60))}
+    ${fg('ef-seo-t',      'SEO-Titel',         inp('ef-seo-t', d.seo_title, ''))}
+    ${fg('ef-seo-d',      'SEO-Beschreibung',  inp('ef-seo-d', d.seo_description, ''))}`;
+}
+
+// ---- Read form values ----
+function readEntryForm(entity) {
+  const v  = id => (document.getElementById(id)||{}).value || '';
+  const vn = id => { const n = parseFloat(v(id)); return isNaN(n) ? null : n; };
+  const vb = id => !!(document.getElementById(id)||{}).checked;
+  const va = id => v(id).split(',').map(s=>s.trim()).filter(Boolean);
+
+  const base = {
+    id:   v('ef-id')   || undefined,
+    slug: v('ef-slug') || undefined,
+    published:  vb('ef-pub'),
+    short_description: v('ef-short') || undefined,
+    long_description:  v('ef-long')  || undefined,
+    travel_context:    v('ef-travel')|| undefined,
+    seo_title:         v('ef-seo-t') || undefined,
+    seo_description:   v('ef-seo-d') || undefined,
+  };
+
+  if (entity === 'countries') return { ...base,
+    name_de: v('ef-name-de'), name_en: v('ef-name-en') || undefined };
+
+  if (entity === 'regions') return { ...base,
+    name: v('ef-name'), country_id: v('ef-country'),
+    style_notes: v('ef-style') || undefined };
+
+  if (entity === 'distilleries') return { ...base,
+    name: v('ef-name'), country_id: v('ef-country'), region_id: v('ef-region'),
+    founded: vn('ef-founded'), owner: v('ef-owner') || undefined,
+    status: v('ef-status') || 'active',
+    visit_info: v('ef-visit') || undefined };
+
+  return { ...base,
+    name: v('ef-name'), country_id: v('ef-country'),
+    region_id: v('ef-region') || undefined,
+    distillery_id: v('ef-distillery'),
+    whisky_type: v('ef-type'), abv: vn('ef-abv'),
+    age_statement: vn('ef-age'),
+    nas: !vn('ef-age'),
+    smoke_profile: v('ef-smoke') || 'none',
+    cask_types:  va('ef-casks'),
+    style_tags:  va('ef-tags'),
+    tasting_notes_nose:   v('ef-nose')     || undefined,
+    tasting_notes_palate: v('ef-palate')   || undefined,
+    tasting_notes_finish: v('ef-finish')   || undefined,
+    editorial_notes:      v('ef-editorial')|| undefined,
+  };
+}
+
+// ---- Save entry ----
+async function saveGlossarEntry() {
+  const btn = document.getElementById('glossar-entry-save-btn');
+  btn.disabled = true;
+  btn.textContent = 'Speichert…';
+  try {
+    const entry = readEntryForm(glossarCurrentEntity);
+    // Carry over existing id if editing
+    if (glossarCurrentEntry && glossarCurrentEntry.id && !entry.id) {
+      entry.id = glossarCurrentEntry.id;
+    }
+    if (glossarCurrentEntry) {
+      // Merge: keep fields not in form
+      Object.assign(entry, {
+        created_at: glossarCurrentEntry.created_at,
+      });
+    }
+    await apiPost(`${API.glossar}?action=save`, { entity: glossarCurrentEntity, entry });
+    showToast('Eintrag gespeichert ✓', 'success');
+    closeGlossarModal();
+    glossarCache[glossarCurrentEntity] = null;
+    loadGlossarEntity(glossarCurrentEntity);
+  } catch (e) {
+    showToast('Fehler: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Speichern';
+  }
+}
+
+// ---- Delete entry ----
+async function deleteGlossarEntry(entity, id) {
+  if (!confirm(`Eintrag "${id}" wirklich löschen (soft)?`)) return;
+  try {
+    await apiPost(`${API.glossar}?action=delete`, { entity, id });
+    showToast('Eintrag gelöscht', 'success');
+    glossarCache[entity] = null;
+    loadGlossarEntity(entity);
+  } catch (e) {
+    showToast('Fehler: ' + e.message, 'error');
+  }
+}
+
+// ---- Import ----
+async function doGlossarImport() {
+  const btn    = document.getElementById('import-btn');
+  const result = document.getElementById('import-result');
+  const entity = document.getElementById('import-entity').value;
+  const fmt    = document.getElementById('import-format').value;
+  const file   = document.getElementById('import-file').files[0];
+  const text   = document.getElementById('import-text').value.trim();
+
+  let data = text;
+  if (!data && file) {
+    data = await file.text();
+  }
+  if (!data) {
+    showToast('Bitte Datei auswählen oder Text einfügen', 'warn');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Importiert…';
+  result.style.display = 'none';
+
+  try {
+    // For JSON, parse and send as object so the API receives structured data
+    let payload = data;
+    if (fmt === 'json') {
+      try { payload = JSON.parse(data); } catch { /* send as string */ }
+    }
+    const res = await apiPost(`${API.glossar}?action=import_batch`,
+      { entity, format: fmt, data: payload });
+
+    result.style.display = 'block';
+    result.className = 'success-box';
+    result.innerHTML = `<strong>Import erfolgreich!</strong> Batch: <code>${esc(res.batch_id)}</code><br>
+      Gesamt: ${res.total} &nbsp;|&nbsp; Neu: ${res.new} &nbsp;|&nbsp;
+      Update-Kandidaten: ${res.update_candidates} &nbsp;|&nbsp;
+      Fehler: ${res.errors} &nbsp;|&nbsp; Unvollständig: ${res.incomplete}<br>
+      <em>→ Zur <a href="#" onclick="goToTab('glossar');switchGlossarSub('review',document.querySelector('.glossar-sub-btn[onclick*=review]'));return false;">Review-Queue</a> wechseln</em>`;
+
+    // Reload review queue and batch list
+    glossarReviewQueue = null;
+    loadImportBatches();
+    showToast(`${res.total} Datensätze in Review-Queue`, 'info');
+  } catch (e) {
+    result.style.display = 'block';
+    result.className = 'error-box';
+    result.textContent = 'Fehler: ' + e.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '📥 Import starten';
+  }
+}
+
+async function loadImportBatches() {
+  const container = document.getElementById('import-batches-list');
+  if (!container) return;
+  try {
+    const queue = await apiGet(`${API.glossar}?action=review_queue`);
+    const batches = (queue.batches || []).slice().reverse();
+    if (!batches.length) {
+      container.innerHTML = '<div class="info-box">Noch keine Import-Batches vorhanden.</div>';
+      return;
+    }
+    const rows = batches.map(b => `<tr>
+      <td style="font-family:monospace;font-size:0.78rem;">${esc(b.batch_id)}</td>
+      <td>${esc(GLOSSAR_ENTITY_LABELS[b.entity] || b.entity)}</td>
+      <td>${b.total}</td>
+      <td><span class="glossar-badge ${b.status==='pending_review'?'badge-yellow':'badge-green'}">${esc(b.status)}</span></td>
+      <td style="font-size:0.78rem;color:var(--color-muted);">${fmtDate(b.imported_at)}</td>
+    </tr>`).join('');
+    container.innerHTML = `<div style="overflow-x:auto;"><table class="glossar-table">
+      <thead><tr><th>Batch-ID</th><th>Entität</th><th>Einträge</th><th>Status</th><th>Datum</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  } catch (e) {
+    container.innerHTML = `<div class="error-box">${esc(e.message)}</div>`;
+  }
+}
+
+// ---- Review Queue ----
+async function loadReviewQueue() {
+  const container = document.getElementById('review-queue-container');
+  if (!container) return;
+  container.innerHTML = '<div class="loading-text">Lädt Review-Queue…</div>';
+  try {
+    const queue = await apiGet(`${API.glossar}?action=review_queue`);
+    glossarReviewQueue = queue;
+    renderReviewQueue();
+  } catch (e) {
+    container.innerHTML = `<div class="error-box">${esc(e.message)}</div>`;
+  }
+}
+
+function renderReviewQueue() {
+  const container = document.getElementById('review-queue-container');
+  if (!container || !glossarReviewQueue) return;
+
+  const filterEntity = document.getElementById('review-filter-entity').value;
+  const filterStatus = document.getElementById('review-filter-status').value;
+
+  let items = glossarReviewQueue.items || [];
+  if (filterEntity) items = items.filter(i => i.entity === filterEntity);
+  if (filterStatus) items = items.filter(i => i.review_status === filterStatus);
+
+  const approvedCount = (glossarReviewQueue.items || [])
+    .filter(i => i.review_status === 'approved' || i.review_status === 'merged').length;
+
+  const bar = document.getElementById('review-publish-bar');
+  const cnt = document.getElementById('review-approved-count');
+  if (bar && cnt) {
+    cnt.textContent = approvedCount;
+    bar.style.display = approvedCount > 0 ? 'flex' : 'none';
+  }
+
+  if (!items.length) {
+    container.innerHTML = '<div class="info-box">Keine Einträge in der Review-Queue (für diesen Filter).</div>';
+    return;
+  }
+
+  const STATUS_COLORS = {
+    new:              'badge-green',
+    update_candidate: 'badge-blue',
+    error:            'badge-red',
+    incomplete:       'badge-yellow',
+  };
+  const REVIEW_COLORS = {
+    pending:   'badge-yellow',
+    approved:  'badge-green',
+    rejected:  'badge-red',
+    merged:    'badge-blue',
+    published: 'badge-grey',
+  };
+
+  const cards = items.map((item, idx) => {
+    const n = item.normalized || {};
+    const statusBadge  = `<span class="glossar-badge ${STATUS_COLORS[item.status]||'badge-grey'}">${esc(item.status)}</span>`;
+    const reviewBadge  = `<span class="glossar-badge ${REVIEW_COLORS[item.review_status]||'badge-grey'}">${esc(item.review_status)}</span>`;
+    const entityLabel  = GLOSSAR_ENTITY_LABELS[item.entity] || item.entity;
+    const nameField    = n.name || n.name_de || n.id || '(kein Name)';
+
+    const errors = (item.errors||[]).map(e =>
+      `<div class="review-error-item">⚠ ${esc(e)}</div>`).join('');
+
+    const fields = Object.entries(n)
+      .filter(([k]) => !['created_at','last_updated','published','deleted','review_status'].includes(k))
+      .slice(0, 12)
+      .map(([k, v]) => `<div>
+        <div class="review-field-label">${esc(k)}</div>
+        <div style="font-size:0.82rem;word-break:break-word;">${esc(Array.isArray(v)?v.join(', '):String(v||'–'))}</div>
+      </div>`).join('');
+
+    const canDecide = item.review_status === 'pending';
+    const canPublish = item.review_status === 'approved' || item.review_status === 'merged';
+
+    return `<div class="review-card">
+      <div class="review-card-header">
+        <div>
+          <div class="review-card-title">${esc(nameField)}</div>
+          <div class="review-card-meta">${esc(entityLabel)} &nbsp;·&nbsp; Batch: ${esc(item.batch_id||'')} &nbsp;·&nbsp; ${statusBadge} ${reviewBadge}</div>
+        </div>
+        <div class="review-card-actions">
+          ${canDecide ? `
+          <button class="btn btn-success btn-sm" onclick='openReviewModal(${idx})'>✓ Freigeben</button>
+          <button class="btn btn-danger btn-sm"  onclick='openReviewModalReject(${idx})'>✗ Ablehnen</button>` : ''}
+          ${canPublish ? `
+          <button class="btn btn-primary btn-sm" onclick='publishSingle("${esc(item.entity)}", "${esc(item.batch_id)}", "${esc(item.item_id)}")'>🚀 Veröffentlichen</button>` : ''}
+        </div>
+      </div>
+      ${errors ? `<div class="review-errors">${errors}</div>` : ''}
+      <div class="review-fields">${fields}</div>
+    </div>`;
+  }).join('');
+
+  container.innerHTML = `<div style="margin-bottom:8px;font-size:0.78rem;color:var(--color-muted);">${items.length} Einträge</div>${cards}`;
+}
+
+// ---- Review modal ----
+let reviewDecisionMode = 'approve';
+let reviewDecisionIdx  = null;
+
+function openReviewModal(idx) {
+  reviewDecisionMode = 'approve';
+  reviewDecisionIdx  = idx;
+  const item = (glossarReviewQueue.items || [])[idx];
+  if (!item) return;
+  const name = (item.normalized||{}).name || (item.normalized||{}).name_de || item.item_id;
+  document.getElementById('review-decision-desc').textContent =
+    `Datensatz "${name}" (${GLOSSAR_ENTITY_LABELS[item.entity]||item.entity}) freigeben?`;
+  document.getElementById('review-decision-notes').value = '';
+  document.getElementById('review-decision-error').style.display = 'none';
+  document.getElementById('review-approve-btn').style.display = '';
+  document.getElementById('review-reject-btn').style.display = '';
+  document.getElementById('review-decision-modal').classList.add('open');
+}
+
+function openReviewModalReject(idx) {
+  openReviewModal(idx);
+  reviewDecisionMode = 'reject';
+}
+
+function closeReviewModal() {
+  document.getElementById('review-decision-modal').classList.remove('open');
+}
+
+async function submitReviewDecision(decision) {
+  const item = (glossarReviewQueue ? glossarReviewQueue.items : [])[reviewDecisionIdx];
+  if (!item) return;
+  const notes = document.getElementById('review-decision-notes').value.trim();
+  const errEl = document.getElementById('review-decision-error');
+  errEl.style.display = 'none';
+  try {
+    await apiPost(`${API.glossar}?action=review_decision`, {
+      batch_id: item.batch_id,
+      item_id:  item.item_id,
+      decision,
+      reviewer_notes: notes,
+    });
+    showToast(decision === 'approve' ? 'Freigegeben ✓' : 'Abgelehnt', decision === 'approve' ? 'success' : 'warn');
+    closeReviewModal();
+    glossarReviewQueue = null;
+    loadReviewQueue();
+  } catch (e) {
+    errEl.textContent = e.message;
+    errEl.style.display = 'block';
+  }
+}
+
+async function publishSingle(entity, batchId) {
+  if (!confirm(`Alle freigegebenen "${GLOSSAR_ENTITY_LABELS[entity]||entity}"-Datensätze in die Live-Daten übernehmen?`)) return;
+  try {
+    const res = await apiPost(`${API.glossar}?action=publish_approved`, { entity, batch_id: batchId });
+    showToast(`${res.published} Datensätze veröffentlicht ✓`, 'success');
+    glossarReviewQueue = null;
+    glossarCache[entity] = null;
+    loadReviewQueue();
+    loadGlossarEntity(entity);
+  } catch (e) {
+    showToast('Fehler: ' + e.message, 'error');
+  }
+}
+
+async function publishApproved() {
+  const entity = document.getElementById('review-publish-entity').value;
+  await publishSingle(entity, '');
+}
+
+/* ============================================================
    KEYBOARD & ACCESSIBILITY
    ============================================================ */
 document.getElementById('login-password').addEventListener('keydown', function(e) {
@@ -2968,6 +3786,8 @@ document.addEventListener('keydown', function(e) {
     closePreview();
     closeNewTopicModal();
     closePublishModal();
+    closeGlossarModal();
+    closeReviewModal();
   }
 });
 
@@ -2980,6 +3800,12 @@ document.getElementById('new-topic-modal').addEventListener('click', function(e)
 });
 document.getElementById('publish-modal').addEventListener('click', function(e) {
   if (e.target === this) closePublishModal();
+});
+document.getElementById('glossar-entry-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeGlossarModal();
+});
+document.getElementById('review-decision-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeReviewModal();
 });
 
 /* ============================================================
