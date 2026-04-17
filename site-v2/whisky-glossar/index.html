@@ -62,7 +62,12 @@
     </header>
     <main id="main-content">
     
-    <nav class="breadcrumb"><div class="breadcrumb-inner"><a href="/">Startseite</a> &rsaquo; <a href="/whisky-glossar/">Whisky-Glossar</a> &rsaquo; <span>Whisky-Glossar</span></div></nav>
+    <style>
+.glossar-page h2::before { display: none !important; }
+.glossar-page h2 { padding-left: 0 !important; }
+</style>
+<div class="glossar-page">
+    <nav class="breadcrumb"><div class="breadcrumb-inner"><a href="/">Startseite</a> &rsaquo; <span>Whisky-Glossar</span></div></nav>
     
     <section style="background:var(--text-primary);color:#fff;padding:60px 24px 48px;text-align:center;position:relative;overflow:hidden;">
         <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(200,150,62,0.15) 0%,transparent 65%);pointer-events:none;"></div>
@@ -179,6 +184,7 @@
             Das Glossar befindet sich im Aufbau. Daten werden schrittweise ergänzt und redaktionell geprüft.
         </div>
     </div>
+    </div><!-- /glossar-page -->
     
     </main>
     <script>
