@@ -2604,11 +2604,16 @@ async function wotmSave() {
     photo_ext_list: [],
   };
 
-  // Encode all selected photos
+  // Encode all selected photos (null = canvas failed, skip that file)
   for (const file of _wotmPhotoFiles) {
     const b64 = await _fileToBase64(file);
-    payload.photo_b64_list.push(b64);
-    payload.photo_ext_list.push(file.name.split('.').pop().toLowerCase());
+    if (b64) {
+      payload.photo_b64_list.push(b64);
+      payload.photo_ext_list.push(file.name.split('.').pop().toLowerCase() || 'jpg');
+    }
+  }
+  if (_wotmPhotoFiles.length > 0 && payload.photo_b64_list.length === 0) {
+    showToast('Fotos konnten nicht verarbeitet werden (Format nicht unterstützt). Bitte als JPEG oder PNG exportieren.', 'warn', 7000);
   }
 
   const btn = document.getElementById('wotm-save-btn');
@@ -2688,16 +2693,21 @@ async function wotmGenerateNewsletter(force) {
 
   const existingEntry = (wotmData?.entries?.[monthKey]) || {};
 
-  // Lokale Foto-Vorschau: neu ausgewählte Fotos als data:-URL übergeben
-  // (erscheinen sofort im Preview, ohne erst zu speichern)
-  let previewPhotoUrls = existingEntry.photo_urls ||
+  // Foto-Vorschau: für lokale (noch nicht gespeicherte) Fotos blob:-URLs nutzen –
+  // das vermeidet riesige base64-Payloads und Canvas-Probleme (Safari/HEIC).
+  // Gespeicherte Fotos kommen als normale /images/…-URLs vom Server.
+  const savedPhotoUrls = existingEntry.photo_urls ||
                          (existingEntry.photo_url ? [existingEntry.photo_url] : []);
-  if (_wotmPhotoFiles.length > 0) {
-    try {
-      previewPhotoUrls = await Promise.all(
-        _wotmPhotoFiles.slice(0, 4).map(f => _fileToBase64(f))
-      );
-    } catch(e) { /* nutze gespeicherte URLs als Fallback */ }
+
+  // Platzhalter-Marker für lokale Fotos, die dann client-seitig per blob: ersetzt werden
+  const localFiles = _wotmPhotoFiles.slice(0, 4);
+  const localBlobUrls = localFiles.map(f => _fileToBlobUrl(f)); // erzeugt blob:-URLs
+
+  // Was ans Backend geht: gespeicherte URLs ODER Platzhalter für lokale
+  let previewPhotoUrls = savedPhotoUrls;
+  if (localFiles.length > 0 && savedPhotoUrls.length === 0) {
+    // Platzhalter damit das Backend img-Tags erzeugt; werden nach Render ersetzt
+    previewPhotoUrls = localFiles.map((_, i) => `__LOCALPHOTO_${i}__`);
   }
 
   const _toNumG = id => { const v = document.getElementById(id)?.value; return v ? Number(v) : null; };
@@ -2730,10 +2740,33 @@ async function wotmGenerateNewsletter(force) {
     const result = await apiPost(API.wotm + '?action=preview_html', payload);
     const html = result.html || '';
 
-    // HTML in verstecktem Textarea speichern (für Versand)
+    // HTML in Textarea speichern (für Versand) – ohne lokale blob-URLs
     editorEl.value = html;
-    // Gerenderte Vorschau anzeigen
-    iframeEl.srcdoc = html;
+
+    // Für die Vorschau: __LOCALPHOTO_X__-Platzhalter durch blob:-URLs ersetzen
+    // (blob:-URLs funktionieren im Preview-iframe, aber nicht im versendeten Newsletter)
+    let previewHtml = html;
+    if (localBlobUrls.length > 0) {
+      localBlobUrls.forEach((blobUrl, i) => {
+        previewHtml = previewHtml.replaceAll(`__LOCALPHOTO_${i}__`, blobUrl);
+      });
+      // Falls Platzhalter noch übrig (z.B. bei gespeicherten Fotos + lokalen):
+      // zeige Hinweis am Ende der Vorschau
+    }
+
+    // Hinweis wenn Fotos noch nicht gespeichert
+    if (localBlobUrls.length > 0 && savedPhotoUrls.length === 0) {
+      previewHtml = previewHtml.replace(
+        '</body>',
+        `<div style="background:#FFF8E1;padding:10px 16px;font-size:0.8rem;color:#7B6200;
+          border-top:2px solid #F39C12;text-align:center;">
+          ⚠ Foto nur in dieser Vorschau sichtbar – bitte erst <strong>Speichern</strong>,
+          dann <strong>Neu generieren</strong> für den finalen Newsletter.
+        </div></body>`
+      );
+    }
+
+    iframeEl.srcdoc = previewHtml;
 
     // Beim ersten Generieren: KI-Texte in die Felder schreiben
     if (!force && result.polished) {
@@ -2850,34 +2883,49 @@ function _getRecentArticleTeasers() {
 }
 
 function _fileToBase64(file) {
-  // Compress & resize before upload: max 1600px on longest side, JPEG 85%
-  // This ensures large mobile/camera photos stay within the server's 10 MB limit
-  return new Promise((resolve, reject) => {
+  // Compress & resize for UPLOAD: max 1600px, JPEG 85%
+  // Falls back to smaller sizes if canvas fails (Safari/HEIC compatibility)
+  return new Promise((resolve) => {
     const reader = new FileReader();
-    reader.onerror = reject;
+    reader.onerror = () => resolve(null);
     reader.onload = e => {
+      const original = e.target.result;
+      if (!original || !original.startsWith('data:')) { resolve(null); return; }
+
       const img = new Image();
-      img.onerror = () => resolve(e.target.result); // fallback: use original
-      img.onload = () => {
-        const MAX = 1600;
-        let { width, height } = img;
-        if (width <= MAX && height <= MAX && file.size < 800_000) {
-          // Small enough — use original
-          resolve(e.target.result);
-          return;
-        }
-        if (width > height) { height = Math.round(height * MAX / width); width = MAX; }
-        else                 { width  = Math.round(width  * MAX / height); height = MAX; }
-        const canvas = document.createElement('canvas');
-        canvas.width  = width;
-        canvas.height = height;
-        canvas.getContext('2d').drawImage(img, 0, 0, width, height);
-        resolve(canvas.toDataURL('image/jpeg', 0.85));
+      img.onerror = () => {
+        // Format not renderable in canvas (e.g. HEIC) — try raw if small enough
+        resolve(file.size < 4_000_000 ? original : null);
       };
-      img.src = e.target.result;
+      img.onload = () => {
+        try {
+          const MAX = 1600;
+          let { width, height } = img;
+          // Skip compression for small images
+          if (width <= MAX && height <= MAX && file.size < 600_000) {
+            resolve(original); return;
+          }
+          if (width > height) { height = Math.round(height * MAX / width); width = MAX; }
+          else                 { width  = Math.round(width  * MAX / height); height = MAX; }
+          const canvas = document.createElement('canvas');
+          canvas.width = width; canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) { resolve(original); return; }
+          ctx.drawImage(img, 0, 0, width, height);
+          const compressed = canvas.toDataURL('image/jpeg', 0.85);
+          // Validate result (a valid JPEG base64 is >500 bytes)
+          resolve(compressed && compressed.length > 500 ? compressed : original);
+        } catch (_) { resolve(original); }
+      };
+      img.src = original;
     };
     reader.readAsDataURL(file);
   });
+}
+
+function _fileToBlobUrl(file) {
+  // Lightweight preview: returns a local blob: URL (no base64 encoding, no size limit)
+  return URL.createObjectURL(file);
 }
 
 /* ============================================================
