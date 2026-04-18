@@ -2929,22 +2929,22 @@ async function wotmGenerateNewsletter(force) {
 
   const existingEntry = (wotmData?.entries?.[monthKey]) || {};
 
-  // Foto-Vorschau: für lokale (noch nicht gespeicherte) Fotos blob:-URLs nutzen –
-  // das vermeidet riesige base64-Payloads und Canvas-Probleme (Safari/HEIC).
   // Gespeicherte Fotos kommen als normale /images/…-URLs vom Server.
   const savedPhotoUrls = existingEntry.photo_urls ||
                          (existingEntry.photo_url ? [existingEntry.photo_url] : []);
 
-  // Platzhalter-Marker für lokale Fotos, die dann client-seitig per blob: ersetzt werden
+  // Lokale Fotos: in kleine data:-URLs umwandeln (max 600px, JPEG 70%)
+  // → funktioniert in srcdoc-iframes auf allen Browsern inkl. Safari
   const localFiles = _wotmPhotoFiles.slice(0, 4);
-  const localBlobUrls = localFiles.map(f => _fileToBlobUrl(f)); // erzeugt blob:-URLs
+  const localDataUrls = localFiles.length > 0
+    ? await Promise.all(localFiles.map(f => _fileToPreviewDataUrl(f)))
+    : [];
+  const localDataUrlsOk = localDataUrls.filter(Boolean);
 
-  // Was ans Backend geht: gespeicherte URLs ODER Platzhalter für lokale
-  let previewPhotoUrls = savedPhotoUrls;
-  if (localFiles.length > 0 && savedPhotoUrls.length === 0) {
-    // Platzhalter damit das Backend img-Tags erzeugt; werden nach Render ersetzt
-    previewPhotoUrls = localFiles.map((_, i) => `__LOCALPHOTO_${i}__`);
-  }
+  // Was ans Backend geht: gespeicherte URLs ODER lokale data:-URLs für die Vorschau
+  const previewPhotoUrls = savedPhotoUrls.length > 0
+    ? savedPhotoUrls
+    : localDataUrlsOk;
 
   const _toNumG = id => { const v = document.getElementById(id)?.value; return v ? Number(v) : null; };
   const payload = {
@@ -2976,29 +2976,22 @@ async function wotmGenerateNewsletter(force) {
     const result = await apiPost(API.wotm + '?action=preview_html', payload);
     const html = result.html || '';
 
-    // HTML in Textarea speichern (für Versand) – ohne lokale blob-URLs
+    // HTML in Textarea speichern (für Versand)
     editorEl.value = html;
 
-    // Für die Vorschau: __LOCALPHOTO_X__-Platzhalter durch blob:-URLs ersetzen
-    // (blob:-URLs funktionieren im Preview-iframe, aber nicht im versendeten Newsletter)
+    // Vorschau: data:-URLs sind bereits im HTML enthalten – kein Ersetzen nötig
     let previewHtml = html;
-    if (localBlobUrls.length > 0) {
-      localBlobUrls.forEach((blobUrl, i) => {
-        previewHtml = previewHtml.replaceAll(`__LOCALPHOTO_${i}__`, blobUrl);
-      });
-      // Falls Platzhalter noch übrig (z.B. bei gespeicherten Fotos + lokalen):
-      // zeige Hinweis am Ende der Vorschau
-    }
 
-    // Hinweis wenn Fotos noch nicht gespeichert
-    if (localBlobUrls.length > 0 && savedPhotoUrls.length === 0) {
+    // Hinweis wenn Fotos noch nicht gespeichert sind
+    if (localFiles.length > 0 && savedPhotoUrls.length === 0) {
+      const failedCount = localDataUrls.filter(u => !u).length;
+      const banner = failedCount > 0
+        ? `⚠ ${failedCount} Foto(s) konnten nicht geladen werden (Format prüfen). Bitte <strong>Speichern</strong>, dann <strong>Neu generieren</strong>.`
+        : `⚠ Foto nur in dieser Vorschau sichtbar – bitte erst <strong>Speichern</strong>, dann <strong>Neu generieren</strong> für den finalen Newsletter.`;
       previewHtml = previewHtml.replace(
         '</body>',
         `<div style="background:#FFF8E1;padding:10px 16px;font-size:0.8rem;color:#7B6200;
-          border-top:2px solid #F39C12;text-align:center;">
-          ⚠ Foto nur in dieser Vorschau sichtbar – bitte erst <strong>Speichern</strong>,
-          dann <strong>Neu generieren</strong> für den finalen Newsletter.
-        </div></body>`
+          border-top:2px solid #F39C12;text-align:center;">${banner}</div></body>`
       );
     }
 
@@ -3159,9 +3152,35 @@ function _fileToBase64(file) {
   });
 }
 
-function _fileToBlobUrl(file) {
-  // Lightweight preview: returns a local blob: URL (no base64 encoding, no size limit)
-  return URL.createObjectURL(file);
+function _fileToPreviewDataUrl(file) {
+  // Returns a small (max 600px, JPEG 70%) data: URL — works in srcdoc iframes on all browsers incl. Safari
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onerror = () => resolve(null);
+    reader.onload = e => {
+      const original = e.target.result;
+      if (!original || !original.startsWith('data:')) { resolve(null); return; }
+      const img = new Image();
+      img.onerror = () => resolve(null);
+      img.onload = () => {
+        try {
+          const MAX = 600;
+          let { width, height } = img;
+          if (width > height) { height = Math.round(height * MAX / width); width = MAX; }
+          else                 { width  = Math.round(width  * MAX / height); height = MAX; }
+          const canvas = document.createElement('canvas');
+          canvas.width = width; canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) { resolve(original); return; }
+          ctx.drawImage(img, 0, 0, width, height);
+          const result = canvas.toDataURL('image/jpeg', 0.70);
+          resolve(result && result.length > 500 ? result : null);
+        } catch (_) { resolve(null); }
+      };
+      img.src = original;
+    };
+    reader.readAsDataURL(file);
+  });
 }
 
 /* ============================================================
