@@ -2,5 +2,5 @@
   <rect width="32" height="32" rx="5" fill="#1C1108"/>
   <text x="16" y="14.5" font-family="Fraunces,Georgia,serif" font-size="14" font-weight="700" fill="#C8963E" text-anchor="middle">W</text>
   <circle cx="16" cy="19" r="1.6" fill="#DCAF5F"/>
-  <text x="16" y="29" font-family="Fraunces,Georgia,serif" font-size="12" font-weight="700" fill="#C8963E" text-anchor="middle">M</text>
+  <text x="16" y="29" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="700" fill="#C8963E" text-anchor="middle">M</text>
 </svg>
