@@ -162,6 +162,11 @@
       color: var(--color-white);
     }
     .btn-success:hover { background: #229954; }
+    .btn-warning {
+      background: #d97706;
+      color: var(--color-white);
+    }
+    .btn-warning:hover { background: #b45309; }
     .btn-sm {
       padding: 6px 12px;
       font-size: 0.8rem;
@@ -1350,13 +1355,23 @@
 
 <!-- ===== REVIEW DECISION MODAL ===== -->
 <div class="modal-overlay" id="review-decision-modal" role="dialog" aria-modal="true">
-  <div class="modal-box" style="max-width:560px">
+  <div class="modal-box" style="max-width:600px">
     <div class="modal-header">
       <h3>Review-Entscheidung</h3>
       <button class="modal-close" onclick="closeReviewModal()">&times;</button>
     </div>
     <div class="modal-body">
       <p style="margin:0 0 12px;font-size:0.9rem;color:var(--color-muted);" id="review-decision-desc"></p>
+
+      <!-- Duplicate warning (hidden by default) -->
+      <div id="review-duplicate-section" style="display:none;margin-bottom:16px;padding:14px 16px;background:#fff8e1;border:1px solid #f59e0b;border-radius:6px;">
+        <div style="font-weight:600;font-size:0.88rem;margin-bottom:8px;color:#92400e;">⚠ Mögliche Duplikate gefunden</div>
+        <div id="review-duplicate-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+        <p style="margin:10px 0 0;font-size:0.8rem;color:#78350f;">
+          Bitte prüfe, ob es sich wirklich um einen eigenständigen Eintrag handelt, oder ob der bestehende Datensatz aktualisiert werden soll.
+        </p>
+      </div>
+
       <div class="form-group">
         <label>Notiz (optional)</label>
         <textarea id="review-decision-notes" placeholder="Begründung oder Korrekturhinweis…" style="height:80px;"></textarea>
@@ -1366,7 +1381,8 @@
     <div class="modal-footer">
       <button class="btn btn-secondary" onclick="closeReviewModal()">Abbrechen</button>
       <button class="btn btn-danger"   id="review-reject-btn"  onclick="submitReviewDecision('reject')">✗ Ablehnen</button>
-      <button class="btn btn-primary"  id="review-approve-btn" onclick="submitReviewDecision('approve')">✓ Freigeben</button>
+      <button class="btn btn-warning"  id="review-merge-btn"   onclick="submitReviewDecision('merge')" style="display:none;">⇄ Als Update übernehmen</button>
+      <button class="btn btn-primary"  id="review-approve-btn" onclick="submitReviewDecision('approve')">✓ Freigeben als Neu</button>
     </div>
   </div>
 </div>
@@ -3732,7 +3748,8 @@ async function doGlossarImport() {
     result.innerHTML = `<strong>Import erfolgreich!</strong> Batch: <code>${esc(res.batch_id)}</code><br>
       Gesamt: ${res.total} &nbsp;|&nbsp; Neu: ${res.new} &nbsp;|&nbsp;
       Update-Kandidaten: ${res.update_candidates} &nbsp;|&nbsp;
-      Fehler: ${res.errors} &nbsp;|&nbsp; Unvollständig: ${res.incomplete}<br>
+      Fehler: ${res.errors} &nbsp;|&nbsp; Unvollständig: ${res.incomplete}
+      ${res.potential_duplicates ? `&nbsp;|&nbsp; <strong style="color:#d97706;">⚠ Mögliche Duplikate: ${res.potential_duplicates}</strong>` : ''}<br>
       <em>→ Zur <a href="#" onclick="goToTab('glossar');switchGlossarSub('review',document.querySelector('.glossar-sub-btn[onclick*=review]'));return false;">Review-Queue</a> wechseln</em>`;
 
     // Reload review queue and batch list
@@ -3849,21 +3866,33 @@ function renderReviewQueue() {
     const canDecide = item.review_status === 'pending';
     const canPublish = item.review_status === 'approved' || item.review_status === 'merged';
 
+    const dupCandidates = item.duplicate_candidates || [];
+    const dupBanner = dupCandidates.length ? `
+      <div style="margin:8px 0 4px;padding:10px 14px;background:#fff8e1;border:1px solid #f59e0b;border-radius:5px;font-size:0.82rem;">
+        <strong style="color:#92400e;">⚠ ${dupCandidates.length} mögliches Duplikat${dupCandidates.length > 1 ? 'e' : ''}:</strong>
+        ${dupCandidates.map(d => `
+          <div style="margin-top:6px;color:#78350f;">
+            <strong>${esc(d.name)}</strong>
+            <span style="color:#a16207;margin-left:6px;">${esc(d.match_reason)}</span>
+          </div>`).join('')}
+      </div>` : '';
+
     return `<div class="review-card">
       <div class="review-card-header">
         <div>
           <div class="review-card-title">${esc(nameField)}</div>
-          <div class="review-card-meta">${esc(entityLabel)} &nbsp;·&nbsp; Batch: ${esc(item.batch_id||'')} &nbsp;·&nbsp; ${statusBadge} ${reviewBadge}</div>
+          <div class="review-card-meta">${esc(entityLabel)} &nbsp;·&nbsp; Batch: ${esc(item.batch_id||'')} &nbsp;·&nbsp; ${statusBadge} ${reviewBadge}${dupCandidates.length ? ' <span class="glossar-badge badge-yellow">⚠ Duplikat?</span>' : ''}</div>
         </div>
         <div class="review-card-actions">
           ${canDecide ? `
-          <button class="btn btn-success btn-sm" onclick='openReviewModal(${idx})'>✓ Freigeben</button>
+          <button class="btn btn-success btn-sm" onclick='openReviewModal(${idx})'>✓ Entscheiden</button>
           <button class="btn btn-danger btn-sm"  onclick='openReviewModalReject(${idx})'>✗ Ablehnen</button>` : ''}
           ${canPublish ? `
           <button class="btn btn-primary btn-sm" onclick='publishSingle("${esc(item.entity)}", "${esc(item.batch_id)}", "${esc(item.item_id)}")'>🚀 Veröffentlichen</button>` : ''}
         </div>
       </div>
       ${errors ? `<div class="review-errors">${errors}</div>` : ''}
+      ${dupBanner}
       <div class="review-fields">${fields}</div>
     </div>`;
   }).join('');
@@ -3878,15 +3907,37 @@ let reviewDecisionIdx  = null;
 function openReviewModal(idx) {
   reviewDecisionMode = 'approve';
   reviewDecisionIdx  = idx;
-  const item = (glossarReviewQueue.items || [])[idx];
+  const item = ((glossarReviewQueue||{}).items || [])[idx];
   if (!item) return;
   const name = (item.normalized||{}).name || (item.normalized||{}).name_de || item.item_id;
+  const entityLabel = GLOSSAR_ENTITY_LABELS[item.entity] || item.entity;
   document.getElementById('review-decision-desc').textContent =
-    `Datensatz "${name}" (${GLOSSAR_ENTITY_LABELS[item.entity]||item.entity}) freigeben?`;
+    `"${name}" (${entityLabel}) – Entscheidung treffen:`;
   document.getElementById('review-decision-notes').value = '';
   document.getElementById('review-decision-error').style.display = 'none';
   document.getElementById('review-approve-btn').style.display = '';
   document.getElementById('review-reject-btn').style.display = '';
+
+  // Duplicate candidates
+  const dups = item.duplicate_candidates || [];
+  const dupSection = document.getElementById('review-duplicate-section');
+  const dupList    = document.getElementById('review-duplicate-list');
+  const mergeBtn   = document.getElementById('review-merge-btn');
+  if (dups.length) {
+    dupList.innerHTML = dups.map(d => `
+      <div style="display:flex;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid #fde68a;">
+        <span style="font-weight:600;font-size:0.86rem;color:#78350f;">${esc(d.name)}</span>
+        <span style="font-size:0.78rem;color:#a16207;flex:1;">${esc(d.match_reason)}</span>
+        <a href="/whisky-glossar/${item.entity === 'whiskies' ? 'whiskys' : item.entity}/${esc(d.slug)}/" target="_blank"
+           style="font-size:0.78rem;color:#2563eb;white-space:nowrap;">Seite ansehen ↗</a>
+      </div>`).join('');
+    dupSection.style.display = 'block';
+    mergeBtn.style.display   = '';
+  } else {
+    dupSection.style.display = 'none';
+    mergeBtn.style.display   = 'none';
+  }
+
   document.getElementById('review-decision-modal').classList.add('open');
 }
 
@@ -3905,6 +3956,7 @@ async function submitReviewDecision(decision) {
   const notes = document.getElementById('review-decision-notes').value.trim();
   const errEl = document.getElementById('review-decision-error');
   errEl.style.display = 'none';
+  const TOAST = { approve: ['Freigegeben ✓', 'success'], reject: ['Abgelehnt', 'warn'], merge: ['Als Update übernommen ✓', 'success'] };
   try {
     await apiPost(`${API.glossar}?action=review_decision`, {
       batch_id: item.batch_id,
@@ -3912,7 +3964,8 @@ async function submitReviewDecision(decision) {
       decision,
       reviewer_notes: notes,
     });
-    showToast(decision === 'approve' ? 'Freigegeben ✓' : 'Abgelehnt', decision === 'approve' ? 'success' : 'warn');
+    const [msg, type] = TOAST[decision] || ['OK', 'success'];
+    showToast(msg, type);
     closeReviewModal();
     glossarReviewQueue = null;
     loadReviewQueue();
