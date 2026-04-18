@@ -206,8 +206,10 @@ def _get_topics_data():
 
     if isinstance(topics, dict):
         topics_list = topics.get("topics", topics.get("queue", []))
+        season_config = topics.get("season_config", {})
     else:
         topics_list = topics
+        season_config = {}
 
     pending = sum(1 for t in topics_list if t.get("status") == "pending")
     in_progress = sum(1 for t in topics_list if t.get("status") == "in_progress")
@@ -216,6 +218,7 @@ def _get_topics_data():
     return {
         "sha": file_data.get("sha", ""),
         "topics": topics_list,
+        "season_config": season_config,
         "total": len(topics_list),
         "stats": {
             "pending": pending,

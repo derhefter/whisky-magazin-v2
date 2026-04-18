@@ -382,6 +382,9 @@
     .badge-done      { background: var(--color-green-bg);  color: #1E8449; }
     .badge-neutral   { background: var(--color-beige);     color: var(--color-muted); }
     .badge-amber     { background: #FEF3E0;                color: var(--color-amber-dark); }
+    .editor-toggle-group { display:inline-flex; border:1px solid var(--color-beige); border-radius:4px; overflow:hidden; margin-left:8px; vertical-align:middle; }
+    .editor-toggle-btn { padding:2px 10px; font-size:0.75rem; border:none; background:#fff; cursor:pointer; color:var(--color-muted); font-family:inherit; }
+    .editor-toggle-btn.active { background:var(--color-amber); color:#fff; font-weight:600; }
 
     /* ===== SUBSCRIBER COUNT ===== */
     .subscriber-hero {
@@ -1317,6 +1320,34 @@
   </div>
 </div>
 
+<!-- ===== SEASON CONFIG MODAL ===== -->
+<div class="modal-overlay" id="season-config-modal" role="dialog" aria-modal="true">
+  <div class="modal-box" style="max-width:500px">
+    <div class="modal-header">
+      <h3>&#9881; Saison-Zeitr&auml;ume konfigurieren</h3>
+      <button class="modal-close" onclick="closeSeasonConfigModal()">&times;</button>
+    </div>
+    <p style="color:var(--color-muted);font-size:0.85rem;margin:0 0 16px">
+      Definiere, in welchem Zeitraum Artikel f&uuml;r jede Saison ver&ouml;ffentlicht werden sollen.<br>
+      Format: <strong>MM-TT</strong> (z.B. <code>03-01</code> = 1. M&auml;rz).
+    </p>
+    <table style="width:100%;border-collapse:collapse;font-size:0.85rem">
+      <thead>
+        <tr style="border-bottom:2px solid var(--color-beige)">
+          <th style="text-align:left;padding:6px 4px;font-weight:600">Saison</th>
+          <th style="padding:6px 8px;font-weight:600;text-align:center">Von (MM-TT)</th>
+          <th style="padding:6px 8px;font-weight:600;text-align:center">Bis (MM-TT)</th>
+        </tr>
+      </thead>
+      <tbody id="season-config-rows"></tbody>
+    </table>
+    <div style="margin-top:20px;display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn btn-secondary" onclick="closeSeasonConfigModal()">Abbrechen</button>
+      <button class="btn btn-primary" onclick="saveSeasonConfig()">Speichern</button>
+    </div>
+  </div>
+</div>
+
 <!-- ===== REVIEW DECISION MODAL ===== -->
 <div class="modal-overlay" id="review-decision-modal" role="dialog" aria-modal="true">
   <div class="modal-box" style="max-width:560px">
@@ -1795,8 +1826,15 @@ function renderDraftCard(d, i) {
           <textarea id="ef-teaser-${i}">${esc(teaser)}</textarea>
         </div>
         <div class="form-group">
-          <label>HTML-Inhalt</label>
+          <div style="display:flex;align-items:center;margin-bottom:6px">
+            <label style="margin:0">Inhalt</label>
+            <div class="editor-toggle-group">
+              <button class="editor-toggle-btn active" id="ef-toggle-html-${i}" onclick="setEditorMode(${i},'html')">&#128296; HTML</button>
+              <button class="editor-toggle-btn" id="ef-toggle-text-${i}" onclick="setEditorMode(${i},'text')">&#128221; Klartext</button>
+            </div>
+          </div>
           <textarea class="tall" id="ef-html-${i}"></textarea>
+          <textarea class="tall" id="ef-plain-${i}" style="display:none" placeholder="Klartext – Abs&auml;tze durch Leerzeile trennen"></textarea>
         </div>
         <div class="form-actions">
           <button class="btn btn-primary btn-sm" onclick="saveEdit('${esc(filename)}', '${esc(sha)}', ${i})">Speichern</button>
@@ -1960,9 +1998,15 @@ async function rejectArticle(filename, sha, i) {
 }
 
 async function saveEdit(filename, sha, i) {
-  const title       = document.getElementById(`ef-title-${i}`).value;
-  const teaser      = document.getElementById(`ef-teaser-${i}`).value;
-  const html_content = document.getElementById(`ef-html-${i}`).value;
+  const title   = document.getElementById(`ef-title-${i}`).value;
+  const teaser  = document.getElementById(`ef-teaser-${i}`).value;
+  const htmlTa  = document.getElementById(`ef-html-${i}`);
+  const plainTa = document.getElementById(`ef-plain-${i}`);
+  // If currently in plain-text mode, convert back to HTML before saving
+  if (htmlTa?.dataset.editorMode === 'text' && plainTa) {
+    htmlTa.value = plainToHtml(plainTa.value);
+  }
+  const html_content = htmlTa?.value ?? '';
 
   const btn = event.target;
   btn.disabled = true;
@@ -1985,6 +2029,7 @@ async function saveEdit(filename, sha, i) {
 let themenData = [];
 let themenFilterSaison  = 'alle';
 let themenFilterStatus  = 'alle';
+let seasonConfig = {};
 
 async function loadThemen() {
   const container = document.getElementById('themen-container');
@@ -1999,6 +2044,7 @@ async function loadThemen() {
     // Sicherstellen dass themenData immer ein Array ist
     const raw = data.topics ?? data.themen ?? data;
     themenData = Array.isArray(raw) ? raw : [];
+    seasonConfig = data.season_config || {};
     if (themenData.length === 0 && !Array.isArray(raw)) {
       container.innerHTML = `<div class="error-box">&#9888; Keine Themen-Daten empfangen. Bitte GITHUB_TOKEN + GITHUB_REPO in Vercel prüfen.</div>`;
       return;
@@ -2028,7 +2074,6 @@ function renderThemen() {
   const statusBtns = [
     ['alle','Alle'],
     ['open','&#11093; Offen'],
-    ['inprogress','&#128260; In Bearbeitung'],
     ['done','&#9989; Erledigt'],
   ].map(([v, label]) =>
     `<button class="filter-btn ${themenFilterStatus===v?'active':''}" onclick="setStatusFilter('${v}')">${label}</button>`
@@ -2066,9 +2111,8 @@ function renderThemen() {
       const id      = t.id ?? t._id ?? idx;
 
       const statusBadge = {
-        open:       '<span class="badge badge-open">&#11093; Offen</span>',
-        inprogress: '<span class="badge badge-inprogress">&#128260; In Bearbeitung</span>',
-        done:       '<span class="badge badge-done">&#9989; Erledigt</span>',
+        open: '<span class="badge badge-open">&#11093; Offen</span>',
+        done: '<span class="badge badge-done">&#9989; Erledigt</span>',
       }[status] || `<span class="badge badge-neutral">${esc(t.status)}</span>`;
 
       const saisonBadge = saison  ? `<span class="badge badge-neutral">${esc(saison)}</span>` : '';
@@ -2103,7 +2147,10 @@ function renderThemen() {
   container.innerHTML = `
     <div class="section-header">
       <h2 class="section-title">Themen (${filtered.length} / ${themenData.length})</h2>
-      <button class="btn btn-primary btn-sm" onclick="openNewTopicModal()">+ Neues Thema</button>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-secondary btn-sm" onclick="openSeasonConfigModal()">&#9881; Saison-Zeitr&auml;ume</button>
+        <button class="btn btn-primary btn-sm" onclick="openNewTopicModal()">+ Neues Thema</button>
+      </div>
     </div>
     <div class="filter-row">
       <div class="filter-group">
@@ -2139,9 +2186,9 @@ function normalizeStatus(s) {
   if (!s) return 'open';
   s = s.toLowerCase();
   if (s === 'open' || s === 'offen' || s === 'pending') return 'open';
-  if (s === 'inprogress' || s === 'in_progress' || s === 'in bearbeitung' || s === 'in bearbeitung' || s === 'editing') return 'inprogress';
+  if (s === 'inprogress' || s === 'in_progress' || s === 'in bearbeitung' || s === 'editing') return 'open';
   if (s === 'done' || s === 'erledigt' || s === 'approved') return 'done';
-  return 'open'; // Fallback: unbekannte Status als offen behandeln
+  return 'open';
 }
 
 function setSaisonFilter(v) {
@@ -2151,6 +2198,107 @@ function setSaisonFilter(v) {
 function setStatusFilter(v) {
   themenFilterStatus = v;
   renderThemen();
+}
+
+// ── Season Config ─────────────────────────────────────────────────────────────
+const SEASON_DEFS = [
+  { key: 'fruehling',   label: '&#127807; Fr\u00fchling', defaultStart: '03-01', defaultEnd: '05-31' },
+  { key: 'sommer',      label: '&#9728;&#65039; Sommer',  defaultStart: '06-01', defaultEnd: '08-31' },
+  { key: 'herbst',      label: '&#127810; Herbst',        defaultStart: '09-01', defaultEnd: '11-30' },
+  { key: 'winter',      label: '&#10052;&#65039; Winter', defaultStart: '12-01', defaultEnd: '02-28' },
+  { key: 'ostern',      label: '&#128039; Ostern',        defaultStart: '03-24', defaultEnd: '04-14' },
+  { key: 'weihnachten', label: '&#127876; Weihnachten',   defaultStart: '11-25', defaultEnd: '12-31' },
+  { key: 'silvester',   label: '&#127842; Silvester',     defaultStart: '12-27', defaultEnd: '01-03' },
+];
+
+function openSeasonConfigModal() {
+  const tbody = document.getElementById('season-config-rows');
+  tbody.innerHTML = SEASON_DEFS.map(({ key, label, defaultStart, defaultEnd }) => {
+    const cfg   = seasonConfig[key] || {};
+    const start = cfg.start || defaultStart;
+    const end   = cfg.end   || defaultEnd;
+    const inputStyle = 'width:70px;text-align:center;padding:4px 6px;border:1px solid var(--color-beige);border-radius:4px;font-family:inherit;font-size:0.85rem';
+    return `<tr style="border-bottom:1px solid var(--color-beige)">
+      <td style="padding:8px 4px"><strong>${label}</strong></td>
+      <td style="padding:8px;text-align:center">
+        <input type="text" id="sc-start-${key}" value="${start}" placeholder="MM-TT" style="${inputStyle}">
+      </td>
+      <td style="padding:8px;text-align:center">
+        <input type="text" id="sc-end-${key}" value="${end}" placeholder="MM-TT" style="${inputStyle}">
+      </td>
+    </tr>`;
+  }).join('');
+  document.getElementById('season-config-modal').classList.add('open');
+}
+
+function closeSeasonConfigModal() {
+  document.getElementById('season-config-modal').classList.remove('open');
+}
+
+async function saveSeasonConfig() {
+  const newConfig = {};
+  for (const { key } of SEASON_DEFS) {
+    const start = (document.getElementById(`sc-start-${key}`)?.value || '').trim();
+    const end   = (document.getElementById(`sc-end-${key}`)?.value   || '').trim();
+    if (!/^\d{2}-\d{2}$/.test(start) || !/^\d{2}-\d{2}$/.test(end)) {
+      showToast(`Ung\u00fcltiges Format bei "${key}" \u2013 bitte MM-TT verwenden (z.B. 03-01)`, 'error');
+      return;
+    }
+    newConfig[key] = { start, end };
+  }
+  try {
+    await apiPut(API.topics, { action: 'save_season_config', season_config: newConfig });
+    seasonConfig = newConfig;
+    closeSeasonConfigModal();
+    showToast('Saison-Zeitr\u00e4ume gespeichert', 'success');
+  } catch (err) {
+    showToast('Fehler: ' + err.message, 'error');
+  }
+}
+
+// ── Plain-text / HTML editor toggle ──────────────────────────────────────────
+function htmlToPlain(html) {
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(h[1-6]|p|div|li|blockquote)>/gi, '\n\n')
+    .replace(/<li[^>]*>/gi, '• ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function plainToHtml(text) {
+  return text.trim()
+    .split(/\n\n+/)
+    .map(p => p.trim())
+    .filter(Boolean)
+    .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+    .join('\n');
+}
+
+function setEditorMode(i, mode) {
+  const htmlTa  = document.getElementById('ef-html-'  + i);
+  const plainTa = document.getElementById('ef-plain-' + i);
+  const htmlBtn = document.getElementById('ef-toggle-html-' + i);
+  const textBtn = document.getElementById('ef-toggle-text-' + i);
+  if (!htmlTa || !plainTa) return;
+  const current = htmlTa.dataset.editorMode || 'html';
+  if (mode === current) return;
+  if (mode === 'text') {
+    plainTa.value = htmlToPlain(htmlTa.value);
+    htmlTa.style.display  = 'none';
+    plainTa.style.display = '';
+    htmlBtn.classList.remove('active');
+    textBtn.classList.add('active');
+  } else {
+    htmlTa.value  = plainToHtml(plainTa.value);
+    plainTa.style.display = 'none';
+    htmlTa.style.display  = '';
+    htmlBtn.classList.add('active');
+    textBtn.classList.remove('active');
+  }
+  htmlTa.dataset.editorMode = mode;
 }
 
 async function markTopicDone(id, idx) {

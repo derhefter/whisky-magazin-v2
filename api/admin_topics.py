@@ -224,7 +224,8 @@ class handler(BaseHTTPRequestHandler):
         return self._json(201, {"success": True, "topic": new_topic}, cors)
 
     def do_PUT(self):
-        """Update an existing topic (status, priority, title, notes, article_slug)."""
+        """Update an existing topic (status, priority, title, notes, article_slug).
+        Special action='save_season_config' saves season date ranges."""
         cors = _cors_headers(self.headers.get("Origin", ""))
         token = self.headers.get("x-admin-token", "")
         if not _verify_token(token):
@@ -233,6 +234,23 @@ class handler(BaseHTTPRequestHandler):
         body, err = self._read_body()
         if err:
             return self._json(400, {"error": err}, cors)
+
+        action = (body.get("action") or "").strip()
+        if action == "save_season_config":
+            season_cfg = body.get("season_config")
+            if not isinstance(season_cfg, dict):
+                return self._json(400, {"error": "season_config muss ein Objekt sein"}, cors)
+            topics_list, data, sha, err = _load_topics()
+            if err:
+                return self._json(500, {"error": err}, cors)
+            if isinstance(data, dict):
+                data["season_config"] = season_cfg
+            else:
+                data = {"topics": data, "season_config": season_cfg}
+            result = _save_topics(data, sha, "dashboard: update season config")
+            if "error" in result:
+                return self._json(500, {"error": result["error"]}, cors)
+            return self._json(200, {"success": True}, cors)
 
         topic_id = (body.get("id") or "").strip()
         if not topic_id:
