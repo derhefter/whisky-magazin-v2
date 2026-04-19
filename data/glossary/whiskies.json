@@ -7,11 +7,20 @@
     "region_id": "islay",
     "distillery_id": "lagavulin",
     "whisky_type": "single_malt",
-    "style_tags": ["torfig", "rauchig", "salzig", "komplex", "vollmundig"],
+    "style_tags": [
+      "torfig",
+      "rauchig",
+      "salzig",
+      "komplex",
+      "vollmundig"
+    ],
     "age_statement": 16,
     "nas": false,
     "abv": 43.0,
-    "cask_types": ["ex-bourbon", "sherry"],
+    "cask_types": [
+      "ex-bourbon",
+      "sherry"
+    ],
     "smoke_profile": "heavy",
     "tasting_notes_nose": "Intensiver Torf- und Rauch, Meeresluft, Jod, dunkle Früchte, Sherry, Leder.",
     "tasting_notes_palate": "Vollmundig, ölig, kräftiger Torfrauch, Salz, dunkle Schokolade, getrocknete Früchte, Eiche.",
@@ -21,7 +30,9 @@
     "editorial_notes": "Persönlicher Favorit aus unserer Islay-Sammlung. Wir haben diesen Whisky direkt an der Destillerie verkostet und immer eine Flasche im Regal.",
     "travel_context": "Zu verkosten an der Destillerie in der kleinen Bucht an der Islay-Südküste – mit Meerblick und Möwengeschrei. Buchung empfohlen.",
     "image": null,
-    "source_urls": ["https://www.lagavulin.com"],
+    "source_urls": [
+      "https://www.lagavulin.com"
+    ],
     "source_status": "verified",
     "review_status": "approved",
     "published": true,
@@ -39,11 +50,19 @@
     "region_id": "islay",
     "distillery_id": "ardbeg",
     "whisky_type": "single_malt",
-    "style_tags": ["torfig", "rauchig", "intensiv", "salzig", "komplex"],
+    "style_tags": [
+      "torfig",
+      "rauchig",
+      "intensiv",
+      "salzig",
+      "komplex"
+    ],
     "age_statement": 10,
     "nas": false,
     "abv": 46.0,
-    "cask_types": ["ex-bourbon"],
+    "cask_types": [
+      "ex-bourbon"
+    ],
     "smoke_profile": "very_heavy",
     "tasting_notes_nose": "Intensiver Torf und Rauch, Zitrusfrüchte, Vanille, Lakritze, Meeresluft.",
     "tasting_notes_palate": "Kraftvoll rauchig, Zitrone, Pfeffer, Vanille, Teer, Salz und Torfrauch dominieren, aber eingebettet in eine überraschende Fruchtigkeit.",
@@ -53,7 +72,9 @@
     "editorial_notes": null,
     "travel_context": "Am besten am Ardbeg-Café-Tisch an der Islay-Südküste probieren – mit Blick auf den Atlantik.",
     "image": null,
-    "source_urls": ["https://www.ardbeg.com"],
+    "source_urls": [
+      "https://www.ardbeg.com"
+    ],
     "source_status": "verified",
     "review_status": "approved",
     "published": true,
@@ -71,11 +92,19 @@
     "region_id": "speyside",
     "distillery_id": "glenfiddich",
     "whisky_type": "single_malt",
-    "style_tags": ["fruchtig", "sanft", "zugänglich", "floral"],
+    "style_tags": [
+      "fruchtig",
+      "sanft",
+      "zugänglich",
+      "floral"
+    ],
     "age_statement": 12,
     "nas": false,
     "abv": 40.0,
-    "cask_types": ["ex-bourbon", "ex-sherry"],
+    "cask_types": [
+      "ex-bourbon",
+      "ex-sherry"
+    ],
     "smoke_profile": "none",
     "tasting_notes_nose": "Frischer Birnen- und Apfelduft, subtile Eiche, leichte Butterkaramell-Noten, frisch gemähtes Gras.",
     "tasting_notes_palate": "Weich und leicht, Birnen, grüne Äpfel, Vanille, leichte Würze, ausgewogene Süße.",
@@ -85,7 +114,9 @@
     "editorial_notes": null,
     "travel_context": null,
     "image": null,
-    "source_urls": ["https://www.glenfiddich.com"],
+    "source_urls": [
+      "https://www.glenfiddich.com"
+    ],
     "source_status": "verified",
     "review_status": "approved",
     "published": true,
@@ -94,5 +125,45 @@
     "seo_description": "Glenfiddich 12 Jahre: der meistverkaufte Single Malt weltweit. Tasting Notes, Geschichte und Kaufempfehlung.",
     "created_at": "2026-04-17T00:00:00Z",
     "last_updated": "2026-04-17T00:00:00Z"
+  },
+  {
+    "id": "bowmore-12",
+    "slug": "bowmore-12-jahre",
+    "name": "Bowmore 12 Jahre",
+    "country_id": "scotland",
+    "region_id": "islay",
+    "distillery_id": "bowmore",
+    "whisky_type": "single_malt",
+    "style_tags": [
+      "rauchig",
+      "fruchtig",
+      "honig",
+      "maritim"
+    ],
+    "age_statement": 12,
+    "nas": false,
+    "abv": 40,
+    "cask_types": [
+      "ex-bourbon",
+      "sherry"
+    ],
+    "smoke_profile": "medium",
+    "tasting_notes_nose": "Dezenter Islay-Rauch, dunkle Schokolade, subtile Zitrusnoten und Honig.",
+    "tasting_notes_palate": "Sehr ausgewogen. Wärmender Rauch, dunkler Honig, sanfte Heidekraut-Noten.",
+    "tasting_notes_finish": "Lang und weich, perfekt ausbalanciert zwischen Rauch und Süße.",
+    "short_description": "Der Inbegriff der Balance: Mittlerer Islay-Rauch trifft auf weiche Süße.",
+    "long_description": "Bowmore 12 Jahre ist der perfekte Einstieg in die Welt von Islay. Er schlägt die Brücke zwischen der extremen Rauchigkeit der Südküsten-Brennereien und der weicheren Fruchtigkeit der Sherryfässer.",
+    "editorial_notes": "Der ideale Islay-Malt für Einsteiger.",
+    "travel_context": "",
+    "image": null,
+    "source_urls": [],
+    "source_status": "verified",
+    "review_status": "approved",
+    "published": true,
+    "related_articles": [],
+    "seo_title": "Bowmore 12 Jahre",
+    "seo_description": "Tasting Notes für Bowmore 12.",
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-19T09:40:03Z"
   }
 ]
