@@ -1115,7 +1115,7 @@
       "item_slug": "caol-ila-12-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ardbeg",
         "slug": "ardbeg",
@@ -1196,7 +1196,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T11:58:39Z"
+      "reviewed_at": "2026-04-19T11:58:39Z",
+      "published_at": "2026-04-19T11:59:37Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
@@ -1205,7 +1206,7 @@
       "item_slug": "kilchoman-machir-bay",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ardbeg",
         "slug": "ardbeg",
@@ -1288,7 +1289,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T11:59:13Z"
+      "reviewed_at": "2026-04-19T11:59:13Z",
+      "published_at": "2026-04-19T11:59:37Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
@@ -1390,7 +1392,7 @@
       "item_slug": "laphroaig-10-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ardbeg",
         "slug": "ardbeg",
@@ -1473,7 +1475,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T11:59:02Z"
+      "reviewed_at": "2026-04-19T11:59:02Z",
+      "published_at": "2026-04-19T11:59:37Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
