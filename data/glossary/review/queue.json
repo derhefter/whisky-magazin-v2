@@ -1931,7 +1931,7 @@
       "item_slug": "ardbeg-an-oa",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg An Oa",
         "distillery_id": "ardbeg",
@@ -1954,7 +1954,10 @@
         "whisky_type": "single_malt",
         "abv": 46.6,
         "age_statement": "NAS"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:59:19Z"
     },
     {
       "batch_id": "whiskies_20260419T115249_708fa3",
