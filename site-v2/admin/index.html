@@ -368,10 +368,12 @@
 
     .dash-metric { display: flex; align-items: baseline; gap: 8px; }
     .dash-metric-num {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       font-size: 2rem;
+      font-weight: 700;
       color: var(--color-amber);
       line-height: 1;
+      letter-spacing: -0.5px;
     }
     .dash-metric-label { font-size: 0.8rem; color: var(--color-muted); }
 
@@ -390,9 +392,11 @@
       transform: translateY(-1px);
     }
     .glossar-mini-num {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
+      font-weight: 700;
       color: var(--color-amber);
+      letter-spacing: -0.3px;
     }
     .glossar-mini-label { font-size: 0.7rem; color: var(--color-muted); text-transform: uppercase; }
 
@@ -402,13 +406,15 @@
       background: #FEF3E0;
       border-radius: 8px;
       padding: 6px 12px;
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
+      font-weight: 700;
       color: var(--color-amber);
       line-height: 1;
       min-width: 48px;
       text-align: center;
       border-bottom: 2px solid var(--color-amber);
+      letter-spacing: -0.3px;
     }
     .pipeline-label { font-size: 0.62rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 1px; }
     .pipeline-arrow { color: #c8b89a; font-size: 1rem; flex-shrink: 0; margin-bottom: 12px; }
@@ -526,9 +532,9 @@
       margin-bottom: 4px;
     }
     .wotm-name {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
       color: var(--color-text);
       line-height: 1.2;
     }
@@ -1889,7 +1895,7 @@ async function loadUebersicht() {
 
   try {
     const [siteData, queueData, distData, whiskyData,
-           regionData, countryData, wotmData] = await Promise.all([
+           regionData, countryData, wotmData, articleData] = await Promise.all([
       apiGet(API.data    + '?section=stats'),
       apiGet(API.glossar + '?action=review_queue').catch(() => ({items:[]})),
       apiGet(API.glossar + '?action=list&entity=distilleries').catch(() => ({items:[]})),
@@ -1897,6 +1903,7 @@ async function loadUebersicht() {
       apiGet(API.glossar + '?action=list&entity=regions').catch(() => ({items:[]})),
       apiGet(API.glossar + '?action=list&entity=countries').catch(() => ({items:[]})),
       apiGet(API.wotm    + '?action=list').catch(() => ({})),
+      apiGet(API.data    + '?section=articles').catch(() => ({published:[],drafts:[]})),
     ]);
 
     const s = siteData.stats || siteData;
@@ -1918,6 +1925,12 @@ async function loadUebersicht() {
       ...(countryData.items||[]).map(i=>({...i,_entity:'other'})),
     ];
     const chartData = _buildMonthlyChart(allGlossarItems);
+
+    const allArticles = [
+      ...(articleData.published||[]).map(a=>({date: a.date, _type:'published'})),
+      ...(articleData.drafts||[]).map(a=>({date: a.date||a.generated_at||'', _type:'draft'})),
+    ];
+    const articleChartData = _buildArticleMonthlyChart(allArticles);
 
     localStorage.setItem('dash_loaded', new Date().toISOString());
 
@@ -2068,6 +2081,19 @@ async function loadUebersicht() {
         </div>
       </div>
 
+      <!-- ARTIKEL CHART -->
+      <div class="activity-chart-wrap">
+        <div class="dash-panel-title" style="margin-bottom:14px;">
+          <span class="dash-panel-title-icon" style="background:var(--color-amber);opacity:0.6;"></span>
+          Artikel-Aktivität · letzte 6 Monate
+        </div>
+        ${_renderArticleChart(articleChartData)}
+        <div class="activity-legend">
+          <span><span class="legend-dot" style="background:#C8963E;"></span>Publiziert</span>
+          <span><span class="legend-dot" style="background:#b0b8c4;"></span>Entwürfe</span>
+        </div>
+      </div>
+
       ${_renderRecentActivity(qItems)}
     `;
   } catch (err) {
@@ -2179,6 +2205,65 @@ function _timeAgo(isoStr) {
   const days = Math.floor(hrs/24);
   if (days === 1) return 'gestern';
   return `vor ${days} Tagen`;
+}
+
+function _buildArticleMonthlyChart(articles) {
+  const months = [];
+  const now = new Date();
+  const labels = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    months.push({ month: d.toISOString().slice(0,7), label: labels[d.getMonth()], published:0, draft:0 });
+  }
+  for (const a of articles) {
+    if (!a.date) continue;
+    const m = String(a.date).slice(0,7);
+    const bucket = months.find(x => x.month === m);
+    if (!bucket) continue;
+    if (a._type === 'published') bucket.published++;
+    else bucket.draft++;
+  }
+  return months;
+}
+
+function _renderArticleChart(data) {
+  const W=600, H=140, padL=28, padB=24, padT=10, padR=10;
+  const innerW=W-padL-padR, innerH=H-padB-padT;
+  const maxVal = Math.max(1, ...data.map(d=>d.published+d.draft));
+  const groupW = innerW/data.length;
+  const barW = Math.min(20, groupW*0.6);
+  const yScale = v => innerH-(v/maxVal)*innerH;
+
+  const gridLines = [0.5,1].map(f=>{
+    const y=padT+yScale(f*maxVal), label=Math.round(f*maxVal);
+    return `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#EDE9E3" stroke-width="1"/>
+            <text x="${padL-4}" y="${y+4}" text-anchor="end" font-size="9" fill="#6B6460">${label}</text>`;
+  }).join('');
+
+  const bars = data.map((d,gi)=>{
+    const cx = padL + gi*groupW + groupW/2;
+    const x = cx - barW/2;
+    // Stacked: Entwürfe unten (grau), Publiziert oben (amber)
+    const bhD = Math.max(d.draft>0?2:0, (d.draft/maxVal)*innerH);
+    const bhP = Math.max(d.published>0?2:0, (d.published/maxVal)*innerH);
+    const yD = padT + yScale(d.draft);
+    const yP = padT + yScale(d.published+d.draft);
+    const total = d.published + d.draft;
+    const stacked = total > 0;
+    if (!stacked) return '';
+    let result = '';
+    if (d.draft > 0) result += `<rect x="${x}" y="${yD}" width="${barW}" height="${bhD}" rx="0" ry="0" fill="#b0b8c4" opacity="0.85"/>`;
+    if (d.published > 0) result += `<rect x="${x}" y="${yP}" width="${barW}" height="${bhP}" rx="3" ry="3" fill="#C8963E" opacity="0.85"/>`;
+    return result;
+  }).join('');
+
+  const labels = data.map((d,gi)=>{
+    const cx=padL+gi*groupW+groupW/2;
+    return `<text x="${cx}" y="${H-6}" text-anchor="middle" font-size="9" fill="#6B6460">${esc(d.label)}</text>`;
+  }).join('');
+
+  const baseline = `<line x1="${padL}" y1="${padT+innerH}" x2="${W-padR}" y2="${padT+innerH}" stroke="#EDE9E3" stroke-width="1.5"/>`;
+  return `<svg class="activity-chart-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${gridLines}${baseline}${bars}${labels}</svg>`;
 }
 
 /* ============================================================
