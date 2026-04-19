@@ -21,7 +21,7 @@
         "Pflichtfeld fehlt: abv",
         "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "islay",
         "slug": "islay",
@@ -75,7 +75,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T08:44:01Z"
     }
   ]
 }
