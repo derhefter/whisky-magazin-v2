@@ -138,13 +138,20 @@ _DEEPL_LANG_MAP = {"en": "EN-GB", "fr": "FR", "nl": "NL", "es": "ES", "ja": "JA"
 
 def _deepl_call(host, texts, target_lang):
     dl_lang = _DEEPL_LANG_MAP.get(target_lang, target_lang.upper())
-    parts = [f"auth_key={quote(DEEPL_API_KEY)}", f"target_lang={dl_lang}", "tag_handling=html", "source_lang=DE"]
-    parts += [f"text={quote(t)}" for t in texts]
-    payload = "&".join(parts).encode("utf-8")
+    body = json.dumps({
+        "text": list(texts),
+        "target_lang": dl_lang,
+        "source_lang": "DE",
+        "tag_handling": "html",
+    }).encode("utf-8")
     req = Request(
         f"https://{host}/v2/translate",
-        data=payload,
-        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        data=body,
+        headers={
+            "Authorization": f"DeepL-Auth-Key {DEEPL_API_KEY}",
+            "Content-Type": "application/json",
+            "User-Agent": "WhiskyMagazin-Translate/1.0",
+        },
         method="POST",
     )
     with urlopen(req, timeout=30) as resp:
