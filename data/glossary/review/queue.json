@@ -1823,7 +1823,7 @@
       "item_slug": "ardbeg-ten-years-old",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg Ten Years Old",
         "distillery_id": "ardbeg",
@@ -1846,7 +1846,10 @@
         "whisky_type": "single_malt",
         "abv": 46,
         "age_statement": "10"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:58:52Z"
     },
     {
       "batch_id": "whiskies_20260419T115249_708fa3",
