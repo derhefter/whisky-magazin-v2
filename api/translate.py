@@ -136,11 +136,7 @@ def _load_article(slug):
 _DEEPL_LANG_MAP = {"en": "EN-GB", "fr": "FR", "nl": "NL", "es": "ES", "ja": "JA"}
 
 
-def _translate_deepl(texts, target_lang):
-    if not DEEPL_API_KEY:
-        raise RuntimeError("DEEPL_API_KEY not configured")
-    is_free = DEEPL_API_KEY.endswith(":fx")
-    host = "api-free.deepl.com" if is_free else "api.deepl.com"
+def _deepl_call(host, texts, target_lang):
     dl_lang = _DEEPL_LANG_MAP.get(target_lang, target_lang.upper())
     parts = [f"auth_key={quote(DEEPL_API_KEY)}", f"target_lang={dl_lang}", "tag_handling=html", "source_lang=DE"]
     parts += [f"text={quote(t)}" for t in texts]
@@ -154,6 +150,22 @@ def _translate_deepl(texts, target_lang):
     with urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read().decode("utf-8"))
     return [t["text"] for t in result["translations"]]
+
+
+def _translate_deepl(texts, target_lang):
+    if not DEEPL_API_KEY:
+        raise RuntimeError("DEEPL_API_KEY not configured")
+    # Case-insensitive check; DeepL free keys end with ":fx" lowercase, but be defensive.
+    is_free = DEEPL_API_KEY.lower().endswith(":fx")
+    primary = "api-free.deepl.com" if is_free else "api.deepl.com"
+    secondary = "api.deepl.com" if is_free else "api-free.deepl.com"
+    try:
+        return _deepl_call(primary, texts, target_lang)
+    except HTTPError as e:
+        if e.code == 403:
+            # Wrong endpoint detected? Try the other one before giving up.
+            return _deepl_call(secondary, texts, target_lang)
+        raise
 
 
 def _translate_azure(texts, target_lang):
