@@ -286,7 +286,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): bowmore"
       ],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "bowmore",
         "slug": "bowmore",
@@ -297,10 +297,10 @@
         "owner": "Suntory Global Spirits",
         "status": "active",
         "website": "https://www.bowmore.com",
-        "short_description": "Die älteste legale Brennerei auf Islay. Berühmt für perfekt ausbalancierten mittleren Torfrauch und fruchtige Sherry-Noten.",
-        "long_description": "Bowmore liegt direkt am Ufer des Loch Indaal und ist die älteste lizenzierte Brennerei der Insel (gegründet 1779). Sie verfügt noch über eigene Mälzböden. Der Stil ist klassisch mittelschwer getorft und wird häufig exzellent in Sherryfässern gereift, was tropische Fruchtnoten hervorbringt.",
-        "visit_info": "Liegt mitten im Hauptort Bowmore. Touren sind sehr beliebt und beinhalten oft einen Blick in die legendären No. 1 Vaults.",
-        "travel_context": "Der ideale Ausgangspunkt für Islay-Erkundungen, da zentral gelegen.",
+        "short_description": "Bowmore ist die älteste Destillerie Islays und liegt direkt am Loch Indaal – bekannt für ausgewogene Torfigkeit und Eleganz.",
+        "long_description": "Gegründet 1779, ist Bowmore die älteste bekannte Destillerie auf Islay und eine der ältesten Schottlands. Die Destillerie liegt im Dorf Bowmore, der Hauptstadt der Insel, und betreibt noch heute eigene traditionelle Floor Malting. Im Vergleich zu Ardbeg, Laphroaig oder Lagavulin gilt Bowmore als 'moderaterer' Islay-Whisky: torfig, aber ausgewogen, mit Sherryfass-Noten und floralen Aromen.",
+        "visit_info": "Tägliche Führungen, Whisky-Bibliothek für seltene Abfüllungen. Bowmore liegt fußläufig vom Hauptort der Insel.",
+        "travel_context": "Bowmore ist ideal als Basislager für Islay-Besucher: zentral gelegen, gute Unterkunftsmöglichkeiten und Direktzugang zu allen Inselteilen.",
         "coordinates": {
           "lat": 55.756,
           "lng": -6.288
@@ -310,7 +310,7 @@
         "seo_description": "Erfahre mehr über Bowmore.",
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T08:48:24Z"
+        "last_updated": "2026-04-19T17:12:48Z"
       },
       "raw": {
         "id": "bowmore",
@@ -336,7 +336,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T17:12:48Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
