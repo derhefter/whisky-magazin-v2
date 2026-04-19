@@ -1355,14 +1355,12 @@
 
 <!-- ===== REVIEW DECISION MODAL ===== -->
 <div class="modal-overlay" id="review-decision-modal" role="dialog" aria-modal="true">
-  <div class="modal-box" style="max-width:600px">
+  <div class="modal-box" style="max-width:780px;width:95vw;">
     <div class="modal-header">
-      <h3>Review-Entscheidung</h3>
+      <h3 id="review-decision-title">Review-Entscheidung</h3>
       <button class="modal-close" onclick="closeReviewModal()">&times;</button>
     </div>
-    <div class="modal-body">
-      <p style="margin:0 0 12px;font-size:0.9rem;color:var(--color-muted);" id="review-decision-desc"></p>
-
+    <div class="modal-body" style="max-height:70vh;overflow-y:auto;">
       <!-- Duplicate warning (hidden by default) -->
       <div id="review-duplicate-section" style="display:none;margin-bottom:16px;padding:14px 16px;background:#fff8e1;border:1px solid #f59e0b;border-radius:6px;">
         <div style="font-weight:600;font-size:0.88rem;margin-bottom:8px;color:#92400e;">⚠ Mögliche Duplikate gefunden</div>
@@ -1372,9 +1370,15 @@
         </p>
       </div>
 
+      <!-- Editable fields -->
+      <div style="border:1px solid var(--color-beige);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;background:var(--color-bg);">
+        <div style="font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--color-muted);margin-bottom:12px;">Daten bearbeiten</div>
+        <div id="review-entry-form"></div>
+      </div>
+
       <div class="form-group">
-        <label>Notiz (optional)</label>
-        <textarea id="review-decision-notes" placeholder="Begründung oder Korrekturhinweis…" style="height:80px;"></textarea>
+        <label>Interne Notiz (optional)</label>
+        <textarea id="review-decision-notes" placeholder="Begründung, Quellenhinweis oder Korrekturvermerk…" style="height:70px;"></textarea>
       </div>
       <div id="review-decision-error" class="error-box" style="display:none;"></div>
     </div>
@@ -1382,7 +1386,7 @@
       <button class="btn btn-secondary" onclick="closeReviewModal()">Abbrechen</button>
       <button class="btn btn-danger"   id="review-reject-btn"  onclick="submitReviewDecision('reject')">✗ Ablehnen</button>
       <button class="btn btn-warning"  id="review-merge-btn"   onclick="submitReviewDecision('merge')" style="display:none;">⇄ Als Update übernehmen</button>
-      <button class="btn btn-primary"  id="review-approve-btn" onclick="submitReviewDecision('approve')">✓ Freigeben als Neu</button>
+      <button class="btn btn-primary"  id="review-approve-btn" onclick="submitReviewDecision('approve')">✓ Freigeben</button>
     </div>
   </div>
 </div>
@@ -3912,8 +3916,10 @@ function openReviewModal(batchId, itemId) {
   reviewDecisionItem = item;
   const name = (item.normalized||{}).name || (item.normalized||{}).name_de || item.item_id;
   const entityLabel = GLOSSAR_ENTITY_LABELS[item.entity] || item.entity;
-  document.getElementById('review-decision-desc').textContent =
-    `"${name}" (${entityLabel}) – Entscheidung treffen:`;
+  document.getElementById('review-decision-title').textContent =
+    `Review: "${name}" (${entityLabel})`;
+  document.getElementById('review-entry-form').innerHTML =
+    buildEntryForm(item.entity, item.normalized || {});
   document.getElementById('review-decision-notes').value = '';
   document.getElementById('review-decision-error').style.display = 'none';
   document.getElementById('review-approve-btn').style.display = '';
@@ -3959,12 +3965,14 @@ async function submitReviewDecision(decision) {
   const errEl = document.getElementById('review-decision-error');
   errEl.style.display = 'none';
   const TOAST = { approve: ['Freigegeben ✓', 'success'], reject: ['Abgelehnt', 'warn'], merge: ['Als Update übernommen ✓', 'success'] };
+  const corrections = decision !== 'reject' ? readEntryForm(item.entity) : {};
   try {
     await apiPost(`${API.glossar}?action=review_decision`, {
       batch_id: item.batch_id,
       item_id:  item.item_id,
       decision,
       reviewer_notes: notes,
+      corrections,
     });
     const [msg, type] = TOAST[decision] || ['OK', 'success'];
     showToast(msg, type);
