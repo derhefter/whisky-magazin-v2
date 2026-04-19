@@ -206,7 +206,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): ardbeg"
       ],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "ardbeg",
         "slug": "ardbeg",
@@ -217,10 +217,10 @@
         "owner": "LVMH",
         "status": "active",
         "website": "https://www.ardbeg.com",
-        "short_description": "Kult-Destillerie für stark getorften, maritimen und zitrusfruchtigen Islay Single Malt.",
-        "long_description": "Ardbeg wurde 1815 an der Südküste Islays gegründet. Nach einer Beinahe-Schließung in den 90ern hat sie heute einen beispiellosen Kultstatus. Berühmt für eine extreme, fast teerige Rauchigkeit, die sensationell mit süßen Zitrusnoten harmoniert.",
-        "visit_info": "Hervorragendes Besucherzentrum mit dem legendären Old Kiln Cafe.",
-        "travel_context": "Die östlichste der drei Kildalton-Brennereien an der malerischen Südküste.",
+        "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
+        "long_description": "Ardbeg wurde 1815 gegründet und liegt am östlichen Ende der berühmten Islay-Whisky-Küste. Nach jahrzehntelangem Rückgang und zwischenzeitlicher Schließung wurde die Destillerie 1997 von der Glenmorangie Company (heute Teil von LVMH) wiederbelebt. Seitdem hat sich Ardbeg zum Kultlabel entwickelt: stark torfig (55+ ppm Phenol), komplex und für seinen enthusiastischen 'Ardbeg Committee' bekannt, der globale Neuerscheinungen zelebriert.",
+        "visit_info": "Das Old Kiln Café und die Destillerietouren sind ganzjährig geöffnet. Ardbeg Day ist Pflichttermin beim Feis Ile Festival.",
+        "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
         "coordinates": {
           "lat": 55.641,
           "lng": -6.108
@@ -230,7 +230,7 @@
         "seo_description": "Alles über Ardbeg.",
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T08:48:24Z"
+        "last_updated": "2026-04-19T15:20:45Z"
       },
       "raw": {
         "id": "ardbeg",
@@ -256,7 +256,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T15:20:45Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
