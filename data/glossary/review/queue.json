@@ -412,7 +412,7 @@
       "item_slug": "caol-ila",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "caol-ila",
         "slug": "caol-ila",
@@ -436,7 +436,7 @@
         "seo_description": "Die größte Brennerei Islays: Caol Ila.",
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T08:48:24Z"
+        "last_updated": "2026-04-19T09:18:13Z"
       },
       "raw": {
         "id": "caol-ila",
@@ -462,7 +462,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T09:18:13Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
