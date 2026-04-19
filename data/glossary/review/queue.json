@@ -754,7 +754,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): ardbeg-10"
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "ardbeg-10",
         "slug": "ardbeg-10-jahre",
@@ -832,7 +832,10 @@
         "seo_description": "Tasting Notes für Ardbeg 10.",
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:58:24Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
