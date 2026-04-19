@@ -1115,11 +1115,11 @@
       "item_slug": "caol-ila-12-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "caol-ila-12",
-        "slug": "caol-ila-12-jahre",
-        "name": "Caol Ila 12 Jahre",
+        "id": "ardbeg",
+        "slug": "ardbeg",
+        "name": "Ardbeg",
         "country_id": "scotland",
         "region_id": "islay",
         "distillery_id": "caol-ila",
@@ -1140,20 +1140,20 @@
         "tasting_notes_nose": "Lagerfeuer-Asche, frische Zitronen, grünes Gras und Pfefferminz.",
         "tasting_notes_palate": "Sehr sauber. Süßes Malzöl, pfeffriger Torfrauch, leichte Meeresbrise und Zitrusfrüchte.",
         "tasting_notes_finish": "Anhaltend, rauchig, mit frischer Säure und trockener Asche.",
-        "short_description": "Der elegante, aschige und zitrusfrische Torf-Klassiker von Islay.",
-        "long_description": "Caol Ila 12 ist weniger wuchtig als seine südlichen Pendants, überzeugt aber durch eine wunderbare Leichtigkeit, bei der aschiger Torfrauch und fruchtige Zitrusnoten perfekt harmonieren.",
+        "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
+        "long_description": "Ardbeg wurde 1815 gegründet und liegt am östlichen Ende der berühmten Islay-Whisky-Küste. Nach jahrzehntelangem Rückgang und zwischenzeitlicher Schließung wurde die Destillerie 1997 von der Glenmorangie Company (heute Teil von LVMH) wiederbelebt. Seitdem hat sich Ardbeg zum Kultlabel entwickelt: stark torfig (55+ ppm Phenol), komplex und für seinen enthusiastischen 'Ardbeg Committee' bekannt, der globale Neuerscheinungen zelebriert.",
         "editorial_notes": "Oft unterschätzt, aber ein echtes Meisterwerk der Ausgewogenheit.",
-        "travel_context": "",
+        "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
         "image": null,
         "source_urls": [],
         "source_status": "verified",
         "review_status": "approved",
         "published": true,
         "related_articles": [],
-        "seo_title": "Caol Ila 12 Jahre",
-        "seo_description": "Tasting Notes Caol Ila 12.",
+        "seo_title": "Ardbeg Destillerie – Islay's rauchigster Single Malt | Whisky-Glossar",
+        "seo_description": "Ardbeg auf Islay: Geschichte, Stil, Touren und Abfüllungen der kultigen Torf-Destillerie.",
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T09:38:48Z"
+        "last_updated": "2026-04-19T11:58:39Z"
       },
       "raw": {
         "id": "caol-ila-12",
@@ -1193,7 +1193,10 @@
         "seo_description": "Tasting Notes Caol Ila 12.",
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:58:39Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
