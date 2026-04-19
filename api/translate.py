@@ -247,6 +247,7 @@ class handler(BaseHTTPRequestHandler):
                     return f"set (len={len(s)})"
                 return f"set (len={len(s)}, starts={s[:4]}, ends={s[-4:]})"
             return self._send(200, {
+                "version": "2026-04-19-v2",
                 "DEEPL_API_KEY": _mask(DEEPL_API_KEY),
                 "AZURE_TRANSLATOR_KEY": _mask(AZURE_TRANSLATOR_KEY),
                 "AZURE_TRANSLATOR_REGION": AZURE_TRANSLATOR_REGION or None,
