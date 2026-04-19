@@ -2193,7 +2193,7 @@
           "match_reason": "Ähnlicher Name (Teilstring)"
         }
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg Wee Beastie",
         "distillery_id": "ardbeg",
@@ -2216,7 +2216,10 @@
         "whisky_type": "single_malt",
         "abv": 47.4,
         "age_statement": "5"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T17:07:14Z"
     }
   ]
 }
