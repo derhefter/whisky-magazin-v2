@@ -1542,7 +1542,7 @@
         "Pflichtfeld fehlt: region_id",
         "ID bereits vorhanden (Duplikat): ardbeg"
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg",
         "founded": 1815,
@@ -1611,7 +1611,10 @@
             "abv": 47.4
           }
         ]
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:44:16Z"
     }
   ]
 }
