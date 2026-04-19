@@ -1109,15 +1109,7 @@
       <div id="review-queue-container"><div class="loading-text">Lädt Review-Queue…</div></div>
       <div id="review-publish-bar" style="display:none;margin-top:16px;padding:16px 20px;background:var(--color-green-bg);border:1px solid #A9DFBF;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:12px;">
         <span style="font-size:0.9rem;color:#1a5632;"><strong id="review-approved-count">0</strong> Datensätze freigegeben – bereit zur Veröffentlichung</span>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <select id="review-publish-entity" style="padding:6px 10px;border:1px solid #A9DFBF;border-radius:var(--radius);font-family:inherit;font-size:0.85rem;background:white;">
-            <option value="whiskies">Whiskys</option>
-            <option value="distilleries">Destillerien</option>
-            <option value="regions">Regionen</option>
-            <option value="countries">Länder</option>
-          </select>
-          <button class="btn btn-success btn-sm" onclick="publishApproved()">🚀 In Live-Daten übernehmen</button>
-        </div>
+        <button class="btn btn-success btn-sm" onclick="publishApproved()">🚀 Alle veröffentlichen</button>
       </div>
     </div>
   </div>
@@ -1649,8 +1641,22 @@ async function loadUebersicht() {
   const container = document.getElementById('stats-container');
   container.innerHTML = '<div class="loading-text">Lädt Übersicht…</div>';
   try {
-    const data = await apiGet(API.data + '?section=stats');
+    // Load site stats + glossary data in parallel
+    const [data, queueData, distData, whiskyData] = await Promise.all([
+      apiGet(API.data + '?section=stats'),
+      apiGet(API.glossar + '?action=review_queue').catch(() => ({ items: [] })),
+      apiGet(API.glossar + '?action=list&entity=distilleries').catch(() => ({ items: [] })),
+      apiGet(API.glossar + '?action=list&entity=whiskies').catch(() => ({ items: [] })),
+    ]);
     const s = data.stats || data;
+    const qItems = queueData.items || [];
+    const reviewPending  = qItems.filter(i => i.review_status === 'pending').length;
+    const reviewApproved = qItems.filter(i => i.review_status === 'approved' || i.review_status === 'merged').length;
+    const distCount  = (distData.items  || []).filter(i => i.published && !i.deleted).length;
+    const whiskCount = (whiskyData.items || []).filter(i => i.published && !i.deleted).length;
+
+    const goGlossar = (sub) => `goToTab('glossar');setTimeout(()=>{ const btn=document.querySelector('.glossar-sub-btn[onclick*=\\'${sub}\\']'); if(btn) switchGlossarSub('${sub}',btn); },200);`;
+
     container.innerHTML = `
       <div class="stats-grid">
         <div class="stat-card stat-card-link" onclick="goToTab('newsletter')" title="Newsletter-Tab öffnen">
@@ -1676,6 +1682,38 @@ async function loadUebersicht() {
           <div class="stat-number">${fmt(s.topics_done ?? s.themen_erledigt ?? 0)}</div>
           <div class="stat-label">Themen erledigt</div>
           <div class="stat-hint">&#8594; Themen</div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--color-beige);">
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-muted);margin-bottom:12px;">📚 Whisky-Glossar</div>
+        <div class="stats-grid">
+          <div class="stat-card stat-card-link" onclick="${goGlossar('review')}" title="Review-Queue öffnen"
+               style="${reviewPending > 0 ? 'border-color:#f59e0b;' : ''}">
+            <span class="stat-icon">&#128270;</span>
+            <div class="stat-number" style="${reviewPending > 0 ? 'color:#d97706;' : ''}">${fmt(reviewPending)}</div>
+            <div class="stat-label">Review ausstehend</div>
+            <div class="stat-hint">&#8594; Glossar · Review</div>
+          </div>
+          <div class="stat-card stat-card-link" onclick="${goGlossar('review')}" title="Freigegeben – bereit zur Veröffentlichung"
+               style="${reviewApproved > 0 ? 'border-color:#27ae60;' : ''}">
+            <span class="stat-icon">&#9989;</span>
+            <div class="stat-number" style="${reviewApproved > 0 ? 'color:#1a7a3c;' : ''}">${fmt(reviewApproved)}</div>
+            <div class="stat-label">Freigegeben (unveröffentlicht)</div>
+            <div class="stat-hint">&#8594; Glossar · Review</div>
+          </div>
+          <div class="stat-card stat-card-link" onclick="${goGlossar('destillerien')}" title="Destillerien im Glossar">
+            <span class="stat-icon">&#127981;</span>
+            <div class="stat-number">${fmt(distCount)}</div>
+            <div class="stat-label">Destillerien live</div>
+            <div class="stat-hint">&#8594; Glossar · Destillerien</div>
+          </div>
+          <div class="stat-card stat-card-link" onclick="${goGlossar('whiskys')}" title="Whiskys im Glossar">
+            <span class="stat-icon">&#127760;</span>
+            <div class="stat-number">${fmt(whiskCount)}</div>
+            <div class="stat-label">Whiskys live</div>
+            <div class="stat-hint">&#8594; Glossar · Whiskys</div>
+          </div>
         </div>
       </div>
     `;
@@ -4000,8 +4038,23 @@ async function publishSingle(entity, batchId) {
 }
 
 async function publishApproved() {
-  const entity = document.getElementById('review-publish-entity').value;
-  await publishSingle(entity, '');
+  const ENTITIES = ['countries', 'regions', 'distilleries', 'whiskies'];
+  let total = 0;
+  try {
+    for (const entity of ENTITIES) {
+      const res = await apiPost(`${API.glossar}?action=publish_approved`, { entity, batch_id: '' });
+      total += res.published || 0;
+      if (res.published > 0) {
+        glossarCache[entity] = null;
+      }
+    }
+    showToast(`${total} Datensätze veröffentlicht ✓`, 'success');
+    glossarReviewQueue = null;
+    loadReviewQueue();
+    if (total > 0) loadUebersicht();
+  } catch (e) {
+    showToast('Fehler: ' + e.message, 'error');
+  }
 }
 
 /* ============================================================
