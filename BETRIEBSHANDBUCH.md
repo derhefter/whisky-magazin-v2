@@ -1,6 +1,6 @@
 # Whisky Magazin -- Betriebshandbuch
 
-Stand: April 2026 (aktualisiert: Whisky-Glossar hinzugefuegt)
+Stand: April 2026
 
 ---
 
@@ -27,6 +27,8 @@ Stand: April 2026 (aktualisiert: Whisky-Glossar hinzugefuegt)
      | (Auto-Rebuild)    |     | - Brevo (Newsletter)      |
      +---------+--------+     | - OpenAI (KI-Texte)       |
                |               | - GitHub API (Dateien)    |
+     +---------+--------+     | - DeepL API (Uebersetzung)|
+               |               | - Azure Translator (Fallb)|
      +---------+--------+     +---------------------------+
      | GitHub Repo       |
      | derhefter/        |
@@ -36,29 +38,25 @@ Stand: April 2026 (aktualisiert: Whisky-Glossar hinzugefuegt)
 
 ### URLs
 
-| Was | URL |
-|-----|-----|
-| **Website** | https://www.whisky-reise.com |
-| **Admin-Dashboard** | https://www.whisky-reise.com/admin/ |
-| **GitHub-Repo** | https://github.com/derhefter/whisky-magazin-v2 |
+| Was                  | URL                                              |
+| -------------------- | ------------------------------------------------ |
+| **Website**          | https://www.whisky-reise.com                     |
+| **Admin-Dashboard**  | https://www.whisky-reise.com/admin/              |
+| **GitHub-Repo**      | https://github.com/derhefter/whisky-magazin-v2   |
 | **Vercel-Dashboard** | https://vercel.com (Projekt: whisky-magazin-new) |
-| **Brevo-Dashboard** | https://app.brevo.com |
+| **Brevo-Dashboard**  | https://app.brevo.com                            |
 
 ### Automatischer Betrieb
 
 Das System laeuft weitgehend automatisch:
 
-| Zeitpunkt | Was passiert | Wer/Was |
-|-----------|-------------|---------|
-| **Montag 07:00 Uhr** | 2 neue Artikel-Entwuerfe werden generiert | Windows Task Scheduler (lokal) |
-| **Nach Generierung** | E-Mail an rosenhefter@gmail.com | Brevo Transactional API |
-| **Mittwoch 10:00 CEST** | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job |
-| **Samstag 10:00 CEST** | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job |
-| **15. des Monats 10:00 CEST** | Newsletter-Erinnerung an rosenhefter@gmail.com | Vercel Cron-Job |
-| **20. des Monats 10:00 CEST** | Erinnerung: Newsletter generieren | Vercel Cron-Job |
-| **30. des Monats 10:00 CEST** | Erinnerung: Newsletter fertigstellen | Vercel Cron-Job |
-| **1. Montag des Monats** | Newsletter-Versand (manuell via Admin-Dashboard) | Steffen |
-| **Bei Artikel-Aenderung** | Website wird automatisch neu gebaut | GitHub Actions |
+| Zeitpunkt                 | Was passiert                                         | Wer/Was                        |
+| ------------------------- | ---------------------------------------------------- | ------------------------------ |
+| **Montag 07:00 Uhr**      | 2 neue Artikel-Entwuerfe werden generiert            | Windows Task Scheduler (lokal) |
+| **Nach Generierung**      | E-Mail an rosenhefter@gmail.com                      | Brevo Transactional API        |
+| **Mittwoch 10:00 CEST**   | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job                |
+| **Samstag 10:00 CEST**    | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job                |
+| **Bei Artikel-Aenderung** | Website wird automatisch neu gebaut                  | GitHub Actions                 |
 
 **Du musst nur:** Entwuerfe im Dashboard pruefen und freigeben. Alles andere laeuft automatisch.
 
@@ -76,12 +74,12 @@ Das System laeuft weitgehend automatisch:
 
 **Probleme beim Login:**
 
-| Fehlermeldung | Ursache | Loesung |
-|---------------|---------|---------|
-| "Falsches Passwort" | Passwort stimmt nicht | Vercel -> Settings -> Env Vars -> `DASHBOARD_PASSWORD` pruefen |
-| "Server-Fehler" | `DASHBOARD_PASSWORD` nicht gesetzt | In Vercel setzen und neu deployen |
-| "Zu viele Versuche" | 5 Fehlversuche in 15 Min. | 15 Minuten warten |
-| "Netzwerkfehler" | Keine Internetverbindung oder Vercel down | Verbindung pruefen |
+| Fehlermeldung       | Ursache                                   | Loesung                                                        |
+| ------------------- | ----------------------------------------- | -------------------------------------------------------------- |
+| "Falsches Passwort" | Passwort stimmt nicht                     | Vercel -> Settings -> Env Vars -> `DASHBOARD_PASSWORD` pruefen |
+| "Server-Fehler"     | `DASHBOARD_PASSWORD` nicht gesetzt        | In Vercel setzen und neu deployen                              |
+| "Zu viele Versuche" | 5 Fehlversuche in 15 Min.                 | 15 Minuten warten                                              |
+| "Netzwerkfehler"    | Keine Internetverbindung oder Vercel down | Verbindung pruefen                                             |
 
 ---
 
@@ -89,12 +87,12 @@ Das System laeuft weitgehend automatisch:
 
 Zeigt 4 Kennzahlen auf einen Blick:
 
-| KPI | Bedeutung |
-|-----|-----------|
-| **Abonnenten** | Anzahl Newsletter-Abonnenten in Brevo |
-| **Entwuerfe** | Anzahl offener Artikel-Entwuerfe (ausstehend + freigegeben) |
-| **Themen offen** | Noch nicht bearbeitete Themen aus der Themen-Queue |
-| **Themen erledigt** | Bereits bearbeitete Themen |
+| KPI                 | Bedeutung                                                   |
+| ------------------- | ----------------------------------------------------------- |
+| **Abonnenten**      | Anzahl Newsletter-Abonnenten in Brevo                       |
+| **Entwuerfe**       | Anzahl offener Artikel-Entwuerfe (ausstehend + freigegeben) |
+| **Themen offen**    | Noch nicht bearbeitete Themen aus der Themen-Queue          |
+| **Themen erledigt** | Bereits bearbeitete Themen                                  |
 
 Jede Karte ist **klickbar** und navigiert direkt zum zugehoerigen Tab.
 
@@ -106,25 +104,26 @@ Hier siehst du alle Entwuerfe und veroeffentlichten Artikel.
 
 #### Artikel-Status
 
-| Status | Bedeutung | Badge-Farbe |
-|--------|-----------|-------------|
-| **Ausstehend** | Neu generiert, wartet auf Pruefung | Gelb |
-| **In Bearbeitung** | Wurde bearbeitet, noch nicht freigegeben | Blau |
-| **Freigegeben** | Wird beim naechsten Cron-Lauf veroeffentlicht (Mi/Sa 10:00) oder zum geplanten Datum | Gruen |
+| Status             | Bedeutung                                                   | Badge-Farbe |
+| ------------------ | ----------------------------------------------------------- | ----------- |
+| **Ausstehend**     | Neu generiert, wartet auf Pruefung                          | Gelb        |
+| **In Bearbeitung** | Wurde bearbeitet, noch nicht freigegeben                    | Blau        |
+| **Freigegeben**    | Wird beim naechsten Cron-Lauf veroeffentlicht (Mi/Sa 10:00) | Gruen       |
 
-#### Workflow: Artikel pruefen und veroeffentlichen
+#### Workflow: Artikel pruefen und freigeben
 
 1. Oeffne den **Artikel**-Tab
+
 2. Fuer jeden Entwurf hast du folgende Aktionen:
+   
    - **Vorschau** (Auge-Icon): Zeigt den Artikel so, wie er spaeter aussehen wird
    - **Bearbeiten** (Stift-Icon): Oeffnet ein Formular zum Aendern von Titel, Teaser und HTML-Inhalt
-   - **Veroeffentlichen** (Haekchen): Oeffnet einen Dialog mit zwei Optionen:
-     - **Sofort veroeffentlichen**: Veroeffentlicht unmittelbar (ca. 1-2 Min. bis live)
-     - **Termin planen**: Datumsauswahl -- der Cron-Job veroeffentlicht automatisch am gewaehlten Tag
-   - **Jetzt veroeffentlichen** (Rakete, nur bei bereits freigegebenen): Veroeffentlicht sofort
+   - **Freigeben** (Haekchen): Setzt den Status auf "Freigegeben" -- der Artikel wird beim naechsten Cron-Lauf veroeffentlicht
+   - **Jetzt veroeffentlichen** (Rakete, nur bei freigegebenen): Veroeffentlicht sofort, ohne auf den Cron zu warten
    - **Ablehnen** (X): Loescht den Entwurf unwiderruflich
 
 3. **Bearbeiten-Formular:**
+   
    - **Titel**: Wird als Ueberschrift und in der URL verwendet
    - **Teaser**: Kurzbeschreibung fuer Artikelkarten und SEO-Meta-Description
    - **HTML-Inhalt**: Der vollstaendige Artikeltext in HTML. Absaetze in `<p>`, Ueberschriften in `<h2>` / `<h3>`
@@ -149,24 +148,24 @@ Die Themen-Queue steuert, welche Themen der KI-Generator als naechstes bearbeite
 
 #### Funktionen
 
-| Aktion | Wie |
-|--------|-----|
-| **Filtern** | Oben: Filter nach Saison (Fruehling/Sommer/Herbst/Winter/Ostern/Weihnachten/Silvester) und Status (Offen/In Bearbeitung/Erledigt) |
-| **Neues Thema** | Button "Neues Thema" oben rechts -> Titel, Kategorie, Saison, Prioritaet eingeben -> Speichern |
-| **Erledigt markieren** | Haekchen-Icon in der Zeile klicken |
-| **Loeschen** | Papierkorb-Icon in der Zeile klicken (nach Bestaetigung) |
-| **Artikel generieren** | Blitz-Icon (⚡) -> Erzeugt einen KI-Entwurf direkt aus dem Thema (dauert ca. 20-30 Sek.) |
+| Aktion                 | Wie                                                                                                                               |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Filtern**            | Oben: Filter nach Saison (Fruehling/Sommer/Herbst/Winter/Ostern/Weihnachten/Silvester) und Status (Offen/In Bearbeitung/Erledigt) |
+| **Neues Thema**        | Button "Neues Thema" oben rechts -> Titel, Kategorie, Saison, Prioritaet eingeben -> Speichern                                    |
+| **Erledigt markieren** | Haekchen-Icon in der Zeile klicken                                                                                                |
+| **Loeschen**           | Papierkorb-Icon in der Zeile klicken (nach Bestaetigung)                                                                          |
+| **Artikel generieren** | Blitz-Icon (⚡) -> Erzeugt einen KI-Entwurf direkt aus dem Thema (dauert ca. 20-30 Sek.)                                           |
 
 #### Themen-Felder
 
-| Feld | Beschreibung |
-|------|-------------|
-| **Titel** | Thema des zu erstellenden Artikels |
-| **Kategorie** | Whisky, Reise, Lifestyle, Natur, Urlaub |
-| **Saison** | Wann das Thema am besten passt |
-| **Anlass** | Optionaler Anlass (Ostern, Weihnachten, etc.) |
-| **Prioritaet** | 1-20, hoeher = wichtiger |
-| **Notizen** | Interne Notizen/Hinweise fuer die Generierung |
+| Feld           | Beschreibung                                  |
+| -------------- | --------------------------------------------- |
+| **Titel**      | Thema des zu erstellenden Artikels            |
+| **Kategorie**  | Whisky, Reise, Lifestyle, Natur, Urlaub       |
+| **Saison**     | Wann das Thema am besten passt                |
+| **Anlass**     | Optionaler Anlass (Ostern, Weihnachten, etc.) |
+| **Prioritaet** | 1-20, hoeher = wichtiger                      |
+| **Notizen**    | Interne Notizen/Hinweise fuer die Generierung |
 
 #### Tipp: Artikel direkt generieren
 
@@ -178,33 +177,24 @@ Klicke das ⚡-Icon neben einem Thema, um sofort einen KI-Entwurf erstellen zu l
 
 Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Versand.
 
-#### Monatlicher Zeitplan
-
-| Datum | Aufgabe |
-|-------|---------|
-| **15. des Monats** | Erinnerungs-E-Mail kommt automatisch an rosenhefter@gmail.com |
-| **20. des Monats** | Vorstellung: Daten eintragen, Newsletter generieren und pruefen |
-| **30. des Monats** | Fertigstellung: Newsletter freigeben und speichern |
-| **1. Montag des Folgemonats** | Versand an alle Abonnenten via "Newsletter jetzt senden" |
-
-**Konkretes Beispiel Mai 2026:** Daten bis 20.04. eintragen → 30.04. fertigstellen → 04.05. (1. Montag) versenden.
-
 #### Schritt 1: WotM-Eintrag erstellen
 
 1. **Monat waehlen** im Dropdown oben
+
 2. **Pflichtfelder ausfuellen:**
+   
    - **Whisky-Name**: z.B. "Lagavulin 16 Jahre"
    - **Destillerie**: z.B. "Lagavulin Distillery"
    - **Region**: z.B. "Islay"
    - **Kommentar**: Deine persoenlichen Eindrucke (Freitext). Wird von der KI in einen warmen, persoenlichen Stil umformuliert.
 
 3. **Optionale Felder:**
+   
    - **Destillerie-URL**: Link zur Destillerie-Seite auf whisky-reise.com (falls vorhanden)
    - **Specials / News**: Aktuelle Nachrichten oder besondere Hinweise. Wird als Prosa-Abschnitt im Newsletter dargestellt.
    - **Intro-Text**: Persoenlicher Einfuehrungstext fuer den Newsletter. Wird automatisch von der KI generiert, kann aber ueberschrieben werden.
    - **Affiliate-Link**: Amazon-Link zum Whisky (wird automatisch generiert wenn der Whisky-Name bekannt ist)
    - **Tasting Notes** (aufklappbar):
-     - **Von whisky.de laden**: Klicke den Button um Aroma, Geschmack, Abgang, Bewertung, Alter, ABV und Preis automatisch von whisky.de zu laden -- Quelle-Link wird angezeigt
      - **Aroma**: Geruchsbeschreibung
      - **Geschmack**: Geschmacksbeschreibung
      - **Abgang**: Nachklang
@@ -213,7 +203,7 @@ Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Ver
      - **ABV**: Alkoholgehalt in %
      - **Preis**: in EUR
 
-4. **Fotos** (bis zu 4): Klicke "Fotos waehlen" und waehle beliebige Bild-Dateien aus. Werden automatisch auf max. 1600px skaliert und als JPEG komprimiert (funktioniert auf allen Geraeten und Browsern).
+4. **Fotos** (bis zu 4): Klicke "Fotos waehlen" und waehle JPG/PNG-Dateien aus. Werden als Base64 gespeichert.
 
 5. **Artikel-Teaser** (bis zu 3): Werden automatisch mit den neuesten Artikeln befuellt. Titel, URL und Teaser koennen manuell ueberschrieben werden.
 
@@ -243,14 +233,80 @@ Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Ver
 
 ---
 
-### 2.6 Tab: Abonnenten
+### 2.6 Tab: Newsletter
 
 Zeigt die aktuelle Abonnenten-Statistik:
+
 - Gesamtzahl der Newsletter-Abonnenten
 - Liste der letzten Anmeldungen mit E-Mail und Datum
 - Daten kommen direkt von der Brevo-API
 
-**Hinweis:** Der Tab heisst jetzt "Abonnenten" (vorher "Newsletter"), da hier ausschliesslich die Abonnenten-Daten aus Brevo angezeigt werden. Den Newsletter erstellt und versendet man im Tab "WotM & Newsletter".
+---
+
+### 2.7 Whisky-Glossar (API-Verwaltung)
+
+Das Glossar ist unter `/whisky-glossar/` erreichbar und enthaelt Laender, Regionen, Destillerien und Abfuellungen. Alle Daten werden redaktionell gepflegt und sind in JSON-Dateien unter `data/glossary/` gespeichert.
+
+#### Datenstruktur
+
+| Entitaet          | Datei                              | Pflichtfelder                                        |
+| ----------------- | ---------------------------------- | ---------------------------------------------------- |
+| **Laender**       | `data/glossary/countries.json`     | id, slug, name_de                                    |
+| **Regionen**      | `data/glossary/regions.json`       | id, slug, name, country_id                           |
+| **Destillerien**  | `data/glossary/distilleries.json`  | id, slug, name, country_id, region_id                |
+| **Abfuellungen**  | `data/glossary/whiskies.json`      | id, slug, name, country_id, distillery_id, whisky_type, abv |
+
+#### Import-Workflow
+
+1. **Batch importieren:** `POST /api/admin_glossary?action=import_batch` — CSV oder JSON hochladen
+2. **Review-Queue:** `GET /api/admin_glossary?action=review_queue` — Eintraege pruefen
+3. **Entscheiden:** `POST /api/admin_glossary?action=review_decision` — approve / reject / merge
+4. **Veroeffentlichen:** `POST /api/admin_glossary?action=publish_approved` — Freigegebene Eintraege live schalten
+
+**Review-Entscheidungen:**
+
+| Entscheidung | Bedeutung                                                                   |
+| ------------ | --------------------------------------------------------------------------- |
+| `approve`    | Eintrag wird unveraendert uebernommen                                       |
+| `reject`     | Eintrag wird verworfen                                                      |
+| `merge`      | Eintrag wird mit bestehendem Datensatz zusammengefuehrt (Smart-Merge-Logik) |
+
+#### Smart-Merge-Logik (seit April 2026)
+
+Beim "Merge" werden Text-Felder intelligent zusammengefuehrt:
+
+- **Textfelder** (`long_description`, `short_description`, `travel_context`, `editorial_notes`, `visit_info`, `style_notes`): Bestehender Text wird behalten, wenn der neue kuerner oder leer ist — verhindert versehentlichen Inhaltsverlust
+- **Alle anderen Felder**: Neuer Wert gewinnt, falls nicht leer; andernfalls bleibt bestehender Wert (schuetzt URLs, Koordinaten, Bilder)
+
+#### Duplikat-Erkennung (seit April 2026)
+
+Beim Import prueft das System automatisch auf potenzielle Duplikate:
+
+- **Teilstring-Abgleich**: "Ardbeg 10" ↔ "Ardbeg 10 Jahre" werden als Duplikat-Kandidaten markiert
+- **Bigram-Aehnlichkeit**: Namen mit ≥ 80 % Uebereinstimmung werden gemeldet
+- **Destillerie + Reifezeit**: Gleiche Destillerie + gleiches Alter = Duplikat-Warnung
+- Duplikate erscheinen im Review mit Begruendung, muessen aber manuell entschieden werden
+
+#### CRUD-Operationen (direkt ueber API)
+
+```
+GET  ?action=list&entity=distilleries         – Alle Eintraege
+GET  ?action=get&entity=distilleries&id=xxx   – Einzelner Eintrag
+POST ?action=save   { entity, entry }         – Erstellen / Aktualisieren
+POST ?action=delete { entity, id }            – Soft-Delete (setzt published=false)
+```
+
+Alle Operationen erfordern den Admin-Token im Header `x-admin-token`.
+
+#### Destillerien-Status
+
+| Status       | Bedeutung      |
+| ------------ | -------------- |
+| `active`     | Aktiv          |
+| `silent`     | Still gelegt   |
+| `closed`     | Geschlossen    |
+| `mothballed` | Eingemottet    |
+| `demolished` | Abgerissen     |
 
 ---
 
@@ -258,49 +314,46 @@ Zeigt die aktuelle Abonnenten-Statistik:
 
 ### 3.1 Windows Task Scheduler (lokale Artikel-Generierung)
 
-| Eigenschaft | Wert |
-|------------|------|
-| **Task-Name** | `WhiskyMagazin-AutoGenerate` |
-| **Zeitplan** | Jeden Montag, 07:00 Uhr |
-| **Befehl** | `python main.py --auto -n 2` |
+| Eigenschaft            | Wert                                                                        |
+| ---------------------- | --------------------------------------------------------------------------- |
+| **Task-Name**          | `WhiskyMagazin-AutoGenerate`                                                |
+| **Zeitplan**           | Jeden Montag, 07:00 Uhr                                                     |
+| **Befehl**             | `python main.py --auto -n 2`                                                |
 | **Arbeitsverzeichnis** | `C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin` |
-| **Log** | `magazin.log` im Projektordner |
+| **Log**                | `magazin.log` im Projektordner                                              |
 
 **Was passiert:**
+
 1. 2 Artikel-Entwuerfe werden per GPT-4o generiert
 2. Entwuerfe werden als JSON in `articles/drafts/` auf GitHub gepusht
 3. Benachrichtigungs-E-Mail wird an rosenhefter@gmail.com gesendet
 4. Entwuerfe erscheinen im Dashboard unter "Artikel"
 
 **Task manuell ausfuehren (z.B. fuer Tests):**
+
 ```
 cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
 python main.py --auto -n 3
 ```
 
 **Task pruefen/aendern:**
+
 1. Windows-Taste -> "Aufgabenplanung" suchen und oeffnen
 2. Links: "Aufgabenplanungsbibliothek" klicken
 3. Task `WhiskyMagazin-AutoGenerate` suchen
 4. Rechtsklick -> "Eigenschaften" zum Aendern, "Ausfuehren" zum manuellen Start
 
-### 3.2 Vercel Cron-Jobs (automatische Veroeffentlichung + Erinnerungen)
+### 3.2 Vercel Cron-Jobs (automatische Veroeffentlichung)
 
 Konfiguriert in `vercel.json`:
 
-| Zeitpunkt | Schedule (UTC) | Aktion |
-|-----------|---------------|--------|
-| **Mittwoch 10:00 CEST** | `0 8 * * 3` | Aeltesten freigegebenen Entwurf veroeffentlichen |
-| **Samstag 10:00 CEST** | `0 8 * * 6` | Aeltesten freigegebenen Entwurf veroeffentlichen |
-| **15. des Monats 10:00 CEST** | `0 8 15 * *` | Newsletter-Erinnerung an rosenhefter@gmail.com |
-| **20. des Monats 10:00 CEST** | `0 8 20 * *` | Vorstellungs-Erinnerung (Newsletter generieren) |
-| **30. des Monats 10:00 CEST** | `0 8 30 * *` | Fertigstellungs-Erinnerung (Newsletter speichern) |
-
-**Geplante Veroeffentlichung:** Artikel koennen jetzt mit einem Wunschdatum freigegeben werden. Der Cron-Job prueft taeglich ob das Datum erreicht ist und veroeffentlicht dann automatisch.
-
-**Erinnerungs-Endpoint:** `/api/newsletter_reminder` -- sendet je nach Tag die passende E-Mail an rosenhefter@gmail.com.
+| Zeitpunkt               | Schedule (UTC) | Aktion                                           |
+| ----------------------- | -------------- | ------------------------------------------------ |
+| **Mittwoch 10:00 CEST** | `0 8 * * 3`    | Aeltesten freigegebenen Entwurf veroeffentlichen |
+| **Samstag 10:00 CEST**  | `0 8 * * 6`    | Aeltesten freigegebenen Entwurf veroeffentlichen |
 
 **Ablauf:**
+
 1. Cron ruft `/api/admin_publish` auf
 2. Sucht den aeltesten Entwurf mit Status "approved"
 3. Verschiebt ihn von `articles/drafts/` nach `articles/`
@@ -316,6 +369,7 @@ Datei: `.github/workflows/build.yml`
 **Trigger:** Wenn Dateien in `articles/*.json` oder `data/topics_queue.json` geaendert werden (Push auf `main`).
 
 **Ablauf:**
+
 1. Checkout des Repos
 2. Python + Abhaengigkeiten installieren
 3. `config.json` wird zur Laufzeit aus fest hinterlegten Werten erstellt (die Datei ist in `.gitignore` und nicht im Repo)
@@ -331,16 +385,17 @@ Datei: `.github/workflows/build.yml`
 
 Jedes Mal wenn `python main.py --auto` laeuft (Montag 07:00 per Task Scheduler), sendet das System eine HTML-E-Mail via Brevo Transactional API:
 
-| Eigenschaft | Wert |
-|------------|------|
-| **Empfaenger** | rosenhefter@gmail.com |
-| **Absender** | whisky-news@whisky-reise.com (via Brevo) |
-| **Betreff** | "X neue Whisky-Artikel warten auf Freigabe" |
-| **Inhalt** | Titel, Kategorie, Teaser und Wortanzahl jedes Entwurfs; Direktlink zum Dashboard; naechste Veroeffentlichungstermine (Mi + Sa) |
+| Eigenschaft    | Wert                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Empfaenger** | rosenhefter@gmail.com                                                                                                          |
+| **Absender**   | whisky-news@whisky-reise.com (via Brevo)                                                                                       |
+| **Betreff**    | "X neue Whisky-Artikel warten auf Freigabe"                                                                                    |
+| **Inhalt**     | Titel, Kategorie, Teaser und Wortanzahl jedes Entwurfs; Direktlink zum Dashboard; naechste Veroeffentlichungstermine (Mi + Sa) |
 
 **Voraussetzung:** `BREVO_API_KEY` muss in der lokalen `.env`-Datei stehen.
 
 **E-Mail manuell testen:**
+
 ```bash
 cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
 python -c "from notifier import notify_new_drafts; notify_new_drafts([{'title':'Test','category':'Whisky','meta':{'teaser':'Testteaser'},'html_content':'<p>Test</p>'}])"
@@ -348,9 +403,124 @@ python -c "from notifier import notify_new_drafts; notify_new_drafts([{'title':'
 
 ---
 
-## 4. Manuelle Operationen
+## 4. Mehrsprachigkeit (KI-Uebersetzung)
 
-### 4.1 Artikel lokal generieren
+### 4.1 Uebersicht
+
+Alle Artikel-Seiten zeigen eine Sprachleiste direkt unterhalb des Hero-Bildes:
+
+```
+🌐  DE · EN · FR · NL · ES · JA
+```
+
+- **DE** ist immer die Originalsprache (kein API-Aufruf, kein Kosten)
+- Klick auf eine andere Sprache: Artikel wird per KI uebersetzt und im Browser angezeigt
+- **Erste Anfrage** einer Sprache: ~2–5 Sekunden (API-Aufruf + GitHub-Cache anlegen)
+- **Folgeaufrufe**: sofort (Server-Cache in GitHub + Browser-localStorage 24h)
+- Die URL aktualisiert sich auf `?lang=en` — Link ist direkt teilbar
+
+### 4.2 Technischer Ablauf
+
+```
+Nutzer klickt [EN]
+  → Browser prueft localStorage (24h-Cache)
+    → Treffer: sofort anzeigen
+    → Kein Treffer: GET /api/translate?slug=&lang=en
+      → GitHub prueft articles/translations/en/slug.json
+        → Vorhanden: zurueckgeben (< 50ms)
+        → Nicht vorhanden: DeepL API aufrufen
+          → Bei 429/Quota: Azure Translator aufrufen
+          → Ergebnis in GitHub cachen, zurueckgeben
+  → h1-Titel + Artikel-Body im DOM ersetzen
+```
+
+### 4.3 Kosten und Kontingente
+
+| Service              | Freies Kontingent        | Danach               | Einsatz                         |
+| -------------------- | ------------------------ | -------------------- | ------------------------------- |
+| **DeepL API Free**   | 500.000 Zeichen / Monat  | 5,49 EUR / Monat     | Primaer (beste Qualitaet EU+JA) |
+| **Azure Translator** | 2.000.000 Zeichen / Monat| 10 USD / Mio. Zeichen| Automatischer Fallback          |
+
+**Richtwerte:**
+- 1 Artikel ≈ 12.000 Zeichen (inkl. HTML)
+- 1 Artikel in 5 Sprachen ≈ 60.000 Zeichen
+- 8 neue Artikel / Monat × 5 Sprachen = ~480.000 Zeichen → passt in DeepL Free
+- Backkatalog (~80 Artikel × 5 Sprachen = 4,8 Mio.) → ueber mehrere Monate per Azure abrufen
+
+**Rate-Limit:** Max. 10 neue Uebersetzungsanfragen pro IP/Stunde (Schutz vor unkontrollierten Kosten). Gecachte Antworten zaehlen nicht.
+
+### 4.4 Welche Inhalte werden uebersetzt?
+
+| Feld               | Uebersetzt | Hinweis                                       |
+| ------------------ | ---------- | --------------------------------------------- |
+| Artikel-Titel      | Ja         | Wird in der h1 ersetzt                        |
+| Artikel-Volltext   | Ja         | HTML-Inhalt mit Tag-Handling                  |
+| Teaser / Excerpt   | Ja         | Im Cache gespeichert                          |
+| Meta-Description   | Ja         | Im Cache gespeichert (nicht im DOM sichtbar)  |
+| Navigation         | Nein       | Statisch DE (Phase 2 geplant)                 |
+| Glossar            | Nein       | Phase 2                                       |
+| Index/Kategorie    | Nein       | Phase 3 (Teaser-Uebersetzung)                 |
+
+### 4.5 Uebersetzungs-Cache verwalten
+
+Gecachte Uebersetzungen liegen in GitHub unter:
+
+```
+articles/translations/
+  en/
+    2026-01-15_mein-artikel-slug.json
+    ...
+  fr/
+    ...
+  nl/ es/ ja/
+```
+
+**Cache fuer einen Artikel loeschen (Neuuebersetzung erzwingen):**
+
+1. GitHub Repo oeffnen -> `articles/translations/{lang}/`
+2. Datei `{slug}.json` loeschen
+3. Beim naechsten Nutzer-Klick wird automatisch neu uebersetzt
+
+**Alle Uebersetzungen einer Sprache loeschen:**
+
+```bash
+# Lokal
+rm articles/translations/en/*.json
+git add -A && git commit -m "fix: clear en translation cache" && git push
+```
+
+### 4.6 API-Endpunkt Details
+
+```
+GET /api/translate?slug={slug}&lang={lang}
+```
+
+| Parameter | Werte                   |
+| --------- | ----------------------- |
+| `slug`    | Artikel-Slug (aus URL)  |
+| `lang`    | en, fr, nl, es, ja      |
+
+**Antwort (JSON):**
+
+```json
+{
+  "lang": "en",
+  "source_lang": "de",
+  "slug": "mein-artikel-slug",
+  "translated_at": "2026-04-19T17:00:00Z",
+  "service": "deepl",
+  "title": "...",
+  "html_content": "...",
+  "teaser": "...",
+  "meta_description": "..."
+}
+```
+
+---
+
+## 5. Manuelle Operationen
+
+### 5.1 Artikel lokal generieren
 
 ```bash
 cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
@@ -368,7 +538,7 @@ python main.py --generate -n 2
 python main.py
 ```
 
-### 4.2 Website lokal bauen und testen
+### 5.2 Website lokal bauen und testen
 
 ```bash
 # Website komplett neu bauen (generiert alle HTML-Seiten):
@@ -379,13 +549,14 @@ python main.py --serve-v2
 # Oeffnet http://localhost:8000
 ```
 
-### 4.3 Artikel direkt bearbeiten (ohne Dashboard)
+### 5.3 Artikel direkt bearbeiten (ohne Dashboard)
 
 Artikel liegen als JSON in `articles/`. Jede Datei ist ein Artikel.
 
 **Dateiname-Format:** `YYYY-MM-DD_slug-des-artikels.json`
 
 **Wichtige Felder:**
+
 ```json
 {
   "title": "Titel des Artikels",
@@ -403,22 +574,24 @@ Artikel liegen als JSON in `articles/`. Jede Datei ist ein Artikel.
 ```
 
 **Aendern:**
+
 1. JSON-Datei in `articles/` oeffnen
 2. `html_content` bearbeiten (HTML-Format: `<p>`, `<h2>`, `<h3>`)
 3. `python main.py --build-v2` ausfuehren
 
-### 4.4 Bilder verwalten
+### 5.4 Bilder verwalten
 
 - Bilder liegen in `site-v2/images/`
 - Werden automatisch von Unsplash heruntergeladen bei der Generierung
 - **Eigene Bilder:** Als JPG in `site-v2/images/` ablegen, Dateiname = Slug des Artikels
 - In der Artikel-JSON: `"image_url": "/images/dateiname.jpg"` setzen
 
-### 4.5 Karten-Eintraege hinzufuegen
+### 5.5 Karten-Eintraege hinzufuegen
 
 Datei: `data/manual-locations.json`
 
 Neuen Eintrag hinzufuegen:
+
 ```json
 {
   "name": "Name der Destillerie",
@@ -434,7 +607,7 @@ Neuen Eintrag hinzufuegen:
 
 Danach: `python main.py --build-v2`
 
-### 4.6 Produkte / Affiliate-Links anpassen
+### 5.6 Produkte / Affiliate-Links anpassen
 
 Datei: `data/products.json`
 
@@ -456,23 +629,23 @@ Datei: `data/products.json`
 - **ASIN finden:** Auf Amazon die Produkt-URL anschauen -> `/dp/B001TZBIBY/`
 - **Amazon-Tag:** `whiskyreise74-21` (in `config.json` hinterlegt)
 
-### 4.7 Seiten im Site-Builder anpassen
+### 5.7 Seiten im Site-Builder anpassen
 
 Alle Seiten werden von `site_builder_v2.py` generiert:
 
-| Seite | Funktion im Builder | Wann aendern |
-|-------|-------------------|-------------|
-| Startseite | `build_index_page()` (~Zeile 1800) | Hero-Text, Trust-Stats, Anzahl Artikel |
-| Artikel | `build_article_page()` | Automatisch aus JSON |
-| Kategorie-Seiten | `build_category_page()` | Automatisch; Meta-Descriptions im Dict `_category_descriptions` innerhalb der Funktion pflegen |
-| Karte | `build_map_page()` (~Zeile 2100) | Bei Kartendesign-Aenderungen |
-| Ueber uns | `build_about_page()` (~Zeile 3030) | Autoren-Info, Statistiken |
-| Impressum | `build_impressum_page()` (~Zeile 3388) | Bei Adress- oder Kontaktaenderungen -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
-| Datenschutz | `build_datenschutz_page()` (~Zeile 3468) | Bei neuen Trackern/Affiliates -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
-| Suche | `build_suche_page()` (~Zeile 3740) | Selten -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
-| Sitemap | `build_sitemap()` (~Zeile 3894) | Bewusst ohne impressum, datenschutz, suche. Neue SEO-irrelevante Seiten hier ebenfalls weglassen |
-| Navigation | `_base_template()` (~Zeile 1150) | Bei neuen Menue-Eintraegen |
-| `<head>`-Meta-Tags | `_base_template()` (~Zeile 282) | Bei neuen Verification-Tags (Google, Pinterest, etc.) |
+| Seite              | Funktion im Builder                      | Wann aendern                                                                                                   |
+| ------------------ | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Startseite         | `build_index_page()` (~Zeile 1800)       | Hero-Text, Trust-Stats, Anzahl Artikel                                                                         |
+| Artikel            | `build_article_page()`                   | Automatisch aus JSON                                                                                           |
+| Kategorie-Seiten   | `build_category_page()`                  | Automatisch; Meta-Descriptions im Dict `_category_descriptions` innerhalb der Funktion pflegen                 |
+| Karte              | `build_map_page()` (~Zeile 2100)         | Bei Kartendesign-Aenderungen                                                                                   |
+| Ueber uns          | `build_about_page()` (~Zeile 3030)       | Autoren-Info, Statistiken                                                                                      |
+| Impressum          | `build_impressum_page()` (~Zeile 3388)   | Bei Adress- oder Kontaktaenderungen -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap |
+| Datenschutz        | `build_datenschutz_page()` (~Zeile 3468) | Bei neuen Trackern/Affiliates -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap       |
+| Suche              | `build_suche_page()` (~Zeile 3740)       | Selten -- Seite traegt automatisch `noindex, follow` und ist nicht in der Sitemap                              |
+| Sitemap            | `build_sitemap()` (~Zeile 3894)          | Bewusst ohne impressum, datenschutz, suche. Neue SEO-irrelevante Seiten hier ebenfalls weglassen               |
+| Navigation         | `_base_template()` (~Zeile 1150)         | Bei neuen Menue-Eintraegen                                                                                     |
+| `<head>`-Meta-Tags | `_base_template()` (~Zeile 282)          | Bei neuen Verification-Tags (Google, Pinterest, etc.)                                                          |
 
 **SEO-Hinweis:** Neue Seiten, die nicht indexiert werden sollen (Utility-, Legal- oder Duplikat-Seiten), muessen zwei Dinge bekommen: (1) `<meta name="robots" content="noindex, follow">` im `<head>` und (2) keinen Eintrag in `build_sitemap()`. Beides wird im Builder per Post-Processing (`.replace()`-Aufruf nach `.format()`) und durch Weglassen in der `static_pages`-Liste geloest -- analog zu impressum/datenschutz/suche.
 
@@ -482,10 +655,10 @@ Nach jeder Aenderung: `python main.py --build-v2`
 
 Im `<head>`-Bereich jeder Seite sind aktuell folgende Verification-Tags hinterlegt (in `_base_template()`, ~Zeile 271 in `site_builder_v2.py`):
 
-| Dienst | Meta-Tag |
-|--------|---------|
+| Dienst                | Meta-Tag                                                                                       |
+| --------------------- | ---------------------------------------------------------------------------------------------- |
 | Google Search Console | `<meta name="google-site-verification" content="3OKzP9zKRrZV5V4-chXaN7GG39fdLAEeymXqKeqn4Rw">` |
-| Pinterest | `<meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">` |
+| Pinterest             | `<meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">`                     |
 
 Neuen Verification-Tag hinzufuegen: Einfach in `_base_template()` unterhalb der bestehenden Tags eintragen, dann `python main.py --build-v2` ausfuehren. Der Tag erscheint automatisch auf **allen** generierten Seiten.
 
@@ -493,83 +666,90 @@ Neuen Verification-Tag hinzufuegen: Einfach in `_base_template()` unterhalb der 
 
 Zusaetzlich zum Verification-Tag ist der **Pinterest Pixel** (Tag-ID: `2613413631015`) auf allen Seiten aktiv. Er wird durch die Konstante `_PINTEREST_TAG` in `site_builder_v2.py` (Zeile ~22) definiert und von `_write_html()` automatisch vor `</head>` jeder HTML-Datei eingefuegt.
 
-| Event | Seite | Zweck |
-|-------|-------|-------|
-| `PageView` | Alle Seiten | Seitenaufrufe tracken, Zielgruppe aufbauen |
-| `lead` | `danke.html` | Newsletter-Anmeldung als Conversion zaehlen |
+| Event      | Seite        | Zweck                                       |
+| ---------- | ------------ | ------------------------------------------- |
+| `PageView` | Alle Seiten  | Seitenaufrufe tracken, Zielgruppe aufbauen  |
+| `lead`     | `danke.html` | Newsletter-Anmeldung als Conversion zaehlen |
 
 **Pinterest Tag-ID aendern oder deaktivieren:** Konstante `_PINTEREST_TAG` in `site_builder_v2.py` anpassen, dann neu bauen.
 
 **Naechster Schritt (Auto-Pinnen):** Artikel koennen automatisch beim Veroeffentlichen als Pinterest-Pin erstellt werden. Dafuer werden benoetigt:
+
 - `PINTEREST_ACCESS_TOKEN` (aus Pinterest Developer App)
 - `PINTEREST_BOARD_ID` (Ziel-Pinnwand)
-Beide als Vercel Environment Variables setzen.
+  Beide als Vercel Environment Variables setzen.
 
 ---
 
-## 5. Konfiguration
+## 6. Konfiguration
 
-### 5.1 Vercel Environment Variables
+### 6.1 Vercel Environment Variables
 
 Alle hier aufgefuehrten Variablen muessen in Vercel unter **Settings -> Environment Variables** gesetzt sein.
 
-| Variable | Beschreibung | Beispielwert |
-|----------|-------------|--------------|
-| `DASHBOARD_PASSWORD` | Login-Passwort fuer /admin | (frei waehlbar, sicher!) |
-| `CRON_SECRET` | Absicherung der Mi/Sa-Cron-Jobs gegen unberechtigte Aufrufe | (langer Zufalls-String, mind. 32 Zeichen) |
-| `GITHUB_TOKEN` | Fine-grained PAT mit read+write auf das Repo | ghp_... |
-| `GITHUB_REPO` | Repository-Pfad | `derhefter/whisky-magazin-v2` |
-| `GITHUB_BRANCH` | Branch (Standard: main) | `main` |
-| `BREVO_API_KEY` | Brevo API-Key fuer Newsletter + Abonnenten-Statistik | xkeysib-... |
-| `BREVO_LIST_ID` | Brevo Newsletter-Listen-ID | `3` |
-| `OPENAI_API_KEY` | OpenAI Key fuer KI-Texte (WotM-Polishing + Dashboard-Generierung) | sk-... |
-| `UNSPLASH_API_KEY` | Unsplash Key fuer automatische Artikelbilder (Dashboard-Generierung) | (Unsplash Developer Key) |
-| `SITE_URL` | Basis-URL der Seite | `https://www.whisky-reise.com` |
+| Variable             | Beschreibung                                                         | Beispielwert                              |
+| -------------------- | -------------------------------------------------------------------- | ----------------------------------------- |
+| `DASHBOARD_PASSWORD` | Login-Passwort fuer /admin                                           | (frei waehlbar, sicher!)                  |
+| `CRON_SECRET`        | Absicherung der Mi/Sa-Cron-Jobs gegen unberechtigte Aufrufe          | (langer Zufalls-String, mind. 32 Zeichen) |
+| `GITHUB_TOKEN`       | Fine-grained PAT mit read+write auf das Repo                         | ghp_...                                   |
+| `GITHUB_REPO`        | Repository-Pfad                                                      | `derhefter/whisky-magazin-v2`             |
+| `GITHUB_BRANCH`      | Branch (Standard: main)                                              | `main`                                    |
+| `BREVO_API_KEY`      | Brevo API-Key fuer Newsletter + Abonnenten-Statistik                 | xkeysib-...                               |
+| `BREVO_LIST_ID`      | Brevo Newsletter-Listen-ID                                           | `3`                                       |
+| `OPENAI_API_KEY`          | OpenAI Key fuer KI-Texte (WotM-Polishing + Dashboard-Generierung)    | sk-...                               |
+| `UNSPLASH_API_KEY`        | Unsplash Key fuer automatische Artikelbilder (Dashboard-Generierung) | (Unsplash Developer Key)             |
+| `SITE_URL`                | Basis-URL der Seite                                                  | `https://www.whisky-reise.com`       |
+| `DEEPL_API_KEY`           | DeepL API Key fuer Artikel-Uebersetzungen (primaer)                  | Free-Keys enden auf `:fx`            |
+| `AZURE_TRANSLATOR_KEY`    | Azure Translator Key (Fallback wenn DeepL Quota erschoepft)          | Aus Azure Portal -> Cognitive Svcs   |
+| `AZURE_TRANSLATOR_REGION` | Azure-Region des Translator-Dienstes                                 | `westeurope` (Standard)              |
 
 **Wichtig:** Nach jeder Aenderung an Environment Variables muss Vercel **neu deployt** werden!
 
 **Neuen CRON_SECRET setzen (einmalig):**
+
 1. Vercel Dashboard -> Settings -> Environment Variables
 2. Neue Variable: Name = `CRON_SECRET`, Value = ein langer zufaelliger String (z.B. via Passwort-Generator, mind. 32 Zeichen)
 3. Neu deployen
 
-### 5.2 Lokale Konfiguration
+### 6.2 Lokale Konfiguration
 
 #### `.env` (im Projektordner, nicht in Git)
+
 ```
 BREVO_API_KEY=xkeysib-...        # Pflicht: fuer E-Mail-Benachrichtigungen (montags)
 OPENAI_API_KEY=sk-proj-...       # Optional: wird auch aus config.json gelesen
 CRON_SECRET=...                  # Nur fuer Vercel noetig, lokal nicht benoetigt
 ```
+
 `BREVO_API_KEY` ist Pflicht fuer die montaegliche E-Mail-Benachrichtigung an rosenhefter@gmail.com. Ohne diesen Key wird die E-Mail uebersprungen (kein Fehler, nur kein Versand).
 
 #### `config.json` (im Projektordner, nicht in Git)
 
-| Feld | Beschreibung | Wann aendern |
-|------|-------------|-------------|
-| `site.base_url` | Basis-URL der Seite | Bei Domain-Wechsel |
-| `site.name` | Seitenname | Bei Umbenennung |
-| `site.author` | Autoren | Bei Aenderung |
-| `openai.api_key` | OpenAI API Key | Bei Key-Erneuerung |
-| `openai.model` | GPT-Modell | Bei Modellwechsel |
-| `affiliate_links.amazon_tag` | Amazon Partner-Tag | Bei Tag-Aenderung |
-| `content_settings.unsplash_api_key` | Unsplash Key | Bei Key-Erneuerung |
+| Feld                                | Beschreibung        | Wann aendern       |
+| ----------------------------------- | ------------------- | ------------------ |
+| `site.base_url`                     | Basis-URL der Seite | Bei Domain-Wechsel |
+| `site.name`                         | Seitenname          | Bei Umbenennung    |
+| `site.author`                       | Autoren             | Bei Aenderung      |
+| `openai.api_key`                    | OpenAI API Key      | Bei Key-Erneuerung |
+| `openai.model`                      | GPT-Modell          | Bei Modellwechsel  |
+| `affiliate_links.amazon_tag`        | Amazon Partner-Tag  | Bei Tag-Aenderung  |
+| `content_settings.unsplash_api_key` | Unsplash Key        | Bei Key-Erneuerung |
 
-### 5.3 Brevo-Setup (Newsletter)
+### 6.3 Brevo-Setup (Newsletter)
 
-| Einstellung | Wert |
-|------------|------|
-| **Kontaktliste** | Liste ID `3` ("Whisky Magazin Newsletter") |
-| **DOI Template** | Template ID `1` (Bestaetigungs-E-Mail mit `{{ doubleoptin }}` Link) |
-| **Redirect nach DOI** | https://www.whisky-reise.com/danke.html |
+| Einstellung           | Wert                                                                |
+| --------------------- | ------------------------------------------------------------------- |
+| **Kontaktliste**      | Liste ID `3` ("Whisky Magazin Newsletter")                          |
+| **DOI Template**      | Template ID `1` (Bestaetigungs-E-Mail mit `{{ doubleoptin }}` Link) |
+| **Redirect nach DOI** | https://www.whisky-reise.com/danke.html                             |
 
 **Pruefen:** https://app.brevo.com -> Kontakte -> Listen
 
 ---
 
-## 6. Sicherheit & Wartung
+## 7. Sicherheit & Wartung
 
-### 6.1 Passwort-Rotation
+### 7.1 Passwort-Rotation
 
 Das Dashboard-Passwort sollte regelmaessig geaendert werden:
 
@@ -580,7 +760,7 @@ Das Dashboard-Passwort sollte regelmaessig geaendert werden:
 
 **Achtung:** Alle aktiven Sessions werden nach dem Wechsel ungueltig (Token basiert auf dem Passwort).
 
-### 6.2 GitHub Token erneuern
+### 7.2 GitHub Token erneuern
 
 GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 
@@ -594,16 +774,18 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 5. Vercel neu deployen
 6. In `.github/workflows/build.yml` ggf. das Repository Secret aktualisieren
 
-### 6.3 API-Key-Management
+### 7.3 API-Key-Management
 
-| Key | Wo gespeichert | Ablauf | Erneuern unter |
-|-----|---------------|--------|----------------|
-| OpenAI | `config.json` (lokal) + Vercel | Laeuft nicht ab, kann widerrufen werden | https://platform.openai.com/api-keys |
-| Unsplash | `config.json` (lokal) | Laeuft nicht ab | https://unsplash.com/oauth/applications |
-| Brevo | `.env` (lokal) + Vercel | Laeuft nicht ab | https://app.brevo.com -> Settings -> API Keys |
-| GitHub | Vercel | Fine-grained: max 1 Jahr | https://github.com/settings/tokens |
+| Key              | Wo gespeichert                 | Ablauf                                  | Erneuern unter                                        |
+| ---------------- | ------------------------------ | --------------------------------------- | ----------------------------------------------------- |
+| OpenAI           | `config.json` (lokal) + Vercel | Laeuft nicht ab, kann widerrufen werden | https://platform.openai.com/api-keys                  |
+| Unsplash         | `config.json` (lokal)          | Laeuft nicht ab                         | https://unsplash.com/oauth/applications               |
+| Brevo            | `.env` (lokal) + Vercel        | Laeuft nicht ab                         | https://app.brevo.com -> Settings -> API Keys         |
+| GitHub           | Vercel                         | Fine-grained: max 1 Jahr                | https://github.com/settings/tokens                    |
+| DeepL            | Vercel                         | Laeuft nicht ab; Free: 500k Zchn/Mon.  | https://www.deepl.com/pro-account                     |
+| Azure Translator | Vercel                         | Laeuft nicht ab; Free: 2 Mio. Zchn/Mon | https://portal.azure.com -> Cognitive Services        |
 
-### 6.4 Sicherheitsfeatures (implementiert)
+### 7.4 Sicherheitsfeatures (implementiert)
 
 - **HMAC-SHA256 Token-Authentifizierung** mit 24-Stunden-Ablauf
 - **Rate Limiting** auf Login (max. 5 Versuche / 15 Minuten)
@@ -615,35 +797,41 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 - **Double Opt-In** fuer Newsletter (DSGVO-konform)
 - **Cookie-Consent-Banner** auf allen oeffentlichen Seiten
 
-### 6.5 Bekannte Einschraenkungen
+### 7.5 Bekannte Einschraenkungen
 
 - Rate Limiting auf Admin-Operationen (Artikel, Themen, WotM) existiert nicht serverseitig, da Vercel Serverless Functions keinen persistenten Speicher haben. Die Token-basierte Authentifizierung bietet jedoch ausreichenden Schutz.
 - Der Admin-Bereich nutzt `unsafe-inline` fuer JavaScript in der CSP, da das Dashboard ein Single-Page-HTML ist. Fuer die oeffentliche Seite ist `unsafe-inline` nur fuer Styles aktiv (benoetig fuer Leaflet.js).
 
 ---
 
-## 7. Fehlerbehebung
+## 8. Fehlerbehebung
 
-### 7.1 Haeufige Probleme
+### 8.1 Haeufige Probleme
 
-| Problem | Moegliche Ursache | Loesung |
-|---------|-------------------|---------|
-| Dashboard zeigt "Fehler" | GITHUB_TOKEN abgelaufen | Neuen Token in Vercel setzen + neu deployen |
-| Dashboard zeigt Nullen ueberall | Env Vars fehlen oder falsch | `/api/admin_debug` aufrufen (nach Login) |
-| Artikel werden nicht veroeffentlicht | Keine freigegebenen Entwuerfe | Im Artikel-Tab pruefen und freigeben |
-| Artikel werden nicht veroeffentlicht | Cron-Job laeuft nicht | Vercel Dashboard -> Cron Jobs pruefen |
-| Artikel ist im Dashboard "veroeffentlicht" aber nicht auf der Seite | `meta.slug` fehlte in der JSON-Datei | `python main.py --build-v2` ausfuehren — der Builder normalisiert fehlende Slugs automatisch seit April 2026 |
-| Artikel hat kein Bild | `UNSPLASH_API_KEY` fehlt in Vercel | In Vercel setzen + neu deployen; dann Artikel im Dashboard neu generieren |
-| E-Mail kommt nicht (montags) | `BREVO_API_KEY` fehlt in `.env` | `.env` Datei pruefen: `BREVO_API_KEY=xkeysib-...` |
-| /admin zeigt 404 | Deployment veraltet | Vercel manuell neu deployen |
-| Thema wird nicht gespeichert | GITHUB_TOKEN abgelaufen | Neuen Token setzen + neu deployen |
-| Newsletter-Versand schlaegt fehl | BREVO_API_KEY fehlt in Vercel | In Vercel setzen + neu deployen |
-| KI-Texte werden nicht poliert | OPENAI_API_KEY fehlt in Vercel | In Vercel setzen + neu deployen |
-| Bilder fehlen auf der Seite | Bild nicht in `site-v2/images/` | Bild ablegen + `python main.py --build-v2` |
-| Website nicht aktuell | Build nicht gelaufen | Manuell: `python main.py --build-v2` + `git push` |
-| GitHub Actions Build schlaegt fehl | `OPENAI_API_KEY` Secret fehlt in GitHub | GitHub -> Repo -> Settings -> Secrets -> `OPENAI_API_KEY` setzen |
+| Problem                                                             | Moegliche Ursache                       | Loesung                                                                                                      |
+| ------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Dashboard zeigt "Fehler"                                            | GITHUB_TOKEN abgelaufen                 | Neuen Token in Vercel setzen + neu deployen                                                                  |
+| Dashboard zeigt Nullen ueberall                                     | Env Vars fehlen oder falsch             | `/api/admin_debug` aufrufen (nach Login)                                                                     |
+| Artikel werden nicht veroeffentlicht                                | Keine freigegebenen Entwuerfe           | Im Artikel-Tab pruefen und freigeben                                                                         |
+| Artikel werden nicht veroeffentlicht                                | Cron-Job laeuft nicht                   | Vercel Dashboard -> Cron Jobs pruefen                                                                        |
+| Artikel ist im Dashboard "veroeffentlicht" aber nicht auf der Seite | `meta.slug` fehlte in der JSON-Datei    | `python main.py --build-v2` ausfuehren — der Builder normalisiert fehlende Slugs automatisch seit April 2026 |
+| Artikel hat kein Bild                                               | `UNSPLASH_API_KEY` fehlt in Vercel      | In Vercel setzen + neu deployen; dann Artikel im Dashboard neu generieren                                    |
+| E-Mail kommt nicht (montags)                                        | `BREVO_API_KEY` fehlt in `.env`         | `.env` Datei pruefen: `BREVO_API_KEY=xkeysib-...`                                                            |
+| /admin zeigt 404                                                    | Deployment veraltet                     | Vercel manuell neu deployen                                                                                  |
+| Thema wird nicht gespeichert                                        | GITHUB_TOKEN abgelaufen                 | Neuen Token setzen + neu deployen                                                                            |
+| Newsletter-Versand schlaegt fehl                                    | BREVO_API_KEY fehlt in Vercel           | In Vercel setzen + neu deployen                                                                              |
+| KI-Texte werden nicht poliert                                       | OPENAI_API_KEY fehlt in Vercel          | In Vercel setzen + neu deployen                                                                              |
+| Bilder fehlen auf der Seite                                         | Bild nicht in `site-v2/images/`         | Bild ablegen + `python main.py --build-v2`                                                                   |
+| Website nicht aktuell                                               | Build nicht gelaufen                    | Manuell: `python main.py --build-v2` + `git push`                                                            |
+| GitHub Actions Build schlaegt fehl                                  | `OPENAI_API_KEY` Secret fehlt in GitHub | GitHub -> Repo -> Settings -> Secrets -> `OPENAI_API_KEY` setzen                                             |
+| Sprachumschalter erscheint nicht                                    | Site-Rebuild nach feature-Commit fehlt  | `python main.py --build-v2` + `git push` ausfuehren                                                         |
+| Uebersetzung schlaegt fehl (502)                                    | `DEEPL_API_KEY` fehlt oder ungueltig    | In Vercel setzen; Free-Key endet auf `:fx`                                                                   |
+| Uebersetzung schlaegt fehl (502), DeepL war gesetzt                 | DeepL Free-Quota erschoepft (500k/Mon.) | `AZURE_TRANSLATOR_KEY` + `AZURE_TRANSLATOR_REGION` in Vercel setzen                                         |
+| Uebersetzung liefert 429                                            | Rate-Limit (10 Anf./Stunde/IP)          | 1 Stunde warten; fuer internen Test VPN/anderen Rechner nutzen                                               |
+| Uebersetzung liefert alten Stand                                    | localStorage-Cache (24h) veraltet       | Browser-DevTools -> Application -> LocalStorage -> `tr_slug_lang` Eintrag loeschen                          |
+| Glossar-Import zeigt keine Duplikat-Warnungen                       | Batch-Groesse zu klein                  | Mindestens 5+ Eintraege importieren; Duplikate werden nur gegen bestehende Eintraege erkannt                 |
 
-### 7.2 Debug-Endpoint
+### 8.2 Debug-Endpoint
 
 Nach dem Login im Dashboard kannst du den Debug-Endpoint aufrufen:
 
@@ -653,29 +841,34 @@ Header: x-admin-token: <dein-token>
 ```
 
 Zeigt:
+
 - Welche Environment Variables gesetzt sind (ja/nein, keine Werte!)
 - GitHub API Verbindungsstatus
 - Brevo API Verbindungsstatus
 - Drafts-Verzeichnis Inhalt
 
-### 7.3 Notfall-Prozeduren
+### 8.3 Notfall-Prozeduren
 
 #### Seite ist komplett down
+
 1. Vercel Dashboard pruefen -> Deployments
 2. Letztes funktionierendes Deployment -> "Redeploy" klicken
 3. Falls Git-Problem:
-```bash
-cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
-git status
-git push
-```
+   
+   ```bash
+   cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
+   git status
+   git push
+   ```
 
 #### GitHub Token abgelaufen (Dashboard funktioniert nicht)
+
 1. https://github.com/settings/tokens -> Neuen Token erstellen
 2. Vercel -> Settings -> Env Vars -> `GITHUB_TOKEN` aktualisieren
 3. Vercel neu deployen (Deployments -> letztes -> Redeploy)
 
 #### Brevo API Key kompromittiert
+
 1. https://app.brevo.com -> Settings -> API Keys -> Alten Key loeschen
 2. Neuen Key erstellen
 3. Vercel -> Env Vars -> `BREVO_API_KEY` aktualisieren
@@ -683,13 +876,14 @@ git push
 5. Vercel neu deployen
 
 #### Artikel manuell veroeffentlichen (wenn Cron nicht laeuft)
+
 1. Dashboard -> Artikel-Tab -> Entwurf freigeben
 2. "Jetzt veroeffentlichen" (Rakete-Icon) klicken
 3. Oder: Browser-Aufruf: `https://www.whisky-reise.com/api/admin_publish` (mit Admin-Token im Header)
 
 ---
 
-## 8. Ordnerstruktur
+## 9. Ordnerstruktur
 
 ```
 whisky-magazin/
@@ -703,15 +897,6 @@ whisky-magazin/
 |   +-- whisky-of-the-month.json  WotM-Archiv
 |   +-- wotm.json           Aktuelles WotM
 |   +-- newsletter_history.json  Newsletter-Verlauf
-|   +-- glossary/           Whisky-Glossar-Daten
-|       +-- countries.json      Laender (Schottland, Irland, Deutschland)
-|       +-- regions.json        Regionen (Islay, Speyside, Highlands, ...)
-|       +-- distilleries.json   Destillerien
-|       +-- whiskies.json       Whisky-Abfuellungen
-|       +-- review/queue.json   Review-Queue fuer Imports
-|       +-- imports/raw/        Roh-Importdaten (unveraendert)
-|       +-- imports/validated/  Validierte Importdaten
-|       +-- imports/reports/    Import-Protokolle + Fehlerberichte
 +-- api/                    Vercel Serverless Functions
 |   +-- admin_auth.py           Login/Token
 |   +-- admin_data.py           Dashboard-Daten
@@ -720,14 +905,27 @@ whisky-magazin/
 |   +-- admin_publish.py        Cron: Artikel veroeffentlichen
 |   +-- admin_wotm.py           WotM + Newsletter
 |   +-- admin_debug.py          Debug-Endpoint
-|   +-- admin_glossary.py       Glossar CRUD + Import/Review-Workflow
 |   +-- generate_article.py     KI-Artikelgenerierung
 |   +-- subscribe.py            Newsletter-Anmeldung
+|   +-- admin_glossary.py       Glossar-Verwaltung (CRUD + Import/Review)
+|   +-- translate.py            KI-Uebersetzung (DeepL + Azure Fallback)
++-- articles/
+|   +-- translations/           Gecachte Uebersetzungen (auto-generiert)
+|       +-- en/slug.json        Englische Uebersetzungen
+|       +-- fr/ nl/ es/ ja/     Weitere Sprachen
++-- data/
+|   +-- glossary/
+|       +-- countries.json      Laender-Daten
+|       +-- regions.json        Regionen
+|       +-- distilleries.json   Destillerien
+|       +-- whiskies.json       Abfuellungen
+|       +-- review/queue.json   Import-Review-Queue
+|       +-- imports/            Rohe Import-Batches + Reports
 +-- site-v2/                Gebaute Website (von Vercel deployed)
-|   +-- admin/index.html    Admin-Dashboard (inkl. Glossar-Tab)
+|   +-- admin/index.html    Admin-Dashboard
 |   +-- artikel/            Artikel-HTML-Seiten
 |   +-- kategorie/          Kategorie-Seiten
-|   +-- whisky-glossar/     Glossar-Seiten (statisch generiert)
+|   +-- whisky-glossar/     Glossar-Seiten (Laender, Regionen, Destillerien)
 |   +-- images/             Bilder
 |   +-- style.css           Globales Stylesheet
 +-- .github/workflows/
@@ -737,7 +935,6 @@ whisky-magazin/
 +-- main.py                 CLI-Hauptskript
 +-- content_generator.py    GPT-4o Artikel-Generator
 +-- site_builder_v2.py      Statischer Site-Builder
-+-- glossary_builder.py     Glossar-Seiten-Generator
 +-- notifier.py             E-Mail-Benachrichtigungen
 +-- newsletter_generator.py Newsletter-Template-Generator
 +-- wotm_generator.py       WotM-Generator
@@ -752,252 +949,7 @@ whisky-magazin/
 
 ---
 
----
-
-## 9. Whisky-Glossar
-
-### 9.1 Ueberblick
-
-Das Whisky-Glossar ist ein datengetriebenes Verzeichnis fuer Laender, Regionen, Destillerien und Abfuellungen. Es wird als statische Seite in die bestehende Website integriert und ist zunaechst nur im Footer verlinkt (kein Hauptmenue-Eintrag).
-
-**Oeffentliche URLs:**
-
-| Seite | URL |
-|-------|-----|
-| Glossar-Startseite | /whisky-glossar/ |
-| Laenderseite | /whisky-glossar/laender/{slug}/ |
-| Regionen-Uebersicht | /whisky-glossar/regionen/ |
-| Regionsseite | /whisky-glossar/regionen/{slug}/ |
-| Destillerie-Uebersicht | /whisky-glossar/destillerien/ |
-| Destillerieseite | /whisky-glossar/destillerien/{slug}/ |
-| Whisky-Detailseite | /whisky-glossar/whiskys/{slug}/ |
-
-**Technische Architektur:**
-
-- Daten: dateibasiert als JSON in `data/glossary/`
-- Seiten werden von `glossary_builder.py` statisch generiert (als Teil von `python main.py --build-v2`)
-- API-Endpunkt: `api/admin_glossary.py` (Vercel Serverless)
-- Admin-Verwaltung: Dashboard -> Tab "Glossar"
-
----
-
-### 9.2 Admin-Tab: Glossar
-
-Der Glossar-Tab im Admin-Dashboard hat sechs Unter-Tabs:
-
-| Unter-Tab | Funktion |
-|-----------|---------|
-| **Laender** | Liste + CRUD fuer Laender-Eintraege |
-| **Regionen** | Liste + CRUD fuer Regionen |
-| **Destillerien** | Liste + CRUD fuer Destillerien |
-| **Whiskys** | Liste + CRUD fuer Whisky-Abfuellungen |
-| **Import** | CSV/JSON-Dateien hochladen oder einfuegen |
-| **Review** | Importierte Datensaetze pruefen, freigeben oder ablehnen |
-
-#### Neuen Eintrag anlegen (manuell)
-
-1. Dashboard -> Tab "Glossar"
-2. Unter-Tab der gewuenschten Entitaet waehlen (z.B. "Destillerien")
-3. "+ Neue Destillerie" klicken
-4. Pflichtfelder ausfuellen (mit * markiert)
-5. "Speichern" klicken
-6. Danach: `python main.py --build-v2` ausfuehren (oder beim naechsten regulaeren Build)
-
-#### Eintrag bearbeiten
-
-Stift-Icon (✏️) in der Tabellenzeile -> Felder anpassen -> Speichern.
-
-#### Eintrag loeschen
-
-Papierkorb-Icon (🗑️) -> Bestaetigung -> Soft-Delete (published=false, deleted=true). Der Eintrag bleibt in der Datei erhalten, wird aber nicht mehr auf der Website angezeigt.
-
----
-
-### 9.3 Import-Workflow
-
-**Wichtig: Importierte Datensaetze werden NICHT sofort veroeffentlicht.** Sie durchlaufen immer die Review-Stufe.
-
-#### Statusfluss
-
-```
-imported (raw) → Review-Queue (pending) → approved / rejected → published (live)
-```
-
-#### Importformate
-
-- **JSON**: Array von Objekten `[{...}, {...}]` oder einzelnes Objekt
-- **CSV**: Erste Zeile = Spaltennamen (muessen Feldnamen aus dem Datenmodell entsprechen)
-
-#### Import-Schritte im Dashboard
-
-1. Dashboard -> Glossar -> Import
-2. **Entitaet waehlen** (Whiskys / Destillerien / Regionen / Laender)
-3. **Format waehlen** (JSON oder CSV)
-4. **Datei hochladen** oder Text direkt einfuegen
-5. "Import starten" klicken
-6. Ergebnis wird angezeigt: Gesamt / Neu / Update-Kandidaten / Fehler
-7. Wechsel zu "Review" zum Pruefen der Eintraege
-
-#### Was passiert beim Import?
-
-1. Roh-Daten werden in `data/glossary/imports/raw/{batch-id}.json` gespeichert
-2. Automatische Validierung (Pflichtfelder, Slug-Format, ABV-Bereich)
-3. Normalisierung (Slug-Generierung, ID-Generierung, Timestamps)
-4. Dublettenpruefung (ID/Slug bereits vorhanden?)
-5. Bericht wird in `data/glossary/imports/reports/{batch-id}_report.json` gespeichert
-6. Alle Eintraege kommen in die Review-Queue (`data/glossary/review/queue.json`)
-
-#### Item-Status nach Import
-
-| Status | Bedeutung |
-|--------|-----------|
-| `new` | Neuer Datensatz, ID/Slug nicht vorhanden |
-| `update_candidate` | ID oder Slug bereits vorhanden -> wird bestehenden Datensatz ueberschreiben |
-| `error` | Pflichtfeld fehlt oder Validierungsfehler |
-| `incomplete` | Warnung: einzelne optionale Felder fehlen oder sind ungueltig |
-
----
-
-### 9.4 Review-Workflow
-
-#### Review-Queue aufrufen
-
-Dashboard -> Glossar -> Review
-
-Die Queue zeigt alle importierten Datensaetze mit Statusfiltern (Offen / Freigegeben / Abgelehnt / Veroeffentlicht).
-
-#### Review-Entscheidungen
-
-| Aktion | Ergebnis |
-|--------|---------|
-| **Freigeben** (✓) | review_status = "approved"; Datensatz bereit zur Veroeffentlichung |
-| **Ablehnen** (✗) | review_status = "rejected"; Datensatz wird nicht veroeffentlicht |
-
-Optional: Notiz zur Begruendung eingeben.
-
-#### Veroeffentlichen
-
-Nach der Freigabe erscheint ein gruener Balken am unteren Rand der Review-Queue:
-"X Datensaetze freigegeben – bereit zur Veroeffentlichung"
-
-1. Entitaet waehlen (Whiskys / Destillerien / etc.)
-2. "In Live-Daten uebernehmen" klicken
-3. Freigegebene Datensaetze werden in die jeweilige JSON-Datei geschrieben (`data/glossary/whiskies.json` etc.)
-4. Danach: Website neu bauen (`python main.py --build-v2`) damit die Seiten generiert werden
-
-**Wichtig:** Das Veroeffentlichen schreibt nur die Daten. Die statischen HTML-Seiten entstehen erst beim naechsten Build-Lauf.
-
----
-
-### 9.5 Datenmodell
-
-#### Pflichtfelder je Entitaet
-
-| Entitaet | Pflichtfelder |
-|---------|--------------|
-| Land | id, slug, name_de |
-| Region | id, slug, name, country_id |
-| Destillerie | id, slug, name, country_id, region_id |
-| Whisky | id, slug, name, country_id, distillery_id, whisky_type, abv |
-
-#### Whisky: wichtige Felder
-
-| Feld | Typ | Bedeutung |
-|------|-----|-----------|
-| `whisky_type` | string | single_malt / blended_malt / blended / single_grain / pot_still |
-| `smoke_profile` | string | none / light / medium / heavy / very_heavy |
-| `abv` | float | Alkoholgehalt in Prozent (20–95) |
-| `age_statement` | int | Reifejahre; leer = NAS |
-| `nas` | bool | No Age Statement |
-| `cask_types` | array | z.B. ["ex-bourbon", "sherry"] |
-| `style_tags` | array | z.B. ["torfig", "rauchig", "salzig"] |
-| `review_status` | string | approved / pending / rejected / published |
-| `published` | bool | true = live auf der Website |
-| `source_status` | string | verified / unverified / estimated |
-
-#### IDs und Slugs
-
-- IDs und Slugs muessen **eindeutig** innerhalb einer Entitaet sein
-- Slugs: nur Kleinbuchstaben, Zahlen, Bindestriche (a-z, 0-9, -)
-- Umlaute werden automatisch umgeschrieben (ae, oe, ue, ss)
-- ID wird automatisch aus dem Slug generiert wenn leer
-
----
-
-### 9.6 Seiten-Generator
-
-Die Glossar-Seiten werden von `glossary_builder.py` generiert und sind Teil des normalen Build-Prozesses:
-
-```bash
-python main.py --build-v2
-```
-
-Dabei werden automatisch generiert:
-- `/whisky-glossar/index.html` (Startseite mit Statistikband)
-- Pro Land: `/whisky-glossar/laender/{slug}/index.html`
-- Pro Region: `/whisky-glossar/regionen/{slug}/index.html`
-- Pro Destillerie: `/whisky-glossar/destillerien/{slug}/index.html`
-- Pro Whisky: `/whisky-glossar/whiskys/{slug}/index.html`
-- Index-Seiten: `/whisky-glossar/regionen/index.html` + `/whisky-glossar/destillerien/index.html`
-
-Nur Eintraege mit `"published": true` und ohne `"deleted": true` werden generiert.
-
-Alle Glossar-Seiten enthalten:
-- Breadcrumb-Navigation
-- JSON-LD Structured Data (BreadcrumbList, Product, LocalBusiness)
-- SEO-Titel und Meta-Description aus den Datensaetzen
-- Interne Verlinkung zwischen Entitaeten
-
----
-
-### 9.7 KI-gestuetzte Datenpflege (vorbereitet)
-
-Das System ist fuer externe KI-Agenten optimiert:
-
-- **Eindeutige IDs und Slugs** als stabiler Anker
-- **Klare Pflichtfelder** mit Validierung
-- **Deterministischer Import-Workflow**: Roh -> Review -> Live (kein Direktschreiben)
-- **Feldnamen** konsistent und selbsterklaerend (snake_case)
-- **source_status-Feld**: KI-generierte Datensaetze koennen als "ai_generated" oder "unverified" markiert werden
-
-Empfohlenes Format fuer KI-generierte Importe:
-
-```json
-[
-  {
-    "name": "Destilleriebeispiel",
-    "country_id": "scotland",
-    "region_id": "speyside",
-    "founded": 1887,
-    "owner": "Eigentuemergruppe",
-    "short_description": "Kurze Beschreibung...",
-    "source_status": "ai_generated",
-    "review_status": "pending"
-  }
-]
-```
-
-Der Import-Workflow erzeugt automatisch `id`, `slug` und `created_at` wenn diese fehlen.
-
----
-
-### 9.8 Erweiterung auf neue Laender
-
-Version 1 enthaelt Schottland, Irland und Deutschland. So wird ein neues Land hinzugefuegt:
-
-1. **Land anlegen**: Dashboard -> Glossar -> Laender -> "+ Neues Land"
-   - `id`: z.B. "japan"
-   - `slug`: z.B. "japan"
-   - `name_de`: z.B. "Japan"
-2. **Regionen anlegen**: Glossar -> Regionen -> "+ Neue Region" mit `country_id: "japan"`
-3. **Destillerien anlegen**: Glossar -> Destillerien mit `country_id: "japan"` und `region_id`
-4. **Website neu bauen**: `python main.py --build-v2`
-
-Alternativ: JSON-Datei direkt bearbeiten und per Import-Workflow einspielen.
-
----
-
-## 11. Checklisten
+## 10. Checklisten
 
 ### Woechentlich (ca. 10 Minuten)
 
@@ -1025,8 +977,9 @@ Alternativ: JSON-Datei direkt bearbeiten und per Import-Workflow einspielen.
 
 ### Quartalsweis (ca. 30 Minuten)
 
-- [ ] **GitHub Token** pruefen -- laeuft er bald ab? -> Erneuern (siehe 6.2)
+- [ ] **GitHub Token** pruefen -- laeuft er bald ab? -> Erneuern (siehe 7.2)
 - [ ] **API-Keys** pruefen -- alle noch gueltig?
+- [ ] **DeepL Quota** pruefen: https://www.deepl.com/pro-account -> Nutzung im laufenden Monat (Warnung: nahe 500.000 Zeichen -> Azure Key hinterlegen)
 - [ ] Datenschutzerklaerung aktualisieren falls noetig (neue Partner, Tracker)
 - [ ] Content-Strategie ueberpruefen: Welche Artikel performen gut? Welche Themen fehlen?
 - [ ] Neue Themen in die Queue eintragen (Dashboard -> Themen -> Neues Thema)
@@ -1035,7 +988,7 @@ Alternativ: JSON-Datei direkt bearbeiten und per Import-Workflow einspielen.
 
 ---
 
-## 12. Schnellreferenz
+## 11. Schnellreferenz
 
 ### CLI-Befehle
 
@@ -1053,18 +1006,18 @@ python main.py --stats          # Statistiken anzeigen
 
 ### Wichtige Dateien
 
-| Datei | Zweck | Wann anfassen |
-|-------|-------|--------------|
-| `config.json` | API-Keys, URLs | Bei Key-Erneuerung oder Domain-Wechsel |
-| `data/products.json` | Amazon-Produkte | Neue Produkte hinzufuegen |
-| `data/manual-locations.json` | Karteneintraege | Neue Destillerien/POIs |
-| `articles/*.json` | Artikel-Inhalte | Artikel manuell bearbeiten |
-| `site_builder_v2.py` | Website-Generator | Bei Design/Layout-Aenderungen |
-| `vercel.json` | Vercel-Config | Bei Deployment-Aenderungen |
+| Datei                        | Zweck             | Wann anfassen                          |
+| ---------------------------- | ----------------- | -------------------------------------- |
+| `config.json`                | API-Keys, URLs    | Bei Key-Erneuerung oder Domain-Wechsel |
+| `data/products.json`         | Amazon-Produkte   | Neue Produkte hinzufuegen              |
+| `data/manual-locations.json` | Karteneintraege   | Neue Destillerien/POIs                 |
+| `articles/*.json`            | Artikel-Inhalte   | Artikel manuell bearbeiten             |
+| `site_builder_v2.py`         | Website-Generator | Bei Design/Layout-Aenderungen          |
+| `vercel.json`                | Vercel-Config     | Bei Deployment-Aenderungen             |
 
 ---
 
-## 13. Rechtliches (DSGVO / TMG)
+## 12. Rechtliches (DSGVO / TMG)
 
 ### Pflichtseiten (alle vorhanden)
 
@@ -1074,17 +1027,18 @@ python main.py --stats          # Statistiken anzeigen
 
 ### Bei Aenderungen beachten
 
-| Aenderung | Datenschutzerklaerung aktualisieren? | Impressum aktualisieren? |
-|-----------|-------------------------------------|-------------------------|
-| Neuer Affiliate-Partner | Ja | Nein |
-| Neues Analytics-Tool | Ja + Cookie-Banner | Nein |
-| Neuer Newsletter-Anbieter | Ja | Nein |
-| Umzug / neue Adresse | Nein | Ja |
-| Neuer Hoster | Ja | Nein |
+| Aenderung                 | Datenschutzerklaerung aktualisieren? | Impressum aktualisieren? |
+| ------------------------- | ------------------------------------ | ------------------------ |
+| Neuer Affiliate-Partner   | Ja                                   | Nein                     |
+| Neues Analytics-Tool      | Ja + Cookie-Banner                   | Nein                     |
+| Neuer Newsletter-Anbieter | Ja                                   | Nein                     |
+| Umzug / neue Adresse      | Nein                                 | Ja                       |
+| Neuer Hoster              | Ja                                   | Nein                     |
 
 ### Newsletter (Double Opt-In)
 
 Der Newsletter nutzt DSGVO-konformes Double Opt-In:
+
 1. Nutzer traegt E-Mail auf der Website ein
 2. Brevo sendet Bestaetigungs-E-Mail (Template ID 1)
 3. Erst nach Klick auf Bestaetigungslink wird der Kontakt aktiv
