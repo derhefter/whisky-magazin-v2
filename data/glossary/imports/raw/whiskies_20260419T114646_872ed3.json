@@ -1,0 +1,40 @@
+{
+  "batch_id": "whiskies_20260419T114646_872ed3",
+  "entity": "whiskies",
+  "imported_at": "2026-04-19T11:46:46Z",
+  "raw": [
+    {
+      "name": "Ardbeg",
+      "founded": 1815,
+      "region_id": "islay",
+      "country_id": "scotland",
+      "core_range": [
+        {
+          "name": "Ardbeg Ten Years Old",
+          "age": 10,
+          "abv": 46
+        },
+        {
+          "name": "Ardbeg Uigeadail",
+          "age": null,
+          "abv": 54.2
+        },
+        {
+          "name": "Ardbeg Corryvreckan",
+          "age": null,
+          "abv": 57.1
+        },
+        {
+          "name": "Ardbeg An Oa",
+          "age": null,
+          "abv": 46.6
+        },
+        {
+          "name": "Ardbeg Wee Beastie",
+          "age": 5,
+          "abv": 47.4
+        }
+      ]
+    }
+  ]
+}
