@@ -207,7 +207,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): ardbeg"
       ],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "ardbeg",
         "slug": "ardbeg",
@@ -260,7 +260,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T15:20:45Z"
+      "reviewed_at": "2026-04-19T15:20:45Z",
+      "published_at": "2026-04-19T15:20:54Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
