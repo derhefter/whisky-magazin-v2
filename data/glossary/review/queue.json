@@ -2077,7 +2077,7 @@
           "match_reason": "Ähnlicher Name (Teilstring)"
         }
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg Uigeadail",
         "distillery_id": "ardbeg",
@@ -2100,7 +2100,10 @@
         "whisky_type": "single_malt",
         "abv": 54.2,
         "age_statement": "NAS"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T17:10:25Z"
     },
     {
       "batch_id": "whiskies_20260419T170654_7fa76a",
