@@ -1899,7 +1899,7 @@
       "item_slug": "ardbeg-corryvreckan",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg Corryvreckan",
         "distillery_id": "ardbeg",
@@ -1922,7 +1922,10 @@
         "whisky_type": "single_malt",
         "abv": 57.1,
         "age_statement": "NAS"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:59:30Z"
     },
     {
       "batch_id": "whiskies_20260419T115249_708fa3",
