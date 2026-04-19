@@ -295,7 +295,7 @@
       "item_slug": "bruichladdich",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bruichladdich",
         "slug": "bruichladdich",
@@ -348,7 +348,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T09:05:58Z"
+      "reviewed_at": "2026-04-19T09:05:58Z",
+      "published_at": "2026-04-19T11:05:33Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
@@ -357,7 +358,7 @@
       "item_slug": "bunnahabhain",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bunnahabhain",
         "slug": "bunnahabhain",
@@ -410,7 +411,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T09:06:10Z"
+      "reviewed_at": "2026-04-19T09:06:10Z",
+      "published_at": "2026-04-19T11:05:33Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
@@ -419,7 +421,7 @@
       "item_slug": "caol-ila",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "caol-ila",
         "slug": "caol-ila",
@@ -472,7 +474,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T09:18:29Z"
+      "reviewed_at": "2026-04-19T09:18:29Z",
+      "published_at": "2026-04-19T11:05:33Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
