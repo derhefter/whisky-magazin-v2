@@ -810,7 +810,7 @@
       "item_slug": "bowmore-12-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bowmore-12",
         "slug": "bowmore-12-jahre",
@@ -893,7 +893,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T09:39:55Z"
+      "reviewed_at": "2026-04-19T09:39:55Z",
+      "published_at": "2026-04-19T09:40:03Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
