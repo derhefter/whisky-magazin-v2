@@ -138,14 +138,14 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): islay"
       ],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "islay",
         "slug": "islay",
         "name": "Islay",
         "country_id": "scotland",
-        "short_description": "Die weltberühmte schottische Whisky-Insel, bekannt für extrem torfige und maritime Single Malts.",
-        "long_description": "Islay ist die südlichste Insel der Inneren Hebriden und gilt unangefochten als das Mekka für Fans von rauchigem Whisky. Mit ihren aktuell neun aktiven Brennereien bietet die Insel eine enorme geschmackliche Vielfalt, die von extremer Rauchnote (Laphroaig, Ardbeg) bis hin zu ungetorften, maritimen Malts (Bruichladdich, Bunnahabhain) reicht.",
+        "short_description": "Islay ist die südlichste der Inneren Hebriden und bekannt für ihre kräftig torfigen, maritimen Single Malts.",
+        "long_description": "Die Insel Islay ('Eye-la' ausgesprochen) liegt vor der Westküste Schottlands und beherbergt acht aktive Destillerien auf engstem Raum. Das lokal gestochene Torf verleiht den Whiskys ein unverwechselbares Raucharoma, das von Jodtönen, Meeressalz und Heilkräutern begleitet wird. Destillerien wie Ardbeg, Laphroaig, Lagavulin und Bowmore sind Pilgerstätten für Whisky-Enthusiasten aus aller Welt.",
         "style_notes": "Torfrauch, Jod, maritim, Seetang, salzig, medizinisch, teils süße Ex-Bourbon- oder schwere Sherry-Einflüsse.",
         "key_distilleries": [
           "ardbeg",
@@ -160,11 +160,11 @@
         ],
         "travel_context": "Islay ist das ultimative Reiseziel für Whisky-Fans. Erreichbar via Fähre von Kennacraig oder Flug ab Glasgow. Das jährliche Fèis Ìle (Islay Festival) im Mai ist ein globales Highlight.",
         "image": null,
-        "seo_title": "Islay Whisky Region: Alle Destillerien & Infos",
+        "seo_title": "Islay – Die Königin der Torf-Whiskys | Whisky-Glossar",
         "seo_description": "Entdecke die schottische Whisky-Insel Islay. Alle Infos zu torfigen Whiskys, den 9 Brennereien und wertvolle Reisetipps.",
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T08:44:12Z"
+        "last_updated": "2026-04-19T15:20:24Z"
       },
       "raw": {
         "id": "islay",
@@ -192,7 +192,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T15:20:24Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
