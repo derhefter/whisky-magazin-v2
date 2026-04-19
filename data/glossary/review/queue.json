@@ -538,7 +538,7 @@
       "item_slug": "kilchoman",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bowmore",
         "slug": "bowmore",
@@ -591,7 +591,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T17:13:32Z"
+      "reviewed_at": "2026-04-19T17:13:32Z",
+      "published_at": "2026-04-19T17:13:53Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
