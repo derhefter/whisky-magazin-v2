@@ -106,7 +106,7 @@
     "country_id": "scotland",
     "region_id": "islay",
     "founded": 1779,
-    "owner": "Beam Suntory",
+    "owner": "Suntory Global Spirits",
     "status": "active",
     "website": "https://www.bowmore.com",
     "short_description": "Bowmore ist die älteste Destillerie Islays und liegt direkt am Loch Indaal – bekannt für ausgewogene Torfigkeit und Eleganz.",
@@ -114,15 +114,15 @@
     "visit_info": "Tägliche Führungen, Whisky-Bibliothek für seltene Abfüllungen. Bowmore liegt fußläufig vom Hauptort der Insel.",
     "travel_context": "Bowmore ist ideal als Basislager für Islay-Besucher: zentral gelegen, gute Unterkunftsmöglichkeiten und Direktzugang zu allen Inselteilen.",
     "coordinates": {
-      "lat": 55.7564,
-      "lng": -6.2935
+      "lat": 55.756,
+      "lng": -6.288
     },
     "image": null,
-    "seo_title": "Bowmore Destillerie – Älteste Destillerie Islays | Whisky-Glossar",
-    "seo_description": "Bowmore auf Islay: Geschichte seit 1779, ausgewogener Islay-Stil und Reisetipps.",
+    "seo_title": "Bowmore Destillerie - Der ausgewogene Islay-Klassiker",
+    "seo_description": "Erfahre mehr über Bowmore.",
     "published": true,
-    "created_at": "2026-04-17T00:00:00Z",
-    "last_updated": "2026-04-17T00:00:00Z"
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-19T17:13:05Z"
   },
   {
     "id": "bruichladdich",
