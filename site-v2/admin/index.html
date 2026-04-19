@@ -552,6 +552,28 @@
     .wotm-status-badge--sent    { background: #d1fae5; color: #065f46; }
     .wotm-status-badge--pending { background: #fef3c7; color: #92400e; }
 
+    /* Diff pick buttons */
+    .diff-pick-btn {
+      background: var(--color-beige);
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      padding: 3px 9px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--color-muted);
+      transition: background 0.1s, border-color 0.1s, color 0.1s;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+    .diff-pick-btn:hover { background: #e2e8f0; border-color: #9ca3af; }
+    .diff-pick-btn.diff-pick-selected {
+      background: var(--color-amber);
+      border-color: var(--color-amber);
+      color: white;
+      font-weight: 700;
+    }
+
     /* ===== SECTION TITLES ===== */
     .section-title {
       font-family: 'Fraunces', Georgia, serif;
@@ -4568,6 +4590,39 @@ async function openReviewModal(batchId, itemId) {
 
 // ── Review diff helpers ─────────────────────────────────────────────────────
 
+// Stores conflict/extend values per field so pick buttons can reference them without escaping
+let _reviewConflictData = {};
+
+// Maps data field names → form element IDs in buildEntryForm()
+const _REVIEW_FIELD_TO_FORM_ID = {
+  id:'ef-id', slug:'ef-slug', published:'ef-pub',
+  name:'ef-name', name_de:'ef-name-de', name_en:'ef-name-en',
+  country_id:'ef-country', region_id:'ef-region', distillery_id:'ef-distillery',
+  founded:'ef-founded', owner:'ef-owner', status:'ef-status',
+  website:'ef-website',
+  short_description:'ef-short', long_description:'ef-long',
+  style_notes:'ef-style', visit_info:'ef-visit',
+  travel_context:'ef-travel', editorial_notes:'ef-editorial',
+  tasting_notes_nose:'ef-nose', tasting_notes_palate:'ef-palate',
+  tasting_notes_finish:'ef-finish',
+  seo_title:'ef-seo-t', seo_description:'ef-seo-d',
+  abv:'ef-abv', age_statement:'ef-age', smoke_profile:'ef-smoke',
+  whisky_type:'ef-type',
+};
+
+function _reviewPickField(field, choice) {
+  const data = _reviewConflictData[field];
+  if (!data) return;
+  const value = choice === 'import' ? data.inStr : data.exStr;
+  const formId = _REVIEW_FIELD_TO_FORM_ID[field];
+  if (formId) {
+    const el = document.getElementById(formId);
+    if (el) el.value = value;
+  }
+  document.querySelectorAll(`.diff-pick-btn[data-field="${CSS.escape(field)}"]`)
+    .forEach(b => b.classList.toggle('diff-pick-selected', b.dataset.choice === choice));
+}
+
 const _REVIEW_TEXT_FIELDS = new Set([
   'long_description','short_description','travel_context',
   'editorial_notes','visit_info','style_notes','tasting_notes',
@@ -4619,6 +4674,14 @@ function _reviewComputeDiff(existing, incoming) {
 }
 
 function _reviewRenderDiff(rows, existingName) {
+  // Populate global lookup so _reviewPickField can access values
+  _reviewConflictData = {};
+  rows.forEach(r => {
+    if (r.action === 'conflict' || r.action === 'extend') {
+      _reviewConflictData[r.field] = { exStr: r.exStr, inStr: r.inStr };
+    }
+  });
+
   const CFG = {
     new:      { label:'Neu',       bg:'#d1fae5', color:'#065f46', icon:'✚' },
     extend:   { label:'Erweitert', bg:'#fef3c7', color:'#92400e', icon:'↑' },
@@ -4634,31 +4697,49 @@ function _reviewRenderDiff(rows, existingName) {
 
   const parts = [];
   if (newN)  parts.push(`<span style="color:#065f46;font-weight:600;">✚ ${newN} neu befüllt</span>`);
-  if (extN)  parts.push(`<span style="color:#92400e;font-weight:600;">↑ ${extN} erweitert</span>`);
+  if (extN)  parts.push(`<span style="color:#92400e;font-weight:600;">↑ ${extN} wählbar</span>`);
   if (conN)  parts.push(`<span style="color:#991b1b;font-weight:600;">⚠ ${conN} Konflikt${conN>1?'e':''}</span>`);
-  if (keptN) parts.push(`<span style="color:#6b7280;">${keptN} unverändert behalten</span>`);
+  if (keptN) parts.push(`<span style="color:#6b7280;">${keptN} behalten</span>`);
 
   if (!rows.length) return `<p style="font-size:0.82rem;color:var(--color-muted);">Keine Unterschiede – Einträge sind identisch.</p>`;
 
   const tableRows = rows.map(r => {
     const cfg = CFG[r.action];
+    const canToggle = r.action === 'conflict' || r.action === 'extend';
+    // Default selection: conflict → existing kept; extend → import adopted
+    const defaultChoice = r.action === 'conflict' ? 'existing' : 'import';
+
+    const actionCell = canToggle ? `
+      <div style="display:flex;flex-direction:column;gap:3px;min-width:110px;">
+        <button class="diff-pick-btn ${defaultChoice==='existing'?'diff-pick-selected':''}"
+          data-field="${esc(r.field)}" data-choice="existing"
+          onclick="_reviewPickField('${esc(r.field)}','existing')">
+          ← Behalten
+        </button>
+        <button class="diff-pick-btn ${defaultChoice==='import'?'diff-pick-selected':''}"
+          data-field="${esc(r.field)}" data-choice="import"
+          onclick="_reviewPickField('${esc(r.field)}','import')">
+          Übernehmen →
+        </button>
+      </div>` :
+      `<span style="background:${cfg.bg};color:${cfg.color};padding:2px 8px;border-radius:999px;font-size:0.68rem;font-weight:700;">${cfg.icon} ${cfg.label}</span>`;
+
     return `<tr>
       <td style="padding:5px 10px;font-size:0.72rem;font-weight:600;color:var(--color-muted);white-space:nowrap;vertical-align:top;border-bottom:1px solid #f1f5f9;">${esc(r.field)}</td>
-      <td style="padding:5px 10px;font-size:0.78rem;color:#374151;vertical-align:top;border-bottom:1px solid #f1f5f9;max-width:180px;">${r.exStr ? esc(cut(r.exStr)) : '<span style="color:#9ca3af;font-style:italic;">leer</span>'}</td>
-      <td style="padding:5px 10px;font-size:0.78rem;color:#374151;vertical-align:top;border-bottom:1px solid #f1f5f9;max-width:180px;">${r.inStr ? esc(cut(r.inStr)) : '<span style="color:#9ca3af;font-style:italic;">leer</span>'}</td>
-      <td style="padding:5px 10px;text-align:center;vertical-align:top;border-bottom:1px solid #f1f5f9;white-space:nowrap;">
-        <span style="background:${cfg.bg};color:${cfg.color};padding:2px 8px;border-radius:999px;font-size:0.68rem;font-weight:700;">${cfg.icon} ${cfg.label}</span>
-      </td>
+      <td style="padding:5px 10px;font-size:0.78rem;color:#374151;vertical-align:top;border-bottom:1px solid #f1f5f9;max-width:160px;">${r.exStr ? esc(cut(r.exStr)) : '<span style="color:#9ca3af;font-style:italic;">leer</span>'}</td>
+      <td style="padding:5px 10px;font-size:0.78rem;color:#374151;vertical-align:top;border-bottom:1px solid #f1f5f9;max-width:160px;">${r.inStr ? esc(cut(r.inStr)) : '<span style="color:#9ca3af;font-style:italic;">leer</span>'}</td>
+      <td style="padding:5px 10px;vertical-align:top;border-bottom:1px solid #f1f5f9;">${actionCell}</td>
     </tr>`;
   }).join('');
 
+  const hasToggle = conN > 0 || extN > 0;
   return `
     <div style="font-size:0.78rem;margin-bottom:10px;">
       Bestehend: <strong>${esc(existingName)}</strong>
       &nbsp;·&nbsp; ${parts.join(' &nbsp;·&nbsp; ')}
     </div>
-    ${conN ? `<div style="background:#fee2e2;border-left:3px solid #ef4444;padding:6px 10px;border-radius:0 4px 4px 0;font-size:0.78rem;color:#991b1b;margin-bottom:10px;">
-      ⚠ Bei Konflikten wurde der bestehende Wert beibehalten. Bitte im Formular unten manuell prüfen.
+    ${hasToggle ? `<div style="background:#eff6ff;border-left:3px solid #3b82f6;padding:6px 10px;border-radius:0 4px 4px 0;font-size:0.78rem;color:#1e40af;margin-bottom:10px;">
+      Klicke bei Konflikten und erweiterten Feldern auf <em>← Behalten</em> oder <em>Übernehmen →</em> — das Formular unten wird sofort aktualisiert.
     </div>` : ''}
     <div style="overflow-x:auto;">
       <table style="width:100%;border-collapse:collapse;">
@@ -4666,7 +4747,7 @@ function _reviewRenderDiff(rows, existingName) {
           <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">FELD</th>
           <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">AKTUELL</th>
           <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">IMPORT</th>
-          <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">AKTION</th>
+          <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">ENTSCHEIDUNG</th>
         </tr></thead>
         <tbody>${tableRows}</tbody>
       </table>
