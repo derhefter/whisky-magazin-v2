@@ -43,5 +43,14 @@
     "published": true,
     "created_at": "2026-04-17T00:00:00Z",
     "last_updated": "2026-04-17T00:00:00Z"
+  },
+  {
+    "id": "oesterreich",
+    "slug": "oesterreich",
+    "published": true,
+    "name_de": "Österreich",
+    "name_en": "Austria",
+    "created_at": "2026-04-19T17:19:19Z",
+    "last_updated": "2026-04-19T17:19:19Z"
   }
 ]
