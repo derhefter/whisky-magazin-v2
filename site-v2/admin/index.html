@@ -315,6 +315,237 @@
       opacity: 1;
     }
 
+    /* ═══════════════════════════════════════════
+       DASHBOARD COMMAND CENTER
+       ═══════════════════════════════════════════ */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 900px) { .dashboard-grid { grid-template-columns: 1fr; } }
+
+    .dash-panel {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 4px solid transparent;
+      transition: box-shadow 0.2s;
+    }
+    .dash-panel:hover { box-shadow: var(--shadow-lg); }
+    .dash-panel--editorial  { border-top-color: var(--color-amber); }
+    .dash-panel--glossar    { border-top-color: #2980B9; }
+    .dash-panel--newsletter { border-top-color: #27AE60; }
+
+    .dash-panel-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      border-bottom: 1px solid var(--color-beige);
+      padding-bottom: 8px;
+    }
+    .dash-panel-title-icon {
+      width: 16px; height: 16px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .dash-urgent {
+      border-left: 4px solid #f59e0b;
+      background: linear-gradient(to right, #fffbeb 0%, white 40%);
+    }
+    .dash-panel.dash-urgent { border-top-color: transparent; }
+
+    .dash-metric { display: flex; align-items: baseline; gap: 8px; }
+    .dash-metric-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2rem;
+      color: var(--color-amber);
+      line-height: 1;
+    }
+    .dash-metric-label { font-size: 0.8rem; color: var(--color-muted); }
+
+    .glossar-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .glossar-mini-cell {
+      background: var(--color-beige);
+      border-radius: 6px;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: background 0.15s, transform 0.15s, border-color 0.15s;
+    }
+    .glossar-mini-cell:hover {
+      background: #e8e0d4;
+      border-left-color: #2980B9;
+      transform: translateY(-1px);
+    }
+    .glossar-mini-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--color-amber);
+    }
+    .glossar-mini-label { font-size: 0.7rem; color: var(--color-muted); text-transform: uppercase; }
+
+    .pipeline-flow { display: flex; align-items: center; gap: 4px; }
+    .pipeline-stage { display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1; }
+    .pipeline-chip {
+      background: #FEF3E0;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--color-amber);
+      line-height: 1;
+      min-width: 48px;
+      text-align: center;
+      border-bottom: 2px solid var(--color-amber);
+    }
+    .pipeline-label { font-size: 0.62rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 1px; }
+    .pipeline-arrow { color: #c8b89a; font-size: 1rem; flex-shrink: 0; margin-bottom: 12px; }
+
+    .pulse-strip {
+      background: var(--color-dark);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.72rem;
+      padding: 7px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin: -16px -16px 16px -16px;
+      letter-spacing: 0.3px;
+    }
+    .pulse-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 0 0 rgba(74,222,128,0.6);
+      display: inline-block;
+      margin-right: 6px;
+      animation: pulse-anim 2s infinite;
+    }
+    @keyframes pulse-anim {
+      0%   { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+      50%  { opacity: 0.6; }
+      70%  { box-shadow: 0 0 0 5px rgba(74,222,128,0); }
+      100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+
+    .activity-chart-wrap {
+      background: white;
+      border-radius: 10px;
+      padding: 20px 20px 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+    .activity-chart-svg { width: 100%; height: auto; display: block; }
+    .activity-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.75rem; margin-top: 10px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+    .activity-timeline-wrap {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .activity-timeline {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-left: 20px;
+    }
+    .activity-timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: var(--color-beige);
+      border-radius: 2px;
+    }
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.82rem;
+      padding: 6px 0;
+      position: relative;
+    }
+    .activity-item:last-child { padding-bottom: 0; }
+    .activity-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 3px;
+      position: absolute;
+      left: -17px;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+    .activity-dot--approved  { background: var(--color-green); }
+    .activity-dot--merged    { background: #2980B9; }
+    .activity-dot--imported  { background: var(--color-amber); }
+    .activity-dot--published { background: #6ab04c; }
+    .activity-dot--rejected  { background: var(--color-red); }
+    .activity-text { flex: 1; line-height: 1.4; }
+    .activity-name { font-weight: 600; color: var(--color-text); display: block; }
+    .activity-sub  { font-size: 0.72rem; color: var(--color-muted); }
+    .activity-time { color: var(--color-muted); font-size: 0.72rem; white-space: nowrap; margin-left: auto; padding-left: 8px; }
+
+    .dash-skeleton {
+      background: linear-gradient(90deg, var(--color-beige) 25%, #e0dbd5 50%, var(--color-beige) 75%);
+      background-size: 200% 100%;
+      border-radius: 6px;
+      animation: shimmer 1.4s infinite;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .wotm-card {
+      background: var(--color-beige);
+      border-left: 3px solid var(--color-amber);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 14px 14px 16px;
+    }
+    .wotm-month-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-muted);
+      margin-bottom: 4px;
+    }
+    .wotm-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+    .wotm-sub { font-size: 0.78rem; color: var(--color-muted); margin-top: 2px; }
+    .wotm-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .wotm-status-badge--sent    { background: #d1fae5; color: #065f46; }
+    .wotm-status-badge--pending { background: #fef3c7; color: #92400e; }
+
     /* ===== SECTION TITLES ===== */
     .section-title {
       font-family: 'Fraunces', Georgia, serif;
@@ -1639,87 +1870,315 @@ function loadTab(name) {
    ============================================================ */
 async function loadUebersicht() {
   const container = document.getElementById('stats-container');
-  container.innerHTML = '<div class="loading-text">Lädt Übersicht…</div>';
+  // Skeleton-Loader
+  container.innerHTML = `
+    <div class="pulse-strip" style="background:var(--color-dark);border-radius:8px 8px 0 0;padding:7px 16px;margin-bottom:16px;">
+      <span style="color:rgba(255,255,255,0.4);font-size:0.72rem;">Lädt…</span>
+    </div>
+    <div class="dashboard-grid" style="margin-bottom:16px;">
+      ${[1,2,3].map(()=>`<div class="dash-panel" style="gap:14px;">
+        <div class="dash-skeleton" style="height:14px;width:60%;"></div>
+        <div class="dash-skeleton" style="height:40px;width:45%;"></div>
+        <div class="dash-skeleton" style="height:14px;width:80%;"></div>
+        <div class="dash-skeleton" style="height:72px;"></div>
+      </div>`).join('')}
+    </div>
+    <div class="activity-chart-wrap">
+      <div class="dash-skeleton" style="height:160px;border-radius:6px;"></div>
+    </div>`;
+
   try {
-    // Load site stats + glossary data in parallel
-    const [data, queueData, distData, whiskyData] = await Promise.all([
-      apiGet(API.data + '?section=stats'),
-      apiGet(API.glossar + '?action=review_queue').catch(() => ({ items: [] })),
-      apiGet(API.glossar + '?action=list&entity=distilleries').catch(() => ({ items: [] })),
-      apiGet(API.glossar + '?action=list&entity=whiskies').catch(() => ({ items: [] })),
+    const [siteData, queueData, distData, whiskyData,
+           regionData, countryData, wotmData] = await Promise.all([
+      apiGet(API.data    + '?section=stats'),
+      apiGet(API.glossar + '?action=review_queue').catch(() => ({items:[]})),
+      apiGet(API.glossar + '?action=list&entity=distilleries').catch(() => ({items:[]})),
+      apiGet(API.glossar + '?action=list&entity=whiskies').catch(() => ({items:[]})),
+      apiGet(API.glossar + '?action=list&entity=regions').catch(() => ({items:[]})),
+      apiGet(API.glossar + '?action=list&entity=countries').catch(() => ({items:[]})),
+      apiGet(API.wotm    + '?action=list').catch(() => ({})),
     ]);
-    const s = data.stats || data;
+
+    const s = siteData.stats || siteData;
     const qItems = queueData.items || [];
     const reviewPending  = qItems.filter(i => i.review_status === 'pending').length;
-    const reviewApproved = qItems.filter(i => i.review_status === 'approved' || i.review_status === 'merged').length;
-    const distCount  = (distData.items  || []).filter(i => i.published && !i.deleted).length;
-    const whiskCount = (whiskyData.items || []).filter(i => i.published && !i.deleted).length;
+    const reviewApproved = qItems.filter(i => ['approved','merged'].includes(i.review_status)).length;
+    const distLive   = (distData.items||[]).filter(i=>i.published&&!i.deleted).length;
+    const whiskyLive = (whiskyData.items||[]).filter(i=>i.published&&!i.deleted).length;
+    const regionLive = (regionData.items||[]).filter(i=>i.published&&!i.deleted).length;
+    const countryLive= (countryData.items||[]).filter(i=>i.published&&!i.deleted).length;
 
-    const goGlossar = (sub) => `goToTab('glossar');setTimeout(()=>{ const btn=document.querySelector('.glossar-sub-btn[onclick*=\\'${sub}\\']'); if(btn) switchGlossarSub('${sub}',btn); },200);`;
+    const nowKey = new Date().toISOString().slice(0,7);
+    const wotmEntry = (wotmData.entries || {})[nowKey] || null;
+
+    const allGlossarItems = [
+      ...(distData.items||[]).map(i=>({...i,_entity:'dist'})),
+      ...(whiskyData.items||[]).map(i=>({...i,_entity:'whisky'})),
+      ...(regionData.items||[]).map(i=>({...i,_entity:'other'})),
+      ...(countryData.items||[]).map(i=>({...i,_entity:'other'})),
+    ];
+    const chartData = _buildMonthlyChart(allGlossarItems);
+
+    localStorage.setItem('dash_loaded', new Date().toISOString());
+
+    const urgentReview = reviewPending > 0;
+    const urgentDrafts = (s.drafts ?? 0) > 0;
 
     container.innerHTML = `
-      <div class="stats-grid">
-        <div class="stat-card stat-card-link" onclick="goToTab('newsletter')" title="Newsletter-Tab öffnen">
-          <span class="stat-icon">&#9993;&#65039;</span>
-          <div class="stat-number">${fmt(s.subscribers ?? s.abonnenten ?? 0)}</div>
-          <div class="stat-label">Abonnenten</div>
-          <div class="stat-hint">&#8594; Newsletter</div>
+      <div class="pulse-strip">
+        <span><span class="pulse-dot"></span>Live · Stand: gerade eben</span>
+        <button onclick="loadUebersicht()"
+          style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.85);
+                 padding:3px 12px;border-radius:4px;cursor:pointer;font-size:0.72rem;transition:background 0.15s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.background='transparent'">↻ Aktualisieren</button>
+      </div>
+
+      <div class="dashboard-grid">
+
+        <!-- REDAKTION -->
+        <div class="dash-panel dash-panel--editorial ${urgentDrafts ? 'dash-urgent' : ''}">
+          <div class="dash-panel-title">
+            <span class="dash-panel-title-icon" style="background:var(--color-amber);opacity:0.6;"></span>
+            Redaktion
+          </div>
+          <div>
+            <div style="font-size:0.72rem;font-weight:600;color:var(--color-muted);letter-spacing:1px;margin-bottom:8px;">ARTIKEL</div>
+            <div class="dash-metric">
+              <span class="dash-metric-num" style="${urgentDrafts?'color:#d97706':''}">${fmt(s.drafts??0)}</span>
+              <span class="dash-metric-label">Entwürfe warten</span>
+            </div>
+            ${urgentDrafts ? '<div style="font-size:0.75rem;color:#92400e;margin-top:3px;">→ Freigabe ausstehend</div>' : ''}
+          </div>
+          <div style="border-top:1px solid var(--color-beige);padding-top:12px;">
+            <div style="font-size:0.72rem;font-weight:600;color:var(--color-muted);letter-spacing:1px;margin-bottom:10px;">THEMEN-PIPELINE</div>
+            <div class="pipeline-flow">
+              <div class="pipeline-stage">
+                <div class="pipeline-chip">${fmt(s.topics_open??s.themen_offen??0)}</div>
+                <div class="pipeline-label">Offen</div>
+              </div>
+              <div class="pipeline-arrow">›</div>
+              <div class="pipeline-stage">
+                <div class="pipeline-chip">${fmt(s.topics_in_progress??0)}</div>
+                <div class="pipeline-label">Aktiv</div>
+              </div>
+              <div class="pipeline-arrow">›</div>
+              <div class="pipeline-stage">
+                <div class="pipeline-chip">${fmt(s.topics_done??s.themen_erledigt??0)}</div>
+                <div class="pipeline-label">Erledigt</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn btn-secondary btn-sm" onclick="goToTab('artikel')">Artikel →</button>
+            <button class="btn btn-secondary btn-sm" onclick="goToTab('themen')">Themen →</button>
+          </div>
         </div>
-        <div class="stat-card stat-card-link" onclick="goToTab('artikel')" title="Artikel-Tab öffnen">
-          <span class="stat-icon">&#128221;</span>
-          <div class="stat-number">${fmt(s.drafts ?? s.entwerfe_wartend ?? 0)}</div>
-          <div class="stat-label">Entwürfe wartend</div>
-          <div class="stat-hint">&#8594; Artikel</div>
+
+        <!-- GLOSSAR -->
+        <div class="dash-panel dash-panel--glossar ${urgentReview ? 'dash-urgent' : ''}">
+          <div class="dash-panel-title">
+            <span class="dash-panel-title-icon" style="background:#2980B9;opacity:0.6;"></span>
+            Whisky-Glossar
+          </div>
+          ${reviewPending > 0 ? `
+          <div style="background:#fef3c7;border-left:3px solid #f59e0b;border-radius:0 6px 6px 0;
+                      padding:10px 14px;font-size:0.82rem;color:#92400e;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span>⚠ <strong>${reviewPending}</strong> Einträge warten auf Review</span>
+            <button class="btn btn-warning btn-sm" style="margin-left:auto;padding:3px 10px;font-size:0.75rem;"
+              onclick="goToTab('glossar');setTimeout(()=>{const b=document.querySelector('.glossar-sub-btn[onclick*=\\'review\\']');if(b)switchGlossarSub('review',b);},200)">
+              Jetzt prüfen →
+            </button>
+          </div>` : ''}
+          ${reviewApproved > 0 ? `
+          <div style="background:#d1fae5;border-left:3px solid #6ee7b7;border-radius:0 6px 6px 0;
+                      padding:10px 14px;font-size:0.82rem;color:#065f46;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span>✅ <strong>${reviewApproved}</strong> freigegeben</span>
+            <button class="btn btn-success btn-sm" style="margin-left:auto;padding:3px 10px;font-size:0.75rem;"
+              onclick="publishApproved()">Veröffentlichen →</button>
+          </div>` : ''}
+          <div class="glossar-mini-grid">
+            <div class="glossar-mini-cell" onclick="goToTab('glossar')" title="Länder anzeigen">
+              <div class="glossar-mini-num">${fmt(countryLive)}</div>
+              <div class="glossar-mini-label">🌍 Länder</div>
+            </div>
+            <div class="glossar-mini-cell" onclick="goToTab('glossar')" title="Regionen anzeigen">
+              <div class="glossar-mini-num">${fmt(regionLive)}</div>
+              <div class="glossar-mini-label">🗺 Regionen</div>
+            </div>
+            <div class="glossar-mini-cell" onclick="goToTab('glossar')" title="Destillerien anzeigen">
+              <div class="glossar-mini-num">${fmt(distLive)}</div>
+              <div class="glossar-mini-label">🏭 Destillerien</div>
+            </div>
+            <div class="glossar-mini-cell" onclick="goToTab('glossar')" title="Whiskys anzeigen">
+              <div class="glossar-mini-num">${fmt(whiskyLive)}</div>
+              <div class="glossar-mini-label">🥃 Whiskys</div>
+            </div>
+          </div>
+          <div style="margin-top:auto;">
+            <button class="btn btn-secondary btn-sm"
+              onclick="goToTab('glossar');setTimeout(()=>{const b=document.querySelector('.glossar-sub-btn[onclick*=\\'import\\']');if(b)switchGlossarSub('import',b);},200)">
+              📥 Import starten
+            </button>
+          </div>
         </div>
-        <div class="stat-card stat-card-link" onclick="goToTab('themen')" title="Themen-Tab öffnen">
-          <span class="stat-icon">&#128203;</span>
-          <div class="stat-number">${fmt(s.topics_open ?? s.themen_offen ?? 0)}</div>
-          <div class="stat-label">Themen offen</div>
-          <div class="stat-hint">&#8594; Themen</div>
-        </div>
-        <div class="stat-card stat-card-link" onclick="goToTab('themen')" title="Themen-Tab öffnen">
-          <span class="stat-icon">&#9989;</span>
-          <div class="stat-number">${fmt(s.topics_done ?? s.themen_erledigt ?? 0)}</div>
-          <div class="stat-label">Themen erledigt</div>
-          <div class="stat-hint">&#8594; Themen</div>
+
+        <!-- NEWSLETTER & WotM -->
+        <div class="dash-panel dash-panel--newsletter">
+          <div class="dash-panel-title">
+            <span class="dash-panel-title-icon" style="background:#27AE60;opacity:0.6;"></span>
+            Newsletter & WotM
+          </div>
+          ${wotmEntry ? `
+          <div class="wotm-card">
+            <div class="wotm-month-label">Whisky des Monats · ${nowKey}</div>
+            <div class="wotm-name">${esc(wotmEntry.whisky_name||wotmEntry.name||'–')}</div>
+            <div class="wotm-sub">${esc(wotmEntry.destillerie||'')}${wotmEntry.region?' · '+esc(wotmEntry.region):''}</div>
+            <div><span class="wotm-status-badge ${wotmEntry.newsletter_gesendet?'wotm-status-badge--sent':'wotm-status-badge--pending'}">
+              ${wotmEntry.newsletter_gesendet ? '✓ Newsletter gesendet' : '⚠ Newsletter ausstehend'}
+            </span></div>
+          </div>` : `
+          <div class="wotm-card" style="text-align:center;color:var(--color-muted);font-size:0.82rem;border-left-color:#c8b89a;">
+            Kein WotM für ${nowKey} angelegt
+          </div>`}
+          <div>
+            <div style="font-size:0.72rem;font-weight:600;color:var(--color-muted);letter-spacing:1px;margin-bottom:8px;">ABONNENTEN</div>
+            <div class="dash-metric">
+              <span class="dash-metric-num">${fmt(s.subscribers??s.abonnenten??0)}</span>
+              <span class="dash-metric-label">gesamt</span>
+            </div>
+          </div>
+          <div style="margin-top:auto;">
+            <button class="btn btn-secondary btn-sm" onclick="goToTab('wotm')">WotM & Newsletter →</button>
+          </div>
         </div>
       </div>
 
-      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--color-beige);">
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-muted);margin-bottom:12px;">📚 Whisky-Glossar</div>
-        <div class="stats-grid">
-          <div class="stat-card stat-card-link" onclick="${goGlossar('review')}" title="Review-Queue öffnen"
-               style="${reviewPending > 0 ? 'border-color:#f59e0b;' : ''}">
-            <span class="stat-icon">&#128270;</span>
-            <div class="stat-number" style="${reviewPending > 0 ? 'color:#d97706;' : ''}">${fmt(reviewPending)}</div>
-            <div class="stat-label">Review ausstehend</div>
-            <div class="stat-hint">&#8594; Glossar · Review</div>
-          </div>
-          <div class="stat-card stat-card-link" onclick="${goGlossar('review')}" title="Freigegeben – bereit zur Veröffentlichung"
-               style="${reviewApproved > 0 ? 'border-color:#27ae60;' : ''}">
-            <span class="stat-icon">&#9989;</span>
-            <div class="stat-number" style="${reviewApproved > 0 ? 'color:#1a7a3c;' : ''}">${fmt(reviewApproved)}</div>
-            <div class="stat-label">Freigegeben (unveröffentlicht)</div>
-            <div class="stat-hint">&#8594; Glossar · Review</div>
-          </div>
-          <div class="stat-card stat-card-link" onclick="${goGlossar('destillerien')}" title="Destillerien im Glossar">
-            <span class="stat-icon">&#127981;</span>
-            <div class="stat-number">${fmt(distCount)}</div>
-            <div class="stat-label">Destillerien live</div>
-            <div class="stat-hint">&#8594; Glossar · Destillerien</div>
-          </div>
-          <div class="stat-card stat-card-link" onclick="${goGlossar('whiskys')}" title="Whiskys im Glossar">
-            <span class="stat-icon">&#127760;</span>
-            <div class="stat-number">${fmt(whiskCount)}</div>
-            <div class="stat-label">Whiskys live</div>
-            <div class="stat-hint">&#8594; Glossar · Whiskys</div>
-          </div>
+      <!-- CHART -->
+      <div class="activity-chart-wrap">
+        <div class="dash-panel-title" style="margin-bottom:14px;">
+          <span class="dash-panel-title-icon" style="background:#5b8dd9;opacity:0.6;"></span>
+          Glossar-Wachstum · letzte 6 Monate
+        </div>
+        ${_renderActivityChart(chartData)}
+        <div class="activity-legend">
+          <span><span class="legend-dot" style="background:#C8963E;"></span>Destillerien</span>
+          <span><span class="legend-dot" style="background:#5b8dd9;"></span>Whiskys</span>
+          <span><span class="legend-dot" style="background:#6ab04c;"></span>Regionen & Länder</span>
         </div>
       </div>
+
+      ${_renderRecentActivity(qItems)}
     `;
   } catch (err) {
-    container.innerHTML = `<div class="error-box">&#9888; Fehler beim Laden: ${esc(err.message)}</div>`;
+    container.innerHTML = `<div class="error-box">&#9888; Fehler: ${esc(err.message)}</div>`;
   }
+}
+
+function _buildMonthlyChart(glossarItems) {
+  const months = [];
+  const now = new Date();
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const key = d.toISOString().slice(0,7);
+    const labels = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+    months.push({ month: key, label: labels[d.getMonth()], dist:0, whisky:0, other:0 });
+  }
+  for (const item of glossarItems) {
+    if (!item.created_at) continue;
+    const m = item.created_at.slice(0,7);
+    const bucket = months.find(x => x.month === m);
+    if (!bucket) continue;
+    if (item._entity === 'dist') bucket.dist++;
+    else if (item._entity === 'whisky') bucket.whisky++;
+    else bucket.other++;
+  }
+  return months;
+}
+
+function _renderActivityChart(data) {
+  const W=600, H=160, padL=28, padB=24, padT=10, padR=10;
+  const innerW=W-padL-padR, innerH=H-padB-padT;
+  const maxVal = Math.max(1, ...data.flatMap(d=>[d.dist,d.whisky,d.other]));
+  const cols = ['#C8963E','#5b8dd9','#6ab04c'];
+  const keys = ['dist','whisky','other'];
+  const groupW = innerW/data.length;
+  const barW = Math.min(14, (groupW-10)/3);
+  const yScale = v => innerH-(v/maxVal)*innerH;
+
+  const gridLines = [0.25,0.5,0.75,1].map(f=>{
+    const y=padT+yScale(f*maxVal), label=Math.round(f*maxVal);
+    return `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#EDE9E3" stroke-width="1"/>
+            <text x="${padL-4}" y="${y+4}" text-anchor="end" font-size="9" fill="#6B6460">${label}</text>`;
+  }).join('');
+
+  const bars = data.map((d,gi)=>{
+    const gx=padL+gi*groupW+(groupW-3*barW-2*2)/2;
+    return keys.map((k,ki)=>{
+      const val=d[k]||0;
+      const bh=Math.max(2,(val/maxVal)*innerH);
+      const x=gx+ki*(barW+2), y=padT+yScale(val);
+      return `<rect x="${x}" y="${y}" width="${barW}" height="${bh}" rx="3" ry="3" fill="${cols[ki]}" opacity="0.85"/>`;
+    }).join('');
+  }).join('');
+
+  const labels = data.map((d,gi)=>{
+    const cx=padL+gi*groupW+groupW/2;
+    return `<text x="${cx}" y="${H-6}" text-anchor="middle" font-size="9" fill="#6B6460">${esc(d.label)}</text>`;
+  }).join('');
+
+  const baseline = `<line x1="${padL}" y1="${padT+innerH}" x2="${W-padR}" y2="${padT+innerH}" stroke="#EDE9E3" stroke-width="1.5"/>`;
+  return `<svg class="activity-chart-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${gridLines}${baseline}${bars}${labels}</svg>`;
+}
+
+function _renderRecentActivity(queueItems) {
+  const DOT = { approved:'activity-dot--approved', merged:'activity-dot--merged',
+                rejected:'activity-dot--rejected', pending:'activity-dot--imported' };
+  const LABEL = { approved:'freigegeben', merged:'zusammengeführt', rejected:'abgelehnt', pending:'importiert' };
+
+  const recent = [...(queueItems||[])]
+    .filter(i=>i.reviewed_at||i.imported_at)
+    .sort((a,b)=>(b.reviewed_at||b.imported_at||'').localeCompare(a.reviewed_at||a.imported_at||''))
+    .slice(0,10);
+
+  if (!recent.length) return '';
+
+  const items = recent.map(i=>{
+    const status = i.review_status||'pending';
+    const name = esc((i.normalized||{}).name||i.item_id||'–');
+    const entity = esc(i.entity||'');
+    const action = LABEL[status]||status;
+    const ago = _timeAgo(i.reviewed_at||i.imported_at||'');
+    return `<div class="activity-item">
+      <span class="activity-dot ${DOT[status]||'activity-dot--imported'}"></span>
+      <span class="activity-text">
+        <span class="activity-name">${name}</span>
+        <span class="activity-sub">${entity} · ${action}</span>
+      </span>
+      <span class="activity-time">${ago}</span>
+    </div>`;
+  }).join('');
+
+  return `<div class="activity-timeline-wrap">
+    <div class="dash-panel-title" style="margin-bottom:14px;">
+      <span class="dash-panel-title-icon" style="background:var(--color-amber);opacity:0.6;"></span>
+      Letzte Aktivität
+    </div>
+    <div class="activity-timeline">${items}</div>
+  </div>`;
+}
+
+function _timeAgo(isoStr) {
+  if (!isoStr) return '–';
+  const diff = Date.now()-new Date(isoStr).getTime();
+  const mins = Math.floor(diff/60000);
+  if (mins < 2)   return 'gerade eben';
+  if (mins < 60)  return `vor ${mins} Min.`;
+  const hrs = Math.floor(mins/60);
+  if (hrs < 24)   return `vor ${hrs} Std.`;
+  const days = Math.floor(hrs/24);
+  if (days === 1) return 'gestern';
+  return `vor ${days} Tagen`;
 }
 
 /* ============================================================
