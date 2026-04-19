@@ -1,0 +1,92 @@
+{
+  "batch_id": "distilleries_20260419T114525_812c31",
+  "entity": "distilleries",
+  "imported_at": "2026-04-19T11:45:25Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "items": [
+    {
+      "raw": {
+        "name": "Ardbeg",
+        "founded": 1815,
+        "region_id": "islay",
+        "country_id": "scotland",
+        "core_range": [
+          {
+            "name": "Ardbeg Ten Years Old",
+            "age": 10,
+            "abv": 46
+          },
+          {
+            "name": "Ardbeg Uigeadail",
+            "age": null,
+            "abv": 54.2
+          },
+          {
+            "name": "Ardbeg Corryvreckan",
+            "age": null,
+            "abv": 57.1
+          },
+          {
+            "name": "Ardbeg An Oa",
+            "age": null,
+            "abv": 46.6
+          },
+          {
+            "name": "Ardbeg Wee Beastie",
+            "age": 5,
+            "abv": 47.4
+          }
+        ]
+      },
+      "normalized": {
+        "name": "Ardbeg",
+        "founded": 1815,
+        "region_id": "islay",
+        "country_id": "scotland",
+        "core_range": [
+          {
+            "name": "Ardbeg Ten Years Old",
+            "age": 10,
+            "abv": 46
+          },
+          {
+            "name": "Ardbeg Uigeadail",
+            "age": null,
+            "abv": 54.2
+          },
+          {
+            "name": "Ardbeg Corryvreckan",
+            "age": null,
+            "abv": 57.1
+          },
+          {
+            "name": "Ardbeg An Oa",
+            "age": null,
+            "abv": 46.6
+          },
+          {
+            "name": "Ardbeg Wee Beastie",
+            "age": 5,
+            "abv": 47.4
+          }
+        ],
+        "slug": "ardbeg",
+        "id": "ardbeg",
+        "created_at": "2026-04-19T11:45:25Z",
+        "last_updated": "2026-04-19T11:45:25Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): ardbeg"
+      ],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
