@@ -1788,20 +1788,16 @@ def build_article_page(article, config, all_articles=None):
     <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
         {hero_img_html}
     </div>
-    <div id="lang-switcher" style="max-width:var(--max-width);margin:16px auto 0;padding:0 24px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-        <span style="font-size:13px;color:var(--text-secondary);">&#127760;</span>
-        <button class="lang-btn lang-active" data-lang="de" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">DE</button>
-        <span style="color:var(--border);">&#183;</span>
-        <button class="lang-btn" data-lang="en" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">EN</button>
-        <span style="color:var(--border);">&#183;</span>
-        <button class="lang-btn" data-lang="fr" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">FR</button>
-        <span style="color:var(--border);">&#183;</span>
-        <button class="lang-btn" data-lang="nl" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">NL</button>
-        <span style="color:var(--border);">&#183;</span>
-        <button class="lang-btn" data-lang="es" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">ES</button>
-        <span style="color:var(--border);">&#183;</span>
-        <button class="lang-btn" data-lang="ja" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">JA</button>
-        <span id="lang-notice" style="font-size:11px;color:var(--accent-sage);display:none;margin-left:4px;font-style:italic;"></span>
+    <div id="lang-switcher" style="max-width:var(--max-width);margin:24px auto 12px;padding:14px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#F5F0E8;border-radius:8px;">
+        <span style="font-size:18px;">&#127760;</span>
+        <span style="font-size:14px;color:#1A1A1A;font-weight:600;font-family:'Inter',sans-serif;">Sprache / Language:</span>
+        <button class="lang-btn lang-active" data-lang="de" style="background:#C8963E;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#FFFFFF;font-family:'Inter',sans-serif;transition:all 0.15s;">DE</button>
+        <button class="lang-btn" data-lang="en" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">EN</button>
+        <button class="lang-btn" data-lang="fr" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">FR</button>
+        <button class="lang-btn" data-lang="nl" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">NL</button>
+        <button class="lang-btn" data-lang="es" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">ES</button>
+        <button class="lang-btn" data-lang="ja" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">JA</button>
+        <span id="lang-notice" style="font-size:12px;color:#8B6F3E;display:none;margin-left:4px;font-style:italic;"></span>
     </div>
     <div class="article-layout">
         <article class="article-body" data-slug="{slug}">
@@ -1877,9 +1873,9 @@ def build_article_page(article, config, all_articles=None):
         history.pushState(null,'',url.toString());
         document.querySelectorAll('.lang-btn').forEach(function(b){{
           var active=b.dataset.lang===lang;
-          b.style.borderColor=active?'var(--accent-amber)':'var(--border)';
-          b.style.color=active?'var(--accent-amber)':'var(--text-secondary)';
-          b.style.background=active?'rgba(200,150,62,0.07)':'none';
+          b.style.borderColor='#C8963E';
+          b.style.color=active?'#FFFFFF':'#1A1A1A';
+          b.style.background=active?'#C8963E':'#FFFFFF';
         }});
         currentLang=lang;
       }}
