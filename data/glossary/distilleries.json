@@ -31,7 +31,7 @@
     "country_id": "scotland",
     "region_id": "islay",
     "founded": 1815,
-    "owner": "LVMH (Glenmorangie Company)",
+    "owner": "LVMH",
     "status": "active",
     "website": "https://www.ardbeg.com",
     "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
@@ -39,15 +39,15 @@
     "visit_info": "Das Old Kiln Café und die Destillerietouren sind ganzjährig geöffnet. Ardbeg Day ist Pflichttermin beim Feis Ile Festival.",
     "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
     "coordinates": {
-      "lat": 55.6403,
-      "lng": -6.0992
+      "lat": 55.641,
+      "lng": -6.108
     },
     "image": null,
-    "seo_title": "Ardbeg Destillerie – Islay's rauchigster Single Malt | Whisky-Glossar",
-    "seo_description": "Ardbeg auf Islay: Geschichte, Stil, Touren und Abfüllungen der kultigen Torf-Destillerie.",
+    "seo_title": "Ardbeg Destillerie - Infos & Whiskys",
+    "seo_description": "Alles über Ardbeg.",
     "published": true,
-    "created_at": "2026-04-17T00:00:00Z",
-    "last_updated": "2026-04-17T00:00:00Z"
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-19T15:20:54Z"
   },
   {
     "id": "laphroaig",
