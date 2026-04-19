@@ -538,31 +538,31 @@
       "item_slug": "kilchoman",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "kilchoman",
-        "slug": "kilchoman",
-        "name": "Kilchoman",
+        "id": "bowmore",
+        "slug": "bowmore",
+        "name": "Bowmore",
         "country_id": "scotland",
         "region_id": "islay",
-        "founded": 2005,
-        "owner": "Independent (Wills Family)",
+        "founded": 1779,
+        "owner": "Suntory Global Spirits",
         "status": "active",
         "website": "https://kilchomandistillery.com",
-        "short_description": "Die Farm-Destillerie: Jung, unabhängig und berühmt für 100% Islay-Produktion.",
-        "long_description": "Kilchoman startete 2005 als erste neue Destillerie auf Islay seit 124 Jahren. Als echte Farm-Destillerie baut sie zum Teil eigene Gerste an, mälzt, destilliert, reift und füllt vor Ort ab ('100% Islay'). Der Spirit ist jung, kräftig, sehr rauchig und oft exzellent mit Bourbon- und Sherryfässern verwoben.",
-        "visit_info": "Gemütliches Café und großartige Touren direkt auf dem Farmgelände im Westen der Insel.",
-        "travel_context": "Liegt an der rauen Westküste nahe der wunderschönen Machir Bay.",
+        "short_description": "Bowmore ist die älteste Destillerie Islays und liegt direkt am Loch Indaal – bekannt für ausgewogene Torfigkeit und Eleganz.",
+        "long_description": "Gegründet 1779, ist Bowmore die älteste bekannte Destillerie auf Islay und eine der ältesten Schottlands. Die Destillerie liegt im Dorf Bowmore, der Hauptstadt der Insel, und betreibt noch heute eigene traditionelle Floor Malting. Im Vergleich zu Ardbeg, Laphroaig oder Lagavulin gilt Bowmore als 'moderaterer' Islay-Whisky: torfig, aber ausgewogen, mit Sherryfass-Noten und floralen Aromen.",
+        "visit_info": "Tägliche Führungen, Whisky-Bibliothek für seltene Abfüllungen. Bowmore liegt fußläufig vom Hauptort der Insel.",
+        "travel_context": "Bowmore ist ideal als Basislager für Islay-Besucher: zentral gelegen, gute Unterkunftsmöglichkeiten und Direktzugang zu allen Inselteilen.",
         "coordinates": {
           "lat": 55.786,
           "lng": -6.43
         },
         "image": null,
-        "seo_title": "Kilchoman Destillerie - Die Farm-Brennerei auf Islay",
-        "seo_description": "Unabhängiger Farm-Whisky von Kilchoman.",
+        "seo_title": "Bowmore Destillerie - Der ausgewogene Islay-Klassiker",
+        "seo_description": "Erfahre mehr über Bowmore.",
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T08:48:24Z"
+        "last_updated": "2026-04-19T17:13:32Z"
       },
       "raw": {
         "id": "kilchoman",
@@ -588,7 +588,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T17:13:32Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
