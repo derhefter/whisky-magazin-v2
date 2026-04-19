@@ -13,7 +13,10 @@
     "long_description": "Die Lagavulin-Destillerie liegt in einer kleinen Bucht an der Südküste von Islay und produziert seit 1816 einen der kraftvollsten Single Malts Schottlands. Der Name bedeutet auf Gälisch 'Mühle in der kleinen Bucht'. Das Flaggschiff – der Lagavulin 16 Jahre – gehört zu Alfred Barnards Klassikern und wurde durch die TV-Sendung Parks and Recreation in den USA einer neuen Generation bekannt. Die Destillerie ist Teil von Diageos 'Classic Malts of Scotland'.",
     "visit_info": "Destillerietouren täglich, Verkostungen buchbar. Die Lage direkt am Meer ist spektakulär.",
     "travel_context": "Lagavulin liegt an der Südküste Islays, wenige Kilometer von Ardbeg und Laphroaig entfernt. Eine Küstenradtour zu allen drei Destillerien ist ein Klassiker für Islay-Besucher.",
-    "coordinates": {"lat": 55.6356, "lng": -6.1268},
+    "coordinates": {
+      "lat": 55.6356,
+      "lng": -6.1268
+    },
     "image": null,
     "seo_title": "Lagavulin Destillerie – Islay Single Malt | Whisky-Glossar",
     "seo_description": "Alles über die Lagavulin Destillerie auf Islay: Geschichte, Touren, Whiskys und Reisetipps.",
@@ -35,7 +38,10 @@
     "long_description": "Ardbeg wurde 1815 gegründet und liegt am östlichen Ende der berühmten Islay-Whisky-Küste. Nach jahrzehntelangem Rückgang und zwischenzeitlicher Schließung wurde die Destillerie 1997 von der Glenmorangie Company (heute Teil von LVMH) wiederbelebt. Seitdem hat sich Ardbeg zum Kultlabel entwickelt: stark torfig (55+ ppm Phenol), komplex und für seinen enthusiastischen 'Ardbeg Committee' bekannt, der globale Neuerscheinungen zelebriert.",
     "visit_info": "Das Old Kiln Café und die Destillerietouren sind ganzjährig geöffnet. Ardbeg Day ist Pflichttermin beim Feis Ile Festival.",
     "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
-    "coordinates": {"lat": 55.6403, "lng": -6.0992},
+    "coordinates": {
+      "lat": 55.6403,
+      "lng": -6.0992
+    },
     "image": null,
     "seo_title": "Ardbeg Destillerie – Islay's rauchigster Single Malt | Whisky-Glossar",
     "seo_description": "Ardbeg auf Islay: Geschichte, Stil, Touren und Abfüllungen der kultigen Torf-Destillerie.",
@@ -57,7 +63,10 @@
     "long_description": "Laphroaig ('la-FROYG') ist eine der wenigen Destillerien, die noch eigene Malting Floors betreibt und damit einen Teil ihrer Gerste selbst mälzt. Dies trägt zur unverwechselbaren Charakteristik bei – stark torfig mit ausgeprägten Jod- und Meeresalgen-Noten, die manche als 'medizinisch' oder sogar 'verbandszeug-artig' beschreiben. Das ist gewollt und genau das, was Laphroaig-Fans lieben. Der 10-jährige ist ein Pflichtversuch.",
     "visit_info": "Friends of Laphroaig können ein eigenes Stück Torf auf Islay 'besitzen'. Touren und Verkostungen täglich.",
     "travel_context": "Laphroaig liegt zwischen Port Ellen und Lagavulin und ist über den Küstenweg gut zu Fuß oder mit dem Rad erreichbar.",
-    "coordinates": {"lat": 55.6316, "lng": -6.1545},
+    "coordinates": {
+      "lat": 55.6316,
+      "lng": -6.1545
+    },
     "image": null,
     "seo_title": "Laphroaig Destillerie – Der Klassiker unter den Islay-Whiskys | Whisky-Glossar",
     "seo_description": "Laphroaig auf Islay: jodiger, rauchiger Single Malt, Geschichte, Touren und Abfüllungen.",
@@ -79,7 +88,10 @@
     "long_description": "Die Glenfiddich-Destillerie in Dufftown, Speyside, wurde 1886 von William Grant gegründet – der Gründer legte an Weihnachten den ersten Stein eigenhändig. Das Hirsch-Logo ist eines der bekanntesten Whisky-Embleme weltweit. Glenfiddich war ein Pionier bei der Einzel-Destillerie-Vermarktung (der Begriff 'Single Malt' wurde popularisiert) und betreibt heute eine der größten und meistbesuchten Destillerien Schottlands.",
     "visit_info": "Glenfiddich bietet umfangreiche Touren (einschließlich Fass-Versiegelungs-Erlebnisse) und ist ganzjährig geöffnet.",
     "travel_context": "Dufftown ist das Zentrum des Speyside Malt Whisky Trails. Von hier aus sind viele der bedeutendsten Speyside-Destillerien in kurzer Fahrt erreichbar.",
-    "coordinates": {"lat": 57.4501, "lng": -3.1276},
+    "coordinates": {
+      "lat": 57.4501,
+      "lng": -3.1276
+    },
     "image": null,
     "seo_title": "Glenfiddich Destillerie – Der meistverkaufte Single Malt | Whisky-Glossar",
     "seo_description": "Glenfiddich in der Speyside: Geschichte, Stile, Touren und Abfüllungen der weltberühmten Destillerie.",
@@ -101,12 +113,90 @@
     "long_description": "Gegründet 1779, ist Bowmore die älteste bekannte Destillerie auf Islay und eine der ältesten Schottlands. Die Destillerie liegt im Dorf Bowmore, der Hauptstadt der Insel, und betreibt noch heute eigene traditionelle Floor Malting. Im Vergleich zu Ardbeg, Laphroaig oder Lagavulin gilt Bowmore als 'moderaterer' Islay-Whisky: torfig, aber ausgewogen, mit Sherryfass-Noten und floralen Aromen.",
     "visit_info": "Tägliche Führungen, Whisky-Bibliothek für seltene Abfüllungen. Bowmore liegt fußläufig vom Hauptort der Insel.",
     "travel_context": "Bowmore ist ideal als Basislager für Islay-Besucher: zentral gelegen, gute Unterkunftsmöglichkeiten und Direktzugang zu allen Inselteilen.",
-    "coordinates": {"lat": 55.7564, "lng": -6.2935},
+    "coordinates": {
+      "lat": 55.7564,
+      "lng": -6.2935
+    },
     "image": null,
     "seo_title": "Bowmore Destillerie – Älteste Destillerie Islays | Whisky-Glossar",
     "seo_description": "Bowmore auf Islay: Geschichte seit 1779, ausgewogener Islay-Stil und Reisetipps.",
     "published": true,
     "created_at": "2026-04-17T00:00:00Z",
     "last_updated": "2026-04-17T00:00:00Z"
+  },
+  {
+    "id": "bruichladdich",
+    "slug": "bruichladdich",
+    "name": "Bruichladdich",
+    "country_id": "scotland",
+    "region_id": "islay",
+    "founded": 1881,
+    "owner": "Rémy Cointreau",
+    "status": "active",
+    "website": "https://www.bruichladdich.com",
+    "short_description": "Die rebellische Destillerie. Produziert ungetorften Bruichladdich, schwer getorften Port Charlotte und den extremen Octomore.",
+    "long_description": "Bruichladdich wurde 2001 als unabhängige Destillerie wiedereröffnet und revolutionierte den Markt mit einem radikalen Fokus auf Terroir und Transparenz. Sie produzieren drei Linien: den komplett ungetorften Bruichladdich, den stark getorften Port Charlotte und den extrem getorften Octomore.",
+    "visit_info": "Sehr lebhaftes und modernes Besucherzentrum. Eigene Abfüllanlagen vor Ort.",
+    "travel_context": "Liegt am westlichen Ufer des Loch Indaal mit wunderschönem Blick hinüber nach Bowmore.",
+    "coordinates": {
+      "lat": 55.766,
+      "lng": -6.362
+    },
+    "image": null,
+    "seo_title": "Bruichladdich Destillerie - Terroir & Transparenz",
+    "seo_description": "Bruichladdich: Infos, Whiskys und Geschichte.",
+    "published": true,
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-19T11:05:33Z"
+  },
+  {
+    "id": "bunnahabhain",
+    "slug": "bunnahabhain",
+    "name": "Bunnahabhain",
+    "country_id": "scotland",
+    "region_id": "islay",
+    "founded": 1881,
+    "owner": "Distell Group",
+    "status": "active",
+    "website": "https://bunnahabhain.com",
+    "short_description": "Die sanfte Seite Islays: Bekannt für ungetorfte, nussige und sherrybetonte Single Malts.",
+    "long_description": "Bunnahabhain liegt sehr isoliert im Nordosten von Islay. Im Gegensatz zum typischen Islay-Stil ist die Standard-Range von Bunnahabhain ungetorft. Sie punkten mit einer öligen Textur, maritimer Salzigkeit, Nuss- und Trockenfruchtnoten aus massiver Sherryfassreifung. Es gibt aber auch getorfte Varianten (Toiteach, Mòine).",
+    "visit_info": "Die Anfahrt erfolgt über eine abenteuerliche Single-Track-Road. Atemberaubender Blick auf die Paps of Jura.",
+    "travel_context": "Im Nordosten gelegen, gut mit Caol Ila oder Ardnahoe zu kombinieren.",
+    "coordinates": {
+      "lat": 55.882,
+      "lng": -6.126
+    },
+    "image": null,
+    "seo_title": "Bunnahabhain Destillerie - Die ungetorfte Islay-Perle",
+    "seo_description": "Alles über Bunnahabhain.",
+    "published": true,
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-19T11:05:33Z"
+  },
+  {
+    "id": "caol-ila",
+    "slug": "caol-ila",
+    "name": "Caol Ila",
+    "country_id": "scotland",
+    "region_id": "islay",
+    "founded": 1846,
+    "owner": "Diageo",
+    "status": "active",
+    "website": "https://www.malts.com/en-row/distilleries/caol-ila",
+    "short_description": "Die größte Brennerei der Insel. Liefert hellen, maritimen und aschigen Torfrauch.",
+    "long_description": "Caol Ila ist der Produktions-Gigant auf Islay und liefert einen Großteil des Rauchs für Johnnie Walker Blends. Der Single Malt zeichnet sich durch einen sehr klaren, maritimen, zitrusfruchtigen und aschigen Torfrauch aus, der eleganter und weniger schwer ist als bei den südlichen Nachbarn.",
+    "visit_info": "Komplett neu renoviertes Besucherzentrum mit atemberaubender Glasfront auf den Sound of Islay.",
+    "travel_context": "Liegt in Port Askaig mit fantastischem Blick auf die Nachbarinsel Jura.",
+    "coordinates": {
+      "lat": 55.854,
+      "lng": -6.11
+    },
+    "image": null,
+    "seo_title": "Caol Ila Destillerie - Maritimer Torfrauch",
+    "seo_description": "Die größte Brennerei Islays: Caol Ila.",
+    "published": true,
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-19T11:05:33Z"
   }
 ]
