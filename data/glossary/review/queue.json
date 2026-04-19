@@ -1966,7 +1966,7 @@
       "item_slug": "ardbeg-wee-beastie",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg Wee Beastie",
         "distillery_id": "ardbeg",
@@ -1989,7 +1989,10 @@
         "whisky_type": "single_malt",
         "abv": 47.4,
         "age_statement": "5"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:59:25Z"
     }
   ]
 }
