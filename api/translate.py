@@ -227,6 +227,24 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         origin = self.headers.get("Origin", "")
         params = parse_qs(urlparse(self.path).query)
+
+        # Diagnostic mode: ?status=1 returns which env vars Vercel sees (masked).
+        if params.get("status", [""])[0]:
+            def _mask(v):
+                s = (v or "").strip()
+                if not s:
+                    return None
+                if len(s) < 8:
+                    return f"set (len={len(s)})"
+                return f"set (len={len(s)}, starts={s[:4]}, ends={s[-4:]})"
+            return self._send(200, {
+                "DEEPL_API_KEY": _mask(DEEPL_API_KEY),
+                "AZURE_TRANSLATOR_KEY": _mask(AZURE_TRANSLATOR_KEY),
+                "AZURE_TRANSLATOR_REGION": AZURE_TRANSLATOR_REGION or None,
+                "GITHUB_TOKEN": _mask(GITHUB_TOKEN),
+                "GITHUB_REPO": GITHUB_REPO or None,
+            }, origin)
+
         slug = params.get("slug", [""])[0].strip()
         lang = params.get("lang", [""])[0].strip().lower()
 

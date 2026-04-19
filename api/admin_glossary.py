@@ -239,6 +239,107 @@ def _normalize_entry(entity: str, entry: dict, now_iso: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Smart-merge helpers (used for "merged" review decisions at publish time)
+# ---------------------------------------------------------------------------
+
+_TEXT_FIELDS = frozenset({
+    "long_description", "short_description", "travel_context",
+    "editorial_notes", "visit_info", "style_notes",
+})
+
+
+def _smart_merge_entry(existing: dict, incoming: dict) -> dict:
+    """Merge an incoming (import) entry into an existing live entry.
+
+    Rules (applied per field):
+    - Text fields (descriptions, notes): keep existing if incoming is empty OR shorter
+      — prevents accidental content loss; use incoming only when it is a genuine extension.
+    - All other fields: use incoming when non-empty; fall back to existing when incoming
+      is empty/null — preserves URLs, coordinates, images that weren't re-supplied.
+    """
+    result = dict(incoming)
+    for field, ex_val in existing.items():
+        in_val = result.get(field)
+        if field in _TEXT_FIELDS:
+            ex_text = (ex_val or "").strip()
+            in_text = (in_val or "").strip()
+            if not in_text or (ex_text and len(in_text) < len(ex_text)):
+                result[field] = ex_val
+        else:
+            if not in_val and ex_val:
+                result[field] = ex_val
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Duplicate detection helpers
+# ---------------------------------------------------------------------------
+
+def _normalize_name_cmp(name: str) -> str:
+    """Normalize a name for fuzzy comparison: lowercase, umlaut-expand, strip non-alnum."""
+    name = name.translate(_UMLAUT_MAP).lower()
+    name = re.sub(r"[^a-z0-9\s]", " ", name)
+    name = re.sub(r"\s+", " ", name).strip()
+    return name
+
+
+def _bigram_similarity(a: str, b: str) -> float:
+    """Jaccard similarity on character bigrams (0.0–1.0)."""
+    def bigrams(s):
+        return {s[i:i+2] for i in range(len(s) - 1)}
+    bg_a, bg_b = bigrams(a), bigrams(b)
+    if not bg_a or not bg_b:
+        return 0.0
+    inter = len(bg_a & bg_b)
+    return inter / len(bg_a | bg_b)
+
+
+def _find_duplicate_candidates(entity: str, item: dict, existing: list) -> list:
+    """Return list of potential duplicates from existing data (excluding exact id/slug matches)."""
+    item_id   = item.get("id", "")
+    item_slug = item.get("slug", "")
+    item_name = item.get("name") or item.get("name_de") or ""
+    item_norm = _normalize_name_cmp(item_name)
+
+    candidates = []
+    for ex in existing:
+        ex_id   = ex.get("id", "")
+        ex_slug = ex.get("slug", "")
+        # Exact id/slug matches are already "update_candidate" – skip here
+        if ex_id == item_id or ex_slug == item_slug:
+            continue
+
+        ex_name = ex.get("name") or ex.get("name_de") or ""
+        ex_norm = _normalize_name_cmp(ex_name)
+        reason  = None
+
+        # 1. Substring match (e.g. "Ardbeg 10" ↔ "Ardbeg 10 Jahre")
+        if item_norm and ex_norm:
+            if item_norm in ex_norm or ex_norm in item_norm:
+                reason = "Ähnlicher Name (Teilstring)"
+            elif _bigram_similarity(item_norm, ex_norm) >= 0.80:
+                reason = f"Sehr ähnlicher Name ({int(_bigram_similarity(item_norm, ex_norm)*100)} % Übereinstimmung)"
+
+        # 2. Whisky-specific: same distillery + same age statement
+        if entity == "whiskies" and not reason:
+            same_dist = item.get("distillery_id") and item.get("distillery_id") == ex.get("distillery_id")
+            age_item  = item.get("age_statement")
+            age_ex    = ex.get("age_statement")
+            if same_dist and age_item is not None and age_item == age_ex:
+                reason = f"Gleiche Destillerie + Reifezeit ({age_item} J.)"
+
+        if reason:
+            candidates.append({
+                "id":           ex_id,
+                "slug":         ex_slug,
+                "name":         ex_name,
+                "match_reason": reason,
+            })
+
+    return candidates
+
+
+# ---------------------------------------------------------------------------
 # Import / Review workflow
 # ---------------------------------------------------------------------------
 
@@ -280,11 +381,18 @@ def _build_import_report(batch_id: str, entity: str, items: list,
         else:
             status = "new"
 
+        # Fuzzy duplicate detection (only for new entries – updates are intentional)
+        duplicate_candidates = (
+            _find_duplicate_candidates(entity, normalized, existing)
+            if status == "new" else []
+        )
+
         report_items.append({
             "raw": raw_item,
             "normalized": normalized,
             "status": status,
             "errors": errors,
+            "duplicate_candidates": duplicate_candidates,
             "review_status": "pending",
             "reviewer_notes": "",
             "decision": None,
@@ -299,6 +407,7 @@ def _build_import_report(batch_id: str, entity: str, items: list,
         "update_candidates": sum(1 for i in report_items if i["status"] == "update_candidate"),
         "errors": sum(1 for i in report_items if i["status"] == "error"),
         "incomplete": sum(1 for i in report_items if i["status"] == "incomplete"),
+        "potential_duplicates": sum(1 for i in report_items if i.get("duplicate_candidates")),
         "items": report_items,
     }
 
@@ -508,6 +617,7 @@ class handler(BaseHTTPRequestHandler):
                     "item_slug": item["normalized"].get("slug", ""),
                     "status": item["status"],
                     "errors": item["errors"],
+                    "duplicate_candidates": item.get("duplicate_candidates", []),
                     "review_status": "pending",
                     "normalized": item["normalized"],
                     "raw": item["raw"],
@@ -526,6 +636,7 @@ class handler(BaseHTTPRequestHandler):
                 "update_candidates": report["update_candidates"],
                 "errors": report["errors"],
                 "incomplete": report["incomplete"],
+                "potential_duplicates": report["potential_duplicates"],
             }, origin)
 
         # --- review_decision ---
@@ -600,6 +711,8 @@ class handler(BaseHTTPRequestHandler):
 
                 existing_idx = live_index.get(entry.get("id"))
                 if existing_idx is not None:
+                    if qi.get("review_status") == "merged":
+                        entry = _smart_merge_entry(items[existing_idx], entry)
                     items[existing_idx] = entry
                 else:
                     items.append(entry)
