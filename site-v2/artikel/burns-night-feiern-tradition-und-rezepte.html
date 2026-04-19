@@ -80,15 +80,30 @@
     </nav>
     <div style="max-width:var(--article-max);margin:0 auto;padding:16px 24px 24px;text-align:center;">
         <span class="badge badge-amber">Lifestyle</span>
-        <h1 style="font-size:34px;margin:16px 0 12px;padding-left:0;">Burns Night feiern: Tradition und Rezepte</h1>
+        <h1 id="article-title" style="font-size:34px;margin:16px 0 12px;padding-left:0;">Burns Night feiern: Tradition und Rezepte</h1>
         <p style="color:var(--text-secondary);font-size:14px;">Von Steffen &amp; Elmar &#183; 26. März 2026 &#183; 3 Min. Lesezeit</p>
         
     </div>
     <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
         <img src="/images/burns-night-feiern-tradition-und-rezepte.jpg" alt="Burns Night feiern: Tradition und Rezepte" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-sm);display:block;" loading="lazy">
     </div>
+    <div id="lang-switcher" style="max-width:var(--max-width);margin:16px auto 0;padding:0 24px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+        <span style="font-size:13px;color:var(--text-secondary);">&#127760;</span>
+        <button class="lang-btn lang-active" data-lang="de" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">DE</button>
+        <span style="color:var(--border);">&#183;</span>
+        <button class="lang-btn" data-lang="en" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">EN</button>
+        <span style="color:var(--border);">&#183;</span>
+        <button class="lang-btn" data-lang="fr" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">FR</button>
+        <span style="color:var(--border);">&#183;</span>
+        <button class="lang-btn" data-lang="nl" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">NL</button>
+        <span style="color:var(--border);">&#183;</span>
+        <button class="lang-btn" data-lang="es" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">ES</button>
+        <span style="color:var(--border);">&#183;</span>
+        <button class="lang-btn" data-lang="ja" style="background:none;border:1px solid var(--border);border-radius:var(--radius-pill);padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:0.5px;cursor:pointer;color:var(--text-secondary);font-family:'Inter',sans-serif;transition:all 0.15s;">JA</button>
+        <span id="lang-notice" style="font-size:11px;color:var(--accent-sage);display:none;margin-left:4px;font-style:italic;"></span>
+    </div>
     <div class="article-layout">
-        <article class="article-body">
+        <article class="article-body" data-slug="burns-night-feiern-tradition-und-rezepte">
             <h2>Burns Night feiern: Tradition und Rezepte</h2>
 
 <p>Jedes Jahr am 25. Januar wird in Schottland und weltweit die Burns Night gefeiert, ein Abend, der dem berühmten schottischen Dichter Robert Burns gewidmet ist. Der Anlass bietet nicht nur eine Gelegenheit, die Kultur und Musik Schottlands zu würdigen, sondern auch, in die kulinarischen Genüsse und die wundervolle Welt des Scotch Whiskys einzutauchen. Als leidenschaftlicher Whisky-Experte und Reiseblogger möchte ich dir näherbringen, wie du diesen besonderen Abend feiern kannst.</p>
@@ -205,6 +220,75 @@
             </div>
         </aside>
     </div>
+    <script>
+    (function(){
+      var article=document.querySelector('article[data-slug]');
+      if(!article)return;
+      var slug=article.dataset.slug;
+      var uiCache=null;
+      var currentLang='de';
+      var TTL=86400000;
+      function cacheKey(l){return'tr_'+slug+'_'+l;}
+      function fromCache(l){try{var r=localStorage.getItem(cacheKey(l));if(!r)return null;var o=JSON.parse(r);if(Date.now()-o.ts>TTL){localStorage.removeItem(cacheKey(l));return null;}return o.d;}catch(e){return null;}}
+      function toCache(l,d){try{localStorage.setItem(cacheKey(l),JSON.stringify({ts:Date.now(),d:d}));}catch(e){}}
+      function loadUi(cb){if(uiCache){cb(uiCache);return;}fetch('/data/translations.json').then(function(r){return r.json();}).then(function(d){uiCache=d;cb(d);}).catch(function(){cb({})});}
+      var langNames={en:'English',fr:'Français',nl:'Nederlands',es:'Español',ja:'日本語'};
+      function applyTranslation(lang,data){
+        var h1=document.getElementById('article-title');
+        if(data.title&&h1)h1.textContent=data.title;
+        if(data.html_content)article.innerHTML=data.html_content;
+        loadUi(function(ui){
+          var notice=document.getElementById('lang-notice');
+          if(notice){
+            if(lang==='de'){notice.style.display='none';}
+            else{
+              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
+              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
+              notice.style.display=tpl?'':'none';
+            }
+          }
+        });
+        var url=new URL(location.href);
+        if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
+        history.pushState(null,'',url.toString());
+        document.querySelectorAll('.lang-btn').forEach(function(b){
+          var active=b.dataset.lang===lang;
+          b.style.borderColor=active?'var(--accent-amber)':'var(--border)';
+          b.style.color=active?'var(--accent-amber)':'var(--text-secondary)';
+          b.style.background=active?'rgba(200,150,62,0.07)':'none';
+        });
+        currentLang=lang;
+      }
+      function switchLang(lang){
+        if(lang===currentLang)return;
+        if(lang==='de'){
+          var url=new URL(location.href);url.searchParams.delete('lang');
+          history.pushState(null,'',url.toString());
+          location.reload();return;
+        }
+        var cached=fromCache(lang);
+        if(cached){applyTranslation(lang,cached);return;}
+        var btn=document.querySelector('.lang-btn[data-lang="'+lang+'"]');
+        var orig=btn?btn.textContent:lang.toUpperCase();
+        if(btn){btn.textContent='…';btn.disabled=true;}
+        fetch('/api/translate?slug='+encodeURIComponent(slug)+'&lang='+lang)
+          .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+          .then(function(d){toCache(lang,d);applyTranslation(lang,d);})
+          .catch(function(){
+            loadUi(function(ui){
+              var notice=document.getElementById('lang-notice');
+              if(notice){notice.textContent=(ui[lang]&&ui[lang].lang_error)||'Translation unavailable.';notice.style.display='';}
+            });
+          })
+          .finally(function(){if(btn){btn.textContent=orig;btn.disabled=false;}});
+      }
+      document.querySelectorAll('.lang-btn').forEach(function(b){
+        b.addEventListener('click',function(){switchLang(b.dataset.lang);});
+      });
+      var urlLang=new URLSearchParams(location.search).get('lang');
+      if(urlLang&&urlLang!=='de'){switchLang(urlLang);}
+    })();
+    </script>
     </main>
     <script>
     (function(){
@@ -247,22 +331,22 @@
     </footer>
 <script>
 (function(){
-  document.querySelectorAll('.newsletter-form').forEach(function(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=form.querySelector('button[type="submit"]');
-      var email=form.querySelector('input[type="email"]').value;
-      if(!email)return;
-      var origText=btn.textContent;
-      btn.textContent='Wird gesendet…';btn.disabled=true;
-      fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
-        .then(function(r){return r.json()})
-        .then(function(d){
-          if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
-          else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
-        })
-        .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
-    });
+  document.addEventListener('submit',function(e){
+    var form=e.target;
+    if(!form.classList.contains('newsletter-form'))return;
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var email=form.querySelector('input[type="email"]').value;
+    if(!email)return;
+    var origText=btn.textContent;
+    btn.textContent='Wird gesendet…';btn.disabled=true;
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
+        else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
+      })
+      .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
   });
 })();
 </script>

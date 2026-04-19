@@ -160,22 +160,22 @@
     </footer>
 <script>
 (function(){
-  document.querySelectorAll('.newsletter-form').forEach(function(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=form.querySelector('button[type="submit"]');
-      var email=form.querySelector('input[type="email"]').value;
-      if(!email)return;
-      var origText=btn.textContent;
-      btn.textContent='Wird gesendet…';btn.disabled=true;
-      fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
-        .then(function(r){return r.json()})
-        .then(function(d){
-          if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
-          else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
-        })
-        .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
-    });
+  document.addEventListener('submit',function(e){
+    var form=e.target;
+    if(!form.classList.contains('newsletter-form'))return;
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var email=form.querySelector('input[type="email"]').value;
+    if(!email)return;
+    var origText=btn.textContent;
+    btn.textContent='Wird gesendet…';btn.disabled=true;
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
+        else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
+      })
+      .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
   });
 })();
 </script>

@@ -91,7 +91,7 @@
         <div style="max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;text-align:center;">
             <div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:#fff;">3</div><div style="font-size:12px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1px;">Länder</div></div>
             <div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:#fff;">5</div><div style="font-size:12px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1px;">Regionen</div></div>
-            <div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:#fff;">5</div><div style="font-size:12px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1px;">Destillerien</div></div>
+            <div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:#fff;">8</div><div style="font-size:12px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1px;">Destillerien</div></div>
             <div><div style="font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:#fff;">4</div><div style="font-size:12px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1px;">Whiskys</div></div>
         </div>
     </div>
@@ -184,6 +184,12 @@
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bowmore</div>
         <div style="font-size:13px;color:var(--text-secondary);">Bowmore ist die älteste Destillerie Islays und liegt direkt am Loch Indaal – bek…</div>
         
+    </a>
+
+    <a href="/whisky-glossar/destillerien/bruichladdich/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bruichladdich</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Die rebellische Destillerie. Produziert ungetorften Bruichladdich, schwer getorf…</div>
+        
     </a></div><p style="margin-top:16px;font-size:13px;"><a href="/whisky-glossar/destillerien/" style="color:var(--accent-amber);">Alle Destillerien →</a></p>
     </section>
 
@@ -236,22 +242,22 @@
     </footer>
 <script>
 (function(){
-  document.querySelectorAll('.newsletter-form').forEach(function(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=form.querySelector('button[type="submit"]');
-      var email=form.querySelector('input[type="email"]').value;
-      if(!email)return;
-      var origText=btn.textContent;
-      btn.textContent='Wird gesendet…';btn.disabled=true;
-      fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
-        .then(function(r){return r.json()})
-        .then(function(d){
-          if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
-          else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
-        })
-        .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
-    });
+  document.addEventListener('submit',function(e){
+    var form=e.target;
+    if(!form.classList.contains('newsletter-form'))return;
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var email=form.querySelector('input[type="email"]').value;
+    if(!email)return;
+    var origText=btn.textContent;
+    btn.textContent='Wird gesendet…';btn.disabled=true;
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
+        else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
+      })
+      .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
   });
 })();
 </script>

@@ -1599,6 +1599,12 @@
         </p>
       </div>
 
+      <!-- Field diff (update_candidate only, hidden by default) -->
+      <div id="review-diff-section" style="display:none;margin-bottom:16px;border:1px solid #e2e8f0;border-radius:var(--radius);padding:14px 16px;background:#f8fafc;">
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-muted);margin-bottom:10px;">🔍 Feld-Vergleich · Bestehend vs. Import</div>
+        <div id="review-diff-content"></div>
+      </div>
+
       <!-- Editable fields -->
       <div style="border:1px solid var(--color-beige);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;background:var(--color-bg);">
         <div style="font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--color-muted);margin-bottom:12px;">Daten bearbeiten</div>
@@ -4490,7 +4496,7 @@ function renderReviewQueue() {
 let reviewDecisionMode = 'approve';
 let reviewDecisionItem = null;
 
-function openReviewModal(batchId, itemId) {
+async function openReviewModal(batchId, itemId) {
   reviewDecisionMode = 'approve';
   const item = ((glossarReviewQueue||{}).items || [])
     .find(i => i.batch_id === batchId && i.item_id === itemId);
@@ -4500,14 +4506,12 @@ function openReviewModal(batchId, itemId) {
   const entityLabel = GLOSSAR_ENTITY_LABELS[item.entity] || item.entity;
   document.getElementById('review-decision-title').textContent =
     `Review: "${name}" (${entityLabel})`;
-  document.getElementById('review-entry-form').innerHTML =
-    buildEntryForm(item.entity, item.normalized || {});
   document.getElementById('review-decision-notes').value = '';
   document.getElementById('review-decision-error').style.display = 'none';
   document.getElementById('review-approve-btn').style.display = '';
   document.getElementById('review-reject-btn').style.display = '';
 
-  // Duplicate candidates
+  // Duplicate candidates (fuzzy)
   const dups = item.duplicate_candidates || [];
   const dupSection = document.getElementById('review-duplicate-section');
   const dupList    = document.getElementById('review-duplicate-list');
@@ -4527,7 +4531,146 @@ function openReviewModal(batchId, itemId) {
     mergeBtn.style.display   = 'none';
   }
 
+  // For update_candidates: fetch existing, compute diff, pre-fill merged form
+  const diffSection = document.getElementById('review-diff-section');
+  const diffContent = document.getElementById('review-diff-content');
+  if (item.status === 'update_candidate') {
+    diffSection.style.display = 'block';
+    diffContent.innerHTML = '<div style="font-size:0.82rem;color:var(--color-muted);">Lädt Vergleich…</div>';
+    // Show form immediately with incoming data while loading
+    document.getElementById('review-entry-form').innerHTML =
+      buildEntryForm(item.entity, item.normalized || {});
+    try {
+      const existing = await apiGet(
+        `${API.glossar}?action=get&entity=${encodeURIComponent(item.entity)}&id=${encodeURIComponent(item.item_id)}`
+      );
+      const merged   = _reviewSmartMerge(existing, item.normalized || {});
+      const diffRows = _reviewComputeDiff(existing, item.normalized || {});
+      const existingName = existing.name || existing.name_de || item.item_id;
+      diffContent.innerHTML = _reviewRenderDiff(diffRows, existingName);
+      // Re-fill form with merged data
+      document.getElementById('review-entry-form').innerHTML =
+        buildEntryForm(item.entity, merged);
+      // Default action for update_candidate is merge
+      mergeBtn.style.display = '';
+    } catch(e) {
+      diffContent.innerHTML =
+        `<div style="color:var(--color-red);font-size:0.8rem;">Vergleich nicht möglich: ${esc(e.message)}</div>`;
+    }
+  } else {
+    diffSection.style.display = 'none';
+    document.getElementById('review-entry-form').innerHTML =
+      buildEntryForm(item.entity, item.normalized || {});
+  }
+
   document.getElementById('review-decision-modal').classList.add('open');
+}
+
+// ── Review diff helpers ─────────────────────────────────────────────────────
+
+const _REVIEW_TEXT_FIELDS = new Set([
+  'long_description','short_description','travel_context',
+  'editorial_notes','visit_info','style_notes','tasting_notes',
+]);
+const _REVIEW_SKIP_FIELDS = new Set([
+  'id','slug','created_at','last_updated','sha','_entity','image',
+]);
+
+function _reviewSmartMerge(existing, incoming) {
+  const result = {...incoming};
+  for (const [field, exVal] of Object.entries(existing)) {
+    if (_REVIEW_SKIP_FIELDS.has(field)) continue;
+    const inVal = result[field];
+    if (_REVIEW_TEXT_FIELDS.has(field)) {
+      const exText = (exVal || '').trim();
+      const inText = (inVal || '').trim();
+      if (!inText || (exText && inText.length < exText.length)) result[field] = exVal;
+    } else {
+      if ((inVal === null || inVal === undefined || inVal === '') && exVal) {
+        result[field] = exVal;
+      }
+    }
+  }
+  return result;
+}
+
+function _reviewComputeDiff(existing, incoming) {
+  const rows = [];
+  const allFields = new Set([...Object.keys(existing), ...Object.keys(incoming)]);
+  for (const field of allFields) {
+    if (_REVIEW_SKIP_FIELDS.has(field)) continue;
+    const exStr = (existing[field] !== null && existing[field] !== undefined)
+      ? String(existing[field]).trim() : '';
+    const inStr = (incoming[field] !== null && incoming[field] !== undefined)
+      ? String(incoming[field]).trim() : '';
+    if (exStr === inStr) continue;
+    let action;
+    if (!exStr && inStr)                                              action = 'new';
+    else if (!inStr && exStr)                                         action = 'kept';
+    else if (_REVIEW_TEXT_FIELDS.has(field) && inStr.length > exStr.length) action = 'extend';
+    else if (_REVIEW_TEXT_FIELDS.has(field) && inStr.length < exStr.length) action = 'kept';
+    else                                                              action = 'conflict';
+    rows.push({ field, exStr, inStr, action });
+  }
+  // Sort: conflict first, then new, extend, kept
+  const ORDER = { conflict:0, new:1, extend:2, kept:3 };
+  rows.sort((a,b) => (ORDER[a.action]||9) - (ORDER[b.action]||9));
+  return rows;
+}
+
+function _reviewRenderDiff(rows, existingName) {
+  const CFG = {
+    new:      { label:'Neu',       bg:'#d1fae5', color:'#065f46', icon:'✚' },
+    extend:   { label:'Erweitert', bg:'#fef3c7', color:'#92400e', icon:'↑' },
+    conflict: { label:'Konflikt',  bg:'#fee2e2', color:'#991b1b', icon:'⚠' },
+    kept:     { label:'Behalten',  bg:'#f1f5f9', color:'#475569', icon:'=' },
+  };
+  const cut = (s,n=90) => s.length > n ? s.slice(0,n)+'…' : s;
+
+  const newN  = rows.filter(r=>r.action==='new').length;
+  const extN  = rows.filter(r=>r.action==='extend').length;
+  const conN  = rows.filter(r=>r.action==='conflict').length;
+  const keptN = rows.filter(r=>r.action==='kept').length;
+
+  const parts = [];
+  if (newN)  parts.push(`<span style="color:#065f46;font-weight:600;">✚ ${newN} neu befüllt</span>`);
+  if (extN)  parts.push(`<span style="color:#92400e;font-weight:600;">↑ ${extN} erweitert</span>`);
+  if (conN)  parts.push(`<span style="color:#991b1b;font-weight:600;">⚠ ${conN} Konflikt${conN>1?'e':''}</span>`);
+  if (keptN) parts.push(`<span style="color:#6b7280;">${keptN} unverändert behalten</span>`);
+
+  if (!rows.length) return `<p style="font-size:0.82rem;color:var(--color-muted);">Keine Unterschiede – Einträge sind identisch.</p>`;
+
+  const tableRows = rows.map(r => {
+    const cfg = CFG[r.action];
+    return `<tr>
+      <td style="padding:5px 10px;font-size:0.72rem;font-weight:600;color:var(--color-muted);white-space:nowrap;vertical-align:top;border-bottom:1px solid #f1f5f9;">${esc(r.field)}</td>
+      <td style="padding:5px 10px;font-size:0.78rem;color:#374151;vertical-align:top;border-bottom:1px solid #f1f5f9;max-width:180px;">${r.exStr ? esc(cut(r.exStr)) : '<span style="color:#9ca3af;font-style:italic;">leer</span>'}</td>
+      <td style="padding:5px 10px;font-size:0.78rem;color:#374151;vertical-align:top;border-bottom:1px solid #f1f5f9;max-width:180px;">${r.inStr ? esc(cut(r.inStr)) : '<span style="color:#9ca3af;font-style:italic;">leer</span>'}</td>
+      <td style="padding:5px 10px;text-align:center;vertical-align:top;border-bottom:1px solid #f1f5f9;white-space:nowrap;">
+        <span style="background:${cfg.bg};color:${cfg.color};padding:2px 8px;border-radius:999px;font-size:0.68rem;font-weight:700;">${cfg.icon} ${cfg.label}</span>
+      </td>
+    </tr>`;
+  }).join('');
+
+  return `
+    <div style="font-size:0.78rem;margin-bottom:10px;">
+      Bestehend: <strong>${esc(existingName)}</strong>
+      &nbsp;·&nbsp; ${parts.join(' &nbsp;·&nbsp; ')}
+    </div>
+    ${conN ? `<div style="background:#fee2e2;border-left:3px solid #ef4444;padding:6px 10px;border-radius:0 4px 4px 0;font-size:0.78rem;color:#991b1b;margin-bottom:10px;">
+      ⚠ Bei Konflikten wurde der bestehende Wert beibehalten. Bitte im Formular unten manuell prüfen.
+    </div>` : ''}
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;">
+        <thead><tr style="background:#f1f5f9;">
+          <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">FELD</th>
+          <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">AKTUELL</th>
+          <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">IMPORT</th>
+          <th style="padding:5px 10px;text-align:left;font-size:0.68rem;letter-spacing:1px;color:var(--color-muted);">AKTION</th>
+        </tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>`;
 }
 
 function openReviewModalReject(batchId, itemId) {

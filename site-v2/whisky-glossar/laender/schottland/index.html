@@ -162,6 +162,24 @@
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bowmore</div>
         <div style="font-size:13px;color:var(--text-secondary);">Bowmore ist die älteste Destillerie Islays und liegt direkt am Loch Indaal – bek…</div>
         
+    </a>
+
+    <a href="/whisky-glossar/destillerien/bruichladdich/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bruichladdich</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Die rebellische Destillerie. Produziert ungetorften Bruichladdich, schwer getorf…</div>
+        
+    </a>
+
+    <a href="/whisky-glossar/destillerien/bunnahabhain/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bunnahabhain</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Die sanfte Seite Islays: Bekannt für ungetorfte, nussige und sherrybetonte Singl…</div>
+        
+    </a>
+
+    <a href="/whisky-glossar/destillerien/caol-ila/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Caol Ila</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Die größte Brennerei der Insel. Liefert hellen, maritimen und aschigen Torfrauch…</div>
+        
     </a></div>
     </section>
     
@@ -238,22 +256,22 @@
     </footer>
 <script>
 (function(){
-  document.querySelectorAll('.newsletter-form').forEach(function(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=form.querySelector('button[type="submit"]');
-      var email=form.querySelector('input[type="email"]').value;
-      if(!email)return;
-      var origText=btn.textContent;
-      btn.textContent='Wird gesendet…';btn.disabled=true;
-      fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
-        .then(function(r){return r.json()})
-        .then(function(d){
-          if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
-          else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
-        })
-        .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
-    });
+  document.addEventListener('submit',function(e){
+    var form=e.target;
+    if(!form.classList.contains('newsletter-form'))return;
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var email=form.querySelector('input[type="email"]').value;
+    if(!email)return;
+    var origText=btn.textContent;
+    btn.textContent='Wird gesendet…';btn.disabled=true;
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
+        else{btn.textContent='✓ '+(d.message||'Check dein Postfach!');btn.style.background='var(--accent-sage)';form.querySelector('input[type="email"]').value=''}
+      })
+      .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
   });
 })();
 </script>
