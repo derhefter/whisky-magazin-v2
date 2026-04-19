@@ -138,7 +138,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): islay"
       ],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "islay",
         "slug": "islay",
@@ -195,7 +195,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T15:20:24Z"
+      "reviewed_at": "2026-04-19T15:20:24Z",
+      "published_at": "2026-04-19T15:20:53Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
