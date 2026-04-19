@@ -1734,7 +1734,7 @@
         "Pflichtfeld fehlt: abv",
         "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "name": "Ardbeg",
         "founded": 1815,
@@ -1805,7 +1805,10 @@
             "abv": 47.4
           }
         ]
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:58:17Z"
     },
     {
       "batch_id": "whiskies_20260419T115249_708fa3",
