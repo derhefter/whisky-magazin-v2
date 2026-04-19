@@ -1387,11 +1387,11 @@
       "item_slug": "laphroaig-10-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "laphroaig-10",
-        "slug": "laphroaig-10-jahre",
-        "name": "Laphroaig 10 Jahre",
+        "id": "ardbeg",
+        "slug": "ardbeg",
+        "name": "Ardbeg",
         "country_id": "scotland",
         "region_id": "islay",
         "distillery_id": "laphroaig",
@@ -1413,20 +1413,20 @@
         "tasting_notes_nose": "Riesiger Rauch, seetangartig, ausgeprägt medizinisch (Jod).",
         "tasting_notes_palate": "Süß mit Noten von Salz, Jod und dichten Schichten von Torf.",
         "tasting_notes_finish": "Anhaltend, extrem torfig.",
-        "short_description": "Der polarisierendste, medizinisch-torfige Standard-Whisky von Laphroaig.",
-        "long_description": "Laphroaig 10 Jahre ist der originale Islay-Malt. Extrem reich, mit starken medizinischen Noten und Pflaster-Assoziationen.",
+        "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
+        "long_description": "Ardbeg wurde 1815 gegründet und liegt am östlichen Ende der berühmten Islay-Whisky-Küste. Nach jahrzehntelangem Rückgang und zwischenzeitlicher Schließung wurde die Destillerie 1997 von der Glenmorangie Company (heute Teil von LVMH) wiederbelebt. Seitdem hat sich Ardbeg zum Kultlabel entwickelt: stark torfig (55+ ppm Phenol), komplex und für seinen enthusiastischen 'Ardbeg Committee' bekannt, der globale Neuerscheinungen zelebriert.",
         "editorial_notes": "Love it or hate it. Ein absoluter Klassiker.",
-        "travel_context": "",
+        "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
         "image": null,
         "source_urls": [],
         "source_status": "verified",
         "review_status": "approved",
         "published": true,
         "related_articles": [],
-        "seo_title": "Laphroaig 10 Jahre",
-        "seo_description": "Tasting Notes Laphroaig 10.",
+        "seo_title": "Ardbeg Destillerie – Islay's rauchigster Single Malt | Whisky-Glossar",
+        "seo_description": "Ardbeg auf Islay: Geschichte, Stil, Touren und Abfüllungen der kultigen Torf-Destillerie.",
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T09:38:48Z"
+        "last_updated": "2026-04-19T11:59:02Z"
       },
       "raw": {
         "id": "laphroaig-10",
@@ -1467,7 +1467,10 @@
         "seo_description": "Tasting Notes Laphroaig 10.",
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-19T11:59:02Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
