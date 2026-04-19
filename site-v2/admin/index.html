@@ -3885,8 +3885,8 @@ function renderReviewQueue() {
         </div>
         <div class="review-card-actions">
           ${canDecide ? `
-          <button class="btn btn-success btn-sm" onclick='openReviewModal(${idx})'>✓ Entscheiden</button>
-          <button class="btn btn-danger btn-sm"  onclick='openReviewModalReject(${idx})'>✗ Ablehnen</button>` : ''}
+          <button class="btn btn-success btn-sm" onclick='openReviewModal("${esc(item.batch_id||"")}","${esc(item.item_id||"")}")'>✓ Entscheiden</button>
+          <button class="btn btn-danger btn-sm"  onclick='openReviewModalReject("${esc(item.batch_id||"")}","${esc(item.item_id||"")}")'>✗ Ablehnen</button>` : ''}
           ${canPublish ? `
           <button class="btn btn-primary btn-sm" onclick='publishSingle("${esc(item.entity)}", "${esc(item.batch_id)}", "${esc(item.item_id)}")'>🚀 Veröffentlichen</button>` : ''}
         </div>
@@ -3902,13 +3902,14 @@ function renderReviewQueue() {
 
 // ---- Review modal ----
 let reviewDecisionMode = 'approve';
-let reviewDecisionIdx  = null;
+let reviewDecisionItem = null;
 
-function openReviewModal(idx) {
+function openReviewModal(batchId, itemId) {
   reviewDecisionMode = 'approve';
-  reviewDecisionIdx  = idx;
-  const item = ((glossarReviewQueue||{}).items || [])[idx];
+  const item = ((glossarReviewQueue||{}).items || [])
+    .find(i => i.batch_id === batchId && i.item_id === itemId);
   if (!item) return;
+  reviewDecisionItem = item;
   const name = (item.normalized||{}).name || (item.normalized||{}).name_de || item.item_id;
   const entityLabel = GLOSSAR_ENTITY_LABELS[item.entity] || item.entity;
   document.getElementById('review-decision-desc').textContent =
@@ -3941,17 +3942,18 @@ function openReviewModal(idx) {
   document.getElementById('review-decision-modal').classList.add('open');
 }
 
-function openReviewModalReject(idx) {
-  openReviewModal(idx);
+function openReviewModalReject(batchId, itemId) {
+  openReviewModal(batchId, itemId);
   reviewDecisionMode = 'reject';
 }
 
 function closeReviewModal() {
   document.getElementById('review-decision-modal').classList.remove('open');
+  reviewDecisionItem = null;
 }
 
 async function submitReviewDecision(decision) {
-  const item = (glossarReviewQueue ? glossarReviewQueue.items : [])[reviewDecisionIdx];
+  const item = reviewDecisionItem;
   if (!item) return;
   const notes = document.getElementById('review-decision-notes').value.trim();
   const errEl = document.getElementById('review-decision-error');
