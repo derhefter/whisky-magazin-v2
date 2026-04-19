@@ -1,0 +1,52 @@
+{
+  "batch_id": "whiskies_20260419T170654_7fa76a",
+  "entity": "whiskies",
+  "imported_at": "2026-04-19T17:06:54Z",
+  "raw": [
+    {
+      "name": "Ardbeg Ten Years Old",
+      "distillery_id": "ardbeg",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "whisky_type": "single_malt",
+      "abv": 46,
+      "age_statement": "10"
+    },
+    {
+      "name": "Ardbeg Uigeadail",
+      "distillery_id": "ardbeg",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "whisky_type": "single_malt",
+      "abv": 54.2,
+      "age_statement": "NAS"
+    },
+    {
+      "name": "Ardbeg Corryvreckan",
+      "distillery_id": "ardbeg",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "whisky_type": "single_malt",
+      "abv": 57.1,
+      "age_statement": "NAS"
+    },
+    {
+      "name": "Ardbeg An Oa",
+      "distillery_id": "ardbeg",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "whisky_type": "single_malt",
+      "abv": 46.6,
+      "age_statement": "NAS"
+    },
+    {
+      "name": "Ardbeg Wee Beastie",
+      "distillery_id": "ardbeg",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "whisky_type": "single_malt",
+      "abv": 47.4,
+      "age_statement": "5"
+    }
+  ]
+}
