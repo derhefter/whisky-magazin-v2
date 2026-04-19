@@ -286,7 +286,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): bowmore"
       ],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "bowmore",
         "slug": "bowmore",
@@ -339,7 +339,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-19T17:12:48Z"
+      "reviewed_at": "2026-04-19T17:12:48Z",
+      "published_at": "2026-04-19T17:13:05Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
