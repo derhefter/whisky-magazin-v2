@@ -184,22 +184,31 @@ def _translate_azure(texts, target_lang):
 
 
 def _translate(texts, target_lang):
-    """Try DeepL first, fall back to Azure on any DeepL failure if Azure is configured."""
-    deepl_err = None
+    """Try DeepL first, fall back to Azure. Collect errors from both for diagnostics."""
+    errors = []
     if DEEPL_API_KEY:
         try:
             return _translate_deepl(texts, target_lang), "deepl"
         except HTTPError as e:
-            deepl_err = f"DeepL HTTP {e.code}"
-            if not AZURE_TRANSLATOR_KEY:
-                raise
+            try:
+                body = e.read().decode("utf-8", errors="replace")[:200]
+            except Exception:
+                body = ""
+            errors.append(f"DeepL HTTP {e.code}: {body}")
         except Exception as e:
-            deepl_err = f"DeepL error: {e}"
-            if not AZURE_TRANSLATOR_KEY:
-                raise
+            errors.append(f"DeepL error: {e}")
     if AZURE_TRANSLATOR_KEY:
-        return _translate_azure(texts, target_lang), "azure"
-    raise RuntimeError(deepl_err or "No translation service configured")
+        try:
+            return _translate_azure(texts, target_lang), "azure"
+        except HTTPError as e:
+            try:
+                body = e.read().decode("utf-8", errors="replace")[:200]
+            except Exception:
+                body = ""
+            errors.append(f"Azure HTTP {e.code}: {body}")
+        except Exception as e:
+            errors.append(f"Azure error: {e}")
+    raise RuntimeError(" | ".join(errors) if errors else "No translation service configured")
 
 
 # ---------------------------------------------------------------------------
