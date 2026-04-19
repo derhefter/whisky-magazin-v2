@@ -62,6 +62,13 @@
       "imported_at": "2026-04-19T17:06:54Z",
       "total": 5,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260419T170938_48a2fd",
+      "entity": "whiskies",
+      "imported_at": "2026-04-19T17:09:38Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -2220,6 +2227,63 @@
       "decision": "reject",
       "reviewer_notes": "",
       "reviewed_at": "2026-04-19T17:07:14Z"
+    },
+    {
+      "batch_id": "whiskies_20260419T170938_48a2fd",
+      "entity": "whiskies",
+      "item_id": "ardnahoe-inaugural-release",
+      "item_slug": "ardnahoe-inaugural-release",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "name": "Ardnahoe Inaugural Release",
+        "distillery_id": "ardnahoe",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "whisky_type": "single_malt",
+        "abv": 50,
+        "age_statement": "5",
+        "slug": "ardnahoe-inaugural-release",
+        "smoke_profile": "Stark getorft",
+        "cask_types": "ex-bourbon, oloroso sherry",
+        "style_tags": "torfig, frisch, modern, fruchtig",
+        "short_description": "Der erste Whisky der neuen Ardnahoe Destillerie. 5 Jahre alt und stark getorft.",
+        "long_description": "Ardnahoe ist die neueste Destillerie auf Islay (gegründet 2018). Ihr Inaugural Release, ein 5-jähriger Single Malt, präsentiert einen modernen Islay-Stil: Er wird in den einzigen Worm-Tub-Kondensatoren der Insel destilliert, was ihm eine fleischige, schwere Textur verleiht, gepaart mit frischem Torfrauch.",
+        "tasting_nose": "Gebackene Äpfel, Zitronenschale, Vanille, Karamell und kräftiger Torfrauch.",
+        "tasting_palate": "Vollmundig, fleischig. Gewürze, Anis, Toffee, Pfirsich und aschiger Rauch.",
+        "tasting_finish": "Lang, frisch und rauchig mit anhaltender Süße.",
+        "seo_title": "Ardnahoe Inaugural Release Whisky kaufen",
+        "seo_description": "Ardnahoe Inaugural Release: Der erste Whisky der neuen Islay-Destillerie. Fleischig, fruchtig und stark getorft.",
+        "published": true,
+        "go_live_immediately": true,
+        "id": "ardnahoe-inaugural-release",
+        "created_at": "2026-04-19T17:09:38Z",
+        "last_updated": "2026-04-19T17:09:38Z"
+      },
+      "raw": {
+        "name": "Ardnahoe Inaugural Release",
+        "distillery_id": "ardnahoe",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "whisky_type": "single_malt",
+        "abv": 50,
+        "age_statement": "5",
+        "slug": "ardnahoe-inaugural-release",
+        "smoke_profile": "Stark getorft",
+        "cask_types": "ex-bourbon, oloroso sherry",
+        "style_tags": "torfig, frisch, modern, fruchtig",
+        "short_description": "Der erste Whisky der neuen Ardnahoe Destillerie. 5 Jahre alt und stark getorft.",
+        "long_description": "Ardnahoe ist die neueste Destillerie auf Islay (gegründet 2018). Ihr Inaugural Release, ein 5-jähriger Single Malt, präsentiert einen modernen Islay-Stil: Er wird in den einzigen Worm-Tub-Kondensatoren der Insel destilliert, was ihm eine fleischige, schwere Textur verleiht, gepaart mit frischem Torfrauch.",
+        "tasting_nose": "Gebackene Äpfel, Zitronenschale, Vanille, Karamell und kräftiger Torfrauch.",
+        "tasting_palate": "Vollmundig, fleischig. Gewürze, Anis, Toffee, Pfirsich und aschiger Rauch.",
+        "tasting_finish": "Lang, frisch und rauchig mit anhaltender Süße.",
+        "seo_title": "Ardnahoe Inaugural Release Whisky kaufen",
+        "seo_description": "Ardnahoe Inaugural Release: Der erste Whisky der neuen Islay-Destillerie. Fleischig, fruchtig und stark getorft.",
+        "published": true,
+        "go_live_immediately": true
+      }
     }
   ]
 }
