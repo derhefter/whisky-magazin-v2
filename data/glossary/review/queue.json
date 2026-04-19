@@ -41,6 +41,13 @@
       "imported_at": "2026-04-19T11:45:25Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260419T114646_872ed3",
+      "entity": "whiskies",
+      "imported_at": "2026-04-19T11:46:46Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -1707,6 +1714,91 @@
       "decision": "reject",
       "reviewer_notes": "",
       "reviewed_at": "2026-04-19T11:45:58Z"
+    },
+    {
+      "batch_id": "whiskies_20260419T114646_872ed3",
+      "entity": "whiskies",
+      "item_id": "ardbeg",
+      "item_slug": "ardbeg",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "review_status": "pending",
+      "normalized": {
+        "name": "Ardbeg",
+        "founded": 1815,
+        "region_id": "islay",
+        "country_id": "scotland",
+        "core_range": [
+          {
+            "name": "Ardbeg Ten Years Old",
+            "age": 10,
+            "abv": 46
+          },
+          {
+            "name": "Ardbeg Uigeadail",
+            "age": null,
+            "abv": 54.2
+          },
+          {
+            "name": "Ardbeg Corryvreckan",
+            "age": null,
+            "abv": 57.1
+          },
+          {
+            "name": "Ardbeg An Oa",
+            "age": null,
+            "abv": 46.6
+          },
+          {
+            "name": "Ardbeg Wee Beastie",
+            "age": 5,
+            "abv": 47.4
+          }
+        ],
+        "slug": "ardbeg",
+        "id": "ardbeg",
+        "created_at": "2026-04-19T11:46:46Z",
+        "last_updated": "2026-04-19T11:46:46Z",
+        "published": false
+      },
+      "raw": {
+        "name": "Ardbeg",
+        "founded": 1815,
+        "region_id": "islay",
+        "country_id": "scotland",
+        "core_range": [
+          {
+            "name": "Ardbeg Ten Years Old",
+            "age": 10,
+            "abv": 46
+          },
+          {
+            "name": "Ardbeg Uigeadail",
+            "age": null,
+            "abv": 54.2
+          },
+          {
+            "name": "Ardbeg Corryvreckan",
+            "age": null,
+            "abv": 57.1
+          },
+          {
+            "name": "Ardbeg An Oa",
+            "age": null,
+            "abv": 46.6
+          },
+          {
+            "name": "Ardbeg Wee Beastie",
+            "age": 5,
+            "abv": 47.4
+          }
+        ]
+      }
     }
   ]
 }
