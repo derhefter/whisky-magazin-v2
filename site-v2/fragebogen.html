@@ -286,6 +286,24 @@
             line-height: 1.5;
         }
 
+        /* Validation error state */
+        .question-block.has-error {
+            border-color: #E05252;
+            box-shadow: 0 0 0 3px rgba(224,82,82,0.12);
+        }
+        .question-error-msg {
+            display: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #E05252;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .question-block.has-error .question-error-msg { display: block; }
+        .personal-section.has-error {
+            outline: 3px solid rgba(224,82,82,0.4);
+        }
+
         /* Submit section */
         .survey-submit {
             text-align: center;
@@ -575,13 +593,121 @@
         document.getElementById('survey-form').addEventListener('input', update);
     })();
 
-    /* Submit feedback */
-    document.getElementById('survey-form').addEventListener('submit', function(){
+    /* Submit: validate + AJAX */
+    document.getElementById('survey-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var form = this;
         var btn = document.getElementById('submit-btn');
+
+        // --- Clear previous errors ---
+        form.querySelectorAll('.question-block, .personal-section').forEach(function(b) {
+            b.classList.remove('has-error');
+            var m = b.querySelector('.question-error-msg');
+            if (m) m.remove();
+        });
+
+        var valid = true;
+        var firstError = null;
+
+        function markError(block, msg) {
+            block.classList.add('has-error');
+            var p = document.createElement('p');
+            p.className = 'question-error-msg';
+            p.textContent = msg;
+            block.appendChild(p);
+            if (!firstError) firstError = block;
+            valid = false;
+        }
+
+        // Radio groups: name → data-q
+        var radioGroups = [
+            ['q1_erster_eindruck', '1'],
+            ['q2_themenvielfalt', '2'],
+            ['q5_navigation', '5'],
+            ['q6_geraet', '6'],
+            ['q7_newsletter', '7'],
+            ['q9_laenge', '9'],
+            ['q10_empfehlung', '10'],
+        ];
+        radioGroups.forEach(function(pair) {
+            var name = pair[0], qNum = pair[1];
+            var block = form.querySelector('[data-q="' + qNum + '"]');
+            if (!form.querySelector('input[name="' + name + '"]:checked')) {
+                markError(block, 'Bitte w\u00e4hle eine Antwort aus.');
+            }
+        });
+
+        // Q3 checkboxes: at least one
+        var q3Block = form.querySelector('[data-q="3"]');
+        if (!form.querySelector('input[name="q3_themen"]:checked')) {
+            markError(q3Block, 'Bitte w\u00e4hle mindestens ein Thema aus.');
+        }
+
+        // Q8: two sub-groups in one block
+        var q8Block = form.querySelector('[data-q="8"]');
+        var q8Err = [];
+        if (!form.querySelector('input[name="q8_wann"]:checked')) q8Err.push('Zeitpunkt');
+        if (!form.querySelector('input[name="q8_haeufigkeit"]:checked')) q8Err.push('H\u00e4ufigkeit');
+        if (q8Err.length) markError(q8Block, 'Bitte w\u00e4hle je eine Antwort f\u00fcr: ' + q8Err.join(' & '));
+
+        // Name + E-Mail (HTML required handles browser popup, JS catches rest)
+        var emailVal = form.querySelector('input[name="email"]').value.trim();
+        var nameVal = form.querySelector('input[name="name"]').value.trim();
+        if (!nameVal || !emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+            var psBlock = form.querySelector('.personal-section');
+            markError(psBlock, 'Bitte Name und g\u00fcltige E-Mail-Adresse eingeben.');
+        }
+
+        if (!valid) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        // --- Submit ---
         btn.textContent = 'Wird gesendet\u2026';
         btn.disabled = true;
+
+        var formData = new FormData(form);
+        var newsletter = form.querySelector('input[name="newsletter"]').checked;
+
+        // 1. Formspree (survey data)
+        try {
+            var fsRes = await fetch('https://formspree.io/f/myklpaqy', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            });
+            if (!fsRes.ok) throw new Error('fs');
+        } catch(_) {
+            btn.textContent = 'Fehler \u2013 bitte nochmal versuchen';
+            btn.disabled = false;
+            return;
+        }
+
+        // 2. Newsletter Double-Opt-In (Brevo)
+        if (newsletter) {
+            try {
+                await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailVal })
+                });
+            } catch(_) { /* non-blocking */ }
+        }
+
+        // 3. Thank-you e-mail
+        try {
+            await fetch('/api/thank_you_feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: emailVal, name: nameVal })
+            });
+        } catch(_) { /* non-blocking */ }
+
+        // 4. Redirect
+        window.location.href = '/danke-feedback.html';
     });
-    </script>
+</script>
 
     <footer class="site-footer">
         <div class="footer-inner">
