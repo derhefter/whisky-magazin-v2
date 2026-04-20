@@ -4041,7 +4041,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Laphroaig 10 Year Old Cask Strength",
         "distillery_id": "laphroaig",
@@ -4088,7 +4088,10 @@
         "seo_description": "Laphroaig 10 Cask Strength: Der ikonische Islay-Malt in brachialer Fassstärke. Ein intensives Geschmackserlebnis.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:43Z"
     },
     {
       "batch_id": "whiskies_20260419T171709_254165",
