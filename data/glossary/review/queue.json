@@ -2838,7 +2838,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Bunnahabhain 12 Year Old",
         "distillery_id": "bunnahabhain",
@@ -2885,7 +2885,10 @@
         "seo_description": "Bunnahabhain 12 Jahre: Der ungetorfte Islay-Klassiker. Entdecke reiche Sherrynoten, maritime Einflüsse und Nüsse.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:28Z"
     },
     {
       "batch_id": "whiskies_20260419T171547_896d42",
