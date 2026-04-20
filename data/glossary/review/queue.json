@@ -3083,7 +3083,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Caol Ila 12 Year Old",
         "distillery_id": "caol_ila",
@@ -3130,7 +3130,10 @@
         "seo_description": "Caol Ila 12 Jahre: Frischer, eleganter und aschig-rauchiger Islay Single Malt. Der perfekte Einstieg in getorfte Whiskys.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:30:53Z"
     },
     {
       "batch_id": "whiskies_20260419T171558_02bce8",
