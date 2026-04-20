@@ -1028,7 +1028,7 @@
       "item_slug": "bruichladdich-the-classic-laddie",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -1111,7 +1111,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:49:39Z"
+      "reviewed_at": "2026-04-20T14:49:39Z",
+      "published_at": "2026-04-20T14:50:54Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
@@ -1120,7 +1121,7 @@
       "item_slug": "bunnahabhain-12-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -1203,7 +1204,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:49:46Z"
+      "reviewed_at": "2026-04-20T14:49:46Z",
+      "published_at": "2026-04-20T14:50:54Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
@@ -1398,7 +1400,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): lagavulin-16"
       ],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -1483,7 +1485,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:50:22Z"
+      "reviewed_at": "2026-04-20T14:50:22Z",
+      "published_at": "2026-04-20T14:50:54Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
@@ -1585,7 +1588,7 @@
       "item_slug": "ardnahoe-inaugural-release",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -1668,7 +1671,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:50:32Z"
+      "reviewed_at": "2026-04-20T14:50:32Z",
+      "published_at": "2026-04-20T14:50:54Z"
     },
     {
       "batch_id": "distilleries_20260419T114108_175ff6",
