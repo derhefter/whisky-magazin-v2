@@ -3740,7 +3740,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Lagavulin 12 Year Old Special Release",
         "distillery_id": "lagavulin",
@@ -3787,7 +3787,10 @@
         "seo_description": "Lagavulin 12 Jahre Special Release: Intensiv, fassstark und stark getorft. Ein exklusives Highlight für Islay-Fans.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:39Z"
     },
     {
       "batch_id": "whiskies_20260419T171625_d7de7b",
