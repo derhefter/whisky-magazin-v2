@@ -2469,7 +2469,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Bowmore 15 Year Old",
         "distillery_id": "bowmore",
@@ -2477,11 +2477,19 @@
         "country_id": "scotland",
         "whisky_type": "single_malt",
         "abv": 43,
-        "age_statement": "15",
+        "age_statement": 15,
         "slug": "bowmore-15-year-old",
-        "smoke_profile": "Leicht getorft",
-        "cask_types": "ex-bourbon, oloroso sherry",
-        "style_tags": "rauchig, sherry, rosinen, schokolade",
+        "smoke_profile": "none",
+        "cask_types": [
+          "ex-bourbon",
+          "oloroso sherry"
+        ],
+        "style_tags": [
+          "rauchig",
+          "sherry",
+          "rosinen",
+          "schokolade"
+        ],
         "short_description": "Ein reicher und komplexer Bowmore mit intensivem Finish in Oloroso-Sherryfässern.",
         "long_description": "Der Bowmore 15 Jahre verbringt die letzten drei Jahre seiner Reifung in spanischen Oloroso-Sherryfässern. Dies verleiht ihm eine wunderbare Farbe und ein robustes, wärmendes Finish mit Aromen von dunkler Schokolade, sonnengetrockneten Früchten und dem markentypischen Rauch.",
         "tasting_nose": "Dunkle Schokolade, sonnengetrocknete Früchte, Rosinen und sanfter Bowmore-Rauch.",
@@ -2493,7 +2501,8 @@
         "go_live_immediately": true,
         "id": "bowmore-15-year-old",
         "created_at": "2026-04-19T17:15:26Z",
-        "last_updated": "2026-04-19T17:15:26Z"
+        "last_updated": "2026-04-20T19:33:17Z",
+        "nas": false
       },
       "raw": {
         "name": "Bowmore 15 Year Old",
@@ -2516,7 +2525,10 @@
         "seo_description": "Bowmore 15 Jahre: Ein edler Islay Single Malt mit intensivem Finish in Oloroso-Sherryfässern. Vollmundig und rauchig.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:33:17Z"
     },
     {
       "batch_id": "whiskies_20260419T171526_f358f8",
