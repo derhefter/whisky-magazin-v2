@@ -2330,7 +2330,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "name": "Ardnahoe Inaugural Release",
         "distillery_id": "ardnahoe",
@@ -2389,7 +2389,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T19:29:38Z"
+      "reviewed_at": "2026-04-20T19:29:38Z",
+      "published_at": "2026-04-20T19:31:05Z"
     },
     {
       "batch_id": "whiskies_20260419T171526_f358f8",
@@ -3083,7 +3084,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "name": "Caol Ila 12 Year Old",
         "distillery_id": "caol_ila",
@@ -3133,7 +3134,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T19:30:53Z"
+      "reviewed_at": "2026-04-20T19:30:53Z",
+      "published_at": "2026-04-20T19:31:05Z"
     },
     {
       "batch_id": "whiskies_20260419T171558_02bce8",
@@ -3599,7 +3601,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "name": "Lagavulin 8 Year Old",
         "distillery_id": "lagavulin",
@@ -3649,7 +3651,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T19:30:51Z"
+      "reviewed_at": "2026-04-20T19:30:51Z",
+      "published_at": "2026-04-20T19:31:05Z"
     },
     {
       "batch_id": "whiskies_20260419T171625_d7de7b",
@@ -3716,7 +3719,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "name": "Lagavulin Distillers Edition",
         "distillery_id": "lagavulin",
@@ -3766,7 +3769,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T19:30:52Z"
+      "reviewed_at": "2026-04-20T19:30:52Z",
+      "published_at": "2026-04-20T19:31:05Z"
     },
     {
       "batch_id": "whiskies_20260419T171709_254165",
