@@ -1395,10 +1395,10 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): lagavulin-16"
       ],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
-        "id": "lagavulin-16",
-        "slug": "lagavulin-16-jahre",
+        "id": "oesterreich",
+        "slug": "oesterreich",
         "name": "Lagavulin 16 Jahre",
         "country_id": "scotland",
         "region_id": "islay",
@@ -1424,7 +1424,7 @@
         "tasting_notes_finish": "Sehr lang, elegant. Torfgefüllt mit viel Salz und Seetang.",
         "short_description": "Der tief rauchige und intensive Islay-Klassiker mit schöner Sherry-Note.",
         "long_description": "Der 16-jährige Lagavulin ist ein wahrer Islay-Klassiker. Er verbindet kraftvollen Rauch mit der Reife und Eleganz europäischer Sherry-Fässer.",
-        "editorial_notes": "Ein Meilenstein für jeden Islay-Fan.",
+        "editorial_notes": "Persönlicher Favorit aus unserer Islay-Sammlung. Wir haben diesen Whisky direkt an der Destillerie verkostet und immer eine Flasche im Regal.",
         "travel_context": "",
         "image": null,
         "source_urls": [],
@@ -1432,10 +1432,10 @@
         "review_status": "approved",
         "published": true,
         "related_articles": [],
-        "seo_title": "Lagavulin 16 Jahre",
+        "seo_title": "Laphroaig Destillerie - Medizinischer Torf-Whisky",
         "seo_description": "Tasting Notes Lagavulin 16.",
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T09:38:48Z"
+        "last_updated": "2026-04-20T14:50:22Z"
       },
       "raw": {
         "id": "lagavulin-16",
@@ -1477,7 +1477,10 @@
         "seo_description": "Tasting Notes Lagavulin 16.",
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T14:50:22Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
