@@ -2400,7 +2400,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Bowmore 12 Year Old",
         "distillery_id": "bowmore",
@@ -2408,11 +2408,19 @@
         "country_id": "scotland",
         "whisky_type": "single_malt",
         "abv": 40,
-        "age_statement": "12",
+        "age_statement": 12,
         "slug": "bowmore-12-year-old",
-        "smoke_profile": "Leicht getorft",
-        "cask_types": "ex-bourbon, sherry",
-        "style_tags": "rauchig, fruchtig, maritim, honig",
+        "smoke_profile": "none",
+        "cask_types": [
+          "ex-bourbon",
+          "sherry"
+        ],
+        "style_tags": [
+          "rauchig",
+          "fruchtig",
+          "maritim",
+          "honig"
+        ],
         "short_description": "Ein wunderbar ausbalancierter Klassiker von Islay. Bowmore 12 vereint sanften Torfrauch mit Zitrus- und Honignoten.",
         "long_description": "Der 12-jährige Bowmore ist das Herzstück der Destillerie. Er spiegelt perfekt den Charakter von Bowmore wider: ein moderater, aschiger Torfrauch kombiniert mit der Süße von Heidehonig und frischen Zitronen, gereift im ältesten Fasslager Schottlands, den No. 1 Vaults.",
         "tasting_nose": "Zitrone, Honig, dezenter Torfrauch und frische Meeresbrise.",
@@ -2424,7 +2432,8 @@
         "go_live_immediately": true,
         "id": "bowmore-12-year-old",
         "created_at": "2026-04-19T17:15:26Z",
-        "last_updated": "2026-04-19T17:15:26Z"
+        "last_updated": "2026-04-20T19:33:11Z",
+        "nas": false
       },
       "raw": {
         "name": "Bowmore 12 Year Old",
@@ -2447,7 +2456,10 @@
         "seo_description": "Bowmore 12 Jahre: Die perfekte Balance aus sanftem Torfrauch, Zitrone und Honig. Ein Islay-Klassiker.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:33:11Z"
     },
     {
       "batch_id": "whiskies_20260419T171526_f358f8",
