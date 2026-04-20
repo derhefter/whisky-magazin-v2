@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback-Fragebogen | Whisky Magazin</title>
+    <meta name="description" content="Dein Feedback f&uuml;r das Whisky Magazin &ndash; 10 Fragen, ca. 3 Minuten.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1C1108">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .survey-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+        .survey-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .survey-header .badge {
+            display: inline-block;
+            background: rgba(200,150,62,0.12);
+            border: 1px solid rgba(200,150,62,0.4);
+            color: var(--accent-amber);
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .survey-header h1 {
+            font-size: clamp(24px, 5vw, 34px);
+            margin-bottom: 10px;
+        }
+        .survey-header p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Progress bar */
+        .progress-wrap {
+            margin-bottom: 36px;
+        }
+        .progress-bar-track {
+            height: 5px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--accent-amber);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+        .progress-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+
+        /* Question blocks */
+        .question-block {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .question-num {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-amber);
+            margin-bottom: 8px;
+        }
+        .question-block legend,
+        .question-block label.q-label {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .question-block fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Radio / Checkbox options */
+        .option-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-list li label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: border-color 0.15s, background 0.15s;
+            background: var(--bg-primary);
+        }
+        .option-list li label:hover {
+            border-color: var(--accent-amber);
+            background: rgba(200,150,62,0.04);
+        }
+        .option-list li input[type="radio"],
+        .option-list li input[type="checkbox"] {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent-amber);
+            cursor: pointer;
+        }
+        .option-list li input[type="radio"]:checked + span,
+        .option-list li input[type="checkbox"]:checked + span {
+            color: var(--accent-amber);
+            font-weight: 500;
+        }
+
+        /* Checked state highlight */
+        .option-list li:has(input:checked) label {
+            border-color: var(--accent-amber);
+            background: rgba(200,150,62,0.06);
+        }
+
+        /* Subgroup label within question */
+        .subgroup-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin: 20px 0 10px;
+        }
+        .subgroup-label:first-of-type { margin-top: 4px; }
+
+        /* Textarea */
+        .survey-textarea {
+            width: 100%;
+            min-height: 110px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            resize: vertical;
+            transition: border-color 0.15s;
+            box-sizing: border-box;
+        }
+        .survey-textarea:focus {
+            outline: none;
+            border-color: var(--accent-amber);
+        }
+        .survey-textarea::placeholder { color: #AAAAAA; }
+
+        /* Optional note */
+        .optional-note {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+        }
+
+        /* Submit section */
+        .survey-submit {
+            text-align: center;
+            padding-top: 12px;
+        }
+        .survey-submit button {
+            background: var(--accent-amber);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 4px 16px rgba(200,150,62,0.3);
+            width: 100%;
+            max-width: 360px;
+        }
+        .survey-submit button:hover { background: #A67A2E; transform: translateY(-1px); }
+        .survey-submit button:active { transform: translateY(0); }
+        .survey-submit button:disabled { background: #CCBBAA; cursor: not-allowed; transform: none; }
+        .survey-submit p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 14px;
+        }
+
+        @media (max-width: 560px) {
+            .question-block { padding: 22px 18px 18px; }
+            .survey-wrap { padding: 32px 16px 64px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">whisky<span class="logo-dot">.</span><span class="logo-magazin">Magazin</span></a>
+            <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'">☰</button>
+            <nav class="site-nav" role="navigation">
+                <a href="/">Startseite</a>
+                <a href="/kategorie/whisky.html">Whisky</a>
+                <a href="/kategorie/reise.html">Reisen</a>
+                <a href="/karte.html">Karte</a>
+                <a href="/ueber-uns.html">&Uuml;ber uns</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="survey-wrap">
+
+            <div class="survey-header">
+                <div class="badge">Feedback-Fragebogen</div>
+                <h1>Deine Meinung z&auml;hlt &#127811;</h1>
+                <p>10 kurze Fragen &middot; ca. 3 Minuten &middot; kein Vorwissen n&ouml;tig</p>
+            </div>
+
+            <div class="progress-wrap">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-label" id="progress-label">0 von 10 beantwortet</div>
+            </div>
+
+            <form action="https://formspree.io/f/myklpaqy" method="POST" id="survey-form">
+                <input type="hidden" name="_next" value="https://www.whisky-reise.com/danke-feedback.html">
+                <input type="hidden" name="_subject" value="Neues Feedback: Whisky Magazin Beta-Tester">
+
+                <!-- Frage 1 -->
+                <div class="question-block" data-q="1">
+                    <div class="question-num">Frage 1 von 10</div>
+                    <fieldset>
+                        <legend>Du siehst die Seite gerade zum ersten Mal. Wie gef&auml;llt sie dir?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q1_erster_eindruck" value="Sehr gut"><span>Sehr gut &ndash; ich w&uuml;rde sie sofort weiter erkunden</span></label></li>
+                            <li><label><input type="radio" name="q1_erster_eindruck" value="Gut"><span>Gut &ndash; macht einen soliden Eindruck</span></label></li>
+                            <li><label><input type="radio" name="q1_erster_eindruck" value="Geht so"><span>Geht so &ndash; nichts Besonderes</span></label></li>
+                            <li><label><input type="radio" name="q1_erster_eindruck" value="Nicht so gut"><span>Nicht so gut &ndash; spricht mich nicht an</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 2 -->
+                <div class="question-block" data-q="2">
+                    <div class="question-num">Frage 2 von 10</div>
+                    <fieldset>
+                        <legend>Wie vielf&auml;ltig findest du die Themen auf der Seite?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q2_themenvielfalt" value="Sehr vielfältig"><span>Sehr vielf&auml;ltig &ndash; f&uuml;r jeden Geschmack etwas dabei</span></label></li>
+                            <li><label><input type="radio" name="q2_themenvielfalt" value="Gut, aber Themen fehlen"><span>Gut, aber ein paar Themen fehlen noch</span></label></li>
+                            <li><label><input type="radio" name="q2_themenvielfalt" value="Zu einseitig"><span>Zu einseitig &ndash; es dreht sich alles um dasselbe</span></label></li>
+                            <li><label><input type="radio" name="q2_themenvielfalt" value="Kann nicht beurteilen"><span>Kann ich noch nicht beurteilen</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 3 -->
+                <div class="question-block" data-q="3">
+                    <div class="question-num">Frage 3 von 10</div>
+                    <fieldset>
+                        <legend>Welche Themen interessieren dich am meisten? <span style="font-size:14px;font-weight:400;color:var(--text-secondary);">(Mehrfachauswahl m&ouml;glich)</span></legend>
+                        <ul class="option-list">
+                            <li><label><input type="checkbox" name="q3_themen" value="Whisky-Bewertungen & Tasting Notes"><span>Whisky-Bewertungen &amp; Tasting Notes</span></label></li>
+                            <li><label><input type="checkbox" name="q3_themen" value="Destillerie-Reportagen & Geschichten"><span>Destillerie-Reportagen &amp; Geschichten</span></label></li>
+                            <li><label><input type="checkbox" name="q3_themen" value="Kaufempfehlungen & Preis-Leistung"><span>Kaufempfehlungen &amp; Preis-Leistung</span></label></li>
+                            <li><label><input type="checkbox" name="q3_themen" value="Whisky-Regionen & Herkunft"><span>Whisky-Regionen &amp; Herkunft</span></label></li>
+                            <li><label><input type="checkbox" name="q3_themen" value="Einsteiger-Tipps & Grundwissen"><span>Einsteiger-Tipps &amp; Grundwissen</span></label></li>
+                            <li><label><input type="checkbox" name="q3_themen" value="Neuheiten & aktuelle Releases"><span>Neuheiten &amp; aktuelle Releases</span></label></li>
+                            <li><label><input type="checkbox" name="q3_themen" value="Cocktails & Rezepte"><span>Cocktails &amp; Rezepte mit Whisky</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 4 -->
+                <div class="question-block" data-q="4">
+                    <div class="question-num">Frage 4 von 10</div>
+                    <label class="q-label" for="q4_vermisst">Gibt es ein Thema, das du auf der Seite vermisst oder gerne sehen w&uuml;rdest?</label>
+                    <textarea id="q4_vermisst" name="q4_vermisste_themen" class="survey-textarea" placeholder="Deine Ideen und W&uuml;nsche..."></textarea>
+                    <p class="optional-note">Freiwillig &ndash; du kannst dieses Feld auch leer lassen.</p>
+                </div>
+
+                <!-- Frage 5 -->
+                <div class="question-block" data-q="5">
+                    <div class="question-num">Frage 5 von 10</div>
+                    <fieldset>
+                        <legend>Wie leicht findest du dich auf der Seite zurecht?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q5_navigation" value="Sehr leicht"><span>Sehr leicht &ndash; alles ist intuitiv und klar</span></label></li>
+                            <li><label><input type="radio" name="q5_navigation" value="Gut"><span>Gut &ndash; nach kurzem Suchen findet man sich zurecht</span></label></li>
+                            <li><label><input type="radio" name="q5_navigation" value="Schwierig"><span>Schwierig &ndash; ich musste l&auml;nger suchen</span></label></li>
+                            <li><label><input type="radio" name="q5_navigation" value="Unübersichtlich"><span>Un&uuml;bersichtlich &ndash; ich habe mich verloren</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 6 -->
+                <div class="question-block" data-q="6">
+                    <div class="question-num">Frage 6 von 10</div>
+                    <fieldset>
+                        <legend>Auf welchem Ger&auml;t hast du die Seite angeschaut, und wie war die Erfahrung?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q6_geraet" value="Smartphone – gut"><span>Smartphone &ndash; hat gut funktioniert</span></label></li>
+                            <li><label><input type="radio" name="q6_geraet" value="Smartphone – umständlich"><span>Smartphone &ndash; war etwas umst&auml;ndlich</span></label></li>
+                            <li><label><input type="radio" name="q6_geraet" value="Computer/Laptop – gut"><span>Computer/Laptop &ndash; hat gut funktioniert</span></label></li>
+                            <li><label><input type="radio" name="q6_geraet" value="Computer/Laptop – umständlich"><span>Computer/Laptop &ndash; war etwas umst&auml;ndlich</span></label></li>
+                            <li><label><input type="radio" name="q6_geraet" value="Beides – Desktop besser"><span>Beides &ndash; Desktop gef&auml;llt mir besser</span></label></li>
+                            <li><label><input type="radio" name="q6_geraet" value="Beides – Mobile besser"><span>Beides &ndash; Mobile gef&auml;llt mir besser</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 7 -->
+                <div class="question-block" data-q="7">
+                    <div class="question-num">Frage 7 von 10</div>
+                    <fieldset>
+                        <legend>K&ouml;nntest du dir vorstellen, einen Newsletter des Whisky Magazins zu abonnieren?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q7_newsletter" value="Ja, sofort"><span>Ja, auf jeden Fall &ndash; ich w&uuml;rde ihn sofort abonnieren</span></label></li>
+                            <li><label><input type="radio" name="q7_newsletter" value="Ja, wenn Themen passen"><span>Ja, wenn die Themen passen</span></label></li>
+                            <li><label><input type="radio" name="q7_newsletter" value="Vielleicht"><span>Vielleicht &ndash; kommt auf den Inhalt an</span></label></li>
+                            <li><label><input type="radio" name="q7_newsletter" value="Eher nicht"><span>Eher nicht</span></label></li>
+                            <li><label><input type="radio" name="q7_newsletter" value="Nein"><span>Nein</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 8 -->
+                <div class="question-block" data-q="8">
+                    <div class="question-num">Frage 8 von 10</div>
+                    <fieldset>
+                        <legend>Wann und wie oft w&uuml;rdest du den Newsletter am liebsten erhalten?</legend>
+                        <p class="subgroup-label">Zeitpunkt</p>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q8_wann" value="Morgens"><span>Morgens beim Fr&uuml;hst&uuml;ck</span></label></li>
+                            <li><label><input type="radio" name="q8_wann" value="Mittags"><span>In der Mittagspause</span></label></li>
+                            <li><label><input type="radio" name="q8_wann" value="Abends"><span>Abends nach der Arbeit</span></label></li>
+                            <li><label><input type="radio" name="q8_wann" value="Wochenende"><span>Am Wochenende &ndash; egal wann</span></label></li>
+                        </ul>
+                        <p class="subgroup-label">H&auml;ufigkeit</p>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q8_haeufigkeit" value="Wöchentlich"><span>W&ouml;chentlich</span></label></li>
+                            <li><label><input type="radio" name="q8_haeufigkeit" value="Zweiwöchentlich"><span>Zweuw&ouml;chentlich</span></label></li>
+                            <li><label><input type="radio" name="q8_haeufigkeit" value="Monatlich"><span>Monatlich</span></label></li>
+                            <li><label><input type="radio" name="q8_haeufigkeit" value="Nur bei Neuheiten"><span>Nur bei besonderen Neuheiten</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 9 -->
+                <div class="question-block" data-q="9">
+                    <div class="question-num">Frage 9 von 10</div>
+                    <fieldset>
+                        <legend>Wie lang sollten die Artikel und Newsletter-Beitr&auml;ge sein?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q9_laenge" value="Kurz & knackig"><span>Kurz &amp; knackig &ndash; max. 2 Minuten Lesezeit</span></label></li>
+                            <li><label><input type="radio" name="q9_laenge" value="Mittel – ca. 5 Minuten"><span>Mittel &ndash; ca. 5 Minuten, mit Tiefgang</span></label></li>
+                            <li><label><input type="radio" name="q9_laenge" value="Ausführlich"><span>Ausf&uuml;hrlich &ndash; ich lese gerne ausf&uuml;hrliche Berichte</span></label></li>
+                            <li><label><input type="radio" name="q9_laenge" value="Gemischt"><span>Gemischt &ndash; kurze &Uuml;bersichten mit Links zu langen Artikeln</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <!-- Frage 10 -->
+                <div class="question-block" data-q="10">
+                    <div class="question-num">Frage 10 von 10</div>
+                    <fieldset>
+                        <legend>W&uuml;rdest du das Whisky Magazin an Freunde oder Bekannte weiterempfehlen?</legend>
+                        <ul class="option-list">
+                            <li><label><input type="radio" name="q10_empfehlung" value="Ja, auf jeden Fall"><span>Ja, auf jeden Fall</span></label></li>
+                            <li><label><input type="radio" name="q10_empfehlung" value="Ja, wenn Seite gewachsen ist"><span>Ja, aber erst wenn die Seite noch etwas gewachsen ist</span></label></li>
+                            <li><label><input type="radio" name="q10_empfehlung" value="Nur an Whisky-Interessierte"><span>Nur an Whisky-Interessierte</span></label></li>
+                            <li><label><input type="radio" name="q10_empfehlung" value="Eher nicht"><span>Eher nicht</span></label></li>
+                            <li><label><input type="radio" name="q10_empfehlung" value="Nein"><span>Nein</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <div class="survey-submit">
+                    <button type="submit" id="submit-btn">Feedback absenden &#10003;</button>
+                    <p>Anonym &middot; Keine Anmeldung n&ouml;tig &middot; Danke!</p>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <script>
+    (function(){
+        var path=location.pathname;
+        var links=document.querySelectorAll('.site-nav a');
+        links.forEach(function(a){
+            var href=a.getAttribute('href');
+            if(path===href||(href!=='/'&&path.indexOf(href)===0))
+                a.classList.add('active');
+        });
+    })();
+
+    /* Progress bar */
+    (function(){
+        var fill = document.getElementById('progress-fill');
+        var label = document.getElementById('progress-label');
+        var total = 10;
+
+        function update(){
+            var answered = new Set();
+            document.querySelectorAll('.question-block').forEach(function(block){
+                var q = block.dataset.q;
+                var radios = block.querySelectorAll('input[type="radio"]:checked');
+                var checks = block.querySelectorAll('input[type="checkbox"]:checked');
+                var textarea = block.querySelector('textarea');
+                if(radios.length > 0 || checks.length > 0 || (textarea && textarea.value.trim())){
+                    answered.add(q);
+                }
+            });
+            var count = answered.size;
+            var pct = Math.round(count / total * 100);
+            fill.style.width = pct + '%';
+            label.textContent = count + ' von ' + total + ' beantwortet';
+        }
+
+        document.getElementById('survey-form').addEventListener('change', update);
+        document.getElementById('survey-form').addEventListener('input', update);
+    })();
+
+    /* Submit feedback */
+    document.getElementById('survey-form').addEventListener('submit', function(){
+        var btn = document.getElementById('submit-btn');
+        btn.textContent = 'Wird gesendet\u2026';
+        btn.disabled = true;
+    });
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo">whisky<span style="color:var(--accent-amber)">.</span>Magazin</div>
+                <p class="footer-tagline">Seit 2007 unterwegs durch Schottlands Whisky-Welt. Echte Reisen, echte Geschichten, ehrliche Empfehlungen.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Magazin</h4>
+                <a href="/">Startseite</a>
+                <a href="/kategorie/whisky.html">Whisky</a>
+                <a href="/kategorie/reise.html">Reisen</a>
+                <a href="/karte.html">Karte</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Mehr</h4>
+                <a href="/ueber-uns.html">&Uuml;ber uns</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/impressum.html">Impressum</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2007&ndash;2026 Whisky Magazin</span>
+            <span class="footer-quote">&#8222;Der beste Whisky ist der, den man mit Freunden teilt.&#8220;</span>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--text-primary);color:#fff;box-shadow:0 -4px 24px rgba(0,0,0,0.25);">
+      <div style="max-width:960px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
+        <div style="flex:1;min-width:280px;">
+          <p style="margin:0 0 4px;font-size:15px;font-weight:600;font-family:'Fraunces',serif;">Cookie-Einstellungen</p>
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.5;">Wir nutzen Cookies f&uuml;r Google Fonts. Details in unserer <a href="/datenschutz.html" style="color:var(--accent-amber);text-decoration:underline;">Datenschutzerkl&auml;rung</a>.</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button onclick="cookieConsent('essential')" style="padding:10px 20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#fff;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;">Nur notwendige</button>
+          <button onclick="cookieConsent('all')" style="padding:10px 20px;border:none;background:var(--accent-amber);color:#fff;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;">Alle akzeptieren</button>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var consent=localStorage.getItem('cookie_consent');
+      if(!consent){document.getElementById('cookie-banner').style.display='block'}
+      window.cookieConsent=function(level){
+        localStorage.setItem('cookie_consent',level);
+        document.getElementById('cookie-banner').style.display='none';
+      };
+    })();
+    </script>
+</body>
+</html>
