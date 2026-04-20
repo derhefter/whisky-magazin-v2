@@ -1043,3 +1043,110 @@ Der Newsletter nutzt DSGVO-konformes Double Opt-In:
 2. Brevo sendet Bestaetigungs-E-Mail (Template ID 1)
 3. Erst nach Klick auf Bestaetigungslink wird der Kontakt aktiv
 4. Abmeldelink in jeder Newsletter-E-Mail (automatisch von Brevo)
+
+---
+
+## 12. Beta-Tester-Kampagne: Landingpage, Fragebogen & Verlosung
+
+Stand: April 2026
+
+### Uebersicht
+
+Fuer den Launch wurde eine Beta-Tester-Kampagne aufgebaut, die per WhatsApp an Freunde und Bekannte verschickt wird. Ziel: ehrliches Erstnutzer-Feedback sammeln und gleichzeitig Newsletter-Abonnenten gewinnen.
+
+### Dateien
+
+| Datei | Zweck |
+| --- | --- |
+| `site-v2/umfrage.html` | Landingpage (WhatsApp-Link, Verlosung, CTA) |
+| `site-v2/fragebogen.html` | Fragebogen (10 Fragen + Name/E-Mail + Newsletter-Opt-in) |
+| `site-v2/danke-feedback.html` | Danke-Seite nach dem Absenden |
+
+### URLs
+
+| Was | URL |
+| --- | --- |
+| Landingpage | https://www.whisky-reise.com/umfrage.html |
+| Fragebogen | https://www.whisky-reise.com/fragebogen.html |
+| Danke-Seite | https://www.whisky-reise.com/danke-feedback.html |
+
+### Workflow fuer den Nutzer
+
+1. WhatsApp-Nachricht mit dem Link zu `/umfrage.html` verschicken
+2. Nutzer sieht Landingpage mit Verlosungs-Infos und klickt "Jetzt Feedback geben"
+3. Nutzer fuellt 10 Fragen aus, gibt Name + E-Mail ein, kann Newsletter-Opt-in auswaehlen
+4. Formular wird an Formspree gesendet, Nutzer landet auf `/danke-feedback.html`
+5. Steffen und Elmar werten Antworten im Formspree-Dashboard aus
+
+### WhatsApp-Nachricht (Template zum Kopieren)
+
+```
+Hey [Name]!
+
+Ich baue gerade ein Whisky-Magazin und wuerde mich riesig ueber dein
+ehrliches Feedback freuen - auch wenn du kein Whisky-Experte bist.
+
+Dauert nur 3 Minuten - und du kannst ein persoenliches Whisky-Tasting
+mit uns gewinnen!
+
+https://www.whisky-reise.com/umfrage.html
+
+Danke!!
+```
+
+### Formspree (Antworten auswerten)
+
+| Aktion | Wo |
+| --- | --- |
+| Dashboard aufrufen | https://formspree.io -> einloggen |
+| Einzelne Antworten lesen | Dashboard -> Formular "myklpaqy" -> Submissions |
+| Alle Antworten exportieren | Dashboard -> Export -> CSV herunterladen -> in Excel/Google Sheets oeffnen |
+| E-Mail-Benachrichtigung | Kommt automatisch nach jeder neuen Einsendung |
+
+**Formspree-Endpunkt:** `https://formspree.io/f/myklpaqy`
+
+**Kostenloses Kontingent:** 50 Einsendungen/Monat. Fuer mehr: Upgrade auf Formspree Basic (8 USD/Monat).
+
+### Verlosung auswerten
+
+Die Gewinner werden manuell aus den Formspree-Antworten ausgewaehlt. Kriterien:
+- Qualitaet und Ausfuehrlichkeit des Freitextfeldes (Frage 4: vermisste Themen)
+- Hinweise auf konkrete Verbesserungen
+- Allgemeine Nuetzlichkeit des Feedbacks
+
+Vorgehen:
+1. CSV-Export aus Formspree herunterladen
+2. In Google Sheets importieren
+3. Freitextantworten manuell lesen und Top 3 bestimmen
+4. Gewinner per E-Mail benachrichtigen (Adresse ist in den Formulardaten)
+
+### Newsletter-Opt-in aus dem Fragebogen
+
+Wenn der Nutzer die Checkbox "Monatlichen Newsletter erhalten" angehaekt laesst (Standard: angehaekt), erscheint im Formspree-Eintrag das Feld `newsletter: Ja`.
+
+Diese E-Mail-Adressen muessen manuell in Brevo importiert werden:
+1. CSV-Export aus Formspree
+2. Spalten filtern: nur Zeilen wo `newsletter = Ja`
+3. E-Mail-Adressen + Namen in Brevo importieren (Kontakte -> Importieren)
+4. Liste: "Beta-Tester-Newsletter" (oder bestehende Hauptliste)
+
+### Foto auf der Landingpage aendern
+
+Das Eyecatcher-Foto auf `/umfrage.html` und `/fragebogen.html` liegt unter:
+
+```
+site-v2/images/authors-steffen-elmar.jpg
+```
+
+Um ein neues Foto zu verwenden:
+1. Neues Foto als `authors-steffen-elmar.jpg` speichern (ueberschreibt das alte)
+2. Empfohlene Groesse: mindestens 400x400px, quadratisches Format
+3. `git add site-v2/images/authors-steffen-elmar.jpg` -> commit -> push
+
+### Design-Details
+
+Das Design der Landingpage und des Fragebogens folgt dem Standard-Brand:
+- **Farben:** Amber `#C8963E`, Cream `#FAFAF7`, Dark `#1A1A1A`
+- **Schriften:** Fraunces (Headings), Inter (Body)
+- **Stylesheet:** `/style.css` (gemeinsam mit dem Rest der Website)
+- **OG-Tags:** Optimiert fuer WhatsApp-Link-Preview (Titel, Beschreibung, Foto)

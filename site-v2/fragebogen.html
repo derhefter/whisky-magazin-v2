@@ -196,6 +196,96 @@
             margin-top: 6px;
         }
 
+        /* Personal data section */
+        .personal-section {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C1F0A 100%);
+            border-radius: 10px;
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .personal-section .question-num { color: #E8B86D; }
+        .personal-section legend,
+        .personal-section .ps-heading {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .personal-section .ps-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 24px;
+            display: block;
+        }
+        .ps-field {
+            margin-bottom: 16px;
+        }
+        .ps-field label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.75);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+        .ps-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.08);
+            border: 1.5px solid rgba(200,150,62,0.35);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #fff;
+            box-sizing: border-box;
+            transition: border-color 0.15s;
+        }
+        .ps-input:focus {
+            outline: none;
+            border-color: var(--accent-amber);
+            background: rgba(255,255,255,0.1);
+        }
+        .ps-input::placeholder { color: rgba(255,255,255,0.3); }
+        .newsletter-opt {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(200,150,62,0.1);
+            border: 1.5px solid rgba(200,150,62,0.3);
+            border-radius: 8px;
+            padding: 14px 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .newsletter-opt input[type="checkbox"] {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent-amber);
+            margin-top: 2px;
+            cursor: pointer;
+        }
+        .newsletter-opt-text strong {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .newsletter-opt-text span {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
         /* Submit section */
         .survey-submit {
             text-align: center;
@@ -416,9 +506,31 @@
                     </fieldset>
                 </div>
 
+                <!-- Persönliche Daten + Verlosung -->
+                <div class="personal-section">
+                    <div class="question-num">Fast geschafft &ndash; und jetzt die Chance auf das Tasting!</div>
+                    <span class="ps-heading">&#127881; Deine Daten f&uuml;r die Verlosung</span>
+                    <span class="ps-sub">Unter allen Teilnehmern verlosen wir 3 Pl&auml;tze f&uuml;r ein pers&ouml;nliches Whisky-Tasting mit Steffen &amp; Elmar. Deine E-Mail-Adresse brauchen wir, um dich zu benachrichtigen.</span>
+                    <div class="ps-field">
+                        <label for="ps_name">Dein Name *</label>
+                        <input type="text" id="ps_name" name="name" class="ps-input" placeholder="Vorname Nachname" required>
+                    </div>
+                    <div class="ps-field">
+                        <label for="ps_email">E-Mail-Adresse *</label>
+                        <input type="email" id="ps_email" name="email" class="ps-input" placeholder="deine@email.de" required>
+                    </div>
+                    <label class="newsletter-opt">
+                        <input type="checkbox" name="newsletter" value="Ja" checked>
+                        <div class="newsletter-opt-text">
+                            <strong>Monatlichen Newsletter erhalten</strong>
+                            <span>Einmal im Monat &ndash; die besten Whisky-Geschichten, Destillerie-Tipps &amp; Neuheiten. Kein Spam, jederzeit abbestellbar.</span>
+                        </div>
+                    </label>
+                </div>
+
                 <div class="survey-submit">
-                    <button type="submit" id="submit-btn">Feedback absenden &#10003;</button>
-                    <p>Anonym &middot; Keine Anmeldung n&ouml;tig &middot; Danke!</p>
+                    <button type="submit" id="submit-btn">Feedback absenden &amp; an Verlosung teilnehmen &#10003;</button>
+                    <p>Deine Daten werden nur f&uuml;r die Verlosung &amp; ggf. den Newsletter genutzt &ndash; <a href="/datenschutz.html" style="color:var(--accent-amber);">Datenschutz</a></p>
                 </div>
             </form>
 

@@ -118,6 +118,65 @@
         }
         .lp-cta-btn:active { transform: translateY(0); }
 
+        /* Prize / raffle block */
+        .lp-prize {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C1F0A 100%);
+            color: #fff;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .lp-prize-inner {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .lp-prize-eyebrow {
+            display: inline-block;
+            background: var(--accent-amber);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .lp-prize h2 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(22px, 5vw, 32px);
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+            padding-left: 0;
+        }
+        .lp-prize h2::before { display: none; }
+        .lp-prize p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .lp-prize-card {
+            background: rgba(200,150,62,0.12);
+            border: 1px solid rgba(200,150,62,0.35);
+            border-radius: 10px;
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+        .lp-prize-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: rgba(255,255,255,0.9);
+        }
+        .lp-prize-item span.icon { font-size: 20px; flex-shrink: 0; }
+
         /* Benefits section */
         .lp-benefits {
             max-width: 680px;
@@ -239,13 +298,28 @@
             <div class="lp-photo-wrap">
                 <img src="/images/authors-steffen-elmar.jpg" alt="Steffen und Elmar &ndash; Whisky Magazin">
             </div>
-            <h1>Hilf uns, das beste Whisky-Magazin im Netz zu bauen</h1>
-            <p>Wir haben whisky-reise.com gerade frisch gestartet &ndash; und w&uuml;rden uns riesig &uuml;ber deinen ersten, ehrlichen Eindruck freuen. Kein Vorwissen n&ouml;tig.</p>
+            <h1>Hilf uns, das beste Whisky-Magazin im Netz zu bauen &ndash; und gewinne ein Tasting mit uns</h1>
+            <p>Wir haben whisky-reise.com gerade frisch gestartet. Dein ehrlicher erster Eindruck hilft uns mehr als alles andere. Kein Vorwissen n&ouml;tig &ndash; und die besten 3 Feedbacks gewinnen ein pers&ouml;nliches Whisky-Tasting mit Steffen &amp; Elmar!</p>
             <div class="lp-time-badge">
-                <span>&#9201;</span> Nur 3 Minuten &middot; 10 kurze Fragen
+                <span>&#9201;</span> Nur 3 Minuten &middot; 10 kurze Fragen &middot; Verlosung
             </div>
             <br>
             <a href="/fragebogen.html" class="lp-cta-btn">Jetzt Feedback geben &rarr;</a>
+        </section>
+
+        <!-- PRIZE / RAFFLE -->
+        <section class="lp-prize">
+            <div class="lp-prize-inner">
+                <div class="lp-prize-eyebrow">&#127881; Verlosung</div>
+                <h2>Gewinne ein pers&ouml;nliches Whisky-Tasting mit Steffen &amp; Elmar</h2>
+                <p>Unter allen Teilnehmern verlosen wir <strong style="color:#E8B86D;">3 Pl&auml;tze</strong> f&uuml;r ein exklusives Tasting &ndash; 5 ausgew&auml;hlte Whiskys, gemeinsam mit uns, egal ob vor Ort oder per Video.</p>
+                <div class="lp-prize-card">
+                    <div class="lp-prize-item"><span class="icon">&#127811;</span> 5 sorgf&auml;ltig ausgew&auml;hlte Whiskys &ndash; von uns kuratiert</div>
+                    <div class="lp-prize-item"><span class="icon">&#128101;</span> Gemeinsam mit Steffen &amp; Elmar &ndash; pers&ouml;nlich &amp; entspannt</div>
+                    <div class="lp-prize-item"><span class="icon">&#11088;</span> Die 3 besten Feedbacks gewinnen &ndash; wer uns am meisten hilft, ist dabei</div>
+                    <div class="lp-prize-item"><span class="icon">&#128279;</span> Vor Ort oder per Video-Call &ndash; deutschlandweit m&ouml;glich</div>
+                </div>
+            </div>
         </section>
 
         <!-- BENEFITS -->
@@ -284,7 +358,7 @@
         <!-- BOTTOM CTA -->
         <div class="lp-bottom-cta">
             <a href="/fragebogen.html" class="lp-cta-btn">Jetzt mitmachen &rarr;</a>
-            <p>Anonym m&ouml;glich &middot; Keine Anmeldung &middot; Kein Spam</p>
+            <p>Kein Spam &middot; Newsletter jederzeit abbestellbar &middot; Datenschutz eingehalten</p>
         </div>
 
     </main>
