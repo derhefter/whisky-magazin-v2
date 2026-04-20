@@ -1117,10 +1117,10 @@
       "item_slug": "bunnahabhain-12-jahre",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "bunnahabhain-12",
-        "slug": "bunnahabhain-12-jahre",
+        "id": "oesterreich",
+        "slug": "oesterreich",
         "name": "Bunnahabhain 12 Jahre",
         "country_id": "scotland",
         "region_id": "islay",
@@ -1153,10 +1153,10 @@
         "review_status": "approved",
         "published": true,
         "related_articles": [],
-        "seo_title": "Bunnahabhain 12 Jahre",
+        "seo_title": "Laphroaig Destillerie - Medizinischer Torf-Whisky",
         "seo_description": "Tasting Notes für Bunnahabhain 12.",
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T09:38:48Z"
+        "last_updated": "2026-04-20T14:49:46Z"
       },
       "raw": {
         "id": "bunnahabhain-12",
@@ -1197,7 +1197,10 @@
         "seo_description": "Tasting Notes für Bunnahabhain 12.",
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T14:49:46Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
