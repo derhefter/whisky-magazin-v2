@@ -1582,10 +1582,10 @@
       "item_slug": "ardnahoe-inaugural-release",
       "status": "new",
       "errors": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "ardnahoe-inaugural",
-        "slug": "ardnahoe-inaugural-release",
+        "id": "oesterreich",
+        "slug": "oesterreich",
         "name": "Ardnahoe Inaugural Release",
         "country_id": "scotland",
         "region_id": "islay",
@@ -1618,10 +1618,10 @@
         "review_status": "approved",
         "published": true,
         "related_articles": [],
-        "seo_title": "Ardnahoe Inaugural Release",
+        "seo_title": "Laphroaig Destillerie - Medizinischer Torf-Whisky",
         "seo_description": "Tasting Notes Ardnahoe Inaugural Release.",
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T09:38:48Z"
+        "last_updated": "2026-04-20T14:50:32Z"
       },
       "raw": {
         "id": "ardnahoe-inaugural",
@@ -1662,7 +1662,10 @@
         "seo_description": "Tasting Notes Ardnahoe Inaugural Release.",
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T14:50:32Z"
     },
     {
       "batch_id": "distilleries_20260419T114108_175ff6",
