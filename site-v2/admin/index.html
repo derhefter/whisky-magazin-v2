@@ -1346,9 +1346,9 @@
 
     <!-- Sub: Review -->
     <div id="glossar-sub-review" class="glossar-sub">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
         <h2 class="section-title" style="margin:0;">Review-Queue</h2>
-        <div style="display:flex;gap:8px;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <select id="review-filter-entity" onchange="renderReviewQueue()" style="padding:6px 10px;border:1px solid var(--color-beige);border-radius:var(--radius);font-family:inherit;font-size:0.85rem;">
             <option value="">Alle Entitäten</option>
             <option value="whiskies">Whiskys</option>
@@ -1363,7 +1363,15 @@
             <option value="rejected">Abgelehnt</option>
             <option value="published">Veröffentlicht</option>
           </select>
+          <button class="btn btn-secondary btn-sm" id="review-select-all-btn" onclick="selectAllNewPending()" style="display:none;">☐ Alle neuen auswählen</button>
         </div>
+      </div>
+      <!-- Batch action bar (appears when items are selected) -->
+      <div id="review-batch-bar" style="display:none;margin-bottom:12px;padding:12px 16px;background:#f0fdf4;border:1px solid #86efac;border-radius:var(--radius);display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span style="font-size:0.88rem;color:#166534;font-weight:600;"><span id="review-batch-count">0</span> ausgewählt</span>
+        <button class="btn btn-success btn-sm" onclick="batchDecideSelected('approve')">✓ Alle freigeben</button>
+        <button class="btn btn-danger btn-sm"  onclick="batchDecideSelected('reject')">✗ Alle ablehnen</button>
+        <button class="btn btn-secondary btn-sm" onclick="clearReviewSelection()" style="margin-left:auto;">Auswahl aufheben</button>
       </div>
       <div id="review-queue-container"><div class="loading-text">Lädt Review-Queue…</div></div>
       <div id="review-publish-bar" style="display:none;margin-top:16px;padding:16px 20px;background:var(--color-green-bg);border:1px solid #A9DFBF;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:12px;">
@@ -4491,11 +4499,16 @@ function renderReviewQueue() {
           </div>`).join('')}
       </div>` : '';
 
-    return `<div class="review-card">
+    const batchable = canDecide && item.status === 'new' && !dupCandidates.length;
+    const cbId = `review-cb-${esc(item.batch_id)}-${esc(item.item_id)}`;
+    return `<div class="review-card" id="review-card-${esc(item.batch_id)}-${esc(item.item_id)}" style="position:relative;">
       <div class="review-card-header">
-        <div>
-          <div class="review-card-title">${esc(nameField)}</div>
-          <div class="review-card-meta">${esc(entityLabel)} &nbsp;·&nbsp; Batch: ${esc(item.batch_id||'')} &nbsp;·&nbsp; ${statusBadge} ${reviewBadge}${dupCandidates.length ? ' <span class="glossar-badge badge-yellow">⚠ Duplikat?</span>' : ''}</div>
+        <div style="display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0;">
+          ${batchable ? `<input type="checkbox" id="${cbId}" data-batch="${esc(item.batch_id)}" data-item="${esc(item.item_id)}" data-entity="${esc(item.entity)}" onchange="updateBatchBar()" style="margin-top:4px;width:16px;height:16px;cursor:pointer;flex-shrink:0;" title="Für Batch-Freigabe auswählen">` : '<span style="width:16px;flex-shrink:0;"></span>'}
+          <div style="flex:1;min-width:0;">
+            <div class="review-card-title">${esc(nameField)}</div>
+            <div class="review-card-meta">${esc(entityLabel)} &nbsp;·&nbsp; Batch: ${esc(item.batch_id||'')} &nbsp;·&nbsp; ${statusBadge} ${reviewBadge}${dupCandidates.length ? ' <span class="glossar-badge badge-yellow">⚠ Duplikat?</span>' : ''}</div>
+          </div>
         </div>
         <div class="review-card-actions">
           ${canDecide ? `
@@ -4511,7 +4524,75 @@ function renderReviewQueue() {
     </div>`;
   }).join('');
 
-  container.innerHTML = `<div style="margin-bottom:8px;font-size:0.78rem;color:var(--color-muted);">${items.length} Einträge</div>${cards}`;
+  const batchableCount = items.filter(i => i.review_status === 'pending' && i.status === 'new' && !(i.duplicate_candidates||[]).length).length;
+  const selAllBtn = document.getElementById('review-select-all-btn');
+  if (selAllBtn) selAllBtn.style.display = batchableCount > 1 ? '' : 'none';
+
+  container.innerHTML = `<div style="margin-bottom:8px;font-size:0.78rem;color:var(--color-muted);">${items.length} Einträge${batchableCount > 0 ? ` · <strong>${batchableCount}</strong> für Schnellfreigabe wählbar` : ''}</div>${cards}`;
+  updateBatchBar();
+}
+
+// ---- Batch review actions ----
+
+function updateBatchBar() {
+  const checked = document.querySelectorAll('input[type=checkbox][data-batch]:checked');
+  const bar = document.getElementById('review-batch-bar');
+  const cnt = document.getElementById('review-batch-count');
+  if (!bar) return;
+  if (checked.length > 0) {
+    bar.style.display = 'flex';
+    if (cnt) cnt.textContent = checked.length;
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+function selectAllNewPending() {
+  const boxes = document.querySelectorAll('input[type=checkbox][data-batch]');
+  const anyUnchecked = [...boxes].some(b => !b.checked);
+  boxes.forEach(b => { b.checked = anyUnchecked; });
+  const btn = document.getElementById('review-select-all-btn');
+  if (btn) btn.textContent = anyUnchecked ? '☑ Auswahl aufheben' : '☐ Alle neuen auswählen';
+  updateBatchBar();
+}
+
+function clearReviewSelection() {
+  document.querySelectorAll('input[type=checkbox][data-batch]').forEach(b => { b.checked = false; });
+  const btn = document.getElementById('review-select-all-btn');
+  if (btn) btn.textContent = '☐ Alle neuen auswählen';
+  updateBatchBar();
+}
+
+async function batchDecideSelected(decision) {
+  const checked = [...document.querySelectorAll('input[type=checkbox][data-batch]:checked')];
+  if (!checked.length) return;
+  const label = decision === 'approve' ? 'freigeben' : 'ablehnen';
+  if (!confirm(`${checked.length} Einträge ${label}?`)) return;
+
+  const bar = document.getElementById('review-batch-bar');
+  if (bar) bar.innerHTML = `<span style="font-size:0.88rem;color:#166534;">⏳ Verarbeite ${checked.length} Einträge…</span>`;
+
+  const results = await Promise.allSettled(
+    checked.map(cb =>
+      apiPost(`${API.glossar}?action=review_decision`, {
+        batch_id: cb.dataset.batch,
+        item_id:  cb.dataset.item,
+        decision,
+        reviewer_notes: '',
+        corrections: {},
+      })
+    )
+  );
+
+  const ok  = results.filter(r => r.status === 'fulfilled').length;
+  const err = results.filter(r => r.status === 'rejected').length;
+  const msg = err > 0
+    ? `${ok} Einträge ${label === 'freigeben' ? 'freigegeben' : 'abgelehnt'}, ${err} Fehler`
+    : `${ok} Einträge ${decision === 'approve' ? 'freigegeben ✓' : 'abgelehnt'}`;
+  showToast(msg, err > 0 ? 'warn' : 'success');
+
+  glossarReviewQueue = null;
+  loadReviewQueue();
 }
 
 // ---- Review modal ----
