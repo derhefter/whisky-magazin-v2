@@ -4221,8 +4221,8 @@ function buildEntryForm(entity, d) {
     ${fg('ef-age',        'Alter (Jahre)',      inp('ef-age',        d.age_statement,'', 'number'), 'Leer lassen für NAS')}
     ${fg('ef-smoke',      'Rauchprofil',        sel('ef-smoke', d.smoke_profile || 'none',
       [['none','Kein Torf'],['light','Leicht'],['medium','Mittel'],['heavy','Stark'],['very_heavy','Sehr stark']]))}
-    ${fg('ef-casks',      'Fasstypen',         inp('ef-casks', (d.cask_types||[]).join(', '), 'ex-bourbon, sherry'), 'Komma-getrennt')}
-    ${fg('ef-tags',       'Style-Tags',        inp('ef-tags',  (d.style_tags||[]).join(', '),  'torfig, rauchig'), 'Komma-getrennt')}
+    ${fg('ef-casks',      'Fasstypen',         inp('ef-casks', Array.isArray(d.cask_types) ? d.cask_types.join(', ') : (d.cask_types||''), 'ex-bourbon, sherry'), 'Komma-getrennt')}
+    ${fg('ef-tags',       'Style-Tags',        inp('ef-tags',  Array.isArray(d.style_tags)  ? d.style_tags.join(', ')  : (d.style_tags||''),  'torfig, rauchig'), 'Komma-getrennt')}
     ${common}
     ${fg('ef-short',      'Kurzbeschreibung',  ta('ef-short', d.short_description, '', 60))}
     ${fg('ef-long',       'Langbeschreibung',  ta('ef-long',  d.long_description,  '', 100))}
