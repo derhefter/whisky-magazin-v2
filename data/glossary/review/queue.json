@@ -2658,7 +2658,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "The Classic Laddie",
         "distillery_id": "bruichladdich",
@@ -2705,7 +2705,10 @@
         "seo_description": "Bruichladdich The Classic Laddie: Ein ungetorfter Islay Single Malt. Frisch, floral und aus 100% schottischer Gerste.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:26Z"
     },
     {
       "batch_id": "whiskies_20260419T171537_e4fecd",
