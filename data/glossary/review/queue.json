@@ -4101,7 +4101,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Laphroaig Select",
         "distillery_id": "laphroaig",
@@ -4148,7 +4148,10 @@
         "seo_description": "Laphroaig Select: Der perfekte, sanfte Einstieg in die Welt der Laphroaig-Whiskys. Süß, maritim und leicht getorft.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:44Z"
     }
   ]
 }
