@@ -87,16 +87,20 @@
     <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
         <img src="/images/luxusurlaub-schottland-schlosshotels-fine-dining.jpg" alt="Luxusurlaub in Schottland: Schlosshotels und Fine Dining" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-sm);display:block;" loading="lazy"><div class="article-image-credit">Foto von <a href="https://unsplash.com/photos/a-white-castle-reflected-in-calm-water-a8Fk-Yw5iIQ?utm_source=whisky_magazin&utm_medium=referral">Wolfgang Weiser</a> auf <a href="https://unsplash.com/?utm_source=whisky_magazin&utm_medium=referral">Unsplash</a></div>
     </div>
-    <div id="lang-switcher" style="max-width:var(--max-width);margin:24px auto 12px;padding:14px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#F5F0E8;border-radius:8px;">
-        <span style="font-size:18px;">&#127760;</span>
-        <span style="font-size:14px;color:#1A1A1A;font-weight:600;font-family:'Inter',sans-serif;">Sprache / Language:</span>
-        <button class="lang-btn lang-active" data-lang="de" style="background:#C8963E;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#FFFFFF;font-family:'Inter',sans-serif;transition:all 0.15s;">DE</button>
-        <button class="lang-btn" data-lang="en" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">EN</button>
-        <button class="lang-btn" data-lang="fr" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">FR</button>
-        <button class="lang-btn" data-lang="nl" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">NL</button>
-        <button class="lang-btn" data-lang="es" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">ES</button>
-        <button class="lang-btn" data-lang="ja" style="background:#FFFFFF;border:1px solid #C8963E;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;color:#1A1A1A;font-family:'Inter',sans-serif;transition:all 0.15s;">JA</button>
-        <span id="lang-notice" style="font-size:12px;color:#8B6F3E;display:none;margin-left:4px;font-style:italic;"></span>
+    <div id="lang-switcher" style="max-width:var(--max-width);margin:18px auto 4px;padding:0 24px;display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6B6B6B;">
+        <span style="margin-right:4px;">&#127760;</span>
+        <button class="lang-btn lang-active" data-lang="de" style="background:none;border:none;padding:4px 2px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#C8963E;font-weight:700;transition:color 0.15s;">DE</button>
+        <span style="color:#D6C9B0;">/</span>
+        <button class="lang-btn" data-lang="en" style="background:none;border:none;padding:4px 2px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:color 0.15s;">EN</button>
+        <span style="color:#D6C9B0;">/</span>
+        <button class="lang-btn" data-lang="fr" style="background:none;border:none;padding:4px 2px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:color 0.15s;">FR</button>
+        <span style="color:#D6C9B0;">/</span>
+        <button class="lang-btn" data-lang="nl" style="background:none;border:none;padding:4px 2px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:color 0.15s;">NL</button>
+        <span style="color:#D6C9B0;">/</span>
+        <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:4px 2px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:color 0.15s;">ES</button>
+        <span style="color:#D6C9B0;">/</span>
+        <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:4px 2px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:color 0.15s;">JA</button>
+        <span id="lang-notice" style="font-size:11px;color:#8B6F3E;display:none;margin-left:8px;font-style:italic;text-transform:none;letter-spacing:0;"></span>
     </div>
     <div class="article-layout">
         <article class="article-body" data-slug="luxusurlaub-schottland-schlosshotels-fine-dining">
@@ -250,9 +254,8 @@
         history.pushState(null,'',url.toString());
         document.querySelectorAll('.lang-btn').forEach(function(b){
           var active=b.dataset.lang===lang;
-          b.style.borderColor='#C8963E';
-          b.style.color=active?'#FFFFFF':'#1A1A1A';
-          b.style.background=active?'#C8963E':'#FFFFFF';
+          b.style.color=active?'#C8963E':'#6B6B6B';
+          b.style.fontWeight=active?'700':'500';
         });
         currentLang=lang;
       }
