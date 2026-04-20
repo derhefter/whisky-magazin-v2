@@ -1367,7 +1367,7 @@
         </div>
       </div>
       <!-- Batch action bar (appears when items are selected) -->
-      <div id="review-batch-bar" style="display:none;margin-bottom:12px;padding:12px 16px;background:#f0fdf4;border:1px solid #86efac;border-radius:var(--radius);display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <div id="review-batch-bar" style="display:none;margin-bottom:12px;padding:12px 16px;background:#f0fdf4;border:1px solid #86efac;border-radius:var(--radius);align-items:center;gap:12px;flex-wrap:wrap;">
         <span style="font-size:0.88rem;color:#166534;font-weight:600;"><span id="review-batch-count">0</span> ausgewählt</span>
         <button class="btn btn-success btn-sm" onclick="batchDecideSelected('approve')">✓ Alle freigeben</button>
         <button class="btn btn-danger btn-sm"  onclick="batchDecideSelected('reject')">✗ Alle ablehnen</button>
@@ -4539,12 +4539,8 @@ function updateBatchBar() {
   const bar = document.getElementById('review-batch-bar');
   const cnt = document.getElementById('review-batch-count');
   if (!bar) return;
-  if (checked.length > 0) {
-    bar.style.display = 'flex';
-    if (cnt) cnt.textContent = checked.length;
-  } else {
-    bar.style.display = 'none';
-  }
+  bar.style.display = checked.length > 0 ? 'flex' : 'none';
+  if (cnt) cnt.textContent = checked.length;
 }
 
 function selectAllNewPending() {
@@ -4570,24 +4566,34 @@ async function batchDecideSelected(decision) {
   if (!confirm(`${checked.length} Einträge ${label}?`)) return;
 
   const bar = document.getElementById('review-batch-bar');
-  if (bar) bar.innerHTML = `<span style="font-size:0.88rem;color:#166534;">⏳ Verarbeite ${checked.length} Einträge…</span>`;
+  let ok = 0, err = 0;
 
-  const results = await Promise.allSettled(
-    checked.map(cb =>
-      apiPost(`${API.glossar}?action=review_decision`, {
+  // Sequential to avoid file write conflicts on the server
+  for (let i = 0; i < checked.length; i++) {
+    const cb = checked[i];
+    if (bar) bar.innerHTML = `
+      <span style="font-size:0.88rem;color:#166534;flex:1;">
+        ⏳ Verarbeite ${i + 1} / ${checked.length}…
+      </span>
+      <div style="flex:1;background:#bbf7d0;border-radius:4px;height:6px;overflow:hidden;">
+        <div style="background:#16a34a;height:100%;width:${Math.round(((i+1)/checked.length)*100)}%;transition:width 0.2s;"></div>
+      </div>`;
+    try {
+      await apiPost(`${API.glossar}?action=review_decision`, {
         batch_id: cb.dataset.batch,
         item_id:  cb.dataset.item,
         decision,
         reviewer_notes: '',
         corrections: {},
-      })
-    )
-  );
+      });
+      ok++;
+    } catch(e) {
+      err++;
+    }
+  }
 
-  const ok  = results.filter(r => r.status === 'fulfilled').length;
-  const err = results.filter(r => r.status === 'rejected').length;
   const msg = err > 0
-    ? `${ok} Einträge ${label === 'freigeben' ? 'freigegeben' : 'abgelehnt'}, ${err} Fehler`
+    ? `${ok} ${decision === 'approve' ? 'freigegeben' : 'abgelehnt'}, ${err} Fehler`
     : `${ok} Einträge ${decision === 'approve' ? 'freigegeben ✓' : 'abgelehnt'}`;
   showToast(msg, err > 0 ? 'warn' : 'success');
 

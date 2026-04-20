@@ -260,16 +260,26 @@ Das Glossar ist unter `/whisky-glossar/` erreichbar und enthaelt Laender, Region
 
 1. **Batch importieren:** `POST /api/admin_glossary?action=import_batch` — CSV oder JSON hochladen
 2. **Review-Queue:** `GET /api/admin_glossary?action=review_queue` — Eintraege pruefen
-3. **Entscheiden:** `POST /api/admin_glossary?action=review_decision` — approve / reject / merge
+3. **Entscheiden:** Einzeln oder per Batch (s.u.)
 4. **Veroeffentlichen:** `POST /api/admin_glossary?action=publish_approved` — Freigegebene Eintraege live schalten
 
-**Review-Entscheidungen:**
+**Review-Entscheidungen (Einzeln):**
 
 | Entscheidung | Bedeutung                                                                   |
 | ------------ | --------------------------------------------------------------------------- |
 | `approve`    | Eintrag wird unveraendert uebernommen                                       |
 | `reject`     | Eintrag wird verworfen                                                      |
 | `merge`      | Eintrag wird mit bestehendem Datensatz zusammengefuehrt (Smart-Merge-Logik) |
+
+**Batch-Freigabe (seit April 2026):**
+
+Fuer neue Eintraege ohne Konflikte (`status = new`, kein Duplikat-Verdacht) steht eine Batch-Funktion bereit:
+
+- **Checkboxen** erscheinen links neben jedem batchbaren Eintrag
+- **"Alle neuen auswaehlen"**-Button im Queue-Header waehlt alle waehlbaren Eintraege; ein zweiter Klick hebt die Auswahl auf
+- **Gruene Aktionsleiste** erscheint sobald ≥ 1 Eintrag gewaehlt ist — zeigt Anzahl + Buttons "Alle freigeben" / "Alle ablehnen"
+- Eintraege mit `update_candidate`-Status oder Duplikat-Warnung erscheinen *ohne* Checkbox und muessen einzeln geprueft werden
+- Die Verarbeitung laeuft **sequentiell** (nicht parallel), um Datei-Schreibkonflikte auf dem Server zu vermeiden; ein Fortschrittsbalken zeigt den Stand an
 
 #### Smart-Merge-Logik (seit April 2026)
 
