@@ -652,10 +652,10 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): lagavulin"
       ],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "lagavulin",
-        "slug": "lagavulin",
+        "id": "oesterreich",
+        "slug": "oesterreich",
         "name": "Lagavulin",
         "country_id": "scotland",
         "region_id": "islay",
@@ -665,18 +665,18 @@
         "website": "https://www.malts.com",
         "short_description": "Legendäre Islay-Brennerei, bekannt für dichten, schweren Torfrauch gepaart mit komplexer Eleganz.",
         "long_description": "Lagavulin gehört zu den gefragtesten Single Malts der Welt und zeichnet sich durch tiefe, trockene Rauchnoten, gepaart mit fruchtiger Süße und maritimen Anklängen aus.",
-        "visit_info": "Besucherzentrum vorhanden, Touren sehr beliebt.",
+        "visit_info": "Destillerietouren täglich, Verkostungen buchbar. Die Lage direkt am Meer ist spektakulär.",
         "travel_context": "Südküste, zwischen Laphroaig und Ardbeg.",
         "coordinates": {
           "lat": 55.635,
           "lng": -6.126
         },
         "image": null,
-        "seo_title": "Lagavulin Destillerie - Whisky aus Islay",
+        "seo_title": "Lagavulin Destillerie – Islay Single Malt | Whisky-Glossar",
         "seo_description": "Lagavulin Infos.",
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
-        "last_updated": "2026-04-19T08:48:24Z"
+        "last_updated": "2026-04-20T14:48:55Z"
       },
       "raw": {
         "id": "lagavulin",
@@ -702,7 +702,10 @@
         "published": true,
         "created_at": "2026-04-19T10:30:00Z",
         "last_updated": "2026-04-19T10:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T14:48:55Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
