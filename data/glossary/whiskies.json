@@ -205,5 +205,45 @@
     "seo_description": "Ardbeg auf Islay: Geschichte, Stil, Touren und Abfüllungen der kultigen Torf-Destillerie.",
     "created_at": "2026-04-19T10:30:00Z",
     "last_updated": "2026-04-19T11:59:37Z"
+  },
+  {
+    "id": "oesterreich",
+    "slug": "oesterreich",
+    "name": "Ardnahoe Inaugural Release",
+    "country_id": "scotland",
+    "region_id": "islay",
+    "distillery_id": "ardnahoe",
+    "whisky_type": "single_malt",
+    "style_tags": [
+      "rauchig",
+      "fruchtig",
+      "jung",
+      "dynamisch"
+    ],
+    "age_statement": 5,
+    "nas": false,
+    "abv": 50,
+    "cask_types": [
+      "ex-bourbon",
+      "oloroso"
+    ],
+    "smoke_profile": "heavy",
+    "tasting_notes_nose": "Gebackene Äpfel, Toffee, süßer Torfrauch und Vanille.",
+    "tasting_notes_palate": "Süßer Rauch, Zitrone, Honig und karamellisierte Nüsse.",
+    "tasting_notes_finish": "Lang, rauchig, mit schöner Fruchtnote.",
+    "short_description": "Das erste Release von Islays jüngster Destillerie.",
+    "long_description": "Mit Spannung erwartet: Der erste 5-jährige Single Malt von Ardnahoe vereint klassische Ex-Bourbon und Oloroso-Sherryfässer zu einem fruchtig-rauchigen Profil.",
+    "editorial_notes": "Ein starker Auftakt für die neue Brennerei.",
+    "travel_context": "",
+    "image": null,
+    "source_urls": [],
+    "source_status": "verified",
+    "review_status": "approved",
+    "published": true,
+    "related_articles": [],
+    "seo_title": "Laphroaig Destillerie - Medizinischer Torf-Whisky",
+    "seo_description": "Tasting Notes Ardnahoe Inaugural Release.",
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-20T14:50:54Z"
   }
 ]
