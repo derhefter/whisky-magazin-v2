@@ -695,12 +695,12 @@
             } catch(_) { /* non-blocking */ }
         }
 
-        // 3. Thank-you e-mail
+        // 3. Thank-you e-mail (via subscribe, action=thankyou)
         try {
-            await fetch('/api/thank_you_feedback', {
+            await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: emailVal, name: nameVal })
+                body: JSON.stringify({ action: 'thankyou', email: emailVal, name: nameVal })
             });
         } catch(_) { /* non-blocking */ }
 

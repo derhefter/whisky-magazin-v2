@@ -196,6 +196,68 @@ def _send_welcome_email(email):
     urlopen(req)
 
 
+def _send_thank_you_feedback(email, name):
+    """Branded thank-you e-mail after beta-tester survey submission."""
+    first_name = name.split()[0] if name else "du"
+    B = BASE_URL
+    html = (
+        '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1.0"></head>'
+        '<body style="margin:0;padding:0;background:#FAFAF7;font-family:Inter,Helvetica,Arial,sans-serif;">'
+        '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FAFAF7;">'
+        '<tr><td align="center" style="padding:32px 16px;">'
+        '<table width="560" cellpadding="0" cellspacing="0" border="0" '
+        'style="max-width:560px;width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);">'
+        '<tr><td style="background:#2C2C2C;padding:32px;text-align:center;">'
+        '<span style="font-family:Georgia,serif;font-size:26px;color:#fff;font-weight:700;">whisky</span>'
+        '<span style="color:#C8963E;font-size:26px;">.</span>'
+        '<span style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#999;margin-left:4px;">MAGAZIN</span>'
+        '</td></tr>'
+        '<tr><td style="padding:40px 32px 28px;text-align:center;">'
+        '<div style="font-size:52px;margin-bottom:20px;">&#127811;</div>'
+        '<h1 style="font-family:Georgia,serif;font-size:26px;color:#2C2C2C;margin:0 0 14px;">'
+        'Vielen Dank, ' + first_name + '!</h1>'
+        '<p style="font-size:15px;color:#5C5C5C;line-height:1.7;margin:0;">'
+        'Dein Feedback ist bei uns angekommen. Wir lesen jede Antwort pers&ouml;nlich &ndash; '
+        'du hilfst uns wirklich, whisky&#8209;reise.com besser zu machen.</p>'
+        '</td></tr>'
+        '<tr><td style="padding:0 32px;"><div style="border-top:2px solid #C8963E;width:48px;margin:0 auto;"></div></td></tr>'
+        '<tr><td style="padding:28px 32px;">'
+        '<div style="background:#1A1A1A;border-radius:10px;padding:28px;text-align:center;">'
+        '<p style="font-size:11px;color:#C8963E;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin:0 0 14px;">&#127881; Deine Verlosungs-Teilnahme</p>'
+        '<h2 style="font-family:Georgia,serif;font-size:20px;color:#fff;margin:0 0 14px;">Du bist dabei &ndash; Tasting mit Steffen &amp; Elmar</h2>'
+        '<p style="font-size:14px;color:#c8c8c8;line-height:1.7;margin:0;">'
+        'Wir verlosen <strong style="color:#E8B86D;">3 Pl&auml;tze</strong> f&uuml;r ein pers&ouml;nliches '
+        'Whisky-Tasting &ndash; 5 ausgew&auml;hlte Whiskys, gemeinsam mit uns. '
+        'Die drei besten Feedbacks gewinnen. Wir melden uns bei dir!</p>'
+        '</div></td></tr>'
+        '<tr><td style="padding:20px 32px 32px;text-align:center;">'
+        '<a href="' + B + '" style="display:inline-block;background:#C8963E;color:#fff;text-decoration:none;'
+        'padding:13px 28px;border-radius:6px;font-size:15px;font-weight:600;">Magazin entdecken &rarr;</a>'
+        '</td></tr>'
+        '<tr><td style="padding:24px 32px;border-top:1px solid #E8E4DF;text-align:center;">'
+        '<span style="font-family:Georgia,serif;font-size:16px;color:#2C2C2C;font-weight:700;">whisky</span>'
+        '<span style="color:#C8963E;font-size:16px;">.</span>'
+        '<span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8A8A8A;margin-left:3px;">MAGAZIN</span>'
+        '<p style="font-size:12px;color:#8A8A8A;margin:12px 0 0;">'
+        'Du erh&auml;ltst diese E-Mail, weil du an unserem Beta-Tester-Feedback teilgenommen hast.</p>'
+        '<p style="font-size:11px;color:#B0B0B0;margin:8px 0 0;">'
+        '&copy; 2007&ndash;2026 Whisky Magazin &middot; Steffen &amp; Elmar</p>'
+        '</td></tr>'
+        '</table></td></tr></table></body></html>'
+    )
+    payload = json.dumps({
+        "sender": {"name": "Steffen & Elmar", "email": "whisky-news@whisky-reise.com"},
+        "to": [{"email": email, "name": name}],
+        "subject": "Danke f\u00fcr dein Feedback \u2013 du bist dabei! \U0001f943",
+        "htmlContent": html,
+    }).encode("utf-8")
+    req = Request("https://api.brevo.com/v3/smtp/email", data=payload, headers={
+        "api-key": BREVO_API_KEY, "Content-Type": "application/json", "Accept": "application/json",
+    }, method="POST")
+    urlopen(req)
+
+
 def _cors_headers(origin=""):
     base = {"Access-Control-Allow-Methods": "POST, GET, OPTIONS", "Access-Control-Allow-Headers": "Content-Type"}
     if origin in ALLOWED_ORIGINS:
@@ -338,6 +400,18 @@ class handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length)) if length else {}
         except Exception:
             return self._json(400, {"error": "Ungueltige Anfrage."}, cors)
+
+        # Thank-you e-mail action (beta-tester survey)
+        if body.get("action") == "thankyou":
+            email = (body.get("email") or "").strip().lower()
+            name = (body.get("name") or "").strip()
+            if not email or not BREVO_API_KEY:
+                return self._json(400, {"error": "E-Mail oder API-Key fehlt."}, cors)
+            try:
+                _send_thank_you_feedback(email, name)
+                return self._json(200, {"ok": True}, cors)
+            except Exception as exc:
+                return self._json(500, {"error": str(exc)}, cors)
 
         email = (body.get("email") or "").strip().lower()
         if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
