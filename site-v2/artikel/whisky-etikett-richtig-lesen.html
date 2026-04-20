@@ -61,11 +61,11 @@
             <a href="/" class="site-logo">whisky<span class="logo-dot">.</span><span class="logo-magazin">Magazin</span></a>
             <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'">☰</button>
             <nav class="site-nav" role="navigation">
-                <a href="/">Startseite</a>
-                <a href="/kategorie/whisky.html">Whisky</a>
-                <a href="/kategorie/reise.html">Reisen</a>
-                <a href="/karte.html">Karte</a>
-                <a href="/ueber-uns.html">Über uns</a>
+                <a href="/" data-i18n="nav_home">Startseite</a>
+                <a href="/kategorie/whisky.html" data-i18n="nav_whisky">Whisky</a>
+                <a href="/kategorie/reise.html" data-i18n="nav_travel">Reisen</a>
+                <a href="/karte.html" data-i18n="nav_map">Karte</a>
+                <a href="/ueber-uns.html" data-i18n="nav_about">Über uns</a>
             </nav>
         </div>
     </header>
@@ -337,6 +337,10 @@
         currentLang=lang;
       }
       function switchLang(lang){
+        try{ localStorage.setItem('site_lang',lang); }catch(e){}
+        document.querySelectorAll('.site-lang-btn').forEach(function(b){
+          if(b.dataset.sitelang===lang)b.classList.add('site-lang-active');else b.classList.remove('site-lang-active');
+        });
         if(lang===currentLang)return;
         if(lang==='de'){
           var url=new URL(location.href);url.searchParams.delete('lang');
@@ -362,8 +366,11 @@
       document.querySelectorAll('.lang-btn').forEach(function(b){
         b.addEventListener('click',function(){switchLang(b.dataset.lang);});
       });
+      window.switchArticleLang=switchLang;
       var urlLang=new URLSearchParams(location.search).get('lang');
-      if(urlLang&&urlLang!=='de'){switchLang(urlLang);}
+      var storedLang=null;try{storedLang=localStorage.getItem('site_lang');}catch(e){}
+      var initLang=urlLang||storedLang;
+      if(initLang&&initLang!=='de'){switchLang(initLang);}
     })();
     </script>
     </main>
@@ -425,6 +432,107 @@
       })
       .catch(function(){btn.textContent='Fehler – bitte nochmal';setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)});
   });
+})();
+</script>
+<!-- Globale Sprachleiste (rechter Rand, fixed) -->
+<style>
+  #site-lang-rail { position:fixed; top:50%; right:0; transform:translateY(-50%); z-index:900; background:rgba(255,253,249,0.92); backdrop-filter:blur(8px); border:1px solid var(--border); border-right:none; border-radius:8px 0 0 8px; box-shadow:-2px 2px 12px rgba(42,32,21,0.08); padding:8px 4px; display:flex; flex-direction:column; gap:2px; font-family:'Inter',sans-serif; transition:padding 0.2s; }
+  #site-lang-rail:hover { padding:8px 8px; }
+  #site-lang-rail .rail-globe { text-align:center; font-size:14px; color:#C8963E; padding:4px 0 6px; border-bottom:1px solid var(--border); margin-bottom:4px; }
+  #site-lang-rail button { background:none; border:none; padding:6px 8px; border-radius:4px; font-size:11px; letter-spacing:0.08em; font-weight:600; color:#6B6B6B; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:8px; white-space:nowrap; transition:all 0.15s; }
+  #site-lang-rail button:hover { background:rgba(200,150,62,0.12); color:#1A1A1A; }
+  #site-lang-rail button.site-lang-active { background:#C8963E; color:#FFFFFF; }
+  #site-lang-rail .full { display:none; font-weight:500; font-size:11px; text-transform:none; letter-spacing:0; }
+  #site-lang-rail:hover .full { display:inline; }
+  #site-lang-rail .code { min-width:18px; text-align:center; }
+  @media (max-width: 1023px) {
+    #site-lang-rail { top:auto; bottom:20px; right:20px; transform:none; border-radius:28px; padding:6px; border:1px solid var(--border); flex-direction:row; gap:0; }
+    #site-lang-rail.mobile-collapsed button:not(.rail-fab) { display:none; }
+    #site-lang-rail .rail-globe { display:none; }
+    #site-lang-rail .rail-fab { display:inline-flex; width:44px; height:44px; justify-content:center; align-items:center; border-radius:50%; background:#C8963E; color:#fff; font-size:18px; padding:0; }
+    #site-lang-rail:not(.mobile-collapsed) .rail-fab { display:none; }
+    #site-lang-rail:not(.mobile-collapsed) { flex-direction:row; padding:6px 8px; }
+    #site-lang-rail:not(.mobile-collapsed) .full { display:none; }
+  }
+  @media (min-width: 1024px) {
+    #site-lang-rail .rail-fab { display:none; }
+  }
+</style>
+<nav id="site-lang-rail" class="mobile-collapsed" aria-label="Sprache wählen">
+  <button type="button" class="rail-fab" aria-label="Sprache wählen" onclick="document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');">&#127760;</button>
+  <span class="rail-globe">&#127760;</span>
+  <button type="button" class="site-lang-btn site-lang-active" data-sitelang="de"><span class="code">DE</span><span class="full">Deutsch</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="en"><span class="code">EN</span><span class="full">English</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="fr"><span class="code">FR</span><span class="full">Français</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="nl"><span class="code">NL</span><span class="full">Nederlands</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="es"><span class="code">ES</span><span class="full">Español</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="ja"><span class="code">JA</span><span class="full">&#26085;&#26412;&#35486;</span></button>
+</nav>
+<script>
+(function(){
+  var STORAGE='site_lang';
+  var uiCache=null;
+  function getLang(){
+    try{ return localStorage.getItem(STORAGE)||'de'; }catch(e){ return 'de'; }
+  }
+  function setLang(l){ try{ localStorage.setItem(STORAGE,l); }catch(e){} }
+  function loadUi(cb){
+    if(uiCache){cb(uiCache);return;}
+    fetch('/data/translations.json').then(function(r){return r.json();}).then(function(d){uiCache=d;cb(d);}).catch(function(){cb({});});
+  }
+  function applyUi(lang){
+    loadUi(function(ui){
+      var dict=ui[lang]||{};
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var key=el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent=dict[key];
+      });
+      document.documentElement.setAttribute('lang',lang);
+    });
+  }
+  function updateRail(lang){
+    document.querySelectorAll('.site-lang-btn').forEach(function(b){
+      if(b.dataset.sitelang===lang) b.classList.add('site-lang-active'); else b.classList.remove('site-lang-active');
+    });
+  }
+  function rewriteArticleLinks(lang){
+    if(lang==='de') return;
+    document.querySelectorAll('a[href*="/artikel/"]').forEach(function(a){
+      try{
+        var u=new URL(a.getAttribute('href'), location.origin);
+        if(u.pathname.indexOf('/artikel/')!==0 && u.pathname.indexOf('/artikel/')===-1) return;
+        u.searchParams.set('lang',lang);
+        a.setAttribute('href', u.pathname+u.search+u.hash);
+      }catch(e){}
+    });
+  }
+  function pickLang(lang){
+    setLang(lang);
+    updateRail(lang);
+    if(typeof window.switchArticleLang==='function'){
+      window.switchArticleLang(lang);
+    }else{
+      applyUi(lang);
+      rewriteArticleLinks(lang);
+    }
+    var notice=document.getElementById('site-lang-notice');
+    if(notice){
+      if(lang==='de'){ notice.style.display='none'; }
+      else{ notice.style.display=''; }
+    }
+  }
+  document.querySelectorAll('.site-lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){ pickLang(b.dataset.sitelang); });
+  });
+  var initial=getLang();
+  updateRail(initial);
+  if(initial!=='de'){
+    applyUi(initial);
+    rewriteArticleLinks(initial);
+    var notice=document.getElementById('site-lang-notice');
+    if(notice) notice.style.display='';
+  }
+  window.__siteLang={get:getLang,set:setLang,applyUi:applyUi};
 })();
 </script>
 <!-- Cookie Consent Banner -->
