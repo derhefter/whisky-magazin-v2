@@ -3439,7 +3439,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Sanaig",
         "distillery_id": "kilchoman",
@@ -3486,7 +3486,10 @@
         "seo_description": "Kilchoman Sanaig: Stark getorfter Islay Single Malt mit intensivem Sherry-Einfluss. Reichhaltig und fruchtig.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:36Z"
     },
     {
       "batch_id": "whiskies_20260419T171612_27d433",
