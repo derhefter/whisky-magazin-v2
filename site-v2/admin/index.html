@@ -4519,10 +4519,14 @@ let reviewDecisionMode = 'approve';
 let reviewDecisionItem = null;
 
 async function openReviewModal(batchId, itemId) {
+  try {
   reviewDecisionMode = 'approve';
   const item = ((glossarReviewQueue||{}).items || [])
     .find(i => i.batch_id === batchId && i.item_id === itemId);
-  if (!item) return;
+  if (!item) {
+    showToast('Eintrag nicht gefunden (batchId=' + batchId + ', itemId=' + itemId + ')', 'error');
+    return;
+  }
   reviewDecisionItem = item;
   const name = (item.normalized||{}).name || (item.normalized||{}).name_de || item.item_id;
   const entityLabel = GLOSSAR_ENTITY_LABELS[item.entity] || item.entity;
@@ -4586,6 +4590,10 @@ async function openReviewModal(batchId, itemId) {
   }
 
   document.getElementById('review-decision-modal').classList.add('open');
+  } catch(err) {
+    console.error('openReviewModal error:', err);
+    showToast('Fehler beim Öffnen: ' + (err.message || err), 'error');
+  }
 }
 
 // ── Review diff helpers ─────────────────────────────────────────────────────
