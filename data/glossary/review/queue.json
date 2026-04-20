@@ -2718,7 +2718,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Port Charlotte 10 Year Old",
         "distillery_id": "bruichladdich",
@@ -2765,7 +2765,10 @@
         "seo_description": "Port Charlotte 10 Jahre: Stark getorft, maritim und süß. Ein Meisterwerk von Bruichladdich für Torf-Fans.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:27Z"
     },
     {
       "batch_id": "whiskies_20260419T171537_e4fecd",
