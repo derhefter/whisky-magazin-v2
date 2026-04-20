@@ -198,5 +198,30 @@
     "published": true,
     "created_at": "2026-04-19T10:30:00Z",
     "last_updated": "2026-04-19T11:05:33Z"
+  },
+  {
+    "id": "oesterreich",
+    "slug": "oesterreich",
+    "name": "Ardnahoe",
+    "country_id": "scotland",
+    "region_id": "islay",
+    "founded": 2018,
+    "owner": "Hunter Laing & Co",
+    "status": "active",
+    "website": "https://ardnahoedistillery.com",
+    "short_description": "Die jüngste aktive Brennerei auf Islay (mit Ausnahme geschlossener Restarts). Moderne Technik, traditioneller Torf.",
+    "long_description": "Ardnahoe wurde vom unabhängigen Abfüller Hunter Laing gegründet und profitiert vom Wissen des legendären Jim McEwan. Mit traditionellen Worm Tubs ausgestattet, produziert die moderne Destillerie einen charakterstarken, fruchtig-rauchigen Islay Single Malt.",
+    "visit_info": "Sehr modernes Besucherzentrum mit Café und phänomenalem Ausblick auf Jura.",
+    "travel_context": "Liegt hoch über dem Sound of Islay zwischen Port Askaig und Bunnahabhain.",
+    "coordinates": {
+      "lat": 55.87,
+      "lng": -6.115
+    },
+    "image": null,
+    "seo_title": "Laphroaig Destillerie - Medizinischer Torf-Whisky",
+    "seo_description": "Alles über die Ardnahoe Destillerie auf Islay.",
+    "published": true,
+    "created_at": "2026-04-19T10:30:00Z",
+    "last_updated": "2026-04-20T14:50:52Z"
   }
 ]
