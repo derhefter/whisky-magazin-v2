@@ -2778,7 +2778,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Octomore",
         "distillery_id": "bruichladdich",
@@ -2825,7 +2825,10 @@
         "seo_description": "Entdecke Octomore, den am stärksten getorften Whisky der Welt. Ein extremes, aber komplexes Geschmackserlebnis von Bruichladdich.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:28Z"
     },
     {
       "batch_id": "whiskies_20260419T171547_896d42",
