@@ -3981,7 +3981,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Laphroaig Lore",
         "distillery_id": "laphroaig",
@@ -4028,7 +4028,10 @@
         "seo_description": "Laphroaig Lore: Der reichhaltigste und komplexeste Laphroaig. Ein Meisterwerk für Kenner.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:42Z"
     },
     {
       "batch_id": "whiskies_20260419T171709_254165",
