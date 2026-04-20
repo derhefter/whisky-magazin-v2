@@ -2538,7 +2538,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Bowmore 18 Year Old",
         "distillery_id": "bowmore",
@@ -2585,7 +2585,10 @@
         "seo_description": "Bowmore 18 Jahre: Ein Meisterwerk aus Islay. Perfekte Harmonie aus reifen Früchten, Toffee und sanftem Torfrauch.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:24Z"
     },
     {
       "batch_id": "whiskies_20260419T171526_f358f8",
