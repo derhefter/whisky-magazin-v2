@@ -652,7 +652,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): lagavulin"
       ],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -705,7 +705,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:48:55Z"
+      "reviewed_at": "2026-04-20T14:48:55Z",
+      "published_at": "2026-04-20T14:50:52Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
@@ -716,7 +717,7 @@
       "errors": [
         "ID bereits vorhanden (Duplikat): laphroaig"
       ],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -769,7 +770,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:49:17Z"
+      "reviewed_at": "2026-04-20T14:49:17Z",
+      "published_at": "2026-04-20T14:50:52Z"
     },
     {
       "batch_id": "distilleries_20260419T084824_01c0c4",
@@ -778,7 +780,7 @@
       "item_slug": "ardnahoe",
       "status": "new",
       "errors": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oesterreich",
         "slug": "oesterreich",
@@ -831,7 +833,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-20T14:49:25Z"
+      "reviewed_at": "2026-04-20T14:49:25Z",
+      "published_at": "2026-04-20T14:50:52Z"
     },
     {
       "batch_id": "whiskies_20260419T093848_ab93f4",
