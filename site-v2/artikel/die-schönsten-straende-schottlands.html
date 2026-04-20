@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="die-schönsten-straende-schottlands">
             <h2>Die schönsten Strände Schottlands: Ein Paradies für Weltenbummler und Whisky-Liebhaber</h2> <p>Schottland ist nicht nur für seine rauen Highlands und seinen erstklassigen Whisky bekannt. Es bietet auch einige der schönsten Küstenlinien der Welt. Als leidenschaftlicher Whisky-Experte und Reiseblogger möchte ich dir heute meine liebsten Strände Schottlands vorstellen. Pack deinen Kilt und deinen Lieblings-Whisky ein und lass uns gemeinsam die Küsten Schottlands erkunden!</p> <h2>1. Luskentyre Beach, Insel Harris</h2><div class="empfehlung-box"><span class="emp-icon">🥃</span><div class="emp-content"><p class="emp-title">Strände bei Amazon</p><p class="emp-text">Den im Artikel besprochenen Whisky direkt bestellen – oft mit Prime-Lieferung.</p><a href="https://www.amazon.de/s?k=strände+whisky+single+malt&tag=whiskyreise74-21" class="emp-cta" target="_blank" rel="nofollow noopener">Strände bei Amazon ansehen</a></div></div> <p>Ein Besuch auf der Insel Harris in den äußeren Hebriden wäre ohne einen Abstecher zum Luskentyre Beach nicht komplett. Dieser Strand ist berühmt für seinen weißen Sand und das türkisfarbene Wasser, das sich perfekt zum Fotografieren eignet.</p> <ul> <li><strong>Aktivitäten:</strong> Spazierengehen, Fotografieren, Vogelbeobachtung</li> <li><strong>Empfohlene Reisezeit:</strong> Mai bis September, wenn das Wetter am mildesten ist</li>
@@ -189,17 +189,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

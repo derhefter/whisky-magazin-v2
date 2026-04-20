@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="wohnmobil-reise-durch-schottland">
             <h2>Wohnmobil-Reise durch Schottland: Ein Abenteuer der besonderen Art</h2> <p>Schottland ist ein Land voller Mythen, atemberaubender Landschaften und natürlich hervorragendem Whisky. Eine Wohnmobil-Reise durch Schottland bietet dir die Freiheit, all das in deinem eigenen Tempo zu entdecken. Stell dir vor, du wachst morgens auf mit dem Blick auf einen der malerischen Lochs oder parkst am Abend direkt neben einer alten Burgruine. Klingt das nicht verlockend?</p> <h2>Warum ein Wohnmobil?</h2><div class="empfehlung-box"><h3 style="padding-left:0;">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Reise planen</h3><p>Fähre, Hotel und mehr für deine Schottland-Reise – alles auf einen Blick.</p><a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" class="btn btn-primary" style="margin-top:12px;margin-right:8px;" target="_blank" rel="nofollow noopener">Fähre buchen</a><a href="https://www.whisky.reise/hotels/" class="btn btn-primary" style="margin-top:12px;" target="_blank" rel="nofollow noopener">Hotels ansehen</a></div> <p>Ein Wohnmobil ist die perfekte Möglichkeit, Schottland zu bereisen. Es bietet Flexibilität und Komfort und ist ideal für all jene, die die Freiheit lieben, sich spontan für den nächsten Stopp entscheiden zu können. Stell dir vor, du fährst durch die Highlands und entscheidest dich, noch eine Nacht an einem abgelegenen Ort zu verbringen, weil du die Aussicht so beeindruckend findest. Mit einem Wohnmobil ist das kein Problem.</p> <h3>Vorteile einer Wohnmobil-Reise</h3> <ul> <li><strong>Flexibilität:</strong> Du kannst deinen Reiseplan jederzeit ändern.</li> <li><strong>Komfort:</strong> Dein Bett, deine Küche, alles ist immer dabei.</li> <li><strong>Naturnähe:</strong> Übernachte an den schönsten Orten direkt in der Natur.</li>
@@ -187,17 +187,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="glasgow-winter-weihnachten-2022">
             <h2>Glasgow im Dezember &ndash; Whisky, Kultur und Weihnachtsstimmung</h2> <p>Dezember 2022. Der zweite Trip des Jahres, und diesmal ging es endlich wieder nach <strong>Schottland</strong> &ndash; genauer: nach <strong>Glasgow</strong>. Flug nach Edinburgh, Bus nach Glasgow, und ab ins <strong>Hotel Indigo</strong> mitten in der Stadt. Was folgte, waren Tage voller Kultur, Whisky und unerwarteter Weihnachtsstimmung.</p> <h3>Hotel Indigo Glasgow &ndash; perfekte Lage</h3> <p>Das <strong>Hotel Indigo Glasgow</strong> wurde schnell zu einem unserer Favoriten. Zentral gelegen, stylish eingerichtet, und die Mitarbeiter hatten diesen typisch schottischen Humor. Von hier aus war alles zu Fuss erreichbar.</p> <h3>Clydeside Distillery &ndash; Whisky am Fluss</h3> <p>Die <strong>Clydeside Distillery</strong> am Ufer des Clyde hat sich seit ihrer Eröffnung 2017 zu einem Fixpunkt für Glasgow-Besucher entwickelt. In der ehemaligen Pumpstation, einem wunderschönen viktorianischen Gebäude, wird hier Single Malt Whisky produziert. Die Tour führt durch die Geschichte des Clyde als Handelsroute für Whisky und endet mit einer Verkostung.</p> <p>Clydeside Single Malt bei <a href="https://www.amazon.de/s?k=Clydeside+Single+Malt+Whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Riverside Museum &ndash; Transport und mehr</h3> <p>Direkt neben der Clydeside Distillery liegt das <strong>Riverside Museum</strong> &ndash; Zaha Hadids architektonisches Meisterwerk. Glasgows Museum für Transport und Reisen. Historische Autos, Lokomotiven, Schiffe, Fahrräder &ndash; und eine komplett nachgebaute Glasgower Straße aus den 1930ern. Eintritt frei, wie bei den meisten Museen in Glasgow.</p> <h3>Kelvingrove Museum &amp; Eislaufen</h3> <p>Das <strong>Kelvingrove Art Gallery and Museum</strong> ist sowieso ein Pflichtbesuch. Aber im Dezember kommt etwas Besonderes dazu: <strong>Eislaufen vor dem Kelvingrove Museum</strong>. Die Eisbahn vor dem imposanten roten Sandsteingebäude, die festliche Beleuchtung, heißer Punsch in der Hand &ndash; besser wird Weihnachtsstimmung nicht.</p> <h3>Botanische Gärten &ndash; Grüne Oase im Winter</h3> <p>Die <strong>Botanic Gardens</strong> am Great Western Road sind auch im Winter einen Besuch wert. Das viktorianische <strong>Kibble Palace</strong>, ein riesiges gläsernes Gewächshaus, bietet tropische Wärme und exotische Pflanzen &ndash; perfekt als Aufwärmpause zwischen den winterlichen Spaziergängen.</p> <h3>Princes Square &ndash; Shopping mit Stil</h3> <p><strong>Princes Square</strong> in der Buchanan Street ist Glasgows stilvollstes Einkaufszentrum. Art-Deco-Architektur, unabhängige Läden, Restaurants &ndash; und zur Weihnachtszeit prachtvoll dekoriert. Hier kann man stundenlang flanieren.</p> <h3>Die Pubs &ndash; Glasgows Seele</h3> <p>Kein Glasgow-Trip ohne Pubs. Unsere Highlights:</p> <ul>
@@ -239,17 +239,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

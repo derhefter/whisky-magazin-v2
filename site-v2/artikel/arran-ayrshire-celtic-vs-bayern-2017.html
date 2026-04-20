@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="arran-ayrshire-celtic-vs-bayern-2017">
             <h2>Von Arran bis Hadrian's Wall &ndash; und dazwischen Champions League</h2> <p>Oktober 2017. Diese Reise hatte alles: eine Insel, die südlichste Destillerie Schottlands, römische Geschichte und &ndash; das absolute Highlight &ndash; <strong>Celtic gegen Bayern München in der Champions League</strong>. Ein Trip, den wir nie vergessen werden.</p> <h3>Anreise &amp; Glasgow</h3> <p>easyJet von Berlin Schönefeld nach Glasgow. <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a> war ein Opel Astra von Sunny Cars. Erste Nacht im Novotel Glasgow, abends die Stadt erkunden.</p> <h3>Isle of Arran &ndash; Schottland im Kleinen</h3> <p>Mit der <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> (15 GBP) nach Arran. Die Insel wird oft als &bdquo;Schottland im Kleinen&ldquo; bezeichnet: Highlands im Norden, Lowlands im Süden, alles auf 430 Quadratkilometern. Die <strong>Arran Distillery</strong> in Lochranza liegt spektakulär am Ende einer Bucht, umgeben von Bergen. Ein unabhängiger Produzent mit hervorragendem Single Malt.</p> <h3>Ayrshire &amp; der Süden</h3> <p>Zurück auf dem Festland übernachteten wir im Mercure Ayr Hotel. Am nächsten Tag ging es nach Süden:</p> <ul>
@@ -238,17 +238,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

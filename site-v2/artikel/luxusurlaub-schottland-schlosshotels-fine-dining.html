@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="luxusurlaub-schottland-schlosshotels-fine-dining">
             <h2>Luxusurlaub in Schottland: Schlosshotels und Fine Dining</h2> <p>Stell dir vor, du wachst in einem majestätischen Schloss inmitten der malerischen Highlands auf, gefolgt von einem Gourmetdinner, das dir die Aromen Schottlands auf einem Teller serviert. Ein Luxusurlaub in Schottland bietet genau das: eine perfekte Kombination aus königlichem Aufenthalt in Schlosshotels und erstklassigem Fine Dining. Schottland ist nicht nur die Heimat des Whiskys, sondern auch ein Paradies für Gourmets und Geschichtsliebhaber. In diesem Guide zeige ich dir, wie du das Beste aus deinem Aufenthalt herausholen kannst.</p> <h2>Die besten Schlosshotels in Schottland</h2><div class="empfehlung-box"><h3 style="padding-left:0;">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Reise planen</h3><p>Fähre, Hotel und mehr für deine Schottland-Reise – alles auf einen Blick.</p><a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" class="btn btn-primary" style="margin-top:12px;margin-right:8px;" target="_blank" rel="nofollow noopener">Fähre buchen</a><a href="https://www.whisky.reise/hotels/" class="btn btn-primary" style="margin-top:12px;" target="_blank" rel="nofollow noopener">Hotels ansehen</a></div> <p>Es gibt wenige Erlebnisse, die mit einer Übernachtung in einem echten schottischen Schloss vergleichbar sind. Hier sind einige der besten Schlosshotels, die du in Betracht ziehen solltest.</p> <ul> <li><strong>Inverlochy Castle Hotel:</strong> Dieses prachtvolle Schloss aus dem 19. Jahrhundert liegt in der Nähe von Fort William und bietet Luxus pur. Mit seinen prächtigen Räumen und einem atemberaubenden Blick auf die Highlands ist es der perfekte Rückzugsort für Genießer. <a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Jetzt buchen</a>.</li> <li><strong>Fonab Castle Hotel & Spa:</strong> In der Nähe von Pitlochry gelegen, bietet dieses Schloss eine einzigartige Mischung aus historischer Pracht und modernem Komfort. Der Spa-Bereich ist ein besonderes Highlight für Erholungssuchende.</li> <li><strong>Glengorm Castle:</strong> Dieses charmante Schloss auf der Isle of Mull ist ideal für Naturliebhaber. Es bietet atemberaubende Ausblicke auf die Küste und eine gemütliche, familiäre Atmosphäre.</li>
@@ -233,17 +233,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

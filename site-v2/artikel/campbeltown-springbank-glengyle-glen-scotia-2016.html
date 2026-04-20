@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="campbeltown-springbank-glengyle-glen-scotia-2016">
             <h2>Die vergessene Whisky-Hauptstadt &ndash; Campbeltown</h2> <p>Oktober 2016. Campbeltown. Einst hatte diese kleine Stadt an der Spitze der Kintyre-Halbinsel über dreissig Destillerien und war die Whisky-Hauptstadt der Welt. Heute sind es noch drei &ndash; aber was für welche. Wir wollten sie alle sehen.</p> <h3>Glasgow &ndash; der übliche Auftakt</h3> <p>Wie immer starteten wir in Glasgow, wie immer mit einem Besuch im <strong>Old Scotia Bar</strong> &ndash; unserem Stammlokal seit 2007. Von dort ging es am nächsten Tag über die A82 und A83 nach Südwesten, durch die längste Halbinsel Schottlands.</p> <h3>Springbank &ndash; die letzte ihrer Art</h3> <p><strong>Springbank Distillery</strong> ist ein Mythos. Eine der letzten Destillerien, die alles unter einem Dach machen: Mälzen, Brennen, Reifen, Abfüllen. Kein anderer schottischer Whisky wird so traditionell hergestellt. Drei verschiedene Whiskys entstehen hier: Springbank (leicht getorft, 2,5-fach destilliert), Longrow (stark getorft, zweifach destilliert) und Hazelburn (ungetorft, dreifach destilliert).</p> <h3>Glengyle &ndash; Kilkerran</h3> <p><strong>Glengyle Distillery</strong> ist die Schwester von Springbank. 2004 wiedereröffnet nach fast 80 Jahren Stillstand. Der Whisky heißt <strong>Kilkerran</strong> (nicht Glengyle &ndash; der Name war bereits vergeben). Noch jung, aber mit enormem Potenzial. Wer Campbeltown-Charakter sucht, findet ihn hier.</p> <h3>Glen Scotia &ndash; Campbeltown Loch</h3> <p><strong>Glen Scotia Distillery</strong> ist die dritte im Bunde. Kleiner, bescheidener als Springbank, aber mit eigenem Charakter: maritim, ölig, komplex. Und dann ist da der Song: <em>Campbeltown Loch</em> &ndash; ein irisches/schottisches Trinklied, das die Stadt und ihren Whisky feiert. Wir haben es in der Destillerie zum ersten Mal gehört und seitdem nicht vergessen.</p> <p>Campbeltown Whiskys bei <a href="https://www.amazon.de/s?k=springbank+kilkerran+glen+scotia+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Campbeltown &ndash; eine Stadt mit Geschichte</h3> <p>Die Stadt selbst hat einen melancholischen Charme. Verlassene Destilleriegebäude, ein Hafen, der bessere Tage gesehen hat, und Einheimische, die stolz auf ihre Whisky-Tradition sind. Campbeltown ist keine Touristenattraktion &ndash; es ist ein Ort mit Seele.</p> <h3>Praktische Tipps</h3> <ul>
@@ -235,17 +235,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

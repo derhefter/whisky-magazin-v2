@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="die-schönsten-whisky-bars-in-deutschland">
             <h2>Die schönsten Whisky-Bars in Deutschland</h2> <p>Als leidenschaftlicher Whisky-Experte und Reiseblogger habe ich das Vergnügen, einige der besten Whisky-Bars in Deutschland zu erkunden. Jede dieser Bars hat ihren eigenen Charme und bietet eine einzigartige Auswahl an Whiskys, die das Herz eines jeden Whisky-Liebhabers höherschlagen lässt. Lass uns gemeinsam die besten Orte entdecken, um ein Glas des goldenen Elixiers zu genießen.</p> <h2>1. The Auld Dubliner, Berlin</h2><div class="empfehlung-box"><span class="emp-icon">🥃</span><div class="emp-content"><p class="emp-title">Whisky Bars bei Amazon</p><p class="emp-text">Den im Artikel besprochenen Whisky direkt bestellen – oft mit Prime-Lieferung.</p><a href="https://www.amazon.de/s?k=whisky+bars+whisky+single+malt&tag=whiskyreise74-21" class="emp-cta" target="_blank" rel="nofollow noopener">Whisky Bars bei Amazon ansehen</a> <a href="https://www.amazon.de/s?k=deutschland&tag=whiskyreise74-21" class="btn btn-secondary" style="margin-top:12px;" target="_blank" rel="nofollow noopener">Deutschland ansehen</a></div></div>
@@ -195,17 +195,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());

@@ -96,7 +96,7 @@
         <button class="lang-btn" data-lang="es" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">ES</button>
         <button class="lang-btn" data-lang="ja" style="background:none;border:none;padding:3px 8px;border-radius:3px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:#6B6B6B;font-weight:500;transition:all 0.15s;">JA</button>
     </div>
-    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:11px;color:#8B6F3E;font-style:italic;text-align:right;display:none;font-family:'Inter',sans-serif;"></div>
+    <div id="lang-notice" style="max-width:var(--max-width);margin:2px auto 0;padding:0 24px;font-size:12px;color:#1A1A1A;text-align:right;display:none;font-family:'Inter',sans-serif;font-weight:500;"></div>
     <div class="article-layout">
         <article class="article-body" data-slug="whisky-und-käse-überraschende-kombinationen">
             <h2>Whisky und Käse: Eine himmlische Kombination</h2> <p>Wenn du, wie ich, ein leidenschaftlicher Whisky-Liebhaber und Entdecker der kulinarischen Welt bist, dann hast du vielleicht schon die wunderbare Harmonie zwischen Whisky und Käse entdeckt. Diese Kombination mag auf den ersten Blick ungewöhnlich erscheinen, aber sie bietet eine unglaubliche Vielfalt an Geschmacksrichtungen und Aromen, die es zu erkunden gilt. In diesem Artikel möchte ich mit dir einige überraschende Kombinationen teilen, die deine Geschmacksnerven begeistern werden.</p> <h2>Warum Whisky und Käse?</h2><div class="empfehlung-box"><span class="emp-icon">🥃</span><div class="emp-content"><p class="emp-title">Pairing bei Amazon</p><p class="emp-text">Den im Artikel besprochenen Whisky direkt bestellen – oft mit Prime-Lieferung.</p><a href="https://www.amazon.de/s?k=pairing+whisky+single+malt&tag=whiskyreise74-21" class="emp-cta" target="_blank" rel="nofollow noopener">Pairing bei Amazon ansehen</a></div></div> <p>Whisky und Käse teilen viele Gemeinsamkeiten. Beide werden mit großer Sorgfalt und Hingabe hergestellt und bieten eine breite Palette von Geschmacksprofilen. Die Komplexität eines guten Whiskys kann die reiche Textur und den Geschmack eines gut gereiften Käses hervorheben und umgekehrt. Die Kombination der beiden eröffnet eine neue Dimension des Genusses.</p> <h3>Die Grundlagen der Kombination</h3> <p>Bevor wir uns in die speziellen Paarungen stürzen, lass uns einige grundlegende Prinzipien betrachten, die dir helfen können, die perfekte Kombination zu finden:</p> <ul> <li><strong>Gegensätze ziehen sich an:</strong> Ein starker, rauchiger Whisky kann wunderbar mit einem cremigen, milden Käse harmonieren.</li> <li><strong>Gleiches mit Gleichem:</strong> Ein süßer, fruchtiger Whisky passt oft gut zu einem Käse mit ähnlichen Noten, wie etwa einem gereiften Cheddar.</li> <li><strong>Experimentiere:</strong> Die Geschmäcker sind subjektiv, und manchmal sind die unerwartetsten Kombinationen die besten.</li>
@@ -242,17 +242,14 @@
         var h1=document.getElementById('article-title');
         if(data.title&&h1)h1.textContent=data.title;
         if(data.html_content)article.innerHTML=data.html_content;
-        loadUi(function(ui){
-          var notice=document.getElementById('lang-notice');
-          if(notice){
-            if(lang==='de'){notice.style.display='none';}
-            else{
-              var tpl=(ui[lang]&&ui[lang].ai_translated_notice)||'';
-              notice.textContent=tpl.replace('{lang}',langNames[lang]||lang.toUpperCase());
-              notice.style.display=tpl?'':'none';
-            }
+        var notice=document.getElementById('lang-notice');
+        if(notice){
+          if(lang==='de'){notice.style.display='none';notice.textContent='';}
+          else{
+            notice.textContent=langNames[lang]||lang.toUpperCase();
+            notice.style.display='';
           }
-        });
+        }
         var url=new URL(location.href);
         if(lang==='de'){url.searchParams.delete('lang');}else{url.searchParams.set('lang',lang);}
         history.pushState(null,'',url.toString());
