@@ -3713,7 +3713,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "Lagavulin Distillers Edition",
         "distillery_id": "lagavulin",
@@ -3760,7 +3760,10 @@
         "seo_description": "Lagavulin Distillers Edition: Die perfekte Harmonie aus intensivem Torfrauch und süßem Pedro Ximénez Sherry.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:30:52Z"
     },
     {
       "batch_id": "whiskies_20260419T171709_254165",
