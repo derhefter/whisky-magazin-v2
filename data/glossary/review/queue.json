@@ -3559,7 +3559,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "name": "100% Islay",
         "distillery_id": "kilchoman",
@@ -3606,7 +3606,10 @@
         "seo_description": "Kilchoman 100% Islay: Vom Feld in die Flasche auf einer einzigen Farm. Ein authentischer, sanft rauchiger Islay Malt.",
         "published": true,
         "go_live_immediately": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-20T19:39:38Z"
     },
     {
       "batch_id": "whiskies_20260419T171625_d7de7b",
