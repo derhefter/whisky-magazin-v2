@@ -4194,7 +4194,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "abhainn-dearg-10-year-old",
         "name": "Abhainn Dearg 10 Year Old",
@@ -4246,7 +4246,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-21T15:41:38Z"
     }
   ]
 }
