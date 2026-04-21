@@ -59,7 +59,7 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="/" class="site-logo">whisky<span class="logo-dot">.</span><span class="logo-magazin">Magazin</span></a>
-            <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'">☰</button>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
             <nav class="site-nav" role="navigation">
                 <a href="/" data-i18n="nav_home">Startseite</a>
                 <a href="/kategorie/whisky.html" data-i18n="nav_whisky">Whisky</a>
@@ -384,6 +384,17 @@
                 a.classList.add('active');
         });
     })();
+    (function(){
+        var toggle=document.querySelector('.nav-toggle');
+        var nav=document.querySelector('.site-nav');
+        if(toggle&&nav){
+            toggle.addEventListener('click',function(){
+                var isOpen=nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded',isOpen);
+                toggle.textContent=isOpen?'✕':'☰';
+            });
+        }
+    })();
     </script>
     <footer class="site-footer">
         <div class="footer-inner">
@@ -449,7 +460,7 @@
     #site-lang-rail { top:auto; bottom:20px; right:20px; transform:none; border-radius:28px; padding:6px; border:1px solid var(--border); flex-direction:row; gap:0; }
     #site-lang-rail.mobile-collapsed button:not(.rail-fab) { display:none; }
     #site-lang-rail .rail-globe { display:none; }
-    #site-lang-rail .rail-fab { display:inline-flex; width:44px; height:44px; justify-content:center; align-items:center; border-radius:50%; background:#C8963E; color:#fff; font-size:18px; padding:0; }
+    #site-lang-rail .rail-fab { display:inline-flex; width:44px; height:44px; justify-content:center; align-items:center; border-radius:50%; background:#C8963E; color:#fff; font-size:18px; padding:0; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
     #site-lang-rail:not(.mobile-collapsed) .rail-fab { display:none; }
     #site-lang-rail:not(.mobile-collapsed) { flex-direction:row; padding:6px 8px; }
     #site-lang-rail:not(.mobile-collapsed) .full { display:none; }
@@ -459,7 +470,7 @@
   }
 </style>
 <nav id="site-lang-rail" class="mobile-collapsed" aria-label="Sprache wählen">
-  <button type="button" class="rail-fab" aria-label="Sprache wählen" onclick="document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');">&#127760;</button>
+  <button type="button" class="rail-fab" aria-label="Sprache wählen">&#127760;</button>
   <span class="rail-globe">&#127760;</span>
   <button type="button" class="site-lang-btn site-lang-active" data-sitelang="de"><span class="code">DE</span><span class="full">Deutsch</span></button>
   <button type="button" class="site-lang-btn" data-sitelang="en"><span class="code">EN</span><span class="full">English</span></button>
@@ -520,9 +531,22 @@
       if(lang==='de'){ notice.style.display='none'; }
       else{ notice.style.display=''; }
     }
+    var rail=document.getElementById('site-lang-rail');
+    if(rail){ rail.classList.add('mobile-collapsed'); }
   }
   document.querySelectorAll('.site-lang-btn').forEach(function(b){
     b.addEventListener('click',function(){ pickLang(b.dataset.sitelang); });
+  });
+  var fab=document.querySelector('.rail-fab');
+  if(fab){
+    fab.addEventListener('click',function(e){
+      e.stopPropagation();
+      document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');
+    });
+  }
+  document.addEventListener('click',function(e){
+    var rail=document.getElementById('site-lang-rail');
+    if(rail&&!rail.contains(e.target)){ rail.classList.add('mobile-collapsed'); }
   });
   var initial=getLang();
   updateRail(initial);

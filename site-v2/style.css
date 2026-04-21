@@ -97,6 +97,10 @@
         }
         .nav-toggle {
             display: none;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
             background: none;
             border: none;
             font-size: 24px;
@@ -104,6 +108,8 @@
             color: var(--text-primary);
             padding: 4px 8px;
             line-height: 1;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* --- HEADINGS --- */
@@ -846,7 +852,10 @@
             }
             .wotm-emoji-col { display: none !important; }
             .article-body { padding: 24px; }
-            .nav-toggle { display: block; }
+            .nav-toggle { display: flex; }
+            .hero-content-inner { padding: 0 16px !important; bottom: 32px !important; }
+            .hero-content-inner > p:first-child { display: none; }
+            .hero-teaser { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
             .header-inner { position: relative; }
             .site-nav {
                 display: none;
