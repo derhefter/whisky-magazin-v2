@@ -243,93 +243,137 @@ Zeigt die aktuelle Abonnenten-Statistik:
 
 ---
 
-### 2.7 Whisky-Glossar (API-Verwaltung)
+### 2.7 Whisky-Glossar (Admin-Bereich)
 
-Das Glossar ist unter `/whisky-glossar/` erreichbar und enthaelt Laender, Regionen, Destillerien und Abfuellungen. Alle Daten werden redaktionell gepflegt und sind in JSON-Dateien unter `data/glossary/` gespeichert.
+Das Glossar ist unter `/whisky-glossar/` oeffentlich erreichbar und enthaelt vier Entitaeten: **Laender**, **Regionen**, **Destillerien** und **Whiskys (Abfuellungen)**. Alle Daten werden redaktionell im Admin-Bereich gepflegt und als JSON-Dateien unter `data/glossary/` im GitHub-Repository gespeichert.
+
+---
+
+> ### ⚡ WICHTIG FUER BEARBEITER: Wie Aenderungen live gehen
+>
+> **Daten werden NICHT sofort auf der Website sichtbar** — sie durchlaufen immer diesen Weg:
+>
+> ```
+> Admin: "Veroeffentlichen" klicken
+>        ↓  (sofort)
+> Daten werden in GitHub committed (automatisch, kein Push noetig)
+>        ↓  (~30 Sek.)
+> Vercel erkennt den neuen Commit und startet einen Website-Build
+>        ↓  (~1-2 Min.)
+> python main.py --build-v2 generiert alle HTML-Seiten neu
+>        ↓  (fertig)
+> whisky-reise.com zeigt den aktualisierten Stand
+> ```
+>
+> **Gesamtdauer: ca. 1–2 Minuten** nach dem Klick auf "Veroeffentlichen".
+>
+> **Erkennbar im Admin:** Nach dem Veroeffentlichen erscheint unten ein blauer Banner mit gruenem Puls-Punkt — *"Glossar-Seiten werden auf whisky-reise.com neu gebaut…"*. Nach ~2,5 Minuten wechselt er automatisch zu *"abgeschlossen ✓"*.
+>
+> **Kein manueller Eingriff noetig.** Es ist nicht erforderlich, Code zu pushen, lokal zu bauen oder sonstige Schritte auszufuehren.
+
+---
+
+#### Typischer Arbeitsablauf einer Datenpflege-Session
+
+```
+1. Im Admin einloggen (whisky-reise.com/admin/)
+2. Tab "Glossar" → Sub-Tab "Import" oeffnen
+3. CSV- oder JSON-Datei hochladen → Import starten
+4. Sub-Tab "Review" oeffnen
+5. Neue Eintraege pruefen und freigeben (s.u.)
+6. Button "Alle veröffentlichen" klicken
+7. Blauer Banner erscheint → ~2 Min. warten
+8. Oeffentliche Glossar-Seite pruefen: whisky-reise.com/whisky-glossar/
+```
+
+---
+
+#### Review-Queue: Eintraege freigeben
+
+Nach jedem Import landen alle Eintraege in der Review-Queue (Sub-Tab "Review"). Es gibt zwei Typen:
+
+| Typ | Symbol | Bedeutung | Vorgehen |
+|-----|--------|-----------|----------|
+| `new` | gruen | Voellig neuer Eintrag | Checkbox anhaeken → Batch-Freigabe |
+| `update_candidate` | blau | Eintrag existiert bereits, Import hat neue/andere Felder | Einzeln pruefen mit Feld-Vergleich |
+
+**Batch-Freigabe fuer neue Eintraege:**
+
+Neue Eintraege ohne Duplikat-Verdacht koennen in einem Schritt freigegeben werden:
+
+1. Button **"☐ Alle neuen auswaehlen"** (oben rechts in der Queue) anklicken — alle waehlbaren Eintraege werden gecheckt
+2. Grüne Aktionsleiste erscheint: *"X ausgewaehlt"*
+3. **"✓ Alle freigeben"** klicken → Bestaetigungsdialog → Fortschrittsbalken laeuft durch
+4. Danach: **"🚀 Alle veroeffentlichen"** klicken (gruener Balken unten in der Queue)
+
+> **Hinweis:** Eintraege mit `update_candidate`-Status oder Duplikat-Warnung (gelbes Dreieck ⚠) erscheinen **ohne Checkbox** und muessen einzeln geprueft werden.
+
+**Einzelne Eintraege entscheiden (inkl. update_candidate):**
+
+1. **"✓ Entscheiden"** klicken → Review-Modal oeffnet sich
+2. Bei `update_candidate`: Feld-Vergleich wird angezeigt (bestehend vs. Import)
+   - Felder die neu befuellt werden → werden automatisch uebernommen
+   - Felder mit abweichenden Werten → per Klick waehlen welcher Wert behalten wird
+3. Entscheidung treffen: **"✓ Freigeben"**, **"⇄ Als Update uebernehmen"** oder **"✗ Ablehnen"**
+
+#### Review-Entscheidungen im Detail
+
+| Entscheidung | Wann verwenden | Was passiert |
+|---|---|---|
+| **Freigeben** (`approve`) | Neuer Eintrag ist korrekt | Wird unveraendert uebernommen |
+| **Als Update uebernehmen** (`merge`) | Bestehender Eintrag soll aktualisiert werden | Smart-Merge: leere Felder werden gefuellt, bei Konflikten gilt die im Modal gewahlte Entscheidung |
+| **Ablehnen** (`reject`) | Eintrag ist fehlerhaft oder Duplikat | Wird verworfen, bleibt in der Queue als "rejected" |
+
+#### Smart-Merge-Logik
+
+Beim Typ "Als Update uebernehmen" werden Felder intelligent zusammengefuehrt:
+
+- **Lange Texte** (`long_description`, `short_description`, `travel_context`, `visit_info`, `style_notes`, `editorial_notes`): Bestehender Text bleibt erhalten, wenn er laenger ist — verhindert versehentlichen Inhaltsverlust
+- **Alle anderen Felder**: Neuer Wert wird uebernommen, falls nicht leer; andernfalls bleibt bestehender Wert (schuetzt URLs, Koordinaten, Bilder)
+- **Manuelle Konflikt-Auswahl**: Im Review-Modal koennen Felder mit abweichendem Inhalt per Klick einzeln entschieden werden
+
+#### Duplikat-Erkennung
+
+Beim Import prueft das System automatisch auf potenzielle Duplikate:
+
+- **Teilstring-Abgleich**: "Ardbeg 10" ↔ "Ardbeg 10 Jahre" → Duplikat-Warnung
+- **Bigram-Aehnlichkeit**: Namen mit ≥ 80 % Uebereinstimmung werden gemeldet
+- **Destillerie + Reifezeit**: Gleiche Destillerie + gleiches Alter → Warnung
+- Verdaechtige Eintraege erscheinen in der Queue mit gelbem Hinweis und muessen manuell entschieden werden
 
 #### Datenstruktur
 
 | Entitaet          | Datei                              | Pflichtfelder                                        |
-| ----------------- | ---------------------------------- | ---------------------------------------------------- |
+|-------------------|------------------------------------|------------------------------------------------------|
 | **Laender**       | `data/glossary/countries.json`     | id, slug, name_de                                    |
 | **Regionen**      | `data/glossary/regions.json`       | id, slug, name, country_id                           |
 | **Destillerien**  | `data/glossary/distilleries.json`  | id, slug, name, country_id, region_id                |
 | **Abfuellungen**  | `data/glossary/whiskies.json`      | id, slug, name, country_id, distillery_id, whisky_type, abv |
 
-#### Automatischer Rebuild-Workflow (seit April 2026)
+#### Destillerien-Status
 
-Alle Datenaenderungen im Admin werden **direkt via GitHub API ins Repository committed**. Vercel erkennt jeden neuen Commit und startet automatisch einen Rebuild (`python main.py --build-v2`). Dadurch sind alle oeffentlichen Glossar-Seiten nach etwa 1–2 Minuten aktuell — ohne manuellen Eingriff.
+| Status       | Bedeutung      |
+|--------------|----------------|
+| `active`     | Aktiv          |
+| `silent`     | Still gelegt   |
+| `closed`     | Geschlossen    |
+| `mothballed` | Eingemottet    |
+| `demolished` | Abgerissen     |
 
-Ablauf:
-1. Admin publiziert Daten (`publish_approved`)
-2. JSON-Datei wird direkt in GitHub committed
-3. Vercel erkennt den Commit → startet Build
-4. `python main.py --build-v2` generiert alle HTML-Seiten neu aus den aktuellen JSON-Daten
-5. ~1–2 Minuten spaeter sind die oeffentlichen Seiten (Zaehler, Listenansichten, Detailseiten) aktuell
-
-Im Admin erscheint nach dem Veroeffentlichen ein grüner Hinweis-Banner ("Seiten werden neu gebaut…"), der sich nach ~2,5 Minuten automatisch auf "abgeschlossen ✓" aendert.
-
-#### Import-Workflow
-
-1. **Batch importieren:** `POST /api/admin_glossary?action=import_batch` — CSV oder JSON hochladen
-2. **Review-Queue:** `GET /api/admin_glossary?action=review_queue` — Eintraege pruefen
-3. **Entscheiden:** Einzeln oder per Batch (s.u.)
-4. **Veroeffentlichen:** `POST /api/admin_glossary?action=publish_approved` — Freigegebene Eintraege live schalten → loest automatischen Rebuild aus
-
-**Review-Entscheidungen (Einzeln):**
-
-| Entscheidung | Bedeutung                                                                   |
-| ------------ | --------------------------------------------------------------------------- |
-| `approve`    | Eintrag wird unveraendert uebernommen                                       |
-| `reject`     | Eintrag wird verworfen                                                      |
-| `merge`      | Eintrag wird mit bestehendem Datensatz zusammengefuehrt (Smart-Merge-Logik) |
-
-**Batch-Freigabe (seit April 2026):**
-
-Fuer neue Eintraege ohne Konflikte (`status = new`, kein Duplikat-Verdacht) steht eine Batch-Funktion bereit:
-
-- **Checkboxen** erscheinen links neben jedem batchbaren Eintrag
-- **"Alle neuen auswaehlen"**-Button im Queue-Header waehlt alle waehlbaren Eintraege; ein zweiter Klick hebt die Auswahl auf
-- **Gruene Aktionsleiste** erscheint sobald ≥ 1 Eintrag gewaehlt ist — zeigt Anzahl + Buttons "Alle freigeben" / "Alle ablehnen"
-- Eintraege mit `update_candidate`-Status oder Duplikat-Warnung erscheinen *ohne* Checkbox und muessen einzeln geprueft werden
-- Die Verarbeitung laeuft **sequentiell** (nicht parallel), um Datei-Schreibkonflikte auf dem Server zu vermeiden; ein Fortschrittsbalken zeigt den Stand an
-
-#### Smart-Merge-Logik (seit April 2026)
-
-Beim "Merge" werden Text-Felder intelligent zusammengefuehrt:
-
-- **Textfelder** (`long_description`, `short_description`, `travel_context`, `editorial_notes`, `visit_info`, `style_notes`): Bestehender Text wird behalten, wenn der neue kuerner oder leer ist — verhindert versehentlichen Inhaltsverlust
-- **Alle anderen Felder**: Neuer Wert gewinnt, falls nicht leer; andernfalls bleibt bestehender Wert (schuetzt URLs, Koordinaten, Bilder)
-
-#### Duplikat-Erkennung (seit April 2026)
-
-Beim Import prueft das System automatisch auf potenzielle Duplikate:
-
-- **Teilstring-Abgleich**: "Ardbeg 10" ↔ "Ardbeg 10 Jahre" werden als Duplikat-Kandidaten markiert
-- **Bigram-Aehnlichkeit**: Namen mit ≥ 80 % Uebereinstimmung werden gemeldet
-- **Destillerie + Reifezeit**: Gleiche Destillerie + gleiches Alter = Duplikat-Warnung
-- Duplikate erscheinen im Review mit Begruendung, muessen aber manuell entschieden werden
-
-#### CRUD-Operationen (direkt ueber API)
+#### Direktzugriff ueber API (fuer Entwickler)
 
 ```
 GET  ?action=list&entity=distilleries         – Alle Eintraege
 GET  ?action=get&entity=distilleries&id=xxx   – Einzelner Eintrag
 POST ?action=save   { entity, entry }         – Erstellen / Aktualisieren
 POST ?action=delete { entity, id }            – Soft-Delete (setzt published=false)
+POST ?action=import_batch                     – CSV oder JSON importieren
+GET  ?action=review_queue                     – Review-Queue abrufen
+POST ?action=review_decision                  – Einzelne Entscheidung
+POST ?action=publish_approved                 – Freigegebene Eintraege live schalten
 ```
 
-Alle Operationen erfordern den Admin-Token im Header `x-admin-token`.
-
-#### Destillerien-Status
-
-| Status       | Bedeutung      |
-| ------------ | -------------- |
-| `active`     | Aktiv          |
-| `silent`     | Still gelegt   |
-| `closed`     | Geschlossen    |
-| `mothballed` | Eingemottet    |
-| `demolished` | Abgerissen     |
+Alle Operationen erfordern den Admin-Token im HTTP-Header `x-admin-token`.
 
 ---
 
