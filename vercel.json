@@ -1,6 +1,6 @@
 {
   "outputDirectory": "site-v2",
-  "buildCommand": "python main.py --build-v2",
+  "buildCommand": null,
   "installCommand": "pip install pillow 2>/dev/null || true",
   "framework": null,
   "crons": [
