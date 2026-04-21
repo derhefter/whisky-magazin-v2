@@ -418,6 +418,10 @@ def _base_template():
         }}
         .nav-toggle {{
             display: none;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
             background: none;
             border: none;
             font-size: 24px;
@@ -425,6 +429,8 @@ def _base_template():
             color: var(--text-primary);
             padding: 4px 8px;
             line-height: 1;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }}
 
         /* --- HEADINGS --- */
@@ -1167,7 +1173,10 @@ def _base_template():
             }}
             .wotm-emoji-col {{ display: none !important; }}
             .article-body {{ padding: 24px; }}
-            .nav-toggle {{ display: block; }}
+            .nav-toggle {{ display: flex; }}
+            .hero-content-inner {{ padding: 0 16px !important; bottom: 32px !important; }}
+            .hero-content-inner > p:first-child {{ display: none; }}
+            .hero-teaser {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
             .header-inner {{ position: relative; }}
             .site-nav {{
                 display: none;
@@ -1253,13 +1262,13 @@ def _base_template():
     <header class="site-header">
         <div class="header-inner">
             <a href="/" class="site-logo">whisky<span class="logo-dot">.</span><span class="logo-magazin">Magazin</span></a>
-            <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'">☰</button>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
             <nav class="site-nav" role="navigation">
-                <a href="/">Startseite</a>
-                <a href="/kategorie/whisky.html">Whisky</a>
-                <a href="/kategorie/reise.html">Reisen</a>
-                <a href="/karte.html">Karte</a>
-                <a href="/ueber-uns.html">Über uns</a>
+                <a href="/" data-i18n="nav_home">Startseite</a>
+                <a href="/kategorie/whisky.html" data-i18n="nav_whisky">Whisky</a>
+                <a href="/kategorie/reise.html" data-i18n="nav_travel">Reisen</a>
+                <a href="/karte.html" data-i18n="nav_map">Karte</a>
+                <a href="/ueber-uns.html" data-i18n="nav_about">Über uns</a>
             </nav>
         </div>
     </header>
@@ -1275,6 +1284,17 @@ def _base_template():
             if(path===href||(href!=='/'&&path.indexOf(href)===0)||(href==='/'&&(path==='/'||path==='/index.html')))
                 a.classList.add('active');
         }});
+    }})();
+    (function(){{
+        var toggle=document.querySelector('.nav-toggle');
+        var nav=document.querySelector('.site-nav');
+        if(toggle&&nav){{
+            toggle.addEventListener('click',function(){{
+                var isOpen=nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded',isOpen);
+                toggle.textContent=isOpen?'\u2715':'\u2630';
+            }});
+        }}
     }})();
     </script>
     <footer class="site-footer">
@@ -1324,6 +1344,120 @@ def _base_template():
       }})
       .catch(function(){{btn.textContent='Fehler \u2013 bitte nochmal';setTimeout(function(){{btn.textContent=origText;btn.disabled=false}},3000)}});
   }});
+}})();
+</script>
+<!-- Globale Sprachleiste (rechter Rand, fixed) -->
+<style>
+  #site-lang-rail {{ position:fixed; top:50%; right:0; transform:translateY(-50%); z-index:900; background:rgba(255,253,249,0.92); backdrop-filter:blur(8px); border:1px solid var(--border); border-right:none; border-radius:8px 0 0 8px; box-shadow:-2px 2px 12px rgba(42,32,21,0.08); padding:8px 4px; display:flex; flex-direction:column; gap:2px; font-family:'Inter',sans-serif; transition:padding 0.2s; }}
+  #site-lang-rail:hover {{ padding:8px 8px; }}
+  #site-lang-rail .rail-globe {{ text-align:center; font-size:14px; color:#C8963E; padding:4px 0 6px; border-bottom:1px solid var(--border); margin-bottom:4px; }}
+  #site-lang-rail button {{ background:none; border:none; padding:6px 8px; border-radius:4px; font-size:11px; letter-spacing:0.08em; font-weight:600; color:#6B6B6B; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:8px; white-space:nowrap; transition:all 0.15s; }}
+  #site-lang-rail button:hover {{ background:rgba(200,150,62,0.12); color:#1A1A1A; }}
+  #site-lang-rail button.site-lang-active {{ background:#C8963E; color:#FFFFFF; }}
+  #site-lang-rail .full {{ display:none; font-weight:500; font-size:11px; text-transform:none; letter-spacing:0; }}
+  #site-lang-rail:hover .full {{ display:inline; }}
+  #site-lang-rail .code {{ min-width:18px; text-align:center; }}
+  @media (max-width: 1023px) {{
+    #site-lang-rail {{ top:auto; bottom:20px; right:20px; transform:none; border-radius:28px; padding:6px; border:1px solid var(--border); flex-direction:row; gap:0; }}
+    #site-lang-rail.mobile-collapsed button:not(.rail-fab) {{ display:none; }}
+    #site-lang-rail .rail-globe {{ display:none; }}
+    #site-lang-rail .rail-fab {{ display:inline-flex; width:44px; height:44px; justify-content:center; align-items:center; border-radius:50%; background:#C8963E; color:#fff; font-size:18px; padding:0; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }}
+    #site-lang-rail:not(.mobile-collapsed) .rail-fab {{ display:none; }}
+    #site-lang-rail:not(.mobile-collapsed) {{ flex-direction:row; padding:6px 8px; }}
+    #site-lang-rail:not(.mobile-collapsed) .full {{ display:none; }}
+  }}
+  @media (min-width: 1024px) {{
+    #site-lang-rail .rail-fab {{ display:none; }}
+  }}
+</style>
+<nav id="site-lang-rail" class="mobile-collapsed" aria-label="Sprache wählen">
+  <button type="button" class="rail-fab" aria-label="Sprache wählen">&#127760;</button>
+  <span class="rail-globe">&#127760;</span>
+  <button type="button" class="site-lang-btn site-lang-active" data-sitelang="de"><span class="code">DE</span><span class="full">Deutsch</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="en"><span class="code">EN</span><span class="full">English</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="fr"><span class="code">FR</span><span class="full">Français</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="nl"><span class="code">NL</span><span class="full">Nederlands</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="es"><span class="code">ES</span><span class="full">Español</span></button>
+  <button type="button" class="site-lang-btn" data-sitelang="ja"><span class="code">JA</span><span class="full">&#26085;&#26412;&#35486;</span></button>
+</nav>
+<script>
+(function(){{
+  var STORAGE='site_lang';
+  var uiCache=null;
+  function getLang(){{
+    try{{ return localStorage.getItem(STORAGE)||'de'; }}catch(e){{ return 'de'; }}
+  }}
+  function setLang(l){{ try{{ localStorage.setItem(STORAGE,l); }}catch(e){{}} }}
+  function loadUi(cb){{
+    if(uiCache){{cb(uiCache);return;}}
+    fetch('/data/translations.json').then(function(r){{return r.json();}}).then(function(d){{uiCache=d;cb(d);}}).catch(function(){{cb({{}});}});
+  }}
+  function applyUi(lang){{
+    loadUi(function(ui){{
+      var dict=ui[lang]||{{}};
+      document.querySelectorAll('[data-i18n]').forEach(function(el){{
+        var key=el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent=dict[key];
+      }});
+      document.documentElement.setAttribute('lang',lang);
+    }});
+  }}
+  function updateRail(lang){{
+    document.querySelectorAll('.site-lang-btn').forEach(function(b){{
+      if(b.dataset.sitelang===lang) b.classList.add('site-lang-active'); else b.classList.remove('site-lang-active');
+    }});
+  }}
+  function rewriteArticleLinks(lang){{
+    if(lang==='de') return;
+    document.querySelectorAll('a[href*="/artikel/"]').forEach(function(a){{
+      try{{
+        var u=new URL(a.getAttribute('href'), location.origin);
+        if(u.pathname.indexOf('/artikel/')!==0 && u.pathname.indexOf('/artikel/')===-1) return;
+        u.searchParams.set('lang',lang);
+        a.setAttribute('href', u.pathname+u.search+u.hash);
+      }}catch(e){{}}
+    }});
+  }}
+  function pickLang(lang){{
+    setLang(lang);
+    updateRail(lang);
+    if(typeof window.switchArticleLang==='function'){{
+      window.switchArticleLang(lang);
+    }}else{{
+      applyUi(lang);
+      rewriteArticleLinks(lang);
+    }}
+    var notice=document.getElementById('site-lang-notice');
+    if(notice){{
+      if(lang==='de'){{ notice.style.display='none'; }}
+      else{{ notice.style.display=''; }}
+    }}
+    var rail=document.getElementById('site-lang-rail');
+    if(rail){{ rail.classList.add('mobile-collapsed'); }}
+  }}
+  document.querySelectorAll('.site-lang-btn').forEach(function(b){{
+    b.addEventListener('click',function(){{ pickLang(b.dataset.sitelang); }});
+  }});
+  var fab=document.querySelector('.rail-fab');
+  if(fab){{
+    fab.addEventListener('click',function(e){{
+      e.stopPropagation();
+      document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');
+    }});
+  }}
+  document.addEventListener('click',function(e){{
+    var rail=document.getElementById('site-lang-rail');
+    if(rail&&!rail.contains(e.target)){{ rail.classList.add('mobile-collapsed'); }}
+  }});
+  var initial=getLang();
+  updateRail(initial);
+  if(initial!=='de'){{
+    applyUi(initial);
+    rewriteArticleLinks(initial);
+    var notice=document.getElementById('site-lang-notice');
+    if(notice) notice.style.display='';
+  }}
+  window.__siteLang={{get:getLang,set:setLang,applyUi:applyUi}};
 }})();
 </script>
 <!-- Cookie Consent Banner -->
@@ -1876,6 +2010,10 @@ def build_article_page(article, config, all_articles=None):
         currentLang=lang;
       }}
       function switchLang(lang){{
+        try{{ localStorage.setItem('site_lang',lang); }}catch(e){{}}
+        document.querySelectorAll('.site-lang-btn').forEach(function(b){{
+          if(b.dataset.sitelang===lang)b.classList.add('site-lang-active');else b.classList.remove('site-lang-active');
+        }});
         if(lang===currentLang)return;
         if(lang==='de'){{
           var url=new URL(location.href);url.searchParams.delete('lang');
@@ -1901,8 +2039,11 @@ def build_article_page(article, config, all_articles=None):
       document.querySelectorAll('.lang-btn').forEach(function(b){{
         b.addEventListener('click',function(){{switchLang(b.dataset.lang);}});
       }});
+      window.switchArticleLang=switchLang;
       var urlLang=new URLSearchParams(location.search).get('lang');
-      if(urlLang&&urlLang!=='de'){{switchLang(urlLang);}}
+      var storedLang=null;try{{storedLang=localStorage.getItem('site_lang');}}catch(e){{}}
+      var initLang=urlLang||storedLang;
+      if(initLang&&initLang!=='de'){{switchLang(initLang);}}
     }})();
     </script>"""
 
@@ -1975,11 +2116,11 @@ def build_index_page(articles, config):
     </style>
     <section style="position:relative;width:100%;height:62vh;min-height:380px;max-height:560px;overflow:hidden;background:{h_bg} center/cover no-repeat;">
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,5,0.88) 0%,rgba(10,8,5,0.5) 40%,rgba(10,8,5,0.12) 100%);"></div>
-        <div style="position:absolute;bottom:60px;left:0;right:0;padding:0 48px;max-width:calc(var(--max-width) + 96px);margin:0 auto;">
+        <div class="hero-content-inner" style="position:absolute;bottom:60px;left:0;right:0;padding:0 48px;max-width:calc(var(--max-width) + 96px);margin:0 auto;">
             <p style="font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;font-family:'Inter',sans-serif;margin:0 0 10px;">Aktuell im Magazin</p>
             <span class="badge badge-amber" style="margin-bottom:12px;">{h_cat}</span>
             <h1 style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(24px,3.2vw,40px);color:#fff;margin:0 0 12px;line-height:1.25;max-width:660px;text-shadow:0 2px 8px rgba(0,0,0,0.4);">{hero_article['title']}</h1>
-            <p style="font-size:15px;color:rgba(255,255,255,0.80);margin:0 0 20px;max-width:560px;line-height:1.6;">{h_teaser}</p>
+            <p class="hero-teaser" style="font-size:15px;color:rgba(255,255,255,0.80);margin:0 0 20px;max-width:560px;line-height:1.6;">{h_teaser}</p>
             <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
                 <a href="{base_url}/artikel/{h_slug}.html" class="btn btn-primary" style="background:var(--accent-amber);border:none;">Weiterlesen</a>
                 <span style="font-size:13px;color:rgba(255,255,255,0.55);">{h_date} · {h_rt} Min.</span>
@@ -1997,6 +2138,17 @@ def build_index_page(articles, config):
             <span style="color:var(--border);">·</span>
             <span style="font-size:12px;color:var(--accent-muted);">Schottland-Reisende &amp; Whisky-Enthusiasten seit 2007</span>
         </div>
+    </div>
+    <div style="max-width:var(--max-width);margin:0 auto;padding:14px 24px 0;text-align:center;font-family:'Inter',sans-serif;">
+        <p style="margin:0;font-size:13px;color:var(--text-secondary);letter-spacing:0.02em;">
+            <span style="color:#C8963E;font-size:15px;">&#127760;</span>
+            <span style="margin:0 6px;">Articles available in</span>
+            <strong style="color:var(--text-primary);font-weight:600;">English &middot; Fran&ccedil;ais &middot; Nederlands &middot; Espa&ntilde;ol &middot; &#26085;&#26412;&#35486;</strong>
+            <span style="color:var(--text-secondary);"> &mdash; open any story to switch language</span>
+        </p>
+    </div>
+    <div id="site-lang-notice" style="display:none;max-width:var(--max-width);margin:14px auto 0;padding:12px 18px;background:rgba(200,150,62,0.12);border-left:3px solid #C8963E;border-radius:3px;font-family:'Inter',sans-serif;font-size:13px;color:#1A1A1A;text-align:left;">
+        <strong>Hinweis / Note:</strong> Die Startseite ist nur auf Deutsch verf&uuml;gbar. &Ouml;ffne einen Artikel, um die gew&auml;hlte Sprache zu sehen. <em>Open any article to read it in your chosen language.</em>
     </div>"""
 
     # --- 2. Featured Stories Grid (Artikel 2-6) ---
