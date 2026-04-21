@@ -169,7 +169,7 @@
   {
     "id": "ardbeg",
     "slug": "ardbeg",
-    "published": true,
+    "published": false,
     "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
     "long_description": "Ardbeg wurde 1815 gegründet und liegt am östlichen Ende der berühmten Islay-Whisky-Küste. Nach jahrzehntelangem Rückgang und zwischenzeitlicher Schließung wurde die Destillerie 1997 von der Glenmorangie Company (heute Teil von LVMH) wiederbelebt. Seitdem hat sich Ardbeg zum Kultlabel entwickelt: stark torfig (55+ ppm Phenol), komplex und für seinen enthusiastischen 'Ardbeg Committee' bekannt, der globale Neuerscheinungen zelebriert.",
     "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
@@ -199,7 +199,8 @@
     "tasting_notes_finish": "Anhaltend, extrem torfig.",
     "editorial_notes": "Love it or hate it. Ein absoluter Klassiker.",
     "created_at": "2026-04-19T10:30:00Z",
-    "last_updated": "2026-04-21T04:49:45Z"
+    "last_updated": "2026-04-21T04:49:56Z",
+    "deleted": true
   },
   {
     "id": "oesterreich",
