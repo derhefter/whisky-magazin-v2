@@ -256,12 +256,25 @@ Das Glossar ist unter `/whisky-glossar/` erreichbar und enthaelt Laender, Region
 | **Destillerien**  | `data/glossary/distilleries.json`  | id, slug, name, country_id, region_id                |
 | **Abfuellungen**  | `data/glossary/whiskies.json`      | id, slug, name, country_id, distillery_id, whisky_type, abv |
 
+#### Automatischer Rebuild-Workflow (seit April 2026)
+
+Alle Datenaenderungen im Admin werden **direkt via GitHub API ins Repository committed**. Vercel erkennt jeden neuen Commit und startet automatisch einen Rebuild (`python main.py --build-v2`). Dadurch sind alle oeffentlichen Glossar-Seiten nach etwa 1–2 Minuten aktuell — ohne manuellen Eingriff.
+
+Ablauf:
+1. Admin publiziert Daten (`publish_approved`)
+2. JSON-Datei wird direkt in GitHub committed
+3. Vercel erkennt den Commit → startet Build
+4. `python main.py --build-v2` generiert alle HTML-Seiten neu aus den aktuellen JSON-Daten
+5. ~1–2 Minuten spaeter sind die oeffentlichen Seiten (Zaehler, Listenansichten, Detailseiten) aktuell
+
+Im Admin erscheint nach dem Veroeffentlichen ein grüner Hinweis-Banner ("Seiten werden neu gebaut…"), der sich nach ~2,5 Minuten automatisch auf "abgeschlossen ✓" aendert.
+
 #### Import-Workflow
 
 1. **Batch importieren:** `POST /api/admin_glossary?action=import_batch` — CSV oder JSON hochladen
 2. **Review-Queue:** `GET /api/admin_glossary?action=review_queue` — Eintraege pruefen
 3. **Entscheiden:** Einzeln oder per Batch (s.u.)
-4. **Veroeffentlichen:** `POST /api/admin_glossary?action=publish_approved` — Freigegebene Eintraege live schalten
+4. **Veroeffentlichen:** `POST /api/admin_glossary?action=publish_approved` — Freigegebene Eintraege live schalten → loest automatischen Rebuild aus
 
 **Review-Entscheidungen (Einzeln):**
 

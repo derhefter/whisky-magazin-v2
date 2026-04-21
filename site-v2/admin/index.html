@@ -4890,7 +4890,12 @@ async function publishSingle(entity, batchId) {
   if (!confirm(`Alle freigegebenen "${GLOSSAR_ENTITY_LABELS[entity]||entity}"-Datensätze in die Live-Daten übernehmen?`)) return;
   try {
     const res = await apiPost(`${API.glossar}?action=publish_approved`, { entity, batch_id: batchId });
-    showToast(`${res.published} Datensätze veröffentlicht ✓`, 'success');
+    if (res.published > 0) {
+      showToast(`${res.published} Datensätze veröffentlicht ✓ — Glossar-Seiten werden neu gebaut (~1–2 Min.)`, 'success', 7000);
+      _showRebuildBanner();
+    } else {
+      showToast('Keine Datensätze zum Veröffentlichen', 'info');
+    }
     glossarReviewQueue = null;
     glossarCache[entity] = null;
     loadReviewQueue();
@@ -4907,17 +4912,51 @@ async function publishApproved() {
     for (const entity of ENTITIES) {
       const res = await apiPost(`${API.glossar}?action=publish_approved`, { entity, batch_id: '' });
       total += res.published || 0;
-      if (res.published > 0) {
-        glossarCache[entity] = null;
-      }
+      if (res.published > 0) glossarCache[entity] = null;
     }
-    showToast(`${total} Datensätze veröffentlicht ✓`, 'success');
+    if (total > 0) {
+      showToast(`${total} Datensätze veröffentlicht ✓ — Glossar-Seiten werden neu gebaut (~1–2 Min.)`, 'success', 7000);
+      _showRebuildBanner();
+    } else {
+      showToast('Keine Datensätze zum Veröffentlichen', 'info');
+    }
     glossarReviewQueue = null;
     loadReviewQueue();
     if (total > 0) loadUebersicht();
   } catch (e) {
     showToast('Fehler: ' + e.message, 'error');
   }
+}
+
+// ── Rebuild-Banner ────────────────────────────────────────────────────────────
+// Zeigt einen persistenten Hinweis, solange Vercel die Seite neu baut.
+function _showRebuildBanner() {
+  const existing = document.getElementById('rebuild-banner');
+  if (existing) return; // schon sichtbar
+  const banner = document.createElement('div');
+  banner.id = 'rebuild-banner';
+  banner.style.cssText = `
+    position:fixed;bottom:80px;left:50%;transform:translateX(-50%);
+    background:#1e3a5f;color:#fff;padding:10px 20px;border-radius:8px;
+    font-size:0.82rem;display:flex;align-items:center;gap:10px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.3);z-index:9999;white-space:nowrap;`;
+  banner.innerHTML = `
+    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;
+      background:#4ade80;animation:pulse-anim 1.5s infinite;flex-shrink:0;"></span>
+    Glossar-Seiten werden auf whisky-reise.com neu gebaut…
+    <button onclick="document.getElementById('rebuild-banner').remove()"
+      style="background:rgba(255,255,255,0.15);border:none;color:#fff;padding:2px 8px;
+             border-radius:4px;cursor:pointer;margin-left:4px;font-size:0.78rem;">✕</button>`;
+  document.body.appendChild(banner);
+  // Auto-dismiss nach 4 Minuten (Vercel Build dauert ~1-2 Min.)
+  setTimeout(() => {
+    const b = document.getElementById('rebuild-banner');
+    if (b) {
+      b.innerHTML = b.innerHTML.replace('werden…', 'abgeschlossen ✓');
+      b.style.background = '#166534';
+      setTimeout(() => b.remove(), 4000);
+    }
+  }, 150000); // 2.5 min
 }
 
 /* ============================================================
