@@ -6802,7 +6802,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "balblair-15",
         "name": "Balblair 15 Year Old",
@@ -6854,7 +6854,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:13:03Z"
     },
     {
       "batch_id": "whiskies_20260422T190800_97e5ec",
