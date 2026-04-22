@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192942_74ffab",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:42Z",
+  "raw": [
+    {
+      "id": "old-pulteney",
+      "name": "Old Pulteney",
+      "slug": "old-pulteney",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1826,
+      "owner": "Inver House Distillers",
+      "website": "https://www.oldpulteney.com/",
+      "short_description": "Bekannt als der 'Maritime Malt', geprägt durch die salzige Meeresluft der nördlichen Highlands.",
+      "long_description": "Old Pulteney in Wick war lange Zeit die nördlichste Destillerie auf dem schottischen Festland. Gegründet 1826 im einstigen Zentrum der europäischen Heringsfischerei, ist ihr Whisky untrennbar mit dem Meer verbunden. Die Brennblasen haben eine ungewöhnliche Form ohne Schwanenhals, was den Spirit besonders ölig macht. Der Charakter ist salzig, frisch und maritim, oft mit einer schönen Süße von Vanille und Zitrusfrüchten.",
+      "travel_info": "Das Besucherzentrum in Wick ist ganzjährig geöffnet. Es werden verschiedene Touren angeboten (z.B. 'The Spirit of Wick'). Die Destillerie ist ein fester Bestandteil der North Coast 500 Route. Eine Buchung im Voraus wird empfohlen.",
+      "seo_title": "Old Pulteney Destillerie: Der maritime Highland-Malt | Whisky-Glossar",
+      "seo_description": "Entdecke Old Pulteney in Wick. Erfahre mehr über den 'Maritime Malt', seine salzige Note und besuche die Brennerei auf deiner Tour entlang der North Coast 500.",
+      "coordinates": {
+        "lat": 58.435,
+        "lng": -3.0883
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T01:20:00Z"
+    }
+  ]
+}
