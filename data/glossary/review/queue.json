@@ -11846,7 +11846,7 @@
         "ID bereits vorhanden (Duplikat): glenmorangie"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "glenmorangie",
         "name": "Glenmorangie",
@@ -11857,8 +11857,8 @@
         "founded": 1843,
         "owner": "LVMH (Moët Hennessy Louis Vuitton)",
         "website": "https://www.glenmorangie.com/",
-        "short_description": "Bekannt für die höchsten Brennblasen Schottlands und ihre Pionierarbeit bei der Nachreifung in Weinfässern.",
-        "long_description": "Glenmorangie (Gälisch für 'Tal der Ruhe') wurde 1843 in Tain gegründet. Die Brennerei verfügt über die höchsten Brennblasen Schottlands (so hoch wie eine ausgewachsene Giraffe), was zu einem extrem leichten und eleganten Spirit führt. Glenmorangie war ein Pionier bei der Einführung von Fass-Finishes (Nachreifungen in Sherry-, Portwein- oder Sauternes-Fässern). Das Ergebnis ist ein komplexer Whisky mit vielseitigen Frucht- und Blumenaromen.",
+        "short_description": "Besitzt die höchsten Brennblasen Schottlands, was zu einem besonders leichten und eleganten Destillat führt.",
+        "long_description": "Glenmorangie beheimatet die höchsten Brennblasen Schottlands; ihre Hälse sind so hoch wie eine ausgewachsene Giraffe. Diese hohen Brennblasen stellen sicher, dass nur die leichtesten Dämpfe die Spitze erreichen, was einen delikaten und floralen Spirit erzeugt. Die in Tain gelegene Destillerie war unter Dr. Bill Lumsden ein Pionier des 'Wood Finishing'. Sie gehört zu den meistverkauften Single Malts der Welt und ist bekannt für ihre weiche, cremige Textur und ihr Zitrus-Honig-Profil.",
         "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (Sept-Mai Mo-Fr, Jun-Aug täglich 10:00-17:00 Uhr). Es bietet exzellente Touren und ein luxuriöses Gästehaus ('Glenmorangie House') in der Nähe.",
         "seo_title": "Glenmorangie Destillerie: Eleganz und Innovation | Whisky-Glossar",
         "seo_description": "Entdecke Glenmorangie in Tain. Erfahre mehr über die höchsten Brennblasen Schottlands, die Kunst der Fassnachreifung und besuche das preisgekrönte Besucherzentrum.",
@@ -11868,7 +11868,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:36Z"
+        "last_updated": "2026-04-22T19:32:33Z"
       },
       "raw": {
         "id": "glenmorangie",
@@ -11892,7 +11892,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:10:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:32:33Z"
     },
     {
       "batch_id": "distilleries_20260422T192939_af088f",
