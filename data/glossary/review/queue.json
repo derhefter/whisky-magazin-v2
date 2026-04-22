@@ -20067,7 +20067,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kingsbarns-balcomie",
         "name": "Kingsbarns Balcomie",
@@ -20135,7 +20135,10 @@
         "seo_title": "Kingsbarns Balcomie kaufen | Sherryfass-gereifter Lowland Malt",
         "seo_description": "Entdecken Sie den Kingsbarns Balcomie: Ein Sherry-Kraftpaket aus den Lowlands mit Noten von dunklen Beeren und Schokolade.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:27Z"
     },
     {
       "batch_id": "whiskies_20260422T195141_30f154",
