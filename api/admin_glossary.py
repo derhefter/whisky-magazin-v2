@@ -126,13 +126,26 @@ def _github_put(path: str, content_bytes: bytes, sha: str, message: str):
 
 
 def _read_json_file(gh_path: str):
-    """Returns (data, sha) or (None, None) on error."""
+    """Returns (data, sha) or (None, None) on error.
+    Falls back to the Git Blobs API for files >1 MB where the Contents API
+    returns an empty 'content' field."""
     result = _github_get(f"contents/{gh_path}")
     if "error" in result:
         return None, None
+    sha = result.get("sha", "")
+    raw_content = result.get("content", "")
+    # GitHub Contents API returns empty content for files >1 MB — use Blobs API
+    if not raw_content.strip():
+        blob_sha = result.get("sha", "")
+        if not blob_sha:
+            return None, None
+        blob = _github_get(f"git/blobs/{blob_sha}")
+        if "error" in blob:
+            return None, None
+        raw_content = blob.get("content", "")
     try:
-        content = base64.b64decode(result["content"]).decode("utf-8")
-        return json.loads(content), result.get("sha", "")
+        content = base64.b64decode(raw_content).decode("utf-8")
+        return json.loads(content), sha
     except Exception:
         return None, None
 
