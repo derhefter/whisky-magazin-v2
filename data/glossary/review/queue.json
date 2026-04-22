@@ -1360,7 +1360,7 @@
         "ID bereits vorhanden (Duplikat): bruichladdich"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "bruichladdich",
         "name": "Bruichladdich",
@@ -1371,7 +1371,7 @@
         "founded": 1881,
         "owner": "Rémy Cointreau",
         "website": "https://www.bruichladdich.com/",
-        "short_description": "Eine progressive Destillerie, die auf Terroir setzt und sowohl ungetorfte als auch extrem getorfte Whiskys (Octomore) produziert.",
+        "short_description": "Die rebellische Destillerie. Produziert ungetorften Bruichladdich, schwer getorften Port Charlotte und den extremen Octomore.",
         "long_description": "Bruichladdich ist die progressive Brennerei auf Islay, bekannt für ihren Fokus auf 'Terroir' und die markanten türkisfarbenen Dosen. Seit der Wiedereröffnung 2001 wird konsequent auf Kältefiltration und Farbstoffe verzichtet. Während die Hauptmarke Bruichladdich ungetorft ist, produziert die Destillerie auch den rauchigen Port Charlotte und mit Octomore den am stärksten getorften Whisky der Welt. Sie setzt sich stark für lokale Gerste und Transparenz in der Branche ein.",
         "travel_info": "Der 'Laddie Shop' und das Besucherzentrum sind von April bis Oktober täglich geöffnet (10:00-17:30 Uhr). Neben Whisky-Touren werden auch Tastings für 'The Botanist Gin' angeboten. Eine Online-Buchung für Erlebnisse wird empfohlen.",
         "seo_title": "Bruichladdich Destillerie: Terroir und Innovation auf Islay | Whisky-Glossar",
@@ -1382,7 +1382,9 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:54:32Z"
+        "last_updated": "2026-04-22T20:25:14Z",
+        "travel_context": "Liegt am westlichen Ufer des Loch Indaal mit wunderschönem Blick hinüber nach Bowmore.",
+        "visit_info": "Sehr lebhaftes und modernes Besucherzentrum. Eigene Abfüllanlagen vor Ort."
       },
       "raw": {
         "id": "bruichladdich",
@@ -1406,7 +1408,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T21:35:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:25:14Z"
     },
     {
       "batch_id": "distilleries_20260422T195435_17bc9b",
