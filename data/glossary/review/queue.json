@@ -13773,7 +13773,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "abhainn-dearg-10-year-old",
         "name": "Abhainn Dearg 10 Year Old",
@@ -13828,7 +13828,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:18Z"
+      "reviewed_at": "2026-04-22T19:44:18Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -13838,7 +13839,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-10-year-old",
         "name": "Arran 10 Year Old",
@@ -13893,7 +13894,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:20Z"
+      "reviewed_at": "2026-04-22T19:44:20Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -13903,7 +13905,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-18-year-old",
         "name": "Arran 18 Year Old",
@@ -13958,7 +13960,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:21Z"
+      "reviewed_at": "2026-04-22T19:44:21Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -13968,7 +13971,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-21-year-old",
         "name": "Arran 21 Year Old",
@@ -14023,7 +14026,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:23Z"
+      "reviewed_at": "2026-04-22T19:44:23Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -14033,7 +14037,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-barrel-reserve",
         "name": "Arran Barrel Reserve",
@@ -14088,7 +14092,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:24Z"
+      "reviewed_at": "2026-04-22T19:44:24Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -14098,7 +14103,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-sherry-cask-the-bodega",
         "name": "Arran Sherry Cask 'The Bodega'",
@@ -14153,7 +14158,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:27Z"
+      "reviewed_at": "2026-04-22T19:44:27Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -14163,7 +14169,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-quarter-cask-the-cassie",
         "name": "Arran Quarter Cask 'The Cassie'",
@@ -14218,7 +14224,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:29Z"
+      "reviewed_at": "2026-04-22T19:44:29Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194015_4ef1e1",
@@ -14228,7 +14235,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran-robert-burns-single-malt",
         "name": "Robert Burns Single Malt",
@@ -14283,7 +14290,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:30Z"
+      "reviewed_at": "2026-04-22T19:44:30Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194018_e50d42",
@@ -14293,7 +14301,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "isle-of-harris-the-hearach",
         "name": "The Hearach",
@@ -14348,7 +14356,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:32Z"
+      "reviewed_at": "2026-04-22T19:44:32Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194021_cafd01",
@@ -14358,7 +14367,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park-10-year-old",
         "name": "Highland Park 10 Year Old",
@@ -14413,7 +14422,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:34Z"
+      "reviewed_at": "2026-04-22T19:44:34Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194021_cafd01",
@@ -14423,7 +14433,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park-12-year-old",
         "name": "Highland Park 12 Year Old",
@@ -14478,7 +14488,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:35Z"
+      "reviewed_at": "2026-04-22T19:44:35Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194021_cafd01",
@@ -14488,7 +14499,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park-15-year-old",
         "name": "Highland Park 15 Year Old",
@@ -14543,7 +14554,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:36Z"
+      "reviewed_at": "2026-04-22T19:44:36Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194021_cafd01",
@@ -14553,7 +14565,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park-18-year-old",
         "name": "Highland Park 18 Year Old",
@@ -14608,7 +14620,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:38Z"
+      "reviewed_at": "2026-04-22T19:44:38Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194021_cafd01",
@@ -14618,7 +14631,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park-dragon-legend",
         "name": "Highland Park Dragon Legend",
@@ -14673,7 +14686,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:39Z"
+      "reviewed_at": "2026-04-22T19:44:39Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194021_cafd01",
@@ -14683,7 +14697,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park-cask-strength-release",
         "name": "Highland Park Cask Strength Release",
@@ -14738,7 +14752,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:41Z"
+      "reviewed_at": "2026-04-22T19:44:41Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194024_2e6646",
@@ -14748,7 +14763,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jura-10-year-old",
         "name": "Jura 10 Year Old",
@@ -14803,7 +14818,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:42Z"
+      "reviewed_at": "2026-04-22T19:44:42Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194024_2e6646",
@@ -14813,7 +14829,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jura-12-year-old",
         "name": "Jura 12 Year Old",
@@ -14868,7 +14884,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:44Z"
+      "reviewed_at": "2026-04-22T19:44:44Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194024_2e6646",
@@ -14878,7 +14895,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jura-journey",
         "name": "Jura Journey",
@@ -14933,7 +14950,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:46Z"
+      "reviewed_at": "2026-04-22T19:44:46Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194027_928e51",
@@ -14943,7 +14961,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lagg-kilmory-edition",
         "name": "Lagg Kilmory Edition",
@@ -14998,7 +15016,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:47Z"
+      "reviewed_at": "2026-04-22T19:44:47Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194027_928e51",
@@ -15008,7 +15027,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lagg-corriecravie-edition",
         "name": "Lagg Corriecravie Edition",
@@ -15063,7 +15082,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:49Z"
+      "reviewed_at": "2026-04-22T19:44:49Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194030_b35a4d",
@@ -15073,7 +15093,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ledaig-10-year-old",
         "name": "Ledaig 10 Year Old",
@@ -15128,7 +15148,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:50Z"
+      "reviewed_at": "2026-04-22T19:44:50Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194030_b35a4d",
@@ -15138,7 +15159,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ledaig-sinclair-series-rioja-cask-finish",
         "name": "Ledaig Sinclair Series (Rioja Cask Finish)",
@@ -15193,7 +15214,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:52Z"
+      "reviewed_at": "2026-04-22T19:44:52Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194033_d21909",
@@ -15203,7 +15225,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "isle-of-raasay-signature-single-malt",
         "name": "Isle of Raasay Signature Single Malt",
@@ -15258,7 +15280,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:54Z"
+      "reviewed_at": "2026-04-22T19:44:54Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194036_d07a46",
@@ -15268,7 +15291,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "scapa-the-orcadian-skiren",
         "name": "Scapa The Orcadian Skiren",
@@ -15323,7 +15346,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:56Z"
+      "reviewed_at": "2026-04-22T19:44:56Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194036_d07a46",
@@ -15333,7 +15357,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "scapa-the-orcadian-glansa",
         "name": "Scapa The Orcadian Glansa",
@@ -15388,7 +15412,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:57Z"
+      "reviewed_at": "2026-04-22T19:44:57Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194039_784623",
@@ -15398,7 +15423,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "talisker-10-year-old",
         "name": "Talisker 10 Year Old",
@@ -15453,7 +15478,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:44:59Z"
+      "reviewed_at": "2026-04-22T19:44:59Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194039_784623",
@@ -15463,7 +15489,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "talisker-skye",
         "name": "Talisker Skye",
@@ -15518,7 +15544,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:45:00Z"
+      "reviewed_at": "2026-04-22T19:45:00Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194039_784623",
@@ -15528,7 +15555,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "talisker-storm",
         "name": "Talisker Storm",
@@ -15583,7 +15610,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:45:02Z"
+      "reviewed_at": "2026-04-22T19:45:02Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194043_7398bc",
@@ -15593,7 +15621,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tiree-whisky-company-the-cairnsmuir",
         "name": "The Cairnsmuir",
@@ -15648,7 +15676,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:45:03Z"
+      "reviewed_at": "2026-04-22T19:45:03Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194046_c22a38",
@@ -15658,7 +15687,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tobermory-12-year-old",
         "name": "Tobermory 12 Year Old",
@@ -15713,7 +15742,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:45:05Z"
+      "reviewed_at": "2026-04-22T19:45:05Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194049_000333",
@@ -15723,7 +15753,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "torabhaig-allt-gleann-legacy-series",
         "name": "Torabhaig Allt Gleann (Legacy Series)",
@@ -15778,7 +15808,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:45:07Z"
+      "reviewed_at": "2026-04-22T19:45:07Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194049_000333",
@@ -15788,7 +15819,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "torabhaig-taigh",
         "name": "Torabhaig \"Taigh\"",
@@ -15843,7 +15874,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:45:08Z"
+      "reviewed_at": "2026-04-22T19:45:08Z",
+      "published_at": "2026-04-22T19:45:14Z"
     },
     {
       "batch_id": "whiskies_20260422T194055_b3085f",
