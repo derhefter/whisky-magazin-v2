@@ -115,5 +115,31 @@
     "published": true,
     "created_at": "2026-04-17T00:00:00Z",
     "last_updated": "2026-04-17T00:00:00Z"
+  },
+  {
+    "id": "republic-of-ireland",
+    "name": "Republik Irland",
+    "slug": "republic-of-ireland",
+    "country_id": "ireland",
+    "short_description": "Der Hauptteil der Insel, bekannt für seine vielfältigen Brennereien von Cork bis Dublin.",
+    "long_description": "Die Republik Irland beheimatet den Großteil der irischen Whiskey-Produktion. Von den historischen Giganten in Midleton bis hin zur modernen Renaissance in Dublin bietet die Republik eine enorme Bandbreite an Stilen, darunter Single Pot Still, Single Malt und Blends. Die Region ist geprägt von einer reichen Tradition, die in den letzten Jahren durch zahlreiche Neugründungen massiv belebt wurde.",
+    "seo_title": "Irischer Whiskey aus der Republik Irland - Tradition & Moderne",
+    "seo_description": "Entdecken Sie Whiskey aus der Republik Irland: Von Dublin bis Cork, Tradition trifft auf Innovation. Jetzt mehr erfahren!",
+    "published": true,
+    "created_at": "2026-04-22T19:18:24Z",
+    "last_updated": "2026-04-22T19:18:45Z"
+  },
+  {
+    "id": "northern-ireland",
+    "name": "Nordirland",
+    "slug": "northern-ireland",
+    "country_id": "ireland",
+    "short_description": "Heimat der ältesten lizenzierten Brennerei der Welt.",
+    "long_description": "Nordirland ist ein integraler Bestandteil der irischen Whiskey-Geschichte. Dominiert wird die Region von der legendären Old Bushmills Distillery in County Antrim, der ältesten lizenzierten Brennerei der Welt. In den letzten Jahren sind auch hier neue Akteure hinzugekommen, die das Erbe Nordirlands mit frischen Ideen fortführen.",
+    "seo_title": "Whiskey aus Nordirland - Bushmills & Mehr",
+    "seo_description": "Whiskey aus Nordirland: Heimat von Bushmills und einer jahrhundertelangen Brenntradition. Entdecken Sie die nordirischen Destillerien.",
+    "published": true,
+    "created_at": "2026-04-22T19:18:24Z",
+    "last_updated": "2026-04-22T19:18:45Z"
   }
 ]
