@@ -734,6 +734,13 @@
       "imported_at": "2026-04-22T19:37:37Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T193740_9f9215",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:37:40Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13319,6 +13326,62 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T22:45:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T193740_9f9215",
+      "entity": "distilleries",
+      "item_id": "talisker",
+      "item_slug": "talisker",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "talisker",
+        "name": "Talisker",
+        "slug": "talisker",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1830,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/talisker",
+        "short_description": "Die älteste Destillerie auf Skye, berühmt für ihren pfeffrigen und rauchigen Charakter.",
+        "long_description": "Gegründet 1830 von den MacAskill-Brüdern, ist Talisker die älteste Brennerei auf der Isle of Skye. Ihr Spirit ist berühmt dafür, 'vom Meer gemacht' zu sein, geprägt von einem kraftvollen pfeffrigen Kick, maritimer Salzigkeit und intensivem Torfrauch. Die Destillerie nutzt einzigartige U-förmige Wash Pipes und Worm Tubs, die zum unverwechselbaren 'Talisker Bite' beitragen.",
+        "travel_info": "Das Besucherzentrum in Carbost bietet erstklassige Touren und Tastings an. Aufgrund der hohen Nachfrage ist eine Online-Buchung Wochen im Voraus fast unerlässlich. Kinder unter 8 Jahren dürfen nicht an den Produktionstouren teilnehmen.",
+        "seo_title": "Talisker Destillerie: Der pfeffrige Malt von der Isle of Skye | Whisky-Glossar",
+        "seo_description": "Besuche Talisker auf Skye. Entdecke den legendären Single Malt mit dem pfeffrigen Abgang, das moderne Besucherzentrum und die wilde Küste Schottlands.",
+        "coordinates": {
+          "lat": 57.3017,
+          "lng": -6.3537
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:40Z"
+      },
+      "raw": {
+        "id": "talisker",
+        "name": "Talisker",
+        "slug": "talisker",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1830,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/talisker",
+        "short_description": "Die älteste Destillerie auf Skye, berühmt für ihren pfeffrigen und rauchigen Charakter.",
+        "long_description": "Gegründet 1830 von den MacAskill-Brüdern, ist Talisker die älteste Brennerei auf der Isle of Skye. Ihr Spirit ist berühmt dafür, 'vom Meer gemacht' zu sein, geprägt von einem kraftvollen pfeffrigen Kick, maritimer Salzigkeit und intensivem Torfrauch. Die Destillerie nutzt einzigartige U-förmige Wash Pipes und Worm Tubs, die zum unverwechselbaren 'Talisker Bite' beitragen.",
+        "travel_info": "Das Besucherzentrum in Carbost bietet erstklassige Touren und Tastings an. Aufgrund der hohen Nachfrage ist eine Online-Buchung Wochen im Voraus fast unerlässlich. Kinder unter 8 Jahren dürfen nicht an den Produktionstouren teilnehmen.",
+        "seo_title": "Talisker Destillerie: Der pfeffrige Malt von der Isle of Skye | Whisky-Glossar",
+        "seo_description": "Besuche Talisker auf Skye. Entdecke den legendären Single Malt mit dem pfeffrigen Abgang, das moderne Besucherzentrum und die wilde Küste Schottlands.",
+        "coordinates": {
+          "lat": 57.3017,
+          "lng": -6.3537
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:50:00Z"
       }
     }
   ]
