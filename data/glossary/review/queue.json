@@ -16797,7 +16797,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "jura-12-year-old",
         "name": "Jura 12 Year Old",
@@ -16849,7 +16849,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:43:41Z"
     },
     {
       "batch_id": "whiskies_20260422T194108_9d7b6e",
