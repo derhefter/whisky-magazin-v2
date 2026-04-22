@@ -1,0 +1,107 @@
+{
+  "batch_id": "whiskies_20260422T190824_72e80c",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:24Z",
+  "raw": [
+    {
+      "id": "glendronach-12",
+      "name": "The GlenDronach 12 Year Old Original",
+      "slug": "glendronach-12",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "glendronach",
+      "whisky_type": "single_malt",
+      "style_tags": "sherry, süß, cremig, fruchtig",
+      "abv": 43,
+      "cask_types": "Pedro Ximénez & Oloroso Sherry Casks",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 12,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Süße Herbstfrüchte, Brombeeren und rote Pflaumen, mit einem Hauch von kandierter Orange.",
+        "palate": "Reichhaltiger Sherry, weich und cremig. Seidige Textur mit Noten von Rosinen, Soft-Früchten und Gewürzen.",
+        "finish": "Lang, voll und nussig mit anhaltender Sherry-Süße."
+      },
+      "short_description": "Der Inbegriff eines reichhaltig sherried Highland Malts.",
+      "long_description": "Der GlenDronach 12 Year Old Original reift in feinesten Pedro Ximénez- und Oloroso-Sherryfässern. Er ist bekannt für seinen tiefen, komplexen Charakter und die typische Fruchtsüße, die ihn zu einem Favoriten für Liebhaber von Sherry-Whiskys macht.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "glendronach-15-revival",
+      "name": "The GlenDronach 15 Year Old Revival",
+      "slug": "glendronach-15-revival",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "glendronach",
+      "whisky_type": "single_malt",
+      "style_tags": "intensiv, dunkel, schokolade, komplex",
+      "abv": 46,
+      "cask_types": "Pedro Ximénez & Oloroso Sherry Casks",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 15,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Berauschende Aromen von Maraschino-Kirschen, reifen Brombeeren und dunkler Schokolade.",
+        "palate": "Ein Zusammenspiel von Honig-Aprikosen, reifen Feigen und dunkler Schokolade, unterlegt mit Kräuternoten.",
+        "finish": "Sehr lang und komplex mit Spuren von Leder und Tabak."
+      },
+      "short_description": "Die Rückkehr einer Legende – intensiv und vielschichtig.",
+      "long_description": "Nach einer mehrjährigen Pause kehrte der 15-jährige 'Revival' in die Core Range zurück. Er zeigt die volle Kraft der Sherry-Reifung und ist für seine dunkle Farbe und die intensiven Noten von dunkler Schokolade und Beeren bekannt.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "glendronach-18-allardice",
+      "name": "The GlenDronach 18 Year Old Allardice",
+      "slug": "glendronach-18-allardice",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "glendronach",
+      "whisky_type": "single_malt",
+      "style_tags": "kraftvoll, dunkel, würzig, sherry",
+      "abv": 46,
+      "cask_types": "Oloroso Sherry Casks",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 18,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Dunkler Melassesirup, Piment und Walnussbrot.",
+        "palate": "Reichhaltig und dunkel. Klassische Oloroso-Noten: Leder, Tabakblätter und dunkler Espresso.",
+        "finish": "Enorm lang und komplex mit einem trockenen, würzigen Ausklang."
+      },
+      "short_description": "Ein kräftiger Highland Malt, ausschließlich in Oloroso-Fässern gereift.",
+      "long_description": "Benannt nach dem Gründer der Destillerie, James Allardice, reift dieser 18-jährige Whisky ausschließlich in feinsten spanischen Oloroso-Sherryfässern. Er ist dunkler und würziger als die jüngeren Ausdrücke und ein echtes Schwergewicht.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "glendronach-21-parliament",
+      "name": "The GlenDronach 21 Year Old Parliament",
+      "slug": "glendronach-21-parliament",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "glendronach",
+      "whisky_type": "single_malt",
+      "style_tags": "majestätisch, komplex, pflaume, schokolade",
+      "abv": 48,
+      "cask_types": "Pedro Ximénez & Oloroso Sherry Casks",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 21,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Reife Herbstfrüchte, rote Pflaumen und Brombeeren mit einem Hauch kandierter Orange.",
+        "palate": "Schokoladen-Fudge, Pflaumenpudding und feine Sherrynoten, balanciert durch Muskatnuss.",
+        "finish": "Langanhaltend und majestätisch mit dunkler Schokolade und reifen Beeren."
+      },
+      "short_description": "Das Flaggschiff der Core Range – reif, tief und elegant.",
+      "long_description": "Benannt nach der 'Parliament of Rooks' (einer Gruppe von Krähen), die in den Bäumen der Destillerie nistet, reift dieser 21-jährige Whisky in einer Kombination aus PX- und Oloroso-Fässern. Er ist der Gipfel der regulären Abfüllungen von GlenDronach.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    }
+  ]
+}
