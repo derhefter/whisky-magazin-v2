@@ -2177,7 +2177,7 @@
         "Pflichtfeld fehlt: whisky_type"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "aberlour-16",
         "name": "Aberlour 16 Year Old Double Cask Matured",
@@ -2211,7 +2211,10 @@
           "palate": "Smooth and full with sweet floral and spicy flavors, and a hint of plum and oak.",
           "finish": "Long, warm, spicy fruitiness."
         }
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:39:07Z"
     },
     {
       "batch_id": "whiskies_20260422T203318_52ef91",
