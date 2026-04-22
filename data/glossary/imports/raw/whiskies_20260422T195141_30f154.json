@@ -1,0 +1,41 @@
+{
+  "batch_id": "whiskies_20260422T195141_30f154",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:51:41Z",
+  "raw": [
+    {
+      "id": "lindores-abbey-mcdxciv",
+      "name": "Lindores Abbey MCDXCIV",
+      "slug": "lindores-abbey-mcdxciv",
+      "country_id": "scotland",
+      "region_id": "lowlands",
+      "distillery_id": "lindores_abbey",
+      "whisky_type": "single_malt",
+      "style_tags": "historisch, cremig, Obstgartenfrüchte, Vanille",
+      "abv": 46,
+      "cask_types": "ex-bourbon, ex-sherry, STR red wine barriques",
+      "smoke_profile": "Ungetorft",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes_nose": "Elegant und weich. Vanille, Karamell, Birnendrops und Toffee-Äpfel. Dazu Noten von Blätterteig und reifen Feigen.",
+      "tasting_notes_palate": "Cremige Textur. Perfekte Balance aus Vanille, getrockneten Früchten und Zitrusnoten. Muskatnuss, Nelke und Schokolade.",
+      "tasting_notes_finish": "Mittellang und zart. Trocknende Eiche, weiße Pfefferwärme und eine anhaltende Fruchtsüße.",
+      "short_description": "Der Standard-Malt vom spirituellen Geburtsort des schottischen Whiskys. Benannt nach dem Jahr 1494.",
+      "long_description": "Lindores Abbey MCDXCIV (1494) ist der erste Core-Release der 2017 eröffneten Destillerie. Die Destillerie steht an dem Ort, an dem der erste schriftliche Beleg für 'Aqua Vitae' (Whisky) in Schottland im Jahr 1494 verzeichnet wurde. Die Reifung erfolgt in einer dreifachen Fasskombination.",
+      "editorial_notes": null,
+      "travel_context": "Ein Muss für Whisky-Historiker: Die Ruinen der alten Abtei können besichtigt werden.",
+      "image": null,
+      "source_urls": [
+        "https://lindoresabbeydistillery.com/lindores/"
+      ],
+      "source_status": "verified",
+      "review_status": "pending",
+      "related_articles": [],
+      "created_at": "2026-04-21T15:00:00.000Z",
+      "last_updated": "2026-04-21T15:00:00.000Z",
+      "seo_title": "Lindores Abbey MCDXCIV kaufen | Der spirituelle Ursprung des Whiskys",
+      "seo_description": "Lindores Abbey MCDXCIV: Ein historischer Lowland Malt mit cremiger Vanille und Obstgartenfrüchten. Ein Stück Whiskygeschichte im Glas.",
+      "published": true
+    }
+  ]
+}
