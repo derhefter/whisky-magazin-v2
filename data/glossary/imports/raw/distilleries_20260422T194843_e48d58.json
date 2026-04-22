@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T194843_e48d58",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:48:43Z",
+  "raw": [
+    {
+      "id": "lochlea",
+      "name": "Lochlea",
+      "slug": "lochlea",
+      "region_id": "lowlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 2018,
+      "owner": "Neil McGeoch",
+      "website": "https://lochleadistillery.com/",
+      "short_description": "Eine unabhängige Farm-Destillerie in Ayrshire, auf der Robert Burns einst lebte und arbeitete.",
+      "long_description": "Lochlea ist eine familiengeführte Farm-Brennerei in Ayrshire. Der Standort hat eine starke historische Verbindung, da der schottische Nationaldichter Robert Burns hier von 1777 bis 1784 lebte und arbeitete. Die Destillerie nutzt ausschließlich ihre eigene Gerste für die Whiskyproduktion. Unter der Leitung von Production Director John Campbell (ehemals Laphroaig) entsteht ein fruchtiger, frischer und eleganter Lowland-Whisky mit viel Textur.",
+      "travel_info": "Lochlea ist derzeit nicht für die Öffentlichkeit zugänglich und verfügt über kein Besucherzentrum. Die Destillerie konzentriert sich voll auf die Produktion ihres Single Malts.",
+      "seo_title": "Lochlea Destillerie: Whisky-Tradition auf der Robert Burns Farm | Whisky-Glossar",
+      "seo_description": "Erfahre mehr über Lochlea, die unabhängige Farm-Brennerei in Ayrshire. Entdecke die Verbindung zu Robert Burns und den erstklassigen Lowland Single Malt.",
+      "coordinates": {
+        "lat": 55.5139,
+        "lng": -4.4344
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T00:10:00Z"
+    }
+  ]
+}
