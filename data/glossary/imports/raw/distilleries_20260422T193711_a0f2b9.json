@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T193711_a0f2b9",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:37:11Z",
+  "raw": [
+    {
+      "id": "abhainn-dearg",
+      "name": "Abhainn Dearg",
+      "slug": "abhainn-dearg",
+      "region_id": "islands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 2008,
+      "owner": "Mark Tayburn",
+      "website": "https://www.abhainndearg.co.uk/",
+      "short_description": "Die westlichste Destillerie Schottlands auf der Isle of Lewis, bekannt für ihre handwerkliche Herangehensweise.",
+      "long_description": "Abhainn Dearg (Gälisch für 'Roter Fluss') wurde 2008 von Mark Tayburn auf der Isle of Lewis gegründet und war die erste legale Brennerei auf den Äußeren Hebriden seit fast 200 Jahren. Die Destillerie folgt einer extrem handwerklichen Philosophie: Die Gerste wird lokal angebaut, und die Brennblasen wurden nach Vorbildern alter Schwarzbrennereien vor Ort gefertigt. Der Whisky ist wild, ungeschliffen und ein authentischer Ausdruck seiner rauen Umgebung.",
+      "travel_info": "Der Shop ist Mo-Fr geöffnet (11:00-13:00 Uhr und 14:00-16:00 Uhr). Im Winter (Nov-Apr) Mi/Do geschlossen. Klassische Touren sind derzeit nicht verfügbar, aber ab April 2026 werden exklusive Warehouse-Tastings angeboten.",
+      "seo_title": "Abhainn Dearg: Die Wildnis von Lewis im Glas | Whisky-Glossar",
+      "seo_description": "Entdecke Abhainn Dearg, die westlichste Brennerei Schottlands. Erfahre mehr über handwerkliche Destillation, den Shop auf Lewis und exklusive Tastings.",
+      "coordinates": {
+        "lat": 58.1883,
+        "lng": -7.0347
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T22:05:00Z"
+    }
+  ]
+}
