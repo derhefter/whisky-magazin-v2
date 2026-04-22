@@ -2771,7 +2771,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "the-balvenie-the-balvenie-french-oak-16-year-old",
         "name": "The Balvenie French Oak 16 Year Old",
@@ -2835,7 +2835,10 @@
         "seo_title": "The Balvenie 16 Jahre French Oak Single Malt kaufen",
         "seo_description": "Der Balvenie 16 Jahre French Oak mit Pineau des Charentes Finish. Florale Frische und feine Fruchtigkeit in einem Glas.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:40:55Z"
     },
     {
       "batch_id": "whiskies_20260422T203936_6b9d51",
