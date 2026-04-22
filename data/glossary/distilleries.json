@@ -234,35 +234,41 @@
     "founded": 1832,
     "owner": "Loch Lomond Group",
     "website": "https://www.glenscotia.com/",
-    "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+    "short_description": "Eine der kleinsten Destillerien Schottlands, bewahrt den maritimen und salzigen Charakter von Campbeltown.",
     "long_description": "Gegründet im Jahr 1832 in Campbeltown, der einstigen 'Whisky-Hauptstadt der Welt', ist Glen Scotia eine der drei verbliebenen Brennereien in der Region. Die Destillerie blickt auf eine wechselvolle Geschichte mit häufigen Besitzerwechseln und Stilllegungsphasen zurück, wurde jedoch unter der Loch Lomond Group erfolgreich revitalisiert. Glen Scotia ist bekannt für ihren maritimen Charakter und produziert sowohl rauchige als auch nicht-rauchige Whiskys, die das klassische ölige und salzige Profil eines Campbeltown-Malts perfekt widerspiegeln.",
+    "travel_info": "Das Besucherzentrum ist Mo-Sa von 10:00 bis 17:00 Uhr geöffnet. Es werden verschiedene Touren angeboten, darunter die beliebte 'Dunnage Warehouse Experience'. Eine Buchung im Voraus wird empfohlen.",
+    "seo_title": "Glen Scotia Destillerie: Maritimer Whisky aus Campbeltown | Whisky-Glossar",
+    "seo_description": "Besuche Glen Scotia, eine der letzten Brennereien in Campbeltown. Entdecke preisgekrönten Single Malt mit salzigem Charakter und viktorianischem Charme.",
     "coordinates": {
-      "lat": 55.4291,
-      "lng": -5.6047
+      "lat": 55.4258,
+      "lng": -5.6111
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:01:46Z"
+    "last_updated": "2026-04-22T19:28:34Z"
   },
   {
     "id": "kilkerran",
-    "name": "Glengyle (Kilkerran)",
+    "name": "Kilkerran (Glengyle)",
     "slug": "kilkerran",
     "region_id": "campbeltown",
     "country_id": "scotland",
     "status": "active",
     "founded": 1872,
-    "owner": "J & A Mitchell & Co. Ltd.",
+    "owner": "Mitchell's Glengyle Ltd.",
     "website": "https://kilkerran.scot/",
-    "short_description": "Wurde 2004 wiedereröffnet und produziert unter dem Namen Kilkerran einen klassischen Campbeltown-Malt.",
+    "short_description": "Die Heimat des Kilkerran Single Malt, im Jahr 2004 wiedereröffnet, um den Status von Campbeltown als Whisky-Region zu sichern.",
     "long_description": "Kilkerran ist der Markenname für Single Malt Whisky, der in der Glengyle-Brennerei in Campbeltown hergestellt wird. Die Destillerie wurde 2004 von der Familie Mitchell (den Eigentümern von Springbank) wiedereröffnet und war die erste neue Brennerei in der Region seit 125 Jahren. Der Name Kilkerran leitet sich vom gälischen 'Ceann Loch Cille Chiarain' ab. Die Whiskys zeichnen sich durch ein leicht rauchiges, öliges und komplexes Profil aus, das ganz in der Tradition der klassischen Campbeltown-Produktionsmethoden steht.",
+    "travel_info": "Touren für die Glengyle Destillerie starten im Springbank Distillery Shop. Sie sind Mo-Sa verfügbar. Da die Brennerei nur wenige Monate im Jahr produziert, ist ein Besuch während der Produktionszeit (meist Herbst) besonders interessant. Buchung vorab nötig.",
+    "seo_title": "Kilkerran (Glengyle) Destillerie: Campbeltowns Renaissance | Whisky-Glossar",
+    "seo_description": "Entdecke Kilkerran Single Malt aus der Glengyle Brennerei. Erfahre mehr über die Wiedereröffnung, den handwerklichen Stil und Touren in Campbeltown.",
     "coordinates": {
-      "lat": 55.4272,
-      "lng": -5.6109
+      "lat": 55.4244,
+      "lng": -5.6083
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:01:46Z"
+    "last_updated": "2026-04-22T19:28:34Z"
   },
   {
     "id": "springbank",
@@ -272,17 +278,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1828,
-    "owner": "J & A Mitchell & Co. Ltd.",
+    "owner": "J & A Mitchell & Co Ltd.",
     "website": "https://www.springbank.scot/",
-    "short_description": "Eine Ikone der Handwerklichkeit; führt 100% der Produktion inklusive Mälzen und Abfüllen vor Ort durch.",
+    "short_description": "Die einzige Destillerie Schottlands, die 100% des Prozesses – vom Mälzen bis zur Abfüllung – vor Ort durchführt.",
     "long_description": "Springbank nimmt unter den schottischen Brennereien eine absolute Sonderstellung ein: Sie ist die älteste unabhängige Brennerei in Familienbesitz und führt 100% ihrer Produktion direkt vor Ort durch – einschließlich des traditionellen Mälzens auf eigenen Tenne-Böden (Floor Malting). In Campbeltown gelegen, produziert sie drei unterschiedliche Marken: Springbank (2,5-fach destilliert, leicht rauchig), Longrow (zweifach destilliert, stark rauchig) und Hazelburn (dreifach destilliert, ungetorft). Springbank ist ein Kultfavorit, bekannt für ihren komplexen, leicht industriellen und öligen Charakter.",
+    "travel_info": "Der Shop und das Besucherzentrum sind Mo-Sa von 10:00 bis 18:00 Uhr geöffnet. Touren sind extrem beliebt und oft weit im Voraus ausgebucht. Kinder unter 18 Jahren können in Begleitung kostenlos teilnehmen (außer bei speziellen Tastings).",
+    "seo_title": "Springbank Destillerie: Handwerkliche Perfektion in Campbeltown | Whisky-Glossar",
+    "seo_description": "Besuche Springbank, die Ikone der Unabhängigkeit. Erfahre mehr über die 100% Vor-Ort-Produktion, Springbank, Longrow und Hazelburn Single Malts.",
     "coordinates": {
-      "lat": 55.4258,
-      "lng": -5.608
+      "lat": 55.4244,
+      "lng": -5.6083
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:01:46Z"
+    "last_updated": "2026-04-22T19:28:34Z"
   },
   {
     "id": "aberfeldy",
