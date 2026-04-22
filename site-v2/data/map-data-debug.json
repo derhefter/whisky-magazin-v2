@@ -2535,16 +2535,45 @@
       "photos": []
     },
     {
-      "id": "glossary-dist-lagavulin",
-      "name": "Lagavulin",
-      "lat": 55.6356,
-      "lon": -6.1268,
+      "id": "loc-glengoyne-distillery",
+      "name": "Glengoyne Distillery",
+      "lat": 56.01,
+      "lon": -4.327,
+      "type": "distillery",
+      "region": "Stirlingshire",
+      "country": "Schottland",
+      "years_visited": [
+        2007
+      ],
+      "articles": [
+        "glasgow-islay-erste-schottlandreise-2007"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-glengoyne-distillery_0.jpg",
+          "year": 2007,
+          "caption": "Glengoyne Distillery"
+        },
+        {
+          "src": "/images/map/loc-glengoyne-distillery_1.jpg",
+          "year": 2007,
+          "caption": "Glengoyne Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-lagavulin-distillery",
+      "name": "Lagavulin Distillery",
+      "lat": 55.636,
+      "lon": -6.127,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
-      "short_description": "Lagavulin ist eine der ikonischsten Destillerien auf Islay – bekannt für seine kraftvoll torfigen, tiefen und komplexen Single Malts.",
-      "founded": 1816,
-      "glossary_url": "/whisky-glossar/lagavulin/",
       "years_visited": [
         2007
       ],
@@ -2556,154 +2585,2728 @@
         "glasgow-islay-erste-schottlandreise-2007",
         "schottland-im-winter-lohnt-sich-eine-reise"
       ],
+      "glossary_url": "/whisky-glossar/lagavulin/",
+      "slug": "lagavulin",
+      "short_description": "Lagavulin ist eine der ikonischsten Destillerien auf Islay – bekannt für seine kraftvoll torfigen, tiefen und komplexen Single Malts.",
+      "founded": 1816,
       "photos": [
         {
-          "src": "/images/map/glossary-dist-lagavulin_0.jpg",
+          "src": "/images/map/loc-lagavulin-distillery_0.jpg",
           "year": 2007,
-          "caption": "Lagavulin"
+          "caption": "Lagavulin Distillery"
         },
         {
-          "src": "/images/map/glossary-dist-lagavulin_1.jpg",
+          "src": "/images/map/loc-lagavulin-distillery_1.jpg",
           "year": 2007,
-          "caption": "Lagavulin"
+          "caption": "Lagavulin Distillery"
         }
       ],
       "visited": true
     },
     {
-      "id": "glossary-dist-ardbeg",
-      "name": "Ardbeg",
-      "lat": 55.641,
-      "lon": -6.108,
+      "id": "loc-kilchoman-distillery",
+      "name": "Kilchoman Distillery",
+      "lat": 55.785,
+      "lon": -6.457,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
-      "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
-      "founded": 1815,
-      "glossary_url": "/whisky-glossar/ardbeg/",
-      "years_visited": [],
+      "years_visited": [
+        2007
+      ],
       "articles": [
         "die-besten-whisky-destillerien-auf-islay",
         "glasgow-islay-erste-schottlandreise-2007"
       ],
-      "photos": [],
-      "visited": true
+      "photos": [
+        {
+          "src": "/images/map/loc-kilchoman-distillery_0.jpg",
+          "year": 2007,
+          "caption": "Kilchoman Distillery"
+        },
+        {
+          "src": "/images/map/loc-kilchoman-distillery_1.jpg",
+          "year": 2007,
+          "caption": "Kilchoman Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
     },
     {
-      "id": "glossary-dist-laphroaig",
-      "name": "Laphroaig",
-      "lat": 55.6316,
-      "lon": -6.1545,
+      "id": "loc-tennent-s-brewery",
+      "name": "Tennent's Brewery",
+      "lat": 55.858,
+      "lon": -4.225,
       "type": "distillery",
-      "region": "Islay",
+      "region": "Glasgow",
       "country": "Schottland",
-      "short_description": "Laphroaig ist der meistverkaufte Islay Single Malt und bekannt für seine jodigen, medizinischen und intensiv rauchigen Noten.",
-      "founded": 1815,
-      "glossary_url": "/whisky-glossar/laphroaig/",
-      "years_visited": [],
+      "years_visited": [
+        2007
+      ],
       "articles": [
-        "die-besten-whisky-destillerien-auf-islay",
         "glasgow-islay-erste-schottlandreise-2007"
       ],
-      "photos": [],
-      "visited": true
+      "photos": [
+        {
+          "src": "/images/map/loc-tennent-s-brewery_0.jpg",
+          "year": 2007,
+          "caption": "Tennent's Brewery"
+        },
+        {
+          "src": "/images/map/loc-tennent-s-brewery_1.jpg",
+          "year": 2007,
+          "caption": "Tennent's Brewery"
+        },
+        {
+          "src": "/images/map/loc-tennent-s-brewery_2.jpg",
+          "year": 2007,
+          "caption": "Tennent's Brewery"
+        },
+        {
+          "src": "/images/map/loc-tennent-s-brewery_3.jpg",
+          "year": 2007,
+          "caption": "Tennent's Brewery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
     },
     {
-      "id": "glossary-dist-glenfiddich",
-      "name": "Glenfiddich",
-      "lat": 57.4501,
-      "lon": -3.1276,
+      "id": "loc-royal-lochnagar-distillery",
+      "name": "Royal Lochnagar Distillery",
+      "lat": 57.041,
+      "lon": -3.233,
+      "type": "distillery",
+      "region": "Royal Deeside",
+      "country": "Schottland",
+      "years_visited": [
+        2008
+      ],
+      "articles": [
+        "edinburgh-orkney-scapa-private-tour-2008"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-royal-lochnagar-distillery_0.jpg",
+          "year": 2008,
+          "caption": "Royal Lochnagar Distillery"
+        },
+        {
+          "src": "/images/map/loc-royal-lochnagar-distillery_1.jpg",
+          "year": 2008,
+          "caption": "Royal Lochnagar Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-tormore-distillery",
+      "name": "Tormore Distillery",
+      "lat": 57.398,
+      "lon": -3.382,
       "type": "distillery",
       "region": "Speyside",
       "country": "Schottland",
-      "short_description": "Glenfiddich ist der meistverkaufte Single Malt Whisky der Welt und seit über 130 Jahren in Familienbesitz.",
-      "founded": 1886,
-      "glossary_url": "/whisky-glossar/glenfiddich/",
+      "years_visited": [
+        2008
+      ],
+      "articles": [
+        "edinburgh-orkney-scapa-private-tour-2008"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-tormore-distillery_0.jpg",
+          "year": 2008,
+          "caption": "Tormore Distillery"
+        },
+        {
+          "src": "/images/map/loc-tormore-distillery_1.jpg",
+          "year": 2008,
+          "caption": "Tormore Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-scapa-distillery",
+      "name": "Scapa Distillery",
+      "lat": 58.962,
+      "lon": -2.991,
+      "type": "distillery",
+      "region": "Orkney",
+      "country": "Schottland",
+      "years_visited": [
+        2008
+      ],
+      "articles": [
+        "edinburgh-halloween-holyrood-2019",
+        "edinburgh-orkney-scapa-private-tour-2008"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-scapa-distillery_0.jpg",
+          "year": 2008,
+          "caption": "Scapa Distillery"
+        },
+        {
+          "src": "/images/map/loc-scapa-distillery_1.jpg",
+          "year": 2008,
+          "caption": "Scapa Distillery"
+        },
+        {
+          "src": "/images/map/loc-scapa-distillery_2.jpg",
+          "year": 2008,
+          "caption": "Scapa Distillery"
+        },
+        {
+          "src": "/images/map/loc-scapa-distillery_3.jpg",
+          "year": 2008,
+          "caption": "Scapa Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-oban-distillery",
+      "name": "Oban Distillery",
+      "lat": 56.415,
+      "lon": -5.472,
+      "type": "distillery",
+      "region": "Argyll",
+      "country": "Schottland",
+      "years_visited": [
+        2009
+      ],
+      "articles": [
+        "trossachs-oban-hadrians-wall-2009",
+        "westküste-mull-zurück-in-schottland-2021"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-oban-distillery_0.jpg",
+          "year": 2009,
+          "caption": "Oban Distillery"
+        },
+        {
+          "src": "/images/map/loc-oban-distillery_1.jpg",
+          "year": 2009,
+          "caption": "Oban Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-talisker-distillery",
+      "name": "Talisker Distillery",
+      "lat": 57.302,
+      "lon": -6.356,
+      "type": "distillery",
+      "region": "Isle of Skye",
+      "country": "Schottland",
+      "years_visited": [
+        2012
+      ],
+      "articles": [
+        "highlands-skye-talisker-2012"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-talisker-distillery_0.jpg",
+          "year": 2012,
+          "caption": "Talisker Distillery"
+        },
+        {
+          "src": "/images/map/loc-talisker-distillery_1.jpg",
+          "year": 2012,
+          "caption": "Talisker Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-edradour-distillery-manual",
+      "name": "Edradour Distillery",
+      "lat": 56.718,
+      "lon": -3.767,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "years_visited": [
+        2012
+      ],
+      "articles": [
+        "highlands-skye-talisker-2012"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-edradour-distillery-manual_0.jpg",
+          "year": 2012,
+          "caption": "Edradour Distillery"
+        },
+        {
+          "src": "/images/map/loc-edradour-distillery-manual_1.jpg",
+          "year": 2012,
+          "caption": "Edradour Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-loch-lomond-distillery",
+      "name": "Loch Lomond Distillery",
+      "lat": 55.99,
+      "lon": -4.578,
+      "type": "distillery",
+      "region": "West Dunbartonshire",
+      "country": "Schottland",
+      "years_visited": [
+        2013
+      ],
+      "articles": [
+        "glasgow-fife-football-2013",
+        "westküste-mull-zurück-in-schottland-2021"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-loch-lomond-distillery_0.jpg",
+          "year": 2013,
+          "caption": "Loch Lomond Distillery"
+        },
+        {
+          "src": "/images/map/loc-loch-lomond-distillery_1.jpg",
+          "year": 2013,
+          "caption": "Loch Lomond Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-teeling-distillery",
+      "name": "Teeling Distillery",
+      "lat": 53.337,
+      "lon": -6.277,
+      "type": "distillery",
+      "region": "Dublin",
+      "country": "Irland",
+      "years_visited": [
+        2015
+      ],
+      "articles": [
+        "special-edition-dublin-irland-2015",
+        "teeling-distillery-dublin-ein-besuch-lohnt-sich"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-teeling-distillery_0.jpg",
+          "year": 2015,
+          "caption": "Teeling Distillery"
+        },
+        {
+          "src": "/images/map/loc-teeling-distillery_1.jpg",
+          "year": 2015,
+          "caption": "Teeling Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-springbank-distillery",
+      "name": "Springbank Distillery",
+      "lat": 55.427,
+      "lon": -5.6,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "years_visited": [
+        2016
+      ],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017",
+        "campbeltown-springbank-glengyle-glen-scotia-2016",
+        "special-edition-dublin-irland-2015",
+        "speyside-aberdeen-dufftown-2014"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-springbank-distillery_0.jpg",
+          "year": 2016,
+          "caption": "Springbank Distillery"
+        },
+        {
+          "src": "/images/map/loc-springbank-distillery_1.jpg",
+          "year": 2016,
+          "caption": "Springbank Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-girvan-distillery",
+      "name": "Girvan Distillery",
+      "lat": 55.6403,
+      "lon": -4.82369,
+      "type": "distillery",
+      "region": "Ayrshire",
+      "country": "Schottland",
+      "years_visited": [
+        2017
+      ],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-girvan-distillery_0.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_1.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_2.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_3.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_4.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_5.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_6.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_7.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_8.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        },
+        {
+          "src": "/images/map/loc-girvan-distillery_9.jpg",
+          "year": 2017,
+          "caption": "Girvan Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-annandale-distillery",
+      "name": "Annandale Distillery",
+      "lat": 56.18931,
+      "lon": -4.07099,
+      "type": "distillery",
+      "region": "Dumfries",
+      "country": "Schottland",
+      "years_visited": [
+        2017
+      ],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-annandale-distillery_0.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_1.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_2.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_3.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_4.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_5.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        },
+        {
+          "src": "/images/map/loc-annandale-distillery_6.jpg",
+          "year": 2017,
+          "caption": "Annandale Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-nine-springs-distillery",
+      "name": "Nine Springs Distillery",
+      "lat": 50.835,
+      "lon": 10.95,
+      "type": "distillery",
+      "region": "Thüringen",
+      "country": "Deutschland",
+      "years_visited": [
+        2020
+      ],
+      "articles": [
+        "special-edition-deutsche-whisky-tour-2020"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-nine-springs-distillery_0.jpg",
+          "year": 2020,
+          "caption": "Nine Springs Distillery"
+        },
+        {
+          "src": "/images/map/loc-nine-springs-distillery_1.jpg",
+          "year": 2020,
+          "caption": "Nine Springs Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-deanston-distillery",
+      "name": "Deanston Distillery",
+      "lat": 56.186,
+      "lon": -4.08,
+      "type": "distillery",
+      "region": "Stirlingshire",
+      "country": "Schottland",
+      "years_visited": [
+        2021
+      ],
+      "articles": [
+        "trossachs-oban-hadrians-wall-2009",
+        "westküste-mull-zurück-in-schottland-2021"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-deanston-distillery_0.jpg",
+          "year": 2021,
+          "caption": "Deanston Distillery"
+        },
+        {
+          "src": "/images/map/loc-deanston-distillery_1.jpg",
+          "year": 2021,
+          "caption": "Deanston Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glasgow-distillery-co",
+      "name": "Glasgow Distillery Co",
+      "lat": 55.856,
+      "lon": -4.287,
+      "type": "distillery",
+      "region": "Glasgow",
+      "country": "Schottland",
+      "years_visited": [
+        2021
+      ],
+      "articles": [
+        "glasgow-winter-citybreak-2025",
+        "arran-ayrshire-celtic-vs-bayern-2017",
+        "westküste-mull-zurück-in-schottland-2021"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-glasgow-distillery-co_0.jpg",
+          "year": 2021,
+          "caption": "Glasgow Distillery Co"
+        },
+        {
+          "src": "/images/map/loc-glasgow-distillery-co_1.jpg",
+          "year": 2021,
+          "caption": "Glasgow Distillery Co"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenns-creek-distillery",
+      "name": "Glenns Creek Distillery",
+      "lat": 38.048,
+      "lon": -84.83,
+      "type": "distillery",
+      "region": "Woodford County",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-glenns-creek-distillery_0.jpg",
+          "year": 2024,
+          "caption": "Glenns Creek Distillery"
+        },
+        {
+          "src": "/images/map/loc-glenns-creek-distillery_1.jpg",
+          "year": 2024,
+          "caption": "Glenns Creek Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-regeneration-distillery",
+      "name": "Regeneration Distillery",
+      "lat": 37.7,
+      "lon": -84.1,
+      "type": "distillery",
+      "region": "Estill County",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-regeneration-distillery_0.jpg",
+          "year": 2024,
+          "caption": "Regeneration Distillery"
+        },
+        {
+          "src": "/images/map/loc-regeneration-distillery_1.jpg",
+          "year": 2024,
+          "caption": "Regeneration Distillery"
+        },
+        {
+          "src": "/images/map/loc-regeneration-distillery_2.jpg",
+          "year": 2024,
+          "caption": "Regeneration Distillery"
+        },
+        {
+          "src": "/images/map/loc-regeneration-distillery_3.jpg",
+          "year": 2024,
+          "caption": "Regeneration Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-wilderness-trail-distillery-manual",
+      "name": "Wilderness Trail Distillery",
+      "lat": 37.643,
+      "lon": -84.772,
+      "type": "distillery",
+      "region": "Danville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_0.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        },
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_1.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        },
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_2.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        },
+        {
+          "src": "/images/map/loc-wilderness-trail-distillery-manual_3.jpg",
+          "year": 2024,
+          "caption": "Wilderness Trail Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-dueling-grounds-distillery-manual",
+      "name": "Dueling Grounds Distillery",
+      "lat": 36.709,
+      "lon": -86.573,
+      "type": "distillery",
+      "region": "Franklin KY",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_0.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        },
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_1.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        },
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_2.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        },
+        {
+          "src": "/images/map/loc-dueling-grounds-distillery-manual_3.jpg",
+          "year": 2024,
+          "caption": "Dueling Grounds Distillery"
+        }
+      ],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-ole-smoky-moonshine-distillery",
+      "name": "Ole Smoky Moonshine Distillery",
+      "lat": 36.1623,
+      "lon": -86.7765,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-nashville-barrel-company-downtown",
+      "name": "Nashville Barrel Company Downtown",
+      "lat": 36.1632,
+      "lon": -86.781,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-big-machine-brewery-distillery",
+      "name": "Big Machine Brewery & Distillery",
+      "lat": 36.1555,
+      "lon": -86.793,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-standard-proof-whiskey-co",
+      "name": "Standard Proof Whiskey Co.",
+      "lat": 36.151,
+      "lon": -86.789,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-southern-collective-spirit-company",
+      "name": "Southern Collective Spirit Company",
+      "lat": 36.158,
+      "lon": -86.78,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-nashville-craft-distillery",
+      "name": "Nashville Craft Distillery",
+      "lat": 36.141,
+      "lon": -86.777,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-nashville-barrel-company-distillery",
+      "name": "Nashville Barrel Company Distillery",
+      "lat": 36.185,
+      "lon": -86.763,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-tennessee-legend-distillery",
+      "name": "Tennessee Legend Distillery",
+      "lat": 36.174,
+      "lon": -86.8,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-nelson-s-green-brier-distillery",
+      "name": "Nelson's Green Brier Distillery",
+      "lat": 36.1742,
+      "lon": -86.801,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-pennington-distilling-co",
+      "name": "Pennington Distilling Co.",
+      "lat": 36.178,
+      "lon": -86.801,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-old-glory-distilling-co",
+      "name": "Old Glory Distilling Co.",
+      "lat": 36.53,
+      "lon": -87.345,
+      "type": "distillery",
+      "region": "Clarksville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-cascade-hollow-distilling-co-george-dickel",
+      "name": "Cascade Hollow Distilling Co. (George Dickel)",
+      "lat": 35.467,
+      "lon": -86.076,
+      "type": "distillery",
+      "region": "Tullahoma",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-pauley-hollow-distillery",
+      "name": "Pauley Hollow Distillery",
+      "lat": 37.35,
+      "lon": -83.62,
+      "type": "distillery",
+      "region": "Eastern Kentucky",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-route-52-distillery",
+      "name": "Route 52 Distillery",
+      "lat": 37.35,
+      "lon": -83.49,
+      "type": "distillery",
+      "region": "Eastern Kentucky",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-regeneration-distilling-co",
+      "name": "Regeneration Distilling Co.",
+      "lat": 37.694,
+      "lon": -83.944,
+      "type": "distillery",
+      "region": "Estill County",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-bluegrass-distillers-at-elkwood-farm",
+      "name": "Bluegrass Distillers at Elkwood Farm",
+      "lat": 38.01,
+      "lon": -84.46,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-jack-daniel-s-distillery",
+      "name": "Jack Daniel's Distillery",
+      "lat": 35.283,
+      "lon": -86.374,
+      "type": "distillery",
+      "region": "Lynchburg",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-corsair-distillery-taproom",
+      "name": "Corsair Distillery & Taproom",
+      "lat": 36.174,
+      "lon": -86.8,
+      "type": "distillery",
+      "region": "Nashville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-james-b-beam-distilling-co",
+      "name": "James B. Beam Distilling Co.",
+      "lat": 37.8,
+      "lon": -85.67,
+      "type": "distillery",
+      "region": "Clermont",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-heaven-hill-bourbon-experience",
+      "name": "Heaven Hill Bourbon Experience",
+      "lat": 37.809,
+      "lon": -85.467,
+      "type": "distillery",
+      "region": "Bardstown",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-maker-s-mark-distillery",
+      "name": "Maker's Mark Distillery",
+      "lat": 37.671,
+      "lon": -85.336,
+      "type": "distillery",
+      "region": "Loretto",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-four-roses-distillery",
+      "name": "Four Roses Distillery",
+      "lat": 38.018,
+      "lon": -84.888,
+      "type": "distillery",
+      "region": "Lawrenceburg",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-lexington-brewing-distilling-co",
+      "name": "Lexington Brewing & Distilling Co.",
+      "lat": 38.047,
+      "lon": -84.497,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-barrel-house-distilling-co",
+      "name": "Barrel House Distilling Co.",
+      "lat": 38.044,
+      "lon": -84.497,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-rd1-spirits-distillery",
+      "name": "RD1 Spirits Distillery",
+      "lat": 38.054,
+      "lon": -84.496,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-divine-spirits",
+      "name": "Divine Spirits",
+      "lat": 38.046,
+      "lon": -84.498,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-james-e-pepper-distillery",
+      "name": "James E. Pepper Distillery",
+      "lat": 38.056,
+      "lon": -84.495,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-woodford-reserve-distillery",
+      "name": "Woodford Reserve Distillery",
+      "lat": 38.079,
+      "lon": -84.754,
+      "type": "distillery",
+      "region": "Versailles",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-larrikin-bourbon-company",
+      "name": "Larrikin Bourbon Company",
+      "lat": 38.044,
+      "lon": -84.494,
+      "type": "distillery",
+      "region": "Lexington",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-wild-turkey-distillery",
+      "name": "Wild Turkey Distillery",
+      "lat": 38.025,
+      "lon": -84.839,
+      "type": "distillery",
+      "region": "Lawrenceburg",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-saddlestone-distillery",
+      "name": "Saddlestone Distillery",
+      "lat": 37.806,
+      "lon": -85.468,
+      "type": "distillery",
+      "region": "Bardstown",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-bourbon-30-j-mattingly-1845-distillery",
+      "name": "Bourbon 30 / J. Mattingly 1845 Distillery",
+      "lat": 38.21,
+      "lon": -84.56,
+      "type": "distillery",
+      "region": "Georgetown",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenns-creek-distilling",
+      "name": "Glenns Creek Distilling",
+      "lat": 38.167,
+      "lon": -84.878,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-castle-key-distillery",
+      "name": "Castle & Key Distillery",
+      "lat": 38.178,
+      "lon": -84.884,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-buffalo-trace-distillery",
+      "name": "Buffalo Trace Distillery",
+      "lat": 38.213,
+      "lon": -84.869,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-whiskey-thief-distilling-co",
+      "name": "Whiskey Thief Distilling Co.",
+      "lat": 38.194,
+      "lon": -84.876,
+      "type": "distillery",
+      "region": "Frankfort",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-bulleit-distilling-co",
+      "name": "Bulleit Distilling Co.",
+      "lat": 38.21,
+      "lon": -85.227,
+      "type": "distillery",
+      "region": "Shelbyville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-jeptha-creed-distillery",
+      "name": "Jeptha Creed Distillery",
+      "lat": 38.184,
+      "lon": -85.195,
+      "type": "distillery",
+      "region": "Shelbyville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-kentucky-artisan-distillery",
+      "name": "Kentucky Artisan Distillery",
+      "lat": 38.18,
+      "lon": -85.68,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-michter-s-fort-nelson-distillery",
+      "name": "Michter's Fort Nelson Distillery",
+      "lat": 38.257,
+      "lon": -85.756,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-angel-s-envy-distillery",
+      "name": "Angel's Envy Distillery",
+      "lat": 38.256,
+      "lon": -85.74,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-old-forester-distilling-co",
+      "name": "Old Forester Distilling Co.",
+      "lat": 38.2563,
+      "lon": -85.7575,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-rabbit-hole-distillery",
+      "name": "Rabbit Hole Distillery",
+      "lat": 38.2565,
+      "lon": -85.759,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-evan-williams-bourbon-experience",
+      "name": "Evan Williams Bourbon Experience",
+      "lat": 38.2575,
+      "lon": -85.757,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-old-carter-whiskey",
+      "name": "Old Carter Whiskey",
+      "lat": 38.254,
+      "lon": -85.757,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-old-louisville-whiskey-co",
+      "name": "Old Louisville Whiskey Co.",
+      "lat": 38.24,
+      "lon": -85.762,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-big-bourbon-club",
+      "name": "Big Bourbon Club",
+      "lat": 38.255,
+      "lon": -85.761,
+      "type": "distillery",
+      "region": "Louisville",
+      "country": "USA",
+      "years_visited": [
+        2024
+      ],
+      "articles": [
+        "bourbon-trail-kentucky-tennessee-2024"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-the-glenturret-distillery",
+      "name": "The Glenturret Distillery",
+      "lat": 56.373,
+      "lon": -3.862,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "trossachs-oban-hadrians-wall-2009"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-the-cairn-distillery",
+      "name": "The Cairn Distillery",
+      "lat": 57.48,
+      "lon": -3.22,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-ardnamurchan-distillery",
+      "name": "Ardnamurchan Distillery",
+      "lat": 56.735,
+      "lon": -6.102,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-dalwhinnie-distillery",
+      "name": "Dalwhinnie Distillery",
+      "lat": 56.94,
+      "lon": -4.244,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenallachie-distillery",
+      "name": "Glenallachie Distillery",
+      "lat": 57.455,
+      "lon": -3.251,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-blair-athol-distillery",
+      "name": "Blair Athol Distillery",
+      "lat": 56.706,
+      "lon": -3.734,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-tomatin-distillery",
+      "name": "Tomatin Distillery",
+      "lat": 57.34,
+      "lon": -4.013,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-8-doors-distillery",
+      "name": "8 Doors Distillery",
+      "lat": 58.64,
+      "lon": -3.07,
+      "type": "distillery",
+      "region": "Caithness",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenfiddich-distillery",
+      "name": "Glenfiddich Distillery",
+      "lat": 57.453,
+      "lon": -3.129,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
       "years_visited": [],
       "articles": [
         "luxusurlaub-schottland-schlosshotels-fine-dining",
         "speyside-marathon-zwölf-destillerien-2010",
         "glenfiddich-vs-glenlivet-der-grosse-vergleich"
       ],
+      "glossary_url": "/whisky-glossar/glenfiddich/",
+      "slug": "glenfiddich",
+      "short_description": "Glenfiddich ist der meistverkaufte Single Malt Whisky der Welt und seit über 130 Jahren in Familienbesitz.",
+      "founded": 1886,
       "photos": [],
       "visited": true
     },
     {
-      "id": "glossary-dist-bowmore",
-      "name": "Bowmore",
-      "lat": 55.786,
-      "lon": -6.43,
+      "id": "loc-nc-nean-distillery",
+      "name": "Nc'nean Distillery",
+      "lat": 56.637,
+      "lon": -5.995,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glen-garioch-distillery",
+      "name": "Glen Garioch Distillery",
+      "lat": 57.339,
+      "lon": -2.286,
+      "type": "distillery",
+      "region": "Aberdeenshire",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-toulvaddie-distillery",
+      "name": "Toulvaddie Distillery",
+      "lat": 57.65,
+      "lon": -3.95,
+      "type": "distillery",
+      "region": "Easter Ross",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-wolfburn-distillery",
+      "name": "Wolfburn Distillery",
+      "lat": 58.593,
+      "lon": -3.523,
+      "type": "distillery",
+      "region": "Caithness",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-ballindalloch-distillery",
+      "name": "Ballindalloch Distillery",
+      "lat": 57.305,
+      "lon": -3.395,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-speyside-distillery",
+      "name": "Speyside Distillery",
+      "lat": 57.074,
+      "lon": -4.055,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "highlands-whisky-trail-2023",
+        "edinburgh-orkney-scapa-private-tour-2008",
+        "speyside-aberdeen-dufftown-2014",
+        "speyside-marathon-zwölf-destillerien-2010",
+        "macallan-ist-der-hype-gerechtfertigt"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glen-ord-distillery",
+      "name": "Glen Ord Distillery",
+      "lat": 57.517,
+      "lon": -4.465,
+      "type": "distillery",
+      "region": "Inverness",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-great-glen-distillery",
+      "name": "Great Glen Distillery",
+      "lat": 57.144,
+      "lon": -4.68,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-the-macallan-distillery",
+      "name": "The Macallan Distillery",
+      "lat": 57.3817,
+      "lon": -3.1851,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "macallan-ist-der-hype-gerechtfertigt"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenfarclas-distillery",
+      "name": "Glenfarclas Distillery",
+      "lat": 57.327,
+      "lon": -3.356,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-aberlour-distillery",
+      "name": "Aberlour Distillery",
+      "lat": 57.467,
+      "lon": -3.229,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "whisky-und-käse-überraschende-kombinationen",
+        "speyside-aberdeen-dufftown-2014",
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-the-balvenie-distillery",
+      "name": "The Balvenie Distillery",
+      "lat": 57.444,
+      "lon": -3.134,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-the-glenlivet-distillery",
+      "name": "The Glenlivet Distillery",
+      "lat": 57.3386,
+      "lon": -3.4087,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-aberdeen-dufftown-2014",
+        "speyside-marathon-zwölf-destillerien-2010",
+        "glenfiddich-vs-glenlivet-der-grosse-vergleich"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-strathisla-distillery",
+      "name": "Strathisla Distillery",
+      "lat": 57.504,
+      "lon": -2.98,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-aberdeen-dufftown-2014",
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-craigellachie-distillery",
+      "name": "Craigellachie Distillery",
+      "lat": 57.462,
+      "lon": -3.197,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-mortlach-distillery",
+      "name": "Mortlach Distillery",
+      "lat": 57.444,
+      "lon": -3.134,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-laphroaig-distillery",
+      "name": "Laphroaig Distillery",
+      "lat": 55.632,
+      "lon": -6.157,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "die-besten-whisky-destillerien-auf-islay",
+        "glasgow-islay-erste-schottlandreise-2007"
+      ],
+      "glossary_url": "/whisky-glossar/laphroaig/",
+      "slug": "laphroaig",
+      "short_description": "Laphroaig ist der meistverkaufte Islay Single Malt und bekannt für seine jodigen, medizinischen und intensiv rauchigen Noten.",
+      "founded": 1815,
+      "photos": [],
+      "visited": true
+    },
+    {
+      "id": "loc-ardbeg-distillery",
+      "name": "Ardbeg Distillery",
+      "lat": 55.64,
+      "lon": -6.107,
+      "type": "distillery",
+      "region": "Islay",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "die-besten-whisky-destillerien-auf-islay",
+        "glasgow-islay-erste-schottlandreise-2007"
+      ],
+      "glossary_url": "/whisky-glossar/ardbeg/",
+      "slug": "ardbeg",
+      "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
+      "founded": 1815,
+      "photos": [],
+      "visited": true
+    },
+    {
+      "id": "loc-bowmore-distillery",
+      "name": "Bowmore Distillery",
+      "lat": 55.755,
+      "lon": -6.289,
+      "type": "distillery",
+      "region": "Islay",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "die-besten-whisky-destillerien-auf-islay",
+        "glasgow-islay-erste-schottlandreise-2007"
+      ],
+      "glossary_url": "/whisky-glossar/bowmore/",
+      "slug": "bowmore",
       "short_description": "Bowmore ist die älteste Destillerie Islays und liegt direkt am Loch Indaal – bekannt für ausgewogene Torfigkeit und Eleganz.",
       "founded": 1779,
-      "glossary_url": "/whisky-glossar/bowmore/",
-      "years_visited": [],
-      "articles": [
-        "die-besten-whisky-destillerien-auf-islay",
-        "glasgow-islay-erste-schottlandreise-2007"
-      ],
       "photos": [],
       "visited": true
     },
     {
-      "id": "glossary-dist-bruichladdich",
-      "name": "Bruichladdich",
-      "lat": 55.766,
-      "lon": -6.362,
+      "id": "loc-bruichladdich-distillery",
+      "name": "Bruichladdich Distillery",
+      "lat": 55.761,
+      "lon": -6.36,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "die-besten-whisky-destillerien-auf-islay"
+      ],
+      "glossary_url": "/whisky-glossar/bruichladdich/",
+      "slug": "bruichladdich",
       "short_description": "Die rebellische Destillerie. Produziert ungetorften Bruichladdich, schwer getorften Port Charlotte und den extremen Octomore.",
       "founded": 1881,
-      "glossary_url": "/whisky-glossar/bruichladdich/",
-      "years_visited": [],
-      "articles": [
-        "die-besten-whisky-destillerien-auf-islay"
-      ],
       "photos": [],
       "visited": true
     },
     {
-      "id": "glossary-dist-bunnahabhain",
-      "name": "Bunnahabhain",
+      "id": "loc-bunnahabhain-distillery",
+      "name": "Bunnahabhain Distillery",
       "lat": 55.882,
-      "lon": -6.126,
+      "lon": -6.122,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "die-besten-whisky-destillerien-auf-islay"
+      ],
+      "glossary_url": "/whisky-glossar/bunnahabhain/",
+      "slug": "bunnahabhain",
       "short_description": "Die sanfte Seite Islays: Bekannt für ungetorfte, nussige und sherrybetonte Single Malts.",
       "founded": 1881,
-      "glossary_url": "/whisky-glossar/bunnahabhain/",
-      "years_visited": [],
-      "articles": [
-        "die-besten-whisky-destillerien-auf-islay"
-      ],
       "photos": [],
       "visited": true
     },
     {
-      "id": "glossary-dist-caol-ila",
-      "name": "Caol Ila",
-      "lat": 55.854,
-      "lon": -6.11,
+      "id": "loc-caol-ila-distillery",
+      "name": "Caol Ila Distillery",
+      "lat": 55.862,
+      "lon": -6.128,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
-      "short_description": "Die größte Brennerei der Insel. Liefert hellen, maritimen und aschigen Torfrauch.",
-      "founded": 1846,
-      "glossary_url": "/whisky-glossar/caol-ila/",
       "years_visited": [],
       "articles": [
         "die-besten-whisky-destillerien-auf-islay",
         "glasgow-islay-erste-schottlandreise-2007"
       ],
+      "glossary_url": "/whisky-glossar/caol-ila/",
+      "slug": "caol-ila",
+      "short_description": "Die größte Brennerei der Insel. Liefert hellen, maritimen und aschigen Torfrauch.",
+      "founded": 1846,
       "photos": [],
       "visited": true
+    },
+    {
+      "id": "loc-highland-park-distillery",
+      "name": "Highland Park Distillery",
+      "lat": 58.946,
+      "lon": -2.957,
+      "type": "distillery",
+      "region": "Orkney",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "edinburgh-orkney-scapa-private-tour-2008"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenmorangie-distillery",
+      "name": "Glenmorangie Distillery",
+      "lat": 57.812,
+      "lon": -4.049,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "highlands-whisky-trail-2023"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-ben-nevis-distillery",
+      "name": "Ben Nevis Distillery",
+      "lat": 56.818,
+      "lon": -5.101,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "highlands-skye-talisker-2012"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-clynelish-distillery",
+      "name": "Clynelish Distillery",
+      "lat": 57.996,
+      "lon": -3.909,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-balblair-distillery",
+      "name": "Balblair Distillery",
+      "lat": 57.764,
+      "lon": -4.154,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "highlands-whisky-trail-2023"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-tobermory-distillery",
+      "name": "Tobermory Distillery",
+      "lat": 56.623,
+      "lon": -6.063,
+      "type": "distillery",
+      "region": "Isle of Mull",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "westküste-mull-zurück-in-schottland-2021"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glenkinchie-distillery",
+      "name": "Glenkinchie Distillery",
+      "lat": 55.887,
+      "lon": -2.966,
+      "type": "distillery",
+      "region": "Lowlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-auchentoshan-distillery",
+      "name": "Auchentoshan Distillery",
+      "lat": 55.936,
+      "lon": -4.394,
+      "type": "distillery",
+      "region": "Lowlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "glasgow-winter-citybreak-2025"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glen-scotia-distillery",
+      "name": "Glen Scotia Distillery",
+      "lat": 55.4238,
+      "lon": -5.6057,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "campbeltown-springbank-glengyle-glen-scotia-2016"
+      ],
+      "glossary_url": "/whisky-glossar/glenscotia/",
+      "slug": "glenscotia",
+      "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+      "founded": 1832,
+      "photos": [],
+      "visited": true
+    },
+    {
+      "id": "loc-isle-of-jura-distillery",
+      "name": "Isle of Jura Distillery",
+      "lat": 55.8494,
+      "lon": -5.9994,
+      "type": "distillery",
+      "region": "Isle of Jura",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glengyle-distillery",
+      "name": "Glengyle Distillery",
+      "lat": 55.4262,
+      "lon": -5.6048,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "campbeltown-springbank-glengyle-glen-scotia-2016"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-dalmore-distillery",
+      "name": "Dalmore Distillery",
+      "lat": 57.6742,
+      "lon": -4.1793,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "highlands-whisky-trail-2023"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-arran-distillery",
+      "name": "Arran Distillery",
+      "lat": 55.7155,
+      "lon": -5.305,
+      "type": "distillery",
+      "region": "Isle of Arran",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-fettercairn-distillery",
+      "name": "Fettercairn Distillery",
+      "lat": 56.855,
+      "lon": -2.5728,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "nordost-tour-14-destillerien-2018",
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glen-grant-distillery",
+      "name": "Glen Grant Distillery",
+      "lat": 57.5128,
+      "lon": -3.2029,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-aberfeldy-distillery",
+      "name": "Aberfeldy Distillery",
+      "lat": 56.6166,
+      "lon": -3.8655,
+      "type": "distillery",
+      "region": "Perthshire",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "highlands-whisky-trail-2023",
+        "nordost-tour-14-destillerien-2018"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-glen-moray-distillery",
+      "name": "Glen Moray Distillery",
+      "lat": 57.6471,
+      "lon": -3.3083,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-bladnoch-distillery",
+      "name": "Bladnoch Distillery",
+      "lat": 54.8427,
+      "lon": -4.422,
+      "type": "distillery",
+      "region": "Lowlands",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "arran-ayrshire-celtic-vs-bayern-2017"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-benriach-distillery",
+      "name": "BenRiach Distillery",
+      "lat": 57.6042,
+      "lon": -3.3008,
+      "type": "distillery",
+      "region": "Speyside",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "speyside-marathon-zwölf-destillerien-2010"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
+    },
+    {
+      "id": "loc-kingsbarns-distillery",
+      "name": "Kingsbarns Distillery",
+      "lat": 56.2731,
+      "lon": -2.6737,
+      "type": "distillery",
+      "region": "Fife",
+      "country": "Schottland",
+      "years_visited": [],
+      "articles": [
+        "nordost-tour-14-destillerien-2018"
+      ],
+      "photos": [],
+      "visited": true,
+      "glossary_url": "",
+      "short_description": "",
+      "founded": null,
+      "slug": ""
     },
     {
       "id": "glossary-dist-ardnahoe",
+      "slug": "ardnahoe",
       "name": "Ardnahoe",
       "lat": 55.87,
       "lon": -6.115,
@@ -2717,24 +5320,6 @@
       "articles": [],
       "photos": [],
       "visited": false
-    },
-    {
-      "id": "glossary-dist-glenscotia",
-      "name": "Glen Scotia",
-      "lat": 55.4291,
-      "lon": -5.6047,
-      "type": "distillery",
-      "region": "Campbeltown",
-      "country": "Schottland",
-      "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
-      "founded": 1832,
-      "glossary_url": "/whisky-glossar/glenscotia/",
-      "years_visited": [],
-      "articles": [
-        "campbeltown-springbank-glengyle-glen-scotia-2016"
-      ],
-      "photos": [],
-      "visited": true
     }
   ],
   "routes": [],
@@ -3054,27 +5639,55 @@
     "Angus",
     "Argyll",
     "Ayrshire",
+    "Bardstown",
     "Berlin",
+    "Caithness",
     "Campbeltown",
+    "Clarksville",
+    "Clermont",
+    "Danville",
     "Dublin",
+    "Dumfries",
     "Easter Ross",
+    "Eastern Kentucky",
     "Edinburgh",
+    "Estill County",
     "Falkirk",
     "Fife",
+    "Frankfort",
+    "Franklin KY",
+    "Georgetown",
     "Glasgow",
     "Highlands",
     "Inverness",
     "Islay",
+    "Isle of Arran",
+    "Isle of Jura",
+    "Isle of Mull",
+    "Isle of Skye",
     "Kentucky",
+    "Lawrenceburg",
     "Lexington",
     "London",
+    "Loretto",
     "Louisville",
+    "Lowlands",
+    "Lynchburg",
     "Nashville",
+    "Orkney",
     "Perthshire",
+    "Royal Deeside",
+    "Shelbyville",
     "Speyside",
     "Stirling",
+    "Stirlingshire",
     "Tennessee",
-    "Trossachs"
+    "Thüringen",
+    "Trossachs",
+    "Tullahoma",
+    "Versailles",
+    "West Dunbartonshire",
+    "Woodford County"
   ],
   "years": [
     2007,
@@ -3087,6 +5700,7 @@
     2016,
     2017,
     2019,
+    2020,
     2021,
     2022,
     2023,
@@ -3101,9 +5715,9 @@
     "USA"
   ],
   "stats": {
-    "total_locations": 103,
-    "total_distilleries": 10,
-    "visited_distilleries": 9,
+    "total_locations": 214,
+    "total_distilleries": 121,
+    "visited_distilleries": 120,
     "unvisited_distilleries": 1,
     "total_routes": 0,
     "total_articles": 44,
