@@ -4942,7 +4942,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glengyle-kilkerran-12-years-old",
         "name": "Kilkerran 12 Years Old",
@@ -5010,7 +5010,10 @@
         "seo_title": "Kilkerran 12 Jahre Single Malt kaufen | Glengyle Destillerie",
         "seo_description": "Kilkerran 12 Jahre aus der Glengyle Destillerie: Ein komplexer Campbeltown Single Malt mit Frucht, Salz und dezentem Rauch.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:34Z"
     },
     {
       "batch_id": "whiskies_20260422T190050_19baca",
