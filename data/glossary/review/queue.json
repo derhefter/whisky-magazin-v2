@@ -9981,7 +9981,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "republic-of-ireland",
         "name": "Republik Irland",
@@ -10008,7 +10008,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:18:37Z"
+      "reviewed_at": "2026-04-22T19:18:37Z",
+      "published_at": "2026-04-22T19:18:45Z"
     },
     {
       "batch_id": "regions_20260422T191824_8f74c6",
@@ -10018,7 +10019,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "northern-ireland",
         "name": "Nordirland",
@@ -10045,7 +10046,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:18:41Z"
+      "reviewed_at": "2026-04-22T19:18:41Z",
+      "published_at": "2026-04-22T19:18:45Z"
     }
   ]
 }
