@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T195432_97c386",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:54:32Z",
+  "raw": [
+    {
+      "id": "bruichladdich",
+      "name": "Bruichladdich",
+      "slug": "bruichladdich",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1881,
+      "owner": "Rémy Cointreau",
+      "website": "https://www.bruichladdich.com/",
+      "short_description": "Eine progressive Destillerie, die auf Terroir setzt und sowohl ungetorfte als auch extrem getorfte Whiskys (Octomore) produziert.",
+      "long_description": "Bruichladdich ist die progressive Brennerei auf Islay, bekannt für ihren Fokus auf 'Terroir' und die markanten türkisfarbenen Dosen. Seit der Wiedereröffnung 2001 wird konsequent auf Kältefiltration und Farbstoffe verzichtet. Während die Hauptmarke Bruichladdich ungetorft ist, produziert die Destillerie auch den rauchigen Port Charlotte und mit Octomore den am stärksten getorften Whisky der Welt. Sie setzt sich stark für lokale Gerste und Transparenz in der Branche ein.",
+      "travel_info": "Der 'Laddie Shop' und das Besucherzentrum sind von April bis Oktober täglich geöffnet (10:00-17:30 Uhr). Neben Whisky-Touren werden auch Tastings für 'The Botanist Gin' angeboten. Eine Online-Buchung für Erlebnisse wird empfohlen.",
+      "seo_title": "Bruichladdich Destillerie: Terroir und Innovation auf Islay | Whisky-Glossar",
+      "seo_description": "Erfahre mehr über Bruichladdich, die Macher von Octomore und Port Charlotte. Infos zu Touren, Terroir-Philosophie und dem Shop in Rhinns of Islay.",
+      "coordinates": {
+        "lat": 55.7662,
+        "lng": -6.3625
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T21:35:00Z"
+    }
+  ]
+}
