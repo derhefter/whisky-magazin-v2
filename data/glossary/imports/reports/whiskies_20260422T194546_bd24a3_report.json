@@ -1,0 +1,72 @@
+{
+  "batch_id": "whiskies_20260422T194546_bd24a3",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:45:46Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "aerstone",
+        "name": "Aerstone",
+        "slug": "aerstone",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2018,
+        "owner": "William Grant & Sons",
+        "website": "https://www.aerstonescotchwhisky.com/",
+        "short_description": "Eine Marke von William Grant & Sons, die zwei unterschiedliche Lowland-Stile präsentiert: Sea Cask und Land Cask.",
+        "long_description": "Aerstone ist kein physischer Destillerie-Standort mit Besucherzentrum, sondern eine Single-Malt-Marke von William Grant & Sons. Die Whiskys werden in der Ailsa Bay Destillerie in den Lowlands destilliert und in verschiedenen Umgebungen gereift, um zwei klare Geschmacksprofile zu schaffen: 'Sea Cask' (mild und salzig durch Küstenreifung) und 'Land Cask' (getorft durch Reifung im Landesinneren). Die Marke soll Single Malt für Einsteiger verständlich und zugänglich machen.",
+        "travel_info": "Aerstone hat kein eigenes Besucherzentrum. Als Marke von William Grant & Sons wird der Whisky in der Ailsa Bay Brennerei produziert, die jedoch nicht für die Öffentlichkeit zugänglich ist.",
+        "seo_title": "Aerstone Whisky: Die zwei Gesichter der Lowlands | Whisky-Glossar",
+        "seo_description": "Entdecke Aerstone Single Malt. Erfahre mehr über die Konzepte Sea Cask und Land Cask, die Herkunft aus der Ailsa Bay Destillerie und das Geschmacksprofil.",
+        "coordinates": {
+          "lat": 55.2631,
+          "lng": -4.8464
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:25:00Z"
+      },
+      "normalized": {
+        "id": "aerstone",
+        "name": "Aerstone",
+        "slug": "aerstone",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2018,
+        "owner": "William Grant & Sons",
+        "website": "https://www.aerstonescotchwhisky.com/",
+        "short_description": "Eine Marke von William Grant & Sons, die zwei unterschiedliche Lowland-Stile präsentiert: Sea Cask und Land Cask.",
+        "long_description": "Aerstone ist kein physischer Destillerie-Standort mit Besucherzentrum, sondern eine Single-Malt-Marke von William Grant & Sons. Die Whiskys werden in der Ailsa Bay Destillerie in den Lowlands destilliert und in verschiedenen Umgebungen gereift, um zwei klare Geschmacksprofile zu schaffen: 'Sea Cask' (mild und salzig durch Küstenreifung) und 'Land Cask' (getorft durch Reifung im Landesinneren). Die Marke soll Single Malt für Einsteiger verständlich und zugänglich machen.",
+        "travel_info": "Aerstone hat kein eigenes Besucherzentrum. Als Marke von William Grant & Sons wird der Whisky in der Ailsa Bay Brennerei produziert, die jedoch nicht für die Öffentlichkeit zugänglich ist.",
+        "seo_title": "Aerstone Whisky: Die zwei Gesichter der Lowlands | Whisky-Glossar",
+        "seo_description": "Entdecke Aerstone Single Malt. Erfahre mehr über die Konzepte Sea Cask und Land Cask, die Herkunft aus der Ailsa Bay Destillerie und das Geschmacksprofil.",
+        "coordinates": {
+          "lat": 55.2631,
+          "lng": -4.8464
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:45:46Z"
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
