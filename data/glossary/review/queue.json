@@ -755,6 +755,13 @@
       "imported_at": "2026-04-22T19:37:47Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T193750_cac8f2",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:37:50Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13508,6 +13515,62 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T23:00:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T193750_cac8f2",
+      "entity": "distilleries",
+      "item_id": "torabhaig",
+      "item_slug": "torabhaig",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "torabhaig",
+        "name": "Torabhaig",
+        "slug": "torabhaig",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2017,
+        "owner": "Mossburn Distillers",
+        "website": "https://www.torabhaig.com/",
+        "short_description": "Die zweite Brennerei auf Skye, produziert einen kräftig getorften 'Well-Tempered Peat'.",
+        "long_description": "Torabhaig ist die zweite legale Destillerie, die jemals auf der Isle of Skye gebaut wurde (eröffnet 2017). Untergebracht in einem wunderschön restaurierten Bauernhof aus dem 19. Jahrhundert, konzentriert sie sich auf 'Well-Tempered Peat'. Ziel ist es, schweren Torfrauch mit einem duftenden, eleganten Spirit zu balancieren und so einen modernen Skye-Malt zu kreieren, der sowohl kraftvoll als auch raffiniert ist.",
+        "travel_info": "Das Besucherzentrum auf der Halbinsel Sleat bietet Touren, einen Shop und ein Café. Da die Kapazitäten begrenzt sind, wird eine Online-Buchung empfohlen. Kinder unter 12 Jahren sind auf den Produktionstouren meist nicht zugelassen.",
+        "seo_title": "Torabhaig Destillerie: Moderner Torfrauch auf Skye | Whisky-Glossar",
+        "seo_description": "Entdecke Torabhaig, die neue Stimme der Isle of Skye. Erfahre mehr über den 'Well-Tempered Peat', das restaurierte Farmhaus und Besuche im Süden der Insel.",
+        "coordinates": {
+          "lat": 57.1128,
+          "lng": -5.8484
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:50Z"
+      },
+      "raw": {
+        "id": "torabhaig",
+        "name": "Torabhaig",
+        "slug": "torabhaig",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2017,
+        "owner": "Mossburn Distillers",
+        "website": "https://www.torabhaig.com/",
+        "short_description": "Die zweite Brennerei auf Skye, produziert einen kräftig getorften 'Well-Tempered Peat'.",
+        "long_description": "Torabhaig ist die zweite legale Destillerie, die jemals auf der Isle of Skye gebaut wurde (eröffnet 2017). Untergebracht in einem wunderschön restaurierten Bauernhof aus dem 19. Jahrhundert, konzentriert sie sich auf 'Well-Tempered Peat'. Ziel ist es, schweren Torfrauch mit einem duftenden, eleganten Spirit zu balancieren und so einen modernen Skye-Malt zu kreieren, der sowohl kraftvoll als auch raffiniert ist.",
+        "travel_info": "Das Besucherzentrum auf der Halbinsel Sleat bietet Touren, einen Shop und ein Café. Da die Kapazitäten begrenzt sind, wird eine Online-Buchung empfohlen. Kinder unter 12 Jahren sind auf den Produktionstouren meist nicht zugelassen.",
+        "seo_title": "Torabhaig Destillerie: Moderner Torfrauch auf Skye | Whisky-Glossar",
+        "seo_description": "Entdecke Torabhaig, die neue Stimme der Isle of Skye. Erfahre mehr über den 'Well-Tempered Peat', das restaurierte Farmhaus und Besuche im Süden der Insel.",
+        "coordinates": {
+          "lat": 57.1128,
+          "lng": -5.8484
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:05:00Z"
       }
     }
   ]
