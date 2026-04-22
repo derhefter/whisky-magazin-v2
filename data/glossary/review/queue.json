@@ -15723,7 +15723,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "torabhaig-allt-gleann-legacy-series",
         "name": "Torabhaig Allt Gleann (Legacy Series)",
@@ -15775,7 +15775,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:45:07Z"
     },
     {
       "batch_id": "whiskies_20260422T194049_000333",
