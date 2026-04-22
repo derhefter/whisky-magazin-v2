@@ -1,0 +1,62 @@
+{
+  "batch_id": "whiskies_20260422T055243_2c4ccd",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T05:52:43Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "springbank",
+        "name": "Springbank",
+        "slug": "springbank",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1828,
+        "short_description": "Eine Ikone der Handwerklichkeit; führt 100% der Produktion inklusive Mälzen und Abfüllen vor Ort durch.",
+        "long_description": "Springbank is unique among Scottish distilleries as it is the oldest independent, family-owned distillery and performs 100% of its production on-site, including traditional floor malting. Located in Campbeltown, it produces three distinct brands: Springbank (2.5 times distilled, lightly peated), Longrow (twice distilled, heavily peated), and Hazelburn (triple distilled, unpeated). It is a cult favorite known for its complex, industrial, and oily character.",
+        "coordinates": {
+          "lat": 55.4258,
+          "lng": -5.608
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-21T17:05:36Z"
+      },
+      "normalized": {
+        "id": "springbank",
+        "name": "Springbank",
+        "slug": "springbank",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1828,
+        "short_description": "Eine Ikone der Handwerklichkeit; führt 100% der Produktion inklusive Mälzen und Abfüllen vor Ort durch.",
+        "long_description": "Springbank is unique among Scottish distilleries as it is the oldest independent, family-owned distillery and performs 100% of its production on-site, including traditional floor malting. Located in Campbeltown, it produces three distinct brands: Springbank (2.5 times distilled, lightly peated), Longrow (twice distilled, heavily peated), and Hazelburn (triple distilled, unpeated). It is a cult favorite known for its complex, industrial, and oily character.",
+        "coordinates": {
+          "lat": 55.4258,
+          "lng": -5.608
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T05:52:43Z"
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
