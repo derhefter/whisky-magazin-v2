@@ -1,0 +1,69 @@
+{
+  "batch_id": "distilleries_20260422T192920_7ca3c9",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:20Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "deanston",
+        "name": "Deanston",
+        "slug": "deanston",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1965,
+        "owner": "Distell (Heineken)",
+        "website": "https://deanstonmalt.com/",
+        "short_description": "In einer ehemaligen Baumwollmühle untergebracht, ist diese Destillerie für ihren wachsartigen, honigsüßen und ungetorften Stil bekannt.",
+        "long_description": "Deanston wurde 1965 in einer beeindruckenden Baumwollmühle aus dem 18. Jahrhundert am Ufer des Teith eröffnet. Die Brennerei ist energieautark und nutzt eine eigene Wasserkraftanlage. Ihr Whisky wird nach traditionellen Methoden hergestellt, oft ohne Kältefiltration und in natürlicher Farbe. Der Stil von Deanston ist geprägt von einer wachsartigen Textur, Heidehonig-Süße und einer feinen Getreidenote.",
+        "travel_info": "Die Destillerie in der Nähe von Doune (bekannt aus Outlander) ist täglich von 10:00 bis 17:00 Uhr geöffnet. Das Café 'The Coffee Bothy' ist bei Besuchern sehr beliebt. Touren starten stündlich.",
+        "seo_title": "Deanston Destillerie: Nachhaltigkeit und Tradition | Whisky-Glossar",
+        "seo_description": "Entdecke Deanston in den südlichen Highlands. Erfahre mehr über die Geschichte der Baumwollmühle, den wachsartigen Single Malt und Besuche in der Nähe von Stirling.",
+        "coordinates": {
+          "lat": 56.1883,
+          "lng": -4.0722
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T00:45:00Z"
+      },
+      "normalized": {
+        "id": "deanston",
+        "name": "Deanston",
+        "slug": "deanston",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1965,
+        "owner": "Distell (Heineken)",
+        "website": "https://deanstonmalt.com/",
+        "short_description": "In einer ehemaligen Baumwollmühle untergebracht, ist diese Destillerie für ihren wachsartigen, honigsüßen und ungetorften Stil bekannt.",
+        "long_description": "Deanston wurde 1965 in einer beeindruckenden Baumwollmühle aus dem 18. Jahrhundert am Ufer des Teith eröffnet. Die Brennerei ist energieautark und nutzt eine eigene Wasserkraftanlage. Ihr Whisky wird nach traditionellen Methoden hergestellt, oft ohne Kältefiltration und in natürlicher Farbe. Der Stil von Deanston ist geprägt von einer wachsartigen Textur, Heidehonig-Süße und einer feinen Getreidenote.",
+        "travel_info": "Die Destillerie in der Nähe von Doune (bekannt aus Outlander) ist täglich von 10:00 bis 17:00 Uhr geöffnet. Das Café 'The Coffee Bothy' ist bei Besuchern sehr beliebt. Touren starten stündlich.",
+        "seo_title": "Deanston Destillerie: Nachhaltigkeit und Tradition | Whisky-Glossar",
+        "seo_description": "Entdecke Deanston in den südlichen Highlands. Erfahre mehr über die Geschichte der Baumwollmühle, den wachsartigen Single Malt und Besuche in der Nähe von Stirling.",
+        "coordinates": {
+          "lat": 56.1883,
+          "lng": -4.0722
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:29:20Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): deanston"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
