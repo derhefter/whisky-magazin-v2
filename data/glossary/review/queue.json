@@ -1872,7 +1872,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kilchoman-100-islay",
         "name": "100% Islay",
@@ -1881,10 +1881,17 @@
         "region_id": "islay",
         "distillery_id": "kilchoman",
         "whisky_type": "single_malt",
-        "style_tags": "torfig, floral, frisch, farm-to-bottle",
+        "style_tags": [
+          "torfig",
+          "floral",
+          "frisch",
+          "farm-to-bottle"
+        ],
         "abv": 50,
-        "cask_types": "ex-bourbon",
-        "smoke_profile": "Medium getorft",
+        "cask_types": [
+          "ex-bourbon"
+        ],
+        "smoke_profile": "none",
         "age_statement": null,
         "nas": true,
         "tasting_notes_nose": "Hell, blumig. Zitrusfrüchte, Birnen, Vanille und zarter, eleganter Rauch.",
@@ -1900,7 +1907,7 @@
         "review_status": "approved",
         "related_articles": [],
         "created_at": "2026-04-19T12:05:39.761Z",
-        "last_updated": "2026-04-22T20:27:02Z",
+        "last_updated": "2026-04-22T20:27:36Z",
         "seo_title": "Kilchoman 100% Islay Single Malt Whisky kaufen",
         "seo_description": "Kilchoman 100% Islay: Vom Feld in die Flasche auf einer einzigen Farm. Ein authentischer, sanft rauchiger Islay Malt.",
         "published": true
@@ -1936,7 +1943,10 @@
         "seo_title": "Kilchoman 100% Islay Single Malt Whisky kaufen",
         "seo_description": "Kilchoman 100% Islay: Vom Feld in die Flasche auf einer einzigen Farm. Ein authentischer, sanft rauchiger Islay Malt.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:27:36Z"
     }
   ]
 }
