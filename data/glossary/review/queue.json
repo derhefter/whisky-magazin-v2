@@ -5185,7 +5185,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "springbank-springbank-10-years-old",
         "name": "Springbank 10 Years Old",
@@ -5253,7 +5253,10 @@
         "seo_title": "Springbank 10 Jahre Single Malt Whisky kaufen | Campbeltown Klassiker",
         "seo_description": "Entdecken Sie den Springbank 10 Jahre: Ein handwerklicher Campbeltown Single Malt mit maritimem Charakter, Frucht und sanftem Rauch.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:38Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
