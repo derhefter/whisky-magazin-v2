@@ -5023,7 +5023,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glengyle-kilkerran-16-years-old",
         "name": "Kilkerran 16 Years Old",
@@ -5091,7 +5091,10 @@
         "seo_title": "Kilkerran 16 Jahre Single Malt kaufen",
         "seo_description": "Der Kilkerran 16 Jahre überzeugt durch Eleganz, tropische Fruchtnoten und die typische Campbeltown-Mineralität. Jetzt entdecken.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:35Z"
     },
     {
       "batch_id": "whiskies_20260422T190050_19baca",
