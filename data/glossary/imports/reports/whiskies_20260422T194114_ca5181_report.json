@@ -1,0 +1,133 @@
+{
+  "batch_id": "whiskies_20260422T194114_ca5181",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:41:14Z",
+  "total": 2,
+  "new": 2,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "ledaig-10-year-old",
+        "name": "Ledaig 10 Year Old",
+        "slug": "ledaig-10-year-old",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tobermory",
+        "whisky_type": "single_malt",
+        "style_tags": "torfig, rauchig, maritim, medizinisch",
+        "abv": 46.3,
+        "cask_types": "Bourbon Casks",
+        "smoke_profile": "Stark getorft",
+        "age_statement": 10,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Intensiver Torfrauch, Meersalz, Algen und eine süße Malznote.",
+          "palate": "Kräftiger Rauch, schwarzer Pfeffer, Teer und getrocknete Früchte.",
+          "finish": "Lang, rauchig und würzig."
+        },
+        "short_description": "Die getorfte Seite der Tobermory Brennerei.",
+        "long_description": "Ledaig (ausgesprochen: 'Let-chick') ist der Name für die stark getorften Abfüllungen der Tobermory Destillerie. Er ist einer der beliebtesten Insel-Whiskys für Fans von kräftigem Rauch.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "ledaig-10-year-old",
+        "name": "Ledaig 10 Year Old",
+        "slug": "ledaig-10-year-old",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tobermory",
+        "whisky_type": "single_malt",
+        "style_tags": "torfig, rauchig, maritim, medizinisch",
+        "abv": 46.3,
+        "cask_types": "Bourbon Casks",
+        "smoke_profile": "Stark getorft",
+        "age_statement": 10,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Intensiver Torfrauch, Meersalz, Algen und eine süße Malznote.",
+          "palate": "Kräftiger Rauch, schwarzer Pfeffer, Teer und getrocknete Früchte.",
+          "finish": "Lang, rauchig und würzig."
+        },
+        "short_description": "Die getorfte Seite der Tobermory Brennerei.",
+        "long_description": "Ledaig (ausgesprochen: 'Let-chick') ist der Name für die stark getorften Abfüllungen der Tobermory Destillerie. Er ist einer der beliebtesten Insel-Whiskys für Fans von kräftigem Rauch.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:41:14Z",
+        "last_updated": "2026-04-22T19:41:14Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "ledaig-sinclair-series-rioja-cask-finish",
+        "name": "Ledaig Sinclair Series (Rioja Cask Finish)",
+        "slug": "ledaig-sinclair-series-rioja-cask-finish",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tobermory",
+        "whisky_type": "single_malt",
+        "style_tags": "rauchig, fruchtig, würzig, rote beeren",
+        "abv": 46.3,
+        "cask_types": "Bourbon & Rioja Wine Cask Finish",
+        "smoke_profile": "Stark getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Rote Früchte, Rosenblätter, dunkler Rauch und Leder.",
+          "palate": "Mandeln, Gerste, rotes Beerenkompott und intensiver Rauch.",
+          "finish": "Lang mit einer Mischung aus Rauch und Weinsüße."
+        },
+        "short_description": "Eine faszinierende Kombination aus Rauch und Rotwein-Finish.",
+        "long_description": "Die Sinclair Series ehrt den Gründer der Brennerei, John Sinclair. Dieses Release reift in Ex-Bourbonfässern und erhält ein Finish in spanischen Rioja-Rotweinfässern.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "ledaig-sinclair-series-rioja-cask-finish",
+        "name": "Ledaig Sinclair Series (Rioja Cask Finish)",
+        "slug": "ledaig-sinclair-series-rioja-cask-finish",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tobermory",
+        "whisky_type": "single_malt",
+        "style_tags": "rauchig, fruchtig, würzig, rote beeren",
+        "abv": 46.3,
+        "cask_types": "Bourbon & Rioja Wine Cask Finish",
+        "smoke_profile": "Stark getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Rote Früchte, Rosenblätter, dunkler Rauch und Leder.",
+          "palate": "Mandeln, Gerste, rotes Beerenkompott und intensiver Rauch.",
+          "finish": "Lang mit einer Mischung aus Rauch und Weinsüße."
+        },
+        "short_description": "Eine faszinierende Kombination aus Rauch und Rotwein-Finish.",
+        "long_description": "Die Sinclair Series ehrt den Gründer der Brennerei, John Sinclair. Dieses Release reift in Ex-Bourbonfässern und erhält ein Finish in spanischen Rioja-Rotweinfässern.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:41:14Z",
+        "last_updated": "2026-04-22T19:41:14Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
