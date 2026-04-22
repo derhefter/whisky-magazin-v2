@@ -300,6 +300,13 @@
       "imported_at": "2026-04-22T19:03:10Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T190757_32eb10",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:07:57Z",
+      "total": 3,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -6428,6 +6435,192 @@
       "reviewer_notes": "",
       "reviewed_at": "2026-04-22T19:06:47Z",
       "published_at": "2026-04-22T19:07:25Z"
+    },
+    {
+      "batch_id": "whiskies_20260422T190757_32eb10",
+      "entity": "whiskies",
+      "item_id": "aberfeldy-12",
+      "item_slug": "aberfeldy-12",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "aberfeldy-12",
+        "name": "Aberfeldy 12 Year Old",
+        "slug": "aberfeldy-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "aberfeldy",
+        "whisky_type": "single_malt",
+        "style_tags": "honig, cremig, süß, fruchtig",
+        "abv": 40,
+        "cask_types": "Bourbon Casks, Sherry Casks",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Warmer Honig, Heidekraut und Vanille mit Spuren von gebackenen Äpfeln.",
+          "palate": "Sanft und rund. Noten von Butterkaramell, Malz, Zitruszesten und feiner Zimtwürze.",
+          "finish": "Weich und anhaltend mit honigsüßer Eiche und Getreidenoten."
+        },
+        "short_description": "Der 'Golden Dram' – bekannt für sein honigsüßes Profil.",
+        "long_description": "Aberfeldy 12 Year Old ist das Herzstück der Brennerei. Der Name 'Golden Dram' bezieht sich sowohl auf die Farbe als auch auf die Goldvorkommen im Fluss Tay, dessen Wasser für die Produktion verwendet wird. Ein sehr zugänglicher und charmanter Highland Malt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:07:57Z",
+        "last_updated": "2026-04-22T19:07:57Z"
+      },
+      "raw": {
+        "id": "aberfeldy-12",
+        "name": "Aberfeldy 12 Year Old",
+        "slug": "aberfeldy-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "aberfeldy",
+        "whisky_type": "single_malt",
+        "style_tags": "honig, cremig, süß, fruchtig",
+        "abv": 40,
+        "cask_types": "Bourbon Casks, Sherry Casks",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Warmer Honig, Heidekraut und Vanille mit Spuren von gebackenen Äpfeln.",
+          "palate": "Sanft und rund. Noten von Butterkaramell, Malz, Zitruszesten und feiner Zimtwürze.",
+          "finish": "Weich und anhaltend mit honigsüßer Eiche und Getreidenoten."
+        },
+        "short_description": "Der 'Golden Dram' – bekannt für sein honigsüßes Profil.",
+        "long_description": "Aberfeldy 12 Year Old ist das Herzstück der Brennerei. Der Name 'Golden Dram' bezieht sich sowohl auf die Farbe als auch auf die Goldvorkommen im Fluss Tay, dessen Wasser für die Produktion verwendet wird. Ein sehr zugänglicher und charmanter Highland Malt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T190757_32eb10",
+      "entity": "whiskies",
+      "item_id": "aberfeldy-16",
+      "item_slug": "aberfeldy-16",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "aberfeldy-16",
+        "name": "Aberfeldy 16 Year Old",
+        "slug": "aberfeldy-16",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "aberfeldy",
+        "whisky_type": "single_malt",
+        "style_tags": "würzig, honig, schokolade, dunkle früchte",
+        "abv": 40,
+        "cask_types": "Bourbon Casks, Oloroso Sherry Cask Finish",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 16,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Honig, Zitrusfrüchte und würzige Nelken, unterlegt mit dunkler Schokolade.",
+          "palate": "Reichhaltig und mundfüllend. Fruchtkuchen, Rosinen, Pfirsiche und Toffee.",
+          "finish": "Süß und komplex mit nachklingender Schokolade und Sherry-Noten."
+        },
+        "short_description": "Ein luxuriöser Aberfeldy mit reichem Sherry-Einfluss.",
+        "long_description": "Nach 16 Jahren Reifung und einem Finish in erstbefüllten Oloroso Sherryfässern zeigt dieser Aberfeldy eine beeindruckende Tiefe. Die typische Honigsüße wird hier wunderbar durch dunkle Fruchtnoten und Schokolade ergänzt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:07:57Z",
+        "last_updated": "2026-04-22T19:07:57Z"
+      },
+      "raw": {
+        "id": "aberfeldy-16",
+        "name": "Aberfeldy 16 Year Old",
+        "slug": "aberfeldy-16",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "aberfeldy",
+        "whisky_type": "single_malt",
+        "style_tags": "würzig, honig, schokolade, dunkle früchte",
+        "abv": 40,
+        "cask_types": "Bourbon Casks, Oloroso Sherry Cask Finish",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 16,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Honig, Zitrusfrüchte und würzige Nelken, unterlegt mit dunkler Schokolade.",
+          "palate": "Reichhaltig und mundfüllend. Fruchtkuchen, Rosinen, Pfirsiche und Toffee.",
+          "finish": "Süß und komplex mit nachklingender Schokolade und Sherry-Noten."
+        },
+        "short_description": "Ein luxuriöser Aberfeldy mit reichem Sherry-Einfluss.",
+        "long_description": "Nach 16 Jahren Reifung und einem Finish in erstbefüllten Oloroso Sherryfässern zeigt dieser Aberfeldy eine beeindruckende Tiefe. Die typische Honigsüße wird hier wunderbar durch dunkle Fruchtnoten und Schokolade ergänzt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T190757_32eb10",
+      "entity": "whiskies",
+      "item_id": "aberfeldy-21",
+      "item_slug": "aberfeldy-21",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "aberfeldy-21",
+        "name": "Aberfeldy 21 Year Old",
+        "slug": "aberfeldy-21",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "aberfeldy",
+        "whisky_type": "single_malt",
+        "style_tags": "komplex, honig, wachsartig, reife früchte",
+        "abv": 40,
+        "cask_types": "Bourbon Casks, Sherry Casks",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 21,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Heidehonig, getoastetes Malz, Trockenfrüchte und Bienenwachs.",
+          "palate": "Seidig und reich. Kokosnuss, Vanille, kandierte Orangen und eine Spur Rauch.",
+          "finish": "Sehr lang, warm und würzig mit einem Hauch von Holzkohle."
+        },
+        "short_description": "Ein preisgekrönter Single Malt von höchster Eleganz.",
+        "long_description": "Der 21-jährige Aberfeldy ist das Flaggschiff der Core Range. Er besticht durch seine enorme Sanftheit und Vielschichtigkeit, die er durch die zwei Jahrzehnte lange Reifung in einer Auswahl feinster Fässer erhält.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:07:57Z",
+        "last_updated": "2026-04-22T19:07:57Z"
+      },
+      "raw": {
+        "id": "aberfeldy-21",
+        "name": "Aberfeldy 21 Year Old",
+        "slug": "aberfeldy-21",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "aberfeldy",
+        "whisky_type": "single_malt",
+        "style_tags": "komplex, honig, wachsartig, reife früchte",
+        "abv": 40,
+        "cask_types": "Bourbon Casks, Sherry Casks",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 21,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Heidehonig, getoastetes Malz, Trockenfrüchte und Bienenwachs.",
+          "palate": "Seidig und reich. Kokosnuss, Vanille, kandierte Orangen und eine Spur Rauch.",
+          "finish": "Sehr lang, warm und würzig mit einem Hauch von Holzkohle."
+        },
+        "short_description": "Ein preisgekrönter Single Malt von höchster Eleganz.",
+        "long_description": "Der 21-jährige Aberfeldy ist das Flaggschiff der Core Range. Er besticht durch seine enorme Sanftheit und Vielschichtigkeit, die er durch die zwei Jahrzehnte lange Reifung in einer Auswahl feinster Fässer erhält.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      }
     }
   ]
 }
