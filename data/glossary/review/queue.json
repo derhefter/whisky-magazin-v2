@@ -2848,7 +2848,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "the-balvenie-the-balvenie-portwood-21-year-old",
         "name": "The Balvenie PortWood 21 Year Old",
@@ -2912,7 +2912,10 @@
         "seo_title": "The Balvenie 21 Jahre PortWood Single Malt Whisky online bestellen",
         "seo_description": "The Balvenie PortWood 21 Jahre: Ein meisterhafter Whisky mit Portwein-Finish. Seidig, elegant und komplex. Jetzt entdecken.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:40:57Z"
     },
     {
       "batch_id": "whiskies_20260422T203939_8e7e66",
