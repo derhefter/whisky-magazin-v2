@@ -1,0 +1,82 @@
+{
+  "batch_id": "whiskies_20260422T190800_97e5ec",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:00Z",
+  "raw": [
+    {
+      "id": "balblair-12",
+      "name": "Balblair 12 Year Old",
+      "slug": "balblair-12",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "balblair",
+      "whisky_type": "single_malt",
+      "style_tags": "fruchtig, honig, würzig, elegant",
+      "abv": 46,
+      "cask_types": "Bourbon Casks, Double-fired American Oak Casks",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 12,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Zitronenschale, cremige Vanille und frische grüne Äpfel.",
+        "palate": "Süße Honignoten, Orangen und eine Spur von gemahlenen Gewürzen.",
+        "finish": "Mittellang und cremig mit süßer Vanille und einem Hauch Leder."
+      },
+      "short_description": "Der elegante Einstieg in die neue Core Range von Balblair.",
+      "long_description": "Nach der Umstellung von Jahrgangsabfüllungen auf Altersangaben bildet der 12-jährige das Fundament. Er reift in einer Kombination aus Bourbonfässern und stark ausgebrannten amerikanischen Eichenfässern, was ihm seine feine Balance verleiht.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "balblair-15",
+      "name": "Balblair 15 Year Old",
+      "slug": "balblair-15",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "balblair",
+      "whisky_type": "single_malt",
+      "style_tags": "tropisch, honig, zimt, komplex",
+      "abv": 46,
+      "cask_types": "Bourbon Casks, First-fill Spanish Oak Butts",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 15,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Leder, würziger Honig und Noten von getrockneten Aprikosen.",
+        "palate": "Tropische Früchte, Karamellpudding und ein Hauch von dunkler Schokolade.",
+        "finish": "Lang, wärmend und komplex mit cremiger Vanille und Zitrusnoten."
+      },
+      "short_description": "Ein vollmundiger Highland Malt mit reifem Sherry-Einfluss.",
+      "long_description": "Der 15-jährige Balblair reift zunächst in Bourbonfässern und wird dann in erstbefüllten spanischen Eichen-Sherryfässern veredelt. Das Ergebnis ist ein wunderbar vielschichtiger Whisky mit warmen Gewürznoten.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "balblair-18",
+      "name": "Balblair 18 Year Old",
+      "slug": "balblair-18",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "balblair",
+      "whisky_type": "single_malt",
+      "style_tags": "intensiv, fruchtig, würzig, eiche",
+      "abv": 46,
+      "cask_types": "Bourbon Casks, First-fill Spanish Oak Butts",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 18,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Reiche Toffeenoten, gebackene Birnen und Leder mit einem Hauch von Vanille.",
+        "palate": "Saftige Aprikosen, Eichenwürze, Pudding und Sultaninen.",
+        "finish": "Sehr lang und wärmend mit viel Sherry-Süße und Eiche."
+      },
+      "short_description": "Ein gereifter und charakterstarker Balblair.",
+      "long_description": "Dieser 18-jährige Single Malt zeigt die volle Reife der Balblair-DNA. Die lange Lagerung und das Finish in Sherryfässern verleihen ihm eine beeindruckende Tiefe und eine reiche, ölige Textur.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    }
+  ]
+}
