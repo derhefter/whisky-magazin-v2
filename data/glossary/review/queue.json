@@ -979,6 +979,13 @@
       "imported_at": "2026-04-22T19:48:14Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T194818_2811c0",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:48:18Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -18080,6 +18087,64 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T23:25:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T194818_2811c0",
+      "entity": "distilleries",
+      "item_id": "ailsa_bay",
+      "item_slug": "ailsa_bay",
+      "status": "incomplete",
+      "errors": [
+        "Slug ungültig (nur a-z, 0-9, Bindestrich): ailsa_bay"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "ailsa_bay",
+        "name": "Ailsa Bay",
+        "slug": "ailsa_bay",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2007,
+        "owner": "William Grant & Sons",
+        "website": "https://www.ailsabay.com/",
+        "short_description": "Eine hochmoderne, industrielle Destillerie, die für ihre präzise Steuerung von Rauch und Süße bekannt ist.",
+        "long_description": "Ailsa Bay wurde 2007 auf dem Gelände der Girvan-Getreidebrennerei errichtet, um die steigende Nachfrage nach Malt Whisky für die Blends von William Grant & Sons zu decken. Die Brennerei ist hochgradig automatisiert und technisch fortschrittlich. Sie ist die erste, die ihren Whisky nach dem Gehalt an Phenolen (Rauch) und Sacchariden (Süße) klassifiziert. Ihr Stil ist sauber, modern und bietet eine präzise Balance aus Torfrauch und Lowland-Süße.",
+        "travel_info": "Ailsa Bay ist eine industrielle Anlage und verfügt über kein Besucherzentrum. Die Destillerie ist nicht für die allgemeine Öffentlichkeit zugänglich.",
+        "seo_title": "Ailsa Bay Destillerie: Präzision und Innovation | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Ailsa Bay, die technologisch fortschrittliche Brennerei in den Lowlands. Infos zu Rauch- und Süßegraden sowie dem modernen Produktionsansatz.",
+        "coordinates": {
+          "lat": 55.2631,
+          "lng": -4.8464
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:48:18Z"
+      },
+      "raw": {
+        "id": "ailsa_bay",
+        "name": "Ailsa Bay",
+        "slug": "ailsa_bay",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2007,
+        "owner": "William Grant & Sons",
+        "website": "https://www.ailsabay.com/",
+        "short_description": "Eine hochmoderne, industrielle Destillerie, die für ihre präzise Steuerung von Rauch und Süße bekannt ist.",
+        "long_description": "Ailsa Bay wurde 2007 auf dem Gelände der Girvan-Getreidebrennerei errichtet, um die steigende Nachfrage nach Malt Whisky für die Blends von William Grant & Sons zu decken. Die Brennerei ist hochgradig automatisiert und technisch fortschrittlich. Sie ist die erste, die ihren Whisky nach dem Gehalt an Phenolen (Rauch) und Sacchariden (Süße) klassifiziert. Ihr Stil ist sauber, modern und bietet eine präzise Balance aus Torfrauch und Lowland-Süße.",
+        "travel_info": "Ailsa Bay ist eine industrielle Anlage und verfügt über kein Besucherzentrum. Die Destillerie ist nicht für die allgemeine Öffentlichkeit zugänglich.",
+        "seo_title": "Ailsa Bay Destillerie: Präzision und Innovation | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Ailsa Bay, die technologisch fortschrittliche Brennerei in den Lowlands. Infos zu Rauch- und Süßegraden sowie dem modernen Produktionsansatz.",
+        "coordinates": {
+          "lat": 55.2631,
+          "lng": -4.8464
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:30:00Z"
       }
     }
   ]
