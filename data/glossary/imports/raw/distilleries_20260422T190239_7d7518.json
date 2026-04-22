@@ -1,0 +1,27 @@
+{
+  "batch_id": "distilleries_20260422T190239_7d7518",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:02:39Z",
+  "raw": [
+    {
+      "id": "dalmore",
+      "name": "The Dalmore",
+      "slug": "dalmore",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1839,
+      "owner": "Whyte & Mackay (Alliance Global)",
+      "website": "https://www.thedalmore.com/",
+      "short_description": "Berühmt für sein Hirschgeweih-Logo und seine komplexen Reifungen in verschiedenen Sherry-Fässern.",
+      "long_description": "The Dalmore, gegründet 1839, steht als Synonym für Luxus und reichhaltige, in Sherryfässern gereifte Whiskys. An den Ufern des Cromarty Firth gelegen, verfügt sie über ein einzigartiges Set an Brennblasen mit flachen Oberseiten und Wasserkühlmänteln. Unter der langjährigen Leitung von Master Distiller Richard Paterson wurde die Destillerie berühmt für die Verwendung außergewöhnlicher Sherryfässer. Sie produziert Whiskys mit tiefen Noten von Schokolade, Orangen und Gewürzen, verziert mit dem ikonischen 12-endigen Royal Stag-Emblem.",
+      "coordinates": {
+        "lat": 57.6881,
+        "lng": -4.2412
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T19:00:00Z"
+    }
+  ]
+}
