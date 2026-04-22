@@ -11907,7 +11907,7 @@
         "ID bereits vorhanden (Duplikat): oban"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "oban",
         "name": "Oban",
@@ -11919,7 +11919,7 @@
         "owner": "Diageo",
         "website": "https://www.malts.com/en-gb/distilleries/oban",
         "short_description": "Eine kompakte Brennerei im Herzen der gleichnamigen Hafenstadt, die einen salzigen, leicht rauchigen Highland-Malt liefert.",
-        "long_description": "Oban wurde 1794 gegründet und ist eine der wenigen Destillerien, die direkt in einem Stadtzentrum liegen. Tatsächlich wuchs die Stadt Oban um die Brennerei herum. Sie nutzt kleine Brennblasen und traditionelle Worm Tubs, was zu einem reichen und komplexen Spirit führt. Der Charakter von Oban ist eine perfekte Brücke zwischen den Inseln und den Highlands: maritim, salzig, mit einer sanften Rauchigkeit und Noten von Feigen und Honig.",
+        "long_description": "Oban ist eine der wenigen Destillerien, die bereits vor der Stadt existierten, die um sie herum entstand. Sie wurde 1794 gegründet und ist bis heute ein kleiner, kompakter Betrieb an der Küste der West Highlands. Ihr Whisky ist ein klassischer 'Brücken-Malt', der ein Gleichgewicht aus Highland-Fruchtigkeit, maritimer Salzigkeit und einem Hauch von trockenem Torfrauch bietet. Er ist ein fester Bestandteil von Diageos 'Classic Malts'-Serie.",
         "travel_info": "Die Destillerie liegt mitten im Stadtzentrum von Oban. Das Besucherzentrum ist täglich geöffnet. Die Bar bietet exzellente Tastings. Aufgrund der Lage und Beliebtheit sind Touren oft schnell ausgebucht; Vorab-Reservierung ist wichtig.",
         "seo_title": "Oban Destillerie: Der maritime Geist der Highlands | Whisky-Glossar",
         "seo_description": "Besuche die Oban Brennerei am Tor zu den Inseln. Entdecke den perfekt balancierten Single Malt, das urbane Besucherzentrum und den maritimen Charme der Hafenstadt.",
@@ -11929,7 +11929,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:39Z"
+        "last_updated": "2026-04-22T19:32:48Z"
       },
       "raw": {
         "id": "oban",
@@ -11953,7 +11953,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:15:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:32:48Z"
     },
     {
       "batch_id": "distilleries_20260422T192942_74ffab",
