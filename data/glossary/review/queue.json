@@ -5480,26 +5480,33 @@
           "match_reason": "Gleiche Destillerie + Reifezeit (12 J.)"
         }
       ],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
-        "id": "glenfiddich-glenfiddich-12-year-old",
-        "name": "Glenfiddich 12 Year Old",
-        "slug": "glenfiddich-12-year-old",
+        "id": "kilchoman-100-islay",
+        "name": "100% Islay",
+        "slug": "100-islay",
         "country_id": "scotland",
-        "region_id": "speyside",
-        "distillery_id": "glenfiddich",
+        "region_id": "islay",
+        "distillery_id": "kilchoman",
         "whisky_type": "single_malt",
-        "style_tags": "fruchtig, frisch, birne, einsteigerfreundlich",
-        "abv": 40,
-        "cask_types": "ex-bourbon, sherry",
-        "smoke_profile": "Nicht getorft",
-        "age_statement": 12,
-        "nas": false,
-        "tasting_notes_nose": "Unverwechselbar frisch und fruchtig mit einem Hauch von Birne.",
-        "tasting_notes_palate": "Charakteristische süße, fruchtige Noten. Entwickelt sich zu Butterscotch, Sahne, Malz und subtilen Eichenaromen.",
-        "tasting_notes_finish": "Ein langer, sanfter und milder Abgang.",
-        "short_description": "Der meistverkaufte Single Malt der Welt. Ein frischer, leichter Speyside-Klassiker mit markanten Birnennoten.",
-        "long_description": "Der Glenfiddich 12 Year Old reift mindestens 12 Jahre in amerikanischen und europäischen Eichenfässern. Er ist bekannt für seine Beständigkeit und seinen zugänglichen Charakter. Die charakteristische grüne Flasche und das Hirsch-Logo sind weltweit Symbole für schottischen Whisky-Erfolg.",
+        "style_tags": [
+          "torfig",
+          "floral",
+          "frisch",
+          "farm-to-bottle"
+        ],
+        "abv": 50,
+        "cask_types": [
+          "ex-bourbon"
+        ],
+        "smoke_profile": "heavy",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Hell, blumig. Zitrusfrüchte, Birnen, Vanille und zarter, eleganter Rauch.",
+        "tasting_notes_palate": "Sehr frisch. Zitrone, Butterscotch, Malzzucker, leichte Gewürze und sanfter Torf.",
+        "tasting_notes_finish": "Klar, mittellang, fruchtig und dezent rauchig.",
+        "short_description": "Echtes Farm-to-Bottle. Von der Gerste bis zur Abfüllung passiert hier alles auf Kilchoman.",
+        "long_description": "Die 100% Islay Edition ist Schottlands einziger Single Farm Single Malt. Die Gerste wird auf der Farm angebaut, gemälzt, destilliert, gereift und abgefüllt. Er ist leichter getorft (ca. 20 ppm) als die anderen Kilchomans und zeigt wunderbar florale und frische Noten.",
         "editorial_notes": null,
         "travel_context": null,
         "image": null,
@@ -5508,9 +5515,9 @@
         "review_status": "approved",
         "related_articles": [],
         "created_at": "2026-04-22T20:30:00.000Z",
-        "last_updated": "2026-04-22T20:40:10Z",
-        "seo_title": "Glenfiddich 12 Jahre Single Malt Whisky kaufen | Speyside Klassiker",
-        "seo_description": "Glenfiddich 12 Jahre: Der weltberühmte Single Malt mit frischen Birnennoten und sanftem Charakter. Ideal für Einsteiger.",
+        "last_updated": "2026-04-22T20:42:52Z",
+        "seo_title": "Kilchoman 100% Islay Single Malt Whisky kaufen",
+        "seo_description": "Kilchoman 100% Islay: Vom Feld in die Flasche auf einer einzigen Farm. Ein authentischer, sanft rauchiger Islay Malt.",
         "published": true
       },
       "raw": {
@@ -5544,7 +5551,10 @@
         "seo_title": "Glenfiddich 12 Jahre Single Malt Whisky kaufen | Speyside Klassiker",
         "seo_description": "Glenfiddich 12 Jahre: Der weltberühmte Single Malt mit frischen Birnennoten und sanftem Charakter. Ideal für Einsteiger.",
         "published": true
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:42:52Z"
     },
     {
       "batch_id": "whiskies_20260422T204010_d148de",
