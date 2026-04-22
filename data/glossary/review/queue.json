@@ -7860,7 +7860,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "the-glenlivet-the-glenlivet-12-year-old-double-oak",
         "name": "The Glenlivet 12 Year Old Double Oak",
@@ -7924,7 +7924,10 @@
         "seo_title": "The Glenlivet 12 Jahre Double Oak Single Malt kaufen",
         "seo_description": "The Glenlivet 12 Jahre Double Oak: Ein eleganter, fruchtiger Speyside Whisky mit Noten von Ananas und Vanille. Jetzt entdecken.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:53Z"
     },
     {
       "batch_id": "whiskies_20260422T204321_65d292",
