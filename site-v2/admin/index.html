@@ -1329,8 +1329,9 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Datei auswählen</label>
-          <input type="file" id="import-file" accept=".json,.csv" style="padding:6px 0;font-size:0.875rem;">
+          <label>Dateien auswählen <span style="font-weight:400;color:var(--color-muted);font-size:0.82rem;">(mehrere möglich)</span></label>
+          <input type="file" id="import-file" accept=".json,.csv" multiple style="padding:6px 0;font-size:0.875rem;" onchange="renderImportFileList()">
+          <div id="import-file-list" style="display:none;margin-top:8px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;"></div>
         </div>
         <div class="form-group">
           <label>Oder direkt einfügen (JSON/CSV-Text)</label>
@@ -4334,58 +4335,126 @@ async function deleteGlossarEntry(entity, id) {
   }
 }
 
+// ---- Import: Dateiliste rendern ----
+function renderImportFileList() {
+  const input    = document.getElementById('import-file');
+  const listEl   = document.getElementById('import-file-list');
+  const files    = Array.from(input.files || []);
+  if (!files.length) { listEl.style.display = 'none'; listEl.innerHTML = ''; return; }
+
+  listEl.style.display = 'block';
+  listEl.innerHTML = files.map((f, i) => `
+    <div id="import-file-row-${i}" style="display:flex;align-items:center;gap:10px;padding:7px 12px;font-size:0.85rem;border-bottom:1px solid var(--color-border);background:var(--color-white);">
+      <span id="import-file-icon-${i}" style="font-size:1rem;width:20px;text-align:center;">📄</span>
+      <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(f.name)}</span>
+      <span style="color:var(--color-muted);font-size:0.78rem;white-space:nowrap;">${(f.size/1024).toFixed(1)} KB</span>
+      <span id="import-file-status-${i}" style="font-size:0.78rem;white-space:nowrap;min-width:60px;text-align:right;color:var(--color-muted);">ausstehend</span>
+    </div>`).join('');
+  // Letzten Border entfernen
+  const rows = listEl.querySelectorAll('[id^=import-file-row-]');
+  if (rows.length) rows[rows.length-1].style.borderBottom = 'none';
+}
+
 // ---- Import ----
 async function doGlossarImport() {
   const btn    = document.getElementById('import-btn');
   const result = document.getElementById('import-result');
   const entity = document.getElementById('import-entity').value;
   const fmt    = document.getElementById('import-format').value;
-  const file   = document.getElementById('import-file').files[0];
+  const files  = Array.from(document.getElementById('import-file').files || []);
   const text   = document.getElementById('import-text').value.trim();
 
-  let data = text;
-  if (!data && file) {
-    data = await file.text();
-  }
-  if (!data) {
-    showToast('Bitte Datei auswählen oder Text einfügen', 'warn');
+  // Text-Modus: einzelner Import (wie bisher)
+  if (text) {
+    btn.disabled = true;
+    btn.textContent = '⏳ Importiert…';
+    result.style.display = 'none';
+    try {
+      let payload = text;
+      if (fmt === 'json') { try { payload = JSON.parse(text); } catch { /* send as string */ } }
+      const res = await apiPost(`${API.glossar}?action=import_batch`, { entity, format: fmt, data: payload });
+      result.style.display = 'block';
+      result.className = 'success-box';
+      result.innerHTML = _importSuccessHtml(res);
+      glossarReviewQueue = null;
+      loadImportBatches();
+      showToast(`${res.total} Datensätze in Review-Queue`, 'info');
+    } catch (e) {
+      result.style.display = 'block';
+      result.className = 'error-box';
+      result.textContent = 'Fehler: ' + e.message;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '📥 Import starten';
+    }
     return;
   }
 
+  if (!files.length) { showToast('Bitte Datei auswählen oder Text einfügen', 'warn'); return; }
+
+  // Multi-Datei-Modus: sequenziell
   btn.disabled = true;
-  btn.textContent = '⏳ Importiert…';
   result.style.display = 'none';
 
-  try {
-    // For JSON, parse and send as object so the API receives structured data
-    let payload = data;
-    if (fmt === 'json') {
-      try { payload = JSON.parse(data); } catch { /* send as string */ }
+  let totalNew = 0, totalItems = 0, errors = 0;
+  const resultLines = [];
+
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i];
+    const iconEl   = document.getElementById(`import-file-icon-${i}`);
+    const statusEl = document.getElementById(`import-file-status-${i}`);
+    if (iconEl)   iconEl.textContent   = '⏳';
+    if (statusEl) { statusEl.textContent = 'läuft…'; statusEl.style.color = 'var(--color-amber)'; }
+    btn.textContent = `⏳ ${i + 1} / ${files.length}…`;
+
+    try {
+      let data = await f.text();
+      let payload = data;
+      if (fmt === 'json') { try { payload = JSON.parse(data); } catch { /* send as string */ } }
+      const res = await apiPost(`${API.glossar}?action=import_batch`, { entity, format: fmt, data: payload });
+
+      totalNew   += res.new   || 0;
+      totalItems += res.total || 0;
+
+      if (iconEl)   iconEl.textContent   = '✅';
+      if (statusEl) { statusEl.textContent = `${res.total} Eintr.`; statusEl.style.color = 'var(--color-green)'; }
+      resultLines.push(`<div style="margin:4px 0;font-size:0.85rem;">
+        ✅ <strong>${esc(f.name)}</strong>: ${res.total} gesamt, ${res.new} neu
+        ${res.potential_duplicates ? `<span style="color:#d97706;"> ⚠ ${res.potential_duplicates} Duplikat(e)</span>` : ''}
+        — Batch <code style="font-size:0.78rem;">${esc(res.batch_id)}</code></div>`);
+    } catch (e) {
+      errors++;
+      if (iconEl)   iconEl.textContent   = '❌';
+      if (statusEl) { statusEl.textContent = 'Fehler'; statusEl.style.color = 'var(--color-red)'; }
+      resultLines.push(`<div style="margin:4px 0;font-size:0.85rem;">❌ <strong>${esc(f.name)}</strong>: ${esc(e.message)}</div>`);
     }
-    const res = await apiPost(`${API.glossar}?action=import_batch`,
-      { entity, format: fmt, data: payload });
-
-    result.style.display = 'block';
-    result.className = 'success-box';
-    result.innerHTML = `<strong>Import erfolgreich!</strong> Batch: <code>${esc(res.batch_id)}</code><br>
-      Gesamt: ${res.total} &nbsp;|&nbsp; Neu: ${res.new} &nbsp;|&nbsp;
-      Update-Kandidaten: ${res.update_candidates} &nbsp;|&nbsp;
-      Fehler: ${res.errors} &nbsp;|&nbsp; Unvollständig: ${res.incomplete}
-      ${res.potential_duplicates ? `&nbsp;|&nbsp; <strong style="color:#d97706;">⚠ Mögliche Duplikate: ${res.potential_duplicates}</strong>` : ''}<br>
-      <em>→ Zur <a href="#" onclick="goToTab('glossar');switchGlossarSub('review',document.querySelector('.glossar-sub-btn[onclick*=review]'));return false;">Review-Queue</a> wechseln</em>`;
-
-    // Reload review queue and batch list
-    glossarReviewQueue = null;
-    loadImportBatches();
-    showToast(`${res.total} Datensätze in Review-Queue`, 'info');
-  } catch (e) {
-    result.style.display = 'block';
-    result.className = 'error-box';
-    result.textContent = 'Fehler: ' + e.message;
-  } finally {
-    btn.disabled = false;
-    btn.textContent = '📥 Import starten';
   }
+
+  result.style.display = 'block';
+  result.className = errors === files.length ? 'error-box' : 'success-box';
+  result.innerHTML = `
+    <strong>${errors < files.length ? 'Import abgeschlossen' : 'Import fehlgeschlagen'}</strong>
+    — ${files.length} Datei(en), ${totalItems} Einträge gesamt, ${totalNew} neu${errors ? `, ${errors} Fehler` : ''}
+    <div style="margin-top:8px;">${resultLines.join('')}</div>
+    <div style="margin-top:10px;font-size:0.85rem;">
+      <em>→ Zur <a href="#" onclick="goToTab('glossar');switchGlossarSub('review',document.querySelector('.glossar-sub-btn[onclick*=review]'));return false;">Review-Queue</a> wechseln</em>
+    </div>`;
+
+  glossarReviewQueue = null;
+  loadImportBatches();
+  if (totalNew > 0) showToast(`${totalNew} neue Datensätze in Review-Queue`, 'info');
+
+  btn.disabled = false;
+  btn.textContent = '📥 Import starten';
+}
+
+function _importSuccessHtml(res) {
+  return `<strong>Import erfolgreich!</strong> Batch: <code>${esc(res.batch_id)}</code><br>
+    Gesamt: ${res.total} &nbsp;|&nbsp; Neu: ${res.new} &nbsp;|&nbsp;
+    Update-Kandidaten: ${res.update_candidates} &nbsp;|&nbsp;
+    Fehler: ${res.errors} &nbsp;|&nbsp; Unvollständig: ${res.incomplete}
+    ${res.potential_duplicates ? `&nbsp;|&nbsp; <strong style="color:#d97706;">⚠ Mögliche Duplikate: ${res.potential_duplicates}</strong>` : ''}<br>
+    <em>→ Zur <a href="#" onclick="goToTab('glossar');switchGlossarSub('review',document.querySelector('.glossar-sub-btn[onclick*=review]'));return false;">Review-Queue</a> wechseln</em>`;
 }
 
 async function loadImportBatches() {
