@@ -19338,7 +19338,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "auchentoshan-18-years-old",
         "name": "Auchentoshan 18 Years Old",
@@ -19406,7 +19406,10 @@
         "seo_title": "Auchentoshan 18 Jahre kaufen | Premium Lowland Whisky",
         "seo_description": "Der Auchentoshan 18 Jahre besticht durch Komplexität, Honigsüße und Noten von Tabakblatt. Ein Meisterstück der Lowlands.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:11Z"
     },
     {
       "batch_id": "whiskies_20260422T195128_c1368e",
