@@ -1,0 +1,61 @@
+{
+  "batch_id": "distilleries_20260422T190310_3c1f28",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:03:10Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "tomatin",
+        "name": "Tomatin",
+        "slug": "tomatin",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1897,
+        "owner": "Takara Shuzo Group",
+        "website": "https://www.tomatin.com/",
+        "short_description": "Einst eine der größten Brennereien Schottlands, heute fokussiert auf hochwertige Single Malts mit fruchtigem Profil.",
+        "long_description": "In ihrer Blütezeit in den 1970er Jahren war Tomatin mit 23 Brennblasen die größte Maltdestillerie Schottlands. Südlich von Inverness in den Monadhliath-Bergen gelegen, hat sie seitdem ihren Fokus von Quantität auf Qualität verlagert. Heute im Besitz eines japanischen Konsortiums, produziert sie einen weichen, fruchtigen und leicht würzigen Highland-Malt. Bemerkenswert ist auch, dass die Destillerie für viele ihrer Mitarbeiter in einem eigenen Dorf auf dem Gelände Wohnraum zur Verfügung stellt.",
+        "coordinates": {
+          "lat": 57.3396,
+          "lng": -4.0088
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      },
+      "normalized": {
+        "id": "tomatin",
+        "name": "Tomatin",
+        "slug": "tomatin",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1897,
+        "owner": "Takara Shuzo Group",
+        "website": "https://www.tomatin.com/",
+        "short_description": "Einst eine der größten Brennereien Schottlands, heute fokussiert auf hochwertige Single Malts mit fruchtigem Profil.",
+        "long_description": "In ihrer Blütezeit in den 1970er Jahren war Tomatin mit 23 Brennblasen die größte Maltdestillerie Schottlands. Südlich von Inverness in den Monadhliath-Bergen gelegen, hat sie seitdem ihren Fokus von Quantität auf Qualität verlagert. Heute im Besitz eines japanischen Konsortiums, produziert sie einen weichen, fruchtigen und leicht würzigen Highland-Malt. Bemerkenswert ist auch, dass die Destillerie für viele ihrer Mitarbeiter in einem eigenen Dorf auf dem Gelände Wohnraum zur Verfügung stellt.",
+        "coordinates": {
+          "lat": 57.3396,
+          "lng": -4.0088
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:03:10Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
