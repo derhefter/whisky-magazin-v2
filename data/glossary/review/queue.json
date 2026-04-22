@@ -7468,7 +7468,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glenfarclas-glenfarclas-25-year-old",
         "name": "Glenfarclas 25 Year Old",
@@ -7532,7 +7532,10 @@
         "seo_title": "Glenfarclas 25 Jahre Single Malt Whisky kaufen | Premium Speyside",
         "seo_description": "Glenfarclas 25 Jahre: Ein edler Single Malt mit Noten von Kaffee, dunkler Schokolade und Sherry. Ein Genuss für Kenner.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:47Z"
     },
     {
       "batch_id": "whiskies_20260422T204315_2d634e",
