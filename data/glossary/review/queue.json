@@ -17647,7 +17647,7 @@
         "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "bladnoch",
         "name": "Bladnoch",
@@ -17693,7 +17693,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:47:16Z"
     },
     {
       "batch_id": "whiskies_20260422T194604_adf5e4",
