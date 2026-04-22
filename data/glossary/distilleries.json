@@ -301,17 +301,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1896,
-    "owner": "John Dewar & Sons (Bacardi)",
-    "website": "https://www.aberfeldy.com/",
-    "short_description": "Das Herzstück der Dewar's Blends, bekannt für seine honigsüßen und cremigen Noten.",
-    "long_description": "Aberfeldy wurde 1896 von John Dewar & Sons gegründet und ist der 'Golden Dram' im Herzen der Dewar's Blended Whiskys. Die Destillerie ist berühmt für ihre langen Gärzeiten und ihr honigsüßes, fruchtiges Profil. Sie bezieht ihr Wasser aus dem Pitilie Burn, der für seine Goldvorkommen bekannt ist, was zur Assoziation der Marke mit Reichhaltigkeit und weicher Textur beiträgt.",
+    "owner": "Bacardi (John Dewar & Sons)",
+    "website": "https://www.dewars.com/gl/en/aberfeldydistillery/",
+    "short_description": "Die Heimat von Dewar's, bekannt für ihren honigsüßen Single Malt und das interaktive 'Dewar's World of Whisky'.",
+    "long_description": "Aberfeldy wurde 1896 von den Brüdern Dewar gegründet und liegt am Ufer des Flusses Tay. Der Whisky ist ein Herzstück der Dewar's Blends und wird für sein reiches, honigartiges und fruchtiges Profil geschätzt. Die Destillerie nutzt das Wasser des Pitilie Burn, das für seine Reinheit (und Goldvorkommen) bekannt ist. Besucher können im 'Dewar's World of Whisky' tief in die Geschichte einer der berühmtesten Whisky-Familien Schottlands eintauchen.",
+    "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (April-Okt: Mo-Sa 10-18 Uhr, So 12-16 Uhr; Nov-Mär: Mo-Sa 10-16 Uhr). Es bietet interaktive Ausstellungen, Touren und eine gemütliche Bar. Eine Reservierung wird empfohlen.",
+    "seo_title": "Aberfeldy Destillerie: Der goldene Malt der Highlands | Whisky-Glossar",
+    "seo_description": "Besuche Aberfeldy und Dewar's World of Whisky. Entdecke den honigsüßen Single Malt, die Geschichte der Familie Dewar und Touren im Herzen der Highlands.",
     "coordinates": {
-      "lat": 56.6243,
-      "lng": -3.8503
+      "lat": 56.6214,
+      "lng": -3.8553
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "balblair",
@@ -321,17 +324,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1790,
-    "owner": "International Beverage (Inver House)",
+    "owner": "Inver House Distillers",
     "website": "https://www.balblair.com/",
-    "short_description": "Bekannt für ihre Vintage-Abfülllungen und einen eleganten, fruchtigen Highland-Stil.",
+    "short_description": "Eine der ältesten und malerischsten Destillerien Schottlands, bekannt für ihre eleganten, fruchtigen Malts.",
     "long_description": "Balblair ist eine der ältesten noch arbeitenden Destillerien Schottlands, die 1790 von John Ross an den Ufern des Dornoch Firth gegründet wurde. Bekannt für ihre traditionellen Methoden und ihren markanten Vintage-Ansatz bei den Abfüllungen, produziert die Destillerie einen klassischen Highland-Malt. Ihr Charakter ist typischerweise elegant, fruchtig und floral, mit einer leicht wachsigen Textur, die sich mit dem Alter wunderbar entwickelt.",
+    "travel_info": "Das Besucherzentrum ist von April bis September Mo-Sa (10:00-17:00 Uhr) geöffnet. Im Winter gelten verkürzte Öffnungszeiten (Mo-Fr). Touren bieten einen authentischen Einblick in die traditionelle Produktion.",
+    "seo_title": "Balblair Destillerie: Zeitloser Highland Single Malt | Whisky-Glossar",
+    "seo_description": "Entdecke Balblair, eine der traditionsreichsten Brennereien Schottlands. Erfahre mehr über den eleganten Highland-Stil, Touren und die Filmkulisse in Edderton.",
     "coordinates": {
-      "lat": 57.8408,
-      "lng": -4.1813
+      "lat": 57.8344,
+      "lng": -4.1847
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "blair-athol",
@@ -343,15 +349,18 @@
     "founded": 1798,
     "owner": "Diageo",
     "website": "https://www.malts.com/en-gb/distilleries/blair-athol",
-    "short_description": "Eine malerische Destillerie in Pitlochry, deren Malts oft eine nussige und würzige Note aufweisen.",
-    "long_description": "Am Tor zu den Highlands in Pitlochry gelegen, ist Blair Athol eine der ältesten lizenzierten Destillerien Schottlands und geht auf das Jahr 1798 zurück. Ein Großteil der Produktion ist für den Bell's Blend bestimmt, aber sein Single Malt wird für seinen tiefen, nussigen und würzigen Charakter gefeiert. Die ikonischen, efeubewachsenen Gebäude der Destillerie machen sie zu einer der am meisten fotografierten des Landes.",
+    "short_description": "Eine charmante, efeubewachsene Destillerie, deren nussiger Malt eine wichtige Komponente von Bell's Blend ist.",
+    "long_description": "Blair Athol in Pitlochry wurde 1798 gegründet und ist eine der meistbesuchten Brennereien Schottlands, was auch an ihrer malerischen, efeubewachsenen Fassade liegt. Der Whisky ist bekannt für seine tiefe goldene Farbe, seine ölige Textur und ein reiches, nussiges und würziges Profil. Er bildet das Herzstück des berühmten Bell's Blended Scotch Whisky, ist aber als Single Malt (oft in der Flora & Fauna Serie) ein echter Geheimtipp.",
+    "travel_info": "Die Destillerie ist ganzjährig täglich geöffnet (meist 10:00-17:00 Uhr). Es werden verschiedene Touren angeboten. Die Mash Tun Bar in einem umgebauten Maischebottich ist ein besonderes Highlight für Besucher.",
+    "seo_title": "Blair Athol Destillerie: Das efeubewachsene Herz von Pitlochry | Whisky-Glossar",
+    "seo_description": "Besuche Blair Athol in Pitlochry. Entdecke den nussigen Single Malt, die Mash Tun Bar und eine der schönsten Destillerien der Highlands.",
     "coordinates": {
-      "lat": 56.6985,
-      "lng": -3.7228
+      "lat": 56.7003,
+      "lng": -3.7258
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "clynelish",
@@ -360,18 +369,21 @@
     "region_id": "highlands",
     "country_id": "scotland",
     "status": "active",
-    "founded": 1819,
+    "founded": 1967,
     "owner": "Diageo",
     "website": "https://www.malts.com/en-gb/distilleries/clynelish",
-    "short_description": "Berühmt für seinen wachsartigen (waxy) Mundcharakter und florale Noten.",
+    "short_description": "Berühmt für seine wachsartige Textur und seinen maritimen Charakter, ist Clynelish ein Favorit unter Kennern.",
     "long_description": "Clynelish wurde 1967 als moderner Nachfolger der ursprünglichen Destillerie von 1819 (später als Brora bekannt) erbaut. An der Küste von Sutherland gelegen, ist sie weltweit für ihren einzigartigen 'wachsartigen' Charakter bekannt, der oft als Bienenwachs oder Honig am Gaumen beschrieben wird. Dieses markante Profil macht sie zu einer sehr begehrten Komponente für Blends und zu einem beliebten Single Malt für Enthusiasten, die Textur und Komplexität suchen.",
+    "travel_info": "Das moderne Besucherzentrum in Brora bietet interaktive Erlebnisse als Teil der 'Four Corners of Scotland' von Diageo. Derzeit kann es aufgrund von Wartungsarbeiten zu eingeschränkten Öffnungszeiten kommen; eine Vorab-Prüfung und Buchung wird empfohlen.",
+    "seo_title": "Clynelish Destillerie: Der wachsartige Malt der Highlands | Whisky-Glossar",
+    "seo_description": "Erfahre mehr über Clynelish in Brora. Entdecke das Geheimnis der wachsartigen Textur, den maritimen Single Malt und das preisgekrönte Besucherzentrum.",
     "coordinates": {
-      "lat": 58.0249,
-      "lng": -3.869
+      "lat": 58.0169,
+      "lng": -3.8561
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "dalmore",
@@ -381,17 +393,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1839,
-    "owner": "Whyte & Mackay (Alliance Global)",
+    "owner": "Whyte & Mackay",
     "website": "https://www.thedalmore.com/",
-    "short_description": "Berühmt für sein Hirschgeweih-Logo und seine komplexen Reifungen in verschiedenen Sherry-Fässern.",
+    "short_description": "Eine Luxus-Destillerie, bekannt für ihre schweren, Sherry-betonten Whiskys und das ikonische Hirschgeweih.",
     "long_description": "The Dalmore, gegründet 1839, steht als Synonym für Luxus und reichhaltige, in Sherryfässern gereifte Whiskys. An den Ufern des Cromarty Firth gelegen, verfügt sie über ein einzigartiges Set an Brennblasen mit flachen Oberseiten und Wasserkühlmänteln. Unter der langjährigen Leitung von Master Distiller Richard Paterson wurde die Destillerie berühmt für die Verwendung außergewöhnlicher Sherryfässer. Sie produziert Whiskys mit tiefen Noten von Schokolade, Orangen und Gewürzen, verziert mit dem ikonischen 12-endigen Royal Stag-Emblem.",
+    "travel_info": "Die Destillerie in Alness eröffnet im April 2026 ein neu gestaltetes Besucherzentrum. Besuche sind exklusiv und müssen im Voraus gebucht werden. Die Lage am Cromarty Firth bietet eine spektakuläre Kulisse.",
+    "seo_title": "The Dalmore Destillerie: Luxus und Tradition in den Highlands | Whisky-Glossar",
+    "seo_description": "Besuche The Dalmore. Entdecke die Meisterschaft der Sherryfass-Reifung, die Geschichte des Hirschgeweihs und exklusive Highland Single Malts.",
     "coordinates": {
-      "lat": 57.6881,
-      "lng": -4.2412
+      "lat": 56.8833,
+      "lng": -4.2383
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "dalwhinnie",
@@ -403,15 +418,18 @@
     "founded": 1897,
     "owner": "Diageo",
     "website": "https://www.malts.com/en-gb/distilleries/dalwhinnie",
-    "short_description": "Eine der höchstgelegenen Destillerien Schottlands, produziert einen sanften, honigsüßen Malt.",
+    "short_description": "Eine der höchstgelegenen und kältesten Destillerien Schottlands, produziert einen sanften, honigsüßen Malt.",
     "long_description": "Dalwhinnie ist eine der am höchsten gelegenen und kältesten Destillerien Schottlands, im Cairngorms-Nationalpark gelegen. Sie wurde 1897 gegründet und trug ursprünglich den Namen Strathspey. Ihre entlegene, windgepeitschte Lage steht im Kontrast zu dem sanften, honigsüßen und heidekrautartigen Spirit, den sie produziert. Als Teil von Diageos 'Classic Malts' ist sie bekannt für ihre Zugänglichkeit und ihren sauberen, floralen Charakter, oft begleitet von einem Hauch Torfrauch.",
+    "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (Mär-Okt 10:00-17:30 Uhr). Besonders beliebt sind die 'Whisky and Chocolate' Tastings. Aufgrund der Lage an der A9 ist die Brennerei ein idealer Stopp auf dem Weg in den Norden.",
+    "seo_title": "Dalwhinnie Destillerie: Der Highland-Malt aus den Bergen | Whisky-Glossar",
+    "seo_description": "Besuche Dalwhinnie, eine der höchstgelegenen Brennereien Schottlands. Entdecke den honigsüßen Single Malt und exklusive Schokoladen-Pairings im Cairngorms Nationalpark.",
     "coordinates": {
-      "lat": 56.9401,
-      "lng": -4.2392
+      "lat": 56.9408,
+      "lng": -4.2389
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "deanston",
@@ -421,17 +439,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1965,
-    "owner": "CVH Spirits (Heineken)",
-    "website": "https://www.deanstonmalt.com/",
-    "short_description": "In einer ehemaligen Baumwollmühle ansässig, nutzt sie Wasserkraft und setzt auf unfiltrierte Abfüllungen.",
+    "owner": "Distell (Heineken)",
+    "website": "https://deanstonmalt.com/",
+    "short_description": "In einer ehemaligen Baumwollmühle untergebracht, ist diese Destillerie für ihren wachsartigen, honigsüßen und ungetorften Stil bekannt.",
     "long_description": "Deanston begann sein Dasein 1785 als Baumwollmühle, bevor sie 1965 in eine Destillerie umgewandelt wurde. Am Ufer des Flusses Teith gelegen, ist sie durch eigene Wasserkraftturbinen völlig energieautark. Die Destillerie verwendet ungetorftes Malz und traditionelle oben offene Maischebottiche (Mash Tuns), was zu einem wachsartigen, honigsüßen und nussigen Brand führt, der ohne Kältefiltration oder Zusatz von Farbstoffen abgefüllt wird.",
+    "travel_info": "Die Destillerie in der Nähe von Doune (bekannt aus Outlander) ist täglich von 10:00 bis 17:00 Uhr geöffnet. Das Café 'The Coffee Bothy' ist bei Besuchern sehr beliebt. Touren starten stündlich.",
+    "seo_title": "Deanston Destillerie: Nachhaltigkeit und Tradition | Whisky-Glossar",
+    "seo_description": "Entdecke Deanston in den südlichen Highlands. Erfahre mehr über die Geschichte der Baumwollmühle, den wachsartigen Single Malt und Besuche in der Nähe von Stirling.",
     "coordinates": {
-      "lat": 56.1891,
-      "lng": -4.0709
+      "lat": 56.1883,
+      "lng": -4.0722
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "edradour",
@@ -445,13 +466,16 @@
     "website": "https://www.edradour.com/",
     "short_description": "Lange Zeit als kleinste Destillerie Schottlands bekannt, produziert sie einen sehr reichhaltigen Highland-Malt.",
     "long_description": "Viele Jahre lang war Edradour als die kleinste Destillerie Schottlands berühmt. Gegründet 1825 in der Nähe von Pitlochry, bewahrt sie ein charmantes, bauernhofähnliches Aussehen und nutzt eine Ausrüstung, die über Generationen weitgehend unverändert geblieben ist, einschließlich des letzten verbliebenen Morton-Kühlers. Im Besitz von Signatory Vintage produziert sie einen reichhaltigen, cremigen und oft stark sherrybetonten Malt, der unter den Highland-Destillerien einzigartig ist.",
+    "travel_info": "Aufgrund von Modernisierungen und personellen Engpässen ist die Brennerei derzeit für reguläre Touren geschlossen. Der Shop und die Außenanlagen können jedoch oft besichtigt werden. Eine Vorab-Information auf der Website ist unerlässlich.",
+    "seo_title": "Edradour Destillerie: Das handwerkliche Juwel der Highlands | Whisky-Glossar",
+    "seo_description": "Entdecke Edradour in Pitlochry. Erfahre mehr über eine der kleinsten Brennereien Schottlands, ihren viktorianischen Charme und die Sherryfass-Reifung.",
     "coordinates": {
-      "lat": 56.7014,
-      "lng": -3.702
+      "lat": 56.7028,
+      "lng": -3.7011
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "fettercairn",
@@ -461,17 +485,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1824,
-    "owner": "Whyte & Mackay (Alliance Global)",
+    "owner": "Whyte & Mackay",
     "website": "https://www.fettercairnwhisky.com/",
-    "short_description": "Einzigartig durch ihre Kühlringe an den Brennblasen, was zu einem besonders reinen Destillat führt.",
+    "short_description": "Bekannt für ihre einzigartigen Kupfer-Kühlringe an den Brennblasen, die einen besonders reinen Spirit erzeugen.",
     "long_description": "Fettercairn wurde 1824 von Sir Alexander Ramsay gegründet und ist für seine innovativen 'Kühlringe' an den Spirituosen-Brennblasen bekannt. Dieser Ring übergießt die Oberseite der Brennblase mit kaltem Wasser, was den Rückfluss (Reflux) erhöht und zu einem leichteren, von tropischen Früchten geprägten Destillat führt. Die Destillerie führt das Einhorn des Ramsay-Clans in ihrem Wappen und ist ein wichtiger Bestandteil des Whyte & Mackay Portfolios, wobei sie in letzter Zeit verstärkt Anerkennung für ihre Single-Malt-Veröffentlichungen erfährt.",
+    "travel_info": "Das Besucherzentrum ist Di-Sa von 10:00 bis 16:00 Uhr geöffnet. Die letzte Tour startet um 15:00 Uhr. Die Destillerie bietet einen authentischen Einblick abseits der großen Touristenströme.",
+    "seo_title": "Fettercairn Destillerie: Innovation durch Kühlung | Whisky-Glossar",
+    "seo_description": "Besuche Fettercairn in den östlichen Highlands. Entdecke die einzigartigen Kühlringe, den tropisch-fruchtigen Single Malt und die Geschichte des Einhorns.",
     "coordinates": {
-      "lat": 56.8535,
-      "lng": -2.5821
+      "lat": 56.8483,
+      "lng": -2.5767
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "glendronach",
@@ -483,15 +510,18 @@
     "founded": 1826,
     "owner": "Brown-Forman",
     "website": "https://www.glendronachdistillery.com/",
-    "short_description": "Ein Meister der Sherry-Fass-Reifung, bekannt für seine tiefen, dunklen und fruchtigen Whiskys.",
+    "short_description": "Die Spezialistin für exzellente Sherryfass-Reifung, bekannt für ihre tiefen, dunklen und fruchtigen Whiskys.",
     "long_description": "The GlenDronach, im Tal von Forgue gelegen, ist eine Bastion der traditionellen Sherry-Reifung. Sie wurde 1826 gegründet und wurde unter der Leitung von Billy Walker und später Brown-Forman legendär. Die Destillerie ist berühmt für ihren schweren Brand, der hauptsächlich in Oloroso- und Pedro Ximénez-Sherryfässern reift. Das Ergebnis sind tief mahagonifarbene Whiskys mit Noten von Trockenfrüchten, Gewürzen und Schokolade.",
+    "travel_info": "Das Besucherzentrum und der Shop sind täglich von 10:00 bis 17:00 Uhr geöffnet. Es wurde kürzlich modernisiert und bietet exzellente geführte Touren durch die Produktion und die Lagerhäuser an.",
+    "seo_title": "The GlenDronach Destillerie: Die Sherry-Ikone der Highlands | Whisky-Glossar",
+    "seo_description": "Besuche The GlenDronach. Entdecke die Meisterschaft der Sherryfass-Reifung, genieße tiefgründige Single Malts und besuche das moderne Besucherzentrum in Forgue.",
     "coordinates": {
-      "lat": 57.4847,
-      "lng": -2.6258
+      "lat": 57.4811,
+      "lng": -2.6283
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "glengoyne",
@@ -503,15 +533,18 @@
     "founded": 1833,
     "owner": "Ian Macleod Distillers",
     "website": "https://www.glengoyne.com/",
-    "short_description": "Wirbt mit der langsamsten Destillation Schottlands und verzichtet komplett auf Torf.",
+    "short_description": "Bekannt für den langsamsten Destillationsprozess Schottlands, der einen besonders fruchtigen und süßen Stil erzeugt.",
     "long_description": "Glengoyne ist einzigartig, da sie die 'Highland-Linie' überspannt: Ihre Brennblasen befinden sich in den Highlands, während ihre Lagerhäuser in den Lowlands liegen. Gegründet im Jahr 1833, ist sie als 'Schottlands langsamste Destillerie' bekannt, was auf ihren außergewöhnlich langsamen Destillationsprozess zurückzuführen ist. Durch die Verwendung von ausschließlich luftgetrockneter Gerste (kein Torfrauch) produziert Glengoyne einen reinen, fruchtigen und eleganten Spirit, der oft in hochwertigen Sherryfässern reift.",
+    "travel_info": "Die Destillerie ist täglich geöffnet und bietet eine Vielzahl von Touren an, von Standard-Führungen bis zu Blending-Sessions. Dank der guten Busanbindung von Glasgow ist sie auch ohne Auto leicht zu erreichen.",
+    "seo_title": "Glengoyne Destillerie: Die Kunst der Langsamkeit | Whisky-Glossar",
+    "seo_description": "Besuche Glengoyne, eine der malerischsten Brennereien Schottlands. Erfahre mehr über die langsame Destillation, ungetorften Single Malt und Touren nahe Glasgow.",
     "coordinates": {
       "lat": 56.0142,
-      "lng": -4.3634
+      "lng": -4.3644
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "glenmorangie",
@@ -521,17 +554,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1843,
-    "owner": "Moët Hennessy Louis Vuitton (LVMH)",
+    "owner": "LVMH (Moët Hennessy Louis Vuitton)",
     "website": "https://www.glenmorangie.com/",
     "short_description": "Besitzt die höchsten Brennblasen Schottlands, was zu einem besonders leichten und eleganten Destillat führt.",
     "long_description": "Glenmorangie beheimatet die höchsten Brennblasen Schottlands; ihre Hälse sind so hoch wie eine ausgewachsene Giraffe. Diese hohen Brennblasen stellen sicher, dass nur die leichtesten Dämpfe die Spitze erreichen, was einen delikaten und floralen Spirit erzeugt. Die in Tain gelegene Destillerie war unter Dr. Bill Lumsden ein Pionier des 'Wood Finishing'. Sie gehört zu den meistverkauften Single Malts der Welt und ist bekannt für ihre weiche, cremige Textur und ihr Zitrus-Honig-Profil.",
+    "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (Sept-Mai Mo-Fr, Jun-Aug täglich 10:00-17:00 Uhr). Es bietet exzellente Touren und ein luxuriöses Gästehaus ('Glenmorangie House') in der Nähe.",
+    "seo_title": "Glenmorangie Destillerie: Eleganz und Innovation | Whisky-Glossar",
+    "seo_description": "Entdecke Glenmorangie in Tain. Erfahre mehr über die höchsten Brennblasen Schottlands, die Kunst der Fassnachreifung und besuche das preisgekrönte Besucherzentrum.",
     "coordinates": {
-      "lat": 57.8259,
-      "lng": -4.078
+      "lat": 57.8183,
+      "lng": -4.0694
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "oban",
@@ -542,16 +578,19 @@
     "status": "active",
     "founded": 1794,
     "owner": "Diageo",
-    "website": "https://www.obanwhisky.com/",
-    "short_description": "Eine kleine Destillerie im Herzen der Stadt Oban, die maritime Noten mit leichter Rauchigkeit kombiniert.",
+    "website": "https://www.malts.com/en-gb/distilleries/oban",
+    "short_description": "Eine kompakte Brennerei im Herzen der gleichnamigen Hafenstadt, die einen salzigen, leicht rauchigen Highland-Malt liefert.",
     "long_description": "Oban ist eine der wenigen Destillerien, die bereits vor der Stadt existierten, die um sie herum entstand. Sie wurde 1794 gegründet und ist bis heute ein kleiner, kompakter Betrieb an der Küste der West Highlands. Ihr Whisky ist ein klassischer 'Brücken-Malt', der ein Gleichgewicht aus Highland-Fruchtigkeit, maritimer Salzigkeit und einem Hauch von trockenem Torfrauch bietet. Er ist ein fester Bestandteil von Diageos 'Classic Malts'-Serie.",
+    "travel_info": "Die Destillerie liegt mitten im Stadtzentrum von Oban. Das Besucherzentrum ist täglich geöffnet. Die Bar bietet exzellente Tastings. Aufgrund der Lage und Beliebtheit sind Touren oft schnell ausgebucht; Vorab-Reservierung ist wichtig.",
+    "seo_title": "Oban Destillerie: Der maritime Geist der Highlands | Whisky-Glossar",
+    "seo_description": "Besuche die Oban Brennerei am Tor zu den Inseln. Entdecke den perfekt balancierten Single Malt, das urbane Besucherzentrum und den maritimen Charme der Hafenstadt.",
     "coordinates": {
-      "lat": 56.4148,
-      "lng": -5.4723
+      "lat": 56.4153,
+      "lng": -5.4719
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "old-pulteney",
@@ -561,17 +600,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1826,
-    "owner": "International Beverage (Inver House)",
+    "owner": "Inver House Distillers",
     "website": "https://www.oldpulteney.com/",
-    "short_description": "Die 'Maritime Malt' Destillerie aus Wick, bekannt für ihren salzigen und öligen Charakter.",
+    "short_description": "Bekannt als der 'Maritime Malt', geprägt durch die salzige Meeresluft der nördlichen Highlands.",
     "long_description": "Bekannt als 'The Maritime Malt', liegt Old Pulteney in Wick, einer der nördlichsten Städte des schottischen Festlandes. Gegründet 1826 während des Heringsfischerei-Booms, ist ihr Charakter tief von der Nordseeluft geprägt. Die Brennblasen haben eine einzigartige Form ohne Schwanenhals, was zur Öligkeit und Salzigkeit beitragen soll, die man in ihrem Spirit findet. Sie wird für ihr belebendes, salziges und zitrusartiges Profil gefeiert.",
+    "travel_info": "Das Besucherzentrum in Wick ist ganzjährig geöffnet. Es werden verschiedene Touren angeboten (z.B. 'The Spirit of Wick'). Die Destillerie ist ein fester Bestandteil der North Coast 500 Route. Eine Buchung im Voraus wird empfohlen.",
+    "seo_title": "Old Pulteney Destillerie: Der maritime Highland-Malt | Whisky-Glossar",
+    "seo_description": "Entdecke Old Pulteney in Wick. Erfahre mehr über den 'Maritime Malt', seine salzige Note und besuche die Brennerei auf deiner Tour entlang der North Coast 500.",
     "coordinates": {
-      "lat": 58.4344,
-      "lng": -3.0847
+      "lat": 58.435,
+      "lng": -3.0883
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "tomatin",
@@ -581,17 +623,20 @@
     "country_id": "scotland",
     "status": "active",
     "founded": 1897,
-    "owner": "Takara Shuzo Group",
-    "website": "https://www.tomatin.com/",
-    "short_description": "Einst eine der größten Brennereien Schottlands, heute fokussiert auf hochwertige Single Malts mit fruchtigem Profil.",
+    "owner": "Takara Shuzo",
+    "website": "https://tomatin.com/",
+    "short_description": "Einst die größte Destillerie Schottlands, ist Tomatin heute für seine weichen und fruchtigen Highland-Malts bekannt.",
     "long_description": "In ihrer Blütezeit in den 1970er Jahren war Tomatin mit 23 Brennblasen die größte Maltdestillerie Schottlands. Südlich von Inverness in den Monadhliath-Bergen gelegen, hat sie seitdem ihren Fokus von Quantität auf Qualität verlagert. Heute im Besitz eines japanischen Konsortiums, produziert sie einen weichen, fruchtigen und leicht würzigen Highland-Malt. Bemerkenswert ist auch, dass die Destillerie für viele ihrer Mitarbeiter in einem eigenen Dorf auf dem Gelände Wohnraum zur Verfügung stellt.",
+    "travel_info": "Das Besucherzentrum ist von April bis November täglich von 9:30 bis 17:30 Uhr geöffnet. Es bietet eine gute Auswahl an Touren und Tastings. Die Brennerei ist bequem über die A9 erreichbar und bietet 'Driver's Drams' für Autofahrer an.",
+    "seo_title": "Tomatin Destillerie: Die sanfte Seite der Highlands | Whisky-Glossar",
+    "seo_description": "Besuche Tomatin südlich von Inverness. Entdecke den weichen und fruchtigen Single Malt, lerne die Geschichte der einst größten Brennerei kennen und genieße eine Tour.",
     "coordinates": {
-      "lat": 57.3396,
-      "lng": -4.0088
+      "lat": 57.3439,
+      "lng": -3.985
     },
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
-    "last_updated": "2026-04-22T19:07:25Z"
+    "last_updated": "2026-04-22T19:33:13Z"
   },
   {
     "id": "bushmills",
