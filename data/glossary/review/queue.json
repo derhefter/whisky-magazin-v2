@@ -4392,7 +4392,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "mortlach-mortlach-16-year-old-distillers-dram",
         "name": "Mortlach 16 Year Old \"Distiller's Dram\"",
@@ -4456,7 +4456,10 @@
         "seo_title": "Mortlach 16 Jahre Distiller's Dram Single Malt Whisky kaufen",
         "seo_description": "Mortlach 16 Jahre: Ein robustes Sherry-Biest mit Noten von Leder, Honig und dunklen Früchten. Jetzt online bestellen.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:20Z"
     },
     {
       "batch_id": "whiskies_20260422T203958_f58077",
