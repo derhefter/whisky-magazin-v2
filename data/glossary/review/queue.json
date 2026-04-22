@@ -4780,7 +4780,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glen-scotia-glen-scotia-15-years-old",
         "name": "Glen Scotia 15 Years Old",
@@ -4848,7 +4848,10 @@
         "seo_title": "Glen Scotia 15 Jahre Single Malt kaufen",
         "seo_description": "Der Glen Scotia 15 Jahre: Ein charakterstarker Campbeltown Whisky mit maritimen Noten, Vanille und kräftiger Eichenwürze.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:32Z"
     },
     {
       "batch_id": "whiskies_20260422T190046_2e665d",
