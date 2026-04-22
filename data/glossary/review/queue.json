@@ -16277,7 +16277,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "isle-of-harris-the-hearach",
         "name": "The Hearach",
@@ -16329,7 +16329,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:43:29Z"
     },
     {
       "batch_id": "whiskies_20260422T194104_5fb36f",
