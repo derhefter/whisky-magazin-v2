@@ -12029,7 +12029,7 @@
         "ID bereits vorhanden (Duplikat): tomatin"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "tomatin",
         "name": "Tomatin",
@@ -12041,7 +12041,7 @@
         "owner": "Takara Shuzo",
         "website": "https://tomatin.com/",
         "short_description": "Einst die größte Destillerie Schottlands, ist Tomatin heute für seine weichen und fruchtigen Highland-Malts bekannt.",
-        "long_description": "Tomatin wurde 1897 gegründet und liegt in einer einsamen Gebirgsregion südlich von Inverness. In den 1970er Jahren war sie die größte Malt-Brennerei Schottlands mit 23 Brennblasen. Heute konzentriert sie sich auf Qualität statt Quantität. Der Whisky ist bekannt für sein weiches, fruchtiges Profil mit Noten von Äpfeln, Birnen und Malz. Die Destillerie ist fast eine kleine Siedlung für sich, da sie früher fast alle ihre Arbeiter vor Ort beherbergte.",
+        "long_description": "In ihrer Blütezeit in den 1970er Jahren war Tomatin mit 23 Brennblasen die größte Maltdestillerie Schottlands. Südlich von Inverness in den Monadhliath-Bergen gelegen, hat sie seitdem ihren Fokus von Quantität auf Qualität verlagert. Heute im Besitz eines japanischen Konsortiums, produziert sie einen weichen, fruchtigen und leicht würzigen Highland-Malt. Bemerkenswert ist auch, dass die Destillerie für viele ihrer Mitarbeiter in einem eigenen Dorf auf dem Gelände Wohnraum zur Verfügung stellt.",
         "travel_info": "Das Besucherzentrum ist von April bis November täglich von 9:30 bis 17:30 Uhr geöffnet. Es bietet eine gute Auswahl an Touren und Tastings. Die Brennerei ist bequem über die A9 erreichbar und bietet 'Driver's Drams' für Autofahrer an.",
         "seo_title": "Tomatin Destillerie: Die sanfte Seite der Highlands | Whisky-Glossar",
         "seo_description": "Besuche Tomatin südlich von Inverness. Entdecke den weichen und fruchtigen Single Malt, lerne die Geschichte der einst größten Brennerei kennen und genieße eine Tour.",
@@ -12051,7 +12051,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:45Z"
+        "last_updated": "2026-04-22T19:33:08Z"
       },
       "raw": {
         "id": "tomatin",
@@ -12075,7 +12075,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:25:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:33:08Z"
     }
   ]
 }
