@@ -5347,7 +5347,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "springbank-hazelburn-10-years-old",
         "name": "Hazelburn 10 Years Old",
@@ -5415,7 +5415,10 @@
         "seo_title": "Hazelburn 10 Jahre kaufen | Ungetorfter Single Malt aus Campbeltown",
         "seo_description": "Entdecken Sie den Hazelburn 10 Jahre: Dreifach destilliert, ungetorft und wunderbar cremig mit Noten von Apfel und Honig.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:40Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
