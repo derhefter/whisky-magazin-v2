@@ -1,0 +1,69 @@
+{
+  "batch_id": "distilleries_20260422T192906_25cfbc",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:06Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "blair-athol",
+        "name": "Blair Athol",
+        "slug": "blair-athol",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/blair-athol",
+        "short_description": "Eine charmante, efeubewachsene Destillerie, deren nussiger Malt eine wichtige Komponente von Bell's Blend ist.",
+        "long_description": "Blair Athol in Pitlochry wurde 1798 gegründet und ist eine der meistbesuchten Brennereien Schottlands, was auch an ihrer malerischen, efeubewachsenen Fassade liegt. Der Whisky ist bekannt für seine tiefe goldene Farbe, seine ölige Textur und ein reiches, nussiges und würziges Profil. Er bildet das Herzstück des berühmten Bell's Blended Scotch Whisky, ist aber als Single Malt (oft in der Flora & Fauna Serie) ein echter Geheimtipp.",
+        "travel_info": "Die Destillerie ist ganzjährig täglich geöffnet (meist 10:00-17:00 Uhr). Es werden verschiedene Touren angeboten. Die Mash Tun Bar in einem umgebauten Maischebottich ist ein besonderes Highlight für Besucher.",
+        "seo_title": "Blair Athol Destillerie: Das efeubewachsene Herz von Pitlochry | Whisky-Glossar",
+        "seo_description": "Besuche Blair Athol in Pitlochry. Entdecke den nussigen Single Malt, die Mash Tun Bar und eine der schönsten Destillerien der Highlands.",
+        "coordinates": {
+          "lat": 56.7003,
+          "lng": -3.7258
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T00:25:00Z"
+      },
+      "normalized": {
+        "id": "blair-athol",
+        "name": "Blair Athol",
+        "slug": "blair-athol",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/blair-athol",
+        "short_description": "Eine charmante, efeubewachsene Destillerie, deren nussiger Malt eine wichtige Komponente von Bell's Blend ist.",
+        "long_description": "Blair Athol in Pitlochry wurde 1798 gegründet und ist eine der meistbesuchten Brennereien Schottlands, was auch an ihrer malerischen, efeubewachsenen Fassade liegt. Der Whisky ist bekannt für seine tiefe goldene Farbe, seine ölige Textur und ein reiches, nussiges und würziges Profil. Er bildet das Herzstück des berühmten Bell's Blended Scotch Whisky, ist aber als Single Malt (oft in der Flora & Fauna Serie) ein echter Geheimtipp.",
+        "travel_info": "Die Destillerie ist ganzjährig täglich geöffnet (meist 10:00-17:00 Uhr). Es werden verschiedene Touren angeboten. Die Mash Tun Bar in einem umgebauten Maischebottich ist ein besonderes Highlight für Besucher.",
+        "seo_title": "Blair Athol Destillerie: Das efeubewachsene Herz von Pitlochry | Whisky-Glossar",
+        "seo_description": "Besuche Blair Athol in Pitlochry. Entdecke den nussigen Single Malt, die Mash Tun Bar und eine der schönsten Destillerien der Highlands.",
+        "coordinates": {
+          "lat": 56.7003,
+          "lng": -3.7258
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:29:06Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): blair-athol"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
