@@ -1,0 +1,57 @@
+{
+  "batch_id": "whiskies_20260422T190805_e8e1de",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:05Z",
+  "raw": [
+    {
+      "id": "clynelish-14",
+      "name": "Clynelish 14 Year Old",
+      "slug": "clynelish-14",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "clynelish",
+      "whisky_type": "single_malt",
+      "style_tags": "wachsig, maritim, honig, fruchtig",
+      "abv": 46,
+      "cask_types": "Bourbon Casks, Sherry Casks",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": 14,
+      "nas": false,
+      "tasting_notes": {
+        "nose": "Wachsig mit Noten von Honig, Orangen und einer dezenten maritimen Brise.",
+        "palate": "Ölig und wachsig. Frische Äpfel, Malz und eine angenehme Süße, gepaart mit Salz und Pfeffer.",
+        "finish": "Mittellang bis lang, trocken mit Salz, Pfeffer und einer anhaltenden Wachsigkeit."
+      },
+      "short_description": "Bekannt für seinen einzigartigen wachsigen Charakter.",
+      "long_description": "Clynelish 14 Year Old ist ein außergewöhnlicher Highland Malt. Sein Markenzeichen ist die 'wachsige' Textur (Waxy Mouthfeel), die er durch die spezielle Form der Brennblasen und die Ablagerungen darin erhält. Er liegt direkt an der Küste, was sich in einer feinen maritimen Note widerspiegelt.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "clynelish-distillers-edition",
+      "name": "Clynelish Distillers Edition",
+      "slug": "clynelish-distillers-edition",
+      "country_id": "scotland",
+      "region_id": "highlands",
+      "distillery_id": "clynelish",
+      "whisky_type": "single_malt",
+      "style_tags": "wachsig, süß, fruchtig, sherry-finish",
+      "abv": 46,
+      "cask_types": "Refill American & European Oak, Oloroso Seco Sherry Cask Finish",
+      "smoke_profile": "Nicht getorft",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes": {
+        "nose": "Reichhaltig und süß. Kandierte Früchte, Heidehonig und eine Spur Meersalz.",
+        "palate": "Vollmundig und cremig. Getrocknete Früchte (Rosinen, Datteln), Malzsüße und der typische Wachscharakter.",
+        "finish": "Lang, wärmend und komplex mit einer schönen Balance aus Süße und Würze."
+      },
+      "short_description": "Der wachsige Clynelish mit einer extra Portion Fruchtsüße.",
+      "long_description": "In der Distillers Edition wird der Clynelish Single Malt in Oloroso Seco Sherryfässern nachgereift. Das trockene Sherry-Finish harmoniert hervorragend mit dem wachsigen und honigartigen Profil der Destillerie und fügt tiefe Fruchtnoten hinzu.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    }
+  ]
+}
