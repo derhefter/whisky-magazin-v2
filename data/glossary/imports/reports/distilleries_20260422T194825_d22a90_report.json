@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T194825_d22a90",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:48:25Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "auchentoshan",
+        "name": "Auchentoshan",
+        "slug": "auchentoshan",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1823,
+        "owner": "Beam Suntory",
+        "website": "https://www.auchentoshan.com/",
+        "short_description": "Bekannt für seine konsequente Dreifachdestillation, die einen besonders weichen und leichten Whisky erzeugt.",
+        "long_description": "Auchentoshan, gelegen am Fuße der Kilpatrick Hills nahe Glasgow, ist eine der wenigen verbliebenen schottischen Destillerien, die jeden Tropfen ihres Whiskys dreifach destillieren. Dieser Prozess, der eher typisch für irischen Whiskey ist, führt zu einem extrem reinen, leichten und zitrusbetonten Spirit. Auchentoshan wird oft als 'Frühstücks-Whisky' bezeichnet und ist berühmt für seine Zugänglichkeit und die Reifung in einer Vielzahl von Fasstypen wie Oloroso-Sherry oder Bourbon.",
+        "travel_info": "Das Besucherzentrum ist täglich von 10:00 bis 17:00 Uhr geöffnet. Dank der Nähe zu Glasgow ist die Destillerie sehr gut erreichbar. Es werden verschiedene Touren und Masterclasses angeboten. Die Bar schließt um 16:30 Uhr.",
+        "seo_title": "Auchentoshan Destillerie: Der weiche Geist von Glasgow | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Auchentoshan und die Kunst der Dreifachdestillation. Besuche die Brennerei nahe Glasgow und entdecke besonders milde Lowland Single Malts.",
+        "coordinates": {
+          "lat": 55.9221,
+          "lng": -4.4178
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:40:00Z"
+      },
+      "normalized": {
+        "id": "auchentoshan",
+        "name": "Auchentoshan",
+        "slug": "auchentoshan",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1823,
+        "owner": "Beam Suntory",
+        "website": "https://www.auchentoshan.com/",
+        "short_description": "Bekannt für seine konsequente Dreifachdestillation, die einen besonders weichen und leichten Whisky erzeugt.",
+        "long_description": "Auchentoshan, gelegen am Fuße der Kilpatrick Hills nahe Glasgow, ist eine der wenigen verbliebenen schottischen Destillerien, die jeden Tropfen ihres Whiskys dreifach destillieren. Dieser Prozess, der eher typisch für irischen Whiskey ist, führt zu einem extrem reinen, leichten und zitrusbetonten Spirit. Auchentoshan wird oft als 'Frühstücks-Whisky' bezeichnet und ist berühmt für seine Zugänglichkeit und die Reifung in einer Vielzahl von Fasstypen wie Oloroso-Sherry oder Bourbon.",
+        "travel_info": "Das Besucherzentrum ist täglich von 10:00 bis 17:00 Uhr geöffnet. Dank der Nähe zu Glasgow ist die Destillerie sehr gut erreichbar. Es werden verschiedene Touren und Masterclasses angeboten. Die Bar schließt um 16:30 Uhr.",
+        "seo_title": "Auchentoshan Destillerie: Der weiche Geist von Glasgow | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Auchentoshan und die Kunst der Dreifachdestillation. Besuche die Brennerei nahe Glasgow und entdecke besonders milde Lowland Single Malts.",
+        "coordinates": {
+          "lat": 55.9221,
+          "lng": -4.4178
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:48:25Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
