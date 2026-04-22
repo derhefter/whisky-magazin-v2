@@ -19743,7 +19743,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "daftmill-winter-batch-release",
         "name": "Daftmill Winter Batch Release",
@@ -19811,7 +19811,10 @@
         "seo_title": "Daftmill Winter Batch Release kaufen | Handwerklicher Lowland Malt",
         "seo_description": "Entdecken Sie den Daftmill Winter Batch Release: Ein tiefgründiger Lowland Malt mit Marzipan- und Honignoten. Rar und begehrt.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:20Z"
     },
     {
       "batch_id": "whiskies_20260422T195134_528e75",
