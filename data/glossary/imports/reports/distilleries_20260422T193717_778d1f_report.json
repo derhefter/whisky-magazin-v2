@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T193717_778d1f",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:37:17Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "harris",
+        "name": "Isle of Harris",
+        "slug": "harris",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2015,
+        "owner": "Isle of Harris Distillers Ltd.",
+        "website": "https://harrisdistillery.com/",
+        "short_description": "Berühmt für ihren Gin, aber ihr 'The Hearach' Single Malt zeigt den maritimen Charakter der Äußeren Hebriden.",
+        "long_description": "Bekannt als 'The Social Distillery', wurde Isle of Harris 2015 in Tarbert gegründet, um nachhaltige Arbeitsplätze für die Inselgemeinschaft zu schaffen. Während ihr preisgekrönter Gin sofort zum Erfolg wurde, veröffentlichte die Brennerei 2023 ihren ersten Single Malt 'The Hearach'. Der Whisky ist leicht getorft, komplex und maritim; er reift vollständig auf der Insel, um deren einzigartige Atmosphäre einzufangen.",
+        "travel_info": "Die Destillerie liegt direkt am Hafen von Tarbert. Es gibt täglich geführte Touren (Mo-Do sehr beliebt, Vorab-Buchung nötig). Der Shop und die Kantine/Bar bieten lokale Produkte und einen gemütlichen Kamin.",
+        "seo_title": "Isle of Harris Destillerie: Die soziale Brennerei | Whisky-Glossar",
+        "seo_description": "Besuche Isle of Harris in Tarbert. Entdecke 'The Hearach' Single Malt, den berühmten Harris Gin und lerne die Geschichte der 'Social Distillery' kennen.",
+        "coordinates": {
+          "lat": 57.8975,
+          "lng": -6.8039
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:15:00Z"
+      },
+      "normalized": {
+        "id": "harris",
+        "name": "Isle of Harris",
+        "slug": "harris",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2015,
+        "owner": "Isle of Harris Distillers Ltd.",
+        "website": "https://harrisdistillery.com/",
+        "short_description": "Berühmt für ihren Gin, aber ihr 'The Hearach' Single Malt zeigt den maritimen Charakter der Äußeren Hebriden.",
+        "long_description": "Bekannt als 'The Social Distillery', wurde Isle of Harris 2015 in Tarbert gegründet, um nachhaltige Arbeitsplätze für die Inselgemeinschaft zu schaffen. Während ihr preisgekrönter Gin sofort zum Erfolg wurde, veröffentlichte die Brennerei 2023 ihren ersten Single Malt 'The Hearach'. Der Whisky ist leicht getorft, komplex und maritim; er reift vollständig auf der Insel, um deren einzigartige Atmosphäre einzufangen.",
+        "travel_info": "Die Destillerie liegt direkt am Hafen von Tarbert. Es gibt täglich geführte Touren (Mo-Do sehr beliebt, Vorab-Buchung nötig). Der Shop und die Kantine/Bar bieten lokale Produkte und einen gemütlichen Kamin.",
+        "seo_title": "Isle of Harris Destillerie: Die soziale Brennerei | Whisky-Glossar",
+        "seo_description": "Besuche Isle of Harris in Tarbert. Entdecke 'The Hearach' Single Malt, den berühmten Harris Gin und lerne die Geschichte der 'Social Distillery' kennen.",
+        "coordinates": {
+          "lat": 57.8975,
+          "lng": -6.8039
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:17Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
