@@ -1,0 +1,133 @@
+{
+  "batch_id": "whiskies_20260422T190812_db16bd",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:12Z",
+  "total": 2,
+  "new": 2,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "dalwhinnie-15",
+        "name": "Dalwhinnie 15 Year Old",
+        "slug": "dalwhinnie-15",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "dalwhinnie",
+        "whisky_type": "single_malt",
+        "style_tags": "mild, honig, heidekraut, sanft",
+        "abv": 43,
+        "cask_types": "Bourbon Casks",
+        "smoke_profile": "Sehr dezenter Rauch",
+        "age_statement": 15,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Sehr aromatisch mit Noten von Heidekraut, Honig und einem Hauch Torfrauch.",
+          "palate": "Mundfüllend und sanft. Malzige Süße, Vanillecreme und ein Hauch von Zitrusfrüchten.",
+          "finish": "Überraschend lang mit viel Vanille, Honig und einem zarten, trockenen Rauch."
+        },
+        "short_description": "Der 'Gentle Spirit' aus der höchstgelegenen Destillerie Schottlands.",
+        "long_description": "Dalwhinnie 15 Year Old ist bekannt für seine außergewöhnliche Milde und Reinheit. In der rauen Umgebung der Cairngorm Mountains produziert, ist er ein klassischer Highland Malt mit einer wunderbaren Honigsüße und einem nur minimalen Anflug von Rauch.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "dalwhinnie-15",
+        "name": "Dalwhinnie 15 Year Old",
+        "slug": "dalwhinnie-15",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "dalwhinnie",
+        "whisky_type": "single_malt",
+        "style_tags": "mild, honig, heidekraut, sanft",
+        "abv": 43,
+        "cask_types": "Bourbon Casks",
+        "smoke_profile": "Sehr dezenter Rauch",
+        "age_statement": 15,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Sehr aromatisch mit Noten von Heidekraut, Honig und einem Hauch Torfrauch.",
+          "palate": "Mundfüllend und sanft. Malzige Süße, Vanillecreme und ein Hauch von Zitrusfrüchten.",
+          "finish": "Überraschend lang mit viel Vanille, Honig und einem zarten, trockenen Rauch."
+        },
+        "short_description": "Der 'Gentle Spirit' aus der höchstgelegenen Destillerie Schottlands.",
+        "long_description": "Dalwhinnie 15 Year Old ist bekannt für seine außergewöhnliche Milde und Reinheit. In der rauen Umgebung der Cairngorm Mountains produziert, ist er ein klassischer Highland Malt mit einer wunderbaren Honigsüße und einem nur minimalen Anflug von Rauch.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:12Z",
+        "last_updated": "2026-04-22T19:08:12Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "dalwhinnie-winters-gold",
+        "name": "Dalwhinnie Winter's Gold",
+        "slug": "dalwhinnie-winters-gold",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "dalwhinnie",
+        "whisky_type": "single_malt",
+        "style_tags": "süß, honig, wärmend, würzig",
+        "abv": 43,
+        "cask_types": "American Oak Casks",
+        "smoke_profile": "Dezenter Rauch",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Süße Fruchtnoten, Honig, reife Birnen und ein Hauch von Wintergewürzen.",
+          "palate": "Reichhaltig und honigsüß mit Melasse, Sultaninen und einer sanften Wärme.",
+          "finish": "Mittellang, wärmend und süß mit Spuren von dunklem Karamell."
+        },
+        "short_description": "Ein Whisky, der im kalten Winter Schottlands destilliert wird.",
+        "long_description": "Winter's Gold wird ausschließlich in den kalten Wintermonaten destilliert, wenn das Kühlwasser besonders kalt ist. Dies führt zu einem dichteren, honigsüßeren Destillat. Er wird oft direkt aus dem Gefrierfach serviert, um seine Viskosität und Süße zu betonen.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "dalwhinnie-winters-gold",
+        "name": "Dalwhinnie Winter's Gold",
+        "slug": "dalwhinnie-winters-gold",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "dalwhinnie",
+        "whisky_type": "single_malt",
+        "style_tags": "süß, honig, wärmend, würzig",
+        "abv": 43,
+        "cask_types": "American Oak Casks",
+        "smoke_profile": "Dezenter Rauch",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Süße Fruchtnoten, Honig, reife Birnen und ein Hauch von Wintergewürzen.",
+          "palate": "Reichhaltig und honigsüß mit Melasse, Sultaninen und einer sanften Wärme.",
+          "finish": "Mittellang, wärmend und süß mit Spuren von dunklem Karamell."
+        },
+        "short_description": "Ein Whisky, der im kalten Winter Schottlands destilliert wird.",
+        "long_description": "Winter's Gold wird ausschließlich in den kalten Wintermonaten destilliert, wenn das Kühlwasser besonders kalt ist. Dies führt zu einem dichteren, honigsüßeren Destillat. Er wird oft direkt aus dem Gefrierfach serviert, um seine Viskosität und Süße zu betonen.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:12Z",
+        "last_updated": "2026-04-22T19:08:12Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
