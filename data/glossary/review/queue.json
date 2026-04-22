@@ -2617,7 +2617,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "the-balvenie-the-balvenie-doublewood-12-year-old",
         "name": "The Balvenie DoubleWood 12 Year Old",
@@ -2681,7 +2681,10 @@
         "seo_title": "The Balvenie 12 Jahre DoubleWood Single Malt Whisky kaufen",
         "seo_description": "The Balvenie DoubleWood 12 Jahre: Ein harmonischer Speyside Whisky mit Honig-, Vanille- und Sherrynoten. Jetzt online entdecken.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:40:53Z"
     },
     {
       "batch_id": "whiskies_20260422T203936_6b9d51",
