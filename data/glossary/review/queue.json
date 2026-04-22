@@ -160,6 +160,13 @@
       "imported_at": "2026-04-22T18:58:18Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T185821_abbdcc",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T18:58:21Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -4541,6 +4548,56 @@
         "coordinates": {
           "lat": 55.4291,
           "lng": -5.6047
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T08:15:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T185821_abbdcc",
+      "entity": "distilleries",
+      "item_id": "kilkerran",
+      "item_slug": "kilkerran",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "kilkerran",
+        "name": "Glengyle (Kilkerran)",
+        "slug": "kilkerran",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1872,
+        "owner": "J & A Mitchell & Co. Ltd.",
+        "website": "https://kilkerran.scot/",
+        "short_description": "Wurde 2004 wiedereröffnet und produziert unter dem Namen Kilkerran einen klassischen Campbeltown-Malt.",
+        "long_description": "Kilkerran ist der Markenname für Single Malt Whisky, der in der Glengyle-Brennerei in Campbeltown hergestellt wird. Die Destillerie wurde 2004 von der Familie Mitchell (den Eigentümern von Springbank) wiedereröffnet und war die erste neue Brennerei in der Region seit 125 Jahren. Der Name Kilkerran leitet sich vom gälischen 'Ceann Loch Cille Chiarain' ab. Die Whiskys zeichnen sich durch ein leicht rauchiges, öliges und komplexes Profil aus, das ganz in der Tradition der klassischen Campbeltown-Produktionsmethoden steht.",
+        "coordinates": {
+          "lat": 55.4272,
+          "lng": -5.6109
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T18:58:21Z"
+      },
+      "raw": {
+        "id": "kilkerran",
+        "name": "Glengyle (Kilkerran)",
+        "slug": "kilkerran",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1872,
+        "owner": "J & A Mitchell & Co. Ltd.",
+        "website": "https://kilkerran.scot/",
+        "short_description": "Wurde 2004 wiedereröffnet und produziert unter dem Namen Kilkerran einen klassischen Campbeltown-Malt.",
+        "long_description": "Kilkerran ist der Markenname für Single Malt Whisky, der in der Glengyle-Brennerei in Campbeltown hergestellt wird. Die Destillerie wurde 2004 von der Familie Mitchell (den Eigentümern von Springbank) wiedereröffnet und war die erste neue Brennerei in der Region seit 125 Jahren. Der Name Kilkerran leitet sich vom gälischen 'Ceann Loch Cille Chiarain' ab. Die Whiskys zeichnen sich durch ein leicht rauchiges, öliges und komplexes Profil aus, das ganz in der Tradition der klassischen Campbeltown-Produktionsmethoden steht.",
+        "coordinates": {
+          "lat": 55.4272,
+          "lng": -5.6109
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
