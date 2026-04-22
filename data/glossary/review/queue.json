@@ -11419,7 +11419,7 @@
         "ID bereits vorhanden (Duplikat): dalmore"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "dalmore",
         "name": "The Dalmore",
@@ -11431,7 +11431,7 @@
         "owner": "Whyte & Mackay",
         "website": "https://www.thedalmore.com/",
         "short_description": "Eine Luxus-Destillerie, bekannt für ihre schweren, Sherry-betonten Whiskys und das ikonische Hirschgeweih.",
-        "long_description": "The Dalmore, gegründet 1839, liegt am Ufer des Cromarty Firth. Die Brennerei ist berühmt für ihre unkonventionellen, unterschiedlich geformten Brennblasen und ihre Meisterschaft in der Sherryfass-Reifung. Unter der Leitung von Master Distiller Richard Paterson wurde die Marke als Inbegriff von Luxus-Whisky etabliert. Der Stil ist reichhaltig, schokoladig und komplex, oft mit Noten von Orangenmarmelade und Gewürzen. Jede Flasche ziert das 12-endige Hirschgeweih der Familie Mackenzie.",
+        "long_description": "The Dalmore, gegründet 1839, steht als Synonym für Luxus und reichhaltige, in Sherryfässern gereifte Whiskys. An den Ufern des Cromarty Firth gelegen, verfügt sie über ein einzigartiges Set an Brennblasen mit flachen Oberseiten und Wasserkühlmänteln. Unter der langjährigen Leitung von Master Distiller Richard Paterson wurde die Destillerie berühmt für die Verwendung außergewöhnlicher Sherryfässer. Sie produziert Whiskys mit tiefen Noten von Schokolade, Orangen und Gewürzen, verziert mit dem ikonischen 12-endigen Royal Stag-Emblem.",
         "travel_info": "Die Destillerie in Alness eröffnet im April 2026 ein neu gestaltetes Besucherzentrum. Besuche sind exklusiv und müssen im Voraus gebucht werden. Die Lage am Cromarty Firth bietet eine spektakuläre Kulisse.",
         "seo_title": "The Dalmore Destillerie: Luxus und Tradition in den Highlands | Whisky-Glossar",
         "seo_description": "Besuche The Dalmore. Entdecke die Meisterschaft der Sherryfass-Reifung, die Geschichte des Hirschgeweihs und exklusive Highland Single Malts.",
@@ -11441,7 +11441,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:13Z"
+        "last_updated": "2026-04-22T19:31:15Z"
       },
       "raw": {
         "id": "dalmore",
@@ -11465,7 +11465,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T00:35:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:31:15Z"
     },
     {
       "batch_id": "distilleries_20260422T192917_8e003c",
