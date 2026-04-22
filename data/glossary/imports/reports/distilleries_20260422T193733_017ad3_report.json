@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T193733_017ad3",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:37:33Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "raasay",
+        "name": "Isle of Raasay",
+        "slug": "raasay",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2017,
+        "owner": "R&B Distillers",
+        "website": "https://raasaydistillery.com/",
+        "short_description": "Eine junge Destillerie mit Fokus auf innovative Fassreifungen und lokalen Torf.",
+        "long_description": "Die Isle of Raasay Destillerie wurde 2017 eröffnet und ist die erste legale Brennerei auf der Insel. Sie zeichnet sich durch einen einzigartigen Produktionsprozess aus, bei dem getorfte und ungetorfte Destillate in drei verschiedenen Fasstypen (Rye, Chinkapin-Eiche und Bordeaux-Rotwein) reifen. Dieses komplexe Rezept führt zu einem ausgewogenen, fruchtigen und leicht rauchigen Whisky, der trotz seines jungen Alters bereits große Anerkennung gefunden hat.",
+        "travel_info": "Die Insel Raasay ist per 25-minütiger Fähre von Sconser (Skye) erreichbar. Die Destillerie bietet Touren, Tastings und sogar Luxus-Unterkünfte direkt vor Ort an. Eine Buchung im Voraus wird empfohlen.",
+        "seo_title": "Isle of Raasay Destillerie: Innovation auf der Hebriden-Insel | Whisky-Glossar",
+        "seo_description": "Besuche die Isle of Raasay Brennerei. Entdecke innovativen Single Malt, übernachte in der Destillerie und genieße den Blick auf die Cuillin-Berge von Skye.",
+        "coordinates": {
+          "lat": 57.3535,
+          "lng": -6.0766
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:40:00Z"
+      },
+      "normalized": {
+        "id": "raasay",
+        "name": "Isle of Raasay",
+        "slug": "raasay",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2017,
+        "owner": "R&B Distillers",
+        "website": "https://raasaydistillery.com/",
+        "short_description": "Eine junge Destillerie mit Fokus auf innovative Fassreifungen und lokalen Torf.",
+        "long_description": "Die Isle of Raasay Destillerie wurde 2017 eröffnet und ist die erste legale Brennerei auf der Insel. Sie zeichnet sich durch einen einzigartigen Produktionsprozess aus, bei dem getorfte und ungetorfte Destillate in drei verschiedenen Fasstypen (Rye, Chinkapin-Eiche und Bordeaux-Rotwein) reifen. Dieses komplexe Rezept führt zu einem ausgewogenen, fruchtigen und leicht rauchigen Whisky, der trotz seines jungen Alters bereits große Anerkennung gefunden hat.",
+        "travel_info": "Die Insel Raasay ist per 25-minütiger Fähre von Sconser (Skye) erreichbar. Die Destillerie bietet Touren, Tastings und sogar Luxus-Unterkünfte direkt vor Ort an. Eine Buchung im Voraus wird empfohlen.",
+        "seo_title": "Isle of Raasay Destillerie: Innovation auf der Hebriden-Insel | Whisky-Glossar",
+        "seo_description": "Besuche die Isle of Raasay Brennerei. Entdecke innovativen Single Malt, übernachte in der Destillerie und genieße den Blick auf die Cuillin-Berge von Skye.",
+        "coordinates": {
+          "lat": 57.3535,
+          "lng": -6.0766
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:33Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
