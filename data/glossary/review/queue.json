@@ -18097,7 +18097,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aerstone",
         "name": "Aerstone",
@@ -18146,7 +18146,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:17Z"
+      "reviewed_at": "2026-04-22T19:50:17Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194818_2811c0",
@@ -18158,7 +18159,7 @@
         "Slug ungültig (nur a-z, 0-9, Bindestrich): ailsa_bay"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ailsa-bay",
         "name": "Ailsa Bay",
@@ -18207,7 +18208,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:48Z"
+      "reviewed_at": "2026-04-22T19:50:48Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194821_3cd5b4",
@@ -18217,7 +18219,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "annandale",
         "name": "Annandale",
@@ -18266,7 +18268,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:19Z"
+      "reviewed_at": "2026-04-22T19:50:19Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194825_d22a90",
@@ -18276,7 +18279,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "auchentoshan",
         "name": "Auchentoshan",
@@ -18325,7 +18328,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:21Z"
+      "reviewed_at": "2026-04-22T19:50:21Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194828_a3be73",
@@ -18335,7 +18339,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bladnoch",
         "name": "Bladnoch",
@@ -18384,7 +18388,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:22Z"
+      "reviewed_at": "2026-04-22T19:50:22Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194831_12a5d0",
@@ -18394,7 +18399,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "daftmill",
         "name": "Daftmill",
@@ -18443,7 +18448,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:23Z"
+      "reviewed_at": "2026-04-22T19:50:23Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194834_6946b6",
@@ -18453,7 +18459,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenkinchie",
         "name": "Glenkinchie",
@@ -18502,7 +18508,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:25Z"
+      "reviewed_at": "2026-04-22T19:50:25Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194837_dc8ddb",
@@ -18512,7 +18519,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kingsbarns",
         "name": "Kingsbarns",
@@ -18561,7 +18568,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:26Z"
+      "reviewed_at": "2026-04-22T19:50:26Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194840_1c2d91",
@@ -18573,7 +18581,7 @@
         "Slug ungültig (nur a-z, 0-9, Bindestrich): lindores_abbey"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lindores-abbey",
         "name": "Lindores Abbey",
@@ -18622,7 +18630,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:07Z"
+      "reviewed_at": "2026-04-22T19:50:07Z",
+      "published_at": "2026-04-22T19:50:52Z"
     },
     {
       "batch_id": "distilleries_20260422T194843_e48d58",
@@ -18632,7 +18641,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lochlea",
         "name": "Lochlea",
@@ -18681,7 +18690,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:50:28Z"
+      "reviewed_at": "2026-04-22T19:50:28Z",
+      "published_at": "2026-04-22T19:50:52Z"
     }
   ]
 }
