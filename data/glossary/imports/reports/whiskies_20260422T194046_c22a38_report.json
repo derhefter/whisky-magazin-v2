@@ -1,0 +1,73 @@
+{
+  "batch_id": "whiskies_20260422T194046_c22a38",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:40:46Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "tobermory-12-year-old",
+        "name": "Tobermory 12 Year Old",
+        "slug": "tobermory-12-year-old",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tobermory",
+        "whisky_type": "single_malt",
+        "style_tags": "fruchtig, floral, maritim, honig",
+        "abv": 46.3,
+        "cask_types": "American Oak",
+        "smoke_profile": "Ungetorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Reife Birnen, Orangen, florale Noten und Honig.",
+          "palate": "Süße Orangen, Karamell, Malz und eine leichte Salznote.",
+          "finish": "Mittellang, frisch und fruchtig."
+        },
+        "short_description": "Der ungetorfte Klassiker von der Isle of Mull.",
+        "long_description": "Tobermory 12 Year Old ist der Standard-Malt der gleichnamigen Brennerei. Er wird ohne Kühlfiltrierung und in natürlicher Farbe abgefüllt, um seinen vollen, fruchtigen Charakter zu bewahren.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "tobermory-12-year-old",
+        "name": "Tobermory 12 Year Old",
+        "slug": "tobermory-12-year-old",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tobermory",
+        "whisky_type": "single_malt",
+        "style_tags": "fruchtig, floral, maritim, honig",
+        "abv": 46.3,
+        "cask_types": "American Oak",
+        "smoke_profile": "Ungetorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Reife Birnen, Orangen, florale Noten und Honig.",
+          "palate": "Süße Orangen, Karamell, Malz und eine leichte Salznote.",
+          "finish": "Mittellang, frisch und fruchtig."
+        },
+        "short_description": "Der ungetorfte Klassiker von der Isle of Mull.",
+        "long_description": "Tobermory 12 Year Old ist der Standard-Malt der gleichnamigen Brennerei. Er wird ohne Kühlfiltrierung und in natürlicher Farbe abgefüllt, um seinen vollen, fruchtigen Charakter zu bewahren.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:40:46Z",
+        "last_updated": "2026-04-22T19:40:46Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
