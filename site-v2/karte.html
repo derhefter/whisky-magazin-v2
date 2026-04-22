@@ -120,7 +120,8 @@
                 <select id="filter-country"><option value="">Alle Länder</option></select>
             </div>
             <div class="filter-group filter-toggles">
-                <label class="toggle-label"><input type="checkbox" id="toggle-distillery" checked> Destillerien</label>
+                <label class="toggle-label" title="Destillerien die wir besucht haben"><input type="checkbox" id="toggle-visited" checked> 🥃 Besucht</label>
+                <label class="toggle-label" title="Destillerien auf unserer Wunschliste"><input type="checkbox" id="toggle-unvisited"> 🥃 Geplant</label>
                 <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswürdigkeiten</label>
             </div>
             <div class="map-stats" id="map-stats"></div>
@@ -286,6 +287,7 @@
             transform: translateY(-2px);
         }
         .dir-item.type-distillery { border-left: 3px solid var(--accent-amber); }
+        .dir-item.type-distillery-unvisited { border-left: 3px solid #c8b89a; opacity: 0.75; }
         .dir-item.type-city { border-left: 3px solid var(--accent-sage); }
         .dir-item.type-nature { border-left: 3px solid #5B8C5A; }
         .dir-item.type-poi { border-left: 3px solid var(--accent-warm); }
@@ -317,10 +319,24 @@
             padding: 8px 0;
         }
         .type-distillery { background: var(--bg-surface); color: var(--accent-amber); }
+        .type-distillery-unvisited { background: rgba(200,150,62,0.06); color: #a0896a; }
         .type-city { background: rgba(91,123,106,0.12); color: var(--accent-sage); }
         .type-nature { background: rgba(91,140,90,0.12); color: #5B8C5A; }
         .type-poi { background: rgba(196,88,58,0.12); color: var(--accent-warm); }
         .type-travel_stop { background: rgba(138,125,107,0.12); color: var(--accent-muted); }
+
+        /* Glossar-Link im Popup */
+        .popup-glossar-link {
+            display: inline-block; margin-top: 8px; font-size: 0.78em;
+            color: var(--accent-amber); text-decoration: none;
+            border: 1px solid var(--accent-amber); padding: 3px 10px; border-radius: 4px;
+            transition: background 0.15s;
+        }
+        .popup-glossar-link:hover { background: rgba(200,150,62,0.1); }
+        .popup-not-visited {
+            display: inline-block; font-size: 0.78em; color: var(--text-secondary);
+            background: var(--bg-surface); padding: 3px 8px; border-radius: 4px; margin: 4px 0;
+        }
 
         /* Popup-Styles */
         .map-popup { min-width: 220px; max-width: 300px; font-family: 'Inter', sans-serif; }
@@ -386,7 +402,16 @@
 
         // Icons
         const ICONS = {
-            distillery: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:22px">🥃</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
+            distillery_visited: L.divIcon({
+                className: 'custom-marker',
+                html: '<div style="font-size:26px;filter:drop-shadow(0 2px 5px rgba(200,150,62,0.55));line-height:1;">🥃</div>',
+                iconSize: [36, 36], iconAnchor: [18, 18]
+            }),
+            distillery_unvisited: L.divIcon({
+                className: 'custom-marker',
+                html: '<div style="font-size:18px;opacity:0.45;filter:grayscale(90%);line-height:1;">🥃</div>',
+                iconSize: [26, 26], iconAnchor: [13, 13]
+            }),
             city: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:20px">🏙️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
             nature: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:20px">🌿</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
             poi: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:20px">📍</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
@@ -467,8 +492,24 @@
         function createPopup(loc) {
             let html = '<div class="map-popup">';
             html += '<h3>' + loc.name + '</h3>';
-            html += '<span class="popup-type type-' + loc.type + '">' + (TYPE_LABELS[loc.type] || loc.type) + '</span>';
-            html += ' <span style="font-size:0.75em;color:var(--text-secondary)">' + loc.region + ', ' + loc.country + '</span>';
+
+            // Typ-Badge + Ort
+            const typeLabel = TYPE_LABELS[loc.type] || loc.type;
+            html += '<span class="popup-type type-' + loc.type + '">' + typeLabel + '</span>';
+            const locParts = [loc.region, loc.country && loc.country !== 'Schottland' ? loc.country : null].filter(Boolean);
+            if (locParts.length) {
+                html += ' <span style="font-size:0.75em;color:var(--text-secondary)">' + locParts.join(', ') + '</span>';
+            }
+
+            // Destillerie-spezifische Zusatzinfos (Glossar)
+            if (loc.type === 'distillery') {
+                if (loc.founded) {
+                    html += '<div style="font-size:0.72em;color:var(--text-secondary);margin:2px 0 4px;">gegr. ' + loc.founded + '</div>';
+                }
+                if (loc.short_description) {
+                    html += '<p style="font-size:0.8em;color:var(--text-secondary);margin:4px 0 6px;line-height:1.4;">' + loc.short_description + '</p>';
+                }
+            }
 
             // Fotos
             if (loc.photos && loc.photos.length > 0) {
@@ -479,8 +520,14 @@
                 html += '</div>';
             }
 
-            // Besuchsjahre
-            if (loc.years_visited && loc.years_visited.length > 0) {
+            // Besuchsjahre oder "Noch nicht besucht"-Badge
+            if (loc.type === 'distillery') {
+                if (loc.visited && loc.years_visited && loc.years_visited.length > 0) {
+                    html += '<div class="popup-years">✓ Besucht: ' + loc.years_visited.join(', ') + '</div>';
+                } else if (!loc.visited) {
+                    html += '<span class="popup-not-visited">⌖ Noch nicht besucht</span>';
+                }
+            } else if (loc.years_visited && loc.years_visited.length > 0) {
                 html += '<div class="popup-years">Besucht: ' + loc.years_visited.join(', ') + '</div>';
             }
 
@@ -490,10 +537,15 @@
                 loc.articles.forEach(slug => {
                     const meta = mapData.articles[slug];
                     if (meta) {
-                        html += '<a href="' + LOCAL_BASE + '/artikel/' + slug + '.html">' + meta.title + '</a>';
+                        html += '<a href="' + LOCAL_BASE + '/artikel/' + slug + '.html">📖 ' + meta.title + '</a>';
                     }
                 });
                 html += '</div>';
+            }
+
+            // Glossar-Link für Destillerien
+            if (loc.type === 'distillery' && loc.glossary_url) {
+                html += '<a href="' + loc.glossary_url + '" class="popup-glossar-link">🥃 Im Glossar ansehen</a>';
             }
 
             html += '</div>';
@@ -509,9 +561,16 @@
                 const dedupeKey = loc.name.toLowerCase() + '|' + loc.type;
                 if (seenMarkers.has(dedupeKey)) return;
                 seenMarkers.add(dedupeKey);
-                const icon = ICONS[loc.type] || ICONS.poi;
-                const marker = L.marker([loc.lat, loc.lon], { icon: icon });
-                marker.bindPopup(createPopup(loc), { maxWidth: 320 });
+                // Icon je nach Typ + Besucht-Status
+                let icon;
+                if (loc.type === 'distillery') {
+                    icon = loc.visited ? ICONS.distillery_visited : ICONS.distillery_unvisited;
+                } else {
+                    icon = ICONS[loc.type] || ICONS.poi;
+                }
+                const zOffset = (loc.type === 'distillery' && loc.visited) ? 500 : 0;
+                const marker = L.marker([loc.lat, loc.lon], { icon: icon, zIndexOffset: zOffset, riseOnHover: true });
+                marker.bindPopup(createPopup(loc), { maxWidth: 340 });
                 marker._locData = loc;
                 allMarkers.push(marker);
                 markerCluster.addLayer(marker);
@@ -537,8 +596,9 @@
             const container = document.getElementById('location-cards');
 
             const SECTIONS = [
-                { key: 'distillery', icon: '🥃', label: 'Destillerien' },
-                { key: 'poi',        icon: '📍', label: 'Sehenswürdigkeiten' },
+                { filter: l => l.type === 'distillery' && l.visited,  icon: '🥃', label: 'Besuchte Destillerien', cssType: 'distillery' },
+                { filter: l => l.type === 'distillery' && !l.visited, icon: '🥃', label: 'Weitere Destillerien',  cssType: 'distillery-unvisited' },
+                { filter: l => l.type === 'poi',                       icon: '📍', label: 'Sehenswürdigkeiten',    cssType: 'poi' },
             ];
 
             let html = '';
@@ -547,7 +607,7 @@
                 const seenNames = new Set();
                 const items = locations
                     .filter(l => {
-                        if (l.type !== sec.key) return false;
+                        if (!sec.filter(l)) return false;
                         const key = l.name.toLowerCase();
                         if (seenNames.has(key)) return false;
                         seenNames.add(key);
@@ -573,9 +633,9 @@
                         ? (mapData.articles[loc.articles[0]] || null) : null;
                     const href = firstArticle
                         ? LOCAL_BASE + '/artikel/' + loc.articles[0] + '.html'
-                        : '#';
+                        : (loc.glossary_url || '#');
 
-                    html += '<a class="dir-item type-' + loc.type + '" data-loc-id="' + loc.id + '" href="' + href + '">'
+                    html += '<a class="dir-item type-' + sec.cssType + '" data-loc-id="' + loc.id + '" href="' + href + '">'
                         + '<span class="dir-item-name">' + loc.name + '</span>'
                         + '<span class="dir-item-region">' + loc.region + (loc.country && loc.country !== 'Schottland' ? ', ' + loc.country : '') + '</span>'
                         + '<div class="dir-item-footer">'
@@ -608,10 +668,12 @@
         }
 
         function updateStats(locations) {
-            const visible = getVisibleLocations(locations);
-            const distCount = visible.filter(l => l.type === 'distillery').length;
+            if (!mapData) return;
+            const allDists = mapData.locations.filter(l => l.type === 'distillery');
+            const visitedTotal = allDists.filter(l => l.visited).length;
+            const unvisitedTotal = allDists.length - visitedTotal;
             document.getElementById('map-stats').textContent =
-                visible.length + ' Orte, davon ' + distCount + ' Destillerien';
+                '🥃 ' + visitedTotal + ' besucht · ' + unvisitedTotal + ' geplant';
         }
 
         function getVisibleLocations(locations) {
@@ -620,9 +682,9 @@
             const country = document.getElementById('filter-country').value;
             const searchEl = document.getElementById('search-input');
             const query   = searchEl ? searchEl.value.trim().toLowerCase() : '';
-            // Nur Destillerien und Sehenswürdigkeiten (poi) anzeigen
-            const types = ['distillery', 'poi']
-                .filter(t => document.getElementById('toggle-' + t) && document.getElementById('toggle-' + t).checked);
+            const showVisited   = document.getElementById('toggle-visited')?.checked ?? true;
+            const showUnvisited = document.getElementById('toggle-unvisited')?.checked ?? false;
+            const showPoi       = document.getElementById('toggle-poi')?.checked ?? true;
 
             // Deduplizierung: Locations mit gleicher lat/lon+name werden zusammengeführt
             const seen = new Set();
@@ -630,11 +692,21 @@
                 if (year && !loc.years_visited.includes(parseInt(year))) return false;
                 if (region && loc.region !== region) return false;
                 if (country && loc.country !== country) return false;
-                if (!types.includes(loc.type)) return false;
+
+                if (loc.type === 'distillery') {
+                    if (loc.visited && !showVisited) return false;
+                    if (!loc.visited && !showUnvisited) return false;
+                } else if (loc.type === 'poi') {
+                    if (!showPoi) return false;
+                } else {
+                    return false;
+                }
+
                 if (query) {
                     const nameMatch = loc.name.toLowerCase().includes(query);
                     const regionMatch = (loc.region || '').toLowerCase().includes(query);
-                    if (!nameMatch && !regionMatch) return false;
+                    const descMatch = (loc.short_description || '').toLowerCase().includes(query);
+                    if (!nameMatch && !regionMatch && !descMatch) return false;
                 }
                 // Duplikat-Schutz: gleicher Name + gleicher Typ = nur einmal zeigen
                 const key = loc.name.toLowerCase() + '|' + loc.type;
@@ -665,6 +737,10 @@
         const TYPE_ICONS = {
             distillery: '🥃', city: '🏙️', nature: '🌿', poi: '📍', travel_stop: '✈️'
         };
+        function getSuggestionIcon(loc) {
+            if (loc.type === 'distillery') return loc.visited ? '🥃' : '🫗';
+            return TYPE_ICONS[loc.type] || '📍';
+        }
         let suggestionIndex = -1;
 
         function handleSearchInput(val) {
@@ -699,10 +775,10 @@
 
             box.innerHTML = matches.map((l, i) => `
                 <div class="suggestion-item" data-index="${i}" data-name="${l.name}" data-lat="${l.lat}" data-lon="${l.lon}" data-type="${l.type}">
-                    <span class="suggestion-type">${TYPE_ICONS[l.type] || '📍'}</span>
+                    <span class="suggestion-type">${getSuggestionIcon(l)}</span>
                     <div>
                         <div class="suggestion-name">${l.name}</div>
-                        <div class="suggestion-meta">${TYPE_LABELS[l.type] || l.type} · ${l.region}${l.country && l.country !== 'Schottland' ? ', ' + l.country : ''}</div>
+                        <div class="suggestion-meta">${TYPE_LABELS[l.type] || l.type}${l.visited ? ' · besucht' : (l.type === 'distillery' ? ' · geplant' : '')} · ${l.region}${l.country && l.country !== 'Schottland' ? ', ' + l.country : ''}</div>
                     </div>
                 </div>
             `).join('');
@@ -769,8 +845,9 @@
         ['filter-year', 'filter-region', 'filter-country'].forEach(id => {
             document.getElementById(id).addEventListener('change', applyFilters);
         });
-        ['toggle-distillery', 'toggle-poi'].forEach(id => {
-            document.getElementById(id).addEventListener('change', applyFilters);
+        ['toggle-visited', 'toggle-unvisited', 'toggle-poi'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('change', applyFilters);
         });
 
         // URL-Parameter verarbeiten
