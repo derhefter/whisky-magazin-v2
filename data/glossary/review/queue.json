@@ -3310,7 +3310,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "glenfarclas-glenfarclas-105-cask-strength",
         "name": "Glenfarclas 105 Cask Strength",
@@ -3374,7 +3374,10 @@
         "seo_title": "Glenfarclas 105 Cask Strength Whisky kaufen | 60% vol.",
         "seo_description": "Glenfarclas 105: Der legendäre Single Malt in Fassstärke. Intensiver Sherry, massive Kraft und überraschende Weichheit.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:04Z"
     },
     {
       "batch_id": "whiskies_20260422T203944_f44fce",
