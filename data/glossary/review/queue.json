@@ -587,6 +587,13 @@
       "imported_at": "2026-04-22T19:29:36Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T192939_af088f",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:29:39Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -11838,6 +11845,64 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:10:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T192939_af088f",
+      "entity": "distilleries",
+      "item_id": "oban",
+      "item_slug": "oban",
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): oban"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "oban",
+        "name": "Oban",
+        "slug": "oban",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1794,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/oban",
+        "short_description": "Eine kompakte Brennerei im Herzen der gleichnamigen Hafenstadt, die einen salzigen, leicht rauchigen Highland-Malt liefert.",
+        "long_description": "Oban wurde 1794 gegründet und ist eine der wenigen Destillerien, die direkt in einem Stadtzentrum liegen. Tatsächlich wuchs die Stadt Oban um die Brennerei herum. Sie nutzt kleine Brennblasen und traditionelle Worm Tubs, was zu einem reichen und komplexen Spirit führt. Der Charakter von Oban ist eine perfekte Brücke zwischen den Inseln und den Highlands: maritim, salzig, mit einer sanften Rauchigkeit und Noten von Feigen und Honig.",
+        "travel_info": "Die Destillerie liegt mitten im Stadtzentrum von Oban. Das Besucherzentrum ist täglich geöffnet. Die Bar bietet exzellente Tastings. Aufgrund der Lage und Beliebtheit sind Touren oft schnell ausgebucht; Vorab-Reservierung ist wichtig.",
+        "seo_title": "Oban Destillerie: Der maritime Geist der Highlands | Whisky-Glossar",
+        "seo_description": "Besuche die Oban Brennerei am Tor zu den Inseln. Entdecke den perfekt balancierten Single Malt, das urbane Besucherzentrum und den maritimen Charme der Hafenstadt.",
+        "coordinates": {
+          "lat": 56.4153,
+          "lng": -5.4719
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:29:39Z"
+      },
+      "raw": {
+        "id": "oban",
+        "name": "Oban",
+        "slug": "oban",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1794,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/oban",
+        "short_description": "Eine kompakte Brennerei im Herzen der gleichnamigen Hafenstadt, die einen salzigen, leicht rauchigen Highland-Malt liefert.",
+        "long_description": "Oban wurde 1794 gegründet und ist eine der wenigen Destillerien, die direkt in einem Stadtzentrum liegen. Tatsächlich wuchs die Stadt Oban um die Brennerei herum. Sie nutzt kleine Brennblasen und traditionelle Worm Tubs, was zu einem reichen und komplexen Spirit führt. Der Charakter von Oban ist eine perfekte Brücke zwischen den Inseln und den Highlands: maritim, salzig, mit einer sanften Rauchigkeit und Noten von Feigen und Honig.",
+        "travel_info": "Die Destillerie liegt mitten im Stadtzentrum von Oban. Das Besucherzentrum ist täglich geöffnet. Die Bar bietet exzellente Tastings. Aufgrund der Lage und Beliebtheit sind Touren oft schnell ausgebucht; Vorab-Reservierung ist wichtig.",
+        "seo_title": "Oban Destillerie: Der maritime Geist der Highlands | Whisky-Glossar",
+        "seo_description": "Besuche die Oban Brennerei am Tor zu den Inseln. Entdecke den perfekt balancierten Single Malt, das urbane Besucherzentrum und den maritimen Charme der Hafenstadt.",
+        "coordinates": {
+          "lat": 56.4153,
+          "lng": -5.4719
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T01:15:00Z"
       }
     }
   ]
