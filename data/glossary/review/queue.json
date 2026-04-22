@@ -7237,7 +7237,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "craigellachie-craigellachie-17-year-old",
         "name": "Craigellachie 17 Year Old",
@@ -7301,7 +7301,10 @@
         "seo_title": "Craigellachie 17 Jahre Single Malt Whisky online bestellen",
         "seo_description": "Craigellachie 17 Jahre: Komplex, fruchtig und robust. Erfahren Sie mehr über diesen außergewöhnlichen Speyside Whisky.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:43Z"
     },
     {
       "batch_id": "whiskies_20260422T204315_2d634e",
