@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T193721_3d846e",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:37:21Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "highland-park",
+        "name": "Highland Park",
+        "slug": "highland-park",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Edrington",
+        "website": "https://www.highlandparkwhisky.com/",
+        "short_description": "Die nördlichste Destillerie auf Orkney, nutzt Heidekraut-Torf für eine einzigartige florale Rauchigkeit.",
+        "long_description": "Highland Park ist eine der wenigen Brennereien, die noch traditionelle Malzböden nutzt und Torf aus dem lokalen Hobbister Moor sticht. In Kirkwall auf Orkney gelegen, produziert sie einen weltweit geschätzten 'Allrounder'. Sein Charakter ist geprägt von einer Balance aus floralem Heidekraut-Rauch, reichem Malz und honigartiger Süße – ein Profil, das oft auf den Mangel an Holz im Orkney-Torf zurückgeführt wird.",
+        "travel_info": "Die Brennerei am Stadtrand von Kirkwall bietet verschiedene Touren an. Da Highland Park eine der meistbesuchten Destillerien ist, sollte man Monate im Voraus buchen. Von Juni bis August gibt es oft Wartungsphasen ('Silent Season'), die das Tourenangebot einschränken können.",
+        "seo_title": "Highland Park Destillerie: Wikinger-Erbe auf Orkney | Whisky-Glossar",
+        "seo_description": "Erfahre alles über Highland Park. Entdecke den einzigartigen Heidekraut-Torf, die Wikinger-Tradition und besuche das Besucherzentrum in Kirkwall auf Orkney.",
+        "coordinates": {
+          "lat": 58.9842,
+          "lng": -2.96
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:20:00Z"
+      },
+      "normalized": {
+        "id": "highland-park",
+        "name": "Highland Park",
+        "slug": "highland-park",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Edrington",
+        "website": "https://www.highlandparkwhisky.com/",
+        "short_description": "Die nördlichste Destillerie auf Orkney, nutzt Heidekraut-Torf für eine einzigartige florale Rauchigkeit.",
+        "long_description": "Highland Park ist eine der wenigen Brennereien, die noch traditionelle Malzböden nutzt und Torf aus dem lokalen Hobbister Moor sticht. In Kirkwall auf Orkney gelegen, produziert sie einen weltweit geschätzten 'Allrounder'. Sein Charakter ist geprägt von einer Balance aus floralem Heidekraut-Rauch, reichem Malz und honigartiger Süße – ein Profil, das oft auf den Mangel an Holz im Orkney-Torf zurückgeführt wird.",
+        "travel_info": "Die Brennerei am Stadtrand von Kirkwall bietet verschiedene Touren an. Da Highland Park eine der meistbesuchten Destillerien ist, sollte man Monate im Voraus buchen. Von Juni bis August gibt es oft Wartungsphasen ('Silent Season'), die das Tourenangebot einschränken können.",
+        "seo_title": "Highland Park Destillerie: Wikinger-Erbe auf Orkney | Whisky-Glossar",
+        "seo_description": "Erfahre alles über Highland Park. Entdecke den einzigartigen Heidekraut-Torf, die Wikinger-Tradition und besuche das Besucherzentrum in Kirkwall auf Orkney.",
+        "coordinates": {
+          "lat": 58.9842,
+          "lng": -2.96
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:21Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
