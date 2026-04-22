@@ -5936,7 +5936,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "macallan-the-macallan-sherry-oak-12-year-old",
         "name": "The Macallan Sherry Oak 12 Year Old",
@@ -6000,7 +6000,10 @@
         "seo_title": "The Macallan Sherry Oak 12 Jahre Whisky kaufen | Jerez Sherry Cask",
         "seo_description": "Der Macallan Sherry Oak 12 Jahre: Ein luxuriöser Speyside Single Malt mit intensiven Sherrynoten und Trockenfrüchten.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:44Z"
     },
     {
       "batch_id": "whiskies_20260422T204016_f548ed",
