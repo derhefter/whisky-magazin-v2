@@ -10884,7 +10884,7 @@
         "ID bereits vorhanden (Duplikat): glenscotia"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "glenscotia",
         "name": "Glen Scotia",
@@ -10896,7 +10896,7 @@
         "owner": "Loch Lomond Group",
         "website": "https://www.glenscotia.com/",
         "short_description": "Eine der kleinsten Destillerien Schottlands, bewahrt den maritimen und salzigen Charakter von Campbeltown.",
-        "long_description": "Glen Scotia wurde 1832 gegründet und ist eine der drei verbliebenen Brennereien in Campbeltown, der einstigen 'Whisky-Hauptstadt der Welt'. Die Destillerie hat viel von ihrem ursprünglichen Charakter bewahrt, einschließlich der viktorianischen Ausstattung. Ihr Whisky ist bekannt für sein typisches Campbeltown-Profil: eine Kombination aus maritimer Salzigkeit, sanftem Rauch und einer öligen Textur, oft ergänzt durch reiche Fruchtnoten aus der Reifung in Sherry- oder Bourbonfässern.",
+        "long_description": "Gegründet im Jahr 1832 in Campbeltown, der einstigen 'Whisky-Hauptstadt der Welt', ist Glen Scotia eine der drei verbliebenen Brennereien in der Region. Die Destillerie blickt auf eine wechselvolle Geschichte mit häufigen Besitzerwechseln und Stilllegungsphasen zurück, wurde jedoch unter der Loch Lomond Group erfolgreich revitalisiert. Glen Scotia ist bekannt für ihren maritimen Charakter und produziert sowohl rauchige als auch nicht-rauchige Whiskys, die das klassische ölige und salzige Profil eines Campbeltown-Malts perfekt widerspiegeln.",
         "travel_info": "Das Besucherzentrum ist Mo-Sa von 10:00 bis 17:00 Uhr geöffnet. Es werden verschiedene Touren angeboten, darunter die beliebte 'Dunnage Warehouse Experience'. Eine Buchung im Voraus wird empfohlen.",
         "seo_title": "Glen Scotia Destillerie: Maritimer Whisky aus Campbeltown | Whisky-Glossar",
         "seo_description": "Besuche Glen Scotia, eine der letzten Brennereien in Campbeltown. Entdecke preisgekrönten Single Malt mit salzigem Charakter und viktorianischem Charme.",
@@ -10906,7 +10906,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:27:17Z"
+        "last_updated": "2026-04-22T19:27:49Z"
       },
       "raw": {
         "id": "glenscotia",
@@ -10930,7 +10930,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T23:10:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:27:49Z"
     },
     {
       "batch_id": "distilleries_20260422T192720_c319e1",
