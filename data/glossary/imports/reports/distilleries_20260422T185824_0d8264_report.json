@@ -1,0 +1,61 @@
+{
+  "batch_id": "distilleries_20260422T185824_0d8264",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T18:58:24Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "springbank",
+        "name": "Springbank",
+        "slug": "springbank",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1828,
+        "owner": "J & A Mitchell & Co. Ltd.",
+        "website": "https://www.springbank.scot/",
+        "short_description": "Eine Ikone der Handwerklichkeit; führt 100% der Produktion inklusive Mälzen und Abfüllen vor Ort durch.",
+        "long_description": "Springbank nimmt unter den schottischen Brennereien eine absolute Sonderstellung ein: Sie ist die älteste unabhängige Brennerei in Familienbesitz und führt 100% ihrer Produktion direkt vor Ort durch – einschließlich des traditionellen Mälzens auf eigenen Tenne-Böden (Floor Malting). In Campbeltown gelegen, produziert sie drei unterschiedliche Marken: Springbank (2,5-fach destilliert, leicht rauchig), Longrow (zweifach destilliert, stark rauchig) und Hazelburn (dreifach destilliert, ungetorft). Springbank ist ein Kultfavorit, bekannt für ihren komplexen, leicht industriellen und öligen Charakter.",
+        "coordinates": {
+          "lat": 55.4258,
+          "lng": -5.608
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T08:15:00Z"
+      },
+      "normalized": {
+        "id": "springbank",
+        "name": "Springbank",
+        "slug": "springbank",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1828,
+        "owner": "J & A Mitchell & Co. Ltd.",
+        "website": "https://www.springbank.scot/",
+        "short_description": "Eine Ikone der Handwerklichkeit; führt 100% der Produktion inklusive Mälzen und Abfüllen vor Ort durch.",
+        "long_description": "Springbank nimmt unter den schottischen Brennereien eine absolute Sonderstellung ein: Sie ist die älteste unabhängige Brennerei in Familienbesitz und führt 100% ihrer Produktion direkt vor Ort durch – einschließlich des traditionellen Mälzens auf eigenen Tenne-Böden (Floor Malting). In Campbeltown gelegen, produziert sie drei unterschiedliche Marken: Springbank (2,5-fach destilliert, leicht rauchig), Longrow (zweifach destilliert, stark rauchig) und Hazelburn (dreifach destilliert, ungetorft). Springbank ist ein Kultfavorit, bekannt für ihren komplexen, leicht industriellen und öligen Charakter.",
+        "coordinates": {
+          "lat": 55.4258,
+          "lng": -5.608
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T18:58:24Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
