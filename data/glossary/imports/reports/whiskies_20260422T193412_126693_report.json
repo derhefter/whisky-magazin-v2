@@ -1,0 +1,72 @@
+{
+  "batch_id": "whiskies_20260422T193412_126693",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:34:12Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "ardnahoe",
+        "name": "Ardnahoe",
+        "slug": "ardnahoe",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2018,
+        "owner": "Hunter Laing & Co.",
+        "website": "https://ardnahoedistillery.com/",
+        "short_description": "Die neueste Destillerie auf Islay, die traditionelle Methoden wie hölzerne Worm Tubs nutzt.",
+        "long_description": "Ardnahoe ist die neunte Destillerie auf Islay und wurde 2018 vom unabhängigen Abfüller Hunter Laing eröffnet. An der Nordostküste gelegen, bietet sie einen spektakulären Blick auf die Paps of Jura. Als einzige Brennerei auf Islay nutzt sie traditionelle Worm Tubs zur Kondensation des Spirits, um einen klassischen, schweren und torfigen Islay-Malt mit viel Tiefe und Textur zu erzeugen.",
+        "travel_info": "Das Besucherzentrum ist Di-Sa von 9:30 bis 17:00 Uhr geöffnet. Das Café & Bar bietet neben Whisky auch Speisen und einen tollen Ausblick. Touren finden meist um 10:30 und 13:30 Uhr statt; eine Online-Buchung wird empfohlen.",
+        "seo_title": "Ardnahoe Destillerie: Islays modernste Brennerei | Whisky-Glossar",
+        "seo_description": "Entdecke Ardnahoe auf Islay. Erfahre mehr über die traditionellen Worm Tubs, das Besucherzentrum mit Café und die rauchigen Whiskys der Familie Laing.",
+        "coordinates": {
+          "lat": 55.8689,
+          "lng": -6.1175
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T21:25:00Z"
+      },
+      "normalized": {
+        "id": "ardnahoe",
+        "name": "Ardnahoe",
+        "slug": "ardnahoe",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2018,
+        "owner": "Hunter Laing & Co.",
+        "website": "https://ardnahoedistillery.com/",
+        "short_description": "Die neueste Destillerie auf Islay, die traditionelle Methoden wie hölzerne Worm Tubs nutzt.",
+        "long_description": "Ardnahoe ist die neunte Destillerie auf Islay und wurde 2018 vom unabhängigen Abfüller Hunter Laing eröffnet. An der Nordostküste gelegen, bietet sie einen spektakulären Blick auf die Paps of Jura. Als einzige Brennerei auf Islay nutzt sie traditionelle Worm Tubs zur Kondensation des Spirits, um einen klassischen, schweren und torfigen Islay-Malt mit viel Tiefe und Textur zu erzeugen.",
+        "travel_info": "Das Besucherzentrum ist Di-Sa von 9:30 bis 17:00 Uhr geöffnet. Das Café & Bar bietet neben Whisky auch Speisen und einen tollen Ausblick. Touren finden meist um 10:30 und 13:30 Uhr statt; eine Online-Buchung wird empfohlen.",
+        "seo_title": "Ardnahoe Destillerie: Islays modernste Brennerei | Whisky-Glossar",
+        "seo_description": "Entdecke Ardnahoe auf Islay. Erfahre mehr über die traditionellen Worm Tubs, das Besucherzentrum mit Café und die rauchigen Whiskys der Familie Laing.",
+        "coordinates": {
+          "lat": 55.8689,
+          "lng": -6.1175
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:34:12Z"
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
