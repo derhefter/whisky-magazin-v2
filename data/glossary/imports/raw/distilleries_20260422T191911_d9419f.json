@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T191911_d9419f",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:19:11Z",
+  "raw": [
+    {
+      "id": "midleton",
+      "name": "Midleton Distillery",
+      "slug": "midleton",
+      "region_id": "republic-of-ireland",
+      "country_id": "ireland",
+      "status": "active",
+      "founded": 1975,
+      "owner": "Pernod Ricard (Irish Distillers)",
+      "website": "https://www.jamesonwhiskey.com/en-ie/visit-our-distilleries/midleton-distillery-cork/",
+      "short_description": "Das Kraftzentrum des irischen Whiskeys, Heimat von Jameson, Redbreast und den Spot Whiskeys.",
+      "long_description": "Die Midleton Distillery in County Cork ist eine der modernsten und größten Brennereien der Welt. Sie wurde 1975 direkt neben der alten Brennerei (Old Midleton) errichtet, um die Produktion der Marken Jameson, Powers und Paddy zu konsolidieren. Heute ist sie das Epizentrum für Single Pot Still Irish Whiskey. Die Brennerei verfügt über eine beeindruckende Kapazität und nutzt sowohl riesige Pot Stills als auch Column Stills. Hier entstehen einige der prestigeträchtigsten Whiskeys Irlands, darunter die berühmte 'Spot'-Serie und die jährliche 'Midleton Very Rare' Edition. Die Architektur verbindet funktionale Industriemoderne mit der Tradition der angrenzenden historischen Gebäude.",
+      "travel_info": "Das 'Midleton Distillery Experience' bietet erstklassige Touren an. Besucher können zwischen Standard-Führungen mit Verkostung, Premium-Verkostungen in der 'Whiskey Academy' und exklusiven 'Behind the Scenes'-Touren wählen. Das Besucherzentrum beherbergt zudem die weltweit größte Pot Still (aus der alten Brennerei) und bietet ein exzellentes Restaurant sowie einen gut sortierten Shop.",
+      "coordinates": {
+        "lat": 51.9131,
+        "lng": -8.1695
+      },
+      "seo_title": "Midleton Distillery - Heimat von Jameson & Redbreast",
+      "seo_description": "Erfahren Sie alles über die Midleton Distillery in Cork: Geschichte, Marken wie Jameson & Redbreast sowie Infos zu Touren und Verkostungen.",
+      "published": true,
+      "created_at": "2026-04-22T21:30:00Z",
+      "last_updated": "2026-04-22T21:30:00Z"
+    }
+  ]
+}
