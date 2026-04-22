@@ -9597,7 +9597,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "tomatin-12-triple-cask",
         "name": "Tomatin 12 Year Old Triple Cask",
@@ -9649,7 +9649,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:14:00Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
