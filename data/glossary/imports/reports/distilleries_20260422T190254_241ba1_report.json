@@ -1,0 +1,61 @@
+{
+  "batch_id": "distilleries_20260422T190254_241ba1",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:02:54Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "glendronach",
+        "name": "The GlenDronach",
+        "slug": "glendronach",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1826,
+        "owner": "Brown-Forman",
+        "website": "https://www.glendronachdistillery.com/",
+        "short_description": "Ein Meister der Sherry-Fass-Reifung, bekannt für seine tiefen, dunklen und fruchtigen Whiskys.",
+        "long_description": "The GlenDronach, im Tal von Forgue gelegen, ist eine Bastion der traditionellen Sherry-Reifung. Sie wurde 1826 gegründet und wurde unter der Leitung von Billy Walker und später Brown-Forman legendär. Die Destillerie ist berühmt für ihren schweren Brand, der hauptsächlich in Oloroso- und Pedro Ximénez-Sherryfässern reift. Das Ergebnis sind tief mahagonifarbene Whiskys mit Noten von Trockenfrüchten, Gewürzen und Schokolade.",
+        "coordinates": {
+          "lat": 57.4847,
+          "lng": -2.6258
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      },
+      "normalized": {
+        "id": "glendronach",
+        "name": "The GlenDronach",
+        "slug": "glendronach",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1826,
+        "owner": "Brown-Forman",
+        "website": "https://www.glendronachdistillery.com/",
+        "short_description": "Ein Meister der Sherry-Fass-Reifung, bekannt für seine tiefen, dunklen und fruchtigen Whiskys.",
+        "long_description": "The GlenDronach, im Tal von Forgue gelegen, ist eine Bastion der traditionellen Sherry-Reifung. Sie wurde 1826 gegründet und wurde unter der Leitung von Billy Walker und später Brown-Forman legendär. Die Destillerie ist berühmt für ihren schweren Brand, der hauptsächlich in Oloroso- und Pedro Ximénez-Sherryfässern reift. Das Ergebnis sind tief mahagonifarbene Whiskys mit Noten von Trockenfrüchten, Gewürzen und Schokolade.",
+        "coordinates": {
+          "lat": 57.4847,
+          "lng": -2.6258
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:02:54Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
