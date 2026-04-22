@@ -4523,42 +4523,35 @@
   },
   {
     "id": "kilchoman-loch-gorm",
-    "name": "Loch Gorm",
     "slug": "loch-gorm",
+    "published": true,
+    "short_description": "Die jährlich limitierte, rein im Sherryfass gereifte Abfüllung von Kilchoman.",
+    "long_description": "Loch Gorm, benannt nach Islays größtem Süßwassersee in der Nähe der Destillerie, reift vollständig in Oloroso-Sherryfässern. Diese exklusive Reifung sorgt für ein tiefes, schweres und würziges Profil, das den Kilchoman-Torf perfekt ergänzt.",
+    "seo_title": "Kilchoman Loch Gorm Single Malt Whisky kaufen",
+    "seo_description": "Kilchoman Loch Gorm: Limitiert und 100% im Oloroso-Sherryfass gereift. Ein Traum für Fans rauchiger Sherry-Whiskys.",
+    "name": "Loch Gorm",
     "country_id": "scotland",
     "region_id": "islay",
     "distillery_id": "kilchoman",
     "whisky_type": "single_malt",
+    "abv": 46,
+    "age_statement": null,
+    "nas": true,
+    "smoke_profile": "heavy",
+    "cask_types": [
+      "100% oloroso sherry"
+    ],
     "style_tags": [
       "torfig",
       "sherry",
       "rosinen",
       "würzig"
     ],
-    "abv": 46,
-    "cask_types": [
-      "100% oloroso sherry"
-    ],
-    "smoke_profile": "none",
-    "age_statement": null,
-    "nas": true,
     "tasting_notes_nose": "Würziger Torfrauch, dunkle Schokolade, Zimt, Nelken und Rosinen.",
     "tasting_notes_palate": "Kräftig. Kirschen, Brombeeren, Walnüsse, Kaffeebohnen und massiver Torfrauch.",
     "tasting_notes_finish": "Lang, reichhaltig, süß-würzig und tief rauchig.",
-    "short_description": "Die jährlich limitierte, rein im Sherryfass gereifte Abfüllung von Kilchoman.",
-    "long_description": "Loch Gorm, benannt nach Islays größtem Süßwassersee in der Nähe der Destillerie, reift vollständig in Oloroso-Sherryfässern. Diese exklusive Reifung sorgt für ein tiefes, schweres und würziges Profil, das den Kilchoman-Torf perfekt ergänzt.",
-    "editorial_notes": null,
-    "travel_context": null,
-    "image": null,
-    "source_urls": [],
-    "source_status": "verified",
-    "review_status": "approved",
-    "related_articles": [],
     "created_at": "2026-04-19T12:05:39.761Z",
-    "last_updated": "2026-04-22T20:27:39Z",
-    "seo_title": "Kilchoman Loch Gorm Single Malt Whisky kaufen",
-    "seo_description": "Kilchoman Loch Gorm: Limitiert und 100% im Oloroso-Sherryfass gereift. Ein Traum für Fans rauchiger Sherry-Whiskys.",
-    "published": true
+    "last_updated": "2026-04-22T20:29:28Z"
   },
   {
     "id": "kilchoman-100-islay",
