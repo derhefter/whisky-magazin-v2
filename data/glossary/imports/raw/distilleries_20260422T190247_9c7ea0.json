@@ -1,0 +1,27 @@
+{
+  "batch_id": "distilleries_20260422T190247_9c7ea0",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:02:47Z",
+  "raw": [
+    {
+      "id": "edradour",
+      "name": "Edradour",
+      "slug": "edradour",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1825,
+      "owner": "Signatory Vintage",
+      "website": "https://www.edradour.com/",
+      "short_description": "Lange Zeit als kleinste Destillerie Schottlands bekannt, produziert sie einen sehr reichhaltigen Highland-Malt.",
+      "long_description": "Viele Jahre lang war Edradour als die kleinste Destillerie Schottlands berühmt. Gegründet 1825 in der Nähe von Pitlochry, bewahrt sie ein charmantes, bauernhofähnliches Aussehen und nutzt eine Ausrüstung, die über Generationen weitgehend unverändert geblieben ist, einschließlich des letzten verbliebenen Morton-Kühlers. Im Besitz von Signatory Vintage produziert sie einen reichhaltigen, cremigen und oft stark sherrybetonten Malt, der unter den Highland-Destillerien einzigartig ist.",
+      "coordinates": {
+        "lat": 56.7014,
+        "lng": -3.702
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T19:00:00Z"
+    }
+  ]
+}
