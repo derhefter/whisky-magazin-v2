@@ -11541,7 +11541,7 @@
         "ID bereits vorhanden (Duplikat): deanston"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "deanston",
         "name": "Deanston",
@@ -11553,7 +11553,7 @@
         "owner": "Distell (Heineken)",
         "website": "https://deanstonmalt.com/",
         "short_description": "In einer ehemaligen Baumwollmühle untergebracht, ist diese Destillerie für ihren wachsartigen, honigsüßen und ungetorften Stil bekannt.",
-        "long_description": "Deanston wurde 1965 in einer beeindruckenden Baumwollmühle aus dem 18. Jahrhundert am Ufer des Teith eröffnet. Die Brennerei ist energieautark und nutzt eine eigene Wasserkraftanlage. Ihr Whisky wird nach traditionellen Methoden hergestellt, oft ohne Kältefiltration und in natürlicher Farbe. Der Stil von Deanston ist geprägt von einer wachsartigen Textur, Heidehonig-Süße und einer feinen Getreidenote.",
+        "long_description": "Deanston begann sein Dasein 1785 als Baumwollmühle, bevor sie 1965 in eine Destillerie umgewandelt wurde. Am Ufer des Flusses Teith gelegen, ist sie durch eigene Wasserkraftturbinen völlig energieautark. Die Destillerie verwendet ungetorftes Malz und traditionelle oben offene Maischebottiche (Mash Tuns), was zu einem wachsartigen, honigsüßen und nussigen Brand führt, der ohne Kältefiltration oder Zusatz von Farbstoffen abgefüllt wird.",
         "travel_info": "Die Destillerie in der Nähe von Doune (bekannt aus Outlander) ist täglich von 10:00 bis 17:00 Uhr geöffnet. Das Café 'The Coffee Bothy' ist bei Besuchern sehr beliebt. Touren starten stündlich.",
         "seo_title": "Deanston Destillerie: Nachhaltigkeit und Tradition | Whisky-Glossar",
         "seo_description": "Entdecke Deanston in den südlichen Highlands. Erfahre mehr über die Geschichte der Baumwollmühle, den wachsartigen Single Malt und Besuche in der Nähe von Stirling.",
@@ -11563,7 +11563,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:20Z"
+        "last_updated": "2026-04-22T19:32:02Z"
       },
       "raw": {
         "id": "deanston",
@@ -11587,7 +11587,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T00:45:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:32:02Z"
     },
     {
       "batch_id": "distilleries_20260422T192923_168252",
