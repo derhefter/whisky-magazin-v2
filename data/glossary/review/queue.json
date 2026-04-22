@@ -19986,7 +19986,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kingsbarns-doocot",
         "name": "Kingsbarns Doocot",
@@ -20054,7 +20054,10 @@
         "seo_title": "Kingsbarns Doocot kaufen | Fruchtiger Single Malt aus Fife",
         "seo_description": "Kingsbarns Doocot: Ein wunderbar leichter und fruchtiger Lowland Single Malt mit Noten von Banane und Vanille. Jetzt entdecken.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:25Z"
     },
     {
       "batch_id": "whiskies_20260422T195138_476644",
