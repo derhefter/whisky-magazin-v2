@@ -60,6 +60,22 @@ def load_glossary_data() -> dict:
 # Kleine Hilfsfunktionen
 # ---------------------------------------------------------------------------
 
+_STATUS_LABELS = {
+    "active": "Aktiv",
+    "silent": "Still gelegt",
+    "closed": "Geschlossen",
+    "mothballed": "Eingemottet",
+    "demolished": "Abgerissen",
+}
+
+_GLOSSAR_STYLES = """<style>
+.glossar-page h2::before { display: none !important; }
+.glossar-page h2 { padding-left: 0 !important; }
+</style>
+<div class="glossar-page">"""
+
+_GLOSSAR_STYLES_CLOSE = "</div><!-- /glossar-page -->"
+
 _SMOKE_LABELS = {
     "none": "Kein Torf",
     "light": "Leicht torfig",
@@ -187,7 +203,8 @@ def build_glossary_index(data: dict, config: dict) -> str:
     )
 
     content = f"""
-    {_breadcrumb(("Whisky-Glossar", "/whisky-glossar/"))}
+    {_GLOSSAR_STYLES}
+    <nav class="breadcrumb"><div class="breadcrumb-inner"><a href="/">Startseite</a> &rsaquo; <span>Whisky-Glossar</span></div></nav>
     {_page_hero("Whisky · Reise · Wissen", "Whisky-Glossar",
                 "Länder, Regionen, Destillerien und Abfüllungen – strukturiert und redaktionell gepflegt.")}
 
@@ -210,6 +227,7 @@ def build_glossary_index(data: dict, config: dict) -> str:
             Das Glossar befindet sich im Aufbau. Daten werden schrittweise ergänzt und redaktionell geprüft.
         </div>
     </div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     return _base_template().format(
@@ -264,6 +282,7 @@ def build_country_page(country: dict, regions: list, distilleries: list,
     travel = country.get("travel_context", "")
 
     content = f"""
+    {_GLOSSAR_STYLES}
     {_breadcrumb(("Länder", "/whisky-glossar/laender/"), (country["name_de"], f"/whisky-glossar/laender/{country['slug']}/"))}
     {_page_hero("Whisky-Land", country["name_de"], country.get("short_description", ""))}
 
@@ -277,6 +296,7 @@ def build_country_page(country: dict, regions: list, distilleries: list,
     {(_section("Whiskys", f'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">{whisky_cards}</div>') if whisky_cards else '')}
 
     <div style="height:48px;"></div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     json_ld = f"""<script type="application/ld+json">
@@ -337,6 +357,7 @@ def build_region_page(region: dict, countries: list, distilleries: list,
     travel = region.get("travel_context", "")
 
     content = f"""
+    {_GLOSSAR_STYLES}
     {_breadcrumb(
         (country_name, f"/whisky-glossar/laender/{country_slug}/"),
         ("Regionen", "/whisky-glossar/regionen/"),
@@ -354,6 +375,7 @@ def build_region_page(region: dict, countries: list, distilleries: list,
     {(_section("Whiskys aus dieser Region", f'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">{whisky_cards}</div>') if whisky_cards else '')}
 
     <div style="height:48px;"></div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     json_ld = f"""<script type="application/ld+json">
@@ -414,6 +436,7 @@ def build_distillery_page(distillery: dict, countries: list, regions: list,
     visit_info = distillery.get("visit_info", "")
 
     content = f"""
+    {_GLOSSAR_STYLES}
     {_breadcrumb(
         (country_name, f"/whisky-glossar/laender/{country_slug}/"),
         (region_name, f"/whisky-glossar/regionen/{region_slug}/"),
@@ -428,7 +451,7 @@ def build_distillery_page(distillery: dict, countries: list, regions: list,
             ("Eigentümer", owner),
             ("Region", region_name),
             ("Land", country_name),
-            ("Status", distillery.get("status", "").capitalize() if distillery.get("status") else ""),
+            ("Status", _STATUS_LABELS.get(distillery.get("status", ""), distillery.get("status", "").capitalize()) if distillery.get("status") else ""),
         )}
         <p style="font-size:17px;line-height:1.8;color:var(--text-secondary);margin-top:24px;">{distillery.get("long_description","")}</p>
         {(f'<div style="margin-top:24px;padding:16px 20px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:14px;line-height:1.7;"><strong>Besucherinfo:</strong> {visit_info}</div>') if visit_info else ''}
@@ -438,6 +461,7 @@ def build_distillery_page(distillery: dict, countries: list, regions: list,
     {(_section(f"Abfüllungen von {distillery['name']}", f'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">{whisky_cards}</div>') if whisky_cards else '')}
 
     <div style="height:48px;"></div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     json_ld = f"""<script type="application/ld+json">
@@ -502,6 +526,7 @@ def build_whisky_page(whisky: dict, countries: list, regions: list,
         tasting_html = _section("Tasting Notes", rows)
 
     content = f"""
+    {_GLOSSAR_STYLES}
     {_breadcrumb(
         (country_name, f"/whisky-glossar/laender/{country_slug}/"),
         (region_name, f"/whisky-glossar/regionen/{region_slug}/"),
@@ -531,6 +556,7 @@ def build_whisky_page(whisky: dict, countries: list, regions: list,
     {(f'<div style="max-width:760px;margin:0 auto 48px;padding:0 24px;"><div style="padding:20px 24px;background:var(--bg-surface);border-left:3px solid var(--accent-amber);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:15px;line-height:1.7;"><strong>Reise-Kontext:</strong> {travel}</div></div>') if travel else ''}
 
     <div style="height:48px;"></div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     json_ld = f"""<script type="application/ld+json">
@@ -574,10 +600,12 @@ def build_region_index(regions: list, countries: list, config: dict) -> str:
         )
 
     content = f"""
+    {_GLOSSAR_STYLES}
     {_breadcrumb(("Regionen", "/whisky-glossar/regionen/"))}
     {_page_hero("Whisky-Regionen", "Alle Regionen im Überblick")}
     {_section("Regionen", f'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">{cards}</div>')}
     <div style="height:48px;"></div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     return _base_template().format(
@@ -613,10 +641,12 @@ def build_distillery_index(distilleries: list, regions: list,
         )
 
     content = f"""
+    {_GLOSSAR_STYLES}
     {_breadcrumb(("Destillerien", "/whisky-glossar/destillerien/"))}
     {_page_hero("Whisky-Destillerien", "Alle Destillerien im Überblick")}
     {_section("Destillerien", f'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">{cards}</div>')}
     <div style="height:48px;"></div>
+    {_GLOSSAR_STYLES_CLOSE}
     """
 
     return _base_template().format(

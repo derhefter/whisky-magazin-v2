@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "whisky-magazin-preview",
+      "name": "whisky-magazin",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "site"],
-      "port": 8080
+      "runtimeArgs": ["-m", "http.server", "8000", "--directory", "site-v2"],
+      "port": 8000
     }
   ]
 }
