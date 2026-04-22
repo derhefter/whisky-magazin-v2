@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192720_c319e1",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:27:20Z",
+  "raw": [
+    {
+      "id": "kilkerran",
+      "name": "Kilkerran (Glengyle)",
+      "slug": "kilkerran",
+      "region_id": "campbeltown",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1872,
+      "owner": "Mitchell's Glengyle Ltd.",
+      "website": "https://kilkerran.scot/",
+      "short_description": "Die Heimat des Kilkerran Single Malt, im Jahr 2004 wiedereröffnet, um den Status von Campbeltown als Whisky-Region zu sichern.",
+      "long_description": "Die Glengyle Destillerie wurde ursprünglich 1872 gegründet, war aber viele Jahre lang geschlossen, bevor sie 2004 von der Familie Mitchell (Eigentümer von Springbank) wiedereröffnet wurde. Da der Name 'Glengyle' bereits für einen Blend verwendet wurde, erhielt der Single Malt den Namen 'Kilkerran'. Die Brennerei teilt sich Personal mit Springbank und produziert einen leicht getorften, öligen und komplexen Whisky, der die traditionellen Werte von Campbeltown verkörpert.",
+      "travel_info": "Touren für die Glengyle Destillerie starten im Springbank Distillery Shop. Sie sind Mo-Sa verfügbar. Da die Brennerei nur wenige Monate im Jahr produziert, ist ein Besuch während der Produktionszeit (meist Herbst) besonders interessant. Buchung vorab nötig.",
+      "seo_title": "Kilkerran (Glengyle) Destillerie: Campbeltowns Renaissance | Whisky-Glossar",
+      "seo_description": "Entdecke Kilkerran Single Malt aus der Glengyle Brennerei. Erfahre mehr über die Wiedereröffnung, den handwerklichen Stil und Touren in Campbeltown.",
+      "coordinates": {
+        "lat": 55.4244,
+        "lng": -5.6083
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T23:15:00Z"
+    }
+  ]
+}
