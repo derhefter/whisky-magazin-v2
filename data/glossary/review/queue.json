@@ -1174,7 +1174,7 @@
         "ID bereits vorhanden (Duplikat): ardbeg"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "ardbeg",
         "name": "Ardbeg",
@@ -1222,7 +1222,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:23:30Z"
+      "reviewed_at": "2026-04-22T20:23:30Z",
+      "published_at": "2026-04-22T20:26:17Z"
     },
     {
       "batch_id": "distilleries_20260422T195425_e40199",
@@ -1234,7 +1235,7 @@
         "ID bereits vorhanden (Duplikat): ardnahoe"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "ardnahoe",
         "name": "Ardnahoe",
@@ -1285,7 +1286,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:24:05Z"
+      "reviewed_at": "2026-04-22T20:24:05Z",
+      "published_at": "2026-04-22T20:26:17Z"
     },
     {
       "batch_id": "distilleries_20260422T195429_0d4627",
@@ -1297,7 +1299,7 @@
         "ID bereits vorhanden (Duplikat): bowmore"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "bowmore",
         "name": "Bowmore",
@@ -1348,7 +1350,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:24:42Z"
+      "reviewed_at": "2026-04-22T20:24:42Z",
+      "published_at": "2026-04-22T20:26:17Z"
     },
     {
       "batch_id": "distilleries_20260422T195432_97c386",
@@ -1360,7 +1363,7 @@
         "ID bereits vorhanden (Duplikat): bruichladdich"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "bruichladdich",
         "name": "Bruichladdich",
@@ -1411,7 +1414,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:25:14Z"
+      "reviewed_at": "2026-04-22T20:25:14Z",
+      "published_at": "2026-04-22T20:26:17Z"
     },
     {
       "batch_id": "distilleries_20260422T195435_17bc9b",
@@ -1423,7 +1427,7 @@
         "ID bereits vorhanden (Duplikat): bunnahabhain"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "bunnahabhain",
         "name": "Bunnahabhain",
@@ -1474,7 +1478,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:25:47Z"
+      "reviewed_at": "2026-04-22T20:25:47Z",
+      "published_at": "2026-04-22T20:26:17Z"
     },
     {
       "batch_id": "distilleries_20260422T195438_ac6add",
@@ -1486,7 +1491,7 @@
         "Slug ungültig (nur a-z, 0-9, Bindestrich): caol_ila"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "caol-ila",
         "name": "Caol Ila",
@@ -1535,7 +1540,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:26:06Z"
+      "reviewed_at": "2026-04-22T20:26:06Z",
+      "published_at": "2026-04-22T20:26:17Z"
     },
     {
       "batch_id": "distilleries_20260422T195441_dae769",
@@ -1545,7 +1551,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kilchoman",
         "name": "Kilchoman",
@@ -1594,7 +1600,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:26:14Z"
+      "reviewed_at": "2026-04-22T20:26:14Z",
+      "published_at": "2026-04-22T20:26:17Z"
     }
   ]
 }
