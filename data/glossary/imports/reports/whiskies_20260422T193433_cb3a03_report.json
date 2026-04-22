@@ -1,0 +1,72 @@
+{
+  "batch_id": "whiskies_20260422T193433_cb3a03",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:34:33Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "laphroaig",
+        "name": "Laphroaig",
+        "slug": "laphroaig",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1815,
+        "owner": "Beam Suntory",
+        "website": "https://www.laphroaig.com/",
+        "short_description": "Berühmt für seinen medizinisch-torfigen Charakter, der oft als 'Pflaster' oder 'Jod' beschrieben wird.",
+        "long_description": "Laphroaig ist wohl einer der am stärksten polarisierenden Whiskys der Welt, berühmt für seinen medizinischen, jodhaltigen und an Algen erinnernden Charakter. Gegründet 1815, nutzt sie noch immer eigene Malzböden für etwa 20 % ihrer Produktion. Die Brennerei ist Inhaber eines Royal Warrant von König Charles III. Ihr charakteristischer Torfrauch ist unverwechselbar und intensiv maritim.",
+        "travel_info": "Das Besucherzentrum ist von März bis Oktober täglich geöffnet. Besonders beliebt ist das 'Water to Whisky' Erlebnis. Mitglieder von 'Friends of Laphroaig' können ihr Stück Land in der Nähe der Destillerie besuchen und ihre Pacht in Form eines Drams einfordern.",
+        "seo_title": "Laphroaig Destillerie: Islays medizinischer Kult-Whisky | Whisky-Glossar",
+        "seo_description": "Besuche Laphroaig auf Islay. Entdecke den meistverkauften Islay-Whisky der Welt, seine traditionellen Malzböden und das Programm 'Friends of Laphroaig'.",
+        "coordinates": {
+          "lat": 55.6258,
+          "lng": -6.143
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:00:00Z"
+      },
+      "normalized": {
+        "id": "laphroaig",
+        "name": "Laphroaig",
+        "slug": "laphroaig",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1815,
+        "owner": "Beam Suntory",
+        "website": "https://www.laphroaig.com/",
+        "short_description": "Berühmt für seinen medizinisch-torfigen Charakter, der oft als 'Pflaster' oder 'Jod' beschrieben wird.",
+        "long_description": "Laphroaig ist wohl einer der am stärksten polarisierenden Whiskys der Welt, berühmt für seinen medizinischen, jodhaltigen und an Algen erinnernden Charakter. Gegründet 1815, nutzt sie noch immer eigene Malzböden für etwa 20 % ihrer Produktion. Die Brennerei ist Inhaber eines Royal Warrant von König Charles III. Ihr charakteristischer Torfrauch ist unverwechselbar und intensiv maritim.",
+        "travel_info": "Das Besucherzentrum ist von März bis Oktober täglich geöffnet. Besonders beliebt ist das 'Water to Whisky' Erlebnis. Mitglieder von 'Friends of Laphroaig' können ihr Stück Land in der Nähe der Destillerie besuchen und ihre Pacht in Form eines Drams einfordern.",
+        "seo_title": "Laphroaig Destillerie: Islays medizinischer Kult-Whisky | Whisky-Glossar",
+        "seo_description": "Besuche Laphroaig auf Islay. Entdecke den meistverkauften Islay-Whisky der Welt, seine traditionellen Malzböden und das Programm 'Friends of Laphroaig'.",
+        "coordinates": {
+          "lat": 55.6258,
+          "lng": -6.143
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:34:33Z"
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
