@@ -762,6 +762,13 @@
       "imported_at": "2026-04-22T19:37:50Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T194012_da7556",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:40:12Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13624,6 +13631,68 @@
       "reviewer_notes": "",
       "reviewed_at": "2026-04-22T19:39:24Z",
       "published_at": "2026-04-22T19:39:49Z"
+    },
+    {
+      "batch_id": "whiskies_20260422T194012_da7556",
+      "entity": "whiskies",
+      "item_id": "abhainn-dearg-10-year-old",
+      "item_slug": "abhainn-dearg-10-year-old",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "abhainn-dearg-10-year-old",
+        "name": "Abhainn Dearg 10 Year Old",
+        "slug": "abhainn-dearg-10-year-old",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "abhainn-dearg",
+        "whisky_type": "single_malt",
+        "style_tags": "handwerklich, naturverbunden, maritim",
+        "abv": 46,
+        "cask_types": "Bourbon & Sherry",
+        "smoke_profile": "Leicht getorft",
+        "age_statement": 10,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Frisches Heu, Seeluft und eine dezente Süße.",
+          "palate": "Malzig, Honig, leichte Holzwürze und ein Hauch von Küstenrauch.",
+          "finish": "Mittellang und natürlich."
+        },
+        "short_description": "Der erste legale Whisky von der Isle of Lewis seit 170 Jahren.",
+        "long_description": "Abhainn Dearg ist eine sehr kleine, handwerkliche Brennerei. Ihr 10-jähriger Single Malt ist das Ergebnis geduldiger Reifung und spiegelt den wilden Charakter der Äußeren Hebriden wider.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:40:12Z",
+        "last_updated": "2026-04-22T19:40:12Z"
+      },
+      "raw": {
+        "id": "abhainn-dearg-10-year-old",
+        "name": "Abhainn Dearg 10 Year Old",
+        "slug": "abhainn-dearg-10-year-old",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "abhainn-dearg",
+        "whisky_type": "single_malt",
+        "style_tags": "handwerklich, naturverbunden, maritim",
+        "abv": 46,
+        "cask_types": "Bourbon & Sherry",
+        "smoke_profile": "Leicht getorft",
+        "age_statement": 10,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Frisches Heu, Seeluft und eine dezente Süße.",
+          "palate": "Malzig, Honig, leichte Holzwürze und ein Hauch von Küstenrauch.",
+          "finish": "Mittellang und natürlich."
+        },
+        "short_description": "Der erste legale Whisky von der Isle of Lewis seit 170 Jahren.",
+        "long_description": "Abhainn Dearg ist eine sehr kleine, handwerkliche Brennerei. Ihr 10-jähriger Single Malt ist das Ergebnis geduldiger Reifung und spiegelt den wilden Charakter der Äußeren Hebriden wider.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      }
     }
   ]
 }
