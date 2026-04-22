@@ -11236,7 +11236,7 @@
         "ID bereits vorhanden (Duplikat): balblair"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "balblair",
         "name": "Balblair",
@@ -11248,7 +11248,7 @@
         "owner": "Inver House Distillers",
         "website": "https://www.balblair.com/",
         "short_description": "Eine der ältesten und malerischsten Destillerien Schottlands, bekannt für ihre eleganten, fruchtigen Malts.",
-        "long_description": "Balblair, im Jahr 1790 gegründet, liegt am Ufer des Dornoch Firth und strahlt eine zeitlose Ruhe aus. Die Brennerei war lange Zeit für ihre Jahrgangsabfüllungen (Vintages) bekannt, bevor sie 2019 zu einem klassischen Alterssortiment zurückkehrte. Der Spirit ist elegant, komplex und fruchtig, mit einer markanten Note von Aprikosen und Gewürzen. Die Destillerie diente als Kulisse für den Film 'The Angels' Share'.",
+        "long_description": "Balblair ist eine der ältesten noch arbeitenden Destillerien Schottlands, die 1790 von John Ross an den Ufern des Dornoch Firth gegründet wurde. Bekannt für ihre traditionellen Methoden und ihren markanten Vintage-Ansatz bei den Abfüllungen, produziert die Destillerie einen klassischen Highland-Malt. Ihr Charakter ist typischerweise elegant, fruchtig und floral, mit einer leicht wachsigen Textur, die sich mit dem Alter wunderbar entwickelt.",
         "travel_info": "Das Besucherzentrum ist von April bis September Mo-Sa (10:00-17:00 Uhr) geöffnet. Im Winter gelten verkürzte Öffnungszeiten (Mo-Fr). Touren bieten einen authentischen Einblick in die traditionelle Produktion.",
         "seo_title": "Balblair Destillerie: Zeitloser Highland Single Malt | Whisky-Glossar",
         "seo_description": "Entdecke Balblair, eine der traditionsreichsten Brennereien Schottlands. Erfahre mehr über den eleganten Highland-Stil, Touren und die Filmkulisse in Edderton.",
@@ -11258,7 +11258,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:03Z"
+        "last_updated": "2026-04-22T19:30:55Z"
       },
       "raw": {
         "id": "balblair",
@@ -11282,7 +11282,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T00:20:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:30:55Z"
     },
     {
       "batch_id": "distilleries_20260422T192906_25cfbc",
