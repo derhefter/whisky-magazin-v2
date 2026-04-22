@@ -1,0 +1,73 @@
+{
+  "batch_id": "whiskies_20260422T194550_93f075",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:45:50Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "ailsa_bay",
+        "name": "Ailsa Bay",
+        "slug": "ailsa_bay",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2007,
+        "owner": "William Grant & Sons",
+        "website": "https://www.ailsabay.com/",
+        "short_description": "Eine hochmoderne, industrielle Destillerie, die für ihre präzise Steuerung von Rauch und Süße bekannt ist.",
+        "long_description": "Ailsa Bay wurde 2007 auf dem Gelände der Girvan-Getreidebrennerei errichtet, um die steigende Nachfrage nach Malt Whisky für die Blends von William Grant & Sons zu decken. Die Brennerei ist hochgradig automatisiert und technisch fortschrittlich. Sie ist die erste, die ihren Whisky nach dem Gehalt an Phenolen (Rauch) und Sacchariden (Süße) klassifiziert. Ihr Stil ist sauber, modern und bietet eine präzise Balance aus Torfrauch und Lowland-Süße.",
+        "travel_info": "Ailsa Bay ist eine industrielle Anlage und verfügt über kein Besucherzentrum. Die Destillerie ist nicht für die allgemeine Öffentlichkeit zugänglich.",
+        "seo_title": "Ailsa Bay Destillerie: Präzision und Innovation | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Ailsa Bay, die technologisch fortschrittliche Brennerei in den Lowlands. Infos zu Rauch- und Süßegraden sowie dem modernen Produktionsansatz.",
+        "coordinates": {
+          "lat": 55.2631,
+          "lng": -4.8464
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:30:00Z"
+      },
+      "normalized": {
+        "id": "ailsa_bay",
+        "name": "Ailsa Bay",
+        "slug": "ailsa_bay",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2007,
+        "owner": "William Grant & Sons",
+        "website": "https://www.ailsabay.com/",
+        "short_description": "Eine hochmoderne, industrielle Destillerie, die für ihre präzise Steuerung von Rauch und Süße bekannt ist.",
+        "long_description": "Ailsa Bay wurde 2007 auf dem Gelände der Girvan-Getreidebrennerei errichtet, um die steigende Nachfrage nach Malt Whisky für die Blends von William Grant & Sons zu decken. Die Brennerei ist hochgradig automatisiert und technisch fortschrittlich. Sie ist die erste, die ihren Whisky nach dem Gehalt an Phenolen (Rauch) und Sacchariden (Süße) klassifiziert. Ihr Stil ist sauber, modern und bietet eine präzise Balance aus Torfrauch und Lowland-Süße.",
+        "travel_info": "Ailsa Bay ist eine industrielle Anlage und verfügt über kein Besucherzentrum. Die Destillerie ist nicht für die allgemeine Öffentlichkeit zugänglich.",
+        "seo_title": "Ailsa Bay Destillerie: Präzision und Innovation | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Ailsa Bay, die technologisch fortschrittliche Brennerei in den Lowlands. Infos zu Rauch- und Süßegraden sowie dem modernen Produktionsansatz.",
+        "coordinates": {
+          "lat": 55.2631,
+          "lng": -4.8464
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:45:50Z"
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "Slug ungültig (nur a-z, 0-9, Bindestrich): ailsa_bay",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
