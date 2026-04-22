@@ -5104,7 +5104,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glengyle-kilkerran-heavily-peated",
         "name": "Kilkerran Heavily Peated",
@@ -5172,7 +5172,10 @@
         "seo_title": "Kilkerran Heavily Peated kaufen | Rauchiger Campbeltown Whisky",
         "seo_description": "Für Torf-Fans: Kilkerran Heavily Peated. Intensiver Rauch trifft auf Campbeltown-Handwerk. Fassstärke und unfiltriert.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:36Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
