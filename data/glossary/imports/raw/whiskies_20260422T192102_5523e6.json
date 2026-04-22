@@ -1,0 +1,53 @@
+{
+  "batch_id": "whiskies_20260422T192102_5523e6",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:21:02Z",
+  "raw": [
+    {
+      "id": "jameson-black-barrel",
+      "name": "Jameson Black Barrel",
+      "slug": "jameson-black-barrel",
+      "country_id": "ireland",
+      "region_id": "republic-of-ireland",
+      "distillery_id": "midleton",
+      "whisky_type": "blended",
+      "style_tags": "würzig, süß, rauchig, komplex",
+      "abv": 40,
+      "cask_types": "doppelt ausgebrannte Ex-Bourbonfässer, Sherryfässer",
+      "smoke_profile": "Leicht rauchig (Fasskohle)",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes_nose": "Butterkaramell, cremiger Fudge und Toffee. Reife Früchte wie Äpfel und Birnen, untermalt von würziger Vanille und einer deutlichen Note von geröstetem Holz.",
+      "tasting_notes_palate": "Sehr weich und cremig. Intensive Süße von Karamell trifft auf nussige Noten, dunkle Schokolade und eine markante Würze, die an schwarzen Pfeffer erinnert.",
+      "tasting_notes_finish": "Lang, warm und würzig. Ein Hauch von Rauch und viel getoastetes Holz bleiben zurück.",
+      "short_description": "Der 'erwachsene' Jameson. Durch doppelt ausgebrannte Fässer erhält er eine enorme Tiefe und eine feine Holzkohle-Note.",
+      "long_description": "Jameson Black Barrel ist eine Hommage an die Kunst der Fassbinder. Die für diesen Blend verwendeten Grain- und Pot-Still-Whiskeys reifen teilweise in Fässern, die zweimal ausgebrannt ('charred') wurden. Dies verleiht dem Whiskey eine Reichhaltigkeit und Komplexität, die weit über den Standard-Jameson hinausgeht. Die typische irische Weichheit wird hier durch kräftige Vanille-, Karamell- und Röstaromen ergänzt.",
+      "seo_title": "Jameson Black Barrel - Der Premium Blend von Jameson kaufen",
+      "seo_description": "Jameson Black Barrel: Intensiv, cremig und komplex durch doppelt ausgebrannte Fässer. Jetzt Tasting Notes und Details entdecken.",
+      "published": true
+    },
+    {
+      "id": "redbreast-12-year-old",
+      "name": "Redbreast 12 Year Old",
+      "slug": "redbreast-12-year-old",
+      "country_id": "ireland",
+      "region_id": "republic-of-ireland",
+      "distillery_id": "midleton",
+      "whisky_type": "single_pot_still",
+      "style_tags": "würzig, fruchtig, ölig, sherry",
+      "abv": 40,
+      "cask_types": "Ex-Bourbon, Oloroso Sherry",
+      "smoke_profile": "Nicht rauchig",
+      "age_statement": 12,
+      "nas": false,
+      "tasting_notes_nose": "Ein klassisches Pot-Still-Bouquet. Komplex mit starken Gewürzen, getoastetem Holz, Honig, reifen Marzipan-Noten und Trockenfrüchten.",
+      "tasting_notes_palate": "Vollmundig und cremig. Eine perfekte Balance aus Sherry-Süße (Datteln, Feigen), kräftiger Pot-Still-Würze und Vanille.",
+      "tasting_notes_finish": "Langanhaltend und befriedigend. Die würzigen Noten klingen langsam ab und hinterlassen einen seidigen Film.",
+      "short_description": "Das Flaggschiff des Single Pot Still Irish Whiskeys. Reichhaltig, würzig und unverwechselbar.",
+      "long_description": "Redbreast 12 Jahre ist der Inbegriff des traditionellen irischen Single Pot Still Whiskeys. Hergestellt aus einer Maische aus gemälzter und ungemälzter Gerste und dreifach in kupfernen Pot Stills destilliert, reift er für mindestens 12 Jahre in einer Kombination aus Bourbon- und Sherryfässern. Er gilt weltweit als einer der besten Whiskeys Irlands und ist berühmt für sein 'Christmas Cake'-Profil.",
+      "seo_title": "Redbreast 12 Jahre Single Pot Still Irish Whiskey kaufen",
+      "seo_description": "Redbreast 12: Der Klassiker unter den Single Pot Still Whiskeys. Reichhaltige Sherry-Noten und irische Würze. Mehr erfahren!",
+      "published": true
+    }
+  ]
+}
