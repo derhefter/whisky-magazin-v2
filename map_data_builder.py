@@ -272,10 +272,14 @@ def load_glossary_distilleries():
 
 
 def merge_with_glossary_distilleries(locations, glossary_dists):
-    """Ersetzt GPS-basierte Destillerien-Marker durch Glossar-Eintraege.
+    """Reichert GPS-basierte Destillerien mit Glossar-Daten an.
 
-    Jeder Glossar-Eintrag erbt Besuchsjahre + Fotos vom naechstgelegenen
-    GPS-Stop (bis 500 m oder exakter Name-Match).
+    - GPS-basierte Destillerien bleiben ALLE erhalten (als "besucht").
+    - Fuer jede Destillerie, die auch im Glossar existiert (Name- oder 500m-Match):
+      Glossar-Felder (glossary_url, short_description, founded, region/country)
+      werden in den GPS-Eintrag eingemischt.
+    - Glossar-Eintraege OHNE GPS-Match werden als zusaetzliche "geplant"-Marker
+      hinzugefuegt (visited=False).
     """
     if not glossary_dists:
         return locations
@@ -283,12 +287,17 @@ def merge_with_glossary_distilleries(locations, glossary_dists):
     gps_dists = [l for l in locations if l["type"] == "distillery"]
     non_dists = [l for l in locations if l["type"] != "distillery"]
 
+    matched_gps_ids = set()   # IDs der GPS-Eintraege, die bereits matchten
     merged_count = 0
+    orphan_glossary = []      # Glossar-Eintraege ohne GPS-Match
+
     for gdist in glossary_dists:
         gn = normalize_dist_name(gdist["name"])
         best = None
         best_dist_m = float("inf")
         for gps in gps_dists:
+            if id(gps) in matched_gps_ids:
+                continue  # bereits anderem Glossar-Eintrag zugeordnet
             # Exakter Name-Match (normalisiert)
             if normalize_dist_name(gps["name"]) == gn:
                 best = gps
@@ -300,14 +309,28 @@ def merge_with_glossary_distilleries(locations, glossary_dists):
                 best_dist_m = d
                 best = gps
 
-        if best:
-            gdist["years_visited"] = sorted(set(best.get("years_visited", [])))
-            gdist["_photos"] = list(best.get("_photos", []))
-            gdist["articles"] = list(best.get("articles", []))
+        if best is not None:
+            # Glossar-Felder in den GPS-Eintrag einmischen
+            best["glossary_url"] = gdist.get("glossary_url", "")
+            best["slug"] = gdist.get("slug", "")
+            best["short_description"] = gdist.get("short_description", "")
+            best["founded"] = gdist.get("founded")
+            # Region/Country aus Glossar bevorzugen, falls im GPS-Eintrag leer
+            if not best.get("region") and gdist.get("region"):
+                best["region"] = gdist["region"]
+            if not best.get("country") and gdist.get("country"):
+                best["country"] = gdist["country"]
+            # Kennzeichnung: aus Glossar bereichert, aber weiterhin besucht
+            best["_has_glossary"] = True
+            matched_gps_ids.add(id(best))
             merged_count += 1
+        else:
+            # Kein GPS-Match -> Glossar-only Eintrag (geplant)
+            orphan_glossary.append(gdist)
 
-    print(f"  {merged_count}/{len(glossary_dists)} Glossar-Destillerien mit GPS-Daten zusammengefuehrt.")
-    return non_dists + glossary_dists
+    print(f"  {merged_count}/{len(glossary_dists)} Glossar-Destillerien mit GPS-Eintraegen verknuepft.")
+    print(f"  {len(orphan_glossary)} Glossar-Destillerien ohne GPS-Daten (als 'geplant' hinzugefuegt).")
+    return non_dists + gps_dists + orphan_glossary
 
 
 # ============================================================
@@ -654,16 +677,23 @@ def build_map_data(config=None):
     # 4. Thumbnails erzeugen
     generate_thumbnails(locations)
 
-    # Visited-Status fuer Glossar-Destillerien setzen
+    # Visited-Status setzen:
+    # - GPS-basierte Destillerien (nicht _from_glossary): IMMER visited=True
+    # - Reine Glossar-Eintraege (_from_glossary, kein GPS-Match): visited=False (geplant)
+    #   es sei denn, ein Artikel verweist auf sie -> dann auch visited=True
     for loc in locations:
+        if loc["type"] != "distillery":
+            continue
         if loc.get("_from_glossary"):
+            # Orphan-Glossar-Eintrag -> visited nur wenn Artikel-Match existiert
             loc["visited"] = bool(loc.get("years_visited")) or bool(loc.get("articles"))
-        elif loc["type"] == "distillery":
-            # GPS-basierte Destillerien (falls noch vorhanden) haben keinen Glossar-URL
-            loc.setdefault("visited", bool(loc.get("years_visited")))
+        else:
+            # GPS-basiert -> immer besucht
+            loc["visited"] = True
             loc.setdefault("glossary_url", "")
             loc.setdefault("short_description", "")
             loc.setdefault("founded", None)
+            loc.setdefault("slug", "")
 
     # 5. Artikel-Metadaten fuer Popup-Anzeige sammeln
     article_meta = {}
@@ -688,7 +718,8 @@ def build_map_data(config=None):
         loc.pop("_photos", None)
         loc.pop("_manual", None)
         loc.pop("_from_glossary", None)
-        loc.pop("slug", None)
+        loc.pop("_has_glossary", None)
+        # slug NICHT entfernen – wird im Popup fuer Glossar-Link-Fallback gebraucht
 
     # 8. JSON schreiben
     data_dir = SITE_DIR / "data"

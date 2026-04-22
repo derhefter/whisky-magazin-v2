@@ -2581,7 +2581,7 @@ def build_map_page(config):
             </div>
             <div class="filter-group filter-toggles">
                 <label class="toggle-label" title="Destillerien die wir besucht haben"><input type="checkbox" id="toggle-visited" checked> 🥃 Besucht</label>
-                <label class="toggle-label" title="Destillerien auf unserer Wunschliste"><input type="checkbox" id="toggle-unvisited"> 🥃 Geplant</label>
+                <label class="toggle-label" title="Destillerien auf unserer Wunschliste"><input type="checkbox" id="toggle-unvisited" checked> 🥃 Geplant</label>
                 <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswürdigkeiten</label>
             </div>
             <div class="map-stats" id="map-stats"></div>
@@ -2869,8 +2869,8 @@ def build_map_page(config):
             }}),
             distillery_unvisited: L.divIcon({{
                 className: 'custom-marker',
-                html: '<div style="font-size:18px;opacity:0.45;filter:grayscale(90%);line-height:1;">🥃</div>',
-                iconSize: [26, 26], iconAnchor: [13, 13]
+                html: '<div style="font-size:22px;opacity:0.7;filter:grayscale(80%);line-height:1;">🥃</div>',
+                iconSize: [30, 30], iconAnchor: [15, 15]
             }}),
             city: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">🏙️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
             nature: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">🌿</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
