@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T194831_12a5d0",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:48:31Z",
+  "raw": [
+    {
+      "id": "daftmill",
+      "name": "Daftmill",
+      "slug": "daftmill",
+      "region_id": "lowlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 2005,
+      "owner": "Francis and Ian Cuthbert",
+      "website": "https://www.daftmill.com/",
+      "short_description": "Eine echte Farm-Destillerie in Fife, die nur produziert, wenn die Farmarbeit es zulässt.",
+      "long_description": "Daftmill ist die Definition einer Farm-Destillerie. Die Brüder Cuthbert destillieren nur während der 'stillen' Zeiten des landwirtschaftlichen Jahres – im Winter nach der Ernte und im Hochsommer nach der Aussaat. Die verwendete Gerste stammt ausschließlich vom eigenen Hof. Daftmill-Whiskys sind extrem gefragt und rar, bekannt für ein klassisches Lowland-Profil mit Noten von frischem Gebäck, Pfirsichen und Gräsern.",
+      "travel_info": "Daftmill ist eine aktive Farm und hat kein öffentliches Besucherzentrum. Touren sind nicht regulär verfügbar und meist nur nach vorheriger, individueller Absprache in kleinen Gruppen möglich.",
+      "seo_title": "Daftmill Destillerie: Authentisches Farm-to-Bottle in Fife | Whisky-Glossar",
+      "seo_description": "Erfahre mehr über Daftmill, die exklusive Farm-Brennerei in den Lowlands. Infos zu den saisonalen Destillationszeiten und dem raren Lowland Single Malt.",
+      "coordinates": {
+        "lat": 56.2994,
+        "lng": -3.0765
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T23:50:00Z"
+    }
+  ]
+}
