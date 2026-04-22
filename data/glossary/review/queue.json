@@ -132,6 +132,13 @@
       "imported_at": "2026-04-22T05:43:48Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T055238_479be3",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T05:52:38Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -4306,6 +4313,57 @@
       "decision": "reject",
       "reviewer_notes": "",
       "reviewed_at": "2026-04-22T05:44:52Z"
+    },
+    {
+      "batch_id": "whiskies_20260422T055238_479be3",
+      "entity": "whiskies",
+      "item_id": "glenscotia",
+      "item_slug": "glenscotia",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "glenscotia",
+        "name": "Glen Scotia",
+        "slug": "glenscotia",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1832,
+        "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+        "long_description": "Founded in 1832 in Campbeltown, once the 'Whisky Capital of the World', Glen Scotia is one of the three remaining survivors in the region. The distillery has a history of changing ownership and periods of silence but was revitalized by the Loch Lomond Group. It is known for its maritime character, producing both peated and unpeated styles that capture the classic Campbeltown oily and salty profile.",
+        "coordinates": {
+          "lat": 55.4291,
+          "lng": -5.6047
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T05:52:38Z"
+      },
+      "raw": {
+        "id": "glenscotia",
+        "name": "Glen Scotia",
+        "slug": "glenscotia",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1832,
+        "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+        "long_description": "Founded in 1832 in Campbeltown, once the 'Whisky Capital of the World', Glen Scotia is one of the three remaining survivors in the region. The distillery has a history of changing ownership and periods of silence but was revitalized by the Loch Lomond Group. It is known for its maritime character, producing both peated and unpeated styles that capture the classic Campbeltown oily and salty profile.",
+        "coordinates": {
+          "lat": 55.4291,
+          "lng": -5.6047
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-21T17:05:36Z"
+      }
     }
   ]
 }
