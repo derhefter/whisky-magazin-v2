@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192717_1b253d",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:27:17Z",
+  "raw": [
+    {
+      "id": "glenscotia",
+      "name": "Glen Scotia",
+      "slug": "glenscotia",
+      "region_id": "campbeltown",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1832,
+      "owner": "Loch Lomond Group",
+      "website": "https://www.glenscotia.com/",
+      "short_description": "Eine der kleinsten Destillerien Schottlands, bewahrt den maritimen und salzigen Charakter von Campbeltown.",
+      "long_description": "Glen Scotia wurde 1832 gegründet und ist eine der drei verbliebenen Brennereien in Campbeltown, der einstigen 'Whisky-Hauptstadt der Welt'. Die Destillerie hat viel von ihrem ursprünglichen Charakter bewahrt, einschließlich der viktorianischen Ausstattung. Ihr Whisky ist bekannt für sein typisches Campbeltown-Profil: eine Kombination aus maritimer Salzigkeit, sanftem Rauch und einer öligen Textur, oft ergänzt durch reiche Fruchtnoten aus der Reifung in Sherry- oder Bourbonfässern.",
+      "travel_info": "Das Besucherzentrum ist Mo-Sa von 10:00 bis 17:00 Uhr geöffnet. Es werden verschiedene Touren angeboten, darunter die beliebte 'Dunnage Warehouse Experience'. Eine Buchung im Voraus wird empfohlen.",
+      "seo_title": "Glen Scotia Destillerie: Maritimer Whisky aus Campbeltown | Whisky-Glossar",
+      "seo_description": "Besuche Glen Scotia, eine der letzten Brennereien in Campbeltown. Entdecke preisgekrönten Single Malt mit salzigem Charakter und viktorianischem Charme.",
+      "coordinates": {
+        "lat": 55.4258,
+        "lng": -5.6111
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T23:10:00Z"
+    }
+  ]
+}
