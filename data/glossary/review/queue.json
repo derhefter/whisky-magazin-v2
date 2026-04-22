@@ -12853,7 +12853,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "abhainn-dearg",
         "name": "Abhainn Dearg",
@@ -12902,7 +12902,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:06Z"
+      "reviewed_at": "2026-04-22T19:39:06Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193714_2a500b",
@@ -12912,7 +12913,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "arran",
         "name": "Arran (Lochranza)",
@@ -12961,7 +12962,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:07Z"
+      "reviewed_at": "2026-04-22T19:39:07Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193717_778d1f",
@@ -12971,7 +12973,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "harris",
         "name": "Isle of Harris",
@@ -13020,7 +13022,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:09Z"
+      "reviewed_at": "2026-04-22T19:39:09Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193721_3d846e",
@@ -13030,7 +13033,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "highland-park",
         "name": "Highland Park",
@@ -13079,7 +13082,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:10Z"
+      "reviewed_at": "2026-04-22T19:39:10Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193724_066384",
@@ -13089,7 +13093,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jura",
         "name": "Jura",
@@ -13138,7 +13142,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:12Z"
+      "reviewed_at": "2026-04-22T19:39:12Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193727_fc8b55",
@@ -13148,7 +13153,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lagg",
         "name": "Lagg",
@@ -13197,7 +13202,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:13Z"
+      "reviewed_at": "2026-04-22T19:39:13Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193731_618e44",
@@ -13207,7 +13213,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ledaig",
         "name": "Ledaig (Tobermory)",
@@ -13256,7 +13262,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:15Z"
+      "reviewed_at": "2026-04-22T19:39:15Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193733_017ad3",
@@ -13266,7 +13273,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "raasay",
         "name": "Isle of Raasay",
@@ -13315,7 +13322,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:17Z"
+      "reviewed_at": "2026-04-22T19:39:17Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193737_420198",
@@ -13325,7 +13333,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "scapa",
         "name": "Scapa",
@@ -13374,7 +13382,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:18Z"
+      "reviewed_at": "2026-04-22T19:39:18Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193740_9f9215",
@@ -13384,7 +13393,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "talisker",
         "name": "Talisker",
@@ -13433,7 +13442,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:19Z"
+      "reviewed_at": "2026-04-22T19:39:19Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193743_98ac7e",
@@ -13443,7 +13453,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tiree",
         "name": "Tiree",
@@ -13492,7 +13502,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:21Z"
+      "reviewed_at": "2026-04-22T19:39:21Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193747_345f96",
@@ -13502,7 +13513,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tobermory",
         "name": "Tobermory",
@@ -13551,7 +13562,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:22Z"
+      "reviewed_at": "2026-04-22T19:39:22Z",
+      "published_at": "2026-04-22T19:39:49Z"
     },
     {
       "batch_id": "distilleries_20260422T193750_cac8f2",
@@ -13561,7 +13573,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "torabhaig",
         "name": "Torabhaig",
@@ -13610,7 +13622,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:39:24Z"
+      "reviewed_at": "2026-04-22T19:39:24Z",
+      "published_at": "2026-04-22T19:39:49Z"
     }
   ]
 }
