@@ -1,0 +1,133 @@
+{
+  "batch_id": "whiskies_20260422T190821_1f452d",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:21Z",
+  "total": 2,
+  "new": 2,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "fettercairn-12",
+        "name": "Fettercairn 12 Year Old",
+        "slug": "fettercairn-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "fettercairn",
+        "whisky_type": "single_malt",
+        "style_tags": "tropisch, vanille, birne, weich",
+        "abv": 46,
+        "cask_types": "Bourbon Barrels",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Vanille, Birne und weiche Gewürze.",
+          "palate": "Erfrischende Nektarine und tropische Früchte, mit Noten von geröstetem Kaffee.",
+          "finish": "Sultaninen und schwarzes Toffee."
+        },
+        "short_description": "Ein fruchtiger und exotischer Highland Malt.",
+        "long_description": "Fettercairn 12 Year Old ist bekannt für seinen tropischen Charakter, der durch die einzigartigen Kühlringe an den Brennblasen entsteht. Diese sorgen für einen hohen Rückfluss (Reflux) und ein besonders leichtes, fruchtiges Destillat.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "fettercairn-12",
+        "name": "Fettercairn 12 Year Old",
+        "slug": "fettercairn-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "fettercairn",
+        "whisky_type": "single_malt",
+        "style_tags": "tropisch, vanille, birne, weich",
+        "abv": 46,
+        "cask_types": "Bourbon Barrels",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Vanille, Birne und weiche Gewürze.",
+          "palate": "Erfrischende Nektarine und tropische Früchte, mit Noten von geröstetem Kaffee.",
+          "finish": "Sultaninen und schwarzes Toffee."
+        },
+        "short_description": "Ein fruchtiger und exotischer Highland Malt.",
+        "long_description": "Fettercairn 12 Year Old ist bekannt für seinen tropischen Charakter, der durch die einzigartigen Kühlringe an den Brennblasen entsteht. Diese sorgen für einen hohen Rückfluss (Reflux) und ein besonders leichtes, fruchtiges Destillat.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:21Z",
+        "last_updated": "2026-04-22T19:08:21Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "fettercairn-16",
+        "name": "Fettercairn 16 Year Old",
+        "slug": "fettercairn-16",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "fettercairn",
+        "whisky_type": "single_malt",
+        "style_tags": "komplex, ananas, honig, nussig",
+        "abv": 46.4,
+        "cask_types": "Bourbon Barrels",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 16,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Gegrillte Ananas, Vanille und gezuckerte Mandeln.",
+          "palate": "Tropische Früchte, pochierte Birne und reichhaltiger Honig.",
+          "finish": "Lang und fruchtig mit einer Spur von Ingwer."
+        },
+        "short_description": "Ein tieferer Einblick in den tropischen Stil von Fettercairn.",
+        "long_description": "Nach 16 Jahren Reifung in erstbefüllten und wiederbefüllten Bourbonfässern zeigt dieser Fettercairn eine beeindruckende Reife. Die typischen Ananas- und Vanillenoten sind hier noch intensiver ausgeprägt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "fettercairn-16",
+        "name": "Fettercairn 16 Year Old",
+        "slug": "fettercairn-16",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "fettercairn",
+        "whisky_type": "single_malt",
+        "style_tags": "komplex, ananas, honig, nussig",
+        "abv": 46.4,
+        "cask_types": "Bourbon Barrels",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 16,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Gegrillte Ananas, Vanille und gezuckerte Mandeln.",
+          "palate": "Tropische Früchte, pochierte Birne und reichhaltiger Honig.",
+          "finish": "Lang und fruchtig mit einer Spur von Ingwer."
+        },
+        "short_description": "Ein tieferer Einblick in den tropischen Stil von Fettercairn.",
+        "long_description": "Nach 16 Jahren Reifung in erstbefüllten und wiederbefüllten Bourbonfässern zeigt dieser Fettercairn eine beeindruckende Reife. Die typischen Ananas- und Vanillenoten sind hier noch intensiver ausgeprägt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:21Z",
+        "last_updated": "2026-04-22T19:08:21Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
