@@ -11441,7 +11441,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:31:15Z"
+        "last_updated": "2026-04-22T19:31:17Z"
       },
       "raw": {
         "id": "dalmore",
@@ -11468,7 +11468,7 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:31:15Z"
+      "reviewed_at": "2026-04-22T19:31:17Z"
     },
     {
       "batch_id": "distilleries_20260422T192917_8e003c",
