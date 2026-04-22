@@ -832,6 +832,13 @@
       "imported_at": "2026-04-22T19:40:39Z",
       "total": 3,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T194043_7398bc",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:40:43Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -15426,6 +15433,68 @@
         },
         "short_description": "Wild, frisch und intensiv wie ein Sturm auf Skye.",
         "long_description": "Talisker Storm ist eine intensivere, rauchigere Variante des Standard-Malts. Er wird aus einer Auswahl von Fässern komponiert, die den stürmischen Charakter der Insel widerspiegeln.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T194043_7398bc",
+      "entity": "whiskies",
+      "item_id": "tiree-whisky-company-the-cairnsmuir",
+      "item_slug": "tiree-whisky-company-the-cairnsmuir",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "tiree-whisky-company-the-cairnsmuir",
+        "name": "The Cairnsmuir",
+        "slug": "tiree-whisky-company-the-cairnsmuir",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tiree-whisky-company",
+        "whisky_type": "blended_malt",
+        "style_tags": "maritim, sanft, fruchtig",
+        "abv": 46,
+        "cask_types": "Bourbon & Sherry",
+        "smoke_profile": "Ungetorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Zitrusfrüchte, Vanille und eine maritime Brise.",
+          "palate": "Sanfte Malzsüße, grüne Äpfel und ein Hauch von Meersalz.",
+          "finish": "Mittellang und frisch."
+        },
+        "short_description": "Ein Blended Malt, inspiriert von der Isle of Tiree.",
+        "long_description": "The Cairnsmuir wird von der Tiree Whisky Company herausgegeben. Da die eigene Destillerie auf der Insel noch in Planung ist, dient dieser Blended Malt als Botschafter für den maritimen Geist der sonnigsten Insel Schottlands.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:40:43Z",
+        "last_updated": "2026-04-22T19:40:43Z"
+      },
+      "raw": {
+        "id": "tiree-whisky-company-the-cairnsmuir",
+        "name": "The Cairnsmuir",
+        "slug": "tiree-whisky-company-the-cairnsmuir",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "tiree-whisky-company",
+        "whisky_type": "blended_malt",
+        "style_tags": "maritim, sanft, fruchtig",
+        "abv": 46,
+        "cask_types": "Bourbon & Sherry",
+        "smoke_profile": "Ungetorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Zitrusfrüchte, Vanille und eine maritime Brise.",
+          "palate": "Sanfte Malzsüße, grüne Äpfel und ein Hauch von Meersalz.",
+          "finish": "Mittellang und frisch."
+        },
+        "short_description": "Ein Blended Malt, inspiriert von der Isle of Tiree.",
+        "long_description": "The Cairnsmuir wird von der Tiree Whisky Company herausgegeben. Da die eigene Destillerie auf der Insel noch in Planung ist, dient dieser Blended Malt als Botschafter für den maritimen Geist der sonnigsten Insel Schottlands.",
         "source_status": "verified",
         "review_status": "approved",
         "published": true
