@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192903_01ec1b",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:03Z",
+  "raw": [
+    {
+      "id": "balblair",
+      "name": "Balblair",
+      "slug": "balblair",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1790,
+      "owner": "Inver House Distillers",
+      "website": "https://www.balblair.com/",
+      "short_description": "Eine der ältesten und malerischsten Destillerien Schottlands, bekannt für ihre eleganten, fruchtigen Malts.",
+      "long_description": "Balblair, im Jahr 1790 gegründet, liegt am Ufer des Dornoch Firth und strahlt eine zeitlose Ruhe aus. Die Brennerei war lange Zeit für ihre Jahrgangsabfüllungen (Vintages) bekannt, bevor sie 2019 zu einem klassischen Alterssortiment zurückkehrte. Der Spirit ist elegant, komplex und fruchtig, mit einer markanten Note von Aprikosen und Gewürzen. Die Destillerie diente als Kulisse für den Film 'The Angels' Share'.",
+      "travel_info": "Das Besucherzentrum ist von April bis September Mo-Sa (10:00-17:00 Uhr) geöffnet. Im Winter gelten verkürzte Öffnungszeiten (Mo-Fr). Touren bieten einen authentischen Einblick in die traditionelle Produktion.",
+      "seo_title": "Balblair Destillerie: Zeitloser Highland Single Malt | Whisky-Glossar",
+      "seo_description": "Entdecke Balblair, eine der traditionsreichsten Brennereien Schottlands. Erfahre mehr über den eleganten Highland-Stil, Touren und die Filmkulisse in Edderton.",
+      "coordinates": {
+        "lat": 57.8344,
+        "lng": -4.1847
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T00:20:00Z"
+    }
+  ]
+}
