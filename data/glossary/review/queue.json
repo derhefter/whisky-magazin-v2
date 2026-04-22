@@ -6542,7 +6542,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aberfeldy-12",
         "name": "Aberfeldy 12 Year Old",
@@ -6597,7 +6597,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:12:57Z"
+      "reviewed_at": "2026-04-22T19:12:57Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190757_32eb10",
@@ -6607,7 +6608,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aberfeldy-16",
         "name": "Aberfeldy 16 Year Old",
@@ -6662,7 +6663,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:12:59Z"
+      "reviewed_at": "2026-04-22T19:12:59Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190757_32eb10",
@@ -6672,7 +6674,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aberfeldy-21",
         "name": "Aberfeldy 21 Year Old",
@@ -6727,7 +6729,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:00Z"
+      "reviewed_at": "2026-04-22T19:13:00Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190800_97e5ec",
@@ -6737,7 +6740,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balblair-12",
         "name": "Balblair 12 Year Old",
@@ -6792,7 +6795,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:01Z"
+      "reviewed_at": "2026-04-22T19:13:01Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190800_97e5ec",
@@ -6802,7 +6806,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balblair-15",
         "name": "Balblair 15 Year Old",
@@ -6857,7 +6861,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:03Z"
+      "reviewed_at": "2026-04-22T19:13:03Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190800_97e5ec",
@@ -6867,7 +6872,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balblair-18",
         "name": "Balblair 18 Year Old",
@@ -6922,7 +6927,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:04Z"
+      "reviewed_at": "2026-04-22T19:13:04Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190803_e1147f",
@@ -6932,7 +6938,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "blair-athol-12",
         "name": "Blair Athol 12 Year Old Flora & Fauna",
@@ -6987,7 +6993,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:06Z"
+      "reviewed_at": "2026-04-22T19:13:06Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190805_e8e1de",
@@ -6997,7 +7004,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "clynelish-14",
         "name": "Clynelish 14 Year Old",
@@ -7052,7 +7059,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:07Z"
+      "reviewed_at": "2026-04-22T19:13:07Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190805_e8e1de",
@@ -7062,7 +7070,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "clynelish-distillers-edition",
         "name": "Clynelish Distillers Edition",
@@ -7117,7 +7125,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:08Z"
+      "reviewed_at": "2026-04-22T19:13:08Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7127,7 +7136,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-12",
         "name": "The Dalmore 12 Year Old",
@@ -7182,7 +7191,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:10Z"
+      "reviewed_at": "2026-04-22T19:13:10Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7192,7 +7202,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-12-sherry-cask-select",
         "name": "The Dalmore 12 Year Old Sherry Cask Select",
@@ -7247,7 +7257,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:11Z"
+      "reviewed_at": "2026-04-22T19:13:11Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7257,7 +7268,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-15",
         "name": "The Dalmore 15 Year Old",
@@ -7312,7 +7323,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:13Z"
+      "reviewed_at": "2026-04-22T19:13:13Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7322,7 +7334,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-18",
         "name": "The Dalmore 18 Year Old",
@@ -7377,7 +7389,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:14Z"
+      "reviewed_at": "2026-04-22T19:13:14Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7387,7 +7400,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-king-alexander-iii",
         "name": "The Dalmore King Alexander III",
@@ -7442,7 +7455,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:15Z"
+      "reviewed_at": "2026-04-22T19:13:15Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7452,7 +7466,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-port-wood-reserve",
         "name": "The Dalmore Port Wood Reserve",
@@ -7507,7 +7521,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:17Z"
+      "reviewed_at": "2026-04-22T19:13:17Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190808_2fa648",
@@ -7517,7 +7532,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore-cigar-malt-reserve",
         "name": "The Dalmore Cigar Malt Reserve",
@@ -7572,7 +7587,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:18Z"
+      "reviewed_at": "2026-04-22T19:13:18Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190812_db16bd",
@@ -7582,7 +7598,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalwhinnie-15",
         "name": "Dalwhinnie 15 Year Old",
@@ -7637,7 +7653,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:19Z"
+      "reviewed_at": "2026-04-22T19:13:19Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190812_db16bd",
@@ -7647,7 +7664,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalwhinnie-winters-gold",
         "name": "Dalwhinnie Winter's Gold",
@@ -7702,7 +7719,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:20Z"
+      "reviewed_at": "2026-04-22T19:13:20Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190815_5aa1a2",
@@ -7712,7 +7730,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "deanston-12",
         "name": "Deanston 12 Year Old",
@@ -7767,7 +7785,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:22Z"
+      "reviewed_at": "2026-04-22T19:13:22Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190815_5aa1a2",
@@ -7777,7 +7796,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "deanston-virgin-oak",
         "name": "Deanston Virgin Oak",
@@ -7832,7 +7851,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:23Z"
+      "reviewed_at": "2026-04-22T19:13:23Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190818_2112ab",
@@ -7842,7 +7862,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "edradour-10",
         "name": "Edradour 10 Year Old",
@@ -7897,7 +7917,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:24Z"
+      "reviewed_at": "2026-04-22T19:13:24Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190818_2112ab",
@@ -7907,7 +7928,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "edradour-caledonia-12",
         "name": "Edradour Caledonia 12 Year Old",
@@ -7962,7 +7983,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:25Z"
+      "reviewed_at": "2026-04-22T19:13:25Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190818_2112ab",
@@ -7972,7 +7994,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ballechin-10",
         "name": "Ballechin 10 Year Old",
@@ -8027,7 +8049,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:27Z"
+      "reviewed_at": "2026-04-22T19:13:27Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190821_1f452d",
@@ -8037,7 +8060,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "fettercairn-12",
         "name": "Fettercairn 12 Year Old",
@@ -8092,7 +8115,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:28Z"
+      "reviewed_at": "2026-04-22T19:13:28Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190821_1f452d",
@@ -8102,7 +8126,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "fettercairn-16",
         "name": "Fettercairn 16 Year Old",
@@ -8157,7 +8181,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:30Z"
+      "reviewed_at": "2026-04-22T19:13:30Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190824_72e80c",
@@ -8167,7 +8192,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glendronach-12",
         "name": "The GlenDronach 12 Year Old Original",
@@ -8222,7 +8247,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:31Z"
+      "reviewed_at": "2026-04-22T19:13:31Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190824_72e80c",
@@ -8232,7 +8258,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glendronach-15-revival",
         "name": "The GlenDronach 15 Year Old Revival",
@@ -8287,7 +8313,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:32Z"
+      "reviewed_at": "2026-04-22T19:13:32Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190824_72e80c",
@@ -8297,7 +8324,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glendronach-18-allardice",
         "name": "The GlenDronach 18 Year Old Allardice",
@@ -8352,7 +8379,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:33Z"
+      "reviewed_at": "2026-04-22T19:13:33Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190824_72e80c",
@@ -8362,7 +8390,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glendronach-21-parliament",
         "name": "The GlenDronach 21 Year Old Parliament",
@@ -8417,7 +8445,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:35Z"
+      "reviewed_at": "2026-04-22T19:13:35Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190827_470183",
@@ -8427,7 +8456,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne-10",
         "name": "Glengoyne 10 Year Old",
@@ -8482,7 +8511,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:36Z"
+      "reviewed_at": "2026-04-22T19:13:36Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190827_470183",
@@ -8492,7 +8522,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne-12",
         "name": "Glengoyne 12 Year Old",
@@ -8547,7 +8577,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:37Z"
+      "reviewed_at": "2026-04-22T19:13:37Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190827_470183",
@@ -8557,7 +8588,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne-15",
         "name": "Glengoyne 15 Year Old",
@@ -8612,7 +8643,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:39Z"
+      "reviewed_at": "2026-04-22T19:13:39Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190827_470183",
@@ -8622,7 +8654,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne-18",
         "name": "Glengoyne 18 Year Old",
@@ -8677,7 +8709,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:40Z"
+      "reviewed_at": "2026-04-22T19:13:40Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190827_470183",
@@ -8687,7 +8720,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne-21",
         "name": "Glengoyne 21 Year Old",
@@ -8742,7 +8775,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:41Z"
+      "reviewed_at": "2026-04-22T19:13:41Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190830_5b9a2b",
@@ -8752,7 +8786,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie-the-original-12",
         "name": "Glenmorangie The Original 12 Year Old",
@@ -8807,7 +8841,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:43Z"
+      "reviewed_at": "2026-04-22T19:13:43Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190830_5b9a2b",
@@ -8817,7 +8852,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie-the-lasanta-15",
         "name": "Glenmorangie The Lasanta 15 Year Old",
@@ -8872,7 +8907,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:44Z"
+      "reviewed_at": "2026-04-22T19:13:44Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190830_5b9a2b",
@@ -8882,7 +8918,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie-the-quinta-ruban-14",
         "name": "Glenmorangie The Quinta Ruban 14 Year Old",
@@ -8937,7 +8973,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:45Z"
+      "reviewed_at": "2026-04-22T19:13:45Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190830_5b9a2b",
@@ -8947,7 +8984,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie-the-nectar-16",
         "name": "Glenmorangie The Nectar 16 Year Old",
@@ -9002,7 +9039,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:47Z"
+      "reviewed_at": "2026-04-22T19:13:47Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190830_5b9a2b",
@@ -9012,7 +9050,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie-signet",
         "name": "Glenmorangie Signet",
@@ -9067,7 +9105,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:48Z"
+      "reviewed_at": "2026-04-22T19:13:48Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190833_15eb83",
@@ -9077,7 +9116,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oban-14",
         "name": "Oban 14 Year Old",
@@ -9132,7 +9171,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:49Z"
+      "reviewed_at": "2026-04-22T19:13:49Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190833_15eb83",
@@ -9142,7 +9182,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oban-little-bay",
         "name": "Oban Little Bay",
@@ -9197,7 +9237,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:51Z"
+      "reviewed_at": "2026-04-22T19:13:51Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190833_15eb83",
@@ -9207,7 +9248,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oban-distillers-edition",
         "name": "Oban Distillers Edition",
@@ -9262,7 +9303,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:52Z"
+      "reviewed_at": "2026-04-22T19:13:52Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190836_0a56ba",
@@ -9272,7 +9314,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-12",
         "name": "Old Pulteney 12 Year Old",
@@ -9327,7 +9369,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:53Z"
+      "reviewed_at": "2026-04-22T19:13:53Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190836_0a56ba",
@@ -9337,7 +9380,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-huddart",
         "name": "Old Pulteney Huddart",
@@ -9392,7 +9435,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:55Z"
+      "reviewed_at": "2026-04-22T19:13:55Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190836_0a56ba",
@@ -9402,7 +9446,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -9457,7 +9501,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:56Z"
+      "reviewed_at": "2026-04-22T19:13:56Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190836_0a56ba",
@@ -9467,7 +9512,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-18",
         "name": "Old Pulteney 18 Year Old",
@@ -9522,7 +9567,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:57Z"
+      "reviewed_at": "2026-04-22T19:13:57Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
@@ -9532,7 +9578,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin-legacy",
         "name": "Tomatin Legacy",
@@ -9587,7 +9633,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:13:59Z"
+      "reviewed_at": "2026-04-22T19:13:59Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
@@ -9597,7 +9644,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin-12-triple-cask",
         "name": "Tomatin 12 Year Old Triple Cask",
@@ -9652,7 +9699,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:14:00Z"
+      "reviewed_at": "2026-04-22T19:14:00Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
@@ -9662,7 +9710,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin-12-sherry-cask",
         "name": "Tomatin 12 Year Old Sherry Cask",
@@ -9717,7 +9765,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:14:01Z"
+      "reviewed_at": "2026-04-22T19:14:01Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
@@ -9727,7 +9776,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin-14-port-wood",
         "name": "Tomatin 14 Year Old Port Wood Finish",
@@ -9782,7 +9831,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:14:02Z"
+      "reviewed_at": "2026-04-22T19:14:02Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
@@ -9792,7 +9842,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin-18",
         "name": "Tomatin 18 Year Old Oloroso Sherry",
@@ -9847,7 +9897,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:14:04Z"
+      "reviewed_at": "2026-04-22T19:14:04Z",
+      "published_at": "2026-04-22T19:16:53Z"
     },
     {
       "batch_id": "whiskies_20260422T190839_abbd86",
@@ -9857,7 +9908,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin-cask-strength",
         "name": "Tomatin Cask Strength",
@@ -9912,7 +9963,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:14:05Z"
+      "reviewed_at": "2026-04-22T19:14:05Z",
+      "published_at": "2026-04-22T19:16:53Z"
     }
   ]
 }
