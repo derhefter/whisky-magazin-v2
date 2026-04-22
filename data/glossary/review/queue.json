@@ -657,6 +657,13 @@
       "imported_at": "2026-04-22T19:34:27Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T193430_ceb3af",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:34:30Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -12567,6 +12574,67 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T21:50:00Z"
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T193430_ceb3af",
+      "entity": "whiskies",
+      "item_id": "lagavulin",
+      "item_slug": "lagavulin",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "lagavulin",
+        "name": "Lagavulin",
+        "slug": "lagavulin",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1816,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/lagavulin",
+        "short_description": "Produziert einen der ikonischsten rauchigen Malts der Welt, bekannt für seine torfige Intensität und Komplexität.",
+        "long_description": "Lagavulin ist für viele der definitive Islay-Malt, bekannt für seine langsame Destillation und lange Reifung. Gegründet 1816, ist sie berühmt für ihre 16-jährige Standardabfüllung. Der Spiritus ist intensiv torfig, reichhaltig und hat eine Süße von Trockenfrüchten, mit einem tiefen Rauch, der oft mit einem knisternden Kaminfeuer verglichen wird. Lagavulin ist ein Eckpfeiler der Classic Malts von Diageo.",
+        "travel_info": "Das Besucherzentrum ist von März bis Oktober täglich geöffnet. Die Malt Mill Bar serviert kleine Speisen und exklusive Tastings. Wegen der großen Beliebtheit der Brennerei (insbesondere des 16-Jährigen) ist eine Buchung von Touren lange im Voraus ratsam.",
+        "seo_title": "Lagavulin Destillerie: Die Heimat des 16-jährigen Islay-Malts | Whisky-Glossar",
+        "seo_description": "Erlebe Lagavulin auf Islay. Entdecke eine der traditionsreichsten Brennereien Schottlands, berühmt für ihren intensiv rauchigen und komplexen Single Malt.",
+        "coordinates": {
+          "lat": 55.6355,
+          "lng": -6.1263
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:34:30Z"
+      },
+      "raw": {
+        "id": "lagavulin",
+        "name": "Lagavulin",
+        "slug": "lagavulin",
+        "region_id": "islay",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1816,
+        "owner": "Diageo",
+        "website": "https://www.malts.com/en-gb/distilleries/lagavulin",
+        "short_description": "Produziert einen der ikonischsten rauchigen Malts der Welt, bekannt für seine torfige Intensität und Komplexität.",
+        "long_description": "Lagavulin ist für viele der definitive Islay-Malt, bekannt für seine langsame Destillation und lange Reifung. Gegründet 1816, ist sie berühmt für ihre 16-jährige Standardabfüllung. Der Spiritus ist intensiv torfig, reichhaltig und hat eine Süße von Trockenfrüchten, mit einem tiefen Rauch, der oft mit einem knisternden Kaminfeuer verglichen wird. Lagavulin ist ein Eckpfeiler der Classic Malts von Diageo.",
+        "travel_info": "Das Besucherzentrum ist von März bis Oktober täglich geöffnet. Die Malt Mill Bar serviert kleine Speisen und exklusive Tastings. Wegen der großen Beliebtheit der Brennerei (insbesondere des 16-Jährigen) ist eine Buchung von Touren lange im Voraus ratsam.",
+        "seo_title": "Lagavulin Destillerie: Die Heimat des 16-jährigen Islay-Malts | Whisky-Glossar",
+        "seo_description": "Erlebe Lagavulin auf Islay. Entdecke eine der traditionsreichsten Brennereien Schottlands, berühmt für ihren intensiv rauchigen und komplexen Single Malt.",
+        "coordinates": {
+          "lat": 55.6355,
+          "lng": -6.1263
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T21:55:00Z"
       }
     }
   ]
