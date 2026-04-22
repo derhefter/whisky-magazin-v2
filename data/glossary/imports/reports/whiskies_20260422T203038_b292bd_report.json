@@ -1,0 +1,148 @@
+{
+  "batch_id": "whiskies_20260422T203038_b292bd",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T20:30:38Z",
+  "total": 3,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 3,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "aberlour-12",
+        "name": "Aberlour 12 Year Old Double Cask Matured",
+        "distillery": "Aberlour",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "age_statement": 12,
+        "nas": false,
+        "abv": 40,
+        "tasting_notes": {
+          "nose": "Soft and rounded with fruity notes of red apples.",
+          "palate": "Fine sherried character, balanced with rich chocolate, toffee, cinnamon and ginger spiciness.",
+          "finish": "Warming and lingering - sweet and slightly spicy."
+        }
+      },
+      "normalized": {
+        "id": "aberlour-12",
+        "name": "Aberlour 12 Year Old Double Cask Matured",
+        "distillery": "Aberlour",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "age_statement": 12,
+        "nas": false,
+        "abv": 40,
+        "tasting_notes": {
+          "nose": "Soft and rounded with fruity notes of red apples.",
+          "palate": "Fine sherried character, balanced with rich chocolate, toffee, cinnamon and ginger spiciness.",
+          "finish": "Warming and lingering - sweet and slightly spicy."
+        },
+        "slug": "aberlour-12-year-old-double-cask-matured",
+        "created_at": "2026-04-22T20:30:38Z",
+        "last_updated": "2026-04-22T20:30:38Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "aberlour-16",
+        "name": "Aberlour 16 Year Old Double Cask Matured",
+        "distillery": "Aberlour",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "age_statement": 16,
+        "nas": false,
+        "abv": 40,
+        "tasting_notes": {
+          "nose": "Rich, scented floral and sweet raisin aromas with spicy nuttiness.",
+          "palate": "Smooth and full with sweet floral and spicy flavors, and a hint of plum and oak.",
+          "finish": "Long, warm, spicy fruitiness."
+        }
+      },
+      "normalized": {
+        "id": "aberlour-16",
+        "name": "Aberlour 16 Year Old Double Cask Matured",
+        "distillery": "Aberlour",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "age_statement": 16,
+        "nas": false,
+        "abv": 40,
+        "tasting_notes": {
+          "nose": "Rich, scented floral and sweet raisin aromas with spicy nuttiness.",
+          "palate": "Smooth and full with sweet floral and spicy flavors, and a hint of plum and oak.",
+          "finish": "Long, warm, spicy fruitiness."
+        },
+        "slug": "aberlour-16-year-old-double-cask-matured",
+        "created_at": "2026-04-22T20:30:38Z",
+        "last_updated": "2026-04-22T20:30:38Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "aberlour-abunadh",
+        "name": "Aberlour A'bunadh",
+        "distillery": "Aberlour",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "age_statement": null,
+        "nas": true,
+        "abv": 60.5,
+        "tasting_notes": {
+          "nose": "Aromas of mixed spices, praline and spiced orange harmonising with rich, deep notes of Oloroso sherry.",
+          "palate": "Orange, black cherries, dried fruit and ginger spiked with dark bitter chocolate and enriched with sherry and oak. Full bodied and creamy.",
+          "finish": "Robust and intense with bitter-sweet notes of exotic spices, dark chocolate and oak."
+        }
+      },
+      "normalized": {
+        "id": "aberlour-abunadh",
+        "name": "Aberlour A'bunadh",
+        "distillery": "Aberlour",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "age_statement": null,
+        "nas": true,
+        "abv": 60.5,
+        "tasting_notes": {
+          "nose": "Aromas of mixed spices, praline and spiced orange harmonising with rich, deep notes of Oloroso sherry.",
+          "palate": "Orange, black cherries, dried fruit and ginger spiked with dark bitter chocolate and enriched with sherry and oak. Full bodied and creamy.",
+          "finish": "Robust and intense with bitter-sweet notes of exotic spices, dark chocolate and oak."
+        },
+        "slug": "aberlour-a-bunadh",
+        "created_at": "2026-04-22T20:30:38Z",
+        "last_updated": "2026-04-22T20:30:38Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
