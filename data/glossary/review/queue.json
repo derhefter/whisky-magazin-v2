@@ -6929,7 +6929,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "the-balvenie-the-balvenie-caribbean-cask-14-year-old",
         "name": "The Balvenie Caribbean Cask 14 Year Old",
@@ -6993,7 +6993,10 @@
         "seo_title": "The Balvenie 14 Jahre Caribbean Cask Whisky online kaufen",
         "seo_description": "Erleben Sie die exotische Süße des The Balvenie 14 Jahre Caribbean Cask. Mit Rum-Finish für Noten von Toffee und Früchten.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:38Z"
     },
     {
       "batch_id": "whiskies_20260422T204308_4a9ad0",
