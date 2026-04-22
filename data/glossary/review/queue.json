@@ -3394,7 +3394,7 @@
           "match_reason": "Gleiche Destillerie + Reifezeit (12 J.)"
         }
       ],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "glenfiddich-glenfiddich-12-year-old",
         "name": "Glenfiddich 12 Year Old",
@@ -3458,7 +3458,10 @@
         "seo_title": "Glenfiddich 12 Jahre Single Malt Whisky kaufen | Speyside Klassiker",
         "seo_description": "Glenfiddich 12 Jahre: Der weltberühmte Single Malt mit frischen Birnennoten und sanftem Charakter. Ideal für Einsteiger.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:42:08Z"
     },
     {
       "batch_id": "whiskies_20260422T203944_f44fce",
