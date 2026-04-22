@@ -1,0 +1,32 @@
+{
+  "batch_id": "whiskies_20260422T194101_3e6c97",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:41:01Z",
+  "raw": [
+    {
+      "id": "isle-of-harris-the-hearach",
+      "name": "The Hearach",
+      "slug": "isle-of-harris-the-hearach",
+      "country_id": "scotland",
+      "region_id": "islands",
+      "distillery_id": "isle-of-harris",
+      "whisky_type": "single_malt",
+      "style_tags": "maritim, rauchig, komplex, handwerklich",
+      "abv": 46,
+      "cask_types": "Bourbon, Oloroso & Fino Sherry",
+      "smoke_profile": "Leicht bis mittel getorft",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes": {
+        "nose": "Sanfter Torfrauch, Apfelmus, weiße Blüten und Meeresbrise.",
+        "palate": "Geröstete Haselnüsse, Vanille, Trockenfrüchte und eine feine Salznote.",
+        "finish": "Lang, elegant mit einer Spur Rauch."
+      },
+      "short_description": "Der erste Single Malt von der Isle of Harris.",
+      "long_description": "The Hearach (Gälisch für Bewohner von Harris) ist das lang erwartete erste Release der Isle of Harris Distillery. Er wird vor Ort gebrannt und gereift, was ihm einen authentischen Insel-Charakter verleiht.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    }
+  ]
+}
