@@ -19257,7 +19257,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "auchentoshan-12-years-old",
         "name": "Auchentoshan 12 Years Old",
@@ -19325,7 +19325,10 @@
         "seo_title": "Auchentoshan 12 Jahre kaufen | Klassischer Lowland Single Malt",
         "seo_description": "Auchentoshan 12 Jahre: Ein milder, floraler Lowland Whisky mit Noten von gebrannten Mandeln und Karamell. Jetzt entdecken.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:10Z"
     },
     {
       "batch_id": "whiskies_20260422T195124_249ced",
