@@ -3776,7 +3776,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "the-glenlivet-the-glenlivet-18-year-old",
         "name": "The Glenlivet 18 Year Old",
@@ -3840,7 +3840,10 @@
         "seo_title": "The Glenlivet 18 Jahre Single Malt Whisky online bestellen",
         "seo_description": "The Glenlivet 18 Jahre: Ein Meisterwerk an Balance und Eleganz. Noten von Orange, Toffee und edler Würze. Jetzt kaufen.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:10Z"
     },
     {
       "batch_id": "whiskies_20260422T203950_67074b",
