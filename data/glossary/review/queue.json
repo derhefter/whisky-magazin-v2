@@ -4315,7 +4315,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "mortlach-mortlach-12-year-old-the-wee-witchie",
         "name": "Mortlach 12 Year Old \"The Wee Witchie\"",
@@ -4379,7 +4379,10 @@
         "seo_title": "Mortlach 12 Jahre Wee Witchie Single Malt Whisky kaufen",
         "seo_description": "Entdecken Sie das Biest von Dufftown: Mortlach 12 Jahre. Ein kräftiger, fleischiger Single Malt mit Umami-Noten.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:19Z"
     },
     {
       "batch_id": "whiskies_20260422T203953_47a476",
