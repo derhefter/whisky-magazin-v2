@@ -1,0 +1,73 @@
+{
+  "batch_id": "whiskies_20260422T190803_e1147f",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:03Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "blair-athol-12",
+        "name": "Blair Athol 12 Year Old Flora & Fauna",
+        "slug": "blair-athol-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "blair-athol",
+        "whisky_type": "single_malt",
+        "style_tags": "nussig, sherry, malzig, trockenfrüchte",
+        "abv": 43,
+        "cask_types": "Refill American & European Oak, Sherry Casks",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Getrocknete Früchte, Malz und Honig mit gerösteten Nüssen und einem Hauch von Eiche.",
+          "palate": "Sanft und rund. Fruchtkuchen, malzige Süße und eine reiche Sherry-Note, ausbalanciert durch Kakao.",
+          "finish": "Lang und wärmend mit nussiger Süße und einer angenehmen Trockenheit."
+        },
+        "short_description": "Der Klassiker aus der Flora & Fauna Serie.",
+        "long_description": "Da der Großteil des Blair Athol Whiskys in den Bell's Blend fließt, ist der 12-jährige aus der Flora & Fauna Serie die einzige regelmäßig verfügbare Originalabfüllung. Er ist bekannt für seinen nussigen und sherry-betonten Charakter.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "blair-athol-12",
+        "name": "Blair Athol 12 Year Old Flora & Fauna",
+        "slug": "blair-athol-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "blair-athol",
+        "whisky_type": "single_malt",
+        "style_tags": "nussig, sherry, malzig, trockenfrüchte",
+        "abv": 43,
+        "cask_types": "Refill American & European Oak, Sherry Casks",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Getrocknete Früchte, Malz und Honig mit gerösteten Nüssen und einem Hauch von Eiche.",
+          "palate": "Sanft und rund. Fruchtkuchen, malzige Süße und eine reiche Sherry-Note, ausbalanciert durch Kakao.",
+          "finish": "Lang und wärmend mit nussiger Süße und einer angenehmen Trockenheit."
+        },
+        "short_description": "Der Klassiker aus der Flora & Fauna Serie.",
+        "long_description": "Da der Großteil des Blair Athol Whiskys in den Bell's Blend fließt, ist der 12-jährige aus der Flora & Fauna Serie die einzige regelmäßig verfügbare Originalabfüllung. Er ist bekannt für seinen nussigen und sherry-betonten Charakter.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:03Z",
+        "last_updated": "2026-04-22T19:08:03Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
