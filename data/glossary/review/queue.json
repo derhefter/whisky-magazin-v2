@@ -6013,7 +6013,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "macallan-the-macallan-sherry-oak-18-year-old",
         "name": "The Macallan Sherry Oak 18 Year Old",
@@ -6077,7 +6077,10 @@
         "seo_title": "The Macallan Sherry Oak 18 Jahre Single Malt online bestellen",
         "seo_description": "The Macallan Sherry Oak 18 Jahre: Ein Meisterwerk der Sherry-Reifung. Tiefgründig, würzig und unvergleichlich.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:46Z"
     },
     {
       "batch_id": "whiskies_20260422T204016_f548ed",
