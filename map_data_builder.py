@@ -205,6 +205,111 @@ def load_manual_locations():
     return locations
 
 
+def normalize_dist_name(name):
+    """Normalisiert Destillerie-Namen fuer Matching (ohne Typ-Suffix)."""
+    n = name.lower().strip()
+    for suf in [" distillery", " distilleries", " destillerie", " brewing", " brewery", " whisky"]:
+        if n.endswith(suf):
+            n = n[:-len(suf)].strip()
+    if n.startswith("the "):
+        n = n[4:].strip()
+    return n
+
+
+def load_glossary_distilleries():
+    """Laedt publizierte Destillerien aus dem Glossar mit Koordinaten."""
+    glossary_file = PROJECT_DIR / "data" / "glossary" / "distilleries.json"
+    if not glossary_file.exists():
+        print("  Kein Glossar-Datei gefunden – ueberspringe Glossar-Destillerien.")
+        return []
+    with open(glossary_file, "r", encoding="utf-8") as f:
+        items = json.load(f)
+
+    # Display-Namen laden
+    country_map, region_map = {}, {}
+    try:
+        countries = json.load(open(PROJECT_DIR / "data" / "glossary" / "countries.json", encoding="utf-8"))
+        country_map = {c["id"]: c.get("name_de") or c.get("name") or c["id"] for c in countries}
+    except Exception:
+        pass
+    try:
+        regions = json.load(open(PROJECT_DIR / "data" / "glossary" / "regions.json", encoding="utf-8"))
+        region_map = {r["id"]: r.get("name") or r["id"] for r in regions}
+    except Exception:
+        pass
+
+    result = []
+    for item in items:
+        if item.get("deleted") or not item.get("published"):
+            continue
+        coords = item.get("coordinates") or {}
+        lat = coords.get("lat")
+        lng = coords.get("lng")
+        if not lat or not lng:
+            continue
+        slug = item.get("slug", "")
+        country_id = item.get("country_id", "")
+        region_id = item.get("region_id", "")
+        result.append({
+            "id": f"glossary-dist-{slug}",
+            "slug": slug,
+            "name": item["name"],
+            "lat": round(float(lat), 5),
+            "lon": round(float(lng), 5),
+            "type": "distillery",
+            "region": region_map.get(region_id, region_id),
+            "country": country_map.get(country_id, "Schottland"),
+            "short_description": item.get("short_description", ""),
+            "founded": item.get("founded"),
+            "glossary_url": f"/whisky-glossar/{slug}/",
+            "years_visited": [],
+            "articles": [],
+            "_photos": [],
+            "_from_glossary": True,
+        })
+    print(f"  {len(result)} Glossar-Destillerien geladen (mit Koordinaten).")
+    return result
+
+
+def merge_with_glossary_distilleries(locations, glossary_dists):
+    """Ersetzt GPS-basierte Destillerien-Marker durch Glossar-Eintraege.
+
+    Jeder Glossar-Eintrag erbt Besuchsjahre + Fotos vom naechstgelegenen
+    GPS-Stop (bis 500 m oder exakter Name-Match).
+    """
+    if not glossary_dists:
+        return locations
+
+    gps_dists = [l for l in locations if l["type"] == "distillery"]
+    non_dists = [l for l in locations if l["type"] != "distillery"]
+
+    merged_count = 0
+    for gdist in glossary_dists:
+        gn = normalize_dist_name(gdist["name"])
+        best = None
+        best_dist_m = float("inf")
+        for gps in gps_dists:
+            # Exakter Name-Match (normalisiert)
+            if normalize_dist_name(gps["name"]) == gn:
+                best = gps
+                best_dist_m = 0
+                break
+            # Naeherungs-Match (500 m)
+            d = haversine_m(gdist["lat"], gdist["lon"], gps["lat"], gps["lon"])
+            if d < 500 and d < best_dist_m:
+                best_dist_m = d
+                best = gps
+
+        if best:
+            gdist["years_visited"] = sorted(set(best.get("years_visited", [])))
+            gdist["_photos"] = list(best.get("_photos", []))
+            gdist["articles"] = list(best.get("articles", []))
+            merged_count += 1
+
+    print(f"  {merged_count}/{len(glossary_dists)} Glossar-Destillerien mit GPS-Daten zusammengefuehrt.")
+    return non_dists + glossary_dists
+
+
 # ============================================================
 # Deduplizierung & Zusammenfuehrung
 # ============================================================
@@ -305,6 +410,11 @@ def match_articles_to_locations(articles, locations):
     for loc in locations:
         name_lower = loc["name"].lower()
         add_index(name_lower, loc)
+
+        # Fuer Glossar-Destillerien (kurzer Name ohne Suffix) auch "Name Distillery" indexieren,
+        # damit article.locations["Lagavulin Distillery"] -> "Lagavulin" matcht.
+        if " distillery" not in name_lower and " distillerie" not in name_lower:
+            add_index(name_lower + " distillery", loc)
 
         # Schrittweises Stripping von Suffixen und Präfixen
         cleaned = name_lower
@@ -532,12 +642,28 @@ def build_map_data(config=None):
     locations = non_distilleries + list(name_best.values())
     print(f"  Deduplizierung: {len(name_best)} einzigartige Destillerien (Name-basiert).")
 
+    # 3c. Glossar-Destillerien laden und GPS-Destillerien ersetzen
+    glossary_dists = load_glossary_distilleries()
+    if glossary_dists:
+        locations = merge_with_glossary_distilleries(locations, glossary_dists)
+
     # 4. Artikel laden & matchen
     articles = load_all_articles()
     match_articles_to_locations(articles, locations)
 
     # 4. Thumbnails erzeugen
     generate_thumbnails(locations)
+
+    # Visited-Status fuer Glossar-Destillerien setzen
+    for loc in locations:
+        if loc.get("_from_glossary"):
+            loc["visited"] = bool(loc.get("years_visited")) or bool(loc.get("articles"))
+        elif loc["type"] == "distillery":
+            # GPS-basierte Destillerien (falls noch vorhanden) haben keinen Glossar-URL
+            loc.setdefault("visited", bool(loc.get("years_visited")))
+            loc.setdefault("glossary_url", "")
+            loc.setdefault("short_description", "")
+            loc.setdefault("founded", None)
 
     # 5. Artikel-Metadaten fuer Popup-Anzeige sammeln
     article_meta = {}
@@ -561,11 +687,15 @@ def build_map_data(config=None):
     for loc in locations:
         loc.pop("_photos", None)
         loc.pop("_manual", None)
+        loc.pop("_from_glossary", None)
+        loc.pop("slug", None)
 
     # 8. JSON schreiben
     data_dir = SITE_DIR / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
+    total_distilleries = sum(1 for l in locations if l["type"] == "distillery")
+    visited_distilleries = sum(1 for l in locations if l["type"] == "distillery" and l.get("visited"))
     map_data = {
         "locations": locations,
         "routes": routes,
@@ -575,7 +705,9 @@ def build_map_data(config=None):
         "countries": all_countries,
         "stats": {
             "total_locations": len(locations),
-            "total_distilleries": sum(1 for l in locations if l["type"] == "distillery"),
+            "total_distilleries": total_distilleries,
+            "visited_distilleries": visited_distilleries,
+            "unvisited_distilleries": total_distilleries - visited_distilleries,
             "total_routes": len(routes),
             "total_articles": len(articles),
             "years_covered": f"{min(all_years)}-{max(all_years)}" if all_years else ""
@@ -602,7 +734,8 @@ def build_map_data(config=None):
     size_kb = output_path.stat().st_size / 1024
     print(f"  map-data.json geschrieben ({size_kb:.1f} KB)")
     print(f"  {map_data['stats']['total_locations']} Orte, "
-          f"{map_data['stats']['total_distilleries']} Destillerien, "
+          f"{map_data['stats']['visited_distilleries']} besuchte + "
+          f"{map_data['stats']['unvisited_distilleries']} geplante Destillerien, "
           f"{map_data['stats']['total_routes']} Routen")
 
     return map_data

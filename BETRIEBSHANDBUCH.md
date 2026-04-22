@@ -1055,6 +1055,59 @@ whisky-magazin/
 
 ---
 
+## 11. Karten-Pflege: Destillerien
+
+Die interaktive Karte (`/karte`) zeigt Destillerien aus dem Glossar – mit visueller Unterscheidung zwischen **besuchten** und **noch nicht besuchten** Orten.
+
+### Wie Destillerien auf die Karte kommen
+
+Quelle ist ausschließlich `data/glossary/distilleries.json`. Nur Einträge mit `published: true` und gültigen `coordinates.lat/lng` erscheinen als Marker.
+
+### Besucht-Status (automatisch)
+
+Der Besucht-Status wird **automatisch beim Build** abgeleitet — kein manuelles Feld nötig:
+
+1. **Artikel-Matching:** Wenn `article.locations[]` einen Eintrag enthält, der zum Destillerie-Namen passt (z. B. `"Lagavulin Distillery"` → Destillerie `"Lagavulin"`), gilt sie als besucht.
+2. **GPS-Proximity:** Wenn ein GPS-Stop aus dem `scotland-archive/` innerhalb von 500 m liegt, werden Besuchsjahre und Fotos übernommen.
+
+→ **Eine Destillerie erscheint als „besucht" (goldenes 🥃), sobald mindestens ein verlinkter Artikel oder ein GPS-Jahr vorhanden ist.**
+
+### Neue Destillerie auf die Karte bringen
+
+1. Im **Admin → Glossar → Destillerien** einen neuen Eintrag anlegen oder importieren.
+2. **Pflichtfelder für Karte:** `coordinates.lat` + `coordinates.lng` als Dezimalzahlen (z. B. `57.123`, `-3.456`). Ohne Koordinaten ist der Eintrag im Glossar sichtbar, aber **nicht auf der Karte**.
+3. Eintrag auf `published: true` setzen und freigeben.
+4. Build auslösen → Destillerie erscheint als graues „Geplant"-🥃 auf der Karte.
+
+### Koordinaten für viele Einträge auf einmal nachziehen
+
+```bash
+python scripts/backfill_distillery_coords.py
+```
+
+Das Skript fragt Nominatim (OpenStreetMap) für alle Einträge ohne Koordinaten an (1 req/sec). Nicht auflösbare Fälle werden in `scripts/backfill_unresolved.txt` gelistet und müssen manuell im Admin eingetragen werden.
+
+### Karte nach Besuch aktualisieren
+
+1. **Reisebericht** schreiben und unter `article.locations[]` die Destillerien-Namen eintragen (exakt, z. B. `"Ardbeg Distillery"`).
+2. Artikel publizieren.
+3. Nächster Build → Destillerie wechselt automatisch zu goldenem 🥃 (besucht).
+
+### Kartenfilter (Benutzer-Sicht)
+
+| Toggle | Standard | Bedeutung |
+|--------|----------|-----------|
+| 🥃 Besucht | ✅ an | Destillerien mit verlinkem Reisebericht |
+| 🥃 Geplant | ☐ aus | Alle anderen Glossar-Destillerien |
+| Sehenswürdigkeiten | ✅ an | POIs aus manual-locations.json |
+
+### Popup-Inhalt
+
+- **Besucht:** Name, Region, Gründungsjahr, Kurzbeschreibung, „✓ Besucht: YYYY", verlinkte Reiseberichte, Button „Im Glossar ansehen"
+- **Geplant:** Name, Region, Gründungsjahr, Kurzbeschreibung, „⌖ Noch nicht besucht", Button „Im Glossar ansehen"
+
+---
+
 ## 11. Schnellreferenz
 
 ### CLI-Befehle
