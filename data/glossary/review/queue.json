@@ -237,6 +237,13 @@
       "imported_at": "2026-04-22T19:02:42Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T190244_645609",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:02:44Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -5850,6 +5857,56 @@
         "coordinates": {
           "lat": 56.9401,
           "lng": -4.2392
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T190244_645609",
+      "entity": "distilleries",
+      "item_id": "deanston",
+      "item_slug": "deanston",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "deanston",
+        "name": "Deanston",
+        "slug": "deanston",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1965,
+        "owner": "CVH Spirits (Heineken)",
+        "website": "https://www.deanstonmalt.com/",
+        "short_description": "In einer ehemaligen Baumwollmühle ansässig, nutzt sie Wasserkraft und setzt auf unfiltrierte Abfüllungen.",
+        "long_description": "Deanston begann sein Dasein 1785 als Baumwollmühle, bevor sie 1965 in eine Destillerie umgewandelt wurde. Am Ufer des Flusses Teith gelegen, ist sie durch eigene Wasserkraftturbinen völlig energieautark. Die Destillerie verwendet ungetorftes Malz und traditionelle oben offene Maischebottiche (Mash Tuns), was zu einem wachsartigen, honigsüßen und nussigen Brand führt, der ohne Kältefiltration oder Zusatz von Farbstoffen abgefüllt wird.",
+        "coordinates": {
+          "lat": 56.1891,
+          "lng": -4.0709
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:02:44Z"
+      },
+      "raw": {
+        "id": "deanston",
+        "name": "Deanston",
+        "slug": "deanston",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1965,
+        "owner": "CVH Spirits (Heineken)",
+        "website": "https://www.deanstonmalt.com/",
+        "short_description": "In einer ehemaligen Baumwollmühle ansässig, nutzt sie Wasserkraft und setzt auf unfiltrierte Abfüllungen.",
+        "long_description": "Deanston begann sein Dasein 1785 als Baumwollmühle, bevor sie 1965 in eine Destillerie umgewandelt wurde. Am Ufer des Flusses Teith gelegen, ist sie durch eigene Wasserkraftturbinen völlig energieautark. Die Destillerie verwendet ungetorftes Malz und traditionelle oben offene Maischebottiche (Mash Tuns), was zu einem wachsartigen, honigsüßen und nussigen Brand führt, der ohne Kältefiltration oder Zusatz von Farbstoffen abgefüllt wird.",
+        "coordinates": {
+          "lat": 56.1891,
+          "lng": -4.0709
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
