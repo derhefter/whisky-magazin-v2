@@ -583,5 +583,120 @@
     "published": true,
     "created_at": "2026-04-21T17:05:36Z",
     "last_updated": "2026-04-22T19:07:25Z"
+  },
+  {
+    "id": "bushmills",
+    "name": "Old Bushmills Distillery",
+    "slug": "bushmills",
+    "region_id": "northern-ireland",
+    "country_id": "ireland",
+    "status": "active",
+    "founded": 1608,
+    "owner": "Proximo Spirits (Casa Cuervo)",
+    "website": "https://www.bushmills.com",
+    "short_description": "Die älteste lizenzierte Brennerei der Welt, berühmt für ihre dreifach destillierten Single Malts.",
+    "long_description": "Die Old Bushmills Distillery liegt an der Nordküste Irlands in County Antrim und blickt auf eine Lizenz von 1608 zurück. Bushmills ist einzigartig in Irland, da sie sich traditionell auf die Produktion von Single Malt Whiskey konzentriert, der dreifach destilliert wird, was ihm eine außergewöhnliche Weichheit und Fruchtigkeit verleiht. Während viele irische Whiskeys Blends aus verschiedenen Getreidesorten sind, bildet der Malz-Whiskey das Herzstück von Bushmills. Die Brennerei nutzt das Wasser des nahegelegenen St. Columb's Rill und ist ein Wahrzeichen der nordirischen Industriegeschichte.",
+    "travel_info": "Bushmills ist eines der meistbesuchten Ziele in Nordirland. Die geführten Touren führen durch die historischen Gebäude, zeigen die kupfernen Pot Stills und die Abfüllanlage. Eine Verkostung im '1608 Bar' ist am Ende jeder Tour inklusive. Es gibt einen großen Souvenirshop und die Brennerei liegt nur wenige Minuten vom berühmten Giant's Causeway entfernt.",
+    "coordinates": {
+      "lat": 55.2019,
+      "lng": -6.5196
+    },
+    "seo_title": "Bushmills Distillery - Älteste Whiskey-Brennerei der Welt",
+    "seo_description": "Besuchen Sie die Old Bushmills Distillery in Nordirland. Infos zu 400 Jahren Geschichte, dreifach destilliertem Single Malt und Besucher-Touren.",
+    "published": true,
+    "created_at": "2026-04-22T21:35:00Z",
+    "last_updated": "2026-04-22T19:20:28Z"
+  },
+  {
+    "id": "dingle",
+    "name": "Dingle Distillery",
+    "slug": "dingle",
+    "region_id": "republic-of-ireland",
+    "country_id": "ireland",
+    "status": "active",
+    "founded": 2012,
+    "owner": "Unabhängig (Dingle Distillery)",
+    "website": "https://www.dingledistillery.ie",
+    "short_description": "Pionier der unabhängigen irischen Whiskey-Bewegung an der wilden Westküste.",
+    "long_description": "Die Dingle Distillery in County Kerry war bei ihrer Gründung 2012 eine der ersten kleinen, unabhängigen Brennereien in Irland seit Jahrzehnten. In einem ehemaligen Sägewerk am Rande der Halbinsel Dingle gelegen, setzt die Brennerei auf Handarbeit und Qualität statt Quantität. Sie produziert Whiskey, Gin und Wodka in kleinen Chargen. Dingle ist besonders für seinen Single Pot Still Whiskey bekannt, der die traditionelle irische Herstellungsweise mit der einzigartigen maritimen Umgebung des Wild Atlantic Way verbindet. Trotz der geringen Größe hat sich Dingle einen exzellenten Ruf bei Kennern weltweit erarbeitet.",
+    "travel_info": "Die Brennerei bietet intime und informative Touren an, die den gesamten Produktionsprozess von der Einmaischung bis zur Abfüllung zeigen. Da die Touren oft ausgebucht sind, wird eine Online-Reservierung dringend empfohlen. Die Lage in der malerischen Hafenstadt Dingle macht den Besuch zu einem perfekten Stop auf jeder Reise entlang der Westküste.",
+    "coordinates": {
+      "lat": 52.1418,
+      "lng": -10.2891
+    },
+    "seo_title": "Dingle Distillery - Handgefertigter Whiskey aus Kerry",
+    "seo_description": "Besuchen Sie die Dingle Distillery: Unabhängige Brennkunst am Wild Atlantic Way. Infos zu Single Pot Still Whiskey, Gin und Touren.",
+    "published": true,
+    "created_at": "2026-04-22T21:50:00Z",
+    "last_updated": "2026-04-22T19:20:28Z"
+  },
+  {
+    "id": "midleton",
+    "name": "Midleton Distillery",
+    "slug": "midleton",
+    "region_id": "republic-of-ireland",
+    "country_id": "ireland",
+    "status": "active",
+    "founded": 1975,
+    "owner": "Pernod Ricard (Irish Distillers)",
+    "website": "https://www.jamesonwhiskey.com/en-ie/visit-our-distilleries/midleton-distillery-cork/",
+    "short_description": "Das Kraftzentrum des irischen Whiskeys, Heimat von Jameson, Redbreast und den Spot Whiskeys.",
+    "long_description": "Die Midleton Distillery in County Cork ist eine der modernsten und größten Brennereien der Welt. Sie wurde 1975 direkt neben der alten Brennerei (Old Midleton) errichtet, um die Produktion der Marken Jameson, Powers und Paddy zu konsolidieren. Heute ist sie das Epizentrum für Single Pot Still Irish Whiskey. Die Brennerei verfügt über eine beeindruckende Kapazität und nutzt sowohl riesige Pot Stills als auch Column Stills. Hier entstehen einige der prestigeträchtigsten Whiskeys Irlands, darunter die berühmte 'Spot'-Serie und die jährliche 'Midleton Very Rare' Edition. Die Architektur verbindet funktionale Industriemoderne mit der Tradition der angrenzenden historischen Gebäude.",
+    "travel_info": "Das 'Midleton Distillery Experience' bietet erstklassige Touren an. Besucher können zwischen Standard-Führungen mit Verkostung, Premium-Verkostungen in der 'Whiskey Academy' und exklusiven 'Behind the Scenes'-Touren wählen. Das Besucherzentrum beherbergt zudem die weltweit größte Pot Still (aus der alten Brennerei) und bietet ein exzellentes Restaurant sowie einen gut sortierten Shop.",
+    "coordinates": {
+      "lat": 51.9131,
+      "lng": -8.1695
+    },
+    "seo_title": "Midleton Distillery - Heimat von Jameson & Redbreast",
+    "seo_description": "Erfahren Sie alles über die Midleton Distillery in Cork: Geschichte, Marken wie Jameson & Redbreast sowie Infos zu Touren und Verkostungen.",
+    "published": true,
+    "created_at": "2026-04-22T21:30:00Z",
+    "last_updated": "2026-04-22T19:20:28Z"
+  },
+  {
+    "id": "teeling",
+    "name": "Teeling Whiskey Distillery",
+    "slug": "teeling",
+    "region_id": "republic-of-ireland",
+    "country_id": "ireland",
+    "status": "active",
+    "founded": 2015,
+    "owner": "Teeling Whiskey Co. (Bacardi hält eine Minderheitsbeteiligung)",
+    "website": "https://www.teelingwhiskey.com",
+    "short_description": "Die Brennerei, die das Whiskey-Brennen zurück ins Herz von Dublin brachte.",
+    "long_description": "Die Teeling Whiskey Distillery wurde 2015 von Jack und Stephen Teeling eröffnet und war die erste neue Brennerei in Dublin seit über 125 Jahren. Sie liegt im historischen Liberties-Viertel, unweit der ursprünglichen Brennerei ihres Vorfahren Walter Teeling aus dem Jahr 1782. Teeling ist bekannt für seinen unkonventionellen Ansatz, der oft mit verschiedenen Fasstypen (wie Rum-, Wein- oder Portweinfässern) experimentiert. Die Brennerei nutzt drei kupferne Pot Stills mit den Namen Alison, Natalie und Chloë (benannt nach den Töchtern von Jack Teeling). Teeling hat maßgeblich zur weltweiten Renaissance des Irish Whiskeys beigetragen.",
+    "travel_info": "Als moderne Stadt-Brennerei bietet Teeling ein sehr lebendiges Besucher-Erlebnis. Es gibt verschiedene Tour-Optionen, von der 'Teeling Trinity' Verkostung bis hin zu exklusiven Single-Cask-Proben. Die 'Bang Bang Bar' bietet großartige Cocktails und der Blick auf die arbeitenden Stills während der Tour ist ein Highlight für jeden Dublin-Besucher.",
+    "coordinates": {
+      "lat": 53.3377,
+      "lng": -6.2772
+    },
+    "seo_title": "Teeling Whiskey Distillery - Dublins Whiskey-Renaissance",
+    "seo_description": "Entdecken Sie die Teeling Distillery in Dublin: Moderne Brennkunst im Herzen der Stadt, innovative Finishes und erstklassige Besucher-Touren.",
+    "published": true,
+    "created_at": "2026-04-22T21:40:00Z",
+    "last_updated": "2026-04-22T19:20:28Z"
+  },
+  {
+    "id": "tullamore-dew",
+    "name": "Tullamore D.E.W. Distillery",
+    "slug": "tullamore-dew",
+    "region_id": "republic-of-ireland",
+    "country_id": "ireland",
+    "status": "active",
+    "founded": 2014,
+    "owner": "William Grant & Sons",
+    "website": "https://www.tullamoredew.com",
+    "short_description": "Eine hochmoderne Anlage, die den Geist von Daniel E. Williams in Tullamore weiterführt.",
+    "long_description": "Nachdem die ursprüngliche Brennerei in Tullamore 1954 geschlossen wurde, brachte William Grant & Sons die Produktion im Jahr 2014 mit einer neuen, hochmodernen Anlage zurück in die Stadt in County Offaly. Der Name D.E.W. geht auf Daniel E. Williams zurück, der im 19. Jahrhundert vom Stalljungen zum Geschäftsführer der Brennerei aufstieg. Tullamore D.E.W. ist berühmt für seine 'Triple'-Philosophie: dreifach destilliert, eine Mischung aus drei Whiskey-Arten (Grain, Malt, Pot Still) und Reifung in drei verschiedenen Fassarten. Diese Kombination sorgt für die legendäre Weichheit und Komplexität des Whiskeys.",
+    "travel_info": "Das 'Tullamore D.E.W. Distillery Experience' bietet eine immersive Tour durch die Produktion. Ein besonderes Highlight ist das 'Blending Lab', in dem Besucher die Kunst des Verschneidens lernen können. Das Besucherzentrum befindet sich in einem wunderschön restaurierten Lagerhaus am Kanal und bietet zudem eine erstklassige Gastronomie.",
+    "coordinates": {
+      "lat": 53.2542,
+      "lng": -7.4992
+    },
+    "seo_title": "Tullamore D.E.W. Distillery - Dreifache Weichheit aus Irland",
+    "seo_description": "Alles über Tullamore D.E.W.: Erfahren Sie mehr über die 'Triple'-Herstellung, die moderne Brennerei in Offaly und die Geschichte von Daniel E. Williams.",
+    "published": true,
+    "created_at": "2026-04-22T21:45:00Z",
+    "last_updated": "2026-04-22T19:20:28Z"
   }
 ]
