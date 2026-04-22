@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192917_8e003c",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:17Z",
+  "raw": [
+    {
+      "id": "dalwhinnie",
+      "name": "Dalwhinnie",
+      "slug": "dalwhinnie",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1897,
+      "owner": "Diageo",
+      "website": "https://www.malts.com/en-gb/distilleries/dalwhinnie",
+      "short_description": "Eine der höchstgelegenen und kältesten Destillerien Schottlands, produziert einen sanften, honigsüßen Malt.",
+      "long_description": "Dalwhinnie wurde 1897 in einer rauen Gebirgsregion des Cairngorms Nationalparks gegründet. Aufgrund ihrer Lage in über 300 Metern Höhe ist sie eine der kältesten bewohnten Gegenden Schottlands. Die Brennerei nutzt immer noch traditionelle Worm Tubs zur Kondensation des Spirits, was zu einem sauberen, aber dennoch körperreichen Whisky führt. Dalwhinnie ist bekannt für seinen milden Charakter mit Noten von Heidehonig, Vanille und einer ganz dezenten Torfigkeit.",
+      "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (Mär-Okt 10:00-17:30 Uhr). Besonders beliebt sind die 'Whisky and Chocolate' Tastings. Aufgrund der Lage an der A9 ist die Brennerei ein idealer Stopp auf dem Weg in den Norden.",
+      "seo_title": "Dalwhinnie Destillerie: Der Highland-Malt aus den Bergen | Whisky-Glossar",
+      "seo_description": "Besuche Dalwhinnie, eine der höchstgelegenen Brennereien Schottlands. Entdecke den honigsüßen Single Malt und exklusive Schokoladen-Pairings im Cairngorms Nationalpark.",
+      "coordinates": {
+        "lat": 56.9408,
+        "lng": -4.2389
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T00:40:00Z"
+    }
+  ]
+}
