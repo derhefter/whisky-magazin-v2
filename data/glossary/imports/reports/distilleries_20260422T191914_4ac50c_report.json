@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T191914_4ac50c",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:19:14Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "teeling",
+        "name": "Teeling Whiskey Distillery",
+        "slug": "teeling",
+        "region_id": "republic-of-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 2015,
+        "owner": "Teeling Whiskey Co. (Bacardi hält eine Minderheitsbeteiligung)",
+        "website": "https://www.teelingwhiskey.com",
+        "short_description": "Die Brennerei, die das Whiskey-Brennen zurück ins Herz von Dublin brachte.",
+        "long_description": "Die Teeling Whiskey Distillery wurde 2015 von Jack und Stephen Teeling eröffnet und war die erste neue Brennerei in Dublin seit über 125 Jahren. Sie liegt im historischen Liberties-Viertel, unweit der ursprünglichen Brennerei ihres Vorfahren Walter Teeling aus dem Jahr 1782. Teeling ist bekannt für seinen unkonventionellen Ansatz, der oft mit verschiedenen Fasstypen (wie Rum-, Wein- oder Portweinfässern) experimentiert. Die Brennerei nutzt drei kupferne Pot Stills mit den Namen Alison, Natalie und Chloë (benannt nach den Töchtern von Jack Teeling). Teeling hat maßgeblich zur weltweiten Renaissance des Irish Whiskeys beigetragen.",
+        "travel_info": "Als moderne Stadt-Brennerei bietet Teeling ein sehr lebendiges Besucher-Erlebnis. Es gibt verschiedene Tour-Optionen, von der 'Teeling Trinity' Verkostung bis hin zu exklusiven Single-Cask-Proben. Die 'Bang Bang Bar' bietet großartige Cocktails und der Blick auf die arbeitenden Stills während der Tour ist ein Highlight für jeden Dublin-Besucher.",
+        "coordinates": {
+          "lat": 53.3377,
+          "lng": -6.2772
+        },
+        "seo_title": "Teeling Whiskey Distillery - Dublins Whiskey-Renaissance",
+        "seo_description": "Entdecken Sie die Teeling Distillery in Dublin: Moderne Brennkunst im Herzen der Stadt, innovative Finishes und erstklassige Besucher-Touren.",
+        "published": true,
+        "created_at": "2026-04-22T21:40:00Z",
+        "last_updated": "2026-04-22T21:40:00Z"
+      },
+      "normalized": {
+        "id": "teeling",
+        "name": "Teeling Whiskey Distillery",
+        "slug": "teeling",
+        "region_id": "republic-of-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 2015,
+        "owner": "Teeling Whiskey Co. (Bacardi hält eine Minderheitsbeteiligung)",
+        "website": "https://www.teelingwhiskey.com",
+        "short_description": "Die Brennerei, die das Whiskey-Brennen zurück ins Herz von Dublin brachte.",
+        "long_description": "Die Teeling Whiskey Distillery wurde 2015 von Jack und Stephen Teeling eröffnet und war die erste neue Brennerei in Dublin seit über 125 Jahren. Sie liegt im historischen Liberties-Viertel, unweit der ursprünglichen Brennerei ihres Vorfahren Walter Teeling aus dem Jahr 1782. Teeling ist bekannt für seinen unkonventionellen Ansatz, der oft mit verschiedenen Fasstypen (wie Rum-, Wein- oder Portweinfässern) experimentiert. Die Brennerei nutzt drei kupferne Pot Stills mit den Namen Alison, Natalie und Chloë (benannt nach den Töchtern von Jack Teeling). Teeling hat maßgeblich zur weltweiten Renaissance des Irish Whiskeys beigetragen.",
+        "travel_info": "Als moderne Stadt-Brennerei bietet Teeling ein sehr lebendiges Besucher-Erlebnis. Es gibt verschiedene Tour-Optionen, von der 'Teeling Trinity' Verkostung bis hin zu exklusiven Single-Cask-Proben. Die 'Bang Bang Bar' bietet großartige Cocktails und der Blick auf die arbeitenden Stills während der Tour ist ein Highlight für jeden Dublin-Besucher.",
+        "coordinates": {
+          "lat": 53.3377,
+          "lng": -6.2772
+        },
+        "seo_title": "Teeling Whiskey Distillery - Dublins Whiskey-Renaissance",
+        "seo_description": "Entdecken Sie die Teeling Distillery in Dublin: Moderne Brennkunst im Herzen der Stadt, innovative Finishes und erstklassige Besucher-Touren.",
+        "published": true,
+        "created_at": "2026-04-22T21:40:00Z",
+        "last_updated": "2026-04-22T19:19:14Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
