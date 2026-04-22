@@ -13148,7 +13148,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "lagg",
         "name": "Lagg",
@@ -13194,7 +13194,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T22:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:39:13Z"
     },
     {
       "batch_id": "distilleries_20260422T193731_618e44",
