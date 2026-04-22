@@ -20148,7 +20148,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "lindores-abbey-mcdxciv",
         "name": "Lindores Abbey MCDXCIV",
@@ -20216,7 +20216,10 @@
         "seo_title": "Lindores Abbey MCDXCIV kaufen | Der spirituelle Ursprung des Whiskys",
         "seo_description": "Lindores Abbey MCDXCIV: Ein historischer Lowland Malt mit cremiger Vanille und Obstgartenfrüchten. Ein Stück Whiskygeschichte im Glas.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:29Z"
     },
     {
       "batch_id": "whiskies_20260422T195144_f9761a",
