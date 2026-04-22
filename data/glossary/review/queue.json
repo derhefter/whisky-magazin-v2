@@ -6621,7 +6621,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "aberlour-aberlour-12-year-old-double-cask-matured",
         "name": "Aberlour 12 Year Old Double Cask Matured",
@@ -6685,7 +6685,10 @@
         "seo_title": "Aberlour 12 Jahre Double Cask Matured Single Malt kaufen",
         "seo_description": "Entdecken Sie den Aberlour 12 Jahre Double Cask Matured. Ein harmonischer Speyside Whisky mit Noten von Apfel, Schokolade und Sherry.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:32Z"
     },
     {
       "batch_id": "whiskies_20260422T204305_21893c",
