@@ -1788,7 +1788,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kilchoman-loch-gorm",
         "name": "Loch Gorm",
@@ -1797,10 +1797,17 @@
         "region_id": "islay",
         "distillery_id": "kilchoman",
         "whisky_type": "single_malt",
-        "style_tags": "torfig, sherry, rosinen, würzig",
+        "style_tags": [
+          "torfig",
+          "sherry",
+          "rosinen",
+          "würzig"
+        ],
         "abv": 46,
-        "cask_types": "100% oloroso sherry",
-        "smoke_profile": "Stark getorft",
+        "cask_types": [
+          "100% oloroso sherry"
+        ],
+        "smoke_profile": "none",
         "age_statement": null,
         "nas": true,
         "tasting_notes_nose": "Würziger Torfrauch, dunkle Schokolade, Zimt, Nelken und Rosinen.",
@@ -1816,7 +1823,7 @@
         "review_status": "approved",
         "related_articles": [],
         "created_at": "2026-04-19T12:05:39.761Z",
-        "last_updated": "2026-04-22T20:27:02Z",
+        "last_updated": "2026-04-22T20:27:31Z",
         "seo_title": "Kilchoman Loch Gorm Single Malt Whisky kaufen",
         "seo_description": "Kilchoman Loch Gorm: Limitiert und 100% im Oloroso-Sherryfass gereift. Ein Traum für Fans rauchiger Sherry-Whiskys.",
         "published": true
@@ -1852,7 +1859,10 @@
         "seo_title": "Kilchoman Loch Gorm Single Malt Whisky kaufen",
         "seo_description": "Kilchoman Loch Gorm: Limitiert und 100% im Oloroso-Sherryfass gereift. Ein Traum für Fans rauchiger Sherry-Whiskys.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:27:31Z"
     },
     {
       "batch_id": "whiskies_20260422T202702_03905b",
