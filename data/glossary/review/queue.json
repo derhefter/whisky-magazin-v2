@@ -7160,7 +7160,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "craigellachie-craigellachie-13-year-old",
         "name": "Craigellachie 13 Year Old",
@@ -7224,7 +7224,10 @@
         "seo_title": "Craigellachie 13 Jahre Single Malt Whisky kaufen",
         "seo_description": "Entdecken Sie den Craigellachie 13 Jahre. Ein kräftiger Speyside Single Malt mit öligem Charakter und tropischen Fruchtnoten.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:42Z"
     },
     {
       "batch_id": "whiskies_20260422T204311_b69dba",
