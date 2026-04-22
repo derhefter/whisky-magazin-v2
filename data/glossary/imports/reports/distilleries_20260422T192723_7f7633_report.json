@@ -1,0 +1,69 @@
+{
+  "batch_id": "distilleries_20260422T192723_7f7633",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:27:23Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "springbank",
+        "name": "Springbank",
+        "slug": "springbank",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1828,
+        "owner": "J & A Mitchell & Co Ltd.",
+        "website": "https://www.springbank.scot/",
+        "short_description": "Die einzige Destillerie Schottlands, die 100% des Prozesses – vom Mälzen bis zur Abfüllung – vor Ort durchführt.",
+        "long_description": "Springbank ist eine der wenigen verbliebenen unabhängigen Familienbrennereien Schottlands und gilt unter Kennern als eine der besten weltweit. Sie ist einzigartig, da jeder einzelne Produktionsschritt in der eigenen Anlage in Campbeltown stattfindet. Die Brennerei produziert drei verschiedene Single Malts: den leicht getorften, zweieinhalbfach destillierten Springbank, den ungetorften Longrow und den stark getorften Hazelburn. Ihr Stil ist ölig, maritim und von höchster handwerklicher Qualität.",
+        "travel_info": "Der Shop und das Besucherzentrum sind Mo-Sa von 10:00 bis 18:00 Uhr geöffnet. Touren sind extrem beliebt und oft weit im Voraus ausgebucht. Kinder unter 18 Jahren können in Begleitung kostenlos teilnehmen (außer bei speziellen Tastings).",
+        "seo_title": "Springbank Destillerie: Handwerkliche Perfektion in Campbeltown | Whisky-Glossar",
+        "seo_description": "Besuche Springbank, die Ikone der Unabhängigkeit. Erfahre mehr über die 100% Vor-Ort-Produktion, Springbank, Longrow und Hazelburn Single Malts.",
+        "coordinates": {
+          "lat": 55.4244,
+          "lng": -5.6083
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:20:00Z"
+      },
+      "normalized": {
+        "id": "springbank",
+        "name": "Springbank",
+        "slug": "springbank",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1828,
+        "owner": "J & A Mitchell & Co Ltd.",
+        "website": "https://www.springbank.scot/",
+        "short_description": "Die einzige Destillerie Schottlands, die 100% des Prozesses – vom Mälzen bis zur Abfüllung – vor Ort durchführt.",
+        "long_description": "Springbank ist eine der wenigen verbliebenen unabhängigen Familienbrennereien Schottlands und gilt unter Kennern als eine der besten weltweit. Sie ist einzigartig, da jeder einzelne Produktionsschritt in der eigenen Anlage in Campbeltown stattfindet. Die Brennerei produziert drei verschiedene Single Malts: den leicht getorften, zweieinhalbfach destillierten Springbank, den ungetorften Longrow und den stark getorften Hazelburn. Ihr Stil ist ölig, maritim und von höchster handwerklicher Qualität.",
+        "travel_info": "Der Shop und das Besucherzentrum sind Mo-Sa von 10:00 bis 18:00 Uhr geöffnet. Touren sind extrem beliebt und oft weit im Voraus ausgebucht. Kinder unter 18 Jahren können in Begleitung kostenlos teilnehmen (außer bei speziellen Tastings).",
+        "seo_title": "Springbank Destillerie: Handwerkliche Perfektion in Campbeltown | Whisky-Glossar",
+        "seo_description": "Besuche Springbank, die Ikone der Unabhängigkeit. Erfahre mehr über die 100% Vor-Ort-Produktion, Springbank, Longrow und Hazelburn Single Malts.",
+        "coordinates": {
+          "lat": 55.4244,
+          "lng": -5.6083
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:27:23Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): springbank"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
