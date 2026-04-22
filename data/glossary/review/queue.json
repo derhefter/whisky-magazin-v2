@@ -1423,7 +1423,7 @@
         "ID bereits vorhanden (Duplikat): bunnahabhain"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "bunnahabhain",
         "name": "Bunnahabhain",
@@ -1445,7 +1445,9 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:54:35Z"
+        "last_updated": "2026-04-22T20:25:47Z",
+        "travel_context": "Im Nordosten gelegen, gut mit Caol Ila oder Ardnahoe zu kombinieren.",
+        "visit_info": "Die Anfahrt erfolgt über eine abenteuerliche Single-Track-Road. Atemberaubender Blick auf die Paps of Jura."
       },
       "raw": {
         "id": "bunnahabhain",
@@ -1469,7 +1471,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T21:40:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:25:47Z"
     },
     {
       "batch_id": "distilleries_20260422T195438_ac6add",
