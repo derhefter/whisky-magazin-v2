@@ -419,6 +419,13 @@
       "imported_at": "2026-04-22T19:19:05Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T191908_e7e06c",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:19:08Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10110,6 +10117,62 @@
         "published": true,
         "created_at": "2026-04-22T21:35:00Z",
         "last_updated": "2026-04-22T21:35:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T191908_e7e06c",
+      "entity": "distilleries",
+      "item_id": "dingle",
+      "item_slug": "dingle",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "dingle",
+        "name": "Dingle Distillery",
+        "slug": "dingle",
+        "region_id": "republic-of-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 2012,
+        "owner": "Unabhängig (Dingle Distillery)",
+        "website": "https://www.dingledistillery.ie",
+        "short_description": "Pionier der unabhängigen irischen Whiskey-Bewegung an der wilden Westküste.",
+        "long_description": "Die Dingle Distillery in County Kerry war bei ihrer Gründung 2012 eine der ersten kleinen, unabhängigen Brennereien in Irland seit Jahrzehnten. In einem ehemaligen Sägewerk am Rande der Halbinsel Dingle gelegen, setzt die Brennerei auf Handarbeit und Qualität statt Quantität. Sie produziert Whiskey, Gin und Wodka in kleinen Chargen. Dingle ist besonders für seinen Single Pot Still Whiskey bekannt, der die traditionelle irische Herstellungsweise mit der einzigartigen maritimen Umgebung des Wild Atlantic Way verbindet. Trotz der geringen Größe hat sich Dingle einen exzellenten Ruf bei Kennern weltweit erarbeitet.",
+        "travel_info": "Die Brennerei bietet intime und informative Touren an, die den gesamten Produktionsprozess von der Einmaischung bis zur Abfüllung zeigen. Da die Touren oft ausgebucht sind, wird eine Online-Reservierung dringend empfohlen. Die Lage in der malerischen Hafenstadt Dingle macht den Besuch zu einem perfekten Stop auf jeder Reise entlang der Westküste.",
+        "coordinates": {
+          "lat": 52.1418,
+          "lng": -10.2891
+        },
+        "seo_title": "Dingle Distillery - Handgefertigter Whiskey aus Kerry",
+        "seo_description": "Besuchen Sie die Dingle Distillery: Unabhängige Brennkunst am Wild Atlantic Way. Infos zu Single Pot Still Whiskey, Gin und Touren.",
+        "published": true,
+        "created_at": "2026-04-22T21:50:00Z",
+        "last_updated": "2026-04-22T19:19:08Z"
+      },
+      "raw": {
+        "id": "dingle",
+        "name": "Dingle Distillery",
+        "slug": "dingle",
+        "region_id": "republic-of-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 2012,
+        "owner": "Unabhängig (Dingle Distillery)",
+        "website": "https://www.dingledistillery.ie",
+        "short_description": "Pionier der unabhängigen irischen Whiskey-Bewegung an der wilden Westküste.",
+        "long_description": "Die Dingle Distillery in County Kerry war bei ihrer Gründung 2012 eine der ersten kleinen, unabhängigen Brennereien in Irland seit Jahrzehnten. In einem ehemaligen Sägewerk am Rande der Halbinsel Dingle gelegen, setzt die Brennerei auf Handarbeit und Qualität statt Quantität. Sie produziert Whiskey, Gin und Wodka in kleinen Chargen. Dingle ist besonders für seinen Single Pot Still Whiskey bekannt, der die traditionelle irische Herstellungsweise mit der einzigartigen maritimen Umgebung des Wild Atlantic Way verbindet. Trotz der geringen Größe hat sich Dingle einen exzellenten Ruf bei Kennern weltweit erarbeitet.",
+        "travel_info": "Die Brennerei bietet intime und informative Touren an, die den gesamten Produktionsprozess von der Einmaischung bis zur Abfüllung zeigen. Da die Touren oft ausgebucht sind, wird eine Online-Reservierung dringend empfohlen. Die Lage in der malerischen Hafenstadt Dingle macht den Besuch zu einem perfekten Stop auf jeder Reise entlang der Westküste.",
+        "coordinates": {
+          "lat": 52.1418,
+          "lng": -10.2891
+        },
+        "seo_title": "Dingle Distillery - Handgefertigter Whiskey aus Kerry",
+        "seo_description": "Besuchen Sie die Dingle Distillery: Unabhängige Brennkunst am Wild Atlantic Way. Infos zu Single Pot Still Whiskey, Gin und Touren.",
+        "published": true,
+        "created_at": "2026-04-22T21:50:00Z",
+        "last_updated": "2026-04-22T21:50:00Z"
       }
     }
   ]
