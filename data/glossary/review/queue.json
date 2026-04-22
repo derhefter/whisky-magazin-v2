@@ -10092,7 +10092,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bushmills",
         "name": "Old Bushmills Distillery",
@@ -10141,7 +10141,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:20:19Z"
+      "reviewed_at": "2026-04-22T19:20:19Z",
+      "published_at": "2026-04-22T19:20:28Z"
     },
     {
       "batch_id": "distilleries_20260422T191908_e7e06c",
@@ -10151,7 +10152,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dingle",
         "name": "Dingle Distillery",
@@ -10200,7 +10201,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:20:20Z"
+      "reviewed_at": "2026-04-22T19:20:20Z",
+      "published_at": "2026-04-22T19:20:28Z"
     },
     {
       "batch_id": "distilleries_20260422T191911_d9419f",
@@ -10210,7 +10212,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "midleton",
         "name": "Midleton Distillery",
@@ -10259,7 +10261,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:20:22Z"
+      "reviewed_at": "2026-04-22T19:20:22Z",
+      "published_at": "2026-04-22T19:20:28Z"
     },
     {
       "batch_id": "distilleries_20260422T191914_4ac50c",
@@ -10269,7 +10272,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "teeling",
         "name": "Teeling Whiskey Distillery",
@@ -10318,7 +10321,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:20:23Z"
+      "reviewed_at": "2026-04-22T19:20:23Z",
+      "published_at": "2026-04-22T19:20:28Z"
     },
     {
       "batch_id": "distilleries_20260422T191918_76dde4",
@@ -10328,7 +10332,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tullamore-dew",
         "name": "Tullamore D.E.W. Distillery",
@@ -10377,7 +10381,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:20:24Z"
+      "reviewed_at": "2026-04-22T19:20:24Z",
+      "published_at": "2026-04-22T19:20:28Z"
     }
   ]
 }
