@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T195717_7665d8",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:57:17Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "craigellachie",
+        "name": "Craigellachie",
+        "slug": "craigellachie",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1891,
+        "owner": "Bacardi (John Dewar & Sons)",
+        "website": "https://www.dewars.com/gl/en/craigellachiedistillery/",
+        "short_description": "Bekannt für seinen schwefeligen, fleischigen Charakter, der durch die Nutzung traditioneller Worm Tubs entsteht.",
+        "long_description": "Craigellachie wurde 1891 gegründet und liegt auf einem Felsen über dem Fluss Spey. Die Brennerei gilt als der Rebell von Speyside, da sie bewusst einen Stil pflegt, der sich von den typisch süßen Whiskys der Region abhebt. Durch die Nutzung von Worm Tubs und ölbeheizten Brennblasen behält der Spirit eine gewisse Schwefeligkeit und Robustheit, die oft als 'fleischig' beschrieben wird. Er ist ein unverzichtbarer Teil der White Horse Blends und als Single Malt ein Favorit für Fans charakterstarker Whiskys.",
+        "travel_info": "Craigellachie verfügt über kein reguläres öffentliches Besucherzentrum und bietet keine täglichen Touren an. Die Brennerei konzentriert sich primär auf die Produktion für Dewar's Blends. Ein Blick auf die beeindruckende Anlage vom Dorf aus lohnt sich dennoch.",
+        "seo_title": "Craigellachie Destillerie: Der robuste Geist von Speyside | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Craigellachie. Entdecke den 'fleischigen' Charakter des Single Malts, das Geheimnis der Worm Tubs und die Geschichte dieser einzigartigen Brennerei.",
+        "coordinates": {
+          "lat": 57.4914,
+          "lng": -3.2325
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T01:40:00Z"
+      },
+      "normalized": {
+        "id": "craigellachie",
+        "name": "Craigellachie",
+        "slug": "craigellachie",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1891,
+        "owner": "Bacardi (John Dewar & Sons)",
+        "website": "https://www.dewars.com/gl/en/craigellachiedistillery/",
+        "short_description": "Bekannt für seinen schwefeligen, fleischigen Charakter, der durch die Nutzung traditioneller Worm Tubs entsteht.",
+        "long_description": "Craigellachie wurde 1891 gegründet und liegt auf einem Felsen über dem Fluss Spey. Die Brennerei gilt als der Rebell von Speyside, da sie bewusst einen Stil pflegt, der sich von den typisch süßen Whiskys der Region abhebt. Durch die Nutzung von Worm Tubs und ölbeheizten Brennblasen behält der Spirit eine gewisse Schwefeligkeit und Robustheit, die oft als 'fleischig' beschrieben wird. Er ist ein unverzichtbarer Teil der White Horse Blends und als Single Malt ein Favorit für Fans charakterstarker Whiskys.",
+        "travel_info": "Craigellachie verfügt über kein reguläres öffentliches Besucherzentrum und bietet keine täglichen Touren an. Die Brennerei konzentriert sich primär auf die Produktion für Dewar's Blends. Ein Blick auf die beeindruckende Anlage vom Dorf aus lohnt sich dennoch.",
+        "seo_title": "Craigellachie Destillerie: Der robuste Geist von Speyside | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Craigellachie. Entdecke den 'fleischigen' Charakter des Single Malts, das Geheimnis der Worm Tubs und die Geschichte dieser einzigartigen Brennerei.",
+        "coordinates": {
+          "lat": 57.4914,
+          "lng": -3.2325
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:57:17Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
