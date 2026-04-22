@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T195435_17bc9b",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:54:35Z",
+  "raw": [
+    {
+      "id": "bunnahabhain",
+      "name": "Bunnahabhain",
+      "slug": "bunnahabhain",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1881,
+      "owner": "Distell (Heineken)",
+      "website": "https://bunnahabhain.com/",
+      "short_description": "Traditionell bekannt für ungetorfte, maritime Whiskys, was sie von den meisten Islay-Nachbarn unterscheidet.",
+      "long_description": "Bunnahabhain (Gälisch für 'Mündung des Flusses') wurde 1881 gegründet. Im Gegensatz zu ihren Nachbarn im Süden von Islay ist der Standard-Spiritus ungetorft und stattdessen für ein reichhaltiges, nussiges und von Sherry geprägtes Profil mit sanfter Meeresbrise bekannt. Die abgelegene Lage der Destillerie und die massiven Brennblasen erzeugen einen vielseitigen Spirit, der besonders gut in Sherryfässern reift.",
+      "travel_info": "Das Besucherzentrum ist täglich von 10:00 bis 17:00 Uhr geöffnet. Beliebt sind die 'Warehouse 9' Tastings direkt aus dem Fass. Vorabreservierungen werden empfohlen, da die Plätze begrenzt sind. Kinder sind im Besucherzentrum willkommen.",
+      "seo_title": "Bunnahabhain Destillerie: Islays Sherry-Spezialist | Whisky-Glossar",
+      "seo_description": "Besuche Bunnahabhain im Norden von Islay. Entdecke ungetorften Single Malt mit maritimem Charakter, Warehouse-Tastings und die spektakuläre Lage am Sund of Islay.",
+      "coordinates": {
+        "lat": 55.8828,
+        "lng": -6.1256
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T21:40:00Z"
+    }
+  ]
+}
