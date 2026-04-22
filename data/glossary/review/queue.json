@@ -1105,6 +1105,13 @@
       "imported_at": "2026-04-22T19:51:41Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T195144_f9761a",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:51:44Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -20157,6 +20164,84 @@
         "last_updated": "2026-04-21T15:00:00.000Z",
         "seo_title": "Lindores Abbey MCDXCIV kaufen | Der spirituelle Ursprung des Whiskys",
         "seo_description": "Lindores Abbey MCDXCIV: Ein historischer Lowland Malt mit cremiger Vanille und Obstgartenfrüchten. Ein Stück Whiskygeschichte im Glas.",
+        "published": true
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T195144_f9761a",
+      "entity": "whiskies",
+      "item_id": "lochlea-our-barley",
+      "item_slug": "lochlea-our-barley",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "lochlea-our-barley",
+        "name": "Lochlea Our Barley",
+        "slug": "lochlea-our-barley",
+        "country_id": "scotland",
+        "region_id": "lowlands",
+        "distillery_id": "lochlea",
+        "whisky_type": "single_malt",
+        "style_tags": "Single Estate, fruchtig, Birne, Getreide",
+        "abv": 46,
+        "cask_types": "First-fill ex-Bourbon, Oloroso Sherry, STR Barriques",
+        "smoke_profile": "Ungetorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Frische Birnen, spritzige Orangen und süße Getreidenoten. Dazu ein Hauch von frisch gebackenem Brot und Vanille.",
+        "tasting_notes_palate": "Vollmundig mit Noten von Karamell, Honig und goldenem Sirup. Fruchtige Akzente von Apfel und Nussigkeit.",
+        "tasting_notes_finish": "Mittellang mit einer sanften Würze und verbleibenden Noten von reifen Früchten.",
+        "short_description": "Das Herzstück der Lochlea Destillerie. Ein Single Estate Whisky, bei dem die Gerste direkt auf dem Farmgelände wächst.",
+        "long_description": "Lochlea Our Barley ist die erste permanente Core-Abfüllung der Destillerie. Als Single Estate Distillery kontrolliert Lochlea jeden Schritt: vom Anbau der eigenen Gerste über die Destillation bis zur Reifung vor Ort. Die Kombination aus Bourbon-, Sherry- und STR-Fässern sorgt für eine beeindruckende Komplexität.",
+        "editorial_notes": "Die Destillerie befindet sich auf der ehemaligen Farm von Robert Burns.",
+        "travel_context": null,
+        "image": null,
+        "source_urls": [
+          "https://lochleadistillery.com/whisky/our-barley/"
+        ],
+        "source_status": "verified",
+        "review_status": "pending",
+        "related_articles": [],
+        "created_at": "2026-04-21T15:00:00.000Z",
+        "last_updated": "2026-04-22T19:51:44Z",
+        "seo_title": "Lochlea Our Barley kaufen | Single Estate Lowland Whisky",
+        "seo_description": "Entdecken Sie Lochlea Our Barley: Ein authentischer Single Estate Whisky mit Noten von Getreide, Honig und Frucht. Handgefertigt in den Lowlands.",
+        "published": true
+      },
+      "raw": {
+        "id": "lochlea-our-barley",
+        "name": "Lochlea Our Barley",
+        "slug": "lochlea-our-barley",
+        "country_id": "scotland",
+        "region_id": "lowlands",
+        "distillery_id": "lochlea",
+        "whisky_type": "single_malt",
+        "style_tags": "Single Estate, fruchtig, Birne, Getreide",
+        "abv": 46,
+        "cask_types": "First-fill ex-Bourbon, Oloroso Sherry, STR Barriques",
+        "smoke_profile": "Ungetorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Frische Birnen, spritzige Orangen und süße Getreidenoten. Dazu ein Hauch von frisch gebackenem Brot und Vanille.",
+        "tasting_notes_palate": "Vollmundig mit Noten von Karamell, Honig und goldenem Sirup. Fruchtige Akzente von Apfel und Nussigkeit.",
+        "tasting_notes_finish": "Mittellang mit einer sanften Würze und verbleibenden Noten von reifen Früchten.",
+        "short_description": "Das Herzstück der Lochlea Destillerie. Ein Single Estate Whisky, bei dem die Gerste direkt auf dem Farmgelände wächst.",
+        "long_description": "Lochlea Our Barley ist die erste permanente Core-Abfüllung der Destillerie. Als Single Estate Distillery kontrolliert Lochlea jeden Schritt: vom Anbau der eigenen Gerste über die Destillation bis zur Reifung vor Ort. Die Kombination aus Bourbon-, Sherry- und STR-Fässern sorgt für eine beeindruckende Komplexität.",
+        "editorial_notes": "Die Destillerie befindet sich auf der ehemaligen Farm von Robert Burns.",
+        "travel_context": null,
+        "image": null,
+        "source_urls": [
+          "https://lochleadistillery.com/whisky/our-barley/"
+        ],
+        "source_status": "verified",
+        "review_status": "pending",
+        "related_articles": [],
+        "created_at": "2026-04-21T15:00:00.000Z",
+        "last_updated": "2026-04-21T15:00:00.000Z",
+        "seo_title": "Lochlea Our Barley kaufen | Single Estate Lowland Whisky",
+        "seo_description": "Entdecken Sie Lochlea Our Barley: Ein authentischer Single Estate Whisky mit Noten von Getreide, Honig und Frucht. Handgefertigt in den Lowlands.",
         "published": true
       }
     }
