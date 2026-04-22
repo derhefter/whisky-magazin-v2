@@ -1,0 +1,61 @@
+{
+  "batch_id": "distilleries_20260422T190303_d6de18",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:03:03Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "oban",
+        "name": "Oban",
+        "slug": "oban",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1794,
+        "owner": "Diageo",
+        "website": "https://www.obanwhisky.com/",
+        "short_description": "Eine kleine Destillerie im Herzen der Stadt Oban, die maritime Noten mit leichter Rauchigkeit kombiniert.",
+        "long_description": "Oban ist eine der wenigen Destillerien, die bereits vor der Stadt existierten, die um sie herum entstand. Sie wurde 1794 gegründet und ist bis heute ein kleiner, kompakter Betrieb an der Küste der West Highlands. Ihr Whisky ist ein klassischer 'Brücken-Malt', der ein Gleichgewicht aus Highland-Fruchtigkeit, maritimer Salzigkeit und einem Hauch von trockenem Torfrauch bietet. Er ist ein fester Bestandteil von Diageos 'Classic Malts'-Serie.",
+        "coordinates": {
+          "lat": 56.4148,
+          "lng": -5.4723
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      },
+      "normalized": {
+        "id": "oban",
+        "name": "Oban",
+        "slug": "oban",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1794,
+        "owner": "Diageo",
+        "website": "https://www.obanwhisky.com/",
+        "short_description": "Eine kleine Destillerie im Herzen der Stadt Oban, die maritime Noten mit leichter Rauchigkeit kombiniert.",
+        "long_description": "Oban ist eine der wenigen Destillerien, die bereits vor der Stadt existierten, die um sie herum entstand. Sie wurde 1794 gegründet und ist bis heute ein kleiner, kompakter Betrieb an der Küste der West Highlands. Ihr Whisky ist ein klassischer 'Brücken-Malt', der ein Gleichgewicht aus Highland-Fruchtigkeit, maritimer Salzigkeit und einem Hauch von trockenem Torfrauch bietet. Er ist ein fester Bestandteil von Diageos 'Classic Malts'-Serie.",
+        "coordinates": {
+          "lat": 56.4148,
+          "lng": -5.4723
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:03:03Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
