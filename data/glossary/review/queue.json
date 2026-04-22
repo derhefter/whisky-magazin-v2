@@ -4540,7 +4540,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenscotia",
         "name": "Glen Scotia",
@@ -4583,7 +4583,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T18:59:00Z"
+      "reviewed_at": "2026-04-22T18:59:00Z",
+      "published_at": "2026-04-22T19:01:46Z"
     },
     {
       "batch_id": "distilleries_20260422T185821_abbdcc",
@@ -4593,7 +4594,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kilkerran",
         "name": "Glengyle (Kilkerran)",
@@ -4636,7 +4637,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T18:59:27Z"
+      "reviewed_at": "2026-04-22T18:59:27Z",
+      "published_at": "2026-04-22T19:01:46Z"
     },
     {
       "batch_id": "distilleries_20260422T185824_0d8264",
@@ -4646,7 +4648,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "springbank",
         "name": "Springbank",
@@ -4689,7 +4691,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T18:59:39Z"
+      "reviewed_at": "2026-04-22T18:59:39Z",
+      "published_at": "2026-04-22T19:01:46Z"
     },
     {
       "batch_id": "whiskies_20260422T190046_2e665d",
