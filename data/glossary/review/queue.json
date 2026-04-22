@@ -468,6 +468,13 @@
       "imported_at": "2026-04-22T19:21:02Z",
       "total": 2,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T192106_533e9c",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:21:06Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10692,6 +10699,64 @@
         "long_description": "Redbreast 12 Jahre ist der Inbegriff des traditionellen irischen Single Pot Still Whiskeys. Hergestellt aus einer Maische aus gemälzter und ungemälzter Gerste und dreifach in kupfernen Pot Stills destilliert, reift er für mindestens 12 Jahre in einer Kombination aus Bourbon- und Sherryfässern. Er gilt weltweit als einer der besten Whiskeys Irlands und ist berühmt für sein 'Christmas Cake'-Profil.",
         "seo_title": "Redbreast 12 Jahre Single Pot Still Irish Whiskey kaufen",
         "seo_description": "Redbreast 12: Der Klassiker unter den Single Pot Still Whiskeys. Reichhaltige Sherry-Noten und irische Würze. Mehr erfahren!",
+        "published": true
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T192106_533e9c",
+      "entity": "whiskies",
+      "item_id": "teeling-small-batch",
+      "item_slug": "teeling-small-batch",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "teeling-small-batch",
+        "name": "Teeling Small Batch",
+        "slug": "teeling-small-batch",
+        "country_id": "ireland",
+        "region_id": "republic-of-ireland",
+        "distillery_id": "teeling",
+        "whisky_type": "blended",
+        "style_tags": "süß, exotisch, fruchtig, würzig",
+        "abv": 46,
+        "cask_types": "Ex-Bourbon, Finish in Central American Rum Casks",
+        "smoke_profile": "Nicht rauchig",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Helle Noten von Vanille und Gewürzen. Dazu gesellen sich Anklänge von frischem Gras, Äpfeln und eine markante Süße von Rohrzucker.",
+        "tasting_notes_palate": "Cremig und vollmundig. Eine Explosion von exotischen Früchten (Ananas, Aprikose) vermischt mit Karamell, Melasse und einer feinen Holzwürze.",
+        "tasting_notes_finish": "Mittellang, wärmend und süßlich mit einer leichten Trockenheit am Ende.",
+        "short_description": "Der innovative Blend mit Rum-Finish. Ungefiltert und mit 46% Vol. abgefüllt für maximalen Geschmack.",
+        "long_description": "Teeling Small Batch bricht mit den Traditionen des irischen Whiskeys. Dieser Blend aus Grain- und Malt-Whiskey reift zunächst in Ex-Bourbonfässern, bevor er sein entscheidendes Finish in handverlesenen Rum-Fässern aus Mittelamerika erhält. Dies verleiht ihm eine einzigartige tropische Süße und Würze. Zudem verzichtet Teeling auf Kältefiltration, was die volle Textur und das Aroma bewahrt.",
+        "seo_title": "Teeling Small Batch Irish Whiskey - Rum Cask Finish kaufen",
+        "seo_description": "Entdecken Sie den Teeling Small Batch: Innovativer Whiskey mit Rum-Fass-Finish. Exotisch fruchtig und kraftvoll mit 46% Vol.",
+        "published": true,
+        "created_at": "2026-04-22T19:21:06Z",
+        "last_updated": "2026-04-22T19:21:06Z"
+      },
+      "raw": {
+        "id": "teeling-small-batch",
+        "name": "Teeling Small Batch",
+        "slug": "teeling-small-batch",
+        "country_id": "ireland",
+        "region_id": "republic-of-ireland",
+        "distillery_id": "teeling",
+        "whisky_type": "blended",
+        "style_tags": "süß, exotisch, fruchtig, würzig",
+        "abv": 46,
+        "cask_types": "Ex-Bourbon, Finish in Central American Rum Casks",
+        "smoke_profile": "Nicht rauchig",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Helle Noten von Vanille und Gewürzen. Dazu gesellen sich Anklänge von frischem Gras, Äpfeln und eine markante Süße von Rohrzucker.",
+        "tasting_notes_palate": "Cremig und vollmundig. Eine Explosion von exotischen Früchten (Ananas, Aprikose) vermischt mit Karamell, Melasse und einer feinen Holzwürze.",
+        "tasting_notes_finish": "Mittellang, wärmend und süßlich mit einer leichten Trockenheit am Ende.",
+        "short_description": "Der innovative Blend mit Rum-Finish. Ungefiltert und mit 46% Vol. abgefüllt für maximalen Geschmack.",
+        "long_description": "Teeling Small Batch bricht mit den Traditionen des irischen Whiskeys. Dieser Blend aus Grain- und Malt-Whiskey reift zunächst in Ex-Bourbonfässern, bevor er sein entscheidendes Finish in handverlesenen Rum-Fässern aus Mittelamerika erhält. Dies verleiht ihm eine einzigartige tropische Süße und Würze. Zudem verzichtet Teeling auf Kältefiltration, was die volle Textur und das Aroma bewahrt.",
+        "seo_title": "Teeling Small Batch Irish Whiskey - Rum Cask Finish kaufen",
+        "seo_description": "Entdecken Sie den Teeling Small Batch: Innovativer Whiskey mit Rum-Fass-Finish. Exotisch fruchtig und kraftvoll mit 46% Vol.",
         "published": true
       }
     }
