@@ -727,6 +727,13 @@
       "imported_at": "2026-04-22T19:37:33Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T193737_420198",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:37:37Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13256,6 +13263,62 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T22:40:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T193737_420198",
+      "entity": "distilleries",
+      "item_id": "scapa",
+      "item_slug": "scapa",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "scapa",
+        "name": "Scapa",
+        "slug": "scapa",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1885,
+        "owner": "Chivas Brothers (Pernod Ricard)",
+        "website": "https://www.scapawhisky.com/",
+        "short_description": "Die zweite Destillerie auf Orkney, nutzt eine Lomond-Still für einen honigsüßen, ungetorften Stil.",
+        "long_description": "Scapa ist Orkneys 'andere' Destillerie, gelegen am Ufer des Scapa Flow. Sie ist berühmt für ihre Lomond-Still, eine Hybridform aus Pot- und Column-Still, die einen fruchtigeren und honigartigen Spirit erzeugt als der benachbarte Highland Park. Scapa verwendet ausschließlich ungetorftes Malz und ist bekannt für sein weiches Profil mit tropischen Früchten und sanftem maritimem Einfluss.",
+        "travel_info": "Die Destillerie in der Nähe von Kirkwall bietet Touren an, die im 'Scapa Noust' Verkostungsraum enden. Der Blick auf den Scapa Flow ist spektakulär. Eine Buchung im Voraus ist ratsam.",
+        "seo_title": "Scapa Destillerie: Der honigsüße Malt von Orkney | Whisky-Glossar",
+        "seo_description": "Entdecke Scapa auf Orkney. Erfahre mehr über die einzigartige Lomond-Still, den ungetorften Insel-Whisky und das Besucherzentrum am Scapa Flow.",
+        "coordinates": {
+          "lat": 58.9582,
+          "lng": -2.9843
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:37Z"
+      },
+      "raw": {
+        "id": "scapa",
+        "name": "Scapa",
+        "slug": "scapa",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1885,
+        "owner": "Chivas Brothers (Pernod Ricard)",
+        "website": "https://www.scapawhisky.com/",
+        "short_description": "Die zweite Destillerie auf Orkney, nutzt eine Lomond-Still für einen honigsüßen, ungetorften Stil.",
+        "long_description": "Scapa ist Orkneys 'andere' Destillerie, gelegen am Ufer des Scapa Flow. Sie ist berühmt für ihre Lomond-Still, eine Hybridform aus Pot- und Column-Still, die einen fruchtigeren und honigartigen Spirit erzeugt als der benachbarte Highland Park. Scapa verwendet ausschließlich ungetorftes Malz und ist bekannt für sein weiches Profil mit tropischen Früchten und sanftem maritimem Einfluss.",
+        "travel_info": "Die Destillerie in der Nähe von Kirkwall bietet Touren an, die im 'Scapa Noust' Verkostungsraum enden. Der Blick auf den Scapa Flow ist spektakulär. Eine Buchung im Voraus ist ratsam.",
+        "seo_title": "Scapa Destillerie: Der honigsüße Malt von Orkney | Whisky-Glossar",
+        "seo_description": "Entdecke Scapa auf Orkney. Erfahre mehr über die einzigartige Lomond-Still, den ungetorften Insel-Whisky und das Besucherzentrum am Scapa Flow.",
+        "coordinates": {
+          "lat": 58.9582,
+          "lng": -2.9843
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:45:00Z"
       }
     }
   ]
