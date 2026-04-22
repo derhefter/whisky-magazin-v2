@@ -1,0 +1,72 @@
+{
+  "batch_id": "whiskies_20260422T194610_2f10e4",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:46:10Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "kingsbarns",
+        "name": "Kingsbarns",
+        "slug": "kingsbarns",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2014,
+        "owner": "Wemyss Family",
+        "website": "https://www.kingsbarnsdistillery.com/",
+        "short_description": "Eine elegante Destillerie in Fife, die in einem restaurierten Gutshof aus dem 18. Jahrhundert untergebracht ist.",
+        "long_description": "Kingsbarns wurde 2014 von der Familie Wemyss gegründet und befindet sich in einem wunderschön restaurierten ehemaligen Pferdestall auf dem Gut Cambo in Fife. Die Brennerei nutzt ausschließlich lokal angebaute Gerste. Ihr Ziel ist es, einen fruchtigen, floralen und leichten Lowland-Whisky zu produzieren. Der Spirit reift hauptsächlich in erstbefüllten Bourbon-Fässern und STR-Rotweinfässern (Shorn, Toasted, Re-charred), was ihm zusätzliche Komplexität verleiht.",
+        "travel_info": "Das Besucherzentrum ist täglich geöffnet (April-Sept 10:00-18:00 Uhr). Es bietet Touren, einen Shop und ein Café. Die Destillerie liegt in der Nähe von St Andrews und ist ein ideales Ziel für Whisky- und Golf-Fans.",
+        "seo_title": "Kingsbarns Destillerie: Lowland-Eleganz aus Fife | Whisky-Glossar",
+        "seo_description": "Entdecke Kingsbarns in der Nähe von St Andrews. Erfahre mehr über die Wemyss-Familie, den fruchtigen 'Dream to Dram' Single Malt und das preisgekrönte Besucherzentrum.",
+        "coordinates": {
+          "lat": 56.2997,
+          "lng": -2.6517
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T00:00:00Z"
+      },
+      "normalized": {
+        "id": "kingsbarns",
+        "name": "Kingsbarns",
+        "slug": "kingsbarns",
+        "region_id": "lowlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 2014,
+        "owner": "Wemyss Family",
+        "website": "https://www.kingsbarnsdistillery.com/",
+        "short_description": "Eine elegante Destillerie in Fife, die in einem restaurierten Gutshof aus dem 18. Jahrhundert untergebracht ist.",
+        "long_description": "Kingsbarns wurde 2014 von der Familie Wemyss gegründet und befindet sich in einem wunderschön restaurierten ehemaligen Pferdestall auf dem Gut Cambo in Fife. Die Brennerei nutzt ausschließlich lokal angebaute Gerste. Ihr Ziel ist es, einen fruchtigen, floralen und leichten Lowland-Whisky zu produzieren. Der Spirit reift hauptsächlich in erstbefüllten Bourbon-Fässern und STR-Rotweinfässern (Shorn, Toasted, Re-charred), was ihm zusätzliche Komplexität verleiht.",
+        "travel_info": "Das Besucherzentrum ist täglich geöffnet (April-Sept 10:00-18:00 Uhr). Es bietet Touren, einen Shop und ein Café. Die Destillerie liegt in der Nähe von St Andrews und ist ein ideales Ziel für Whisky- und Golf-Fans.",
+        "seo_title": "Kingsbarns Destillerie: Lowland-Eleganz aus Fife | Whisky-Glossar",
+        "seo_description": "Entdecke Kingsbarns in der Nähe von St Andrews. Erfahre mehr über die Wemyss-Familie, den fruchtigen 'Dream to Dram' Single Malt und das preisgekrönte Besucherzentrum.",
+        "coordinates": {
+          "lat": 56.2997,
+          "lng": -2.6517
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:46:10Z"
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: distillery_id",
+        "Pflichtfeld fehlt: whisky_type",
+        "Pflichtfeld fehlt: abv",
+        "ABV außerhalb des gültigen Bereichs (20–95): 0.0"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
