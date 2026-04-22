@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192910_6f3173",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:10Z",
+  "raw": [
+    {
+      "id": "clynelish",
+      "name": "Clynelish",
+      "slug": "clynelish",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1967,
+      "owner": "Diageo",
+      "website": "https://www.malts.com/en-gb/distilleries/clynelish",
+      "short_description": "Berühmt für seine wachsartige Textur und seinen maritimen Charakter, ist Clynelish ein Favorit unter Kennern.",
+      "long_description": "Clynelish wurde 1967 als Nachfolger der ursprünglichen Brennerei (die in Brora umbenannt wurde) erbaut. Der Whisky ist legendär für seine einzigartige, wachsartige (waxy) Textur, die durch Ablagerungen in den Receiver-Tanks entsteht. Das Geschmacksprofil ist maritim, mit Noten von Bienenwachs, Salzwasser und reifen Äpfeln. Clynelish ist eine unverzichtbare Komponente für Johnnie Walker Gold Label.",
+      "travel_info": "Das moderne Besucherzentrum in Brora bietet interaktive Erlebnisse als Teil der 'Four Corners of Scotland' von Diageo. Derzeit kann es aufgrund von Wartungsarbeiten zu eingeschränkten Öffnungszeiten kommen; eine Vorab-Prüfung und Buchung wird empfohlen.",
+      "seo_title": "Clynelish Destillerie: Der wachsartige Malt der Highlands | Whisky-Glossar",
+      "seo_description": "Erfahre mehr über Clynelish in Brora. Entdecke das Geheimnis der wachsartigen Textur, den maritimen Single Malt und das preisgekrönte Besucherzentrum.",
+      "coordinates": {
+        "lat": 58.0169,
+        "lng": -3.8561
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T00:30:00Z"
+    }
+  ]
+}
