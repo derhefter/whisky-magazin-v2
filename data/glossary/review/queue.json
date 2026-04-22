@@ -1703,7 +1703,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kilchoman-sanaig",
         "name": "Sanaig",
@@ -1712,10 +1712,18 @@
         "region_id": "islay",
         "distillery_id": "kilchoman",
         "whisky_type": "single_malt",
-        "style_tags": "torfig, sherry, dunkle früchte, pfeffrig",
+        "style_tags": [
+          "torfig",
+          "sherry",
+          "dunkle früchte",
+          "pfeffrig"
+        ],
         "abv": 46,
-        "cask_types": "oloroso sherry (ca. 70%), ex-bourbon (ca. 30%)",
-        "smoke_profile": "Stark getorft",
+        "cask_types": [
+          "oloroso sherry (ca. 70%)",
+          "ex-bourbon (ca. 30%)"
+        ],
+        "smoke_profile": "none",
         "age_statement": null,
         "nas": true,
         "tasting_notes_nose": "Dunkle Früchte, Toffee, erdiger Torfrauch und ein Hauch Zitrus.",
@@ -1731,7 +1739,7 @@
         "review_status": "approved",
         "related_articles": [],
         "created_at": "2026-04-19T12:05:39.761Z",
-        "last_updated": "2026-04-22T20:27:02Z",
+        "last_updated": "2026-04-22T20:27:27Z",
         "seo_title": "Kilchoman Sanaig Single Malt Whisky kaufen",
         "seo_description": "Kilchoman Sanaig: Stark getorfter Islay Single Malt mit intensivem Sherry-Einfluss. Reichhaltig und fruchtig.",
         "published": true
@@ -1767,7 +1775,10 @@
         "seo_title": "Kilchoman Sanaig Single Malt Whisky kaufen",
         "seo_description": "Kilchoman Sanaig: Stark getorfter Islay Single Malt mit intensivem Sherry-Einfluss. Reichhaltig und fruchtig.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:27:27Z"
     },
     {
       "batch_id": "whiskies_20260422T202702_03905b",
