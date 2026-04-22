@@ -19095,7 +19095,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "annandale-man-o-sword",
         "name": "Annandale Man O'Sword",
@@ -19163,7 +19163,10 @@
         "seo_title": "Annandale Man O'Sword kaufen | Getorfter Lowland Single Malt",
         "seo_description": "Erleben Sie den Annandale Man O'Sword: Ein intensiv rauchiger Lowland Malt mit fruchtigen Untertönen. Benannt nach einem König.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:06Z"
     },
     {
       "batch_id": "whiskies_20260422T195124_249ced",
