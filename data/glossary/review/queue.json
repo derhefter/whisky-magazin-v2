@@ -202,6 +202,13 @@
       "imported_at": "2026-04-22T19:02:28Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T190230_29f275",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:02:30Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -5565,6 +5572,56 @@
         "coordinates": {
           "lat": 56.6243,
           "lng": -3.8503
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T190230_29f275",
+      "entity": "distilleries",
+      "item_id": "balblair",
+      "item_slug": "balblair",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "balblair",
+        "name": "Balblair",
+        "slug": "balblair",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1790,
+        "owner": "International Beverage (Inver House)",
+        "website": "https://www.balblair.com/",
+        "short_description": "Bekannt für ihre Vintage-Abfülllungen und einen eleganten, fruchtigen Highland-Stil.",
+        "long_description": "Balblair ist eine der ältesten noch arbeitenden Destillerien Schottlands, die 1790 von John Ross an den Ufern des Dornoch Firth gegründet wurde. Bekannt für ihre traditionellen Methoden und ihren markanten Vintage-Ansatz bei den Abfüllungen, produziert die Destillerie einen klassischen Highland-Malt. Ihr Charakter ist typischerweise elegant, fruchtig und floral, mit einer leicht wachsigen Textur, die sich mit dem Alter wunderbar entwickelt.",
+        "coordinates": {
+          "lat": 57.8408,
+          "lng": -4.1813
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:02:30Z"
+      },
+      "raw": {
+        "id": "balblair",
+        "name": "Balblair",
+        "slug": "balblair",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1790,
+        "owner": "International Beverage (Inver House)",
+        "website": "https://www.balblair.com/",
+        "short_description": "Bekannt für ihre Vintage-Abfülllungen und einen eleganten, fruchtigen Highland-Stil.",
+        "long_description": "Balblair ist eine der ältesten noch arbeitenden Destillerien Schottlands, die 1790 von John Ross an den Ufern des Dornoch Firth gegründet wurde. Bekannt für ihre traditionellen Methoden und ihren markanten Vintage-Ansatz bei den Abfüllungen, produziert die Destillerie einen klassischen Highland-Malt. Ihr Charakter ist typischerweise elegant, fruchtig und floral, mit einer leicht wachsigen Textur, die sich mit dem Alter wunderbar entwickelt.",
+        "coordinates": {
+          "lat": 57.8408,
+          "lng": -4.1813
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
