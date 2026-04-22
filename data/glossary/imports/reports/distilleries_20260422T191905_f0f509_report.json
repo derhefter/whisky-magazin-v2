@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T191905_f0f509",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:19:05Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "bushmills",
+        "name": "Old Bushmills Distillery",
+        "slug": "bushmills",
+        "region_id": "northern-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 1608,
+        "owner": "Proximo Spirits (Casa Cuervo)",
+        "website": "https://www.bushmills.com",
+        "short_description": "Die älteste lizenzierte Brennerei der Welt, berühmt für ihre dreifach destillierten Single Malts.",
+        "long_description": "Die Old Bushmills Distillery liegt an der Nordküste Irlands in County Antrim und blickt auf eine Lizenz von 1608 zurück. Bushmills ist einzigartig in Irland, da sie sich traditionell auf die Produktion von Single Malt Whiskey konzentriert, der dreifach destilliert wird, was ihm eine außergewöhnliche Weichheit und Fruchtigkeit verleiht. Während viele irische Whiskeys Blends aus verschiedenen Getreidesorten sind, bildet der Malz-Whiskey das Herzstück von Bushmills. Die Brennerei nutzt das Wasser des nahegelegenen St. Columb's Rill und ist ein Wahrzeichen der nordirischen Industriegeschichte.",
+        "travel_info": "Bushmills ist eines der meistbesuchten Ziele in Nordirland. Die geführten Touren führen durch die historischen Gebäude, zeigen die kupfernen Pot Stills und die Abfüllanlage. Eine Verkostung im '1608 Bar' ist am Ende jeder Tour inklusive. Es gibt einen großen Souvenirshop und die Brennerei liegt nur wenige Minuten vom berühmten Giant's Causeway entfernt.",
+        "coordinates": {
+          "lat": 55.2019,
+          "lng": -6.5196
+        },
+        "seo_title": "Bushmills Distillery - Älteste Whiskey-Brennerei der Welt",
+        "seo_description": "Besuchen Sie die Old Bushmills Distillery in Nordirland. Infos zu 400 Jahren Geschichte, dreifach destilliertem Single Malt und Besucher-Touren.",
+        "published": true,
+        "created_at": "2026-04-22T21:35:00Z",
+        "last_updated": "2026-04-22T21:35:00Z"
+      },
+      "normalized": {
+        "id": "bushmills",
+        "name": "Old Bushmills Distillery",
+        "slug": "bushmills",
+        "region_id": "northern-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 1608,
+        "owner": "Proximo Spirits (Casa Cuervo)",
+        "website": "https://www.bushmills.com",
+        "short_description": "Die älteste lizenzierte Brennerei der Welt, berühmt für ihre dreifach destillierten Single Malts.",
+        "long_description": "Die Old Bushmills Distillery liegt an der Nordküste Irlands in County Antrim und blickt auf eine Lizenz von 1608 zurück. Bushmills ist einzigartig in Irland, da sie sich traditionell auf die Produktion von Single Malt Whiskey konzentriert, der dreifach destilliert wird, was ihm eine außergewöhnliche Weichheit und Fruchtigkeit verleiht. Während viele irische Whiskeys Blends aus verschiedenen Getreidesorten sind, bildet der Malz-Whiskey das Herzstück von Bushmills. Die Brennerei nutzt das Wasser des nahegelegenen St. Columb's Rill und ist ein Wahrzeichen der nordirischen Industriegeschichte.",
+        "travel_info": "Bushmills ist eines der meistbesuchten Ziele in Nordirland. Die geführten Touren führen durch die historischen Gebäude, zeigen die kupfernen Pot Stills und die Abfüllanlage. Eine Verkostung im '1608 Bar' ist am Ende jeder Tour inklusive. Es gibt einen großen Souvenirshop und die Brennerei liegt nur wenige Minuten vom berühmten Giant's Causeway entfernt.",
+        "coordinates": {
+          "lat": 55.2019,
+          "lng": -6.5196
+        },
+        "seo_title": "Bushmills Distillery - Älteste Whiskey-Brennerei der Welt",
+        "seo_description": "Besuchen Sie die Old Bushmills Distillery in Nordirland. Infos zu 400 Jahren Geschichte, dreifach destilliertem Single Malt und Besucher-Touren.",
+        "published": true,
+        "created_at": "2026-04-22T21:35:00Z",
+        "last_updated": "2026-04-22T19:19:05Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
