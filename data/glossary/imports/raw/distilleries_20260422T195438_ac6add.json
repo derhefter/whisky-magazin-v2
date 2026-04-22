@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T195438_ac6add",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:54:38Z",
+  "raw": [
+    {
+      "id": "caol_ila",
+      "name": "Caol Ila",
+      "slug": "caol_ila",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1846,
+      "owner": "Diageo",
+      "website": "https://www.malts.com/en-gb/distilleries/caol-ila",
+      "short_description": "Die größte Destillerie der Insel, liefert einen eleganten, rauchigen Malt mit Noten von Zitrusfrüchten.",
+      "long_description": "Caol Ila ist der Gigant von Islay und produziert mehr Whisky als jede andere Brennerei auf der Insel. Gegründet 1846, blickt sie über den Sund of Islay. Ihr Spirit wird von Blendern (insbesondere für Johnnie Walker) wegen seiner Beständigkeit hoch geschätzt. Als Single Malt wird Caol Ila für seinen sauberen, rauchigen und medizinischen Charakter mit hellen Zitrus- und floralen Noten gefeiert.",
+      "travel_info": "Das neu gestaltete Besucherzentrum ist Teil der 'Four Corners of Scotland' von Diageo und täglich von 10:00 bis 17:00 Uhr geöffnet. Die Bar bietet einen Panoramablick auf den Sund of Islay. Touren sollten online reserviert werden.",
+      "seo_title": "Caol Ila Destillerie: Der rauchige Gigant auf Islay | Whisky-Glossar",
+      "seo_description": "Besuche Caol Ila, Islays größte Brennerei. Entdecke das moderne Besucherzentrum, genieße den Blick auf die Paps of Jura und probiere elegant-rauchigen Single Malt.",
+      "coordinates": {
+        "lat": 55.8542,
+        "lng": -6.1091
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T21:45:00Z"
+    }
+  ]
+}
