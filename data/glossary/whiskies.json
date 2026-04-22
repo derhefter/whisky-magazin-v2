@@ -4490,43 +4490,36 @@
   },
   {
     "id": "kilchoman-sanaig",
-    "name": "Sanaig",
     "slug": "sanaig",
+    "published": true,
+    "short_description": "Das sherry-betonte Gegenstück zum Machir Bay. Kilchoman Sanaig verbindet Torfrauch mit dunklen Früchten.",
+    "long_description": "Während Machir Bay vom Bourbonfass dominiert wird, liegt der Fokus beim Sanaig auf Oloroso-Sherryfässern. Dies verleiht dem stark getorften Kilchoman-Destillat wunderbare Noten von dunkler Schokolade, Rosinen und roten Früchten, ohne den Rauch zu überdecken.",
+    "seo_title": "Kilchoman Sanaig Single Malt Whisky kaufen",
+    "seo_description": "Kilchoman Sanaig: Stark getorfter Islay Single Malt mit intensivem Sherry-Einfluss. Reichhaltig und fruchtig.",
+    "name": "Sanaig",
     "country_id": "scotland",
     "region_id": "islay",
     "distillery_id": "kilchoman",
     "whisky_type": "single_malt",
+    "abv": 46,
+    "age_statement": null,
+    "nas": true,
+    "smoke_profile": "heavy",
+    "cask_types": [
+      "oloroso sherry (ca. 70%)",
+      "ex-bourbon (ca. 30%)"
+    ],
     "style_tags": [
       "torfig",
       "sherry",
       "dunkle früchte",
       "pfeffrig"
     ],
-    "abv": 46,
-    "cask_types": [
-      "oloroso sherry (ca. 70%)",
-      "ex-bourbon (ca. 30%)"
-    ],
-    "smoke_profile": "none",
-    "age_statement": null,
-    "nas": true,
     "tasting_notes_nose": "Dunkle Früchte, Toffee, erdiger Torfrauch und ein Hauch Zitrus.",
     "tasting_notes_palate": "Pflaumen, Rosinen, dunkle Schokolade, Gewürze und kräftiger Torf.",
     "tasting_notes_finish": "Lang, fruchtig und anhaltend rauchig.",
-    "short_description": "Das sherry-betonte Gegenstück zum Machir Bay. Kilchoman Sanaig verbindet Torfrauch mit dunklen Früchten.",
-    "long_description": "Während Machir Bay vom Bourbonfass dominiert wird, liegt der Fokus beim Sanaig auf Oloroso-Sherryfässern. Dies verleiht dem stark getorften Kilchoman-Destillat wunderbare Noten von dunkler Schokolade, Rosinen und roten Früchten, ohne den Rauch zu überdecken.",
-    "editorial_notes": null,
-    "travel_context": null,
-    "image": null,
-    "source_urls": [],
-    "source_status": "verified",
-    "review_status": "approved",
-    "related_articles": [],
     "created_at": "2026-04-19T12:05:39.761Z",
-    "last_updated": "2026-04-22T20:27:39Z",
-    "seo_title": "Kilchoman Sanaig Single Malt Whisky kaufen",
-    "seo_description": "Kilchoman Sanaig: Stark getorfter Islay Single Malt mit intensivem Sherry-Einfluss. Reichhaltig und fruchtig.",
-    "published": true
+    "last_updated": "2026-04-22T20:29:17Z"
   },
   {
     "id": "kilchoman-loch-gorm",
