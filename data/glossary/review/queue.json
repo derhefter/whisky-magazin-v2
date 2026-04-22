@@ -11297,7 +11297,7 @@
         "ID bereits vorhanden (Duplikat): blair-athol"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "blair-athol",
         "name": "Blair Athol",
@@ -11319,7 +11319,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:29:06Z"
+        "last_updated": "2026-04-22T19:31:05Z"
       },
       "raw": {
         "id": "blair-athol",
@@ -11343,7 +11343,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T00:25:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:31:05Z"
     },
     {
       "batch_id": "distilleries_20260422T192910_6f3173",
