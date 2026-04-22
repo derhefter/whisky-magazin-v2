@@ -1,0 +1,69 @@
+{
+  "batch_id": "distilleries_20260422T192859_3dc622",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:28:59Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "aberfeldy",
+        "name": "Aberfeldy",
+        "slug": "aberfeldy",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1896,
+        "owner": "Bacardi (John Dewar & Sons)",
+        "website": "https://www.dewars.com/gl/en/aberfeldydistillery/",
+        "short_description": "Die Heimat von Dewar's, bekannt für ihren honigsüßen Single Malt und das interaktive 'Dewar's World of Whisky'.",
+        "long_description": "Aberfeldy wurde 1896 von den Brüdern Dewar gegründet und liegt am Ufer des Flusses Tay. Der Whisky ist ein Herzstück der Dewar's Blends und wird für sein reiches, honigartiges und fruchtiges Profil geschätzt. Die Destillerie nutzt das Wasser des Pitilie Burn, das für seine Reinheit (und Goldvorkommen) bekannt ist. Besucher können im 'Dewar's World of Whisky' tief in die Geschichte einer der berühmtesten Whisky-Familien Schottlands eintauchen.",
+        "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (April-Okt: Mo-Sa 10-18 Uhr, So 12-16 Uhr; Nov-Mär: Mo-Sa 10-16 Uhr). Es bietet interaktive Ausstellungen, Touren und eine gemütliche Bar. Eine Reservierung wird empfohlen.",
+        "seo_title": "Aberfeldy Destillerie: Der goldene Malt der Highlands | Whisky-Glossar",
+        "seo_description": "Besuche Aberfeldy und Dewar's World of Whisky. Entdecke den honigsüßen Single Malt, die Geschichte der Familie Dewar und Touren im Herzen der Highlands.",
+        "coordinates": {
+          "lat": 56.6214,
+          "lng": -3.8553
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T00:15:00Z"
+      },
+      "normalized": {
+        "id": "aberfeldy",
+        "name": "Aberfeldy",
+        "slug": "aberfeldy",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1896,
+        "owner": "Bacardi (John Dewar & Sons)",
+        "website": "https://www.dewars.com/gl/en/aberfeldydistillery/",
+        "short_description": "Die Heimat von Dewar's, bekannt für ihren honigsüßen Single Malt und das interaktive 'Dewar's World of Whisky'.",
+        "long_description": "Aberfeldy wurde 1896 von den Brüdern Dewar gegründet und liegt am Ufer des Flusses Tay. Der Whisky ist ein Herzstück der Dewar's Blends und wird für sein reiches, honigartiges und fruchtiges Profil geschätzt. Die Destillerie nutzt das Wasser des Pitilie Burn, das für seine Reinheit (und Goldvorkommen) bekannt ist. Besucher können im 'Dewar's World of Whisky' tief in die Geschichte einer der berühmtesten Whisky-Familien Schottlands eintauchen.",
+        "travel_info": "Das Besucherzentrum ist ganzjährig geöffnet (April-Okt: Mo-Sa 10-18 Uhr, So 12-16 Uhr; Nov-Mär: Mo-Sa 10-16 Uhr). Es bietet interaktive Ausstellungen, Touren und eine gemütliche Bar. Eine Reservierung wird empfohlen.",
+        "seo_title": "Aberfeldy Destillerie: Der goldene Malt der Highlands | Whisky-Glossar",
+        "seo_description": "Besuche Aberfeldy und Dewar's World of Whisky. Entdecke den honigsüßen Single Malt, die Geschichte der Familie Dewar und Touren im Herzen der Highlands.",
+        "coordinates": {
+          "lat": 56.6214,
+          "lng": -3.8553
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:28:59Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): aberfeldy"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
