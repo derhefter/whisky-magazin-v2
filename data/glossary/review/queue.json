@@ -6698,7 +6698,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "aberlour-aberlour-16-year-old-double-cask-matured",
         "name": "Aberlour 16 Year Old Double Cask Matured",
@@ -6762,7 +6762,10 @@
         "seo_title": "Aberlour 16 Jahre Double Cask Matured Whisky online bestellen",
         "seo_description": "Aberlour 16 Jahre: Ein komplexer Speyside Single Malt mit floralen Noten und reifer Fruchtigkeit. Jetzt entdecken.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:44:34Z"
     },
     {
       "batch_id": "whiskies_20260422T204305_21893c",
