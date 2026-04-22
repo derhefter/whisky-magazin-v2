@@ -573,6 +573,13 @@
       "imported_at": "2026-04-22T19:29:29Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T192932_37a4cc",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:29:32Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -11708,6 +11715,64 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:00:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T192932_37a4cc",
+      "entity": "distilleries",
+      "item_id": "glengoyne",
+      "item_slug": "glengoyne",
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): glengoyne"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "glengoyne",
+        "name": "Glengoyne",
+        "slug": "glengoyne",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1833,
+        "owner": "Ian Macleod Distillers",
+        "website": "https://www.glengoyne.com/",
+        "short_description": "Bekannt für den langsamsten Destillationsprozess Schottlands, der einen besonders fruchtigen und süßen Stil erzeugt.",
+        "long_description": "Glengoyne liegt in einem malerischen Tal nördlich von Glasgow. Eine Besonderheit ist die Lage: Die Brennerei selbst steht in den Highlands, während die Lagerhäuser auf der anderen Straßenseite technisch gesehen bereits in den Lowlands liegen. Glengoyne verwendet ausschließlich ungetorftes Malz und destilliert langsamer als jede andere Brennerei in Schottland. Dieser behutsame Prozess führt zu einem außergewöhnlich klaren, süßen und fruchtigen Whisky mit ausgeprägten Sherrynoten.",
+        "travel_info": "Die Destillerie ist täglich geöffnet und bietet eine Vielzahl von Touren an, von Standard-Führungen bis zu Blending-Sessions. Dank der guten Busanbindung von Glasgow ist sie auch ohne Auto leicht zu erreichen.",
+        "seo_title": "Glengoyne Destillerie: Die Kunst der Langsamkeit | Whisky-Glossar",
+        "seo_description": "Besuche Glengoyne, eine der malerischsten Brennereien Schottlands. Erfahre mehr über die langsame Destillation, ungetorften Single Malt und Touren nahe Glasgow.",
+        "coordinates": {
+          "lat": 56.0142,
+          "lng": -4.3644
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:29:32Z"
+      },
+      "raw": {
+        "id": "glengoyne",
+        "name": "Glengoyne",
+        "slug": "glengoyne",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1833,
+        "owner": "Ian Macleod Distillers",
+        "website": "https://www.glengoyne.com/",
+        "short_description": "Bekannt für den langsamsten Destillationsprozess Schottlands, der einen besonders fruchtigen und süßen Stil erzeugt.",
+        "long_description": "Glengoyne liegt in einem malerischen Tal nördlich von Glasgow. Eine Besonderheit ist die Lage: Die Brennerei selbst steht in den Highlands, während die Lagerhäuser auf der anderen Straßenseite technisch gesehen bereits in den Lowlands liegen. Glengoyne verwendet ausschließlich ungetorftes Malz und destilliert langsamer als jede andere Brennerei in Schottland. Dieser behutsame Prozess führt zu einem außergewöhnlich klaren, süßen und fruchtigen Whisky mit ausgeprägten Sherrynoten.",
+        "travel_info": "Die Destillerie ist täglich geöffnet und bietet eine Vielzahl von Touren an, von Standard-Führungen bis zu Blending-Sessions. Dank der guten Busanbindung von Glasgow ist sie auch ohne Auto leicht zu erreichen.",
+        "seo_title": "Glengoyne Destillerie: Die Kunst der Langsamkeit | Whisky-Glossar",
+        "seo_description": "Besuche Glengoyne, eine der malerischsten Brennereien Schottlands. Erfahre mehr über die langsame Destillation, ungetorften Single Malt und Touren nahe Glasgow.",
+        "coordinates": {
+          "lat": 56.0142,
+          "lng": -4.3644
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T01:05:00Z"
       }
     }
   ]
