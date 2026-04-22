@@ -1,0 +1,57 @@
+{
+  "batch_id": "whiskies_20260422T194049_000333",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:40:49Z",
+  "raw": [
+    {
+      "id": "torabhaig-allt-gleann-legacy-series",
+      "name": "Torabhaig Allt Gleann (Legacy Series)",
+      "slug": "torabhaig-allt-gleann-legacy-series",
+      "country_id": "scotland",
+      "region_id": "islands",
+      "distillery_id": "torabhaig",
+      "whisky_type": "single_malt",
+      "style_tags": "torfig, rauchig, maritim, robust",
+      "abv": 46,
+      "cask_types": "First-fill & Re-fill Bourbon",
+      "smoke_profile": "Stark getorft",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes": {
+        "nose": "Kräftiger Torfrauch, Meersalz, maritime Mineralität.",
+        "palate": "Pfeffrige Würze, süßer Rauch, Zitrusnoten, ölig.",
+        "finish": "Lang, rauchig mit anhaltender Salznote."
+      },
+      "short_description": "Die zweite Abfüllung der Legacy Series von der Isle of Skye.",
+      "long_description": "Torabhaig ist erst die zweite legale Brennerei auf der Isle of Skye. Der Allt Gleann ist Teil der Legacy Series, die den Weg zum ersten 10-jährigen Whisky der Brennerei ebnet. Er zeichnet sich durch einen robusten, torfigen Charakter aus.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    },
+    {
+      "id": "torabhaig-taigh",
+      "name": "Torabhaig \"Taigh\"",
+      "slug": "torabhaig-taigh",
+      "country_id": "scotland",
+      "region_id": "islands",
+      "distillery_id": "torabhaig",
+      "whisky_type": "single_malt",
+      "style_tags": "torfig, rauchig, maritim, balanciert",
+      "abv": 46,
+      "cask_types": "Bourbon Casks",
+      "smoke_profile": "Stark getorft",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes": {
+        "nose": "Gekochte Früchte, sanfter Rauch, Vanille.",
+        "palate": "Süßer Torf, florale Noten, Meeresbrise.",
+        "finish": "Wärmend und rauchig."
+      },
+      "short_description": "Das erste permanente Core Range Release von Torabhaig.",
+      "long_description": "Taigh (Gälisch für Haus) markiert den Übergang von limitierten Editionen zu einem permanenten Kernsortiment. Er zeigt die typische Skye-Charakteristik mit einer feineren Balance als die Legacy-Abfüllungen.",
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true
+    }
+  ]
+}
