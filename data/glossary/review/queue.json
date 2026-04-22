@@ -18771,7 +18771,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aerstone-sea-cask",
         "name": "Aerstone 10 Years Old Sea Cask",
@@ -18842,7 +18842,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:00Z"
+      "reviewed_at": "2026-04-22T19:53:00Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195115_7caedc",
@@ -18852,7 +18853,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aerstone-land-cask",
         "name": "Aerstone 10 Years Old Land Cask",
@@ -18923,7 +18924,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:01Z"
+      "reviewed_at": "2026-04-22T19:53:01Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195118_63b4b9",
@@ -18933,7 +18935,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ailsa-bay-sweet-smoke",
         "name": "Ailsa Bay Sweet Smoke",
@@ -19004,7 +19006,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:03Z"
+      "reviewed_at": "2026-04-22T19:53:03Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195121_96b0cc",
@@ -19014,7 +19017,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "annandale-man-o-words",
         "name": "Annandale Man O'Words",
@@ -19085,7 +19088,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:05Z"
+      "reviewed_at": "2026-04-22T19:53:05Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195121_96b0cc",
@@ -19095,7 +19099,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "annandale-man-o-sword",
         "name": "Annandale Man O'Sword",
@@ -19166,7 +19170,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:06Z"
+      "reviewed_at": "2026-04-22T19:53:06Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195124_249ced",
@@ -19176,7 +19181,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "auchentoshan-american-oak",
         "name": "Auchentoshan American Oak",
@@ -19247,7 +19252,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:08Z"
+      "reviewed_at": "2026-04-22T19:53:08Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195124_249ced",
@@ -19257,7 +19263,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "auchentoshan-12-years-old",
         "name": "Auchentoshan 12 Years Old",
@@ -19328,7 +19334,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:10Z"
+      "reviewed_at": "2026-04-22T19:53:10Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195124_249ced",
@@ -19338,7 +19345,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "auchentoshan-18-years-old",
         "name": "Auchentoshan 18 Years Old",
@@ -19409,7 +19416,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:11Z"
+      "reviewed_at": "2026-04-22T19:53:11Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195128_c1368e",
@@ -19419,7 +19427,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bladnoch-vinaya",
         "name": "Bladnoch Vinaya",
@@ -19490,7 +19498,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:13Z"
+      "reviewed_at": "2026-04-22T19:53:13Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195128_c1368e",
@@ -19500,7 +19509,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bladnoch-samsara",
         "name": "Bladnoch Samsara",
@@ -19571,7 +19580,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:14Z"
+      "reviewed_at": "2026-04-22T19:53:14Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195128_c1368e",
@@ -19581,7 +19591,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bladnoch-alinta",
         "name": "Bladnoch Alinta",
@@ -19652,7 +19662,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:16Z"
+      "reviewed_at": "2026-04-22T19:53:16Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195131_2145d6",
@@ -19662,7 +19673,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "daftmill-summer-batch-release",
         "name": "Daftmill Summer Batch Release",
@@ -19733,7 +19744,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:18Z"
+      "reviewed_at": "2026-04-22T19:53:18Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195131_2145d6",
@@ -19743,7 +19755,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "daftmill-winter-batch-release",
         "name": "Daftmill Winter Batch Release",
@@ -19814,7 +19826,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:20Z"
+      "reviewed_at": "2026-04-22T19:53:20Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195134_528e75",
@@ -19824,7 +19837,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenkinchie-12-years-old",
         "name": "Glenkinchie 12 Years Old",
@@ -19895,7 +19908,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:22Z"
+      "reviewed_at": "2026-04-22T19:53:22Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195134_528e75",
@@ -19905,7 +19919,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenkinchie-distillers-edition",
         "name": "Glenkinchie Distillers Edition",
@@ -19976,7 +19990,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:24Z"
+      "reviewed_at": "2026-04-22T19:53:24Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195138_476644",
@@ -19986,7 +20001,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kingsbarns-doocot",
         "name": "Kingsbarns Doocot",
@@ -20057,7 +20072,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:25Z"
+      "reviewed_at": "2026-04-22T19:53:25Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195138_476644",
@@ -20067,7 +20083,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kingsbarns-balcomie",
         "name": "Kingsbarns Balcomie",
@@ -20138,7 +20154,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:27Z"
+      "reviewed_at": "2026-04-22T19:53:27Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195141_30f154",
@@ -20148,7 +20165,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lindores-abbey-mcdxciv",
         "name": "Lindores Abbey MCDXCIV",
@@ -20219,7 +20236,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:29Z"
+      "reviewed_at": "2026-04-22T19:53:29Z",
+      "published_at": "2026-04-22T19:53:43Z"
     },
     {
       "batch_id": "whiskies_20260422T195144_f9761a",
@@ -20229,7 +20247,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lochlea-our-barley",
         "name": "Lochlea Our Barley",
@@ -20300,7 +20318,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:53:31Z"
+      "reviewed_at": "2026-04-22T19:53:31Z",
+      "published_at": "2026-04-22T19:53:43Z"
     }
   ]
 }
