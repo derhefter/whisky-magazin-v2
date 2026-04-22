@@ -1618,7 +1618,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kilchoman-machir-bay",
         "name": "Machir Bay",
@@ -1693,7 +1693,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:27:22Z"
+      "reviewed_at": "2026-04-22T20:27:22Z",
+      "published_at": "2026-04-22T20:27:39Z"
     },
     {
       "batch_id": "whiskies_20260422T202702_03905b",
@@ -1703,7 +1704,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kilchoman-sanaig",
         "name": "Sanaig",
@@ -1778,7 +1779,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:27:27Z"
+      "reviewed_at": "2026-04-22T20:27:27Z",
+      "published_at": "2026-04-22T20:27:39Z"
     },
     {
       "batch_id": "whiskies_20260422T202702_03905b",
@@ -1788,7 +1790,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kilchoman-loch-gorm",
         "name": "Loch Gorm",
@@ -1862,7 +1864,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:27:31Z"
+      "reviewed_at": "2026-04-22T20:27:31Z",
+      "published_at": "2026-04-22T20:27:39Z"
     },
     {
       "batch_id": "whiskies_20260422T202702_03905b",
@@ -1872,7 +1875,7 @@
       "status": "update_candidate",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kilchoman-100-islay",
         "name": "100% Islay",
@@ -1946,7 +1949,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T20:27:36Z"
+      "reviewed_at": "2026-04-22T20:27:36Z",
+      "published_at": "2026-04-22T20:27:39Z"
     }
   ]
 }
