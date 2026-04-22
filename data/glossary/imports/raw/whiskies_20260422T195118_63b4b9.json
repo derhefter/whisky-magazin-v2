@@ -1,0 +1,41 @@
+{
+  "batch_id": "whiskies_20260422T195118_63b4b9",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:51:18Z",
+  "raw": [
+    {
+      "id": "ailsa-bay-sweet-smoke",
+      "name": "Ailsa Bay Sweet Smoke",
+      "slug": "ailsa-bay-sweet-smoke",
+      "country_id": "scotland",
+      "region_id": "lowlands",
+      "distillery_id": "ailsa_bay",
+      "whisky_type": "single_malt",
+      "style_tags": "getorft, modern, süß-rauchig, Vanille",
+      "abv": 48.9,
+      "cask_types": "small wood, ex-bourbon",
+      "smoke_profile": "Getorft",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes_nose": "Erdiger Rauch und schwelende Glut, kombiniert mit viel Vanille, karamellisierten Äpfeln und kandierter Orangen-Schale.",
+      "tasting_notes_palate": "Medizinischer Torfeinfluss trifft auf Holzkohle und Salmiak. Dazu eine süße Schicht aus goldenem Sirup und cremiger Vanille.",
+      "tasting_notes_finish": "Mittellang, süß und trocken mit verbleibenden Rauch- und Eichennoten.",
+      "short_description": "Ein innovativer, getorfter Lowland Malt, der mit Präzision destilliert wurde, um 'süßen Rauch' zu erzeugen.",
+      "long_description": "Ailsa Bay ist eine der modernsten Destillerien Schottlands. Der 'Sweet Smoke' nutzt eine präzise Steuerung der Phenole (PPPM) und der Süße (SPPM), um ein einzigartiges Gleichgewicht zwischen intensivem Torfrauch und einer reichen, malzigen Süße zu schaffen.",
+      "editorial_notes": "Die Flasche zeigt oft die PPPM- und SPPM-Werte an.",
+      "travel_context": null,
+      "image": null,
+      "source_urls": [
+        "https://www.ailsabay.com/"
+      ],
+      "source_status": "verified",
+      "review_status": "pending",
+      "related_articles": [],
+      "created_at": "2026-04-21T15:00:00.000Z",
+      "last_updated": "2026-04-21T15:00:00.000Z",
+      "seo_title": "Ailsa Bay Sweet Smoke kaufen | Moderner getorfter Lowland Malt",
+      "seo_description": "Erleben Sie Ailsa Bay Sweet Smoke: Die perfekte Balance aus intensivem Rauch und süßer Vanille. Ein technisches Meisterwerk aus den Lowlands.",
+      "published": true
+    }
+  ]
+}
