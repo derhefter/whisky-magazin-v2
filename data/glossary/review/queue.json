@@ -5162,7 +5162,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "glenfarclas-glenfarclas-12-year-old",
         "name": "Glenfarclas 12 Year Old",
@@ -5226,7 +5226,10 @@
         "seo_title": "Glenfarclas 12 Jahre Single Malt Whisky kaufen | Sherry-Klassiker",
         "seo_description": "Der Glenfarclas 12 Jahre: Ein fruchtiger, würziger Speyside Whisky aus dem Sherryfass. Jetzt online entdecken.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:32Z"
     },
     {
       "batch_id": "whiskies_20260422T204007_cc4857",
