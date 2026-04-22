@@ -11175,7 +11175,7 @@
         "ID bereits vorhanden (Duplikat): aberfeldy"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "aberfeldy",
         "name": "Aberfeldy",
@@ -11224,7 +11224,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:30:40Z"
+      "reviewed_at": "2026-04-22T19:30:40Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192903_01ec1b",
@@ -11236,7 +11237,7 @@
         "ID bereits vorhanden (Duplikat): balblair"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "balblair",
         "name": "Balblair",
@@ -11285,7 +11286,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:30:55Z"
+      "reviewed_at": "2026-04-22T19:30:55Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192906_25cfbc",
@@ -11297,7 +11299,7 @@
         "ID bereits vorhanden (Duplikat): blair-athol"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "blair-athol",
         "name": "Blair Athol",
@@ -11346,7 +11348,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:31:05Z"
+      "reviewed_at": "2026-04-22T19:31:05Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192910_6f3173",
@@ -11358,7 +11361,7 @@
         "ID bereits vorhanden (Duplikat): clynelish"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "clynelish",
         "name": "Clynelish",
@@ -11407,7 +11410,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:31:10Z"
+      "reviewed_at": "2026-04-22T19:31:10Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192913_de19e4",
@@ -11419,7 +11423,7 @@
         "ID bereits vorhanden (Duplikat): dalmore"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore",
         "name": "The Dalmore",
@@ -11468,7 +11472,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:31:17Z"
+      "reviewed_at": "2026-04-22T19:31:17Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192917_8e003c",
@@ -11480,7 +11485,7 @@
         "ID bereits vorhanden (Duplikat): dalwhinnie"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "dalwhinnie",
         "name": "Dalwhinnie",
@@ -11529,7 +11534,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:31:54Z"
+      "reviewed_at": "2026-04-22T19:31:54Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192920_7ca3c9",
@@ -11541,7 +11547,7 @@
         "ID bereits vorhanden (Duplikat): deanston"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "deanston",
         "name": "Deanston",
@@ -11590,7 +11596,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:02Z"
+      "reviewed_at": "2026-04-22T19:32:02Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192923_168252",
@@ -11602,7 +11609,7 @@
         "ID bereits vorhanden (Duplikat): edradour"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "edradour",
         "name": "Edradour",
@@ -11651,7 +11658,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:07Z"
+      "reviewed_at": "2026-04-22T19:32:07Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192926_442e5a",
@@ -11663,7 +11671,7 @@
         "ID bereits vorhanden (Duplikat): fettercairn"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "fettercairn",
         "name": "Fettercairn",
@@ -11712,7 +11720,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:13Z"
+      "reviewed_at": "2026-04-22T19:32:13Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192929_f10070",
@@ -11724,7 +11733,7 @@
         "ID bereits vorhanden (Duplikat): glendronach"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "glendronach",
         "name": "The GlenDronach",
@@ -11773,7 +11782,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:20Z"
+      "reviewed_at": "2026-04-22T19:32:20Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192932_37a4cc",
@@ -11785,7 +11795,7 @@
         "ID bereits vorhanden (Duplikat): glengoyne"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne",
         "name": "Glengoyne",
@@ -11834,7 +11844,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:27Z"
+      "reviewed_at": "2026-04-22T19:32:27Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192936_237dc2",
@@ -11846,7 +11857,7 @@
         "ID bereits vorhanden (Duplikat): glenmorangie"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie",
         "name": "Glenmorangie",
@@ -11895,7 +11906,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:33Z"
+      "reviewed_at": "2026-04-22T19:32:33Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192939_af088f",
@@ -11907,7 +11919,7 @@
         "ID bereits vorhanden (Duplikat): oban"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "oban",
         "name": "Oban",
@@ -11956,7 +11968,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:32:48Z"
+      "reviewed_at": "2026-04-22T19:32:48Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192942_74ffab",
@@ -11968,7 +11981,7 @@
         "ID bereits vorhanden (Duplikat): old-pulteney"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney",
         "name": "Old Pulteney",
@@ -12017,7 +12030,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:33:03Z"
+      "reviewed_at": "2026-04-22T19:33:03Z",
+      "published_at": "2026-04-22T19:33:13Z"
     },
     {
       "batch_id": "distilleries_20260422T192945_8dede5",
@@ -12029,7 +12043,7 @@
         "ID bereits vorhanden (Duplikat): tomatin"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin",
         "name": "Tomatin",
@@ -12078,7 +12092,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:33:08Z"
+      "reviewed_at": "2026-04-22T19:33:08Z",
+      "published_at": "2026-04-22T19:33:13Z"
     }
   ]
 }
