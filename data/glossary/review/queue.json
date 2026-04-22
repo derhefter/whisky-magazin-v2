@@ -5627,7 +5627,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aberfeldy",
         "name": "Aberfeldy",
@@ -5670,7 +5670,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:29Z"
+      "reviewed_at": "2026-04-22T19:06:29Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190230_29f275",
@@ -5680,7 +5681,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balblair",
         "name": "Balblair",
@@ -5723,7 +5724,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:30Z"
+      "reviewed_at": "2026-04-22T19:06:30Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190233_0e6210",
@@ -5733,7 +5735,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "blair-athol",
         "name": "Blair Athol",
@@ -5776,7 +5778,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:32Z"
+      "reviewed_at": "2026-04-22T19:06:32Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190236_6b363d",
@@ -5786,7 +5789,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "clynelish",
         "name": "Clynelish",
@@ -5829,7 +5832,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:33Z"
+      "reviewed_at": "2026-04-22T19:06:33Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190239_7d7518",
@@ -5839,7 +5843,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalmore",
         "name": "The Dalmore",
@@ -5882,7 +5886,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:34Z"
+      "reviewed_at": "2026-04-22T19:06:34Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190242_7e0446",
@@ -5892,7 +5897,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dalwhinnie",
         "name": "Dalwhinnie",
@@ -5935,7 +5940,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:35Z"
+      "reviewed_at": "2026-04-22T19:06:35Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190244_645609",
@@ -5945,7 +5951,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "deanston",
         "name": "Deanston",
@@ -5988,7 +5994,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:36Z"
+      "reviewed_at": "2026-04-22T19:06:36Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190247_9c7ea0",
@@ -5998,7 +6005,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "edradour",
         "name": "Edradour",
@@ -6041,7 +6048,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:38Z"
+      "reviewed_at": "2026-04-22T19:06:38Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190251_8fb945",
@@ -6051,7 +6059,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "fettercairn",
         "name": "Fettercairn",
@@ -6094,7 +6102,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:39Z"
+      "reviewed_at": "2026-04-22T19:06:39Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190254_241ba1",
@@ -6104,7 +6113,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glendronach",
         "name": "The GlenDronach",
@@ -6147,7 +6156,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:40Z"
+      "reviewed_at": "2026-04-22T19:06:40Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190257_8a01a9",
@@ -6157,7 +6167,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengoyne",
         "name": "Glengoyne",
@@ -6200,7 +6210,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:42Z"
+      "reviewed_at": "2026-04-22T19:06:42Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190300_233d96",
@@ -6210,7 +6221,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenmorangie",
         "name": "Glenmorangie",
@@ -6253,7 +6264,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:43Z"
+      "reviewed_at": "2026-04-22T19:06:43Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190303_d6de18",
@@ -6263,7 +6275,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "oban",
         "name": "Oban",
@@ -6306,7 +6318,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:44Z"
+      "reviewed_at": "2026-04-22T19:06:44Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190306_d68714",
@@ -6316,7 +6329,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney",
         "name": "Old Pulteney",
@@ -6359,7 +6372,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:45Z"
+      "reviewed_at": "2026-04-22T19:06:45Z",
+      "published_at": "2026-04-22T19:07:25Z"
     },
     {
       "batch_id": "distilleries_20260422T190310_3c1f28",
@@ -6369,7 +6383,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tomatin",
         "name": "Tomatin",
@@ -6412,7 +6426,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:06:47Z"
+      "reviewed_at": "2026-04-22T19:06:47Z",
+      "published_at": "2026-04-22T19:07:25Z"
     }
   ]
 }
