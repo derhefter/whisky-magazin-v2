@@ -4702,7 +4702,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glen-scotia-glen-scotia-double-cask",
         "name": "Glen Scotia Double Cask",
@@ -4773,7 +4773,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:30Z"
+      "reviewed_at": "2026-04-22T19:01:30Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190046_2e665d",
@@ -4783,7 +4784,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glen-scotia-glen-scotia-15-years-old",
         "name": "Glen Scotia 15 Years Old",
@@ -4854,7 +4855,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:32Z"
+      "reviewed_at": "2026-04-22T19:01:32Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190046_2e665d",
@@ -4864,7 +4866,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glen-scotia-glen-scotia-victoriana",
         "name": "Glen Scotia Victoriana",
@@ -4935,7 +4937,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:33Z"
+      "reviewed_at": "2026-04-22T19:01:33Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190050_19baca",
@@ -4945,7 +4948,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengyle-kilkerran-12-years-old",
         "name": "Kilkerran 12 Years Old",
@@ -5016,7 +5019,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:34Z"
+      "reviewed_at": "2026-04-22T19:01:34Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190050_19baca",
@@ -5026,7 +5030,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengyle-kilkerran-16-years-old",
         "name": "Kilkerran 16 Years Old",
@@ -5097,7 +5101,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:35Z"
+      "reviewed_at": "2026-04-22T19:01:35Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190050_19baca",
@@ -5107,7 +5112,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glengyle-kilkerran-heavily-peated",
         "name": "Kilkerran Heavily Peated",
@@ -5178,7 +5183,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:36Z"
+      "reviewed_at": "2026-04-22T19:01:36Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
@@ -5188,7 +5194,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "springbank-springbank-10-years-old",
         "name": "Springbank 10 Years Old",
@@ -5259,7 +5265,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:38Z"
+      "reviewed_at": "2026-04-22T19:01:38Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
@@ -5269,7 +5276,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "springbank-springbank-15-years-old",
         "name": "Springbank 15 Years Old",
@@ -5340,7 +5347,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:39Z"
+      "reviewed_at": "2026-04-22T19:01:39Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
@@ -5350,7 +5358,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "springbank-hazelburn-10-years-old",
         "name": "Hazelburn 10 Years Old",
@@ -5421,7 +5429,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:40Z"
+      "reviewed_at": "2026-04-22T19:01:40Z",
+      "published_at": "2026-04-22T19:01:48Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
@@ -5431,7 +5440,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "springbank-longrow-peated",
         "name": "Longrow Peated",
@@ -5502,7 +5511,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:01:41Z"
+      "reviewed_at": "2026-04-22T19:01:41Z",
+      "published_at": "2026-04-22T19:01:48Z"
     }
   ]
 }
