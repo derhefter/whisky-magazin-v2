@@ -4457,43 +4457,36 @@
   },
   {
     "id": "kilchoman-machir-bay",
-    "name": "Machir Bay",
     "slug": "machir-bay",
+    "published": true,
+    "short_description": "Das Aushängeschild der Farm-Destillerie Kilchoman. Machir Bay ist stark getorft und stark vom Bourbonfass geprägt.",
+    "long_description": "Benannt nach dem spektakulärsten Strand auf Islay, ist Machir Bay das Herzstück von Kilchoman. Er ist stark getorft (50 ppm) und reift überwiegend in Ex-Bourbonfässern, was ihm intensive Vanillenoten und eine frische Zitrusfruchtigkeit verleiht, die perfekt zum Torfrauch passt.",
+    "seo_title": "Kilchoman Machir Bay Single Malt Whisky kaufen",
+    "seo_description": "Kilchoman Machir Bay: Der typische Farm-Distillery-Malt von Islay. Stark getorft, frisch und komplex.",
+    "name": "Machir Bay",
     "country_id": "scotland",
     "region_id": "islay",
     "distillery_id": "kilchoman",
     "whisky_type": "single_malt",
+    "abv": 46,
+    "age_statement": null,
+    "nas": true,
+    "smoke_profile": "heavy",
+    "cask_types": [
+      "ex-bourbon (ca. 90%)",
+      "oloroso sherry (ca. 10%)"
+    ],
     "style_tags": [
       "torfig",
       "rauchig",
       "vanille",
       "frisch"
     ],
-    "abv": 46,
-    "cask_types": [
-      "ex-bourbon (ca. 90%)",
-      "oloroso sherry (ca. 10%)"
-    ],
-    "smoke_profile": "none",
-    "age_statement": null,
-    "nas": true,
     "tasting_notes_nose": "Zitrusfrüchte, Vanille, Kekse und starker, erdiger Torfrauch.",
     "tasting_notes_palate": "Vollmundig. Süße Vanille, tropische Früchte, kräftiger Rauch und Gewürze.",
     "tasting_notes_finish": "Lang, frisch und extrem rauchig mit Meersalz.",
-    "short_description": "Das Aushängeschild der Farm-Destillerie Kilchoman. Machir Bay ist stark getorft und stark vom Bourbonfass geprägt.",
-    "long_description": "Benannt nach dem spektakulärsten Strand auf Islay, ist Machir Bay das Herzstück von Kilchoman. Er ist stark getorft (50 ppm) und reift überwiegend in Ex-Bourbonfässern, was ihm intensive Vanillenoten und eine frische Zitrusfruchtigkeit verleiht, die perfekt zum Torfrauch passt.",
-    "editorial_notes": null,
-    "travel_context": null,
-    "image": null,
-    "source_urls": [],
-    "source_status": "verified",
-    "review_status": "approved",
-    "related_articles": [],
     "created_at": "2026-04-19T12:05:39.761Z",
-    "last_updated": "2026-04-22T20:27:39Z",
-    "seo_title": "Kilchoman Machir Bay Single Malt Whisky kaufen",
-    "seo_description": "Kilchoman Machir Bay: Der typische Farm-Distillery-Malt von Islay. Stark getorft, frisch und komplex.",
-    "published": true
+    "last_updated": "2026-04-22T20:28:58Z"
   },
   {
     "id": "kilchoman-sanaig",
