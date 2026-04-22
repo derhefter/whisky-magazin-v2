@@ -1174,7 +1174,7 @@
         "ID bereits vorhanden (Duplikat): ardbeg"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "ardbeg",
         "name": "Ardbeg",
@@ -1183,7 +1183,7 @@
         "country_id": "scotland",
         "status": "active",
         "founded": 1815,
-        "short_description": "Bekannt für seine intensiv getorften Whiskys mit einer überraschenden fruchtigen Süße.",
+        "short_description": "Ardbeg gilt als 'der raudigste Raucher' unter den Islay-Destillerien und hat eine fanatische weltweite Anhängerschaft.",
         "long_description": "Ardbeg gilt als eine der torfigsten und komplexesten Islay-Brennereien. Gegründet im Jahr 1815, stand sie in den 1980er Jahren kurz vor der Schließung, bevor sie 1997 von Glenmorangie gerettet wurde. Der Spiritus zeichnet sich durch eine einzigartige Kombination aus schwerem Torfrauch und einer überraschend süßen, floralen Fruchtigkeit aus – ein Ergebnis des Purifiers am Spirit Still. Unter 'Ardbeggians' weltweit genießt die Destillerie Kultstatus.",
         "travel_info": "Das Besucherzentrum und der Shop sind ganzjährig geöffnet (Mo-Fr 9:30-17:00 Uhr, von Mai bis September auch am Wochenende). Das Old Kiln Café bietet legendäre Mittagessen und hausgemachtes Gebäck an. Verschiedene Touren und Tastings stehen zur Verfügung, eine Vorabreservierung wird dringend empfohlen.",
         "seo_title": "Besuche die Ardbeg Destillerie auf Islay | Whisky-Glossar",
@@ -1194,7 +1194,10 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:54:22Z"
+        "last_updated": "2026-04-22T20:23:30Z",
+        "travel_context": "Ardbeg ist die östlichste der drei Südküsten-Destillerien Islays und liegt nur 3 km von Lagavulin entfernt. Der Besuch lässt sich gut mit Laphroaig und Lagavulin kombinieren.",
+        "owner": "LVMH",
+        "visit_info": "Das Old Kiln Café und die Destillerietouren sind ganzjährig geöffnet. Ardbeg Day ist Pflichttermin beim Feis Ile Festival."
       },
       "raw": {
         "id": "ardbeg",
@@ -1216,7 +1219,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T21:20:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:23:30Z"
     },
     {
       "batch_id": "distilleries_20260422T195425_e40199",
