@@ -2070,7 +2070,7 @@
         "Pflichtfeld fehlt: whisky_type"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "aberlour-abunadh",
         "name": "Aberlour A'bunadh",
@@ -2104,7 +2104,10 @@
           "palate": "Orange, black cherries, dried fruit and ginger spiked with dark bitter chocolate and enriched with sherry and oak. Full bodied and creamy.",
           "finish": "Robust and intense with bitter-sweet notes of exotic spices, dark chocolate and oak."
         }
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:31:00Z"
     }
   ]
 }
