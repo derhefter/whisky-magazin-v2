@@ -5551,7 +5551,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "glenfiddich-glenfiddich-15-year-old-solera",
         "name": "Glenfiddich 15 Year Old Solera",
@@ -5615,7 +5615,10 @@
         "seo_title": "Glenfiddich 15 Jahre Solera Single Malt Whisky online bestellen",
         "seo_description": "Glenfiddich 15 Jahre Solera: Ein besonders weicher Whisky mit Honignoten und tiefer Komplexität. Erfahren Sie mehr.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:38Z"
     },
     {
       "batch_id": "whiskies_20260422T204010_d148de",
