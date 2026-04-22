@@ -2717,6 +2717,24 @@
       "articles": [],
       "photos": [],
       "visited": false
+    },
+    {
+      "id": "glossary-dist-glenscotia",
+      "name": "Glen Scotia",
+      "lat": 55.4291,
+      "lon": -5.6047,
+      "type": "distillery",
+      "region": "Campbeltown",
+      "country": "Schottland",
+      "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+      "founded": 1832,
+      "glossary_url": "/whisky-glossar/glenscotia/",
+      "years_visited": [],
+      "articles": [
+        "campbeltown-springbank-glengyle-glen-scotia-2016"
+      ],
+      "photos": [],
+      "visited": true
     }
   ],
   "routes": [],
@@ -3083,9 +3101,9 @@
     "USA"
   ],
   "stats": {
-    "total_locations": 102,
-    "total_distilleries": 9,
-    "visited_distilleries": 8,
+    "total_locations": 103,
+    "total_distilleries": 10,
+    "visited_distilleries": 9,
     "unvisited_distilleries": 1,
     "total_routes": 0,
     "total_articles": 44,
