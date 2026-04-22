@@ -1,0 +1,133 @@
+{
+  "batch_id": "whiskies_20260422T190815_5aa1a2",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:08:15Z",
+  "total": 2,
+  "new": 2,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "deanston-12",
+        "name": "Deanston 12 Year Old",
+        "slug": "deanston-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "deanston",
+        "whisky_type": "single_malt",
+        "style_tags": "malzig, honig, cremig, zitrus",
+        "abv": 46.3,
+        "cask_types": "Bourbon Barrels",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Frisches Heu, cremiges Toffee, Heidehonig und Gerstenzucker.",
+          "palate": "Mittelschwer mit weicher Süße. Honig, Malz und sanfte Gewürze (Zimt, Nelken).",
+          "finish": "Belebend und befriedigend mit einem Hauch von Nelken."
+        },
+        "short_description": "Ein ehrlicher und handwerklich hergestellter Highland Malt.",
+        "long_description": "Deanston 12 Year Old wird unchill-filtered und ohne Zusatz von Farbstoffen abgefüllt. Die Destillerie, eine ehemalige Baumwollmühle, nutzt die Wasserkraft des Flusses Teith. Der Whisky besticht durch seinen malzigen und honigartigen Charakter.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "deanston-12",
+        "name": "Deanston 12 Year Old",
+        "slug": "deanston-12",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "deanston",
+        "whisky_type": "single_malt",
+        "style_tags": "malzig, honig, cremig, zitrus",
+        "abv": 46.3,
+        "cask_types": "Bourbon Barrels",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": 12,
+        "nas": false,
+        "tasting_notes": {
+          "nose": "Frisches Heu, cremiges Toffee, Heidehonig und Gerstenzucker.",
+          "palate": "Mittelschwer mit weicher Süße. Honig, Malz und sanfte Gewürze (Zimt, Nelken).",
+          "finish": "Belebend und befriedigend mit einem Hauch von Nelken."
+        },
+        "short_description": "Ein ehrlicher und handwerklich hergestellter Highland Malt.",
+        "long_description": "Deanston 12 Year Old wird unchill-filtered und ohne Zusatz von Farbstoffen abgefüllt. Die Destillerie, eine ehemalige Baumwollmühle, nutzt die Wasserkraft des Flusses Teith. Der Whisky besticht durch seinen malzigen und honigartigen Charakter.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:15Z",
+        "last_updated": "2026-04-22T19:08:15Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "deanston-virgin-oak",
+        "name": "Deanston Virgin Oak",
+        "slug": "deanston-virgin-oak",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "deanston",
+        "whisky_type": "single_malt",
+        "style_tags": "süß, würzig, vanille, zitrus",
+        "abv": 46.3,
+        "cask_types": "Bourbon Casks, New American Oak Cask Finish",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Zitronenschale, Gerstenzucker und Äpfel mit einer intensiven Eichennote.",
+          "palate": "Süß und würzig. Kandierte Früchte, Vanille-Toffee und Heidehonig.",
+          "finish": "Leichte Gewürze mit einer Explosion von Honigmalz und süßer Eiche."
+        },
+        "short_description": "Ein junger und dynamischer Deanston mit Finish in frischer Eiche.",
+        "long_description": "Deanston Virgin Oak reift zunächst in Bourbonfässern und erhält dann ein Finish in frischen amerikanischen Eichenfässern (Virgin Oak). Dies verleiht ihm eine intensive Vanillenote und eine kräftige Würze, die hervorragend zur malzigen Süße passt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "deanston-virgin-oak",
+        "name": "Deanston Virgin Oak",
+        "slug": "deanston-virgin-oak",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "distillery_id": "deanston",
+        "whisky_type": "single_malt",
+        "style_tags": "süß, würzig, vanille, zitrus",
+        "abv": 46.3,
+        "cask_types": "Bourbon Casks, New American Oak Cask Finish",
+        "smoke_profile": "Nicht getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Zitronenschale, Gerstenzucker und Äpfel mit einer intensiven Eichennote.",
+          "palate": "Süß und würzig. Kandierte Früchte, Vanille-Toffee und Heidehonig.",
+          "finish": "Leichte Gewürze mit einer Explosion von Honigmalz und süßer Eiche."
+        },
+        "short_description": "Ein junger und dynamischer Deanston mit Finish in frischer Eiche.",
+        "long_description": "Deanston Virgin Oak reift zunächst in Bourbonfässern und erhält dann ein Finish in frischen amerikanischen Eichenfässern (Virgin Oak). Dies verleiht ihm eine intensive Vanillenote und eine kräftige Würze, die hervorragend zur malzigen Süße passt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:08:15Z",
+        "last_updated": "2026-04-22T19:08:15Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
