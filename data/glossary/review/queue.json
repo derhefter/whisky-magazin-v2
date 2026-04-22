@@ -10945,7 +10945,7 @@
         "ID bereits vorhanden (Duplikat): kilkerran"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
         "id": "kilkerran",
         "name": "Kilkerran (Glengyle)",
@@ -10957,7 +10957,7 @@
         "owner": "Mitchell's Glengyle Ltd.",
         "website": "https://kilkerran.scot/",
         "short_description": "Die Heimat des Kilkerran Single Malt, im Jahr 2004 wiedereröffnet, um den Status von Campbeltown als Whisky-Region zu sichern.",
-        "long_description": "Die Glengyle Destillerie wurde ursprünglich 1872 gegründet, war aber viele Jahre lang geschlossen, bevor sie 2004 von der Familie Mitchell (Eigentümer von Springbank) wiedereröffnet wurde. Da der Name 'Glengyle' bereits für einen Blend verwendet wurde, erhielt der Single Malt den Namen 'Kilkerran'. Die Brennerei teilt sich Personal mit Springbank und produziert einen leicht getorften, öligen und komplexen Whisky, der die traditionellen Werte von Campbeltown verkörpert.",
+        "long_description": "Kilkerran ist der Markenname für Single Malt Whisky, der in der Glengyle-Brennerei in Campbeltown hergestellt wird. Die Destillerie wurde 2004 von der Familie Mitchell (den Eigentümern von Springbank) wiedereröffnet und war die erste neue Brennerei in der Region seit 125 Jahren. Der Name Kilkerran leitet sich vom gälischen 'Ceann Loch Cille Chiarain' ab. Die Whiskys zeichnen sich durch ein leicht rauchiges, öliges und komplexes Profil aus, das ganz in der Tradition der klassischen Campbeltown-Produktionsmethoden steht.",
         "travel_info": "Touren für die Glengyle Destillerie starten im Springbank Distillery Shop. Sie sind Mo-Sa verfügbar. Da die Brennerei nur wenige Monate im Jahr produziert, ist ein Besuch während der Produktionszeit (meist Herbst) besonders interessant. Buchung vorab nötig.",
         "seo_title": "Kilkerran (Glengyle) Destillerie: Campbeltowns Renaissance | Whisky-Glossar",
         "seo_description": "Entdecke Kilkerran Single Malt aus der Glengyle Brennerei. Erfahre mehr über die Wiedereröffnung, den handwerklichen Stil und Touren in Campbeltown.",
@@ -10967,7 +10967,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:27:20Z"
+        "last_updated": "2026-04-22T19:28:17Z"
       },
       "raw": {
         "id": "kilkerran",
@@ -10991,7 +10991,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T23:15:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:28:17Z"
     },
     {
       "batch_id": "distilleries_20260422T192723_7f7633",
