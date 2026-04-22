@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T192926_442e5a",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:26Z",
+  "raw": [
+    {
+      "id": "fettercairn",
+      "name": "Fettercairn",
+      "slug": "fettercairn",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1824,
+      "owner": "Whyte & Mackay",
+      "website": "https://www.fettercairnwhisky.com/",
+      "short_description": "Bekannt für ihre einzigartigen Kupfer-Kühlringe an den Brennblasen, die einen besonders reinen Spirit erzeugen.",
+      "long_description": "Fettercairn wurde 1824 am Fuße der Cairngorms gegründet. Die Brennerei ist berühmt für eine technische Besonderheit: Kupferringe am Hals der Spirit Stills lassen kühles Wasser über die Außenseite laufen, was den Rückfluss (Reflux) erhöht und einen außergewöhnlich leichten, tropisch-fruchtigen Spirit erzeugt. Das Markenzeichen der Brennerei, das Einhorn, steht für Reinheit und ist Teil des Familienwappens des Gründers Sir Alexander Ramsay.",
+      "travel_info": "Das Besucherzentrum ist Di-Sa von 10:00 bis 16:00 Uhr geöffnet. Die letzte Tour startet um 15:00 Uhr. Die Destillerie bietet einen authentischen Einblick abseits der großen Touristenströme.",
+      "seo_title": "Fettercairn Destillerie: Innovation durch Kühlung | Whisky-Glossar",
+      "seo_description": "Besuche Fettercairn in den östlichen Highlands. Entdecke die einzigartigen Kühlringe, den tropisch-fruchtigen Single Malt und die Geschichte des Einhorns.",
+      "coordinates": {
+        "lat": 56.8483,
+        "lng": -2.5767
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T00:55:00Z"
+    }
+  ]
+}
