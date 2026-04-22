@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T193724_066384",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:37:24Z",
+  "raw": [
+    {
+      "id": "jura",
+      "name": "Jura",
+      "slug": "jura",
+      "region_id": "islands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1810,
+      "owner": "Whyte & Mackay",
+      "website": "https://www.jurawhisky.com/",
+      "short_description": "Die einzige Brennerei auf der abgelegenen Insel Jura, bietet eine Palette von leicht bis stark getorft.",
+      "long_description": "Die Isle of Jura Destillerie ist die einzige auf ihrer namensgebenden Insel – einem Ort, an dem es mehr Hirsche als Menschen gibt. 1963 wiederaufgebaut, um die lokale Gemeinschaft zu revitalisieren, verfügt sie über außergewöhnlich hohe Brennblasen. Der produzierte Spirit ist typischerweise leicht und fruchtig, wobei das Sortiment sowohl ungetorfte als auch getorfte Abfüllungen umfasst. Jura ist bekannt für seinen zugänglichen und leicht öligen Charakter.",
+      "travel_info": "Die Destillerie liegt in Craighouse und ist an Wochentagen von 10:00 bis 16:00 Uhr geöffnet. Da die Anreise über die Fähre von Islay erfolgt, ist eine gute Reiseplanung nötig. Touren wie die 'Warehouse No 1 Experience' sind sehr beliebt.",
+      "seo_title": "Jura Destillerie: Whisky von einer Insel voller Hirsche | Whisky-Glossar",
+      "seo_description": "Entdecke Jura, die einsame Brennerei zwischen Islay und dem schottischen Festland. Infos zu Touren, den hohen Brennblasen und dem besonderen Inselcharakter.",
+      "coordinates": {
+        "lat": 55.8338,
+        "lng": -5.9511
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T22:25:00Z"
+    }
+  ]
+}
