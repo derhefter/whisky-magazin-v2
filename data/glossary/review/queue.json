@@ -713,6 +713,13 @@
       "imported_at": "2026-04-22T19:37:27Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T193731_618e44",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:37:31Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13130,6 +13137,62 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T22:30:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T193731_618e44",
+      "entity": "distilleries",
+      "item_id": "ledaig",
+      "item_slug": "ledaig",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "ledaig",
+        "name": "Ledaig (Tobermory)",
+        "slug": "ledaig",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Distell (Heineken)",
+        "website": "https://tobermorydistillery.com/",
+        "short_description": "Der getorfte Brand der Tobermory Destillerie, bekannt für seine 'schmutzigen', rauchigen Noten.",
+        "long_description": "Ledaig ist die stark getorfte Marke, die in der Tobermory-Destillerie auf der Isle of Mull hergestellt wird. Benannt nach dem ursprünglichen Namen der 1798 gegründeten Brennerei, ist der Ledaig-Spirit für seinen medizinischen, rauchigen und maritimen Charakter bekannt. Er weist oft Noten von Gummi, Meeresalgen und schwarzem Pfeffer auf, was ihn zu einem Favoriten unter Liebhabern robuster Insel-Malts macht.",
+        "travel_info": "Produziert in der Tobermory Destillerie auf Mull. Das Besucherzentrum in Tobermory bietet spezielle Tastings an, die sowohl den ungetorften Tobermory als auch den rauchigen Ledaig umfassen. Eine Fährüberfahrt von Oban ist erforderlich.",
+        "seo_title": "Ledaig (Tobermory) Destillerie: Rauchiger Malt von Mull | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Ledaig, den rauchigen Single Malt der Tobermory Brennerei auf der Isle of Mull. Infos zu Charakter, Herkunft und Besuchermöglichkeiten.",
+        "coordinates": {
+          "lat": 56.6231,
+          "lng": -6.0681
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:31Z"
+      },
+      "raw": {
+        "id": "ledaig",
+        "name": "Ledaig (Tobermory)",
+        "slug": "ledaig",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Distell (Heineken)",
+        "website": "https://tobermorydistillery.com/",
+        "short_description": "Der getorfte Brand der Tobermory Destillerie, bekannt für seine 'schmutzigen', rauchigen Noten.",
+        "long_description": "Ledaig ist die stark getorfte Marke, die in der Tobermory-Destillerie auf der Isle of Mull hergestellt wird. Benannt nach dem ursprünglichen Namen der 1798 gegründeten Brennerei, ist der Ledaig-Spirit für seinen medizinischen, rauchigen und maritimen Charakter bekannt. Er weist oft Noten von Gummi, Meeresalgen und schwarzem Pfeffer auf, was ihn zu einem Favoriten unter Liebhabern robuster Insel-Malts macht.",
+        "travel_info": "Produziert in der Tobermory Destillerie auf Mull. Das Besucherzentrum in Tobermory bietet spezielle Tastings an, die sowohl den ungetorften Tobermory als auch den rauchigen Ledaig umfassen. Eine Fährüberfahrt von Oban ist erforderlich.",
+        "seo_title": "Ledaig (Tobermory) Destillerie: Rauchiger Malt von Mull | Whisky-Glossar",
+        "seo_description": "Erfahre mehr über Ledaig, den rauchigen Single Malt der Tobermory Brennerei auf der Isle of Mull. Infos zu Charakter, Herkunft und Besuchermöglichkeiten.",
+        "coordinates": {
+          "lat": 56.6231,
+          "lng": -6.0681
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T22:35:00Z"
       }
     }
   ]
