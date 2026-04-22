@@ -1,0 +1,133 @@
+{
+  "batch_id": "whiskies_20260422T194111_75a36d",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:41:11Z",
+  "total": 2,
+  "new": 2,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "lagg-kilmory-edition",
+        "name": "Lagg Kilmory Edition",
+        "slug": "lagg-kilmory-edition",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "lagg",
+        "whisky_type": "single_malt",
+        "style_tags": "torfig, rauchig, zitrus, maritim",
+        "abv": 46,
+        "cask_types": "First-fill Bourbon Barrels",
+        "smoke_profile": "Stark getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Intensiver Heidekraut-Rauch, reife Zitrusfrüchte und süße Vanille.",
+          "palate": "Zitronenzeste, Lagerfeuerrauch und eine cremige Textur.",
+          "finish": "Lang, rauchig mit anhaltender Fruchtsüße."
+        },
+        "short_description": "Das Flaggschiff der neuen Lagg Destillerie auf Arran.",
+        "long_description": "Lagg ist die zweite Brennerei auf der Insel Arran und widmet sich ausschließlich der Produktion von stark getorftem Single Malt. Die Kilmory Edition reift in First-fill Bourbonfässern und zeigt die raue Seite Arrans.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "lagg-kilmory-edition",
+        "name": "Lagg Kilmory Edition",
+        "slug": "lagg-kilmory-edition",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "lagg",
+        "whisky_type": "single_malt",
+        "style_tags": "torfig, rauchig, zitrus, maritim",
+        "abv": 46,
+        "cask_types": "First-fill Bourbon Barrels",
+        "smoke_profile": "Stark getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Intensiver Heidekraut-Rauch, reife Zitrusfrüchte und süße Vanille.",
+          "palate": "Zitronenzeste, Lagerfeuerrauch und eine cremige Textur.",
+          "finish": "Lang, rauchig mit anhaltender Fruchtsüße."
+        },
+        "short_description": "Das Flaggschiff der neuen Lagg Destillerie auf Arran.",
+        "long_description": "Lagg ist die zweite Brennerei auf der Insel Arran und widmet sich ausschließlich der Produktion von stark getorftem Single Malt. Die Kilmory Edition reift in First-fill Bourbonfässern und zeigt die raue Seite Arrans.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:41:11Z",
+        "last_updated": "2026-04-22T19:41:11Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "lagg-corriecravie-edition",
+        "name": "Lagg Corriecravie Edition",
+        "slug": "lagg-corriecravie-edition",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "lagg",
+        "whisky_type": "single_malt",
+        "style_tags": "torfig, rauchig, dunkle früchte, sherry",
+        "abv": 55,
+        "cask_types": "Bourbon Barrels & Oloroso Sherry Finish",
+        "smoke_profile": "Stark getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Dunkle Schokolade, Gewürze und reichhaltiger Torfrauch.",
+          "palate": "Gebackene Haselnüsse, gebrannter Zucker und intensive Sherry-Noten.",
+          "finish": "Lang und komplex mit süßem Rauch."
+        },
+        "short_description": "Stark getorfter Lagg mit reichem Sherry-Finish.",
+        "long_description": "Diese Edition reift zunächst in Bourbon-Fässern und erhält ein Finish in feinsten Oloroso Sherry-Butts, was den kräftigen Lagg-Rauch mit dunklen Fruchtnoten ergänzt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true
+      },
+      "normalized": {
+        "id": "lagg-corriecravie-edition",
+        "name": "Lagg Corriecravie Edition",
+        "slug": "lagg-corriecravie-edition",
+        "country_id": "scotland",
+        "region_id": "islands",
+        "distillery_id": "lagg",
+        "whisky_type": "single_malt",
+        "style_tags": "torfig, rauchig, dunkle früchte, sherry",
+        "abv": 55,
+        "cask_types": "Bourbon Barrels & Oloroso Sherry Finish",
+        "smoke_profile": "Stark getorft",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes": {
+          "nose": "Dunkle Schokolade, Gewürze und reichhaltiger Torfrauch.",
+          "palate": "Gebackene Haselnüsse, gebrannter Zucker und intensive Sherry-Noten.",
+          "finish": "Lang und komplex mit süßem Rauch."
+        },
+        "short_description": "Stark getorfter Lagg mit reichem Sherry-Finish.",
+        "long_description": "Diese Edition reift zunächst in Bourbon-Fässern und erhält ein Finish in feinsten Oloroso Sherry-Butts, was den kräftigen Lagg-Rauch mit dunklen Fruchtnoten ergänzt.",
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "created_at": "2026-04-22T19:41:11Z",
+        "last_updated": "2026-04-22T19:41:11Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
