@@ -19905,7 +19905,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glenkinchie-distillers-edition",
         "name": "Glenkinchie Distillers Edition",
@@ -19973,7 +19973,10 @@
         "seo_title": "Glenkinchie Distillers Edition kaufen | Amontillado Sherry Finish",
         "seo_description": "Die Glenkinchie Distillers Edition überzeugt mit Amontillado Sherry-Süße und komplexen Fruchtnoten. Ein besonderer Lowland Genuss.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:24Z"
     },
     {
       "batch_id": "whiskies_20260422T195138_476644",
