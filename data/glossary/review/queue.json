@@ -440,6 +440,13 @@
       "imported_at": "2026-04-22T19:19:14Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T191918_76dde4",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:19:18Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10299,6 +10306,62 @@
         "published": true,
         "created_at": "2026-04-22T21:40:00Z",
         "last_updated": "2026-04-22T21:40:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T191918_76dde4",
+      "entity": "distilleries",
+      "item_id": "tullamore-dew",
+      "item_slug": "tullamore-dew",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "tullamore-dew",
+        "name": "Tullamore D.E.W. Distillery",
+        "slug": "tullamore-dew",
+        "region_id": "republic-of-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 2014,
+        "owner": "William Grant & Sons",
+        "website": "https://www.tullamoredew.com",
+        "short_description": "Eine hochmoderne Anlage, die den Geist von Daniel E. Williams in Tullamore weiterführt.",
+        "long_description": "Nachdem die ursprüngliche Brennerei in Tullamore 1954 geschlossen wurde, brachte William Grant & Sons die Produktion im Jahr 2014 mit einer neuen, hochmodernen Anlage zurück in die Stadt in County Offaly. Der Name D.E.W. geht auf Daniel E. Williams zurück, der im 19. Jahrhundert vom Stalljungen zum Geschäftsführer der Brennerei aufstieg. Tullamore D.E.W. ist berühmt für seine 'Triple'-Philosophie: dreifach destilliert, eine Mischung aus drei Whiskey-Arten (Grain, Malt, Pot Still) und Reifung in drei verschiedenen Fassarten. Diese Kombination sorgt für die legendäre Weichheit und Komplexität des Whiskeys.",
+        "travel_info": "Das 'Tullamore D.E.W. Distillery Experience' bietet eine immersive Tour durch die Produktion. Ein besonderes Highlight ist das 'Blending Lab', in dem Besucher die Kunst des Verschneidens lernen können. Das Besucherzentrum befindet sich in einem wunderschön restaurierten Lagerhaus am Kanal und bietet zudem eine erstklassige Gastronomie.",
+        "coordinates": {
+          "lat": 53.2542,
+          "lng": -7.4992
+        },
+        "seo_title": "Tullamore D.E.W. Distillery - Dreifache Weichheit aus Irland",
+        "seo_description": "Alles über Tullamore D.E.W.: Erfahren Sie mehr über die 'Triple'-Herstellung, die moderne Brennerei in Offaly und die Geschichte von Daniel E. Williams.",
+        "published": true,
+        "created_at": "2026-04-22T21:45:00Z",
+        "last_updated": "2026-04-22T19:19:18Z"
+      },
+      "raw": {
+        "id": "tullamore-dew",
+        "name": "Tullamore D.E.W. Distillery",
+        "slug": "tullamore-dew",
+        "region_id": "republic-of-ireland",
+        "country_id": "ireland",
+        "status": "active",
+        "founded": 2014,
+        "owner": "William Grant & Sons",
+        "website": "https://www.tullamoredew.com",
+        "short_description": "Eine hochmoderne Anlage, die den Geist von Daniel E. Williams in Tullamore weiterführt.",
+        "long_description": "Nachdem die ursprüngliche Brennerei in Tullamore 1954 geschlossen wurde, brachte William Grant & Sons die Produktion im Jahr 2014 mit einer neuen, hochmodernen Anlage zurück in die Stadt in County Offaly. Der Name D.E.W. geht auf Daniel E. Williams zurück, der im 19. Jahrhundert vom Stalljungen zum Geschäftsführer der Brennerei aufstieg. Tullamore D.E.W. ist berühmt für seine 'Triple'-Philosophie: dreifach destilliert, eine Mischung aus drei Whiskey-Arten (Grain, Malt, Pot Still) und Reifung in drei verschiedenen Fassarten. Diese Kombination sorgt für die legendäre Weichheit und Komplexität des Whiskeys.",
+        "travel_info": "Das 'Tullamore D.E.W. Distillery Experience' bietet eine immersive Tour durch die Produktion. Ein besonderes Highlight ist das 'Blending Lab', in dem Besucher die Kunst des Verschneidens lernen können. Das Besucherzentrum befindet sich in einem wunderschön restaurierten Lagerhaus am Kanal und bietet zudem eine erstklassige Gastronomie.",
+        "coordinates": {
+          "lat": 53.2542,
+          "lng": -7.4992
+        },
+        "seo_title": "Tullamore D.E.W. Distillery - Dreifache Weichheit aus Irland",
+        "seo_description": "Alles über Tullamore D.E.W.: Erfahren Sie mehr über die 'Triple'-Herstellung, die moderne Brennerei in Offaly und die Geschichte von Daniel E. Williams.",
+        "published": true,
+        "created_at": "2026-04-22T21:45:00Z",
+        "last_updated": "2026-04-22T21:45:00Z"
       }
     }
   ]
