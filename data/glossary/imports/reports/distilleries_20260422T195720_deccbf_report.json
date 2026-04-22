@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260422T195720_deccbf",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:57:20Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "glenfarclas",
+        "name": "Glenfarclas",
+        "slug": "glenfarclas",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1836,
+        "owner": "J. & G. Grant (Independent)",
+        "website": "https://www.glenfarclas.com/",
+        "short_description": "Eine der letzten unabhängigen Familien-Destillerien Schottlands, berühmt für ihre schweren Sherry-Fass-Reifungen.",
+        "long_description": "Glenfarclas (Gälisch für 'Tal des grünen Grases') ist seit 1865 im Besitz der Familie Grant. Die Brennerei ist eine Bastion der Tradition: Sie nutzt noch immer direkt befeuerte Brennblasen und setzt konsequent auf die Reifung in ehemaligen Sherryfässern aus Jerez. Der Stil ist kraftvoll, reichhaltig und voll von Trockenfrucht- und Nussaromen. Glenfarclas ist auch bekannt für seine beeindruckenden Lagerbestände, die in der 'Family Casks' Serie gipfeln.",
+        "travel_info": "Das Besucherzentrum ist ganzjährig Mo-Fr geöffnet (im Sommer auch Sa). Glenfarclas war eine der ersten Brennereien, die Besucher empfing. Die Touren bieten einen sehr persönlichen Einblick in die Familiengeschichte. Vorab-Buchung wird empfohlen.",
+        "seo_title": "Glenfarclas Destillerie: Unabhängigkeit und Sherry-Tradition | Whisky-Glossar",
+        "seo_description": "Besuche Glenfarclas in Speyside. Entdecke die Meisterschaft der Sherryfass-Reifung, die Geschichte der Familie Grant und authentische Highland Single Malts.",
+        "coordinates": {
+          "lat": 57.4264,
+          "lng": -3.3158
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T01:45:00Z"
+      },
+      "normalized": {
+        "id": "glenfarclas",
+        "name": "Glenfarclas",
+        "slug": "glenfarclas",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1836,
+        "owner": "J. & G. Grant (Independent)",
+        "website": "https://www.glenfarclas.com/",
+        "short_description": "Eine der letzten unabhängigen Familien-Destillerien Schottlands, berühmt für ihre schweren Sherry-Fass-Reifungen.",
+        "long_description": "Glenfarclas (Gälisch für 'Tal des grünen Grases') ist seit 1865 im Besitz der Familie Grant. Die Brennerei ist eine Bastion der Tradition: Sie nutzt noch immer direkt befeuerte Brennblasen und setzt konsequent auf die Reifung in ehemaligen Sherryfässern aus Jerez. Der Stil ist kraftvoll, reichhaltig und voll von Trockenfrucht- und Nussaromen. Glenfarclas ist auch bekannt für seine beeindruckenden Lagerbestände, die in der 'Family Casks' Serie gipfeln.",
+        "travel_info": "Das Besucherzentrum ist ganzjährig Mo-Fr geöffnet (im Sommer auch Sa). Glenfarclas war eine der ersten Brennereien, die Besucher empfing. Die Touren bieten einen sehr persönlichen Einblick in die Familiengeschichte. Vorab-Buchung wird empfohlen.",
+        "seo_title": "Glenfarclas Destillerie: Unabhängigkeit und Sherry-Tradition | Whisky-Glossar",
+        "seo_description": "Besuche Glenfarclas in Speyside. Entdecke die Meisterschaft der Sherryfass-Reifung, die Geschichte der Familie Grant und authentische Highland Single Malts.",
+        "coordinates": {
+          "lat": 57.4264,
+          "lng": -3.3158
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:57:20Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
