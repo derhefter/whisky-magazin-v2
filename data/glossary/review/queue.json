@@ -19581,7 +19581,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "bladnoch-alinta",
         "name": "Bladnoch Alinta",
@@ -19649,7 +19649,10 @@
         "seo_title": "Bladnoch Alinta kaufen | Getorfter Lowland Single Malt",
         "seo_description": "Bladnoch Alinta: Der rauchige Lowland Malt mit Lagerfeueraroma und feiner Sherry-Süße. Ein Muss für Rauch-Fans.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:16Z"
     },
     {
       "batch_id": "whiskies_20260422T195131_2145d6",
