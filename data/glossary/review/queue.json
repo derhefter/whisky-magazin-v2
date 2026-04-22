@@ -6867,7 +6867,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "balblair-18",
         "name": "Balblair 18 Year Old",
@@ -6919,7 +6919,10 @@
         "source_status": "verified",
         "review_status": "approved",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:13:04Z"
     },
     {
       "batch_id": "whiskies_20260422T190803_e1147f",
