@@ -4555,41 +4555,34 @@
   },
   {
     "id": "kilchoman-100-islay",
-    "name": "100% Islay",
     "slug": "100-islay",
+    "published": true,
+    "short_description": "Echtes Farm-to-Bottle. Von der Gerste bis zur Abfüllung passiert hier alles auf Kilchoman.",
+    "long_description": "Die 100% Islay Edition ist Schottlands einziger Single Farm Single Malt. Die Gerste wird auf der Farm angebaut, gemälzt, destilliert, gereift und abgefüllt. Er ist leichter getorft (ca. 20 ppm) als die anderen Kilchomans und zeigt wunderbar florale und frische Noten.",
+    "seo_title": "Kilchoman 100% Islay Single Malt Whisky kaufen",
+    "seo_description": "Kilchoman 100% Islay: Vom Feld in die Flasche auf einer einzigen Farm. Ein authentischer, sanft rauchiger Islay Malt.",
+    "name": "100% Islay",
     "country_id": "scotland",
     "region_id": "islay",
     "distillery_id": "kilchoman",
     "whisky_type": "single_malt",
+    "abv": 50,
+    "age_statement": null,
+    "nas": true,
+    "smoke_profile": "heavy",
+    "cask_types": [
+      "ex-bourbon"
+    ],
     "style_tags": [
       "torfig",
       "floral",
       "frisch",
       "farm-to-bottle"
     ],
-    "abv": 50,
-    "cask_types": [
-      "ex-bourbon"
-    ],
-    "smoke_profile": "none",
-    "age_statement": null,
-    "nas": true,
     "tasting_notes_nose": "Hell, blumig. Zitrusfrüchte, Birnen, Vanille und zarter, eleganter Rauch.",
     "tasting_notes_palate": "Sehr frisch. Zitrone, Butterscotch, Malzzucker, leichte Gewürze und sanfter Torf.",
     "tasting_notes_finish": "Klar, mittellang, fruchtig und dezent rauchig.",
-    "short_description": "Echtes Farm-to-Bottle. Von der Gerste bis zur Abfüllung passiert hier alles auf Kilchoman.",
-    "long_description": "Die 100% Islay Edition ist Schottlands einziger Single Farm Single Malt. Die Gerste wird auf der Farm angebaut, gemälzt, destilliert, gereift und abgefüllt. Er ist leichter getorft (ca. 20 ppm) als die anderen Kilchomans und zeigt wunderbar florale und frische Noten.",
-    "editorial_notes": null,
-    "travel_context": null,
-    "image": null,
-    "source_urls": [],
-    "source_status": "verified",
-    "review_status": "approved",
-    "related_articles": [],
     "created_at": "2026-04-19T12:05:39.761Z",
-    "last_updated": "2026-04-22T20:27:39Z",
-    "seo_title": "Kilchoman 100% Islay Single Malt Whisky kaufen",
-    "seo_description": "Kilchoman 100% Islay: Vom Feld in die Flasche auf einer einzigen Farm. Ein authentischer, sanft rauchiger Islay Malt.",
-    "published": true
+    "last_updated": "2026-04-22T20:29:40Z"
   }
 ]
