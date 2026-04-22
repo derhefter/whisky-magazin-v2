@@ -1970,7 +1970,7 @@
         "Pflichtfeld fehlt: whisky_type"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "aberlour-12",
         "name": "Aberlour 12 Year Old Double Cask Matured",
@@ -2004,7 +2004,10 @@
           "palate": "Fine sherried character, balanced with rich chocolate, toffee, cinnamon and ginger spiciness.",
           "finish": "Warming and lingering - sweet and slightly spicy."
         }
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:30:53Z"
     },
     {
       "batch_id": "whiskies_20260422T203038_b292bd",
