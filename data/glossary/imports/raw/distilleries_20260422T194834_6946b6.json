@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T194834_6946b6",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:48:34Z",
+  "raw": [
+    {
+      "id": "glenkinchie",
+      "name": "Glenkinchie",
+      "slug": "glenkinchie",
+      "region_id": "lowlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1837,
+      "owner": "Diageo",
+      "website": "https://www.malts.com/en-gb/distilleries/glenkinchie",
+      "short_description": "Oft als 'The Edinburgh Malt' bezeichnet, liefert dieser Whisky einen leichten, floralen und grasigen Stil.",
+      "long_description": "Glenkinchie liegt in einem malerischen Tal südöstlich von Edinburgh und ist bekannt als der Lowland-Vertreter der Classic Malts von Diageo. Die Brennerei verfügt über eine der größten Wash Stills in Schottland, was zu einem leichten und eleganten Spirit führt. Ihr Charakter ist typisch für die Region: duftend, mit Noten von Zitronengras, Blumenwiesen und einem trockenen Abgang. Sie spielt eine wichtige Rolle in den Blends von Haig und Johnnie Walker.",
+      "travel_info": "Das Besucherzentrum ist täglich von 10:00 bis 17:00 Uhr geöffnet. Es wurde kürzlich umfassend modernisiert und bietet interaktive Ausstellungen sowie die 'Lowland Bar'. Die Anreise von Edinburgh aus ist einfach und gut ausgeschildert.",
+      "seo_title": "Glenkinchie Destillerie: Der Edinburgh Malt | Whisky-Glossar",
+      "seo_description": "Besuche Glenkinchie, die grüne Oase der Lowlands. Entdecke den floralen Single Malt, das moderne Besucherzentrum und die Nähe zur schottischen Hauptstadt.",
+      "coordinates": {
+        "lat": 55.8919,
+        "lng": -2.8917
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T23:55:00Z"
+    }
+  ]
+}
