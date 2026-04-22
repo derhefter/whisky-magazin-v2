@@ -1,0 +1,30 @@
+{
+  "batch_id": "whiskies_20260422T194553_9f14ee",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:45:53Z",
+  "raw": [
+    {
+      "id": "annandale",
+      "name": "Annandale",
+      "slug": "annandale",
+      "region_id": "lowlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1836,
+      "owner": "Annandale Distillery Company",
+      "website": "https://annandaledistillery.com/",
+      "short_description": "Eine historische Destillerie, die nach fast 100 Jahren Pause im Jahr 2014 wiederbelebt wurde.",
+      "long_description": "Annandale wurde ursprünglich 1836 gegründet und war einst im Besitz von Johnnie Walker, bevor sie 1918 geschlossen wurde. Nach einer umfassenden Restaurierung wurde sie 2014 wiedereröffnet. Die Brennerei produziert sowohl ungetorften (Man O' Words) als auch getorften (Man O' Sword) Single Malt. Sie legt großen Wert auf die Verbindung zur schottischen Geschichte, insbesondere zu Robert Burns und Robert the Bruce.",
+      "travel_info": "Das Besucherzentrum ist täglich von 10:00 bis 16:00 Uhr geöffnet. Es gibt stündliche Touren und das hundefreundliche 'Maltings Café'. Die Destillerie liegt in Annan und bietet ausreichend Parkmöglichkeiten.",
+      "seo_title": "Annandale Destillerie: Geschichte trifft Lowland-Whisky | Whisky-Glossar",
+      "seo_description": "Besuche die Annandale Brennerei im Süden Schottlands. Entdecke die Geschichte hinter Man O' Words und Man O' Sword und genieße hausgemachte Speisen im Café.",
+      "coordinates": {
+        "lat": 55.0053,
+        "lng": -3.2661
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T23:35:00Z"
+    }
+  ]
+}
