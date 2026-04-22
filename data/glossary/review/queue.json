@@ -272,6 +272,13 @@
       "imported_at": "2026-04-22T19:02:57Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T190300_233d96",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:03:00Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -6135,6 +6142,56 @@
         "coordinates": {
           "lat": 56.0142,
           "lng": -4.3634
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T190300_233d96",
+      "entity": "distilleries",
+      "item_id": "glenmorangie",
+      "item_slug": "glenmorangie",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "glenmorangie",
+        "name": "Glenmorangie",
+        "slug": "glenmorangie",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1843,
+        "owner": "Moët Hennessy Louis Vuitton (LVMH)",
+        "website": "https://www.glenmorangie.com/",
+        "short_description": "Besitzt die höchsten Brennblasen Schottlands, was zu einem besonders leichten und eleganten Destillat führt.",
+        "long_description": "Glenmorangie beheimatet die höchsten Brennblasen Schottlands; ihre Hälse sind so hoch wie eine ausgewachsene Giraffe. Diese hohen Brennblasen stellen sicher, dass nur die leichtesten Dämpfe die Spitze erreichen, was einen delikaten und floralen Spirit erzeugt. Die in Tain gelegene Destillerie war unter Dr. Bill Lumsden ein Pionier des 'Wood Finishing'. Sie gehört zu den meistverkauften Single Malts der Welt und ist bekannt für ihre weiche, cremige Textur und ihr Zitrus-Honig-Profil.",
+        "coordinates": {
+          "lat": 57.8259,
+          "lng": -4.078
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:03:00Z"
+      },
+      "raw": {
+        "id": "glenmorangie",
+        "name": "Glenmorangie",
+        "slug": "glenmorangie",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1843,
+        "owner": "Moët Hennessy Louis Vuitton (LVMH)",
+        "website": "https://www.glenmorangie.com/",
+        "short_description": "Besitzt die höchsten Brennblasen Schottlands, was zu einem besonders leichten und eleganten Destillat führt.",
+        "long_description": "Glenmorangie beheimatet die höchsten Brennblasen Schottlands; ihre Hälse sind so hoch wie eine ausgewachsene Giraffe. Diese hohen Brennblasen stellen sicher, dass nur die leichtesten Dämpfe die Spitze erreichen, was einen delikaten und floralen Spirit erzeugt. Die in Tain gelegene Destillerie war unter Dr. Bill Lumsden ein Pionier des 'Wood Finishing'. Sie gehört zu den meistverkauften Single Malts der Welt und ist bekannt für ihre weiche, cremige Textur und ihr Zitrus-Honig-Profil.",
+        "coordinates": {
+          "lat": 57.8259,
+          "lng": -4.078
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
