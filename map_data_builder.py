@@ -261,7 +261,7 @@ def load_glossary_distilleries():
             "country": country_map.get(country_id, "Schottland"),
             "short_description": item.get("short_description", ""),
             "founded": item.get("founded"),
-            "glossary_url": f"/whisky-glossar/{slug}/",
+            "glossary_url": f"/whisky-glossar/destillerien/{slug}/",
             "years_visited": [],
             "articles": [],
             "_photos": [],
