@@ -1,0 +1,61 @@
+{
+  "batch_id": "distilleries_20260422T185818_1eb444",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T18:58:18Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "glenscotia",
+        "name": "Glen Scotia",
+        "slug": "glenscotia",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1832,
+        "owner": "Loch Lomond Group",
+        "website": "https://www.glenscotia.com/",
+        "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+        "long_description": "Gegründet im Jahr 1832 in Campbeltown, der einstigen 'Whisky-Hauptstadt der Welt', ist Glen Scotia eine der drei verbliebenen Brennereien in der Region. Die Destillerie blickt auf eine wechselvolle Geschichte mit häufigen Besitzerwechseln und Stilllegungsphasen zurück, wurde jedoch unter der Loch Lomond Group erfolgreich revitalisiert. Glen Scotia ist bekannt für ihren maritimen Charakter und produziert sowohl rauchige als auch nicht-rauchige Whiskys, die das klassische ölige und salzige Profil eines Campbeltown-Malts perfekt widerspiegeln.",
+        "coordinates": {
+          "lat": 55.4291,
+          "lng": -5.6047
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T08:15:00Z"
+      },
+      "normalized": {
+        "id": "glenscotia",
+        "name": "Glen Scotia",
+        "slug": "glenscotia",
+        "region_id": "campbeltown",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1832,
+        "owner": "Loch Lomond Group",
+        "website": "https://www.glenscotia.com/",
+        "short_description": "Eine der kleinsten Destillerien Schottlands, die den maritimen Charakter Campbeltowns perfekt einfängt.",
+        "long_description": "Gegründet im Jahr 1832 in Campbeltown, der einstigen 'Whisky-Hauptstadt der Welt', ist Glen Scotia eine der drei verbliebenen Brennereien in der Region. Die Destillerie blickt auf eine wechselvolle Geschichte mit häufigen Besitzerwechseln und Stilllegungsphasen zurück, wurde jedoch unter der Loch Lomond Group erfolgreich revitalisiert. Glen Scotia ist bekannt für ihren maritimen Charakter und produziert sowohl rauchige als auch nicht-rauchige Whiskys, die das klassische ölige und salzige Profil eines Campbeltown-Malts perfekt widerspiegeln.",
+        "coordinates": {
+          "lat": 55.4291,
+          "lng": -5.6047
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T18:58:18Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
