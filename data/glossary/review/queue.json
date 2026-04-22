@@ -12172,7 +12172,7 @@
         "ID bereits vorhanden (Duplikat): ardbeg"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "ardbeg",
         "name": "Ardbeg",
@@ -12238,7 +12238,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:35:11Z"
+      "reviewed_at": "2026-04-22T19:35:11Z",
+      "published_at": "2026-04-22T19:36:43Z"
     },
     {
       "batch_id": "whiskies_20260422T193412_126693",
