@@ -1,0 +1,27 @@
+{
+  "batch_id": "distilleries_20260422T190228_fc9fd0",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:02:28Z",
+  "raw": [
+    {
+      "id": "aberfeldy",
+      "name": "Aberfeldy",
+      "slug": "aberfeldy",
+      "region_id": "highlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1896,
+      "owner": "John Dewar & Sons (Bacardi)",
+      "website": "https://www.aberfeldy.com/",
+      "short_description": "Das Herzstück der Dewar's Blends, bekannt für seine honigsüßen und cremigen Noten.",
+      "long_description": "Aberfeldy wurde 1896 von John Dewar & Sons gegründet und ist der 'Golden Dram' im Herzen der Dewar's Blended Whiskys. Die Destillerie ist berühmt für ihre langen Gärzeiten und ihr honigsüßes, fruchtiges Profil. Sie bezieht ihr Wasser aus dem Pitilie Burn, der für seine Goldvorkommen bekannt ist, was zur Assoziation der Marke mit Reichhaltigkeit und weicher Textur beiträgt.",
+      "coordinates": {
+        "lat": 56.6243,
+        "lng": -3.8503
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T19:00:00Z"
+    }
+  ]
+}
