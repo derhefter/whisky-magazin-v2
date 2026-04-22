@@ -1,0 +1,30 @@
+{
+  "batch_id": "whiskies_20260422T194600_f2cdef",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:46:00Z",
+  "raw": [
+    {
+      "id": "bladnoch",
+      "name": "Bladnoch",
+      "slug": "bladnoch",
+      "region_id": "lowlands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1817,
+      "owner": "David Prior",
+      "website": "https://bladnoch.com/",
+      "short_description": "Die südlichste Destillerie Schottlands, die nach einer wechselvollen Geschichte unter neuer Führung zu altem Glanz zurückkehrt.",
+      "long_description": "Bladnoch wurde 1817 gegründet und ist die südlichste Brennerei Schottlands. Nach mehreren Besitzerwechseln und einer längeren Stilllegung wurde sie 2015 vom australischen Unternehmer David Prior gekauft und aufwendig modernisiert. Unter der Leitung von Master Distiller Dr. Nick Savage produziert Bladnoch einen klassischen Lowland-Stil: grasig, floral und mit einer schönen honigartigen Süße, oft kombiniert mit Einflüssen aus hochwertigen Sherry-Fässern.",
+      "travel_info": "Das Besucherzentrum ist Di-Sa von 10:00 bis 17:00 Uhr geöffnet. Es bietet Touren, einen Shop und ein Café. Die Destillerie liegt malerisch am Fluss Bladnoch in der Nähe von Newton Stewart.",
+      "seo_title": "Bladnoch Destillerie: Schottlands südlichster Single Malt | Whisky-Glossar",
+      "seo_description": "Besuche Bladnoch in den südlichen Lowlands. Entdecke eine der ältesten Brennereien Schottlands, ihr modernes Besucherzentrum und ihre floral-grasigen Whiskys.",
+      "coordinates": {
+        "lat": 54.8548,
+        "lng": -4.4619
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T23:45:00Z"
+    }
+  ]
+}
