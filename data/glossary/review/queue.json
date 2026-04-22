@@ -19824,7 +19824,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "glenkinchie-12-years-old",
         "name": "Glenkinchie 12 Years Old",
@@ -19892,7 +19892,10 @@
         "seo_title": "Glenkinchie 12 Jahre kaufen | Leichter Lowland Single Malt",
         "seo_description": "Glenkinchie 12 Jahre: Der klassische Edinburgh Malt. Frisch, floral und angenehm leicht. Perfekt für Einsteiger und als Aperitif.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:53:22Z"
     },
     {
       "batch_id": "whiskies_20260422T195134_528e75",
