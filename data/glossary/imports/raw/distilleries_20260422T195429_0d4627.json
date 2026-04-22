@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T195429_0d4627",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:54:29Z",
+  "raw": [
+    {
+      "id": "bowmore",
+      "name": "Bowmore",
+      "slug": "bowmore",
+      "region_id": "islay",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1779,
+      "owner": "Beam Suntory",
+      "website": "https://www.bowmore.com/",
+      "short_description": "Die älteste legale Destillerie Islays, berühmt für ihr legendäres No. 1 Vaults Lagerhaus.",
+      "long_description": "Gegründet im Jahr 1779, ist Bowmore die älteste Brennerei auf Islay und beherbergt die berühmten No. 1 Vaults – das älteste Reifelager der Welt, das unter dem Meeresspiegel liegt. Als eine der wenigen Destillerien mälzt Bowmore noch einen Teil der Gerste selbst auf eigenen Malzböden. Der Charakter von Bowmore bildet die goldene Mitte von Islay: moderater Rauch, perfekt balanciert mit tropischen Früchten und dunkler Schokolade.",
+      "travel_info": "Die Destillerie ist Mo-Sa für Besucher geöffnet. Die Whisky-Bar mit Blick auf Loch Indaal bietet Tastings und Cocktails an. Eine Besichtigung der No. 1 Vaults ist ein Highlight für jeden Besucher; Buchung im Voraus wird empfohlen.",
+      "seo_title": "Bowmore Destillerie: Tradition und Rauch auf Islay | Whisky-Glossar",
+      "seo_description": "Besuche die älteste Brennerei Islays. Entdecke Bowmore, die legendären No. 1 Vaults und den perfekt balancierten Single Malt mit Meerescharakter.",
+      "coordinates": {
+        "lat": 55.7568,
+        "lng": -6.2899
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T21:30:00Z"
+    }
+  ]
+}
