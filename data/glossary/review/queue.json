@@ -10884,7 +10884,7 @@
         "ID bereits vorhanden (Duplikat): glenscotia"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "glenscotia",
         "name": "Glen Scotia",
@@ -10933,7 +10933,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:27:49Z"
+      "reviewed_at": "2026-04-22T19:27:49Z",
+      "published_at": "2026-04-22T19:28:34Z"
     },
     {
       "batch_id": "distilleries_20260422T192720_c319e1",
@@ -10945,7 +10946,7 @@
         "ID bereits vorhanden (Duplikat): kilkerran"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "kilkerran",
         "name": "Kilkerran (Glengyle)",
@@ -10994,7 +10995,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:28:17Z"
+      "reviewed_at": "2026-04-22T19:28:17Z",
+      "published_at": "2026-04-22T19:28:34Z"
     },
     {
       "batch_id": "distilleries_20260422T192723_7f7633",
@@ -11006,7 +11008,7 @@
         "ID bereits vorhanden (Duplikat): springbank"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "springbank",
         "name": "Springbank",
@@ -11055,7 +11057,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-22T19:28:30Z"
+      "reviewed_at": "2026-04-22T19:28:30Z",
+      "published_at": "2026-04-22T19:28:34Z"
     }
   ]
 }
