@@ -18549,11 +18549,11 @@
         "Slug ungültig (nur a-z, 0-9, Bindestrich): lindores_abbey"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "lindores_abbey",
+        "id": "lindores-abbey",
         "name": "Lindores Abbey",
-        "slug": "lindores_abbey",
+        "slug": "lindores-abbey",
         "region_id": "lowlands",
         "country_id": "scotland",
         "status": "active",
@@ -18571,7 +18571,7 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-22T19:48:40Z"
+        "last_updated": "2026-04-22T19:50:07Z"
       },
       "raw": {
         "id": "lindores_abbey",
@@ -18595,7 +18595,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T00:05:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:50:07Z"
     },
     {
       "batch_id": "distilleries_20260422T194843_e48d58",
