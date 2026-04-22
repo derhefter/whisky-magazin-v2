@@ -4238,7 +4238,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "macallan-the-macallan-double-cask-18-year-old",
         "name": "The Macallan Double Cask 18 Year Old",
@@ -4302,7 +4302,10 @@
         "seo_title": "The Macallan Double Cask 18 Jahre Single Malt Whisky kaufen",
         "seo_description": "The Macallan 18 Jahre Double Cask: Ein Meisterwerk aus Sherry-gereifter amerikanischer und europäischer Eiche.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:17Z"
     },
     {
       "batch_id": "whiskies_20260422T203953_47a476",
