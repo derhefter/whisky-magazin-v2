@@ -1,0 +1,53 @@
+{
+  "batch_id": "whiskies_20260422T192056_98dc98",
+  "entity": "whiskies",
+  "imported_at": "2026-04-22T19:20:56Z",
+  "raw": [
+    {
+      "id": "bushmills-10-year-old",
+      "name": "Bushmills 10 Year Old",
+      "slug": "bushmills-10-year-old",
+      "country_id": "ireland",
+      "region_id": "northern-ireland",
+      "distillery_id": "bushmills",
+      "whisky_type": "single_malt",
+      "style_tags": "fruchtig, leicht, floral, honig",
+      "abv": 40,
+      "cask_types": "Ex-Bourbon, teilweise Sherry",
+      "smoke_profile": "Nicht rauchig",
+      "age_statement": 10,
+      "nas": false,
+      "tasting_notes_nose": "Frisch und leicht. Aromen von Honig, reifen Äpfeln und Birnen, dazu Noten von Milchschokolade und Vanille.",
+      "tasting_notes_palate": "Sehr weich und zugänglich. Viel Fruchtsüße, Malz, Honigwaben und ein Hauch von geschmolzener Schokolade.",
+      "tasting_notes_finish": "Kurz bis mittellang, sauber und trocken mit einer sanften Eichenwürze.",
+      "short_description": "Ein Paradebeispiel für die Eleganz irischer Single Malts. Fruchtig, leicht und unglaublich weich.",
+      "long_description": "Der Bushmills 10 Jahre ist ein Single Malt Whiskey, der zu 100% aus gemälzter Gerste besteht und dreifach destilliert wird. Seine Reifung erfolgt überwiegend in erstbelegten Ex-Bourbonfässern, was ihm seine charakteristischen Vanille- und Honignoten verleiht. Er ist der ideale Einstieg in die Welt der irischen Single Malts und besticht durch seine Reinheit und das Fehlen jeglicher Rauchigkeit.",
+      "seo_title": "Bushmills 10 Jahre Single Malt Irish Whiskey kaufen",
+      "seo_description": "Bushmills 10 Jahre: Der fruchtige Klassiker aus der ältesten Brennerei der Welt. 100% Single Malt, dreifach destilliert.",
+      "published": true
+    },
+    {
+      "id": "bushmills-black-bush",
+      "name": "Bushmills Black Bush",
+      "slug": "bushmills-black-bush",
+      "country_id": "ireland",
+      "region_id": "northern-ireland",
+      "distillery_id": "bushmills",
+      "whisky_type": "blended",
+      "style_tags": "sherry, dunkel, fruchtig, würzig",
+      "abv": 40,
+      "cask_types": "Oloroso Sherryfässer (hoher Anteil)",
+      "smoke_profile": "Nicht rauchig",
+      "age_statement": null,
+      "nas": true,
+      "tasting_notes_nose": "Reichhaltig und fruchtig. Starke Sherry-Aromen, dunkle Beeren, Trockenfrüchte und eine feine Malzwürze.",
+      "tasting_notes_palate": "Vollmundig mit einer fast samtigen Textur. Intensive Noten von Rosinen, Nüssen und dunkler Schokolade, balanciert durch eine sanfte Süße.",
+      "tasting_notes_finish": "Mittellang und wärmend mit langanhaltenden Sherry-Noten.",
+      "short_description": "Ein legendärer Blend mit einem extrem hohen Anteil an Sherry-gereiftem Malt Whiskey.",
+      "long_description": "Black Bush unterscheidet sich von gewöhnlichen Blends durch seinen außergewöhnlich hohen Anteil an Malt Whiskey (ca. 80%), der zudem größtenteils in ehemaligen Oloroso-Sherryfässern gereift ist. Dies verleiht ihm eine dunkle Farbe und ein tiefes, fruchtiges Profil, das man sonst eher bei Single Malts vermuten würde. Er gilt als einer der besten 'Bang-for-your-buck' Whiskeys weltweit.",
+      "seo_title": "Bushmills Black Bush Irish Whiskey - Sherry-betont kaufen",
+      "seo_description": "Bushmills Black Bush: Der Blend für Sherry-Liebhaber. Hoher Malt-Anteil und reiche Fruchtnoten. Jetzt entdecken!",
+      "published": true
+    }
+  ]
+}
