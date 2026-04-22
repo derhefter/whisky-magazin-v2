@@ -748,6 +748,13 @@
       "imported_at": "2026-04-22T19:37:43Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T193747_345f96",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:37:47Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13445,6 +13452,62 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T22:55:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T193747_345f96",
+      "entity": "distilleries",
+      "item_id": "tobermory",
+      "item_slug": "tobermory",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "tobermory",
+        "name": "Tobermory",
+        "slug": "tobermory",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Distell (Heineken)",
+        "website": "https://tobermorydistillery.com/",
+        "short_description": "Produziert auf Mull zwei Stile: den ungetorften Tobermory und den stark getorften Ledaig.",
+        "long_description": "Tobermory wurde 1798 als Ledaig gegründet und ist die einzige Brennerei auf der Isle of Mull. Bekannt für ihre bunten Gebäude am Hafen und eine Geschichte voller Schließungen und Wiedereröffnungen, produziert sie zwei unterschiedliche Stile: den ungetorften Tobermory (fruchtig, würzig, kräuterartig) und den getorften Ledaig. Der ungetorfte Malt wird für seinen einzigartigen Charakter und die lebendigen Fruchtnoten geschätzt.",
+        "travel_info": "Das Besucherzentrum am Hafen von Tobermory ist täglich geöffnet. Es werden verschiedene Erlebnisse angeboten, von der Standard-Tour bis hin zu exklusiven Fass-Verkostungen. Eine Fährüberfahrt von Oban oder Lochaline ist für den Besuch der Insel Mull notwendig.",
+        "seo_title": "Tobermory Destillerie: Das bunte Herz der Isle of Mull | Whisky-Glossar",
+        "seo_description": "Besuche Tobermory auf der Isle of Mull. Entdecke den ungetorften Tobermory und den rauchigen Ledaig in einer der malerischsten Hafenstädte Schottlands.",
+        "coordinates": {
+          "lat": 56.6231,
+          "lng": -6.0681
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:37:47Z"
+      },
+      "raw": {
+        "id": "tobermory",
+        "name": "Tobermory",
+        "slug": "tobermory",
+        "region_id": "islands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1798,
+        "owner": "Distell (Heineken)",
+        "website": "https://tobermorydistillery.com/",
+        "short_description": "Produziert auf Mull zwei Stile: den ungetorften Tobermory und den stark getorften Ledaig.",
+        "long_description": "Tobermory wurde 1798 als Ledaig gegründet und ist die einzige Brennerei auf der Isle of Mull. Bekannt für ihre bunten Gebäude am Hafen und eine Geschichte voller Schließungen und Wiedereröffnungen, produziert sie zwei unterschiedliche Stile: den ungetorften Tobermory (fruchtig, würzig, kräuterartig) und den getorften Ledaig. Der ungetorfte Malt wird für seinen einzigartigen Charakter und die lebendigen Fruchtnoten geschätzt.",
+        "travel_info": "Das Besucherzentrum am Hafen von Tobermory ist täglich geöffnet. Es werden verschiedene Erlebnisse angeboten, von der Standard-Tour bis hin zu exklusiven Fass-Verkostungen. Eine Fährüberfahrt von Oban oder Lochaline ist für den Besuch der Insel Mull notwendig.",
+        "seo_title": "Tobermory Destillerie: Das bunte Herz der Isle of Mull | Whisky-Glossar",
+        "seo_description": "Besuche Tobermory auf der Isle of Mull. Entdecke den ungetorften Tobermory und den rauchigen Ledaig in einer der malerischsten Hafenstädte Schottlands.",
+        "coordinates": {
+          "lat": 56.6231,
+          "lng": -6.0681
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T23:00:00Z"
       }
     }
   ]
