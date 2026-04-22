@@ -5266,7 +5266,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "springbank-springbank-15-years-old",
         "name": "Springbank 15 Years Old",
@@ -5334,7 +5334,10 @@
         "seo_title": "Springbank 15 Jahre Single Malt Whisky kaufen",
         "seo_description": "Der Springbank 15 Jahre überzeugt durch intensive Sherrynoten, dunkle Früchte und komplexe Würze. Ein Campbeltown-Meisterwerk.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T19:01:39Z"
     },
     {
       "batch_id": "whiskies_20260422T190053_596c48",
