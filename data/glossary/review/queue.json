@@ -265,6 +265,13 @@
       "imported_at": "2026-04-22T19:02:54Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260422T190257_8a01a9",
+      "entity": "distilleries",
+      "imported_at": "2026-04-22T19:02:57Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -6078,6 +6085,56 @@
         "coordinates": {
           "lat": 57.4847,
           "lng": -2.6258
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:00:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260422T190257_8a01a9",
+      "entity": "distilleries",
+      "item_id": "glengoyne",
+      "item_slug": "glengoyne",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "glengoyne",
+        "name": "Glengoyne",
+        "slug": "glengoyne",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1833,
+        "owner": "Ian Macleod Distillers",
+        "website": "https://www.glengoyne.com/",
+        "short_description": "Wirbt mit der langsamsten Destillation Schottlands und verzichtet komplett auf Torf.",
+        "long_description": "Glengoyne ist einzigartig, da sie die 'Highland-Linie' überspannt: Ihre Brennblasen befinden sich in den Highlands, während ihre Lagerhäuser in den Lowlands liegen. Gegründet im Jahr 1833, ist sie als 'Schottlands langsamste Destillerie' bekannt, was auf ihren außergewöhnlich langsamen Destillationsprozess zurückzuführen ist. Durch die Verwendung von ausschließlich luftgetrockneter Gerste (kein Torfrauch) produziert Glengoyne einen reinen, fruchtigen und eleganten Spirit, der oft in hochwertigen Sherryfässern reift.",
+        "coordinates": {
+          "lat": 56.0142,
+          "lng": -4.3634
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:02:57Z"
+      },
+      "raw": {
+        "id": "glengoyne",
+        "name": "Glengoyne",
+        "slug": "glengoyne",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1833,
+        "owner": "Ian Macleod Distillers",
+        "website": "https://www.glengoyne.com/",
+        "short_description": "Wirbt mit der langsamsten Destillation Schottlands und verzichtet komplett auf Torf.",
+        "long_description": "Glengoyne ist einzigartig, da sie die 'Highland-Linie' überspannt: Ihre Brennblasen befinden sich in den Highlands, während ihre Lagerhäuser in den Lowlands liegen. Gegründet im Jahr 1833, ist sie als 'Schottlands langsamste Destillerie' bekannt, was auf ihren außergewöhnlich langsamen Destillationsprozess zurückzuführen ist. Durch die Verwendung von ausschließlich luftgetrockneter Gerste (kein Torfrauch) produziert Glengoyne einen reinen, fruchtigen und eleganten Spirit, der oft in hochwertigen Sherryfässern reift.",
+        "coordinates": {
+          "lat": 56.0142,
+          "lng": -4.3634
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
