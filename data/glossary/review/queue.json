@@ -5628,7 +5628,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "glenfiddich-glenfiddich-18-year-old",
         "name": "Glenfiddich 18 Year Old",
@@ -5692,7 +5692,10 @@
         "seo_title": "Glenfiddich 18 Jahre Single Malt Whisky kaufen | Small Batch",
         "seo_description": "Glenfiddich 18 Jahre: Ein tiefgründiger Speyside Whisky mit Noten von Bratapfel und edler Eiche. Jetzt online kaufen.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-22T20:41:39Z"
     },
     {
       "batch_id": "whiskies_20260422T204013_c64b6f",
