@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260422T193714_2a500b",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:37:14Z",
+  "raw": [
+    {
+      "id": "arran",
+      "name": "Arran (Lochranza)",
+      "slug": "arran",
+      "region_id": "islands",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1995,
+      "owner": "Isle of Arran Distillers Ltd.",
+      "website": "https://www.arranwhisky.com/",
+      "short_description": "Die erste neue Destillerie auf Arran seit über 150 Jahren, produziert einen frischen und fruchtigen Malt.",
+      "long_description": "Die Isle of Arran Destillerie (Lochranza) wurde 1995 gegründet und belebte die lange Destilliertradition der Insel wieder. Bekannt für ihren sauberen, zitrusartigen und nussigen Spirit, war sie eine der ersten Erfolgsgeschichten der modernen Craft-Distilling-Bewegung. Die Brennerei verwendet ungetorftes Malz für ihr Kernsortiment und ist berühmt für eine Vielzahl von Weinfass-Finishes, die vom einzigartigen Mikroklima der Insel profitieren.",
+      "travel_info": "Das Besucherzentrum in Lochranza ist preisgekrönt und bietet täglich Touren und Tastings an. Das 'CASKS Café' serviert lokale Spezialitäten. Eine Online-Buchung für Touren wird dringend empfohlen, da Arran ein beliebtes Reiseziel ist.",
+      "seo_title": "Arran (Lochranza) Destillerie: Fruchtiger Insel-Whisky | Whisky-Glossar",
+      "seo_description": "Besuche die Arran Brennerei in Lochranza. Entdecke fruchtigen Single Malt, das Besucherzentrum und lerne alles über das Handwerk auf der Insel Arran.",
+      "coordinates": {
+        "lat": 55.693,
+        "lng": -5.2748
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-22T22:10:00Z"
+    }
+  ]
+}
