@@ -1,0 +1,69 @@
+{
+  "batch_id": "distilleries_20260422T192923_168252",
+  "entity": "distilleries",
+  "imported_at": "2026-04-22T19:29:23Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "edradour",
+        "name": "Edradour",
+        "slug": "edradour",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1825,
+        "owner": "Signatory Vintage",
+        "website": "https://www.edradour.com/",
+        "short_description": "Lange Zeit als die kleinste Destillerie Schottlands bekannt, besticht sie durch ihren viktorianischen Charme.",
+        "long_description": "Edradour wurde 1825 gegründet und liegt malerisch in den Hügeln über Pitlochry. Die Brennerei hat ihren handwerklichen Charakter über die Jahrhunderte bewahrt und produziert nur eine sehr geringe Menge Whisky pro Jahr. Bekannt für ihren cremigen, nussigen und oft stark sherry-betonten Stil, ist Edradour ein Juwel der Highlands. Seit 2002 gehört sie dem unabhängigen Abfüller Signatory Vintage, was zu einer Vielzahl von interessanten Weinfass-Finishes geführt hat.",
+        "travel_info": "Aufgrund von Modernisierungen und personellen Engpässen ist die Brennerei derzeit für reguläre Touren geschlossen. Der Shop und die Außenanlagen können jedoch oft besichtigt werden. Eine Vorab-Information auf der Website ist unerlässlich.",
+        "seo_title": "Edradour Destillerie: Das handwerkliche Juwel der Highlands | Whisky-Glossar",
+        "seo_description": "Entdecke Edradour in Pitlochry. Erfahre mehr über eine der kleinsten Brennereien Schottlands, ihren viktorianischen Charme und die Sherryfass-Reifung.",
+        "coordinates": {
+          "lat": 56.7028,
+          "lng": -3.7011
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T00:50:00Z"
+      },
+      "normalized": {
+        "id": "edradour",
+        "name": "Edradour",
+        "slug": "edradour",
+        "region_id": "highlands",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1825,
+        "owner": "Signatory Vintage",
+        "website": "https://www.edradour.com/",
+        "short_description": "Lange Zeit als die kleinste Destillerie Schottlands bekannt, besticht sie durch ihren viktorianischen Charme.",
+        "long_description": "Edradour wurde 1825 gegründet und liegt malerisch in den Hügeln über Pitlochry. Die Brennerei hat ihren handwerklichen Charakter über die Jahrhunderte bewahrt und produziert nur eine sehr geringe Menge Whisky pro Jahr. Bekannt für ihren cremigen, nussigen und oft stark sherry-betonten Stil, ist Edradour ein Juwel der Highlands. Seit 2002 gehört sie dem unabhängigen Abfüller Signatory Vintage, was zu einer Vielzahl von interessanten Weinfass-Finishes geführt hat.",
+        "travel_info": "Aufgrund von Modernisierungen und personellen Engpässen ist die Brennerei derzeit für reguläre Touren geschlossen. Der Shop und die Außenanlagen können jedoch oft besichtigt werden. Eine Vorab-Information auf der Website ist unerlässlich.",
+        "seo_title": "Edradour Destillerie: Das handwerkliche Juwel der Highlands | Whisky-Glossar",
+        "seo_description": "Entdecke Edradour in Pitlochry. Erfahre mehr über eine der kleinsten Brennereien Schottlands, ihren viktorianischen Charme und die Sherryfass-Reifung.",
+        "coordinates": {
+          "lat": 56.7028,
+          "lng": -3.7011
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-22T19:29:23Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): edradour"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
