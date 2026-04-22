@@ -475,6 +475,13 @@
       "imported_at": "2026-04-22T19:21:06Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260422T192110_39176b",
+      "entity": "whiskies",
+      "imported_at": "2026-04-22T19:21:10Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10757,6 +10764,64 @@
         "long_description": "Teeling Small Batch bricht mit den Traditionen des irischen Whiskeys. Dieser Blend aus Grain- und Malt-Whiskey reift zunächst in Ex-Bourbonfässern, bevor er sein entscheidendes Finish in handverlesenen Rum-Fässern aus Mittelamerika erhält. Dies verleiht ihm eine einzigartige tropische Süße und Würze. Zudem verzichtet Teeling auf Kältefiltration, was die volle Textur und das Aroma bewahrt.",
         "seo_title": "Teeling Small Batch Irish Whiskey - Rum Cask Finish kaufen",
         "seo_description": "Entdecken Sie den Teeling Small Batch: Innovativer Whiskey mit Rum-Fass-Finish. Exotisch fruchtig und kraftvoll mit 46% Vol.",
+        "published": true
+      }
+    },
+    {
+      "batch_id": "whiskies_20260422T192110_39176b",
+      "entity": "whiskies",
+      "item_id": "tullamore-dew-original",
+      "item_slug": "tullamore-dew-original",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "tullamore-dew-original",
+        "name": "Tullamore D.E.W. Original",
+        "slug": "tullamore-dew-original",
+        "country_id": "ireland",
+        "region_id": "republic-of-ireland",
+        "distillery_id": "tullamore-dew",
+        "whisky_type": "blended",
+        "style_tags": "weich, fruchtig, vielseitig, mild",
+        "abv": 40,
+        "cask_types": "Ex-Bourbon, Sherryfässer",
+        "smoke_profile": "Nicht rauchig",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Zart und blumig mit Honigwaben, grünen Äpfeln und Zitrusnoten. Eine feine Getreidewürze und Vanille im Hintergrund.",
+        "tasting_notes_palate": "Hervorragend weich und seidig. Süße Aromen von Karamell und Toffee harmonieren mit frischen Früchten und einem Hauch von Gewürzen (Zimt, Muskat).",
+        "tasting_notes_finish": "Sauber und mild. Ein kurzes, angenehmes Echo von Vanilleeis und grüner Frucht.",
+        "short_description": "Der Klassiker mit der 'Triple'-Formel: Dreifach destilliert, dreifach geblendet, dreifach gereift.",
+        "long_description": "Tullamore D.E.W. Original ist weltweit geschätzt für seine außerordentliche Milde. Die Einzigartigkeit liegt im Blend aus allen drei irischen Whiskey-Arten: Golden Grain (für Süße), Malt (für Fruchtigkeit) und Pure Pot Still (für Würze). Durch die Reifung in drei verschiedenen Fassarten entsteht ein universeller Whiskey, der sowohl pur als auch in Longdrinks oder als Irish Coffee überzeugt.",
+        "seo_title": "Tullamore D.E.W. Original Irish Whiskey kaufen",
+        "seo_description": "Tullamore D.E.W. Original: Der mildeste irische Whiskey durch die Kraft der Drei. Infos zu Geschmack, Blend und Tradition.",
+        "published": true,
+        "created_at": "2026-04-22T19:21:10Z",
+        "last_updated": "2026-04-22T19:21:10Z"
+      },
+      "raw": {
+        "id": "tullamore-dew-original",
+        "name": "Tullamore D.E.W. Original",
+        "slug": "tullamore-dew-original",
+        "country_id": "ireland",
+        "region_id": "republic-of-ireland",
+        "distillery_id": "tullamore-dew",
+        "whisky_type": "blended",
+        "style_tags": "weich, fruchtig, vielseitig, mild",
+        "abv": 40,
+        "cask_types": "Ex-Bourbon, Sherryfässer",
+        "smoke_profile": "Nicht rauchig",
+        "age_statement": null,
+        "nas": true,
+        "tasting_notes_nose": "Zart und blumig mit Honigwaben, grünen Äpfeln und Zitrusnoten. Eine feine Getreidewürze und Vanille im Hintergrund.",
+        "tasting_notes_palate": "Hervorragend weich und seidig. Süße Aromen von Karamell und Toffee harmonieren mit frischen Früchten und einem Hauch von Gewürzen (Zimt, Muskat).",
+        "tasting_notes_finish": "Sauber und mild. Ein kurzes, angenehmes Echo von Vanilleeis und grüner Frucht.",
+        "short_description": "Der Klassiker mit der 'Triple'-Formel: Dreifach destilliert, dreifach geblendet, dreifach gereift.",
+        "long_description": "Tullamore D.E.W. Original ist weltweit geschätzt für seine außerordentliche Milde. Die Einzigartigkeit liegt im Blend aus allen drei irischen Whiskey-Arten: Golden Grain (für Süße), Malt (für Fruchtigkeit) und Pure Pot Still (für Würze). Durch die Reifung in drei verschiedenen Fassarten entsteht ein universeller Whiskey, der sowohl pur als auch in Longdrinks oder als Irish Coffee überzeugt.",
+        "seo_title": "Tullamore D.E.W. Original Irish Whiskey kaufen",
+        "seo_description": "Tullamore D.E.W. Original: Der mildeste irische Whiskey durch die Kraft der Drei. Infos zu Geschmack, Blend und Tradition.",
         "published": true
       }
     }
