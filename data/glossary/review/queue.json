@@ -9234,7 +9234,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "dresdner-whisky-manufaktur",
         "name": "Dresdner Whisky Manufaktur",
@@ -9264,7 +9264,10 @@
         "long_description": "Die Dresdner Whisky Manufaktur ist eine der modernsten Whisky-Brennereien Deutschlands und produziert unter der Marke 'Hellinger 42'. Inmitten des historischen Alberthafens in Dresden gelegen, verbindet sie sächsische Ingenieurskunst mit der Leidenschaft für Single Malt. Die Destillerie verfügt über eine beachtliche Kapazität und setzt auf eine präzise Steuerung des Brennprozesses, um einen besonders reinen und fruchtigen Rohbrand zu erzeugen. Die Reifung erfolgt in einem der größten Fasslager der Region, wobei neben klassischen Bourbon-Fässern auch eine Vielzahl an Weinfässern regionaler Winzer zum Einsatz kommt.",
         "seo_title": "Dresdner Whisky Manufaktur | Hellinger 42 Sächsischer Single Malt",
         "seo_description": "Entdecken Sie die Dresdner Whisky Manufaktur im Alberthafen. Erfahren Sie alles über Hellinger 42 Single Malt Whisky aus Sachsen, Besichtigungen und Tastings."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:28Z"
     },
     {
       "batch_id": "distilleries_20260423T134054_06245b",
