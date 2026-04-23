@@ -1385,6 +1385,13 @@
       "imported_at": "2026-04-23T13:40:43Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134047_26b454",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:40:47Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -8963,6 +8970,46 @@
         "long_description": "Die Brennerei Liebl im Bayerischen Wald ist für ihre hochwertigen Edelbrände und den 'Coillmór' (gälisch für 'Großer Wald') Single Malt bekannt. Gerhard Liebl legt größten Wert auf die Auswahl erstklassiger Fässer, darunter Amarone-, Port- und Sherry-Casks. Der Whisky wird aus rein bayerischem Malz destilliert und reift im feucht-milden Klima des Bayerischen Waldes. Coillmór Whiskys zeichnen sich durch ihre enorme Komplexität und Dichte aus und gewinnen regelmäßig internationale Auszeichnungen.",
         "seo_title": "Coillmór Whisky | Bayerischer Single Malt von Liebl",
         "seo_description": "Coillmór Single Malt Whisky aus dem Bayerischen Wald. Exklusive Fassreifungen und höchste Destillationskunst der Brennerei Liebl."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134047_26b454",
+      "entity": "distilleries",
+      "item_id": "dolleruper-destille",
+      "item_slug": "dolleruper-destille",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "dolleruper-destille",
+        "name": "Dolleruper Destille",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://dolleruper-destille.de/",
+        "owner": "Dr. Werner Küsters",
+        "location": "Dollerup, Schleswig-Holstein",
+        "travel_info": "Die nördlichste Destillerie Deutschlands bietet Führungen durch die Obstbrennerei und das Whisky-Lager sowie einen gemütlichen Laden.",
+        "long_description": "Die Dolleruper Destille in der Nähe von Flensburg ist die nördlichste Whiskydestillerie Deutschlands. In einer ehemaligen Meierei entstehen hier Whiskys mit norddeutschem Charakter. Dr. Werner Küsters setzt auf Transparenz und Qualität. Die Whiskys reifen in der salzhaltigen Luft der Ostseenähe, was ihnen eine ganz eigene Note verleiht. Neben Whisky ist die Destille auch für ihre hochwertigen Obstbrände und Geiste aus regionalen Früchten bekannt.",
+        "seo_title": "Dolleruper Destille | Der nördlichste Whisky Deutschlands",
+        "seo_description": "In Schleswig-Holstein brennt die Dolleruper Destille charakterstarken Whisky. Norddeutsches Handwerk nahe der Ostsee.",
+        "slug": "dolleruper-destille",
+        "created_at": "2026-04-23T13:40:47Z",
+        "last_updated": "2026-04-23T13:40:47Z",
+        "published": false
+      },
+      "raw": {
+        "id": "dolleruper-destille",
+        "name": "Dolleruper Destille",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://dolleruper-destille.de/",
+        "owner": "Dr. Werner Küsters",
+        "location": "Dollerup, Schleswig-Holstein",
+        "travel_info": "Die nördlichste Destillerie Deutschlands bietet Führungen durch die Obstbrennerei und das Whisky-Lager sowie einen gemütlichen Laden.",
+        "long_description": "Die Dolleruper Destille in der Nähe von Flensburg ist die nördlichste Whiskydestillerie Deutschlands. In einer ehemaligen Meierei entstehen hier Whiskys mit norddeutschem Charakter. Dr. Werner Küsters setzt auf Transparenz und Qualität. Die Whiskys reifen in der salzhaltigen Luft der Ostseenähe, was ihnen eine ganz eigene Note verleiht. Neben Whisky ist die Destille auch für ihre hochwertigen Obstbrände und Geiste aus regionalen Früchten bekannt.",
+        "seo_title": "Dolleruper Destille | Der nördlichste Whisky Deutschlands",
+        "seo_description": "In Schleswig-Holstein brennt die Dolleruper Destille charakterstarken Whisky. Norddeutsches Handwerk nahe der Ostsee."
       }
     }
   ]
