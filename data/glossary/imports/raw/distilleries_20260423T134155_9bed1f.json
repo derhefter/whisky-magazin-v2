@@ -1,0 +1,22 @@
+{
+  "batch_id": "distilleries_20260423T134155_9bed1f",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:55Z",
+  "raw": [
+    {
+      "id": "slyrs",
+      "name": "Slyrs Destillerie",
+      "country_id": "germany",
+      "region_id": "bavaria",
+      "owner": "Familie Stetter",
+      "website": "https://slyrs.com",
+      "founded": "1999",
+      "coordinates": "47.7225, 11.8597",
+      "seo_title": "Slyrs Destillerie | Bayerischer Single Malt Whisky vom Schliersee",
+      "seo_description": "Entdecken Sie die Slyrs Destillerie am Schliersee. Erfahren Sie alles über bayerischen Single Malt Whisky, Besichtigungen und Tastings in den Alpen.",
+      "long_description": "Die Slyrs Destillerie am malerischen Schliersee in den bayerischen Alpen gilt als Pionier des bayerischen Single Malt Whiskys. Gegründet 1999 von Florian Stetter, hat sich Slyrs zu einer der bekanntesten deutschen Whisky-Marken entwickelt. Die Destillerie nutzt regionales bayerisches Gerstenmalz und reines alpines Quellwasser für ihre Produktion. Besonders markant ist das Höhenlager auf dem Gipfel des Stümpflings auf 1501 Metern, wo ausgewählte Fässer unter extremen klimatischen Bedingungen reifen. Die Destillation erfolgt in klassischen Kupferbrennblasen, und die Reifung findet vorwiegend in neuen Fässern aus amerikanischer Weißeiche statt, was den Slyrs-Whiskys ihre charakteristische Vanille- und Karamellnote verleiht.",
+      "travel_info": "Slyrs bietet Besuchern die 'SLYRS Experience' in Neuhaus am Schliersee (Bayrischzeller Str. 13, 83727 Schliersee). Es gibt sowohl selbstgeführte als auch begleitete Touren durch die Brennerei. Ein Highlight ist die 'SLYRS Caffee & Lunchery' mit einer großen Außenterrasse und Blick auf die Berge. Die Destillerie ist gut mit dem Auto (Parkplätze direkt vor der Tür) oder mit der Bayerischen Regiobahn (Bahnhof Fischhausen-Neuhaus, ca. 1 km Fußweg) erreichbar.",
+      "updated_at": "2026-04-22T23:30:00Z"
+    }
+  ]
+}
