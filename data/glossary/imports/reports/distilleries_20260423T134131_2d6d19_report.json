@@ -1,0 +1,51 @@
+{
+  "batch_id": "distilleries_20260423T134131_2d6d19",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:31Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "old-sandhill",
+        "name": "Old Sandhill (Destillerie Schmidt)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.old-sandhill.de/",
+        "owner": "Familie Schmidt",
+        "location": "Bad Belzig, Brandenburg",
+        "travel_info": "Die Destillerie im Hohen Fläming bietet Führungen und Tastings an. Ein Besuch lässt sich wunderbar mit einer Wanderung in der märkischen Landschaft verbinden.",
+        "long_description": "Old Sandhill ist eine handwerkliche Whiskydestillerie in Bad Belzig, Brandenburg. Inmitten des Naturparks Hoher Fläming brennt die Familie Schmidt Whiskys aus regionalem Getreide. Der Name bezieht sich auf den sandigen Boden der Region. Old Sandhill Whiskys reifen in einer Vielzahl von Fässern, darunter auch deutsche Eiche, und sind bekannt für ihre Ehrlichkeit und Tiefe. Die Brennerei ist ein wichtiger Akteur in der aufstrebenden ostdeutschen Whiskyszene.",
+        "seo_title": "Old Sandhill Whisky | Handwerk aus Bad Belzig in Brandenburg",
+        "seo_description": "Old Sandhill steht für echten Brandenburger Whisky. Entdecken Sie die Destillerie Schmidt im Hohen Fläming."
+      },
+      "normalized": {
+        "id": "old-sandhill",
+        "name": "Old Sandhill (Destillerie Schmidt)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.old-sandhill.de/",
+        "owner": "Familie Schmidt",
+        "location": "Bad Belzig, Brandenburg",
+        "travel_info": "Die Destillerie im Hohen Fläming bietet Führungen und Tastings an. Ein Besuch lässt sich wunderbar mit einer Wanderung in der märkischen Landschaft verbinden.",
+        "long_description": "Old Sandhill ist eine handwerkliche Whiskydestillerie in Bad Belzig, Brandenburg. Inmitten des Naturparks Hoher Fläming brennt die Familie Schmidt Whiskys aus regionalem Getreide. Der Name bezieht sich auf den sandigen Boden der Region. Old Sandhill Whiskys reifen in einer Vielzahl von Fässern, darunter auch deutsche Eiche, und sind bekannt für ihre Ehrlichkeit und Tiefe. Die Brennerei ist ein wichtiger Akteur in der aufstrebenden ostdeutschen Whiskyszene.",
+        "seo_title": "Old Sandhill Whisky | Handwerk aus Bad Belzig in Brandenburg",
+        "seo_description": "Old Sandhill steht für echten Brandenburger Whisky. Entdecken Sie die Destillerie Schmidt im Hohen Fläming.",
+        "slug": "old-sandhill-destillerie-schmidt",
+        "created_at": "2026-04-23T13:41:31Z",
+        "last_updated": "2026-04-23T13:41:31Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
