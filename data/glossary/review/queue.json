@@ -11798,37 +11798,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "rothaus-black-forest",
-        "distillery_id": "rothaus",
-        "name": "Rothaus Black Forest Single Malt Whisky",
-        "whisky_type": "Single Malt",
-        "slug": "rothaus-black-forest-single-malt",
+        "id": "old-pulteney-15",
+        "distillery_id": "old-pulteney",
+        "name": "Old Pulteney 15 Year Old",
+        "whisky_type": "single_malt",
+        "slug": "old-pulteney-15",
         "published": true,
-        "age_statement": "3 Jahre",
+        "age_statement": 15,
         "nas": false,
-        "abv": 43,
+        "abv": 46,
         "tasting_notes_nose": "Feine Aromen von Vanille, Birne und Honig. Dazu dezente blumige Noten und ein Hauch von hellem Malz.",
         "tasting_notes_palate": "Weich und rund mit viel Honigsüße, Karamell und leichter Würze. Es zeigen sich Noten von gerösteten Nüssen und dezenter Eiche.",
         "tasting_notes_finish": "Sanft und wärmend mit einer anhaltenden Süße und fruchtigen Anklängen.",
-        "short_description": "Die erfolgreiche Symbiose aus badischer Braukunst und Destillierkunst.",
-        "long_description": "Der Rothaus Black Forest Single Malt wird aus dem berühmten Rothaus-Malz und eigenem Quellwasser eingemaischt. Nach der Destillation bei Kammer-Kirsch reift er für mindestens drei Jahre in ehemaligen Bourbonfässern in den kühlen Kellern der Brauerei Rothaus auf 1000m Höhe. Die Kombination aus Brautradition und der besonderen Reifung im Schwarzwaldklima macht diesen Whisky zu einem der populärsten deutschen Whiskys.",
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
         "seo_title": "Rothaus Black Forest Single Malt | Schwarzwälder Whisky Klassiker",
         "seo_description": "Rothaus Black Forest Single Malt Whisky – Die fruchtige Milde des Schwarzwaldes. Ausgezeichnet mit zahlreichen Goldmedaillen.",
         "style_tags": [
-          "mild",
-          "honigsüß",
-          "Schwarzwald",
-          "balanciert"
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
         ],
         "cask_types": [
-          "Ex-Bourbon"
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z",
         "created_at": "2026-04-23T13:49:15Z",
-        "last_updated": "2026-04-23T13:49:15Z"
+        "last_updated": "2026-04-23T13:53:47Z",
+        "country_id": "scotland",
+        "region_id": "highlands"
       },
       "raw": {
         "id": "rothaus-black-forest",
@@ -11858,7 +11861,10 @@
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:53:47Z"
     },
     {
       "batch_id": "whiskies_20260423T134919_65a297",
