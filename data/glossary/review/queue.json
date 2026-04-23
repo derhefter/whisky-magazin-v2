@@ -1350,6 +1350,13 @@
       "imported_at": "2026-04-22T20:43:27Z",
       "total": 2,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134029_894710",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:40:29Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -8725,6 +8732,46 @@
       "reviewer_notes": "",
       "reviewed_at": "2026-04-22T20:45:06Z",
       "published_at": "2026-04-22T20:45:12Z"
+    },
+    {
+      "batch_id": "distilleries_20260423T134029_894710",
+      "entity": "distilleries",
+      "item_id": "bellerhof",
+      "item_slug": "bellerhof-brennerei",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "bellerhof",
+        "name": "Bellerhof Brennerei",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.bellerhof.de/",
+        "owner": "Familie Beller",
+        "location": "Owen, Baden-Württemberg",
+        "travel_info": "Die Brennerei liegt am Fuße der Schwäbischen Alb in Owen, der 'Whisky-Stadt' Deutschlands. Tastings und Verkauf direkt ab Hof.",
+        "long_description": "Owen an der Teck gilt als das deutsche Mekka für Whisky-Liebhaber, und der Bellerhof ist einer der traditionsreichsten Betriebe vor Ort. Die Familie Beller brennt hier mit Leidenschaft schwäbischen Whisky aus eigenem Getreide. Die Whiskys vom Bellerhof profitieren vom mineralreichen Wasser der Schwäbischen Alb und der langjährigen Erfahrung der Brennerfamilie. Sie sind oft charakterstark, würzig und tief in der schwäbischen Streuobst- und Getreidelandschaft verwurzelt.",
+        "seo_title": "Bellerhof Brennerei | Schwäbischer Whisky aus Owen",
+        "seo_description": "Der Bellerhof in Owen an der Teck brennt erstklassigen schwäbischen Whisky. Tradition und Qualität vom Fuße der Alb.",
+        "slug": "bellerhof-brennerei",
+        "created_at": "2026-04-23T13:40:29Z",
+        "last_updated": "2026-04-23T13:40:29Z",
+        "published": false
+      },
+      "raw": {
+        "id": "bellerhof",
+        "name": "Bellerhof Brennerei",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.bellerhof.de/",
+        "owner": "Familie Beller",
+        "location": "Owen, Baden-Württemberg",
+        "travel_info": "Die Brennerei liegt am Fuße der Schwäbischen Alb in Owen, der 'Whisky-Stadt' Deutschlands. Tastings und Verkauf direkt ab Hof.",
+        "long_description": "Owen an der Teck gilt als das deutsche Mekka für Whisky-Liebhaber, und der Bellerhof ist einer der traditionsreichsten Betriebe vor Ort. Die Familie Beller brennt hier mit Leidenschaft schwäbischen Whisky aus eigenem Getreide. Die Whiskys vom Bellerhof profitieren vom mineralreichen Wasser der Schwäbischen Alb und der langjährigen Erfahrung der Brennerfamilie. Sie sind oft charakterstark, würzig und tief in der schwäbischen Streuobst- und Getreidelandschaft verwurzelt.",
+        "seo_title": "Bellerhof Brennerei | Schwäbischer Whisky aus Owen",
+        "seo_description": "Der Bellerhof in Owen an der Teck brennt erstklassigen schwäbischen Whisky. Tradition und Qualität vom Fuße der Alb."
+      }
     }
   ]
 }
