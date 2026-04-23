@@ -10329,7 +10329,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "weyermann",
         "name": "Weyermann Destillerie",
@@ -10359,7 +10359,10 @@
         "long_description": "Weyermann ist weltweit als führender Hersteller von Spezialmalzen für Brauereien bekannt. In der eigenen Destillerie in Bamberg nutzt das Unternehmen dieses immense Wissen über den Rohstoff Malz für die Produktion von Whisky. Die Weyermann Whiskys sind eine Hommage an die Vielfalt des Getreides. Durch die Verwendung verschiedenster Spezialmalze entstehen Aromenprofile, die man so bei kaum einer anderen Brennerei findet – von schokoladig-röstig bis hin zu fein-fruchtig.",
         "seo_title": "Weyermann Destillerie | Whiskys aus der Bamberger Mälzerei",
         "seo_description": "Weyermann in Bamberg verbindet Malz-Expertise mit Brennkunst. Entdecken Sie einzigartige Whiskys aus Spezialmalzen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:44:07Z"
     },
     {
       "batch_id": "distilleries_20260423T134220_16e7cc",
