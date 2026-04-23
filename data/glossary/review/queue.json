@@ -9934,7 +9934,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "sasse-lagerkorn",
         "name": "Feinbrennerei Sasse",
@@ -9964,7 +9964,10 @@
         "long_description": "Die Feinbrennerei Sasse im Münsterland ist eigentlich berühmt für ihren 'Lagerkorn', ein edler Kornbrand, der wie Whisky im Fass reift. Sasse hat die Kategorie Korn revolutioniert, indem sie Techniken und Standards der Whiskyproduktion anwenden. Mit ihren 'Lagerkorn' Abfüllungen, die oft 10 Jahre und länger reifen, bewegen sie sich geschmacklich in der Welt hochwertiger Spirituosen. Sasse nutzt dabei unter anderem Barriquefässer berühmter Weingüter aus Bordeaux. Die Destillerie steht für absolute Transparenz und höchste Qualitätsansprüche.",
         "seo_title": "Sasse Lagerkorn | Edelkorn und Fassreifung aus dem Münsterland",
         "seo_description": "Sasse Lagerkorn definiert Korn neu. Erfahren Sie mehr über die Fassreifung und die Feinbrennerei Sasse in Schöppingen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:53Z"
     },
     {
       "batch_id": "distilleries_20260423T134148_baeb8e",
