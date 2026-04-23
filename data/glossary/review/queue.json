@@ -1413,6 +1413,13 @@
       "imported_at": "2026-04-23T13:40:58Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134101_5e4d1b",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:41:01Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9155,6 +9162,46 @@
         "long_description": "Die finch® Whiskydestillerie auf der Schwäbischen Alb verfolgt das konsequente Konzept 'Vom Feld ins Glas'. Inhaber Hans-Gerhard Fink ist Landwirt und baut das Getreide für seinen Whisky auf über 400 Hektar eigenem Land selbst an – darunter auch alte Sorten wie Emmer und Dinkel. Die Destillerie betreibt eine der größten Pot-Still-Anlagen Deutschlands. Finch ist bekannt für seine Vielfalt, die von klassischem Single Malt über Grain Whiskys bis hin zu speziellen Editionen aus seltenen Getreidesorten reicht. Die Reifung erfolgt oft in hochwertigen Wein-Barriques, was den Whiskys eine besondere Fruchtigkeit und Komplexität verleiht.",
         "travel_info": "Die Destillerie liegt in Am Berg 5, 72535 Heroldstatt. Finch bietet Tastings, geführte Whisky-Wanderungen über die Alb und Einblicke in die Produktion in der neuen Erlebnismanufaktur. Der Hofladen ist wochentags geöffnet. Die Lage auf der Hochebene der Schwäbischen Alb bietet zudem tolle Möglichkeiten für Naturerlebnisse.",
         "updated_at": "2026-04-22T23:30:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134101_5e4d1b",
+      "entity": "distilleries",
+      "item_id": "glina",
+      "item_slug": "glina-destillerie",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "glina",
+        "name": "Glina Destillerie",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://glina-destillerie.de/",
+        "owner": "Michael Schultz",
+        "location": "Werder (Havel), Brandenburg",
+        "travel_info": "Besucher sind in der Destillerie in Werder/Elisabethhöhe willkommen. Es gibt einen Werksverkauf und Verkostungsmöglichkeiten direkt vor Ort.",
+        "long_description": "Die Glina Destillerie in Brandenburg ist ein echtes Familienunternehmen, das vom Getreideanbau auf eigenen Feldern bis zur Abfüllung alles selbst in der Hand hält. Michael Schultz führt die Tradition fort und brennt Whisky aus eigenem Roggen und Gerste. Glina ist bekannt für die Verwendung von heimischem Spessart-Eichenholz für die Fässer. Das Sortiment umfasst Single Malts und Rye Whiskys, die oft eine charakteristische Bodenständigkeit und ehrliche Handwerkskunst widerspiegeln. Die Destillerie gilt als eine der größten in Ostdeutschland.",
+        "seo_title": "Glina Destillerie | Whisky aus Werder an der Havel",
+        "seo_description": "Glina Whisky steht für Handwerk aus Brandenburg. Single Malt und Rye Whisky vom eigenen Feld bis in die Flasche.",
+        "slug": "glina-destillerie",
+        "created_at": "2026-04-23T13:41:01Z",
+        "last_updated": "2026-04-23T13:41:01Z",
+        "published": false
+      },
+      "raw": {
+        "id": "glina",
+        "name": "Glina Destillerie",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://glina-destillerie.de/",
+        "owner": "Michael Schultz",
+        "location": "Werder (Havel), Brandenburg",
+        "travel_info": "Besucher sind in der Destillerie in Werder/Elisabethhöhe willkommen. Es gibt einen Werksverkauf und Verkostungsmöglichkeiten direkt vor Ort.",
+        "long_description": "Die Glina Destillerie in Brandenburg ist ein echtes Familienunternehmen, das vom Getreideanbau auf eigenen Feldern bis zur Abfüllung alles selbst in der Hand hält. Michael Schultz führt die Tradition fort und brennt Whisky aus eigenem Roggen und Gerste. Glina ist bekannt für die Verwendung von heimischem Spessart-Eichenholz für die Fässer. Das Sortiment umfasst Single Malts und Rye Whiskys, die oft eine charakteristische Bodenständigkeit und ehrliche Handwerkskunst widerspiegeln. Die Destillerie gilt als eine der größten in Ostdeutschland.",
+        "seo_title": "Glina Destillerie | Whisky aus Werder an der Havel",
+        "seo_description": "Glina Whisky steht für Handwerk aus Brandenburg. Single Malt und Rye Whisky vom eigenen Feld bis in die Flasche."
       }
     }
   ]
