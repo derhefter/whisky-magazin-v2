@@ -10990,24 +10990,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "dolleruper-single-malt",
-        "name": "Dolleruper Single Malt Whisky",
-        "distillery_id": "dolleruper-destille",
-        "whisky_type": "Single Malt",
-        "abv": 42,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
         "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
         "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
         "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
         "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk.",
-        "slug": "dolleruper-single-malt-whisky",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:48:34Z",
-        "last_updated": "2026-04-23T13:48:34Z",
-        "published": false
+        "last_updated": "2026-04-23T13:52:33Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "dolleruper-single-malt",
@@ -11022,7 +11038,10 @@
         "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
         "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
         "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:52:33Z"
     },
     {
       "batch_id": "whiskies_20260423T134837_ef0856",
