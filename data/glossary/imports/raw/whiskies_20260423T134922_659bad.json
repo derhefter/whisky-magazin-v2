@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134922_659bad",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:22Z",
+  "raw": [
+    {
+      "id": "senft-bodensee-whisky",
+      "name": "Senft Bodensee Whisky",
+      "distillery_id": "senft",
+      "whisky_type": "Single Malt",
+      "abv": 42,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Vollmundig mit angenehmer Rauchnote, unterlegt mit fruchtigen Sherry-Aromen und Malz.",
+      "tasting_notes_palate": "Harmonisches Zusammenspiel von dezenter Torfigkeit, Vanille und reifen roten Früchten.",
+      "tasting_notes_finish": "Fruchtig-warmer Nachklang mit einem Hauch von Würze.",
+      "seo_title": "Senft Bodensee Whisky | Fruchtig-rauchiger Single Malt",
+      "seo_description": "Der Bodensee Whisky von Senft reift in einer Kombination aus Bourbon- und Sherryfässern. Ein harmonisches Erlebnis."
+    }
+  ]
+}
