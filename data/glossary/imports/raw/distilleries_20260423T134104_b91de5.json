@@ -1,0 +1,20 @@
+{
+  "batch_id": "distilleries_20260423T134104_b91de5",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:04Z",
+  "raw": [
+    {
+      "id": "grumsiner",
+      "name": "Grumsiner Brennerei",
+      "region_id": "germany",
+      "country_id": "germany",
+      "website": "https://grumsiner.de/",
+      "owner": "Thomas Blätterlein",
+      "location": "Angermünde, Brandenburg",
+      "travel_info": "Die Brennerei liegt am Rande des UNESCO-Weltnaturerbes Grumsiner Buchenwald. Es werden Genussführungen und Tastings in der gläsernen Brennerei angeboten.",
+      "long_description": "Die Grumsiner Brennerei in der Uckermark verbindet moderne Destillationstechnik mit der unberührten Natur Brandenburgs. Bekannt unter der Marke 'Mammut', produziert die Brennerei Whiskys, die ihre Kraft aus regionalen Rohstoffen ziehen. Die Lage am Buchenwald ist namensgebend für viele Kreationen. Thomas Blätterlein legt großen Wert auf Transparenz und Qualität, was Besucher in der offen gestalteten Brennerei hautnah miterleben können. Die Whiskys sind oft komplex und durch eine sorgfältige Fassauswahl geprägt.",
+      "seo_title": "Grumsiner Brennerei | Mammut Whisky aus der Uckermark",
+      "seo_description": "Entdecken Sie die Grumsiner Brennerei in Angermünde. Hochwertiger Mammut Whisky und Edelbrände aus Brandenburg."
+    }
+  ]
+}
