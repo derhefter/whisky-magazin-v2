@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134946_9d3499",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:46Z",
+  "raw": [
+    {
+      "id": "vallendar-single-malt",
+      "name": "Vallendar Single Malt Whisky",
+      "distillery_id": "vallendar",
+      "whisky_type": "Single Malt",
+      "abv": 40,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Enorm aromendicht mit Noten von Honig, reifen Birnen und einer feinen Getreidewürze.",
+      "tasting_notes_palate": "Präzise und rein, vielschichtige Fruchtaromen gepaart mit eleganter Malzsüße.",
+      "tasting_notes_finish": "Langanhaltend, sauber und komplex im Nachklang.",
+      "seo_title": "Vallendar Single Malt | Präzision von der Mosel",
+      "seo_description": "Der Single Malt von Hubertus Vallendar steht für höchste Reinheit und Aromendichte. Ein Meisterwerk der Brennkunst."
+    }
+  ]
+}
