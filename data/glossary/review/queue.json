@@ -12352,24 +12352,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "stork-club-straight-rye",
-        "name": "Stork Club Straight Rye Whiskey",
-        "distillery_id": "stork-club",
-        "whisky_type": "Rye Whiskey",
-        "abv": 45,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Reichhaltiges Aroma von Schokolade, pfeffrigem Eichenholz, süßem Karamell, Toffee und Roggen mit einem Hauch von Vanille.",
         "tasting_notes_palate": "Geschmeidig mit Noten von Toffee, Buttertoffee und Espresso, gefolgt von einer deutlichen Roggenwürze und dunkler Schokolade.",
         "tasting_notes_finish": "Lang und befriedigend mit Wellen von dunkler Schokolade, Roggenwürze und Zitruszesten.",
         "seo_title": "Stork Club Straight Rye | Preisgekrönter Roggen-Whisky aus Brandenburg",
         "seo_description": "Der Klassiker von Stork Club aus dem Spreewald. Würziger Rye Whiskey mit Noten von Schokolade und Toffee.",
-        "slug": "stork-club-straight-rye-whiskey",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:49:43Z",
-        "last_updated": "2026-04-23T13:49:43Z",
-        "published": false
+        "last_updated": "2026-04-23T13:54:37Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "stork-club-straight-rye",
@@ -12384,7 +12400,10 @@
         "tasting_notes_finish": "Lang und befriedigend mit Wellen von dunkler Schokolade, Roggenwürze und Zitruszesten.",
         "seo_title": "Stork Club Straight Rye | Preisgekrönter Roggen-Whisky aus Brandenburg",
         "seo_description": "Der Klassiker von Stork Club aus dem Spreewald. Würziger Rye Whiskey mit Noten von Schokolade und Toffee."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:54:37Z"
     },
     {
       "batch_id": "whiskies_20260423T134946_9d3499",
