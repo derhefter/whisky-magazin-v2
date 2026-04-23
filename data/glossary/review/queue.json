@@ -10157,7 +10157,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "stonewood",
         "name": "Stonewood Whisky-Destillerie (Schraml)",
@@ -10187,7 +10187,10 @@
         "long_description": "Die Brennerei Schraml in der Oberpfalz blickt auf eine über 200-jährige Tradition zurück. Unter der Marke 'Stonewood' entstehen bayerische Whiskys, die regional verwurzelt sind. Gregor Schraml setzt dabei auf handwerkliche Perfektion und nutzt das weiche Wasser des Steinwalds. Das Sortiment umfasst verschiedene Getreidesorten, darunter den einzigartigen 'Woaz' (Weizenwhisky) und klassische Single Malts. Die Whiskys reifen oft in massiven Eichenfässern, was ihnen eine markante Würze verleiht.",
         "seo_title": "Stonewood Whisky | Bayerische Brennkunst von Schraml",
         "seo_description": "Entdecken Sie Stonewood Whisky aus der Oberpfalz. Traditionelle Brennerei Schraml mit preisgekrönten Single Malts und Grain Whiskys."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:44:01Z"
     },
     {
       "batch_id": "distilleries_20260423T134205_c90c1d",
