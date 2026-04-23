@@ -1581,6 +1581,13 @@
       "imported_at": "2026-04-23T13:42:20Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134223_0ee78f",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:42:23Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10299,6 +10306,50 @@
         "long_description": "Die Zeitzer Whisky Manufaktur ist ein ambitioniertes Projekt in Sachsen-Anhalt. Hier wird mit viel Herzblut an der Etablierung einer regionalen Whiskykultur gearbeitet. Die Brennerei setzt auf kleine Apparaturen und eine sehr individuelle Betreuung jedes Fasses. Der Whisky aus Zeitz ist geprägt von der Leidenschaft seiner Gründer und gewinnt stetig an Bekanntheit unter Kennern deutscher Whiskys. Die handwerkliche Produktion in kleinen Mengen garantiert Exklusivität.",
         "seo_title": "Zeitzer Whisky Manufaktur | Handgemachter Whisky aus Sachsen-Anhalt",
         "seo_description": "Die Zeitzer Whisky Manufaktur steht für ehrliches Handwerk und regionale Spezialitäten aus der Stadt Zeitz."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134223_0ee78f",
+      "entity": "distilleries",
+      "item_id": "ziegler",
+      "item_slug": "edelbrennerei-ziegler",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "ziegler",
+        "name": "Edelbrennerei Ziegler",
+        "country_id": "germany",
+        "region_id": "bavaria",
+        "owner": "Rantum Capital",
+        "website": "https://brennerei-ziegler.de",
+        "founded": "1865",
+        "coordinates": "49.7436, 9.3289",
+        "seo_title": "Ziegler Aureum | Exklusiver Single Malt Whisky aus Franken",
+        "seo_description": "Ziegler Aureum ist der Single Malt der traditionsreichen Edelbrennerei Ziegler. Entdecken Sie fränkische Destillierkunst und Fassreife in Perfektion.",
+        "long_description": "Die Edelbrennerei Ziegler in Freudenberg am Main ist eigentlich für ihre erstklassigen Obstbrände berühmt, stellt aber seit 2008 auch den Aureum Single Malt Whisky her. Ziegler nutzt für seinen Whisky bayerisches Gerstenmalz und das Wissen aus über 150 Jahren Destillierkunst. Eine Besonderheit bei Ziegler ist die Verwendung seltener Holzfässer für die Reifung, darunter Kastanienholz aus der Region, was dem Aureum ein ganz eigenes Profil verleiht. Die Whiskys reifen in den historischen Felsenkellern der Brennerei bei konstant kühlen Temperaturen.",
+        "travel_info": "Die Brennerei liegt direkt am Main (Hauptstraße 26, 97896 Freudenberg). Ziegler bietet eine 'Zeitreise'-Führung an, die durch die historische Brennerei und den Felsenkeller führt, abgerundet durch eine Degustation. Der Brennerei-Shop ist von Montag bis Samstag geöffnet. Freudenberg selbst ist ein pittoresker Ort mit einer mittelalterlichen Burgruine.",
+        "updated_at": "2026-04-22T23:30:00Z",
+        "slug": "edelbrennerei-ziegler",
+        "created_at": "2026-04-23T13:42:23Z",
+        "last_updated": "2026-04-23T13:42:23Z",
+        "published": false
+      },
+      "raw": {
+        "id": "ziegler",
+        "name": "Edelbrennerei Ziegler",
+        "country_id": "germany",
+        "region_id": "bavaria",
+        "owner": "Rantum Capital",
+        "website": "https://brennerei-ziegler.de",
+        "founded": "1865",
+        "coordinates": "49.7436, 9.3289",
+        "seo_title": "Ziegler Aureum | Exklusiver Single Malt Whisky aus Franken",
+        "seo_description": "Ziegler Aureum ist der Single Malt der traditionsreichen Edelbrennerei Ziegler. Entdecken Sie fränkische Destillierkunst und Fassreife in Perfektion.",
+        "long_description": "Die Edelbrennerei Ziegler in Freudenberg am Main ist eigentlich für ihre erstklassigen Obstbrände berühmt, stellt aber seit 2008 auch den Aureum Single Malt Whisky her. Ziegler nutzt für seinen Whisky bayerisches Gerstenmalz und das Wissen aus über 150 Jahren Destillierkunst. Eine Besonderheit bei Ziegler ist die Verwendung seltener Holzfässer für die Reifung, darunter Kastanienholz aus der Region, was dem Aureum ein ganz eigenes Profil verleiht. Die Whiskys reifen in den historischen Felsenkellern der Brennerei bei konstant kühlen Temperaturen.",
+        "travel_info": "Die Brennerei liegt direkt am Main (Hauptstraße 26, 97896 Freudenberg). Ziegler bietet eine 'Zeitreise'-Führung an, die durch die historische Brennerei und den Felsenkeller führt, abgerundet durch eine Degustation. Der Brennerei-Shop ist von Montag bis Samstag geöffnet. Freudenberg selbst ist ein pittoresker Ort mit einer mittelalterlichen Burgruine.",
+        "updated_at": "2026-04-22T23:30:00Z"
       }
     }
   ]
