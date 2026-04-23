@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134909_1cfade",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:09Z",
+  "raw": [
+    {
+      "id": "nine-springs-triple-cask",
+      "name": "The Nine Springs Triple Cask",
+      "distillery_id": "number-nine",
+      "whisky_type": "Single Malt",
+      "abv": 45,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Sehr malzig mit reifen Früchten wie Pfirsich und getrockneter Pflaume, dazu Gewürze wie Nelke und Kardamom sowie Vanille und dunkle Schokolade.",
+      "tasting_notes_palate": "Kraftvoller Antritt mit intensiven Noten von getrockneten Feigen, Kakao-Röstaromen und einer sanften Süße.",
+      "tasting_notes_finish": "Voluminös mit einer leicht herben Tanninstruktur, die würzigen Noten klingen lange nach.",
+      "seo_title": "Nine Springs Triple Cask | Thüringer Single Malt Whisky",
+      "seo_description": "Der Nine Springs Triple Cask überzeugt durch komplexe Reifung in drei Fasstypen. Malzig, fruchtig und würzig."
+    }
+  ]
+}
