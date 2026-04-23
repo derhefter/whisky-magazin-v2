@@ -1,0 +1,20 @@
+{
+  "batch_id": "distilleries_20260423T134040_c99e70",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:40:40Z",
+  "raw": [
+    {
+      "id": "brigantia",
+      "name": "Brigantia (Steinhauser)",
+      "region_id": "germany",
+      "country_id": "germany",
+      "website": "https://steinhauser-bodensee.de/",
+      "owner": "Steinhauser GmbH",
+      "location": "Kressbronn, Baden-Württemberg",
+      "travel_info": "Das Stammhaus in Kressbronn bietet einen Shop und regelmäßige Tastings an. Ein Highlight ist der Fasskeller, in dem der Bodensee-Whisky reift.",
+      "long_description": "Am Bodensee produziert die Familie Steinhauser unter dem Namen 'Brigantia' (benannt nach dem römischen Namen des Sees) Single Malt Whisky. Seit 2008 wird hier Whisky gebrannt, wobei auf modernste Brennereitechnik und regionale Rohstoffe gesetzt wird. Die Nähe zum See sorgt für ein besonderes Mikroklima während der Reifung. Brigantia Whiskys sind oft fruchtig-elegant und spiegeln die Leichtigkeit der Bodenseeregion wider. Neben dem Classic Single Malt gibt es auch rauchige Varianten und zahlreiche Single Cask Abfüllungen.",
+      "seo_title": "Brigantia Whisky | Bodensee Single Malt von Steinhauser",
+      "seo_description": "Brigantia ist der erstklassige Single Malt Whisky vom Bodensee. Erfahren Sie mehr über die Brennerei Steinhauser in Kressbronn."
+    }
+  ]
+}
