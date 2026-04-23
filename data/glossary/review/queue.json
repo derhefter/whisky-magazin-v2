@@ -1448,6 +1448,13 @@
       "imported_at": "2026-04-23T13:41:14Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134118_14d3db",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:41:18Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9394,6 +9401,46 @@
         "long_description": "In der Hansestadt Wismar wird unter dem Namen 'Hinricus Noyte' (ein historischer Braumeister) die Tradition des Brennens fortgeführt. Eng verbunden mit dem Brauhaus am Lohberg, entsteht hier der 'Wismarian' Whisky. Die maritime Atmosphäre der Ostseestadt und die Nutzung von Braumalz geben dem Whisky einen ganz eigenen Charakter. Der Wismarian Single Malt reift in einer Auswahl verschiedener Fässer und spiegelt die hanseatische Brau- und Brenntradition wider.",
         "seo_title": "Hinricus Noyte | Wismarian Single Malt Whisky aus Wismar",
         "seo_description": "Entdecken Sie den Wismarian Whisky von Hinricus Noyte aus der Hansestadt Wismar. Traditionelle Brennkunst an der Ostsee."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134118_14d3db",
+      "entity": "distilleries",
+      "item_id": "luebbehusen",
+      "item_slug": "the-luebbehusen-malt-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "luebbehusen",
+        "name": "The Lübbehusen Malt Distillery",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.luebbehusen.de/",
+        "owner": "Lübbehusen Malt Distillery GmbH",
+        "location": "Emstek, Niedersachsen",
+        "travel_info": "Besucher können die gläserne Destillerie besichtigen und an Tastings teilnehmen. Ein Besuch lässt sich gut mit einer Wanderung in der Region verbinden.",
+        "long_description": "In Niedersachsen hat sich die Lübbehusen Malt Distillery dem klassischen Single Malt verschrieben. In einer modern gestalteten Brennerei wird mit viel Liebe zum Detail produziert. Der Whisky aus dem Hause Lübbehusen ist geprägt von einer klaren Malznote und wird in einer Vielzahl von Fässern gelagert. Die Brennerei legt großen Wert auf die handwerkliche Qualität und eine lange Reifezeit, um einen harmonischen und komplexen Single Malt zu erzeugen.",
+        "seo_title": "Lübbehusen Distillery | Single Malt aus Niedersachsen",
+        "seo_description": "The Lübbehusen Malt Distillery steht für norddeutsche Whiskykunst. Entdecken Sie den Single Malt aus Emstek.",
+        "slug": "the-luebbehusen-malt-distillery",
+        "created_at": "2026-04-23T13:41:18Z",
+        "last_updated": "2026-04-23T13:41:18Z",
+        "published": false
+      },
+      "raw": {
+        "id": "luebbehusen",
+        "name": "The Lübbehusen Malt Distillery",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.luebbehusen.de/",
+        "owner": "Lübbehusen Malt Distillery GmbH",
+        "location": "Emstek, Niedersachsen",
+        "travel_info": "Besucher können die gläserne Destillerie besichtigen und an Tastings teilnehmen. Ein Besuch lässt sich gut mit einer Wanderung in der Region verbinden.",
+        "long_description": "In Niedersachsen hat sich die Lübbehusen Malt Distillery dem klassischen Single Malt verschrieben. In einer modern gestalteten Brennerei wird mit viel Liebe zum Detail produziert. Der Whisky aus dem Hause Lübbehusen ist geprägt von einer klaren Malznote und wird in einer Vielzahl von Fässern gelagert. Die Brennerei legt großen Wert auf die handwerkliche Qualität und eine lange Reifezeit, um einen harmonischen und komplexen Single Malt zu erzeugen.",
+        "seo_title": "Lübbehusen Distillery | Single Malt aus Niedersachsen",
+        "seo_description": "The Lübbehusen Malt Distillery steht für norddeutsche Whiskykunst. Entdecken Sie den Single Malt aus Emstek."
       }
     }
   ]
