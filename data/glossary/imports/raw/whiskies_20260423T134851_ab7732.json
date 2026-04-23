@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134851_ab7732",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:48:51Z",
+  "raw": [
+    {
+      "id": "glina-single-malt-classic",
+      "name": "Glina Single Malt Classic",
+      "distillery_id": "glina",
+      "whisky_type": "Single Malt",
+      "abv": 40,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Fruchtig mit Gartenfrüchten und reifen Beeren, dazu Töne von Vanille, Honig und Getreide.",
+      "tasting_notes_palate": "Weich und rund auf der Zunge, fruchtige Süße mit Noten von Äpfeln und Birnen, später würziger mit Eichenholz und Malz.",
+      "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eichenholz und einer leichten Pfeffrigkeit.",
+      "seo_title": "Glina Single Malt Classic | Handwerk aus Brandenburg",
+      "seo_description": "Der Glina Single Malt Classic besticht durch seine regionale Herkunft und ehrliche Handwerkskunst. Fruchtig und mild."
+    }
+  ]
+}
