@@ -1560,6 +1560,13 @@
       "imported_at": "2026-04-23T13:42:08Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134211_d7d7e0",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:42:11Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10158,6 +10165,46 @@
         "long_description": "Im 'Land der tausend Berge' produziert die Sauerländer Edelbrand GmbH unter der Marke 'Thousand Mountains' Single Malt Whisky. Der bekannteste Vertreter ist der 'Mc Raven'. Die Brennerei setzt auf eine langsame Destillation und nutzt für die Reifung eine Kombination aus Rotwein- und Bourbonfässern. Das Ergebnis sind fruchtige und elegante Whiskys mit einer markanten Würze, die das raue, aber herzliche Klima des Sauerlands widerspiegeln.",
         "seo_title": "Thousand Mountains | Mc Raven Whisky aus dem Sauerland",
         "seo_description": "Thousand Mountains produziert erstklassigen Sauerländer Single Malt. Entdecken Sie den Mc Raven und die Kunst der Destillation in Kallenhardt."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134211_d7d7e0",
+      "entity": "distilleries",
+      "item_id": "vallendar",
+      "item_slug": "brennerei-vallendar",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "vallendar",
+        "name": "Brennerei Vallendar",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.vallendar.de/",
+        "owner": "Hubertus Vallendar",
+        "location": "Kail, Rheinland-Pfalz",
+        "travel_info": "Die moderne Design-Destillerie in Kail an der Mosel ist architektonisch ein Highlight und bietet exzellente Tastings und Verkaufsräume.",
+        "long_description": "Hubertus Vallendar ist einer der dekoriertesten Brenner Deutschlands. In seiner hochmodernen Destillerie in Kail an der Mosel produziert er neben weltbekannten Edelbränden auch exzellenten Whisky. Sein technisches Verständnis und sein feiner Gaumen spiegeln sich in Whiskys wider, die durch Präzision, Reinheit und eine enorme Aromendichte bestechen. Vallendar Whiskys sind moderne Klassiker, die zeigen, dass deutsche Brennkunst zur Weltspitze gehört.",
+        "seo_title": "Brennerei Vallendar | Whisky-Präzision von der Mosel",
+        "seo_description": "Hubertus Vallendar brennt preisgekrönte Spirituosen und Whisky in Kail. Erleben Sie höchste Destillationskunst in Rheinland-Pfalz.",
+        "slug": "brennerei-vallendar",
+        "created_at": "2026-04-23T13:42:11Z",
+        "last_updated": "2026-04-23T13:42:11Z",
+        "published": false
+      },
+      "raw": {
+        "id": "vallendar",
+        "name": "Brennerei Vallendar",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.vallendar.de/",
+        "owner": "Hubertus Vallendar",
+        "location": "Kail, Rheinland-Pfalz",
+        "travel_info": "Die moderne Design-Destillerie in Kail an der Mosel ist architektonisch ein Highlight und bietet exzellente Tastings und Verkaufsräume.",
+        "long_description": "Hubertus Vallendar ist einer der dekoriertesten Brenner Deutschlands. In seiner hochmodernen Destillerie in Kail an der Mosel produziert er neben weltbekannten Edelbränden auch exzellenten Whisky. Sein technisches Verständnis und sein feiner Gaumen spiegeln sich in Whiskys wider, die durch Präzision, Reinheit und eine enorme Aromendichte bestechen. Vallendar Whiskys sind moderne Klassiker, die zeigen, dass deutsche Brennkunst zur Weltspitze gehört.",
+        "seo_title": "Brennerei Vallendar | Whisky-Präzision von der Mosel",
+        "seo_description": "Hubertus Vallendar brennt preisgekrönte Spirituosen und Whisky in Kail. Erleben Sie höchste Destillationskunst in Rheinland-Pfalz."
       }
     }
   ]
