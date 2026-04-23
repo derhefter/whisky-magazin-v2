@@ -1455,6 +1455,13 @@
       "imported_at": "2026-04-23T13:41:18Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134121_fb84c3",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:41:21Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9441,6 +9448,46 @@
         "long_description": "In Niedersachsen hat sich die Lübbehusen Malt Distillery dem klassischen Single Malt verschrieben. In einer modern gestalteten Brennerei wird mit viel Liebe zum Detail produziert. Der Whisky aus dem Hause Lübbehusen ist geprägt von einer klaren Malznote und wird in einer Vielzahl von Fässern gelagert. Die Brennerei legt großen Wert auf die handwerkliche Qualität und eine lange Reifezeit, um einen harmonischen und komplexen Single Malt zu erzeugen.",
         "seo_title": "Lübbehusen Distillery | Single Malt aus Niedersachsen",
         "seo_description": "The Lübbehusen Malt Distillery steht für norddeutsche Whiskykunst. Entdecken Sie den Single Malt aus Emstek."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134121_fb84c3",
+      "entity": "distilleries",
+      "item_id": "maerkische-spezialitaetenbrennerei",
+      "item_slug": "maerkische-spezialitaetenbrennerei",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "maerkische-spezialitaetenbrennerei",
+        "name": "Märkische Spezialitätenbrennerei",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://msb-hagen.de/",
+        "owner": "Klaus Wurm",
+        "location": "Hagen, Nordrhein-Westfalen",
+        "travel_info": "Die Brennerei bietet Tastings und Besichtigungen an. Ein besonderes Erlebnis ist die Verbindung zum 'Höhlenwhisky', der in der Dechenhöhle reift.",
+        "long_description": "Die Märkische Spezialitätenbrennerei in Hagen ist für eine absolute Weltneuheit bekannt: den 'DeCavo' Höhlenwhisky. Ein Teil der Reifung findet in der Dechenhöhle statt, wo konstante Temperaturen und hohe Luftfeuchtigkeit für ein einzigartiges Reifeklima sorgen. Klaus Wurm nutzt für seine Whiskys zum Teil historische Getreidesorten wie Chevalier-Gerste. Die Brennerei verbindet geologische Besonderheiten mit traditionellem Brennhandwerk zu einem unverwechselbaren Produkt.",
+        "seo_title": "Märkische Spezialitätenbrennerei | DeCavo Höhlenwhisky",
+        "seo_description": "Die Märkische Spezialitätenbrennerei in Hagen produziert den weltweit einzigartigen DeCavo Höhlenwhisky. Handwerk trifft Geologie.",
+        "slug": "maerkische-spezialitaetenbrennerei",
+        "created_at": "2026-04-23T13:41:21Z",
+        "last_updated": "2026-04-23T13:41:21Z",
+        "published": false
+      },
+      "raw": {
+        "id": "maerkische-spezialitaetenbrennerei",
+        "name": "Märkische Spezialitätenbrennerei",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://msb-hagen.de/",
+        "owner": "Klaus Wurm",
+        "location": "Hagen, Nordrhein-Westfalen",
+        "travel_info": "Die Brennerei bietet Tastings und Besichtigungen an. Ein besonderes Erlebnis ist die Verbindung zum 'Höhlenwhisky', der in der Dechenhöhle reift.",
+        "long_description": "Die Märkische Spezialitätenbrennerei in Hagen ist für eine absolute Weltneuheit bekannt: den 'DeCavo' Höhlenwhisky. Ein Teil der Reifung findet in der Dechenhöhle statt, wo konstante Temperaturen und hohe Luftfeuchtigkeit für ein einzigartiges Reifeklima sorgen. Klaus Wurm nutzt für seine Whiskys zum Teil historische Getreidesorten wie Chevalier-Gerste. Die Brennerei verbindet geologische Besonderheiten mit traditionellem Brennhandwerk zu einem unverwechselbaren Produkt.",
+        "seo_title": "Märkische Spezialitätenbrennerei | DeCavo Höhlenwhisky",
+        "seo_description": "Die Märkische Spezialitätenbrennerei in Hagen produziert den weltweit einzigartigen DeCavo Höhlenwhisky. Handwerk trifft Geologie."
       }
     }
   ]
