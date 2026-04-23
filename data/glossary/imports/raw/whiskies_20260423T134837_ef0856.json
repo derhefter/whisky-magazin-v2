@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134837_ef0856",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:48:37Z",
+  "raw": [
+    {
+      "id": "elch-torf-vom-dorf",
+      "name": "Elch-Whisky Torf vom Dorf",
+      "distillery_id": "elch-whisky",
+      "whisky_type": "Peated Single Malt",
+      "abv": 51.9,
+      "age": 3,
+      "nas": false,
+      "tasting_notes_nose": "Erdiger Rauch, moderndes Laub, Zitrusfrüchte und ein salziger, leicht fruchtiger Moment.",
+      "tasting_notes_palate": "Kräftig und rauchig mit viel Lagerfeuercharakter, Malzsüße und würzigen Eichenholznoten.",
+      "tasting_notes_finish": "Langanhaltend und intensiv rauchig mit einer Spur Meersalz und Süße.",
+      "seo_title": "Elch-Whisky Torf vom Dorf | Kräftig rauchiger Franken-Whisky",
+      "seo_description": "Torf vom Dorf ist die rauchige Legende aus Thuisbrunn. Single Malt mit deutschem Torfrauch und 51,9% Vol."
+    }
+  ]
+}
