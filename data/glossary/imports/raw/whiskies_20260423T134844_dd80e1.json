@@ -1,0 +1,38 @@
+{
+  "batch_id": "whiskies_20260423T134844_dd80e1",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:48:44Z",
+  "raw": [
+    {
+      "id": "fading-hill-classic",
+      "distillery_id": "birkenhof",
+      "name": "Birkenhof Fading Hill Single Malt Whisky Classic",
+      "whisky_type": "Single Malt",
+      "slug": "birkenhof-fading-hill-classic",
+      "published": true,
+      "age_statement": "NAS",
+      "nas": true,
+      "abv": 46,
+      "tasting_notes_nose": "Facettenreich mit gelbfruchtigen Noten von Mostbirne, Pflaumen und saftigen Kirschen. Dazu Anklänge von Salzkaramell.",
+      "tasting_notes_palate": "Mundfüllend, cremig und weich. Malzig-fruchtige Aromen treffen auf würzige Komponenten und dunkle Schokolade.",
+      "tasting_notes_finish": "Langanhaltend und wärmend mit einer harmonischen Balance aus Frucht und Würze.",
+      "short_description": "Der preisgekrönte Single Malt aus dem Westerwald – komplex und fruchtbetont.",
+      "long_description": "Der Fading Hill Single Malt Classic aus der Birkenhof Brennerei ist ein Paradebeispiel für moderne deutsche Whisky-Kunst. Gereift in einer Kombination aus Bourbon-, Oloroso- und PX-Sherryfässern, entwickelt er eine enorme Komplexität. Mit 46% Vol. abgefüllt, bringt er genug Kraft mit, um die vielfältigen Frucht- und Karamellaromen optimal zu transportieren. Die Birkenhof Brennerei wurde für ihre Qualitäten bereits mehrfach ausgezeichnet.",
+      "seo_title": "Birkenhof Fading Hill Single Malt Classic | Westerwald Whisky",
+      "seo_description": "Fading Hill Single Malt Classic von Birkenhof. Ein komplexer deutscher Whisky mit Sherry-Finish und fruchtigen Noten aus dem Westerwald.",
+      "style_tags": [
+        "komplex",
+        "fruchtig",
+        "Sherry-Finish",
+        "Westerwald"
+      ],
+      "cask_types": [
+        "Ex-Bourbon",
+        "Oloroso Sherry",
+        "PX Sherry"
+      ],
+      "smoke_profile": "none",
+      "updated_at": "2026-04-22T23:45:00Z"
+    }
+  ]
+}
