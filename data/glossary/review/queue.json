@@ -10715,12 +10715,12 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "bellerhof-single-malt",
         "name": "Bellerhof Single Malt Whisky",
         "distillery_id": "bellerhof",
-        "whisky_type": "Single Malt",
+        "whisky_type": "single_malt",
         "abv": 40,
         "age": null,
         "nas": true,
@@ -10731,8 +10731,13 @@
         "seo_description": "Echter schwäbischer Single Malt vom Bellerhof aus der Whisky-Stadt Owen. Würzig und regional.",
         "slug": "bellerhof-single-malt-whisky",
         "created_at": "2026-04-23T13:48:17Z",
-        "last_updated": "2026-04-23T13:48:17Z",
-        "published": false
+        "last_updated": "2026-04-23T13:51:02Z",
+        "published": false,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "bellerhof-single-malt",
@@ -10747,7 +10752,10 @@
         "tasting_notes_finish": "Wärmend mit einem würzigen Nachklang von Holz und Korn.",
         "seo_title": "Bellerhof Single Malt | Schwäbischer Whisky aus Owen",
         "seo_description": "Echter schwäbischer Single Malt vom Bellerhof aus der Whisky-Stadt Owen. Würzig und regional."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:51:02Z"
     },
     {
       "batch_id": "whiskies_20260423T134821_a09c44",
