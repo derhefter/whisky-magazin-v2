@@ -9148,7 +9148,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "coillmor",
         "name": "Coillmór (Brennerei Liebl)",
@@ -9178,7 +9178,10 @@
         "long_description": "Die Brennerei Liebl im Bayerischen Wald ist für ihre hochwertigen Edelbrände und den 'Coillmór' (gälisch für 'Großer Wald') Single Malt bekannt. Gerhard Liebl legt größten Wert auf die Auswahl erstklassiger Fässer, darunter Amarone-, Port- und Sherry-Casks. Der Whisky wird aus rein bayerischem Malz destilliert und reift im feucht-milden Klima des Bayerischen Waldes. Coillmór Whiskys zeichnen sich durch ihre enorme Komplexität und Dichte aus und gewinnen regelmäßig internationale Auszeichnungen.",
         "seo_title": "Coillmór Whisky | Bayerischer Single Malt von Liebl",
         "seo_description": "Coillmór Single Malt Whisky aus dem Bayerischen Wald. Exklusive Fassreifungen und höchste Destillationskunst der Brennerei Liebl."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:25Z"
     },
     {
       "batch_id": "distilleries_20260423T134047_26b454",
