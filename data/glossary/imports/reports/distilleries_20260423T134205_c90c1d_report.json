@@ -1,0 +1,51 @@
+{
+  "batch_id": "distilleries_20260423T134205_c90c1d",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:42:05Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "stork-club",
+        "name": "Stork Club (Spreewood Distillers)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://stork-club-whisky.com/",
+        "owner": "Spreewood Distillers GmbH",
+        "location": "Schlepzig, Brandenburg",
+        "travel_info": "Die Destillerie liegt im malerischen Spreewald. Es gibt einen Hofladen, ein Café und es werden geführte Touren sowie Workshops zum Thema Roggen-Whisky angeboten.",
+        "long_description": "Stork Club ist Deutschlands erste Roggen-Whisky-Destillerie, gelegen im Biosphärenreservat Spreewald. Die Spreewood Distillers haben die traditionsreiche Brennerei in Schlepzig übernommen und zu einer Kultmarke für Rye Whisky ausgebaut. Da Brandenburg eines der besten Roggenanbaugebiete der Welt ist, setzt die Brennerei konsequent auf diesen Rohstoff. Der Stork Club Rye wird international geschätzt und hat bereits zahlreiche Preise gewonnen. Er besticht durch seine würzigen Roggennoten, kombiniert mit einer modernen, urbanen Markenidentität.",
+        "seo_title": "Stork Club Whisky | Deutsche Roggen-Whisky Destillerie im Spreewald",
+        "seo_description": "Stork Club ist spezialisiert auf erstklassigen Rye Whisky aus Brandenburg. Entdecken Sie die Spreewood Distillers in Schlepzig."
+      },
+      "normalized": {
+        "id": "stork-club",
+        "name": "Stork Club (Spreewood Distillers)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://stork-club-whisky.com/",
+        "owner": "Spreewood Distillers GmbH",
+        "location": "Schlepzig, Brandenburg",
+        "travel_info": "Die Destillerie liegt im malerischen Spreewald. Es gibt einen Hofladen, ein Café und es werden geführte Touren sowie Workshops zum Thema Roggen-Whisky angeboten.",
+        "long_description": "Stork Club ist Deutschlands erste Roggen-Whisky-Destillerie, gelegen im Biosphärenreservat Spreewald. Die Spreewood Distillers haben die traditionsreiche Brennerei in Schlepzig übernommen und zu einer Kultmarke für Rye Whisky ausgebaut. Da Brandenburg eines der besten Roggenanbaugebiete der Welt ist, setzt die Brennerei konsequent auf diesen Rohstoff. Der Stork Club Rye wird international geschätzt und hat bereits zahlreiche Preise gewonnen. Er besticht durch seine würzigen Roggennoten, kombiniert mit einer modernen, urbanen Markenidentität.",
+        "seo_title": "Stork Club Whisky | Deutsche Roggen-Whisky Destillerie im Spreewald",
+        "seo_description": "Stork Club ist spezialisiert auf erstklassigen Rye Whisky aus Brandenburg. Entdecken Sie die Spreewood Distillers in Schlepzig.",
+        "slug": "stork-club-spreewood-distillers",
+        "created_at": "2026-04-23T13:42:05Z",
+        "last_updated": "2026-04-23T13:42:05Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
