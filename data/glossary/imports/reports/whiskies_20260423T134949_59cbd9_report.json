@@ -1,0 +1,55 @@
+{
+  "batch_id": "whiskies_20260423T134949_59cbd9",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:49Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "van-loon-single-malt",
+        "name": "Van Loon Single Malt Whisky",
+        "distillery_id": "piekfeine-braende",
+        "whisky_type": "Single Malt",
+        "abv": 40,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Rein und klar mit hellen Fruchtnoten, Malz und einer dezenten Vanillesüße.",
+        "tasting_notes_palate": "Feine Textur, Noten von Getreide, Honig und leichten Gewürzen aus der Fassreifung.",
+        "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
+        "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
+        "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität."
+      },
+      "normalized": {
+        "id": "van-loon-single-malt",
+        "name": "Van Loon Single Malt Whisky",
+        "distillery_id": "piekfeine-braende",
+        "whisky_type": "Single Malt",
+        "abv": 40,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Rein und klar mit hellen Fruchtnoten, Malz und einer dezenten Vanillesüße.",
+        "tasting_notes_palate": "Feine Textur, Noten von Getreide, Honig und leichten Gewürzen aus der Fassreifung.",
+        "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
+        "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
+        "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität.",
+        "slug": "van-loon-single-malt-whisky",
+        "created_at": "2026-04-23T13:49:49Z",
+        "last_updated": "2026-04-23T13:49:49Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
