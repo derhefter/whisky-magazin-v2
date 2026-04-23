@@ -1420,6 +1420,13 @@
       "imported_at": "2026-04-23T13:41:01Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134104_b91de5",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:41:04Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9202,6 +9209,46 @@
         "long_description": "Die Glina Destillerie in Brandenburg ist ein echtes Familienunternehmen, das vom Getreideanbau auf eigenen Feldern bis zur Abfüllung alles selbst in der Hand hält. Michael Schultz führt die Tradition fort und brennt Whisky aus eigenem Roggen und Gerste. Glina ist bekannt für die Verwendung von heimischem Spessart-Eichenholz für die Fässer. Das Sortiment umfasst Single Malts und Rye Whiskys, die oft eine charakteristische Bodenständigkeit und ehrliche Handwerkskunst widerspiegeln. Die Destillerie gilt als eine der größten in Ostdeutschland.",
         "seo_title": "Glina Destillerie | Whisky aus Werder an der Havel",
         "seo_description": "Glina Whisky steht für Handwerk aus Brandenburg. Single Malt und Rye Whisky vom eigenen Feld bis in die Flasche."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134104_b91de5",
+      "entity": "distilleries",
+      "item_id": "grumsiner",
+      "item_slug": "grumsiner-brennerei",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "grumsiner",
+        "name": "Grumsiner Brennerei",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://grumsiner.de/",
+        "owner": "Thomas Blätterlein",
+        "location": "Angermünde, Brandenburg",
+        "travel_info": "Die Brennerei liegt am Rande des UNESCO-Weltnaturerbes Grumsiner Buchenwald. Es werden Genussführungen und Tastings in der gläsernen Brennerei angeboten.",
+        "long_description": "Die Grumsiner Brennerei in der Uckermark verbindet moderne Destillationstechnik mit der unberührten Natur Brandenburgs. Bekannt unter der Marke 'Mammut', produziert die Brennerei Whiskys, die ihre Kraft aus regionalen Rohstoffen ziehen. Die Lage am Buchenwald ist namensgebend für viele Kreationen. Thomas Blätterlein legt großen Wert auf Transparenz und Qualität, was Besucher in der offen gestalteten Brennerei hautnah miterleben können. Die Whiskys sind oft komplex und durch eine sorgfältige Fassauswahl geprägt.",
+        "seo_title": "Grumsiner Brennerei | Mammut Whisky aus der Uckermark",
+        "seo_description": "Entdecken Sie die Grumsiner Brennerei in Angermünde. Hochwertiger Mammut Whisky und Edelbrände aus Brandenburg.",
+        "slug": "grumsiner-brennerei",
+        "created_at": "2026-04-23T13:41:04Z",
+        "last_updated": "2026-04-23T13:41:04Z",
+        "published": false
+      },
+      "raw": {
+        "id": "grumsiner",
+        "name": "Grumsiner Brennerei",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://grumsiner.de/",
+        "owner": "Thomas Blätterlein",
+        "location": "Angermünde, Brandenburg",
+        "travel_info": "Die Brennerei liegt am Rande des UNESCO-Weltnaturerbes Grumsiner Buchenwald. Es werden Genussführungen und Tastings in der gläsernen Brennerei angeboten.",
+        "long_description": "Die Grumsiner Brennerei in der Uckermark verbindet moderne Destillationstechnik mit der unberührten Natur Brandenburgs. Bekannt unter der Marke 'Mammut', produziert die Brennerei Whiskys, die ihre Kraft aus regionalen Rohstoffen ziehen. Die Lage am Buchenwald ist namensgebend für viele Kreationen. Thomas Blätterlein legt großen Wert auf Transparenz und Qualität, was Besucher in der offen gestalteten Brennerei hautnah miterleben können. Die Whiskys sind oft komplex und durch eine sorgfältige Fassauswahl geprägt.",
+        "seo_title": "Grumsiner Brennerei | Mammut Whisky aus der Uckermark",
+        "seo_description": "Entdecken Sie die Grumsiner Brennerei in Angermünde. Hochwertiger Mammut Whisky und Edelbrände aus Brandenburg."
       }
     }
   ]
