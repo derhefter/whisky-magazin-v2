@@ -1,0 +1,22 @@
+{
+  "batch_id": "distilleries_20260423T134141_51d076",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:41Z",
+  "raw": [
+    {
+      "id": "rothaus",
+      "name": "Badische Staatsbrauerei Rothaus",
+      "country_id": "germany",
+      "region_id": "baden-wuerttemberg",
+      "owner": "Land Baden-Württemberg",
+      "website": "https://www.rothaus.de",
+      "founded": "1791 (Whisky seit 2006)",
+      "coordinates": "47.7953, 8.2458",
+      "seo_title": "Rothaus Black Forest Single Malt | Schwarzwald Whisky",
+      "seo_description": "Der Rothaus Black Forest Single Malt Whisky verbindet Brautradition mit Destillierkunst. Erfahren Sie mehr über den Schwarzwald-Klassiker.",
+      "long_description": "Die Badische Staatsbrauerei Rothaus ist weltbekannt für ihr 'Tannenzäpfle' Bier, produziert jedoch in Kooperation mit der Destillerie Kammer-Kirsch in Karlsruhe auch einen der erfolgreichsten deutschen Whiskys: den Rothaus Black Forest Single Malt. Das Malz wird in Rothaus mit dem weichen Brauwasser aus eigenen Quellen gemaischt und vergoren, bevor die Würze bei Kammer-Kirsch zweifach destilliert wird. Die Lagerung erfolgt dann wieder im Schwarzwald in den kühlen Kellern der Brauerei auf 1000 Metern Höhe. Der Whisky ist bekannt für seine Milde und feine Fruchtigkeit und hat international zahlreiche Goldmedaillen gewonnen.",
+      "travel_info": "Die Brauerei liegt in Rothaus 2, 79865 Grafenhausen. In der 'Rothaus GenussWelt' können Besucher Brauereiführungen machen, das Museum 'ZÄPFLE Heimat' besuchen und im Brauereigasthof einkehren oder übernachten. Die Lage im Hochschwarzwald ist ideal für Ausflüge zum Schluchsee oder Titisee.",
+      "updated_at": "2026-04-22T23:30:00Z"
+    }
+  ]
+}
