@@ -12541,24 +12541,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "weyermann-single-malt",
-        "name": "Weyermann Single Malt Whisky",
-        "distillery_id": "weyermann",
-        "whisky_type": "Single Malt",
-        "abv": 43,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Einzigartige Malzaromatik, Noten von Schokolade, Röstkaffee und dunklem Karamell.",
         "tasting_notes_palate": "Vollmundig mit einer komplexen Textur, Röstaromen treffen auf Süße und Vanille.",
         "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
         "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
         "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil.",
-        "slug": "weyermann-single-malt-whisky",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:49:53Z",
-        "last_updated": "2026-04-23T13:49:53Z",
-        "published": false
+        "last_updated": "2026-04-23T13:54:56Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "weyermann-single-malt",
@@ -12573,7 +12589,10 @@
         "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
         "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
         "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:54:56Z"
     },
     {
       "batch_id": "whiskies_20260423T134956_e24d64",
