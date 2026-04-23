@@ -9629,7 +9629,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "maerkische-spezialitaetenbrennerei",
         "name": "Märkische Spezialitätenbrennerei",
@@ -9659,7 +9659,10 @@
         "long_description": "Die Märkische Spezialitätenbrennerei in Hagen ist für eine absolute Weltneuheit bekannt: den 'DeCavo' Höhlenwhisky. Ein Teil der Reifung findet in der Dechenhöhle statt, wo konstante Temperaturen und hohe Luftfeuchtigkeit für ein einzigartiges Reifeklima sorgen. Klaus Wurm nutzt für seine Whiskys zum Teil historische Getreidesorten wie Chevalier-Gerste. Die Brennerei verbindet geologische Besonderheiten mit traditionellem Brennhandwerk zu einem unverwechselbaren Produkt.",
         "seo_title": "Märkische Spezialitätenbrennerei | DeCavo Höhlenwhisky",
         "seo_description": "Die Märkische Spezialitätenbrennerei in Hagen produziert den weltweit einzigartigen DeCavo Höhlenwhisky. Handwerk trifft Geologie."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:42Z"
     },
     {
       "batch_id": "distilleries_20260423T134124_e9138e",
