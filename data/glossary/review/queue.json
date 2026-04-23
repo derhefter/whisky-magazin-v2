@@ -1707,6 +1707,13 @@
       "imported_at": "2026-04-23T13:49:12Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260423T134915_79874a",
+      "entity": "whiskies",
+      "imported_at": "2026-04-23T13:49:15Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -11451,6 +11458,78 @@
         "tasting_notes_finish": "Mittellang und wärmend mit einer angenehmen Holzwürze.",
         "seo_title": "Old Sandhill Single Malt | Whisky aus Bad Belzig",
         "seo_description": "Der Old Sandhill Single Malt spiegelt die märkische Landschaft wider. Handwerklich gebrannt in Brandenburg."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260423T134915_79874a",
+      "entity": "whiskies",
+      "item_id": "rothaus-black-forest",
+      "item_slug": "rothaus-black-forest-single-malt",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "rothaus-black-forest",
+        "distillery_id": "rothaus",
+        "name": "Rothaus Black Forest Single Malt Whisky",
+        "whisky_type": "Single Malt",
+        "slug": "rothaus-black-forest-single-malt",
+        "published": true,
+        "age_statement": "3 Jahre",
+        "nas": false,
+        "abv": 43,
+        "tasting_notes_nose": "Feine Aromen von Vanille, Birne und Honig. Dazu dezente blumige Noten und ein Hauch von hellem Malz.",
+        "tasting_notes_palate": "Weich und rund mit viel Honigsüße, Karamell und leichter Würze. Es zeigen sich Noten von gerösteten Nüssen und dezenter Eiche.",
+        "tasting_notes_finish": "Sanft und wärmend mit einer anhaltenden Süße und fruchtigen Anklängen.",
+        "short_description": "Die erfolgreiche Symbiose aus badischer Braukunst und Destillierkunst.",
+        "long_description": "Der Rothaus Black Forest Single Malt wird aus dem berühmten Rothaus-Malz und eigenem Quellwasser eingemaischt. Nach der Destillation bei Kammer-Kirsch reift er für mindestens drei Jahre in ehemaligen Bourbonfässern in den kühlen Kellern der Brauerei Rothaus auf 1000m Höhe. Die Kombination aus Brautradition und der besonderen Reifung im Schwarzwaldklima macht diesen Whisky zu einem der populärsten deutschen Whiskys.",
+        "seo_title": "Rothaus Black Forest Single Malt | Schwarzwälder Whisky Klassiker",
+        "seo_description": "Rothaus Black Forest Single Malt Whisky – Die fruchtige Milde des Schwarzwaldes. Ausgezeichnet mit zahlreichen Goldmedaillen.",
+        "style_tags": [
+          "mild",
+          "honigsüß",
+          "Schwarzwald",
+          "balanciert"
+        ],
+        "cask_types": [
+          "Ex-Bourbon"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z",
+        "created_at": "2026-04-23T13:49:15Z",
+        "last_updated": "2026-04-23T13:49:15Z"
+      },
+      "raw": {
+        "id": "rothaus-black-forest",
+        "distillery_id": "rothaus",
+        "name": "Rothaus Black Forest Single Malt Whisky",
+        "whisky_type": "Single Malt",
+        "slug": "rothaus-black-forest-single-malt",
+        "published": true,
+        "age_statement": "3 Jahre",
+        "nas": false,
+        "abv": 43,
+        "tasting_notes_nose": "Feine Aromen von Vanille, Birne und Honig. Dazu dezente blumige Noten und ein Hauch von hellem Malz.",
+        "tasting_notes_palate": "Weich und rund mit viel Honigsüße, Karamell und leichter Würze. Es zeigen sich Noten von gerösteten Nüssen und dezenter Eiche.",
+        "tasting_notes_finish": "Sanft und wärmend mit einer anhaltenden Süße und fruchtigen Anklängen.",
+        "short_description": "Die erfolgreiche Symbiose aus badischer Braukunst und Destillierkunst.",
+        "long_description": "Der Rothaus Black Forest Single Malt wird aus dem berühmten Rothaus-Malz und eigenem Quellwasser eingemaischt. Nach der Destillation bei Kammer-Kirsch reift er für mindestens drei Jahre in ehemaligen Bourbonfässern in den kühlen Kellern der Brauerei Rothaus auf 1000m Höhe. Die Kombination aus Brautradition und der besonderen Reifung im Schwarzwaldklima macht diesen Whisky zu einem der populärsten deutschen Whiskys.",
+        "seo_title": "Rothaus Black Forest Single Malt | Schwarzwälder Whisky Klassiker",
+        "seo_description": "Rothaus Black Forest Single Malt Whisky – Die fruchtige Milde des Schwarzwaldes. Ausgezeichnet mit zahlreichen Goldmedaillen.",
+        "style_tags": [
+          "mild",
+          "honigsüß",
+          "Schwarzwald",
+          "balanciert"
+        ],
+        "cask_types": [
+          "Ex-Bourbon"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z"
       }
     }
   ]
