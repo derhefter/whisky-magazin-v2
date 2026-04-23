@@ -9453,7 +9453,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hardenberg-beverbach",
         "name": "Hardenberg Distillery (Beverbach)",
@@ -9483,7 +9483,10 @@
         "long_description": "Die Hardenberg Distillery, bekannt für ihr Markenzeichen, den Keiler, hat mit 'Beverbach' eine eigenständige Whisky-Marke etabliert. In Nörten-Hardenberg wird auf modernsten Anlagen deutscher Whisky produziert, der sich durch eine hohe Qualität und Reinheit auszeichnet. Der Fokus liegt auf Single Malt, der oft in verschiedenen Fasstypen (Sherry, Port, Bourbon) veredelt wird. Beverbach steht für eine moderne Interpretation deutscher Whiskykunst, die Tradition mit internationalem Anspruch verbindet.",
         "seo_title": "Beverbach Whisky | Hardenberg Distillery Niedersachsen",
         "seo_description": "Beverbach Single Malt wird in der traditionsreichen Hardenberg Distillery gebrannt. Modernes Design trifft auf niedersächsische Handwerkskunst."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:36Z"
     },
     {
       "batch_id": "distilleries_20260423T134111_75b764",
