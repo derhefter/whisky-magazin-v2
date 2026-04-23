@@ -1539,6 +1539,13 @@
       "imported_at": "2026-04-23T13:41:58Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134201_f00890",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:42:01Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10017,6 +10024,46 @@
         "long_description": "St. Kilian Distillers im unterfränkischen Rüdenau ist eine der größten und modernsten Whiskydestillerien Kontinentaleuropas. Gegründet 2012 von Andreas Thümmler, begann die Produktion im Jahr 2016 nach dem Vorbild schottischer Destillerien. Mit originalen schottischen Pot Stills aus Rothes produziert St. Kilian sowohl milde als auch rauchige Single Malts. Einzigartig ist das Fassmanagement mit Zugriff auf über 375 verschiedene Fassarten. Ein besonderes Merkmal ist die Lagerung in 'Bunker City', ehemaligen Munitionsbunkern der NATO, die ideale Reifebedingungen bieten. Die Destillerie hat international zahlreiche Preise gewonnen, darunter 'Distillery of the Year'.",
         "travel_info": "Die Destillerie liegt in der Hauptstraße 1-5, 63924 Rüdenau. Besucher können an ausführlichen Factory-Tours und Tastings teilnehmen. Rüdenau liegt in der Nähe der mittelalterlichen Stadt Miltenberg am Main. Die Destillerie ist bekannt für ihre Gastfreundschaft und bietet regelmäßig Live-Web-Shows für Fans an.",
         "updated_at": "2026-04-22T23:30:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134201_f00890",
+      "entity": "distilleries",
+      "item_id": "stonewood",
+      "item_slug": "stonewood-whisky-destillerie-schraml",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "stonewood",
+        "name": "Stonewood Whisky-Destillerie (Schraml)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://stonewood-whisky.de/",
+        "owner": "Brennerei Schraml",
+        "location": "Erbendorf, Bayern",
+        "travel_info": "Die Brennerei Schraml bietet in der 'Stonewood Bar' in Erbendorf Verkostungen und Einblicke in die Produktion an. Auch geführte Brennereibesichtigungen sind möglich.",
+        "long_description": "Die Brennerei Schraml in der Oberpfalz blickt auf eine über 200-jährige Tradition zurück. Unter der Marke 'Stonewood' entstehen bayerische Whiskys, die regional verwurzelt sind. Gregor Schraml setzt dabei auf handwerkliche Perfektion und nutzt das weiche Wasser des Steinwalds. Das Sortiment umfasst verschiedene Getreidesorten, darunter den einzigartigen 'Woaz' (Weizenwhisky) und klassische Single Malts. Die Whiskys reifen oft in massiven Eichenfässern, was ihnen eine markante Würze verleiht.",
+        "seo_title": "Stonewood Whisky | Bayerische Brennkunst von Schraml",
+        "seo_description": "Entdecken Sie Stonewood Whisky aus der Oberpfalz. Traditionelle Brennerei Schraml mit preisgekrönten Single Malts und Grain Whiskys.",
+        "slug": "stonewood-whisky-destillerie-schraml",
+        "created_at": "2026-04-23T13:42:01Z",
+        "last_updated": "2026-04-23T13:42:01Z",
+        "published": false
+      },
+      "raw": {
+        "id": "stonewood",
+        "name": "Stonewood Whisky-Destillerie (Schraml)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://stonewood-whisky.de/",
+        "owner": "Brennerei Schraml",
+        "location": "Erbendorf, Bayern",
+        "travel_info": "Die Brennerei Schraml bietet in der 'Stonewood Bar' in Erbendorf Verkostungen und Einblicke in die Produktion an. Auch geführte Brennereibesichtigungen sind möglich.",
+        "long_description": "Die Brennerei Schraml in der Oberpfalz blickt auf eine über 200-jährige Tradition zurück. Unter der Marke 'Stonewood' entstehen bayerische Whiskys, die regional verwurzelt sind. Gregor Schraml setzt dabei auf handwerkliche Perfektion und nutzt das weiche Wasser des Steinwalds. Das Sortiment umfasst verschiedene Getreidesorten, darunter den einzigartigen 'Woaz' (Weizenwhisky) und klassische Single Malts. Die Whiskys reifen oft in massiven Eichenfässern, was ihnen eine markante Würze verleiht.",
+        "seo_title": "Stonewood Whisky | Bayerische Brennkunst von Schraml",
+        "seo_description": "Entdecken Sie Stonewood Whisky aus der Oberpfalz. Traditionelle Brennerei Schraml mit preisgekrönten Single Malts und Grain Whiskys."
       }
     }
   ]
