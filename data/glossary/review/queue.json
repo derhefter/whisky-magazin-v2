@@ -12163,13 +12163,13 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "stonewood-dra",
-        "name": "Stonewood Drà",
-        "distillery_id": "stonewood",
-        "whisky_type": "Single Malt",
-        "abv": 43,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": 5,
         "nas": false,
         "tasting_notes_nose": "Leichte Süße mit Honig, Heidekraut und floralen Noten, dazu gelbe Früchte, Vanille und Zimt.",
@@ -12177,10 +12177,26 @@
         "tasting_notes_finish": "Mittellang, ausgewogen und rund mit einer feinen Würze aus dem Holz.",
         "seo_title": "Stonewood Drà Single Malt | Bayerischer Whisky",
         "seo_description": "Der Stonewood Drà reift 5 Jahre in amerikanischer Weißeiche. Ein milder und fruchtiger Single Malt aus der Oberpfalz.",
-        "slug": "stonewood-dr",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:49:33Z",
-        "last_updated": "2026-04-23T13:49:33Z",
-        "published": false
+        "last_updated": "2026-04-23T13:54:17Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "stonewood-dra",
@@ -12195,7 +12211,10 @@
         "tasting_notes_finish": "Mittellang, ausgewogen und rund mit einer feinen Würze aus dem Holz.",
         "seo_title": "Stonewood Drà Single Malt | Bayerischer Whisky",
         "seo_description": "Der Stonewood Drà reift 5 Jahre in amerikanischer Weißeiche. Ein milder und fruchtiger Single Malt aus der Oberpfalz."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:54:17Z"
     },
     {
       "batch_id": "whiskies_20260423T134936_bbc28f",
