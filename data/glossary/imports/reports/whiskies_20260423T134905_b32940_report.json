@@ -1,0 +1,55 @@
+{
+  "batch_id": "whiskies_20260423T134905_b32940",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:05Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "meissner-10-jahre",
+        "name": "Meißner Single Malt 10 Jahre",
+        "distillery_id": "meissener-spezialitaetenbrennerei",
+        "whisky_type": "Single Malt",
+        "abv": 42,
+        "age": 10,
+        "nas": false,
+        "tasting_notes_nose": "Feine Malzaromen, dezent fruchtig mit Hinweisen auf reife Birnen und einem Hauch von blumigen Noten.",
+        "tasting_notes_palate": "Elegant und weich, eine feine Balance zwischen Malzsüße und dezenten Holznoten, Anklänge von getrockneten Früchten.",
+        "tasting_notes_finish": "Harmonisch und langanhaltend mit einer feinen Würze und trockenem Nachklang.",
+        "seo_title": "Meißner Single Malt 10 Jahre | Sächsische Whiskytradition",
+        "seo_description": "Der 10-jährige Single Malt der Meißner Spezialitätenbrennerei ist ein Klassiker aus Sachsen. Elegant und gereift."
+      },
+      "normalized": {
+        "id": "meissner-10-jahre",
+        "name": "Meißner Single Malt 10 Jahre",
+        "distillery_id": "meissener-spezialitaetenbrennerei",
+        "whisky_type": "Single Malt",
+        "abv": 42,
+        "age": 10,
+        "nas": false,
+        "tasting_notes_nose": "Feine Malzaromen, dezent fruchtig mit Hinweisen auf reife Birnen und einem Hauch von blumigen Noten.",
+        "tasting_notes_palate": "Elegant und weich, eine feine Balance zwischen Malzsüße und dezenten Holznoten, Anklänge von getrockneten Früchten.",
+        "tasting_notes_finish": "Harmonisch und langanhaltend mit einer feinen Würze und trockenem Nachklang.",
+        "seo_title": "Meißner Single Malt 10 Jahre | Sächsische Whiskytradition",
+        "seo_description": "Der 10-jährige Single Malt der Meißner Spezialitätenbrennerei ist ein Klassiker aus Sachsen. Elegant und gereift.",
+        "slug": "meissner-single-malt-10-jahre",
+        "created_at": "2026-04-23T13:49:05Z",
+        "last_updated": "2026-04-23T13:49:05Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
