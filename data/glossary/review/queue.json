@@ -10110,7 +10110,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "st-kilian",
         "name": "St. Kilian Distillers",
@@ -10144,7 +10144,10 @@
         "long_description": "St. Kilian Distillers im unterfränkischen Rüdenau ist eine der größten und modernsten Whiskydestillerien Kontinentaleuropas. Gegründet 2012 von Andreas Thümmler, begann die Produktion im Jahr 2016 nach dem Vorbild schottischer Destillerien. Mit originalen schottischen Pot Stills aus Rothes produziert St. Kilian sowohl milde als auch rauchige Single Malts. Einzigartig ist das Fassmanagement mit Zugriff auf über 375 verschiedene Fassarten. Ein besonderes Merkmal ist die Lagerung in 'Bunker City', ehemaligen Munitionsbunkern der NATO, die ideale Reifebedingungen bieten. Die Destillerie hat international zahlreiche Preise gewonnen, darunter 'Distillery of the Year'.",
         "travel_info": "Die Destillerie liegt in der Hauptstraße 1-5, 63924 Rüdenau. Besucher können an ausführlichen Factory-Tours und Tastings teilnehmen. Rüdenau liegt in der Nähe der mittelalterlichen Stadt Miltenberg am Main. Die Destillerie ist bekannt für ihre Gastfreundschaft und bietet regelmäßig Live-Web-Shows für Fans an.",
         "updated_at": "2026-04-22T23:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:59Z"
     },
     {
       "batch_id": "distilleries_20260423T134201_f00890",
