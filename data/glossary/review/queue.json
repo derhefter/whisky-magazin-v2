@@ -1357,6 +1357,13 @@
       "imported_at": "2026-04-23T13:40:29Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134033_eb9550",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:40:33Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -8771,6 +8778,50 @@
         "long_description": "Owen an der Teck gilt als das deutsche Mekka für Whisky-Liebhaber, und der Bellerhof ist einer der traditionsreichsten Betriebe vor Ort. Die Familie Beller brennt hier mit Leidenschaft schwäbischen Whisky aus eigenem Getreide. Die Whiskys vom Bellerhof profitieren vom mineralreichen Wasser der Schwäbischen Alb und der langjährigen Erfahrung der Brennerfamilie. Sie sind oft charakterstark, würzig und tief in der schwäbischen Streuobst- und Getreidelandschaft verwurzelt.",
         "seo_title": "Bellerhof Brennerei | Schwäbischer Whisky aus Owen",
         "seo_description": "Der Bellerhof in Owen an der Teck brennt erstklassigen schwäbischen Whisky. Tradition und Qualität vom Fuße der Alb."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134033_eb9550",
+      "entity": "distilleries",
+      "item_id": "birkenhof",
+      "item_slug": "birkenhof-brennerei",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "birkenhof",
+        "name": "Birkenhof Brennerei",
+        "country_id": "germany",
+        "region_id": "rhineland-palatinate",
+        "owner": "Familie Klöckner",
+        "website": "https://www.birkenhof-brennerei.de",
+        "founded": "1848",
+        "coordinates": "50.6403, 7.9158",
+        "seo_title": "Birkenhof Brennerei | Fading Hill Whisky aus dem Westerwald",
+        "seo_description": "Besuchen Sie die Birkenhof Brennerei im Westerwald. Entdecken Sie den preisgekrönten Fading Hill Whisky und erleben Sie 'Faszination Brennerei'.",
+        "long_description": "Die Birkenhof Brennerei in Nistertal ist ein familiengeführter Traditionsbetrieb im Westerwald, der heute in der siebten Generation geleitet wird. Seit 2002 produziert Birkenhof unter dem Namen 'Fading Hill' hochwertige Whiskys. Die Brennerei kombiniert moderne Technik mit handwerklicher Tradition und ist mehrfach als 'Beste Destillerie Deutschlands' ausgezeichnet worden. Neben Single Malts produziert Birkenhof auch markante Rye Whiskys. Das Fassmanagement ist sehr vielfältig und umfasst neben klassischen Bourbon- und Sherryfässern auch exotischere Weinfässer wie Sauternes oder Amarone.",
+        "travel_info": "Die Brennerei liegt 'Auf dem Birkenhof', 57647 Nistertal. Unter dem Motto 'Faszination Brennerei' werden regelmäßige Führungen angeboten (freitags, samstags und am ersten Sonntag im Monat). Es gibt ein umfangreiches Programm mit Tastings, Blending-Kursen und Genussabenden. Anmeldung ist erforderlich. Der Hofladen bietet das volle Sortiment inklusive regionaler Spezialitäten.",
+        "updated_at": "2026-04-22T23:30:00Z",
+        "slug": "birkenhof-brennerei",
+        "created_at": "2026-04-23T13:40:33Z",
+        "last_updated": "2026-04-23T13:40:33Z",
+        "published": false
+      },
+      "raw": {
+        "id": "birkenhof",
+        "name": "Birkenhof Brennerei",
+        "country_id": "germany",
+        "region_id": "rhineland-palatinate",
+        "owner": "Familie Klöckner",
+        "website": "https://www.birkenhof-brennerei.de",
+        "founded": "1848",
+        "coordinates": "50.6403, 7.9158",
+        "seo_title": "Birkenhof Brennerei | Fading Hill Whisky aus dem Westerwald",
+        "seo_description": "Besuchen Sie die Birkenhof Brennerei im Westerwald. Entdecken Sie den preisgekrönten Fading Hill Whisky und erleben Sie 'Faszination Brennerei'.",
+        "long_description": "Die Birkenhof Brennerei in Nistertal ist ein familiengeführter Traditionsbetrieb im Westerwald, der heute in der siebten Generation geleitet wird. Seit 2002 produziert Birkenhof unter dem Namen 'Fading Hill' hochwertige Whiskys. Die Brennerei kombiniert moderne Technik mit handwerklicher Tradition und ist mehrfach als 'Beste Destillerie Deutschlands' ausgezeichnet worden. Neben Single Malts produziert Birkenhof auch markante Rye Whiskys. Das Fassmanagement ist sehr vielfältig und umfasst neben klassischen Bourbon- und Sherryfässern auch exotischere Weinfässer wie Sauternes oder Amarone.",
+        "travel_info": "Die Brennerei liegt 'Auf dem Birkenhof', 57647 Nistertal. Unter dem Motto 'Faszination Brennerei' werden regelmäßige Führungen angeboten (freitags, samstags und am ersten Sonntag im Monat). Es gibt ein umfangreiches Programm mit Tastings, Blending-Kursen und Genussabenden. Anmeldung ist erforderlich. Der Hofladen bietet das volle Sortiment inklusive regionaler Spezialitäten.",
+        "updated_at": "2026-04-22T23:30:00Z"
       }
     }
   ]
