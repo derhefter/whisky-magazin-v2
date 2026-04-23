@@ -10372,7 +10372,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "zeitzer-whisky-manufaktur",
         "name": "Zeitzer Whisky Manufaktur",
@@ -10402,7 +10402,10 @@
         "long_description": "Die Zeitzer Whisky Manufaktur ist ein ambitioniertes Projekt in Sachsen-Anhalt. Hier wird mit viel Herzblut an der Etablierung einer regionalen Whiskykultur gearbeitet. Die Brennerei setzt auf kleine Apparaturen und eine sehr individuelle Betreuung jedes Fasses. Der Whisky aus Zeitz ist geprägt von der Leidenschaft seiner Gründer und gewinnt stetig an Bekanntheit unter Kennern deutscher Whiskys. Die handwerkliche Produktion in kleinen Mengen garantiert Exklusivität.",
         "seo_title": "Zeitzer Whisky Manufaktur | Handgemachter Whisky aus Sachsen-Anhalt",
         "seo_description": "Die Zeitzer Whisky Manufaktur steht für ehrliches Handwerk und regionale Spezialitäten aus der Stadt Zeitz."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:44:09Z"
     },
     {
       "batch_id": "distilleries_20260423T134223_0ee78f",
