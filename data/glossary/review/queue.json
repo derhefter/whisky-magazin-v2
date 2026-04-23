@@ -1441,6 +1441,13 @@
       "imported_at": "2026-04-23T13:41:11Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134114_b3363e",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:41:14Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9347,6 +9354,46 @@
         "long_description": "Die Hercynian Distilling Co., besser bekannt als Hammerschmiede, ist eine der ältesten Whisky-Brennereien Deutschlands. Ansässig in Zorge im Harz, produziert die Familie Buchholz seit 2002 Whisky nach traditionellen Methoden. Die Brennblasen werden teilweise noch mit Holz befeuert, und für die Produktion wird reines Harzer Bergquellwasser genutzt. Bekannt wurde die Brennerei unter dem Namen 'The Glen Els', musste diesen jedoch nach einem Rechtsstreit mit der Scotch Whisky Association in 'Elsburn' ändern. Neben der fruchtigen Elsburn-Reihe produziert die Destillerie auch rauchige Varianten wie Willowburn und extrem rauchige Malts unter dem Namen The Alrik.",
         "travel_info": "Die Destillerie befindet sich im Elsbach 11A, 37445 Walkenried (Ortsteil Zorge). Besucher können das Besucherzentrum im alten Kurhaus besuchen. Es werden verschiedene Touren angeboten (Wee Dram Tour, Boutique Distillery Tour), die oft eine Verkostung beinhalten. Der Shop ist Dienstag bis Samstag geöffnet. Eine Vorab-Anmeldung für Touren wird empfohlen.",
         "updated_at": "2026-04-22T23:30:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134114_b3363e",
+      "entity": "distilleries",
+      "item_id": "hinricus-noyte",
+      "item_slug": "hinricus-noyte-s-spirituosen-wismarian",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "hinricus-noyte",
+        "name": "Hinricus Noyte's Spirituosen (Wismarian)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.hinricusnoyte.de/",
+        "owner": "Brauhaus am Lohberg",
+        "location": "Wismar, Mecklenburg-Vorpommern",
+        "travel_info": "Die Destillerie ist an das Brauhaus am Lohberg in der historischen Altstadt von Wismar angegliedert. Besuche der Gastronomie lassen sich perfekt mit dem Erwerb der Spirituosen verbinden.",
+        "long_description": "In der Hansestadt Wismar wird unter dem Namen 'Hinricus Noyte' (ein historischer Braumeister) die Tradition des Brennens fortgeführt. Eng verbunden mit dem Brauhaus am Lohberg, entsteht hier der 'Wismarian' Whisky. Die maritime Atmosphäre der Ostseestadt und die Nutzung von Braumalz geben dem Whisky einen ganz eigenen Charakter. Der Wismarian Single Malt reift in einer Auswahl verschiedener Fässer und spiegelt die hanseatische Brau- und Brenntradition wider.",
+        "seo_title": "Hinricus Noyte | Wismarian Single Malt Whisky aus Wismar",
+        "seo_description": "Entdecken Sie den Wismarian Whisky von Hinricus Noyte aus der Hansestadt Wismar. Traditionelle Brennkunst an der Ostsee.",
+        "slug": "hinricus-noyte-s-spirituosen-wismarian",
+        "created_at": "2026-04-23T13:41:14Z",
+        "last_updated": "2026-04-23T13:41:14Z",
+        "published": false
+      },
+      "raw": {
+        "id": "hinricus-noyte",
+        "name": "Hinricus Noyte's Spirituosen (Wismarian)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.hinricusnoyte.de/",
+        "owner": "Brauhaus am Lohberg",
+        "location": "Wismar, Mecklenburg-Vorpommern",
+        "travel_info": "Die Destillerie ist an das Brauhaus am Lohberg in der historischen Altstadt von Wismar angegliedert. Besuche der Gastronomie lassen sich perfekt mit dem Erwerb der Spirituosen verbinden.",
+        "long_description": "In der Hansestadt Wismar wird unter dem Namen 'Hinricus Noyte' (ein historischer Braumeister) die Tradition des Brennens fortgeführt. Eng verbunden mit dem Brauhaus am Lohberg, entsteht hier der 'Wismarian' Whisky. Die maritime Atmosphäre der Ostseestadt und die Nutzung von Braumalz geben dem Whisky einen ganz eigenen Charakter. Der Wismarian Single Malt reift in einer Auswahl verschiedener Fässer und spiegelt die hanseatische Brau- und Brenntradition wider.",
+        "seo_title": "Hinricus Noyte | Wismarian Single Malt Whisky aus Wismar",
+        "seo_description": "Entdecken Sie den Wismarian Whisky von Hinricus Noyte aus der Hansestadt Wismar. Traditionelle Brennkunst an der Ostsee."
       }
     }
   ]
