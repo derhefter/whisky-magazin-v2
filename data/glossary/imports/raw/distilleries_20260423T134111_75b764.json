@@ -1,0 +1,22 @@
+{
+  "batch_id": "distilleries_20260423T134111_75b764",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:11Z",
+  "raw": [
+    {
+      "id": "hercynian",
+      "name": "Hercynian Distilling Co. / Hammerschmiede",
+      "country_id": "germany",
+      "region_id": "lower-saxony",
+      "owner": "Familie Buchholz",
+      "website": "https://www.hercynian-distilling.de",
+      "founded": "1985",
+      "coordinates": "51.6425, 10.6139",
+      "seo_title": "Hercynian Distilling Co. | Hammerschmiede Harz Whisky",
+      "seo_description": "Entdecken Sie die Hammerschmiede im Harz. Heimat der Marken Elsburn, Willowburn und The Alrik. Traditionelle Whisky-Herstellung in Zorge.",
+      "long_description": "Die Hercynian Distilling Co., besser bekannt als Hammerschmiede, ist eine der ältesten Whisky-Brennereien Deutschlands. Ansässig in Zorge im Harz, produziert die Familie Buchholz seit 2002 Whisky nach traditionellen Methoden. Die Brennblasen werden teilweise noch mit Holz befeuert, und für die Produktion wird reines Harzer Bergquellwasser genutzt. Bekannt wurde die Brennerei unter dem Namen 'The Glen Els', musste diesen jedoch nach einem Rechtsstreit mit der Scotch Whisky Association in 'Elsburn' ändern. Neben der fruchtigen Elsburn-Reihe produziert die Destillerie auch rauchige Varianten wie Willowburn und extrem rauchige Malts unter dem Namen The Alrik.",
+      "travel_info": "Die Destillerie befindet sich im Elsbach 11A, 37445 Walkenried (Ortsteil Zorge). Besucher können das Besucherzentrum im alten Kurhaus besuchen. Es werden verschiedene Touren angeboten (Wee Dram Tour, Boutique Distillery Tour), die oft eine Verkostung beinhalten. Der Shop ist Dienstag bis Samstag geöffnet. Eine Vorab-Anmeldung für Touren wird empfohlen.",
+      "updated_at": "2026-04-22T23:30:00Z"
+    }
+  ]
+}
