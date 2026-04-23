@@ -9015,7 +9015,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "birkenhof",
         "name": "Birkenhof Brennerei",
@@ -9049,7 +9049,10 @@
         "long_description": "Die Birkenhof Brennerei in Nistertal ist ein familiengeführter Traditionsbetrieb im Westerwald, der heute in der siebten Generation geleitet wird. Seit 2002 produziert Birkenhof unter dem Namen 'Fading Hill' hochwertige Whiskys. Die Brennerei kombiniert moderne Technik mit handwerklicher Tradition und ist mehrfach als 'Beste Destillerie Deutschlands' ausgezeichnet worden. Neben Single Malts produziert Birkenhof auch markante Rye Whiskys. Das Fassmanagement ist sehr vielfältig und umfasst neben klassischen Bourbon- und Sherryfässern auch exotischere Weinfässer wie Sauternes oder Amarone.",
         "travel_info": "Die Brennerei liegt 'Auf dem Birkenhof', 57647 Nistertal. Unter dem Motto 'Faszination Brennerei' werden regelmäßige Führungen angeboten (freitags, samstags und am ersten Sonntag im Monat). Es gibt ein umfangreiches Programm mit Tastings, Blending-Kursen und Genussabenden. Anmeldung ist erforderlich. Der Hofladen bietet das volle Sortiment inklusive regionaler Spezialitäten.",
         "updated_at": "2026-04-22T23:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:20Z"
     },
     {
       "batch_id": "distilleries_20260423T134036_09035e",
