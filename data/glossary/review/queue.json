@@ -1735,6 +1735,13 @@
       "imported_at": "2026-04-23T13:49:25Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260423T134929_ff3646",
+      "entity": "whiskies",
+      "imported_at": "2026-04-23T13:49:29Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -11708,6 +11715,88 @@
         ],
         "cask_types": [
           "New American Oak"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z"
+      }
+    },
+    {
+      "batch_id": "whiskies_20260423T134929_ff3646",
+      "entity": "whiskies",
+      "item_id": "st-kilian-sig-14",
+      "item_slug": "st-kilian-signature-edition-14",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "st-kilian-sig-14",
+        "distillery_id": "st-kilian",
+        "name": "St. Kilian Signature Edition Fourteen",
+        "whisky_type": "Single Malt",
+        "slug": "st-kilian-signature-edition-14",
+        "published": true,
+        "age_statement": "NAS",
+        "nas": true,
+        "abv": 48,
+        "tasting_notes_nose": "Deutlich fruchtig und süß mit Noten von Pfirsichringen, Passionsfrucht, Litschi und saftiger Birne. Dazu cremige Vanille und ein Hauch Crème Brûlée.",
+        "tasting_notes_palate": "Butterig und cremig am Gaumen. Reife Fruchtaromen von Plattpfirsich und Kiwi treffen auf eine dezente Weinnote und feine Karamellsüße.",
+        "tasting_notes_finish": "Mittellang, harmonisch und sehr ausgewogen mit weichem Eichenholz, feiner Vanille und dem typischen St. Kilian Charakter.",
+        "short_description": "Eine ungetorfte Fruchtexplosion, gereift in einer komplexen Auswahl französischer Fässer.",
+        "long_description": "Die Signature Edition Fourteen von St. Kilian ist eine Hommage an die französische Fasskunst. Dieser ungetorfte Single Malt reifte in einer außergewöhnlichen Kombination aus Fässern, die zuvor Rhum Agricole, Armagnac, Cognac, Sauternes und Margaux-Rotwein enthielten, abgerundet durch Champagner-Fässer (Vin Clair). Das Ergebnis ist ein extrem fruchtiger und komplexer Whisky, der die Vielseitigkeit der Destillerie aus Rüdenau unterstreicht.",
+        "seo_title": "St. Kilian Signature Edition 14 | Fruchtiger deutscher Single Malt",
+        "seo_description": "Entdecken Sie die Signature Edition 14 von St. Kilian. Ein ungetorfter Whisky mit exotischen Fruchtnoten aus französischen Edel-Fässern.",
+        "style_tags": [
+          "exotisch-fruchtig",
+          "cremig",
+          "komplex",
+          "ungetorft"
+        ],
+        "cask_types": [
+          "Rhum Agricole",
+          "Armagnac",
+          "Cognac",
+          "Sauternes",
+          "Margaux",
+          "Champagne"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z",
+        "created_at": "2026-04-23T13:49:29Z",
+        "last_updated": "2026-04-23T13:49:29Z"
+      },
+      "raw": {
+        "id": "st-kilian-sig-14",
+        "distillery_id": "st-kilian",
+        "name": "St. Kilian Signature Edition Fourteen",
+        "whisky_type": "Single Malt",
+        "slug": "st-kilian-signature-edition-14",
+        "published": true,
+        "age_statement": "NAS",
+        "nas": true,
+        "abv": 48,
+        "tasting_notes_nose": "Deutlich fruchtig und süß mit Noten von Pfirsichringen, Passionsfrucht, Litschi und saftiger Birne. Dazu cremige Vanille und ein Hauch Crème Brûlée.",
+        "tasting_notes_palate": "Butterig und cremig am Gaumen. Reife Fruchtaromen von Plattpfirsich und Kiwi treffen auf eine dezente Weinnote und feine Karamellsüße.",
+        "tasting_notes_finish": "Mittellang, harmonisch und sehr ausgewogen mit weichem Eichenholz, feiner Vanille und dem typischen St. Kilian Charakter.",
+        "short_description": "Eine ungetorfte Fruchtexplosion, gereift in einer komplexen Auswahl französischer Fässer.",
+        "long_description": "Die Signature Edition Fourteen von St. Kilian ist eine Hommage an die französische Fasskunst. Dieser ungetorfte Single Malt reifte in einer außergewöhnlichen Kombination aus Fässern, die zuvor Rhum Agricole, Armagnac, Cognac, Sauternes und Margaux-Rotwein enthielten, abgerundet durch Champagner-Fässer (Vin Clair). Das Ergebnis ist ein extrem fruchtiger und komplexer Whisky, der die Vielseitigkeit der Destillerie aus Rüdenau unterstreicht.",
+        "seo_title": "St. Kilian Signature Edition 14 | Fruchtiger deutscher Single Malt",
+        "seo_description": "Entdecken Sie die Signature Edition 14 von St. Kilian. Ein ungetorfter Whisky mit exotischen Fruchtnoten aus französischen Edel-Fässern.",
+        "style_tags": [
+          "exotisch-fruchtig",
+          "cremig",
+          "komplex",
+          "ungetorft"
+        ],
+        "cask_types": [
+          "Rhum Agricole",
+          "Armagnac",
+          "Cognac",
+          "Sauternes",
+          "Margaux",
+          "Champagne"
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
