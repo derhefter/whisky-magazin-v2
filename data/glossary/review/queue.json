@@ -9277,7 +9277,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "elch-whisky",
         "name": "Elch-Whisky (Elch-Bräu)",
@@ -9307,7 +9307,10 @@
         "long_description": "In der Fränkischen Schweiz verbindet Georg Kugler in Thuisbrunn die Brau- und Brenntradition. Elch-Whisky ist vor allem für seinen 'Torf vom Dorf' bekannt – einen für deutsche Verhältnisse ungewöhnlich rauchigen Whisky, bei dem das Malz über heimischem Torf geräuchert wird. Die Produktion erfolgt handwerklich in kleinen Mengen. Die Kombination aus Brauerei-Know-how und leidenschaftlicher Destillation führt zu charakterstarken Whiskys, die sowohl Malzsüße als auch kräftigen Rauch vereinen.",
         "seo_title": "Elch-Whisky | Rauchiger Single Malt aus Franken",
         "seo_description": "Elch-Whisky aus Thuisbrunn ist bekannt für den 'Torf vom Dorf'. Entdecken Sie rauchigen fränkischen Single Malt."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:30Z"
     },
     {
       "batch_id": "distilleries_20260423T134058_7c6cdd",
