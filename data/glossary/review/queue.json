@@ -1469,6 +1469,13 @@
       "imported_at": "2026-04-23T13:41:24Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134128_84b27e",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:41:28Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9535,6 +9542,46 @@
         "long_description": "Die Meißner Spezialitätenbrennerei gehört zum renommierten Weingut Schloss Proschwitz Prinz zur Lippe. Bereits seit den 1990er Jahren wird hier sächsischer Whisky produziert, was sie zu einem Pionier in den neuen Bundesländern macht. Der Fokus liegt auf Qualität statt Quantität. Durch die Nähe zum Weinbau werden für das Finish oft erstklassige eigene Weinfässer genutzt. Die Single Malts aus Meißen sind meist elegant, fein-fruchtig und spiegeln die terroir-geprägte Philosophie des Hauses wider.",
         "seo_title": "Meißner Spezialitätenbrennerei | Sächsischer Whisky & Edelbrände",
         "seo_description": "Erfahren Sie mehr über den exklusiven Meißner Whisky vom Weingut Schloss Proschwitz. Traditionelle Brennkunst aus Sachsen."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134128_84b27e",
+      "entity": "distilleries",
+      "item_id": "number-nine",
+      "item_slug": "number-nine-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "number-nine",
+        "name": "Number Nine Distillery",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://number-nine.eu/",
+        "owner": "Number Nine Distillery Germany GmbH",
+        "location": "Leinefelde-Worbis, Thüringen",
+        "travel_info": "Die Destillerie liegt in Worbis. Die angrenzende 'Whiskywelt Burg Scharfenstein' bietet ein umfangreiches Museum, Tastings und einen Shop in historischem Ambiente.",
+        "long_description": "Die Number Nine Distillery aus Thüringen ist bekannt für ihren 'Nine Springs' Single Malt. Seit 2013 wird hier mit handwerklicher Präzision Whisky gebrannt. Ein besonderes Highlight ist die Verbindung zur Burg Scharfenstein, die als Whiskyzentrum ausgebaut wurde. Die Brennerei nutzt das weiche Quellwasser der Region und experimentiert mit einer breiten Palette an Fasstypen, von klassischem Bourbon bis hin zu exotischen Weinfässern wie Muscatel oder Marsala. Die Nine Springs Whiskys zeichnen sich oft durch eine ausgeprägte Malzigkeit und komplexe Fruchtnoten aus.",
+        "seo_title": "Number Nine Distillery | Nine Springs Thüringer Single Malt Whisky",
+        "seo_description": "Die Number Nine Distillery produziert den preisgekrönten Nine Springs Whisky. Besuchen Sie die Whiskywelt Burg Scharfenstein in Thüringen.",
+        "slug": "number-nine-distillery",
+        "created_at": "2026-04-23T13:41:28Z",
+        "last_updated": "2026-04-23T13:41:28Z",
+        "published": false
+      },
+      "raw": {
+        "id": "number-nine",
+        "name": "Number Nine Distillery",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://number-nine.eu/",
+        "owner": "Number Nine Distillery Germany GmbH",
+        "location": "Leinefelde-Worbis, Thüringen",
+        "travel_info": "Die Destillerie liegt in Worbis. Die angrenzende 'Whiskywelt Burg Scharfenstein' bietet ein umfangreiches Museum, Tastings und einen Shop in historischem Ambiente.",
+        "long_description": "Die Number Nine Distillery aus Thüringen ist bekannt für ihren 'Nine Springs' Single Malt. Seit 2013 wird hier mit handwerklicher Präzision Whisky gebrannt. Ein besonderes Highlight ist die Verbindung zur Burg Scharfenstein, die als Whiskyzentrum ausgebaut wurde. Die Brennerei nutzt das weiche Quellwasser der Region und experimentiert mit einer breiten Palette an Fasstypen, von klassischem Bourbon bis hin zu exotischen Weinfässern wie Muscatel oder Marsala. Die Nine Springs Whiskys zeichnen sich oft durch eine ausgeprägte Malzigkeit und komplexe Fruchtnoten aus.",
+        "seo_title": "Number Nine Distillery | Nine Springs Thüringer Single Malt Whisky",
+        "seo_description": "Die Number Nine Distillery produziert den preisgekrönten Nine Springs Whisky. Besuchen Sie die Whiskywelt Burg Scharfenstein in Thüringen."
       }
     }
   ]
