@@ -11876,24 +11876,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "schlitzer-single-malt-klassisch",
-        "name": "Schlitzer Single Malt Klassisch",
-        "distillery_id": "schlitzer",
-        "whisky_type": "Single Malt",
-        "abv": 43,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Frische Eichenfässer, Vanille, helle Früchte wie Apfel und gelbe Pflaume, dazu ein Hauch Marzipan.",
         "tasting_notes_palate": "Weich und rund, fruchtige Süße von Äpfeln und Birnen, gefolgt von Malz und einer dezenten Holzwürze.",
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
         "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
         "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig.",
-        "slug": "schlitzer-single-malt-klassisch",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:49:19Z",
-        "last_updated": "2026-04-23T13:49:19Z",
-        "published": false
+        "last_updated": "2026-04-23T13:53:53Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "schlitzer-single-malt-klassisch",
@@ -11908,7 +11924,10 @@
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
         "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
         "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:53:53Z"
     },
     {
       "batch_id": "whiskies_20260423T134922_659bad",
