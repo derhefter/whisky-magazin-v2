@@ -1,0 +1,51 @@
+{
+  "batch_id": "distilleries_20260423T134148_baeb8e",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:48Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "schlitzer",
+        "name": "Schlitzer Destillerie",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://schlitzer-destillerie.de/",
+        "owner": "Stadt Schlitz / Schlitzer Destillerie GmbH",
+        "location": "Schlitz, Hessen",
+        "travel_info": "Die historische Destillerie im Herzen der Burgenstadt Schlitz bietet spannende Führungen durch die alten Keller und modernen Brennhäuser an.",
+        "long_description": "Die Schlitzer Destillerie in Hessen ist eine der ältesten Brennereien der Welt (gegründet 1585). In der historischen Burgenstadt wird eine enorme Vielfalt an Spirituosen hergestellt, wobei der Whisky in den letzten Jahren immer mehr an Bedeutung gewonnen hat. Schlitzer produziert Single Malt, Single Grain und auch Weizen-Whiskys. Besonders ist die Verwendung von regionalem Getreide und die Lagerung in den historischen Gewölbekellern. Der 'Slitisian' Whisky ist das Aushängeschild des Hauses.",
+        "seo_title": "Schlitzer Destillerie | Traditioneller Whisky aus Hessen",
+        "seo_description": "Die Schlitzer Destillerie brennt seit 1585. Entdecken Sie hessischen Whisky, Single Malt und Grain Whiskys aus Schlitz."
+      },
+      "normalized": {
+        "id": "schlitzer",
+        "name": "Schlitzer Destillerie",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://schlitzer-destillerie.de/",
+        "owner": "Stadt Schlitz / Schlitzer Destillerie GmbH",
+        "location": "Schlitz, Hessen",
+        "travel_info": "Die historische Destillerie im Herzen der Burgenstadt Schlitz bietet spannende Führungen durch die alten Keller und modernen Brennhäuser an.",
+        "long_description": "Die Schlitzer Destillerie in Hessen ist eine der ältesten Brennereien der Welt (gegründet 1585). In der historischen Burgenstadt wird eine enorme Vielfalt an Spirituosen hergestellt, wobei der Whisky in den letzten Jahren immer mehr an Bedeutung gewonnen hat. Schlitzer produziert Single Malt, Single Grain und auch Weizen-Whiskys. Besonders ist die Verwendung von regionalem Getreide und die Lagerung in den historischen Gewölbekellern. Der 'Slitisian' Whisky ist das Aushängeschild des Hauses.",
+        "seo_title": "Schlitzer Destillerie | Traditioneller Whisky aus Hessen",
+        "seo_description": "Die Schlitzer Destillerie brennt seit 1585. Entdecken Sie hessischen Whisky, Single Malt und Grain Whiskys aus Schlitz.",
+        "slug": "schlitzer-destillerie",
+        "created_at": "2026-04-23T13:41:48Z",
+        "last_updated": "2026-04-23T13:41:48Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
