@@ -10415,7 +10415,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "ziegler",
         "name": "Edelbrennerei Ziegler",
@@ -10449,7 +10449,10 @@
         "long_description": "Die Edelbrennerei Ziegler in Freudenberg am Main ist eigentlich für ihre erstklassigen Obstbrände berühmt, stellt aber seit 2008 auch den Aureum Single Malt Whisky her. Ziegler nutzt für seinen Whisky bayerisches Gerstenmalz und das Wissen aus über 150 Jahren Destillierkunst. Eine Besonderheit bei Ziegler ist die Verwendung seltener Holzfässer für die Reifung, darunter Kastanienholz aus der Region, was dem Aureum ein ganz eigenes Profil verleiht. Die Whiskys reifen in den historischen Felsenkellern der Brennerei bei konstant kühlen Temperaturen.",
         "travel_info": "Die Brennerei liegt direkt am Main (Hauptstraße 26, 97896 Freudenberg). Ziegler bietet eine 'Zeitreise'-Führung an, die durch die historische Brennerei und den Felsenkeller führt, abgerundet durch eine Degustation. Der Brennerei-Shop ist von Montag bis Samstag geöffnet. Freudenberg selbst ist ein pittoresker Ort mit einer mittelalterlichen Burgruine.",
         "updated_at": "2026-04-22T23:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:44:11Z"
     }
   ]
 }
