@@ -9801,7 +9801,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "piekfeine-braende",
         "name": "Piekfeine Brände",
@@ -9831,7 +9831,10 @@
         "long_description": "In der Bremer Überseestadt führt Birgitta Schulze van Loon die Manufaktur 'Piekfeine Brände'. Mit norddeutscher Klarheit und Präzision entstehen hier unter dem Namen 'Van Loon' Single Malt Whiskys. Die Whiskys zeichnen sich durch ihre Reinheit und die sorgfältige Auswahl der Fässer aus, darunter oft Portwein- oder Sauternes-Finishes. Die Lage direkt am Wasser und die Leidenschaft der Brennerin machen diese Whiskys zu einem besonderen Erlebnis hanseatischer Handwerkskunst.",
         "seo_title": "Piekfeine Brände | Van Loon Whisky aus Bremen",
         "seo_description": "Piekfeine Brände brennt charakterstarken Whisky in Bremen. Entdecken Sie den Van Loon Single Malt aus der Überseestadt."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:48Z"
     },
     {
       "batch_id": "distilleries_20260423T134138_88363d",
