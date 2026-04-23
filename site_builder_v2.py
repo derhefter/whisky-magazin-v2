@@ -3374,7 +3374,12 @@ def build_map_page(config):
 
 
 def _push_to_v2_repo(project_dir):
-    """Pusht die gebaute site-v2/ direkt aus dem Projektverzeichnis nach GitHub."""
+    """Pusht die gebaute site-v2/ direkt aus dem Projektverzeichnis nach GitHub.
+    Wird auf Vercel übersprungen (VERCEL=1), da dort kein git push möglich ist."""
+    import os
+    if os.environ.get("VERCEL") == "1":
+        print("  Vercel-Umgebung erkannt – git push wird übersprungen.")
+        return
     try:
         repo_str = str(project_dir)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
