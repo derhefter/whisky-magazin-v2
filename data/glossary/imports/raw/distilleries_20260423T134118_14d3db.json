@@ -1,0 +1,20 @@
+{
+  "batch_id": "distilleries_20260423T134118_14d3db",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:18Z",
+  "raw": [
+    {
+      "id": "luebbehusen",
+      "name": "The Lübbehusen Malt Distillery",
+      "region_id": "germany",
+      "country_id": "germany",
+      "website": "https://www.luebbehusen.de/",
+      "owner": "Lübbehusen Malt Distillery GmbH",
+      "location": "Emstek, Niedersachsen",
+      "travel_info": "Besucher können die gläserne Destillerie besichtigen und an Tastings teilnehmen. Ein Besuch lässt sich gut mit einer Wanderung in der Region verbinden.",
+      "long_description": "In Niedersachsen hat sich die Lübbehusen Malt Distillery dem klassischen Single Malt verschrieben. In einer modern gestalteten Brennerei wird mit viel Liebe zum Detail produziert. Der Whisky aus dem Hause Lübbehusen ist geprägt von einer klaren Malznote und wird in einer Vielzahl von Fässern gelagert. Die Brennerei legt großen Wert auf die handwerkliche Qualität und eine lange Reifezeit, um einen harmonischen und komplexen Single Malt zu erzeugen.",
+      "seo_title": "Lübbehusen Distillery | Single Malt aus Niedersachsen",
+      "seo_description": "The Lübbehusen Malt Distillery steht für norddeutsche Whiskykunst. Entdecken Sie den Single Malt aus Emstek."
+    }
+  ]
+}
