@@ -1,0 +1,51 @@
+{
+  "batch_id": "distilleries_20260423T134138_88363d",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:38Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "preussischer-biermaker",
+        "name": "Preußischer Biermaker",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.preussischer-biermaker.de/",
+        "owner": "Preußischer Biermaker GmbH",
+        "location": "Werder (Havel), Brandenburg",
+        "travel_info": "Die kleine Destillerie bietet Tastings nach Vereinbarung an. Ein Besuch lässt sich gut mit einem Ausflug in die Obstgartenstadt Werder verbinden.",
+        "long_description": "Hinter dem ungewöhnlichen Namen 'Preußischer Biermaker' verbirgt sich eine kleine, aber feine Whiskydestillerie aus Brandenburg. Ursprünglich aus der Brautradition kommend, nutzt die Brennerei ihr tiefes Wissen über Malz und Fermentation für die Whiskyherstellung. Die Whiskys zeichnen sich oft durch eine kräftige Malznote und eine handwerkliche Textur aus. Es wird in kleinen Batches produziert, wobei viel Wert auf regionale Identität und traditionelle Methoden gelegt wird.",
+        "seo_title": "Preußischer Biermaker | Handwerklicher Whisky aus Brandenburg",
+        "seo_description": "Preußischer Biermaker in Werder brennt charakterstarken Whisky mit Wurzeln in der Braukunst. Regional und handgemacht."
+      },
+      "normalized": {
+        "id": "preussischer-biermaker",
+        "name": "Preußischer Biermaker",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.preussischer-biermaker.de/",
+        "owner": "Preußischer Biermaker GmbH",
+        "location": "Werder (Havel), Brandenburg",
+        "travel_info": "Die kleine Destillerie bietet Tastings nach Vereinbarung an. Ein Besuch lässt sich gut mit einem Ausflug in die Obstgartenstadt Werder verbinden.",
+        "long_description": "Hinter dem ungewöhnlichen Namen 'Preußischer Biermaker' verbirgt sich eine kleine, aber feine Whiskydestillerie aus Brandenburg. Ursprünglich aus der Brautradition kommend, nutzt die Brennerei ihr tiefes Wissen über Malz und Fermentation für die Whiskyherstellung. Die Whiskys zeichnen sich oft durch eine kräftige Malznote und eine handwerkliche Textur aus. Es wird in kleinen Batches produziert, wobei viel Wert auf regionale Identität und traditionelle Methoden gelegt wird.",
+        "seo_title": "Preußischer Biermaker | Handwerklicher Whisky aus Brandenburg",
+        "seo_description": "Preußischer Biermaker in Werder brennt charakterstarken Whisky mit Wurzeln in der Braukunst. Regional und handgemacht.",
+        "slug": "preussischer-biermaker",
+        "created_at": "2026-04-23T13:41:38Z",
+        "last_updated": "2026-04-23T13:41:38Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
