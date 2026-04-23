@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134953_f4a72a",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:53Z",
+  "raw": [
+    {
+      "id": "weyermann-single-malt",
+      "name": "Weyermann Single Malt Whisky",
+      "distillery_id": "weyermann",
+      "whisky_type": "Single Malt",
+      "abv": 43,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Einzigartige Malzaromatik, Noten von Schokolade, Röstkaffee und dunklem Karamell.",
+      "tasting_notes_palate": "Vollmundig mit einer komplexen Textur, Röstaromen treffen auf Süße und Vanille.",
+      "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
+      "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
+      "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil."
+    }
+  ]
+}
