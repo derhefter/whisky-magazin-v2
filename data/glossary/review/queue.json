@@ -9496,7 +9496,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hercynian",
         "name": "Hercynian Distilling Co. / Hammerschmiede",
@@ -9530,7 +9530,10 @@
         "long_description": "Die Hercynian Distilling Co., besser bekannt als Hammerschmiede, ist eine der ältesten Whisky-Brennereien Deutschlands. Ansässig in Zorge im Harz, produziert die Familie Buchholz seit 2002 Whisky nach traditionellen Methoden. Die Brennblasen werden teilweise noch mit Holz befeuert, und für die Produktion wird reines Harzer Bergquellwasser genutzt. Bekannt wurde die Brennerei unter dem Namen 'The Glen Els', musste diesen jedoch nach einem Rechtsstreit mit der Scotch Whisky Association in 'Elsburn' ändern. Neben der fruchtigen Elsburn-Reihe produziert die Destillerie auch rauchige Varianten wie Willowburn und extrem rauchige Malts unter dem Namen The Alrik.",
         "travel_info": "Die Destillerie befindet sich im Elsbach 11A, 37445 Walkenried (Ortsteil Zorge). Besucher können das Besucherzentrum im alten Kurhaus besuchen. Es werden verschiedene Touren angeboten (Wee Dram Tour, Boutique Distillery Tour), die oft eine Verkostung beinhalten. Der Shop ist Dienstag bis Samstag geöffnet. Eine Vorab-Anmeldung für Touren wird empfohlen.",
         "updated_at": "2026-04-22T23:30:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:38Z"
     },
     {
       "batch_id": "distilleries_20260423T134114_b3363e",
