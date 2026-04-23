@@ -9062,7 +9062,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "blaue-maus",
         "name": "Blaue Maus",
@@ -9092,7 +9092,10 @@
         "long_description": "Die Blaue Maus gilt als die erste deutsche Whiskydestillerie der Neuzeit. Robert Fleischmann begann bereits 1980 mit dem Brennen von Single Malt, lange bevor der Boom in Deutschland einsetzte. Heute führt sein Sohn Thomas die Tradition in der Fränkischen Schweiz fort. Die Whiskys reifen traditionell lange und oft in kleinen Fässern. Die Blaue Maus ist eine Kultmarke, die für Unabhängigkeit und pionierhafte Leidenschaft steht. Die Abfüllungen sind oft limitiert und unter Kennern hoch begehrt.",
         "seo_title": "Blaue Maus | Die erste deutsche Whiskydestillerie",
         "seo_description": "Die Blaue Maus in Franken ist eine Legende. Entdecken Sie Single Malt Whisky mit über 40 Jahren Tradition."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:21Z"
     },
     {
       "batch_id": "distilleries_20260423T134040_c99e70",
