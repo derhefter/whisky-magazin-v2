@@ -1406,6 +1406,13 @@
       "imported_at": "2026-04-23T13:40:54Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134058_7c6cdd",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:40:58Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9104,6 +9111,50 @@
         "long_description": "In der Fränkischen Schweiz verbindet Georg Kugler in Thuisbrunn die Brau- und Brenntradition. Elch-Whisky ist vor allem für seinen 'Torf vom Dorf' bekannt – einen für deutsche Verhältnisse ungewöhnlich rauchigen Whisky, bei dem das Malz über heimischem Torf geräuchert wird. Die Produktion erfolgt handwerklich in kleinen Mengen. Die Kombination aus Brauerei-Know-how und leidenschaftlicher Destillation führt zu charakterstarken Whiskys, die sowohl Malzsüße als auch kräftigen Rauch vereinen.",
         "seo_title": "Elch-Whisky | Rauchiger Single Malt aus Franken",
         "seo_description": "Elch-Whisky aus Thuisbrunn ist bekannt für den 'Torf vom Dorf'. Entdecken Sie rauchigen fränkischen Single Malt."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134058_7c6cdd",
+      "entity": "distilleries",
+      "item_id": "finch",
+      "item_slug": "finch-whiskydestillerie",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "finch",
+        "name": "finch® Whiskydestillerie",
+        "country_id": "germany",
+        "region_id": "baden-wuerttemberg",
+        "owner": "Hans-Gerhard Fink",
+        "website": "https://finch-whisky.com",
+        "founded": "1999",
+        "coordinates": "48.4489, 9.7283",
+        "seo_title": "finch® Whiskydestillerie | Schwäbischer Hochland Whisky",
+        "seo_description": "Vom Feld ins Glas: Entdecken Sie finch® Whisky von der Schwäbischen Alb. Hochwertiger Single Malt und Grain Whisky aus eigenem Anbau.",
+        "long_description": "Die finch® Whiskydestillerie auf der Schwäbischen Alb verfolgt das konsequente Konzept 'Vom Feld ins Glas'. Inhaber Hans-Gerhard Fink ist Landwirt und baut das Getreide für seinen Whisky auf über 400 Hektar eigenem Land selbst an – darunter auch alte Sorten wie Emmer und Dinkel. Die Destillerie betreibt eine der größten Pot-Still-Anlagen Deutschlands. Finch ist bekannt für seine Vielfalt, die von klassischem Single Malt über Grain Whiskys bis hin zu speziellen Editionen aus seltenen Getreidesorten reicht. Die Reifung erfolgt oft in hochwertigen Wein-Barriques, was den Whiskys eine besondere Fruchtigkeit und Komplexität verleiht.",
+        "travel_info": "Die Destillerie liegt in Am Berg 5, 72535 Heroldstatt. Finch bietet Tastings, geführte Whisky-Wanderungen über die Alb und Einblicke in die Produktion in der neuen Erlebnismanufaktur. Der Hofladen ist wochentags geöffnet. Die Lage auf der Hochebene der Schwäbischen Alb bietet zudem tolle Möglichkeiten für Naturerlebnisse.",
+        "updated_at": "2026-04-22T23:30:00Z",
+        "slug": "finch-whiskydestillerie",
+        "created_at": "2026-04-23T13:40:58Z",
+        "last_updated": "2026-04-23T13:40:58Z",
+        "published": false
+      },
+      "raw": {
+        "id": "finch",
+        "name": "finch® Whiskydestillerie",
+        "country_id": "germany",
+        "region_id": "baden-wuerttemberg",
+        "owner": "Hans-Gerhard Fink",
+        "website": "https://finch-whisky.com",
+        "founded": "1999",
+        "coordinates": "48.4489, 9.7283",
+        "seo_title": "finch® Whiskydestillerie | Schwäbischer Hochland Whisky",
+        "seo_description": "Vom Feld ins Glas: Entdecken Sie finch® Whisky von der Schwäbischen Alb. Hochwertiger Single Malt und Grain Whisky aus eigenem Anbau.",
+        "long_description": "Die finch® Whiskydestillerie auf der Schwäbischen Alb verfolgt das konsequente Konzept 'Vom Feld ins Glas'. Inhaber Hans-Gerhard Fink ist Landwirt und baut das Getreide für seinen Whisky auf über 400 Hektar eigenem Land selbst an – darunter auch alte Sorten wie Emmer und Dinkel. Die Destillerie betreibt eine der größten Pot-Still-Anlagen Deutschlands. Finch ist bekannt für seine Vielfalt, die von klassischem Single Malt über Grain Whiskys bis hin zu speziellen Editionen aus seltenen Getreidesorten reicht. Die Reifung erfolgt oft in hochwertigen Wein-Barriques, was den Whiskys eine besondere Fruchtigkeit und Komplexität verleiht.",
+        "travel_info": "Die Destillerie liegt in Am Berg 5, 72535 Heroldstatt. Finch bietet Tastings, geführte Whisky-Wanderungen über die Alb und Einblicke in die Produktion in der neuen Erlebnismanufaktur. Der Hofladen ist wochentags geöffnet. Die Lage auf der Hochebene der Schwäbischen Alb bietet zudem tolle Möglichkeiten für Naturerlebnisse.",
+        "updated_at": "2026-04-22T23:30:00Z"
       }
     }
   ]
