@@ -12478,24 +12478,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "van-loon-single-malt",
-        "name": "Van Loon Single Malt Whisky",
-        "distillery_id": "piekfeine-braende",
-        "whisky_type": "Single Malt",
-        "abv": 40,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Rein und klar mit hellen Fruchtnoten, Malz und einer dezenten Vanillesüße.",
         "tasting_notes_palate": "Feine Textur, Noten von Getreide, Honig und leichten Gewürzen aus der Fassreifung.",
         "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
         "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
         "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität.",
-        "slug": "van-loon-single-malt-whisky",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:49:49Z",
-        "last_updated": "2026-04-23T13:49:49Z",
-        "published": false
+        "last_updated": "2026-04-23T13:54:50Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "van-loon-single-malt",
@@ -12510,7 +12526,10 @@
         "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
         "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
         "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:54:50Z"
     },
     {
       "batch_id": "whiskies_20260423T134953_f4a72a",
