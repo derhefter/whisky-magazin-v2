@@ -11357,24 +11357,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "glina-single-malt-classic",
-        "name": "Glina Single Malt Classic",
-        "distillery_id": "glina",
-        "whisky_type": "Single Malt",
-        "abv": 40,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Fruchtig mit Gartenfrüchten und reifen Beeren, dazu Töne von Vanille, Honig und Getreide.",
         "tasting_notes_palate": "Weich und rund auf der Zunge, fruchtige Süße mit Noten von Äpfeln und Birnen, später würziger mit Eichenholz und Malz.",
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eichenholz und einer leichten Pfeffrigkeit.",
         "seo_title": "Glina Single Malt Classic | Handwerk aus Brandenburg",
         "seo_description": "Der Glina Single Malt Classic besticht durch seine regionale Herkunft und ehrliche Handwerkskunst. Fruchtig und mild.",
-        "slug": "glina-single-malt-classic",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:48:51Z",
-        "last_updated": "2026-04-23T13:48:51Z",
-        "published": false
+        "last_updated": "2026-04-23T13:53:03Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "glina-single-malt-classic",
@@ -11389,7 +11405,10 @@
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eichenholz und einer leichten Pfeffrigkeit.",
         "seo_title": "Glina Single Malt Classic | Handwerk aus Brandenburg",
         "seo_description": "Der Glina Single Malt Classic besticht durch seine regionale Herkunft und ehrliche Handwerkskunst. Fruchtig und mild."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:53:03Z"
     },
     {
       "batch_id": "whiskies_20260423T134855_9b9d25",
