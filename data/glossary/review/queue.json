@@ -1399,6 +1399,13 @@
       "imported_at": "2026-04-23T13:40:51Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134054_06245b",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:40:54Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -9057,6 +9064,46 @@
         "long_description": "Die Dresdner Whisky Manufaktur ist eine der modernsten Whisky-Brennereien Deutschlands und produziert unter der Marke 'Hellinger 42'. Inmitten des historischen Alberthafens in Dresden gelegen, verbindet sie sächsische Ingenieurskunst mit der Leidenschaft für Single Malt. Die Destillerie verfügt über eine beachtliche Kapazität und setzt auf eine präzise Steuerung des Brennprozesses, um einen besonders reinen und fruchtigen Rohbrand zu erzeugen. Die Reifung erfolgt in einem der größten Fasslager der Region, wobei neben klassischen Bourbon-Fässern auch eine Vielzahl an Weinfässern regionaler Winzer zum Einsatz kommt.",
         "seo_title": "Dresdner Whisky Manufaktur | Hellinger 42 Sächsischer Single Malt",
         "seo_description": "Entdecken Sie die Dresdner Whisky Manufaktur im Alberthafen. Erfahren Sie alles über Hellinger 42 Single Malt Whisky aus Sachsen, Besichtigungen und Tastings."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134054_06245b",
+      "entity": "distilleries",
+      "item_id": "elch-whisky",
+      "item_slug": "elch-whisky-elch-braeu",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "elch-whisky",
+        "name": "Elch-Whisky (Elch-Bräu)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.elch-whisky.de/",
+        "owner": "Georg Kugler",
+        "location": "Thuisbrunn, Bayern",
+        "travel_info": "Die Brennerei ist an den Gasthof Elch-Bräu in Thuisbrunn angegliedert. Es gibt einen Biergarten, Brauerei- und Brennereiführungen sowie Übernachtungsmöglichkeiten.",
+        "long_description": "In der Fränkischen Schweiz verbindet Georg Kugler in Thuisbrunn die Brau- und Brenntradition. Elch-Whisky ist vor allem für seinen 'Torf vom Dorf' bekannt – einen für deutsche Verhältnisse ungewöhnlich rauchigen Whisky, bei dem das Malz über heimischem Torf geräuchert wird. Die Produktion erfolgt handwerklich in kleinen Mengen. Die Kombination aus Brauerei-Know-how und leidenschaftlicher Destillation führt zu charakterstarken Whiskys, die sowohl Malzsüße als auch kräftigen Rauch vereinen.",
+        "seo_title": "Elch-Whisky | Rauchiger Single Malt aus Franken",
+        "seo_description": "Elch-Whisky aus Thuisbrunn ist bekannt für den 'Torf vom Dorf'. Entdecken Sie rauchigen fränkischen Single Malt.",
+        "slug": "elch-whisky-elch-braeu",
+        "created_at": "2026-04-23T13:40:54Z",
+        "last_updated": "2026-04-23T13:40:54Z",
+        "published": false
+      },
+      "raw": {
+        "id": "elch-whisky",
+        "name": "Elch-Whisky (Elch-Bräu)",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.elch-whisky.de/",
+        "owner": "Georg Kugler",
+        "location": "Thuisbrunn, Bayern",
+        "travel_info": "Die Brennerei ist an den Gasthof Elch-Bräu in Thuisbrunn angegliedert. Es gibt einen Biergarten, Brauerei- und Brennereiführungen sowie Übernachtungsmöglichkeiten.",
+        "long_description": "In der Fränkischen Schweiz verbindet Georg Kugler in Thuisbrunn die Brau- und Brenntradition. Elch-Whisky ist vor allem für seinen 'Torf vom Dorf' bekannt – einen für deutsche Verhältnisse ungewöhnlich rauchigen Whisky, bei dem das Malz über heimischem Torf geräuchert wird. Die Produktion erfolgt handwerklich in kleinen Mengen. Die Kombination aus Brauerei-Know-how und leidenschaftlicher Destillation führt zu charakterstarken Whiskys, die sowohl Malzsüße als auch kräftigen Rauch vereinen.",
+        "seo_title": "Elch-Whisky | Rauchiger Single Malt aus Franken",
+        "seo_description": "Elch-Whisky aus Thuisbrunn ist bekannt für den 'Torf vom Dorf'. Entdecken Sie rauchigen fränkischen Single Malt."
       }
     }
   ]
