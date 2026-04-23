@@ -11053,13 +11053,13 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "elch-torf-vom-dorf",
-        "name": "Elch-Whisky Torf vom Dorf",
-        "distillery_id": "elch-whisky",
-        "whisky_type": "Peated Single Malt",
-        "abv": 51.9,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": 3,
         "nas": false,
         "tasting_notes_nose": "Erdiger Rauch, moderndes Laub, Zitrusfrüchte und ein salziger, leicht fruchtiger Moment.",
@@ -11067,10 +11067,26 @@
         "tasting_notes_finish": "Langanhaltend und intensiv rauchig mit einer Spur Meersalz und Süße.",
         "seo_title": "Elch-Whisky Torf vom Dorf | Kräftig rauchiger Franken-Whisky",
         "seo_description": "Torf vom Dorf ist die rauchige Legende aus Thuisbrunn. Single Malt mit deutschem Torfrauch und 51,9% Vol.",
-        "slug": "elch-whisky-torf-vom-dorf",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:48:37Z",
-        "last_updated": "2026-04-23T13:48:37Z",
-        "published": false
+        "last_updated": "2026-04-23T13:52:39Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "elch-torf-vom-dorf",
@@ -11085,7 +11101,10 @@
         "tasting_notes_finish": "Langanhaltend und intensiv rauchig mit einer Spur Meersalz und Süße.",
         "seo_title": "Elch-Whisky Torf vom Dorf | Kräftig rauchiger Franken-Whisky",
         "seo_description": "Torf vom Dorf ist die rauchige Legende aus Thuisbrunn. Single Malt mit deutschem Torfrauch und 51,9% Vol."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:52:39Z"
     },
     {
       "batch_id": "whiskies_20260423T134840_0445ae",
