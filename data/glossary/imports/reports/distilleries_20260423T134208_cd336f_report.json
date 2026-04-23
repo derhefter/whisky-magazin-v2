@@ -1,0 +1,51 @@
+{
+  "batch_id": "distilleries_20260423T134208_cd336f",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:42:08Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "thousand-mountains",
+        "name": "Thousand Mountains",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.sauerlaender-edelbrand.de/",
+        "owner": "Sauerländer Edelbrand GmbH",
+        "location": "Kallenhardt, Nordrhein-Westfalen",
+        "travel_info": "Die Destillerie im Sauerland bietet Brennereiführungen, Tastings und einen Hofladen. Die Lage im Naturpark Arnsberger Wald ist ideal für Ausflüge.",
+        "long_description": "Im 'Land der tausend Berge' produziert die Sauerländer Edelbrand GmbH unter der Marke 'Thousand Mountains' Single Malt Whisky. Der bekannteste Vertreter ist der 'Mc Raven'. Die Brennerei setzt auf eine langsame Destillation und nutzt für die Reifung eine Kombination aus Rotwein- und Bourbonfässern. Das Ergebnis sind fruchtige und elegante Whiskys mit einer markanten Würze, die das raue, aber herzliche Klima des Sauerlands widerspiegeln.",
+        "seo_title": "Thousand Mountains | Mc Raven Whisky aus dem Sauerland",
+        "seo_description": "Thousand Mountains produziert erstklassigen Sauerländer Single Malt. Entdecken Sie den Mc Raven und die Kunst der Destillation in Kallenhardt."
+      },
+      "normalized": {
+        "id": "thousand-mountains",
+        "name": "Thousand Mountains",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.sauerlaender-edelbrand.de/",
+        "owner": "Sauerländer Edelbrand GmbH",
+        "location": "Kallenhardt, Nordrhein-Westfalen",
+        "travel_info": "Die Destillerie im Sauerland bietet Brennereiführungen, Tastings und einen Hofladen. Die Lage im Naturpark Arnsberger Wald ist ideal für Ausflüge.",
+        "long_description": "Im 'Land der tausend Berge' produziert die Sauerländer Edelbrand GmbH unter der Marke 'Thousand Mountains' Single Malt Whisky. Der bekannteste Vertreter ist der 'Mc Raven'. Die Brennerei setzt auf eine langsame Destillation und nutzt für die Reifung eine Kombination aus Rotwein- und Bourbonfässern. Das Ergebnis sind fruchtige und elegante Whiskys mit einer markanten Würze, die das raue, aber herzliche Klima des Sauerlands widerspiegeln.",
+        "seo_title": "Thousand Mountains | Mc Raven Whisky aus dem Sauerland",
+        "seo_description": "Thousand Mountains produziert erstklassigen Sauerländer Single Malt. Entdecken Sie den Mc Raven und die Kunst der Destillation in Kallenhardt.",
+        "slug": "thousand-mountains",
+        "created_at": "2026-04-23T13:42:08Z",
+        "last_updated": "2026-04-23T13:42:08Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
