@@ -1,0 +1,55 @@
+{
+  "batch_id": "whiskies_20260423T134834_abfcb1",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:48:34Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "dolleruper-single-malt",
+        "name": "Dolleruper Single Malt Whisky",
+        "distillery_id": "dolleruper-destille",
+        "whisky_type": "Single Malt",
+        "abv": 42,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
+        "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
+        "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
+        "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
+        "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk."
+      },
+      "normalized": {
+        "id": "dolleruper-single-malt",
+        "name": "Dolleruper Single Malt Whisky",
+        "distillery_id": "dolleruper-destille",
+        "whisky_type": "Single Malt",
+        "abv": 42,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
+        "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
+        "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
+        "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
+        "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk.",
+        "slug": "dolleruper-single-malt-whisky",
+        "created_at": "2026-04-23T13:48:34Z",
+        "last_updated": "2026-04-23T13:48:34Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
