@@ -432,8 +432,9 @@ def build_distillery_page(distillery: dict, countries: list, regions: list,
 
     founded = distillery.get("founded", "")
     owner = distillery.get("owner", "")
+    # Support both old field name (travel_info) and new split fields (visit_info + travel_context)
     travel = distillery.get("travel_context", "")
-    visit_info = distillery.get("visit_info", "")
+    visit_info = distillery.get("visit_info", "") or distillery.get("travel_info", "")
 
     content = f"""
     {_GLOSSAR_STYLES}
