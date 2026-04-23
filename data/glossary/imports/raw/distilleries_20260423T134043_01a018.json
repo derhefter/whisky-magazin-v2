@@ -1,0 +1,20 @@
+{
+  "batch_id": "distilleries_20260423T134043_01a018",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:40:43Z",
+  "raw": [
+    {
+      "id": "coillmor",
+      "name": "Coillmór (Brennerei Liebl)",
+      "region_id": "germany",
+      "country_id": "germany",
+      "website": "https://brennerei-liebl.de/",
+      "owner": "Gerhard Liebl",
+      "location": "Bad Kötzting, Bayern",
+      "travel_info": "Besucher können das Ladengeschäft in Bad Kötzting besuchen. Es werden Führungen durch die Whiskydestillerie und den Barriquekeller angeboten.",
+      "long_description": "Die Brennerei Liebl im Bayerischen Wald ist für ihre hochwertigen Edelbrände und den 'Coillmór' (gälisch für 'Großer Wald') Single Malt bekannt. Gerhard Liebl legt größten Wert auf die Auswahl erstklassiger Fässer, darunter Amarone-, Port- und Sherry-Casks. Der Whisky wird aus rein bayerischem Malz destilliert und reift im feucht-milden Klima des Bayerischen Waldes. Coillmór Whiskys zeichnen sich durch ihre enorme Komplexität und Dichte aus und gewinnen regelmäßig internationale Auszeichnungen.",
+      "seo_title": "Coillmór Whisky | Bayerischer Single Malt von Liebl",
+      "seo_description": "Coillmór Single Malt Whisky aus dem Bayerischen Wald. Exklusive Fassreifungen und höchste Destillationskunst der Brennerei Liebl."
+    }
+  ]
+}
