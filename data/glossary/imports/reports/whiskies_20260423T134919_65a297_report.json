@@ -1,0 +1,55 @@
+{
+  "batch_id": "whiskies_20260423T134919_65a297",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:19Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "schlitzer-single-malt-klassisch",
+        "name": "Schlitzer Single Malt Klassisch",
+        "distillery_id": "schlitzer",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Frische Eichenfässer, Vanille, helle Früchte wie Apfel und gelbe Pflaume, dazu ein Hauch Marzipan.",
+        "tasting_notes_palate": "Weich und rund, fruchtige Süße von Äpfeln und Birnen, gefolgt von Malz und einer dezenten Holzwürze.",
+        "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
+        "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
+        "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig."
+      },
+      "normalized": {
+        "id": "schlitzer-single-malt-klassisch",
+        "name": "Schlitzer Single Malt Klassisch",
+        "distillery_id": "schlitzer",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Frische Eichenfässer, Vanille, helle Früchte wie Apfel und gelbe Pflaume, dazu ein Hauch Marzipan.",
+        "tasting_notes_palate": "Weich und rund, fruchtige Süße von Äpfeln und Birnen, gefolgt von Malz und einer dezenten Holzwürze.",
+        "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
+        "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
+        "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig.",
+        "slug": "schlitzer-single-malt-klassisch",
+        "created_at": "2026-04-23T13:49:19Z",
+        "last_updated": "2026-04-23T13:49:19Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
