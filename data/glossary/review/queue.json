@@ -11198,39 +11198,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "fading-hill-classic",
-        "distillery_id": "birkenhof",
-        "name": "Birkenhof Fading Hill Single Malt Whisky Classic",
-        "whisky_type": "Single Malt",
-        "slug": "birkenhof-fading-hill-classic",
+        "id": "old-pulteney-15",
+        "distillery_id": "old-pulteney",
+        "name": "Old Pulteney 15 Year Old",
+        "whisky_type": "single_malt",
+        "slug": "old-pulteney-15",
         "published": true,
-        "age_statement": "NAS",
-        "nas": true,
+        "age_statement": 15,
+        "nas": false,
         "abv": 46,
         "tasting_notes_nose": "Facettenreich mit gelbfruchtigen Noten von Mostbirne, Pflaumen und saftigen Kirschen. Dazu Anklänge von Salzkaramell.",
         "tasting_notes_palate": "Mundfüllend, cremig und weich. Malzig-fruchtige Aromen treffen auf würzige Komponenten und dunkle Schokolade.",
         "tasting_notes_finish": "Langanhaltend und wärmend mit einer harmonischen Balance aus Frucht und Würze.",
-        "short_description": "Der preisgekrönte Single Malt aus dem Westerwald – komplex und fruchtbetont.",
-        "long_description": "Der Fading Hill Single Malt Classic aus der Birkenhof Brennerei ist ein Paradebeispiel für moderne deutsche Whisky-Kunst. Gereift in einer Kombination aus Bourbon-, Oloroso- und PX-Sherryfässern, entwickelt er eine enorme Komplexität. Mit 46% Vol. abgefüllt, bringt er genug Kraft mit, um die vielfältigen Frucht- und Karamellaromen optimal zu transportieren. Die Birkenhof Brennerei wurde für ihre Qualitäten bereits mehrfach ausgezeichnet.",
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
         "seo_title": "Birkenhof Fading Hill Single Malt Classic | Westerwald Whisky",
         "seo_description": "Fading Hill Single Malt Classic von Birkenhof. Ein komplexer deutscher Whisky mit Sherry-Finish und fruchtigen Noten aus dem Westerwald.",
         "style_tags": [
           "komplex",
-          "fruchtig",
-          "Sherry-Finish",
-          "Westerwald"
+          "würzig",
+          "sherry",
+          "maritim"
         ],
         "cask_types": [
-          "Ex-Bourbon",
-          "Oloroso Sherry",
-          "PX Sherry"
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z",
         "created_at": "2026-04-23T13:48:44Z",
-        "last_updated": "2026-04-23T13:48:44Z"
+        "last_updated": "2026-04-23T13:52:52Z",
+        "country_id": "scotland",
+        "region_id": "highlands"
       },
       "raw": {
         "id": "fading-hill-classic",
@@ -11262,7 +11263,10 @@
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:52:52Z"
     },
     {
       "batch_id": "whiskies_20260423T134847_693262",
