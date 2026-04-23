@@ -11546,24 +11546,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "mc-raven-single-malt",
-        "name": "Mc Raven Single Malt Whisky",
-        "distillery_id": "thousand-mountains",
-        "whisky_type": "Single Malt",
-        "abv": 46.2,
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
+        "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Fruchtig und elegant mit Noten von dunklen Beeren, floralen Hinweisen und einer Spur Vanille.",
         "tasting_notes_palate": "Vollmundig mit Akzenten von dunklen Früchten, Malz, Eichenholz und einer feinen Schokoladennote.",
         "tasting_notes_finish": "Langanhaltend und wärmend mit würzigen Nuancen und einer angenehmen Süße.",
         "seo_title": "Mc Raven Single Malt | Thousand Mountains Sauerland",
         "seo_description": "Der Mc Raven ist der Star der Thousand Mountains Distillery. Ein eleganter Single Malt mit 46,2% Vol. aus dem Sauerland.",
-        "slug": "mc-raven-single-malt-whisky",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:49:01Z",
-        "last_updated": "2026-04-23T13:49:01Z",
-        "published": false
+        "last_updated": "2026-04-23T13:53:22Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "mc-raven-single-malt",
@@ -11578,7 +11594,10 @@
         "tasting_notes_finish": "Langanhaltend und wärmend mit würzigen Nuancen und einer angenehmen Süße.",
         "seo_title": "Mc Raven Single Malt | Thousand Mountains Sauerland",
         "seo_description": "Der Mc Raven ist der Star der Thousand Mountains Distillery. Ein eleganter Single Malt mit 46,2% Vol. aus dem Sauerland."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:53:22Z"
     },
     {
       "batch_id": "whiskies_20260423T134905_b32940",
