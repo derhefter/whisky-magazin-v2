@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134936_bbc28f",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:36Z",
+  "raw": [
+    {
+      "id": "stonewood-woaz",
+      "name": "Stonewood Woaz",
+      "distillery_id": "stonewood",
+      "whisky_type": "Grain Whisky",
+      "abv": 43,
+      "age": 5,
+      "nas": false,
+      "tasting_notes_nose": "Würzig-malziges Aroma mit frischen Holznoten, Honig und einer deutlichen Bananennote.",
+      "tasting_notes_palate": "Kraftvoll mit Röstaromen, Vanille, Zimt und Mocha, begleitet von einem dezenten Hauch Rauch.",
+      "tasting_notes_finish": "Sehr langanhaltend, vielschichtig mit subtilem Rauch im Nachklang.",
+      "seo_title": "Stonewood Woaz | Einzigartiger bayerischer Weizen-Whisky",
+      "seo_description": "Woaz ist bayerisch für Weizen. Stonewood Woaz überzeugt durch Röstaromen und feine Würze. Ein echter Geheimtipp."
+    }
+  ]
+}
