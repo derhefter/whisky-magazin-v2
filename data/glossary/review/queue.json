@@ -10715,7 +10715,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bellerhof-single-malt",
         "name": "Bellerhof Single Malt Whisky",
@@ -10755,7 +10755,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:51:02Z"
+      "reviewed_at": "2026-04-23T13:51:02Z",
+      "published_at": "2026-04-23T13:51:37Z"
     },
     {
       "batch_id": "whiskies_20260423T134821_a09c44",
@@ -10767,7 +10768,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "beverbach-single-malt",
         "name": "Beverbach Single Malt German Highland Whisky",
@@ -10807,7 +10808,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:51:10Z"
+      "reviewed_at": "2026-04-23T13:51:10Z",
+      "published_at": "2026-04-23T13:51:37Z"
     },
     {
       "batch_id": "whiskies_20260423T134824_8a796c",
@@ -10819,7 +10821,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "brigantia-classic",
         "name": "Brigantia Classic Single Malt",
@@ -10859,7 +10861,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:51:18Z"
+      "reviewed_at": "2026-04-23T13:51:18Z",
+      "published_at": "2026-04-23T13:51:37Z"
     },
     {
       "batch_id": "whiskies_20260423T134827_58b48a",
@@ -10871,7 +10874,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -10911,7 +10914,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:51:27Z"
+      "reviewed_at": "2026-04-23T13:51:27Z",
+      "published_at": "2026-04-23T13:51:37Z"
     },
     {
       "batch_id": "whiskies_20260423T134831_815cbb",
