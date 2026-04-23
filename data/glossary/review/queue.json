@@ -10927,7 +10927,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -10978,7 +10978,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:52:26Z"
+      "reviewed_at": "2026-04-23T13:52:26Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134834_abfcb1",
@@ -10990,7 +10991,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11041,7 +11042,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:52:33Z"
+      "reviewed_at": "2026-04-23T13:52:33Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134837_ef0856",
@@ -11053,7 +11055,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11104,7 +11106,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:52:39Z"
+      "reviewed_at": "2026-04-23T13:52:39Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134840_0445ae",
@@ -11116,7 +11119,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -11186,7 +11189,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:52:45Z"
+      "reviewed_at": "2026-04-23T13:52:45Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134844_dd80e1",
@@ -11198,7 +11202,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -11266,7 +11270,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:52:52Z"
+      "reviewed_at": "2026-04-23T13:52:52Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134847_693262",
@@ -11278,7 +11283,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -11345,7 +11350,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:52:58Z"
+      "reviewed_at": "2026-04-23T13:52:58Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134851_ab7732",
@@ -11357,7 +11363,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11408,7 +11414,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:03Z"
+      "reviewed_at": "2026-04-23T13:53:03Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134855_9b9d25",
@@ -11420,7 +11427,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11471,7 +11478,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:09Z"
+      "reviewed_at": "2026-04-23T13:53:09Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134858_cab4c6",
@@ -11483,7 +11491,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11534,7 +11542,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:15Z"
+      "reviewed_at": "2026-04-23T13:53:15Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134901_85d826",
@@ -11546,7 +11555,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11597,7 +11606,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:22Z"
+      "reviewed_at": "2026-04-23T13:53:22Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134905_b32940",
@@ -11609,7 +11619,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11660,7 +11670,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:29Z"
+      "reviewed_at": "2026-04-23T13:53:29Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134909_1cfade",
@@ -11672,7 +11683,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11723,7 +11734,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:35Z"
+      "reviewed_at": "2026-04-23T13:53:35Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134912_f3a376",
@@ -11735,7 +11747,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11786,7 +11798,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:41Z"
+      "reviewed_at": "2026-04-23T13:53:41Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134915_79874a",
@@ -11798,7 +11811,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -11864,7 +11877,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:47Z"
+      "reviewed_at": "2026-04-23T13:53:47Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134919_65a297",
@@ -11876,7 +11890,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11927,7 +11941,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:53Z"
+      "reviewed_at": "2026-04-23T13:53:53Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134922_659bad",
@@ -11939,7 +11954,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -11990,7 +12005,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:53:59Z"
+      "reviewed_at": "2026-04-23T13:53:59Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134925_71da33",
@@ -12002,7 +12018,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -12068,7 +12084,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:04Z"
+      "reviewed_at": "2026-04-23T13:54:04Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134929_ff3646",
@@ -12080,7 +12097,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -12151,7 +12168,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:11Z"
+      "reviewed_at": "2026-04-23T13:54:11Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134933_9924a0",
@@ -12163,7 +12181,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12214,7 +12232,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:17Z"
+      "reviewed_at": "2026-04-23T13:54:17Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134936_bbc28f",
@@ -12226,7 +12245,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12277,7 +12296,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:23Z"
+      "reviewed_at": "2026-04-23T13:54:23Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134939_026c59",
@@ -12289,7 +12309,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12340,7 +12360,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:30Z"
+      "reviewed_at": "2026-04-23T13:54:30Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134943_03afcf",
@@ -12352,7 +12373,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12403,7 +12424,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:37Z"
+      "reviewed_at": "2026-04-23T13:54:37Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134946_9d3499",
@@ -12415,7 +12437,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12466,7 +12488,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:43Z"
+      "reviewed_at": "2026-04-23T13:54:43Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134949_59cbd9",
@@ -12478,7 +12501,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12529,7 +12552,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:50Z"
+      "reviewed_at": "2026-04-23T13:54:50Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134953_f4a72a",
@@ -12541,7 +12565,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12592,7 +12616,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:54:56Z"
+      "reviewed_at": "2026-04-23T13:54:56Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T134956_e24d64",
@@ -12604,7 +12629,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -12655,7 +12680,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:55:01Z"
+      "reviewed_at": "2026-04-23T13:55:01Z",
+      "published_at": "2026-04-23T13:55:11Z"
     },
     {
       "batch_id": "whiskies_20260423T135000_3a4cc5",
@@ -12667,7 +12693,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "distillery_id": "old-pulteney",
@@ -12734,7 +12760,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:55:06Z"
+      "reviewed_at": "2026-04-23T13:55:06Z",
+      "published_at": "2026-04-23T13:55:11Z"
     }
   ]
 }
