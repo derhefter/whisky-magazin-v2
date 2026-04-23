@@ -1574,6 +1574,13 @@
       "imported_at": "2026-04-23T13:42:16Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134220_16e7cc",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:42:20Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10252,6 +10259,46 @@
         "long_description": "Weyermann ist weltweit als führender Hersteller von Spezialmalzen für Brauereien bekannt. In der eigenen Destillerie in Bamberg nutzt das Unternehmen dieses immense Wissen über den Rohstoff Malz für die Produktion von Whisky. Die Weyermann Whiskys sind eine Hommage an die Vielfalt des Getreides. Durch die Verwendung verschiedenster Spezialmalze entstehen Aromenprofile, die man so bei kaum einer anderen Brennerei findet – von schokoladig-röstig bis hin zu fein-fruchtig.",
         "seo_title": "Weyermann Destillerie | Whiskys aus der Bamberger Mälzerei",
         "seo_description": "Weyermann in Bamberg verbindet Malz-Expertise mit Brennkunst. Entdecken Sie einzigartige Whiskys aus Spezialmalzen."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134220_16e7cc",
+      "entity": "distilleries",
+      "item_id": "zeitzer-whisky-manufaktur",
+      "item_slug": "zeitzer-whisky-manufaktur",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "zeitzer-whisky-manufaktur",
+        "name": "Zeitzer Whisky Manufaktur",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.zeitzer-whisky.de/",
+        "owner": "Zeitzer Whisky Manufaktur",
+        "location": "Zeitz, Sachsen-Anhalt",
+        "travel_info": "Die Manufaktur bietet regelmäßig Veranstaltungen und Tastings an. Ein Besuch im Ladenlokal in Zeitz ermöglicht den direkten Austausch mit den Machern.",
+        "long_description": "Die Zeitzer Whisky Manufaktur ist ein ambitioniertes Projekt in Sachsen-Anhalt. Hier wird mit viel Herzblut an der Etablierung einer regionalen Whiskykultur gearbeitet. Die Brennerei setzt auf kleine Apparaturen und eine sehr individuelle Betreuung jedes Fasses. Der Whisky aus Zeitz ist geprägt von der Leidenschaft seiner Gründer und gewinnt stetig an Bekanntheit unter Kennern deutscher Whiskys. Die handwerkliche Produktion in kleinen Mengen garantiert Exklusivität.",
+        "seo_title": "Zeitzer Whisky Manufaktur | Handgemachter Whisky aus Sachsen-Anhalt",
+        "seo_description": "Die Zeitzer Whisky Manufaktur steht für ehrliches Handwerk und regionale Spezialitäten aus der Stadt Zeitz.",
+        "slug": "zeitzer-whisky-manufaktur",
+        "created_at": "2026-04-23T13:42:20Z",
+        "last_updated": "2026-04-23T13:42:20Z",
+        "published": false
+      },
+      "raw": {
+        "id": "zeitzer-whisky-manufaktur",
+        "name": "Zeitzer Whisky Manufaktur",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.zeitzer-whisky.de/",
+        "owner": "Zeitzer Whisky Manufaktur",
+        "location": "Zeitz, Sachsen-Anhalt",
+        "travel_info": "Die Manufaktur bietet regelmäßig Veranstaltungen und Tastings an. Ein Besuch im Ladenlokal in Zeitz ermöglicht den direkten Austausch mit den Machern.",
+        "long_description": "Die Zeitzer Whisky Manufaktur ist ein ambitioniertes Projekt in Sachsen-Anhalt. Hier wird mit viel Herzblut an der Etablierung einer regionalen Whiskykultur gearbeitet. Die Brennerei setzt auf kleine Apparaturen und eine sehr individuelle Betreuung jedes Fasses. Der Whisky aus Zeitz ist geprägt von der Leidenschaft seiner Gründer und gewinnt stetig an Bekanntheit unter Kennern deutscher Whiskys. Die handwerkliche Produktion in kleinen Mengen garantiert Exklusivität.",
+        "seo_title": "Zeitzer Whisky Manufaktur | Handgemachter Whisky aus Sachsen-Anhalt",
+        "seo_description": "Die Zeitzer Whisky Manufaktur steht für ehrliches Handwerk und regionale Spezialitäten aus der Stadt Zeitz."
       }
     }
   ]
