@@ -1791,6 +1791,13 @@
       "imported_at": "2026-04-23T13:49:53Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260423T134956_e24d64",
+      "entity": "whiskies",
+      "imported_at": "2026-04-23T13:49:56Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -12157,6 +12164,50 @@
         "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
         "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
         "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260423T134956_e24d64",
+      "entity": "whiskies",
+      "item_id": "wismarian-single-malt",
+      "item_slug": "wismarian-single-malt",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "wismarian-single-malt",
+        "name": "Wismarian Single Malt",
+        "distillery_id": "hinricus-noyte",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Aromen von Holz, Vanille und dunklen Beeren, unterlegt mit einer leichten Getreidenote.",
+        "tasting_notes_palate": "Vollmundig mit malzigen Akzenten, feiner Süße und würzigen Einflüssen aus der Fasslagerung.",
+        "tasting_notes_finish": "Angenehm wärmend mit einem Nachklang von Vanille und Eichenholz.",
+        "seo_title": "Wismarian Single Malt | Whisky aus der Hansestadt Wismar",
+        "seo_description": "Hinricus Noyte präsentiert den Wismarian Single Malt. Hanseatische Brennkunst mit maritimen Flair.",
+        "slug": "wismarian-single-malt",
+        "created_at": "2026-04-23T13:49:56Z",
+        "last_updated": "2026-04-23T13:49:56Z",
+        "published": false
+      },
+      "raw": {
+        "id": "wismarian-single-malt",
+        "name": "Wismarian Single Malt",
+        "distillery_id": "hinricus-noyte",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Aromen von Holz, Vanille und dunklen Beeren, unterlegt mit einer leichten Getreidenote.",
+        "tasting_notes_palate": "Vollmundig mit malzigen Akzenten, feiner Süße und würzigen Einflüssen aus der Fasslagerung.",
+        "tasting_notes_finish": "Angenehm wärmend mit einem Nachklang von Vanille und Eichenholz.",
+        "seo_title": "Wismarian Single Malt | Whisky aus der Hansestadt Wismar",
+        "seo_description": "Hinricus Noyte präsentiert den Wismarian Single Malt. Hanseatische Brennkunst mit maritimen Flair."
       }
     }
   ]
