@@ -9672,7 +9672,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "meissener-spezialitaetenbrennerei",
         "name": "Meißner Spezialitätenbrennerei Prinz zur Lippe",
@@ -9702,7 +9702,10 @@
         "long_description": "Die Meißner Spezialitätenbrennerei gehört zum renommierten Weingut Schloss Proschwitz Prinz zur Lippe. Bereits seit den 1990er Jahren wird hier sächsischer Whisky produziert, was sie zu einem Pionier in den neuen Bundesländern macht. Der Fokus liegt auf Qualität statt Quantität. Durch die Nähe zum Weinbau werden für das Finish oft erstklassige eigene Weinfässer genutzt. Die Single Malts aus Meißen sind meist elegant, fein-fruchtig und spiegeln die terroir-geprägte Philosophie des Hauses wider.",
         "seo_title": "Meißner Spezialitätenbrennerei | Sächsischer Whisky & Edelbrände",
         "seo_description": "Erfahren Sie mehr über den exklusiven Meißner Whisky vom Weingut Schloss Proschwitz. Traditionelle Brennkunst aus Sachsen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:44Z"
     },
     {
       "batch_id": "distilleries_20260423T134128_84b27e",
