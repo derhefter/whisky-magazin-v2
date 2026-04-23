@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260423T134939_026c59",
+  "entity": "whiskies",
+  "imported_at": "2026-04-23T13:49:39Z",
+  "raw": [
+    {
+      "id": "stork-club-smoky-rye",
+      "name": "Stork Club Smoky Rye",
+      "distillery_id": "stork-club",
+      "whisky_type": "Peated Rye Whiskey",
+      "abv": 50,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Zitronenquark auf Graubrot, Äpfel, Toffee, getrocknete Bananenchips und ein deutlicher Einschlag von Lagerfeuerrauch.",
+      "tasting_notes_palate": "Sauerteig, Zitruszesten, Pistazienschokolade und rauchiges Holz, begleitet von einer pfeffrigen Schärfe.",
+      "tasting_notes_finish": "Mittellang und rauchig mit einem Nachklang von BBQ-Aromen und fruchtigen Nuancen.",
+      "seo_title": "Stork Club Smoky Rye | Rauchiger Roggen-Whisky",
+      "seo_description": "Eine einzigartige Kombination aus Roggenwürze und Rauch. Stork Club Smoky Rye mit kräftigen 50% Vol."
+    }
+  ]
+}
