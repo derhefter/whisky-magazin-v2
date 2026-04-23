@@ -2556,30 +2556,37 @@
   },
   {
     "id": "old-pulteney-15",
-    "name": "Old Pulteney 15 Year Old",
-    "slug": "old-pulteney-15",
-    "country_id": "scotland",
-    "region_id": "highlands",
     "distillery_id": "old-pulteney",
+    "name": "Old Pulteney 15 Year Old",
     "whisky_type": "single_malt",
-    "style_tags": "komplex, würzig, sherry, maritim",
-    "abv": 46,
-    "cask_types": "Bourbon Casks, First-fill Spanish Oak Sherry Casks",
-    "smoke_profile": "Nicht getorft",
+    "slug": "old-pulteney-15",
+    "published": true,
     "age_statement": 15,
     "nas": false,
-    "tasting_notes": {
-      "nose": "Sehr süß mit getrockneten Früchten, Äpfeln, Honig und einer Spur Schokolade.",
-      "palate": "Kräftige Gewürze, dunkle Schokolade, Toffee und eine wachsige Vanille-Note.",
-      "finish": "Lang, würzig-süß mit einem sanften, salzigen Ausklang."
-    },
+    "abv": 46,
+    "tasting_notes_nose": "Markant nussig mit feinen Holzaromen. Dazu würzig-süße Vanille und ein Hauch von Orangenblüten.",
+    "tasting_notes_palate": "Vollmundig und weich. Cremige Süße trifft auf würzige Vanille, Kastaniennoten und dezente Fruchttöne wie Birne.",
+    "tasting_notes_finish": "Mild und rund mit einer subtilen Süße und sehr zurückhaltenden Gerbstoffen.",
     "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
     "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
-    "source_status": "verified",
-    "review_status": "approved",
-    "published": true,
-    "created_at": "2026-04-22T19:08:36Z",
-    "last_updated": "2026-04-22T19:16:53Z"
+    "seo_title": "Ziegler Aureum Chestnut Cask | Whisky aus Kastanienholz online",
+    "seo_description": "Entdecken Sie den Ziegler Aureum Chestnut Cask. Ein fränkischer Single Malt mit einzigartiger Kastanienholz-Reifung und nussigem Aroma.",
+    "style_tags": [
+      "komplex",
+      "würzig",
+      "sherry",
+      "maritim"
+    ],
+    "cask_types": [
+      "Bourbon Casks",
+      "First-fill Spanish Oak Sherry Casks"
+    ],
+    "smoke_profile": "none",
+    "updated_at": "2026-04-22T23:45:00Z",
+    "created_at": "2026-04-23T13:50:00Z",
+    "last_updated": "2026-04-23T13:55:11Z",
+    "country_id": "scotland",
+    "region_id": "highlands"
   },
   {
     "id": "old-pulteney-18",
