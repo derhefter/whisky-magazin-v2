@@ -1553,6 +1553,13 @@
       "imported_at": "2026-04-23T13:42:05Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260423T134208_cd336f",
+      "entity": "distilleries",
+      "imported_at": "2026-04-23T13:42:08Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -10111,6 +10118,46 @@
         "long_description": "Stork Club ist Deutschlands erste Roggen-Whisky-Destillerie, gelegen im Biosphärenreservat Spreewald. Die Spreewood Distillers haben die traditionsreiche Brennerei in Schlepzig übernommen und zu einer Kultmarke für Rye Whisky ausgebaut. Da Brandenburg eines der besten Roggenanbaugebiete der Welt ist, setzt die Brennerei konsequent auf diesen Rohstoff. Der Stork Club Rye wird international geschätzt und hat bereits zahlreiche Preise gewonnen. Er besticht durch seine würzigen Roggennoten, kombiniert mit einer modernen, urbanen Markenidentität.",
         "seo_title": "Stork Club Whisky | Deutsche Roggen-Whisky Destillerie im Spreewald",
         "seo_description": "Stork Club ist spezialisiert auf erstklassigen Rye Whisky aus Brandenburg. Entdecken Sie die Spreewood Distillers in Schlepzig."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260423T134208_cd336f",
+      "entity": "distilleries",
+      "item_id": "thousand-mountains",
+      "item_slug": "thousand-mountains",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "thousand-mountains",
+        "name": "Thousand Mountains",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.sauerlaender-edelbrand.de/",
+        "owner": "Sauerländer Edelbrand GmbH",
+        "location": "Kallenhardt, Nordrhein-Westfalen",
+        "travel_info": "Die Destillerie im Sauerland bietet Brennereiführungen, Tastings und einen Hofladen. Die Lage im Naturpark Arnsberger Wald ist ideal für Ausflüge.",
+        "long_description": "Im 'Land der tausend Berge' produziert die Sauerländer Edelbrand GmbH unter der Marke 'Thousand Mountains' Single Malt Whisky. Der bekannteste Vertreter ist der 'Mc Raven'. Die Brennerei setzt auf eine langsame Destillation und nutzt für die Reifung eine Kombination aus Rotwein- und Bourbonfässern. Das Ergebnis sind fruchtige und elegante Whiskys mit einer markanten Würze, die das raue, aber herzliche Klima des Sauerlands widerspiegeln.",
+        "seo_title": "Thousand Mountains | Mc Raven Whisky aus dem Sauerland",
+        "seo_description": "Thousand Mountains produziert erstklassigen Sauerländer Single Malt. Entdecken Sie den Mc Raven und die Kunst der Destillation in Kallenhardt.",
+        "slug": "thousand-mountains",
+        "created_at": "2026-04-23T13:42:08Z",
+        "last_updated": "2026-04-23T13:42:08Z",
+        "published": false
+      },
+      "raw": {
+        "id": "thousand-mountains",
+        "name": "Thousand Mountains",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://www.sauerlaender-edelbrand.de/",
+        "owner": "Sauerländer Edelbrand GmbH",
+        "location": "Kallenhardt, Nordrhein-Westfalen",
+        "travel_info": "Die Destillerie im Sauerland bietet Brennereiführungen, Tastings und einen Hofladen. Die Lage im Naturpark Arnsberger Wald ist ideal für Ausflüge.",
+        "long_description": "Im 'Land der tausend Berge' produziert die Sauerländer Edelbrand GmbH unter der Marke 'Thousand Mountains' Single Malt Whisky. Der bekannteste Vertreter ist der 'Mc Raven'. Die Brennerei setzt auf eine langsame Destillation und nutzt für die Reifung eine Kombination aus Rotwein- und Bourbonfässern. Das Ergebnis sind fruchtige und elegante Whiskys mit einer markanten Würze, die das raue, aber herzliche Klima des Sauerlands widerspiegeln.",
+        "seo_title": "Thousand Mountains | Mc Raven Whisky aus dem Sauerland",
+        "seo_description": "Thousand Mountains produziert erstklassigen Sauerländer Single Malt. Entdecken Sie den Mc Raven und die Kunst der Destillation in Kallenhardt."
       }
     }
   ]
