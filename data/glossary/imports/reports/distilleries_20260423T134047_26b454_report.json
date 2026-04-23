@@ -1,0 +1,51 @@
+{
+  "batch_id": "distilleries_20260423T134047_26b454",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:40:47Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "dolleruper-destille",
+        "name": "Dolleruper Destille",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://dolleruper-destille.de/",
+        "owner": "Dr. Werner Küsters",
+        "location": "Dollerup, Schleswig-Holstein",
+        "travel_info": "Die nördlichste Destillerie Deutschlands bietet Führungen durch die Obstbrennerei und das Whisky-Lager sowie einen gemütlichen Laden.",
+        "long_description": "Die Dolleruper Destille in der Nähe von Flensburg ist die nördlichste Whiskydestillerie Deutschlands. In einer ehemaligen Meierei entstehen hier Whiskys mit norddeutschem Charakter. Dr. Werner Küsters setzt auf Transparenz und Qualität. Die Whiskys reifen in der salzhaltigen Luft der Ostseenähe, was ihnen eine ganz eigene Note verleiht. Neben Whisky ist die Destille auch für ihre hochwertigen Obstbrände und Geiste aus regionalen Früchten bekannt.",
+        "seo_title": "Dolleruper Destille | Der nördlichste Whisky Deutschlands",
+        "seo_description": "In Schleswig-Holstein brennt die Dolleruper Destille charakterstarken Whisky. Norddeutsches Handwerk nahe der Ostsee."
+      },
+      "normalized": {
+        "id": "dolleruper-destille",
+        "name": "Dolleruper Destille",
+        "region_id": "germany",
+        "country_id": "germany",
+        "website": "https://dolleruper-destille.de/",
+        "owner": "Dr. Werner Küsters",
+        "location": "Dollerup, Schleswig-Holstein",
+        "travel_info": "Die nördlichste Destillerie Deutschlands bietet Führungen durch die Obstbrennerei und das Whisky-Lager sowie einen gemütlichen Laden.",
+        "long_description": "Die Dolleruper Destille in der Nähe von Flensburg ist die nördlichste Whiskydestillerie Deutschlands. In einer ehemaligen Meierei entstehen hier Whiskys mit norddeutschem Charakter. Dr. Werner Küsters setzt auf Transparenz und Qualität. Die Whiskys reifen in der salzhaltigen Luft der Ostseenähe, was ihnen eine ganz eigene Note verleiht. Neben Whisky ist die Destille auch für ihre hochwertigen Obstbrände und Geiste aus regionalen Früchten bekannt.",
+        "seo_title": "Dolleruper Destille | Der nördlichste Whisky Deutschlands",
+        "seo_description": "In Schleswig-Holstein brennt die Dolleruper Destille charakterstarken Whisky. Norddeutsches Handwerk nahe der Ostsee.",
+        "slug": "dolleruper-destille",
+        "created_at": "2026-04-23T13:40:47Z",
+        "last_updated": "2026-04-23T13:40:47Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
