@@ -10020,7 +10020,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "senft",
         "name": "Erlebnisdestillerie Senft",
@@ -10050,7 +10050,10 @@
         "long_description": "Die Destillerie Senft in Salem am Bodensee wird heute in zweiter Generation geführt. Neben feinen Obstbränden hat sich die Familie Senft einen Namen mit ihrem Bodensee-Whisky gemacht. Verwendet wird regionales Getreide und das Wasser der Bodenseeregion. Ein besonderes Merkmal ist die Reifung in einer Kombination aus Wein- und Bourbonfässern, was den Whiskys eine charakteristische Fruchtnote verleiht. Das Sortiment umfasst Single Malts, Single Grain und Liköre auf Whiskybasis.",
         "seo_title": "Senft Destillerie | Bodensee Whisky aus Salem",
         "seo_description": "Senft Bodensee Whisky steht für Qualität und Leidenschaft. Besuchen Sie die Erlebnisdestillerie in Salem."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:56Z"
     },
     {
       "batch_id": "distilleries_20260423T134155_9bed1f",
