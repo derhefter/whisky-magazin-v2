@@ -9543,7 +9543,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hinricus-noyte",
         "name": "Hinricus Noyte's Spirituosen (Wismarian)",
@@ -9573,7 +9573,10 @@
         "long_description": "In der Hansestadt Wismar wird unter dem Namen 'Hinricus Noyte' (ein historischer Braumeister) die Tradition des Brennens fortgeführt. Eng verbunden mit dem Brauhaus am Lohberg, entsteht hier der 'Wismarian' Whisky. Die maritime Atmosphäre der Ostseestadt und die Nutzung von Braumalz geben dem Whisky einen ganz eigenen Charakter. Der Wismarian Single Malt reift in einer Auswahl verschiedener Fässer und spiegelt die hanseatische Brau- und Brenntradition wider.",
         "seo_title": "Hinricus Noyte | Wismarian Single Malt Whisky aus Wismar",
         "seo_description": "Entdecken Sie den Wismarian Whisky von Hinricus Noyte aus der Hansestadt Wismar. Traditionelle Brennkunst an der Ostsee."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:43:39Z"
     },
     {
       "batch_id": "distilleries_20260423T134118_14d3db",
