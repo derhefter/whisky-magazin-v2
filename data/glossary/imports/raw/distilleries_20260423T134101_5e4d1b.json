@@ -1,0 +1,20 @@
+{
+  "batch_id": "distilleries_20260423T134101_5e4d1b",
+  "entity": "distilleries",
+  "imported_at": "2026-04-23T13:41:01Z",
+  "raw": [
+    {
+      "id": "glina",
+      "name": "Glina Destillerie",
+      "region_id": "germany",
+      "country_id": "germany",
+      "website": "https://glina-destillerie.de/",
+      "owner": "Michael Schultz",
+      "location": "Werder (Havel), Brandenburg",
+      "travel_info": "Besucher sind in der Destillerie in Werder/Elisabethhöhe willkommen. Es gibt einen Werksverkauf und Verkostungsmöglichkeiten direkt vor Ort.",
+      "long_description": "Die Glina Destillerie in Brandenburg ist ein echtes Familienunternehmen, das vom Getreideanbau auf eigenen Feldern bis zur Abfüllung alles selbst in der Hand hält. Michael Schultz führt die Tradition fort und brennt Whisky aus eigenem Roggen und Gerste. Glina ist bekannt für die Verwendung von heimischem Spessart-Eichenholz für die Fässer. Das Sortiment umfasst Single Malts und Rye Whiskys, die oft eine charakteristische Bodenständigkeit und ehrliche Handwerkskunst widerspiegeln. Die Destillerie gilt als eine der größten in Ostdeutschland.",
+      "seo_title": "Glina Destillerie | Whisky aus Werder an der Havel",
+      "seo_description": "Glina Whisky steht für Handwerk aus Brandenburg. Single Malt und Rye Whisky vom eigenen Feld bis in die Flasche."
+    }
+  ]
+}
