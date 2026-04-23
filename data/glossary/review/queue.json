@@ -8972,7 +8972,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bellerhof",
         "name": "Bellerhof Brennerei",
@@ -9005,7 +9005,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:17Z"
+      "reviewed_at": "2026-04-23T13:43:17Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134033_eb9550",
@@ -9015,7 +9016,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "birkenhof",
         "name": "Birkenhof Brennerei",
@@ -9052,7 +9053,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:20Z"
+      "reviewed_at": "2026-04-23T13:43:20Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134036_09035e",
@@ -9062,7 +9064,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "blaue-maus",
         "name": "Blaue Maus",
@@ -9095,7 +9097,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:21Z"
+      "reviewed_at": "2026-04-23T13:43:21Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134040_c99e70",
@@ -9105,7 +9108,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "brigantia",
         "name": "Brigantia (Steinhauser)",
@@ -9138,7 +9141,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:23Z"
+      "reviewed_at": "2026-04-23T13:43:23Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134043_01a018",
@@ -9148,7 +9152,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor",
         "name": "Coillmór (Brennerei Liebl)",
@@ -9181,7 +9185,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:25Z"
+      "reviewed_at": "2026-04-23T13:43:25Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134047_26b454",
@@ -9191,7 +9196,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dolleruper-destille",
         "name": "Dolleruper Destille",
@@ -9224,7 +9229,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:26Z"
+      "reviewed_at": "2026-04-23T13:43:26Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134051_029903",
@@ -9234,7 +9240,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dresdner-whisky-manufaktur",
         "name": "Dresdner Whisky Manufaktur",
@@ -9267,7 +9273,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:28Z"
+      "reviewed_at": "2026-04-23T13:43:28Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134054_06245b",
@@ -9277,7 +9284,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "elch-whisky",
         "name": "Elch-Whisky (Elch-Bräu)",
@@ -9310,7 +9317,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:30Z"
+      "reviewed_at": "2026-04-23T13:43:30Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134058_7c6cdd",
@@ -9320,7 +9328,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "finch",
         "name": "finch® Whiskydestillerie",
@@ -9357,7 +9365,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:31Z"
+      "reviewed_at": "2026-04-23T13:43:31Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134101_5e4d1b",
@@ -9367,7 +9376,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glina",
         "name": "Glina Destillerie",
@@ -9400,7 +9409,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:33Z"
+      "reviewed_at": "2026-04-23T13:43:33Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134104_b91de5",
@@ -9410,7 +9420,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "grumsiner",
         "name": "Grumsiner Brennerei",
@@ -9443,7 +9453,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:34Z"
+      "reviewed_at": "2026-04-23T13:43:34Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134107_300517",
@@ -9453,7 +9464,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hardenberg-beverbach",
         "name": "Hardenberg Distillery (Beverbach)",
@@ -9486,7 +9497,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:36Z"
+      "reviewed_at": "2026-04-23T13:43:36Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134111_75b764",
@@ -9496,7 +9508,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hercynian",
         "name": "Hercynian Distilling Co. / Hammerschmiede",
@@ -9533,7 +9545,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:38Z"
+      "reviewed_at": "2026-04-23T13:43:38Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134114_b3363e",
@@ -9543,7 +9556,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hinricus-noyte",
         "name": "Hinricus Noyte's Spirituosen (Wismarian)",
@@ -9576,7 +9589,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:39Z"
+      "reviewed_at": "2026-04-23T13:43:39Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134118_14d3db",
@@ -9586,7 +9600,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "luebbehusen",
         "name": "The Lübbehusen Malt Distillery",
@@ -9619,7 +9633,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:41Z"
+      "reviewed_at": "2026-04-23T13:43:41Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134121_fb84c3",
@@ -9629,7 +9644,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "maerkische-spezialitaetenbrennerei",
         "name": "Märkische Spezialitätenbrennerei",
@@ -9662,7 +9677,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:42Z"
+      "reviewed_at": "2026-04-23T13:43:42Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134124_e9138e",
@@ -9672,7 +9688,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "meissener-spezialitaetenbrennerei",
         "name": "Meißner Spezialitätenbrennerei Prinz zur Lippe",
@@ -9705,7 +9721,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:44Z"
+      "reviewed_at": "2026-04-23T13:43:44Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134128_84b27e",
@@ -9715,7 +9732,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "number-nine",
         "name": "Number Nine Distillery",
@@ -9748,7 +9765,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:45Z"
+      "reviewed_at": "2026-04-23T13:43:45Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134131_2d6d19",
@@ -9758,7 +9776,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-sandhill",
         "name": "Old Sandhill (Destillerie Schmidt)",
@@ -9791,7 +9809,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:47Z"
+      "reviewed_at": "2026-04-23T13:43:47Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134134_0343de",
@@ -9801,7 +9820,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "piekfeine-braende",
         "name": "Piekfeine Brände",
@@ -9834,7 +9853,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:48Z"
+      "reviewed_at": "2026-04-23T13:43:48Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134138_88363d",
@@ -9844,7 +9864,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "preussischer-biermaker",
         "name": "Preußischer Biermaker",
@@ -9877,7 +9897,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:50Z"
+      "reviewed_at": "2026-04-23T13:43:50Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134141_51d076",
@@ -9887,7 +9908,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "rothaus",
         "name": "Badische Staatsbrauerei Rothaus",
@@ -9924,7 +9945,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:51Z"
+      "reviewed_at": "2026-04-23T13:43:51Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134144_ac890a",
@@ -9934,7 +9956,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "sasse-lagerkorn",
         "name": "Feinbrennerei Sasse",
@@ -9967,7 +9989,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:53Z"
+      "reviewed_at": "2026-04-23T13:43:53Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134148_baeb8e",
@@ -9977,7 +10000,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "schlitzer",
         "name": "Schlitzer Destillerie",
@@ -10010,7 +10033,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:55Z"
+      "reviewed_at": "2026-04-23T13:43:55Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134151_8da903",
@@ -10020,7 +10044,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "senft",
         "name": "Erlebnisdestillerie Senft",
@@ -10053,7 +10077,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:56Z"
+      "reviewed_at": "2026-04-23T13:43:56Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134155_9bed1f",
@@ -10063,7 +10088,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "slyrs",
         "name": "Slyrs Destillerie",
@@ -10100,7 +10125,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:58Z"
+      "reviewed_at": "2026-04-23T13:43:58Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134158_e8f4dc",
@@ -10110,7 +10136,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "st-kilian",
         "name": "St. Kilian Distillers",
@@ -10147,7 +10173,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:43:59Z"
+      "reviewed_at": "2026-04-23T13:43:59Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134201_f00890",
@@ -10157,7 +10184,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "stonewood",
         "name": "Stonewood Whisky-Destillerie (Schraml)",
@@ -10190,7 +10217,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:01Z"
+      "reviewed_at": "2026-04-23T13:44:01Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134205_c90c1d",
@@ -10200,7 +10228,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "stork-club",
         "name": "Stork Club (Spreewood Distillers)",
@@ -10233,7 +10261,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:03Z"
+      "reviewed_at": "2026-04-23T13:44:03Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134208_cd336f",
@@ -10243,7 +10272,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "thousand-mountains",
         "name": "Thousand Mountains",
@@ -10276,7 +10305,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:04Z"
+      "reviewed_at": "2026-04-23T13:44:04Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134211_d7d7e0",
@@ -10286,7 +10316,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "vallendar",
         "name": "Brennerei Vallendar",
@@ -10319,7 +10349,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:06Z"
+      "reviewed_at": "2026-04-23T13:44:06Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134216_05f0f5",
@@ -10329,7 +10360,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "weyermann",
         "name": "Weyermann Destillerie",
@@ -10362,7 +10393,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:07Z"
+      "reviewed_at": "2026-04-23T13:44:07Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134220_16e7cc",
@@ -10372,7 +10404,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "zeitzer-whisky-manufaktur",
         "name": "Zeitzer Whisky Manufaktur",
@@ -10405,7 +10437,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:09Z"
+      "reviewed_at": "2026-04-23T13:44:09Z",
+      "published_at": "2026-04-23T13:46:10Z"
     },
     {
       "batch_id": "distilleries_20260423T134223_0ee78f",
@@ -10415,7 +10448,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ziegler",
         "name": "Edelbrennerei Ziegler",
@@ -10452,7 +10485,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-23T13:44:11Z"
+      "reviewed_at": "2026-04-23T13:44:11Z",
+      "published_at": "2026-04-23T13:46:10Z"
     }
   ]
 }
