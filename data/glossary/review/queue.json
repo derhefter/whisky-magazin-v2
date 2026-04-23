@@ -11483,24 +11483,40 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "hellinger-42-rauch",
-        "name": "Hellinger 42 Rauch",
-        "distillery_id": "dresdner-whisky-manufaktur",
-        "whisky_type": "Peated Single Malt",
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "distillery_id": "old-pulteney",
+        "whisky_type": "single_malt",
         "abv": 46,
         "age": null,
-        "nas": true,
+        "nas": false,
         "tasting_notes_nose": "Deutlicher malziger Rauch, kombiniert mit Vanille, Honig und Zitrusnoten wie Orange und Mandarine.",
         "tasting_notes_palate": "Kräftiger Geschmack nach Lagerfeuerrauch, dunkler Schokolade, Karamell und würzigen Akzenten, begleitet von Fruchtnoten.",
         "tasting_notes_finish": "Langanhaltend und rauchig mit einer feinen Süße und würzigem Nachklang.",
         "seo_title": "Hellinger 42 Rauch | Torfiger Single Malt aus Sachsen",
         "seo_description": "Erleben Sie den rauchigen Hellinger 42 aus Dresden. Malziger Rauch trifft auf Schokolade und Zitrusfrucht.",
-        "slug": "hellinger-42-rauch",
+        "slug": "old-pulteney-15",
         "created_at": "2026-04-23T13:48:58Z",
-        "last_updated": "2026-04-23T13:48:58Z",
-        "published": false
+        "last_updated": "2026-04-23T13:53:15Z",
+        "published": true,
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
+        "country_id": "scotland",
+        "region_id": "highlands",
+        "age_statement": 15,
+        "smoke_profile": "none",
+        "cask_types": [
+          "Bourbon Casks",
+          "First-fill Spanish Oak Sherry Casks"
+        ],
+        "style_tags": [
+          "komplex",
+          "würzig",
+          "sherry",
+          "maritim"
+        ]
       },
       "raw": {
         "id": "hellinger-42-rauch",
@@ -11515,7 +11531,10 @@
         "tasting_notes_finish": "Langanhaltend und rauchig mit einer feinen Süße und würzigem Nachklang.",
         "seo_title": "Hellinger 42 Rauch | Torfiger Single Malt aus Sachsen",
         "seo_description": "Erleben Sie den rauchigen Hellinger 42 aus Dresden. Malziger Rauch trifft auf Schokolade und Zitrusfrucht."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-23T13:53:15Z"
     },
     {
       "batch_id": "whiskies_20260423T134901_85d826",
