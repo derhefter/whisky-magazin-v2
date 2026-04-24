@@ -14403,41 +14403,31 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "elsburn-journey",
-        "distillery_id": "hercynian",
-        "name": "Elsburn The Journey (2023 Edition)",
-        "whisky_type": "Single Malt",
-        "slug": "elsburn-the-journey-single-malt",
+        "id": "coillmor-american-oak",
+        "distillery_id": "coillmor",
+        "name": "Coillmór American Oak",
+        "whisky_type": "single_malt",
+        "slug": "coillm-r-american-oak",
         "published": true,
-        "age_statement": "NAS",
+        "age_statement": null,
         "nas": true,
         "abv": 43,
-        "tasting_notes_nose": "Fruchtige Aromen kombiniert mit deutlichem Eichenholz. Noten von Malz, Toffee, Rosinen und ein Hauch Vanille.",
-        "tasting_notes_palate": "Weich und malzig am Gaumen. Es zeigen sich getrocknete Früchte, Eiche, Toffee und eine dezente Mokka-Note.",
-        "tasting_notes_finish": "Ein schöner Wechselspiel zwischen fruchtigen und würzig-herben Noten im Nachhall.",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
         "short_description": "Der ideale Einstieg in die Welt des Harzer Single Malts – fruchtig und mild.",
         "long_description": "Elsburn The Journey ist die Standardabfüllung der Hercynian Distilling Co. und dient als Botschafter des milden Harzer Whisky-Stils. Er wird aus einer Komposition verschiedener Fasstypen kreiert, wobei der Fokus auf hochwertigen Sherry- und Süßweinfässern liegt. 'The Journey' ersetzt die frühere Core Range und bietet ein konstantes Geschmackserlebnis, das die fruchtige DNA der Brennerei perfekt einfängt.",
-        "seo_title": "Elsburn The Journey | Der Klassiker aus der Hammerschmiede Harz",
-        "seo_description": "Elsburn The Journey Single Malt Whisky. Erleben Sie die fruchtige Milde des Harzes. Gereift in feinsten Weinfässern. Jetzt entdecken.",
-        "style_tags": [
-          "mild",
-          "fruchtig",
-          "malzig",
-          "Harz"
-        ],
-        "cask_types": [
-          "Sherry",
-          "Port",
-          "Madeira",
-          "Marsala",
-          "Malaga"
-        ],
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "style_tags": [],
+        "cask_types": [],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z",
         "created_at": "2026-04-24T18:51:37Z",
-        "last_updated": "2026-04-24T18:51:37Z"
+        "last_updated": "2026-04-24T18:57:31Z",
+        "country_id": "deutschland"
       },
       "raw": {
         "id": "elsburn-journey",
@@ -14471,7 +14461,10 @@
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:57:31Z"
     },
     {
       "batch_id": "whiskies_20260424T185139_623c4b",
