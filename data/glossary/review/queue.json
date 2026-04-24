@@ -2050,6 +2050,13 @@
       "imported_at": "2026-04-24T18:52:27Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185230_fa8d41",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:52:30Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -15297,6 +15304,50 @@
         "tasting_notes_finish": "Mittellang und rauchig mit einem Nachklang von BBQ-Aromen und fruchtigen Nuancen.",
         "seo_title": "Stork Club Smoky Rye | Rauchiger Roggen-Whisky",
         "seo_description": "Eine einzigartige Kombination aus Roggenwürze und Rauch. Stork Club Smoky Rye mit kräftigen 50% Vol."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185230_fa8d41",
+      "entity": "whiskies",
+      "item_id": "stork-club-straight-rye",
+      "item_slug": "stork-club-straight-rye-whiskey",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "stork-club-straight-rye",
+        "name": "Stork Club Straight Rye Whiskey",
+        "distillery_id": "stork-club",
+        "whisky_type": "Rye Whiskey",
+        "abv": 45,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Reichhaltiges Aroma von Schokolade, pfeffrigem Eichenholz, süßem Karamell, Toffee und Roggen mit einem Hauch von Vanille.",
+        "tasting_notes_palate": "Geschmeidig mit Noten von Toffee, Buttertoffee und Espresso, gefolgt von einer deutlichen Roggenwürze und dunkler Schokolade.",
+        "tasting_notes_finish": "Lang und befriedigend mit Wellen von dunkler Schokolade, Roggenwürze und Zitruszesten.",
+        "seo_title": "Stork Club Straight Rye | Preisgekrönter Roggen-Whisky aus Brandenburg",
+        "seo_description": "Der Klassiker von Stork Club aus dem Spreewald. Würziger Rye Whiskey mit Noten von Schokolade und Toffee.",
+        "slug": "stork-club-straight-rye-whiskey",
+        "created_at": "2026-04-24T18:52:30Z",
+        "last_updated": "2026-04-24T18:52:30Z",
+        "published": false
+      },
+      "raw": {
+        "id": "stork-club-straight-rye",
+        "name": "Stork Club Straight Rye Whiskey",
+        "distillery_id": "stork-club",
+        "whisky_type": "Rye Whiskey",
+        "abv": 45,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Reichhaltiges Aroma von Schokolade, pfeffrigem Eichenholz, süßem Karamell, Toffee und Roggen mit einem Hauch von Vanille.",
+        "tasting_notes_palate": "Geschmeidig mit Noten von Toffee, Buttertoffee und Espresso, gefolgt von einer deutlichen Roggenwürze und dunkler Schokolade.",
+        "tasting_notes_finish": "Lang und befriedigend mit Wellen von dunkler Schokolade, Roggenwürze und Zitruszesten.",
+        "seo_title": "Stork Club Straight Rye | Preisgekrönter Roggen-Whisky aus Brandenburg",
+        "seo_description": "Der Klassiker von Stork Club aus dem Spreewald. Würziger Rye Whiskey mit Noten von Schokolade und Toffee."
       }
     }
   ]
