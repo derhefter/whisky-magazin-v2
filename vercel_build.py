@@ -68,8 +68,8 @@ print("\n  === Vercel Build ===")
 print("  Starte site_builder_v2 mit eingebetteter Config...")
 
 try:
-    from site_builder_v2 import build_site_v2
-    build_site_v2(VERCEL_CONFIG)
+    from site_builder_v2 import build_site
+    build_site(VERCEL_CONFIG)
     print("\n  Vercel Build erfolgreich abgeschlossen.")
     sys.exit(0)
 except Exception as e:
