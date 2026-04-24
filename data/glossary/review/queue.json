@@ -1917,6 +1917,13 @@
       "imported_at": "2026-04-24T18:51:31Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185134_1e4c47",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:34Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14136,6 +14143,50 @@
         "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
         "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
         "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185134_1e4c47",
+      "entity": "whiskies",
+      "item_id": "elch-torf-vom-dorf",
+      "item_slug": "elch-whisky-torf-vom-dorf",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "elch-torf-vom-dorf",
+        "name": "Elch-Whisky Torf vom Dorf",
+        "distillery_id": "elch-whisky",
+        "whisky_type": "Peated Single Malt",
+        "abv": 51.9,
+        "age": 3,
+        "nas": false,
+        "tasting_notes_nose": "Erdiger Rauch, moderndes Laub, Zitrusfrüchte und ein salziger, leicht fruchtiger Moment.",
+        "tasting_notes_palate": "Kräftig und rauchig mit viel Lagerfeuercharakter, Malzsüße und würzigen Eichenholznoten.",
+        "tasting_notes_finish": "Langanhaltend und intensiv rauchig mit einer Spur Meersalz und Süße.",
+        "seo_title": "Elch-Whisky Torf vom Dorf | Kräftig rauchiger Franken-Whisky",
+        "seo_description": "Torf vom Dorf ist die rauchige Legende aus Thuisbrunn. Single Malt mit deutschem Torfrauch und 51,9% Vol.",
+        "slug": "elch-whisky-torf-vom-dorf",
+        "created_at": "2026-04-24T18:51:34Z",
+        "last_updated": "2026-04-24T18:51:34Z",
+        "published": false
+      },
+      "raw": {
+        "id": "elch-torf-vom-dorf",
+        "name": "Elch-Whisky Torf vom Dorf",
+        "distillery_id": "elch-whisky",
+        "whisky_type": "Peated Single Malt",
+        "abv": 51.9,
+        "age": 3,
+        "nas": false,
+        "tasting_notes_nose": "Erdiger Rauch, moderndes Laub, Zitrusfrüchte und ein salziger, leicht fruchtiger Moment.",
+        "tasting_notes_palate": "Kräftig und rauchig mit viel Lagerfeuercharakter, Malzsüße und würzigen Eichenholznoten.",
+        "tasting_notes_finish": "Langanhaltend und intensiv rauchig mit einer Spur Meersalz und Süße.",
+        "seo_title": "Elch-Whisky Torf vom Dorf | Kräftig rauchiger Franken-Whisky",
+        "seo_description": "Torf vom Dorf ist die rauchige Legende aus Thuisbrunn. Single Malt mit deutschem Torfrauch und 51,9% Vol."
       }
     }
   ]
