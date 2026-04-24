@@ -1889,6 +1889,13 @@
       "imported_at": "2026-04-24T18:51:18Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185121_304de1",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:21Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13930,6 +13937,51 @@
         "tasting_notes_finish": "Mittellang und wärmend mit feinen Holzaromen.",
         "seo_title": "Beverbach Single Malt | Whisky der Hardenberg Distillery",
         "seo_description": "Entdecken Sie Beverbach Single Malt aus Niedersachsen. Modernes Design und klassische Handwerkskunst."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185121_304de1",
+      "entity": "whiskies",
+      "item_id": "brigantia-classic",
+      "item_slug": "brigantia-classic-single-malt",
+      "status": "update_candidate",
+      "errors": [
+        "Pflichtfeld fehlt: country_id",
+        "ID bereits vorhanden (Duplikat): brigantia-classic"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "brigantia-classic",
+        "name": "Brigantia Classic Single Malt",
+        "distillery_id": "brigantia",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": 3,
+        "nas": false,
+        "tasting_notes_nose": "Reife Äpfel, frische Zitrusfrüchte und ein Hauch Eiche, dazu Vanille und weiße Blüten.",
+        "tasting_notes_palate": "Vollmundig und geschmeidig, intensive Fruchtigkeit kombiniert mit Malzsüße, Karamell und Nuancen von Bananenchips.",
+        "tasting_notes_finish": "Elegant und langanhaltend mit feiner Würze und warmen Holzakzenten.",
+        "seo_title": "Brigantia Classic Single Malt | Bodensee Whisky",
+        "seo_description": "Der preisgekrönte Brigantia Classic vom Bodensee. Ein fruchtiger und eleganter Single Malt mit 43% Vol.",
+        "slug": "brigantia-classic-single-malt",
+        "created_at": "2026-04-24T18:51:21Z",
+        "last_updated": "2026-04-24T18:51:21Z",
+        "published": false
+      },
+      "raw": {
+        "id": "brigantia-classic",
+        "name": "Brigantia Classic Single Malt",
+        "distillery_id": "brigantia",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": 3,
+        "nas": false,
+        "tasting_notes_nose": "Reife Äpfel, frische Zitrusfrüchte und ein Hauch Eiche, dazu Vanille und weiße Blüten.",
+        "tasting_notes_palate": "Vollmundig und geschmeidig, intensive Fruchtigkeit kombiniert mit Malzsüße, Karamell und Nuancen von Bananenchips.",
+        "tasting_notes_finish": "Elegant und langanhaltend mit feiner Würze und warmen Holzakzenten.",
+        "seo_title": "Brigantia Classic Single Malt | Bodensee Whisky",
+        "seo_description": "Der preisgekrönte Brigantia Classic vom Bodensee. Ein fruchtiger und eleganter Single Malt mit 43% Vol."
       }
     }
   ]
