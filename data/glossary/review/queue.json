@@ -13388,7 +13388,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "salzatal-nr-1",
         "slug": "salzatal-whisky-nr-1",
@@ -13469,7 +13469,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T14:57:23Z"
+      "reviewed_at": "2026-04-24T14:57:23Z",
+      "published_at": "2026-04-24T14:57:53Z"
     },
     {
       "batch_id": "whiskies_20260424T145702_6c6008",
@@ -13479,7 +13480,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "salzatal-nr-2",
         "slug": "salzatal-whisky-nr-2",
@@ -13558,7 +13559,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T14:57:24Z"
+      "reviewed_at": "2026-04-24T14:57:24Z",
+      "published_at": "2026-04-24T14:57:53Z"
     },
     {
       "batch_id": "whiskies_20260424T145702_6c6008",
@@ -13568,7 +13570,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "salzatal-nr-3",
         "slug": "salzatal-whisky-nr-3",
@@ -13647,7 +13649,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T14:57:26Z"
+      "reviewed_at": "2026-04-24T14:57:26Z",
+      "published_at": "2026-04-24T14:57:53Z"
     },
     {
       "batch_id": "whiskies_20260424T145702_6c6008",
@@ -13657,7 +13660,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "salzatal-single-grain",
         "slug": "salzatal-whisky-single-grain",
@@ -13732,7 +13735,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T14:57:28Z"
+      "reviewed_at": "2026-04-24T14:57:28Z",
+      "published_at": "2026-04-24T14:57:53Z"
     },
     {
       "batch_id": "whiskies_20260424T145702_6c6008",
@@ -13742,7 +13746,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "salzatal-cask-cherry",
         "slug": "salzatal-whisky-cask-edition-cherry",
@@ -13821,7 +13825,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T14:57:29Z"
+      "reviewed_at": "2026-04-24T14:57:29Z",
+      "published_at": "2026-04-24T14:57:53Z"
     }
   ]
 }
