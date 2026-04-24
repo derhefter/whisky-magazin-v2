@@ -880,6 +880,7 @@
             #lang-notice { display: none !important; }
             .mobile-lang-block { display: none !important; }
             #site-lang-notice { display: none !important; }
+            #lang-availability-hint { display: none !important; }
             body.nav-open { overflow: hidden; }
             .mobile-lang-block { display: block; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px; }
             .mobile-lang-label { display: block; font-family: 'Inter',sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-amber); font-weight: 600; margin-bottom: 10px; }

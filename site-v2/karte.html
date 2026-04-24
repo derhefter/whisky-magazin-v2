@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <meta name="google-site-verification" content="3OKzP9zKRrZV5V4-chXaN7GG39fdLAEeymXqKeqn4Rw">
     <meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">
     <title>Karte | Whisky Magazin</title>
@@ -133,7 +134,6 @@
             <div class="filter-group filter-toggles">
                 <label class="toggle-label" title="Destillerien die wir besucht haben"><input type="checkbox" id="toggle-visited" checked> 🥃 Besucht</label>
                 <label class="toggle-label" title="Destillerien auf unserer Wunschliste"><input type="checkbox" id="toggle-unvisited" checked> 🥃 Geplant</label>
-                <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswürdigkeiten</label>
             </div>
             <div class="map-stats" id="map-stats"></div>
         </div>
@@ -422,11 +422,7 @@
                 className: 'custom-marker',
                 html: '<div style="font-size:22px;opacity:0.7;filter:grayscale(80%);line-height:1;">🥃</div>',
                 iconSize: [30, 30], iconAnchor: [15, 15]
-            }),
-            city: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:20px">🏙️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
-            nature: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:20px">🌿</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
-            poi: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:20px">📍</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
-            travel_stop: L.divIcon({ className: 'custom-marker', html: '<div style="font-size:18px">✈️</div>', iconSize: [28, 28], iconAnchor: [14, 14] })
+            })
         };
 
         // Routen-Farben pro Jahr
@@ -437,10 +433,7 @@
             '#000075', '#a9a9a9', '#e6beff'
         ];
 
-        const TYPE_LABELS = {
-            distillery: 'Destillerie', city: 'Stadt', nature: 'Natur',
-            poi: 'Sehenswürdigkeit', travel_stop: 'Reisestopp'
-        };
+        const TYPE_LABELS = { distillery: 'Destillerie' };
 
         let mapData = null;
         let map = null;
@@ -609,7 +602,6 @@
             const SECTIONS = [
                 { filter: l => l.type === 'distillery' && l.visited,  icon: '🥃', label: 'Besuchte Destillerien', cssType: 'distillery' },
                 { filter: l => l.type === 'distillery' && !l.visited, icon: '🥃', label: 'Weitere Destillerien',  cssType: 'distillery-unvisited' },
-                { filter: l => l.type === 'poi',                       icon: '📍', label: 'Sehenswürdigkeiten',    cssType: 'poi' },
             ];
 
             let html = '';
@@ -695,7 +687,6 @@
             const query   = searchEl ? searchEl.value.trim().toLowerCase() : '';
             const showVisited   = document.getElementById('toggle-visited')?.checked ?? true;
             const showUnvisited = document.getElementById('toggle-unvisited')?.checked ?? false;
-            const showPoi       = document.getElementById('toggle-poi')?.checked ?? true;
 
             // Deduplizierung: Locations mit gleicher lat/lon+name werden zusammengeführt
             const seen = new Set();
@@ -707,8 +698,6 @@
                 if (loc.type === 'distillery') {
                     if (loc.visited && !showVisited) return false;
                     if (!loc.visited && !showUnvisited) return false;
-                } else if (loc.type === 'poi') {
-                    if (!showPoi) return false;
                 } else {
                     return false;
                 }
@@ -856,7 +845,7 @@
         ['filter-year', 'filter-region', 'filter-country'].forEach(id => {
             document.getElementById(id).addEventListener('change', applyFilters);
         });
-        ['toggle-visited', 'toggle-unvisited', 'toggle-poi'].forEach(id => {
+        ['toggle-visited', 'toggle-unvisited'].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.addEventListener('change', applyFilters);
         });

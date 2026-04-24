@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <meta name="google-site-verification" content="3OKzP9zKRrZV5V4-chXaN7GG39fdLAEeymXqKeqn4Rw">
     <meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">
     <title>Whisky-Destillerien | Whisky Magazin</title>
@@ -97,496 +98,527 @@
             
         </div>
     </section>
+    <section style="max-width:960px;margin:32px auto 0;padding:0 24px;">
+        
+    <div style="margin:0 0 24px;">
+        <div style="position:relative;">
+            <input type="search" id="dist-search"
+                placeholder="Destillerie suchen … z.B. Lagavulin, Ardbeg, Bowmore"
+                autocomplete="off"
+                style="width:100%;padding:10px 40px 10px 16px;border:1.5px solid var(--border);
+                       border-radius:var(--radius-sm);font-size:15px;font-family:'Inter',sans-serif;
+                       color:var(--text-primary);background:var(--bg-primary);
+                       transition:border-color 0.2s;outline:none;box-sizing:border-box;"
+                onfocus="this.style.borderColor='var(--accent-amber)'"
+                onblur="this.style.borderColor='var(--border)'"
+                oninput="(function(q){
+                    var items=document.querySelectorAll('[data-search]');
+                    var count=0;
+                    items.forEach(function(el){
+                        var match=!q||el.dataset.search.includes(q.toLowerCase());
+                        el.style.display=match?'':'none';
+                        if(match)count++;
+                    });
+                    var cnt=document.getElementById('dist-search-count');
+                    if(cnt)cnt.textContent=q?(count+' Ergebnis'+(count!==1?'se':'')):'';
+                })(this.value)">
+            <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);
+                         color:var(--text-secondary);pointer-events:none;font-size:16px;">🔍</span>
+        </div>
+        <div id="dist-search-count" style="font-size:12px;color:var(--text-secondary);
+             margin-top:6px;font-family:'Inter',sans-serif;min-height:18px;"></div>
+    </div>
+    </section>
     
     <section style="max-width:960px;margin:48px auto;padding:0 24px;">
         <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin:0 0 20px;padding-bottom:10px;border-bottom:2px solid var(--bg-surface);">Destillerien</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
-    <a href="/whisky-glossar/destillerien/lagavulin/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/lagavulin/" data-search="lagavulin islay schottland lagavulin ist eine der ikonischsten destillerien auf islay – bekannt für seine kraftvoll torfigen, tiefen und komplexen single malts." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Lagavulin</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/ardbeg/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/ardbeg/" data-search="ardbeg islay schottland ardbeg gilt als 'der raudigste raucher' unter den islay-destillerien und hat eine fanatische weltweite anhängerschaft." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Ardbeg</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/laphroaig/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/laphroaig/" data-search="laphroaig islay schottland laphroaig ist der meistverkaufte islay single malt und bekannt für seine jodigen, medizinischen und intensiv rauchigen noten." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Laphroaig</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glenfiddich/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glenfiddich/" data-search="glenfiddich speyside schottland glenfiddich ist der meistverkaufte single malt whisky der welt und seit über 130 jahren in familienbesitz." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glenfiddich</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/bowmore/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/bowmore/" data-search="bowmore islay schottland bowmore ist die älteste destillerie islays und liegt direkt am loch indaal – bekannt für ausgewogene torfigkeit und eleganz." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bowmore</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/bruichladdich/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/bruichladdich/" data-search="bruichladdich islay schottland die rebellische destillerie. produziert ungetorften bruichladdich, schwer getorften port charlotte und den extremen octomore." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bruichladdich</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/bunnahabhain/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/bunnahabhain/" data-search="bunnahabhain islay schottland traditionell bekannt für ungetorfte, maritime whiskys, was sie von den meisten islay-nachbarn unterscheidet." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bunnahabhain</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/caol-ila/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/caol-ila/" data-search="caol ila islay schottland die größte destillerie der insel, liefert einen eleganten, rauchigen malt mit noten von zitrusfrüchten." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Caol Ila</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/ardnahoe/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/ardnahoe/" data-search="ardnahoe islay schottland die jüngste aktive brennerei auf islay (mit ausnahme geschlossener restarts). moderne technik, traditioneller torf." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Ardnahoe</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glenscotia/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glenscotia/" data-search="glen scotia campbeltown schottland eine der kleinsten destillerien schottlands, bewahrt den maritimen und salzigen charakter von campbeltown." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glen Scotia</div>
         <div style="font-size:13px;color:var(--text-secondary);">Campbeltown · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/kilkerran/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/kilkerran/" data-search="kilkerran (glengyle) campbeltown schottland die heimat des kilkerran single malt, im jahr 2004 wiedereröffnet, um den status von campbeltown als whisky-region zu sichern." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Kilkerran (Glengyle)</div>
         <div style="font-size:13px;color:var(--text-secondary);">Campbeltown · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/springbank/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/springbank/" data-search="springbank campbeltown schottland die einzige destillerie schottlands, die 100% des prozesses – vom mälzen bis zur abfüllung – vor ort durchführt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Springbank</div>
         <div style="font-size:13px;color:var(--text-secondary);">Campbeltown · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/aberfeldy/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/aberfeldy/" data-search="aberfeldy highlands schottland die heimat von dewar's, bekannt für ihren honigsüßen single malt und das interaktive 'dewar's world of whisky'." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Aberfeldy</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/balblair/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/balblair/" data-search="balblair highlands schottland eine der ältesten und malerischsten destillerien schottlands, bekannt für ihre eleganten, fruchtigen malts." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Balblair</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/blair-athol/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/blair-athol/" data-search="blair athol highlands schottland eine charmante, efeubewachsene destillerie, deren nussiger malt eine wichtige komponente von bell's blend ist." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Blair Athol</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/clynelish/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/clynelish/" data-search="clynelish highlands schottland berühmt für seine wachsartige textur und seinen maritimen charakter, ist clynelish ein favorit unter kennern." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Clynelish</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/dalmore/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/dalmore/" data-search="the dalmore highlands schottland eine luxus-destillerie, bekannt für ihre schweren, sherry-betonten whiskys und das ikonische hirschgeweih." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">The Dalmore</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/dalwhinnie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/dalwhinnie/" data-search="dalwhinnie highlands schottland eine der höchstgelegenen und kältesten destillerien schottlands, produziert einen sanften, honigsüßen malt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Dalwhinnie</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/deanston/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/deanston/" data-search="deanston highlands schottland in einer ehemaligen baumwollmühle untergebracht, ist diese destillerie für ihren wachsartigen, honigsüßen und ungetorften stil bekannt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Deanston</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/edradour/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/edradour/" data-search="edradour highlands schottland lange zeit als kleinste destillerie schottlands bekannt, produziert sie einen sehr reichhaltigen highland-malt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Edradour</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/fettercairn/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/fettercairn/" data-search="fettercairn highlands schottland bekannt für ihre einzigartigen kupfer-kühlringe an den brennblasen, die einen besonders reinen spirit erzeugen." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Fettercairn</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glendronach/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glendronach/" data-search="the glendronach highlands schottland die spezialistin für exzellente sherryfass-reifung, bekannt für ihre tiefen, dunklen und fruchtigen whiskys." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">The GlenDronach</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glengoyne/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glengoyne/" data-search="glengoyne highlands schottland bekannt für den langsamsten destillationsprozess schottlands, der einen besonders fruchtigen und süßen stil erzeugt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glengoyne</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glenmorangie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glenmorangie/" data-search="glenmorangie highlands schottland besitzt die höchsten brennblasen schottlands, was zu einem besonders leichten und eleganten destillat führt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glenmorangie</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/oban/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/oban/" data-search="oban highlands schottland eine kompakte brennerei im herzen der gleichnamigen hafenstadt, die einen salzigen, leicht rauchigen highland-malt liefert." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Oban</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/old-pulteney/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/old-pulteney/" data-search="old pulteney highlands schottland bekannt als der 'maritime malt', geprägt durch die salzige meeresluft der nördlichen highlands." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Old Pulteney</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/tomatin/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/tomatin/" data-search="tomatin highlands schottland einst die größte destillerie schottlands, ist tomatin heute für seine weichen und fruchtigen highland-malts bekannt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Tomatin</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/bushmills/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/bushmills/" data-search="old bushmills distillery nordirland irland die älteste lizenzierte brennerei der welt, berühmt für ihre dreifach destillierten single malts." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Old Bushmills Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);">Nordirland · Irland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/dingle/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/dingle/" data-search="dingle distillery republik irland irland pionier der unabhängigen irischen whiskey-bewegung an der wilden westküste." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Dingle Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);">Republik Irland · Irland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/midleton/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/midleton/" data-search="midleton distillery republik irland irland das kraftzentrum des irischen whiskeys, heimat von jameson, redbreast und den spot whiskeys." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Midleton Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);">Republik Irland · Irland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/teeling/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/teeling/" data-search="teeling whiskey distillery republik irland irland die brennerei, die das whiskey-brennen zurück ins herz von dublin brachte." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Teeling Whiskey Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);">Republik Irland · Irland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/tullamore-dew/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/tullamore-dew/" data-search="tullamore d.e.w. distillery republik irland irland eine hochmoderne anlage, die den geist von daniel e. williams in tullamore weiterführt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Tullamore D.E.W. Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);">Republik Irland · Irland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/abhainn-dearg/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/abhainn-dearg/" data-search="abhainn dearg  schottland die westlichste destillerie schottlands auf der isle of lewis, bekannt für ihre handwerkliche herangehensweise." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Abhainn Dearg</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/arran/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/arran/" data-search="arran (lochranza)  schottland die erste neue destillerie auf arran seit über 150 jahren, produziert einen frischen und fruchtigen malt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Arran (Lochranza)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/harris/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/harris/" data-search="isle of harris  schottland berühmt für ihren gin, aber ihr 'the hearach' single malt zeigt den maritimen charakter der äußeren hebriden." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Isle of Harris</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/highland-park/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/highland-park/" data-search="highland park  schottland die nördlichste destillerie auf orkney, nutzt heidekraut-torf für eine einzigartige florale rauchigkeit." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Highland Park</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/jura/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/jura/" data-search="jura  schottland die einzige brennerei auf der abgelegenen insel jura, bietet eine palette von leicht bis stark getorft." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Jura</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/lagg/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/lagg/" data-search="lagg  schottland die zweite destillerie auf arran, spezialisiert auf stark getorfte malts." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Lagg</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/ledaig/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/ledaig/" data-search="ledaig (tobermory)  schottland der getorfte brand der tobermory destillerie, bekannt für seine 'schmutzigen', rauchigen noten." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Ledaig (Tobermory)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/raasay/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/raasay/" data-search="isle of raasay  schottland eine junge destillerie mit fokus auf innovative fassreifungen und lokalen torf." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Isle of Raasay</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/scapa/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/scapa/" data-search="scapa  schottland die zweite destillerie auf orkney, nutzt eine lomond-still für einen honigsüßen, ungetorften stil." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Scapa</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/talisker/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/talisker/" data-search="talisker  schottland die älteste destillerie auf skye, berühmt für ihren pfeffrigen und rauchigen charakter." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Talisker</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/tiree/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/tiree/" data-search="tiree  schottland eine mikro-destillerie auf der gleichnamigen insel, die den geist der hebriden einfängt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Tiree</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/tobermory/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/tobermory/" data-search="tobermory  schottland produziert auf mull zwei stile: den ungetorften tobermory und den stark getorften ledaig." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Tobermory</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/torabhaig/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/torabhaig/" data-search="torabhaig  schottland die zweite brennerei auf skye, produziert einen kräftig getorften 'well-tempered peat'." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Torabhaig</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/aerstone/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/aerstone/" data-search="aerstone lowlands schottland eine marke von william grant & sons, die zwei unterschiedliche lowland-stile präsentiert: sea cask und land cask." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Aerstone</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/ailsa-bay/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/ailsa-bay/" data-search="ailsa bay lowlands schottland eine hochmoderne, industrielle destillerie, die für ihre präzise steuerung von rauch und süße bekannt ist." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Ailsa Bay</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/annandale/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/annandale/" data-search="annandale lowlands schottland eine historische destillerie, die nach fast 100 jahren pause im jahr 2014 wiederbelebt wurde." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Annandale</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/auchentoshan/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/auchentoshan/" data-search="auchentoshan lowlands schottland bekannt für seine konsequente dreifachdestillation, die einen besonders weichen und leichten whisky erzeugt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Auchentoshan</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/bladnoch/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/bladnoch/" data-search="bladnoch lowlands schottland die südlichste destillerie schottlands, die nach einer wechselvollen geschichte unter neuer führung zu altem glanz zurückkehrt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bladnoch</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/daftmill/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/daftmill/" data-search="daftmill lowlands schottland eine echte farm-destillerie in fife, die nur produziert, wenn die farmarbeit es zulässt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Daftmill</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glenkinchie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glenkinchie/" data-search="glenkinchie lowlands schottland oft als 'the edinburgh malt' bezeichnet, liefert dieser whisky einen leichten, floralen und grasigen stil." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glenkinchie</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/kingsbarns/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/kingsbarns/" data-search="kingsbarns lowlands schottland eine elegante destillerie in fife, die in einem restaurierten gutshof aus dem 18. jahrhundert untergebracht ist." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Kingsbarns</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/lindores-abbey/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/lindores-abbey/" data-search="lindores abbey lowlands schottland erbaut an der geburtsstätte des schottischen whiskys, wo 1494 die erste urkundliche erwähnung stattfand." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Lindores Abbey</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/lochlea/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/lochlea/" data-search="lochlea lowlands schottland eine unabhängige farm-destillerie in ayrshire, auf der robert burns einst lebte und arbeitete." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Lochlea</div>
         <div style="font-size:13px;color:var(--text-secondary);">Lowlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/kilchoman/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/kilchoman/" data-search="kilchoman islay schottland eine farm-destillerie, die den gesamten prozess vom gerstenanbau bis zur abfüllung vor ort durchführt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Kilchoman</div>
         <div style="font-size:13px;color:var(--text-secondary);">Islay · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/bellerhof-brennerei/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/bellerhof-brennerei/" data-search="bellerhof brennerei  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Bellerhof Brennerei</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/birkenhof-brennerei/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/birkenhof-brennerei/" data-search="birkenhof brennerei  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Birkenhof Brennerei</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/blaue-maus/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/blaue-maus/" data-search="blaue maus  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Blaue Maus</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/brigantia-steinhauser/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/brigantia-steinhauser/" data-search="brigantia (steinhauser)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Brigantia (Steinhauser)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/coillm-r-brennerei-liebl/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/coillm-r-brennerei-liebl/" data-search="coillmór (brennerei liebl)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Coillmór (Brennerei Liebl)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/dolleruper-destille/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/dolleruper-destille/" data-search="dolleruper destille  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Dolleruper Destille</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/dresdner-whisky-manufaktur/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/dresdner-whisky-manufaktur/" data-search="dresdner whisky manufaktur  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Dresdner Whisky Manufaktur</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/elch-whisky-elch-braeu/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/elch-whisky-elch-braeu/" data-search="elch-whisky (elch-bräu)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Elch-Whisky (Elch-Bräu)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/finch-whiskydestillerie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/finch-whiskydestillerie/" data-search="finch® whiskydestillerie  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">finch® Whiskydestillerie</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glina-destillerie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glina-destillerie/" data-search="glina destillerie  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glina Destillerie</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/grumsiner-brennerei/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/grumsiner-brennerei/" data-search="grumsiner brennerei  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Grumsiner Brennerei</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/hardenberg-distillery-beverbach/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/hardenberg-distillery-beverbach/" data-search="hardenberg distillery (beverbach)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Hardenberg Distillery (Beverbach)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/hercynian-distilling-co-hammerschmiede/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/hercynian-distilling-co-hammerschmiede/" data-search="hercynian distilling co. / hammerschmiede  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Hercynian Distilling Co. / Hammerschmiede</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/hinricus-noyte-s-spirituosen-wismarian/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/hinricus-noyte-s-spirituosen-wismarian/" data-search="hinricus noyte's spirituosen (wismarian)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Hinricus Noyte's Spirituosen (Wismarian)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/the-luebbehusen-malt-distillery/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/the-luebbehusen-malt-distillery/" data-search="the lübbehusen malt distillery  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">The Lübbehusen Malt Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/maerkische-spezialitaetenbrennerei/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/maerkische-spezialitaetenbrennerei/" data-search="märkische spezialitätenbrennerei  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Märkische Spezialitätenbrennerei</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/meissner-spezialitaetenbrennerei-prinz-zur-lippe/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/meissner-spezialitaetenbrennerei-prinz-zur-lippe/" data-search="meißner spezialitätenbrennerei prinz zur lippe  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Meißner Spezialitätenbrennerei Prinz zur Lippe</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/number-nine-distillery/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/number-nine-distillery/" data-search="number nine distillery  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Number Nine Distillery</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/old-sandhill-destillerie-schmidt/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/old-sandhill-destillerie-schmidt/" data-search="old sandhill (destillerie schmidt)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Old Sandhill (Destillerie Schmidt)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/piekfeine-braende/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/piekfeine-braende/" data-search="piekfeine brände  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Piekfeine Brände</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/preussischer-biermaker/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/preussischer-biermaker/" data-search="preußischer biermaker  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Preußischer Biermaker</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/badische-staatsbrauerei-rothaus/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/badische-staatsbrauerei-rothaus/" data-search="badische staatsbrauerei rothaus  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Badische Staatsbrauerei Rothaus</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/feinbrennerei-sasse/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/feinbrennerei-sasse/" data-search="feinbrennerei sasse  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Feinbrennerei Sasse</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/schlitzer-destillerie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/schlitzer-destillerie/" data-search="schlitzer destillerie  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Schlitzer Destillerie</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/erlebnisdestillerie-senft/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/erlebnisdestillerie-senft/" data-search="erlebnisdestillerie senft  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Erlebnisdestillerie Senft</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/slyrs-destillerie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/slyrs-destillerie/" data-search="slyrs destillerie  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Slyrs Destillerie</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/st-kilian-distillers/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/st-kilian-distillers/" data-search="st. kilian distillers  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">St. Kilian Distillers</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/stonewood-whisky-destillerie-schraml/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/stonewood-whisky-destillerie-schraml/" data-search="stonewood whisky-destillerie (schraml)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Stonewood Whisky-Destillerie (Schraml)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/stork-club-spreewood-distillers/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/stork-club-spreewood-distillers/" data-search="stork club (spreewood distillers)  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Stork Club (Spreewood Distillers)</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/thousand-mountains/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/thousand-mountains/" data-search="thousand mountains  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Thousand Mountains</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/brennerei-vallendar/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/brennerei-vallendar/" data-search="brennerei vallendar  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Brennerei Vallendar</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/weyermann-destillerie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/weyermann-destillerie/" data-search="weyermann destillerie  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Weyermann Destillerie</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/zeitzer-whisky-manufaktur/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/zeitzer-whisky-manufaktur/" data-search="zeitzer whisky manufaktur  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Zeitzer Whisky Manufaktur</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/edelbrennerei-ziegler/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/edelbrennerei-ziegler/" data-search="edelbrennerei ziegler  deutschland " style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Edelbrennerei Ziegler</div>
         <div style="font-size:13px;color:var(--text-secondary);"> · Deutschland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/aberlour/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/aberlour/" data-search="aberlour speyside schottland ein klassiker aus speyside, berühmt für seine tiefen, fruchtigen whiskys mit ausgeprägter sherry-reifung." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Aberlour</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/balvenie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/balvenie/" data-search="the balvenie speyside schottland eine der letzten destillerien, die noch alle 'fünf seltenen handwerke' – inklusive eigener malzböden – betreibt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">The Balvenie</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/craigellachie/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/craigellachie/" data-search="craigellachie speyside schottland bekannt für seinen schwefeligen, fleischigen charakter, der durch die nutzung traditioneller worm tubs entsteht." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Craigellachie</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glenfarclas/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glenfarclas/" data-search="glenfarclas speyside schottland eine der letzten unabhängigen familien-destillerien schottlands, berühmt für ihre schweren sherry-fass-reifungen." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Glenfarclas</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/old-pulteney-15/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/old-pulteney-15/" data-search="old pulteney 15 year old highlands schottland ein wunderbar ausbalancierter whisky mit sherry-einfluss." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Old Pulteney 15 Year Old</div>
         <div style="font-size:13px;color:var(--text-secondary);">Highlands · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/glenlivet/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/glenlivet/" data-search="the glenlivet speyside schottland die erste lizensierte destillerie im glenlivet-tal, bekannt als 'der single malt, mit dem alles begann'." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">The Glenlivet</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/macallan/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/macallan/" data-search="the macallan speyside schottland eine der weltweit renommiertesten destillerien, berühmt für ihre exklusiven sherry-fass-reifungen." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">The Macallan</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
     </a>
-    <a href="/whisky-glossar/destillerien/mortlach/" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
+    <a href="/whisky-glossar/destillerien/mortlach/" data-search="mortlach speyside schottland bekannt als 'the beast of dufftown', produziert diese destillerie einen extrem kräftigen und fleischigen malt." style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;text-decoration:none;color:inherit;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='var(--shadow-hover)'" onmouseout="this.style.boxShadow=''">
         <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px;">Mortlach</div>
         <div style="font-size:13px;color:var(--text-secondary);">Speyside · Schottland</div>
         
