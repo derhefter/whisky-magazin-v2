@@ -1,4 +1,4 @@
-"""Vercel Serverless Function: Admin Draft Article Management (edit / approve / reject)."""
+"""Vercel Serverless Function: Admin Draft Article Management (edit / approve / reject / image)."""
 import base64
 import hashlib
 import hmac
@@ -8,7 +8,7 @@ import re
 import time
 from http.server import BaseHTTPRequestHandler
 from urllib.error import HTTPError
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
@@ -17,8 +17,10 @@ BREVO_LIST_ID = os.environ.get("BREVO_LIST_ID", "3").strip()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "derhefter/whisky-magazin-v2").strip()
 GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main").strip()
+UNSPLASH_ACCESS_KEY = os.environ.get("UNSPLASH_ACCESS_KEY", os.environ.get("UNSPLASH_API_KEY", "")).strip()
 
 TOKEN_TTL = 86400
+IMAGES_DIR = "site-v2/images"
 
 
 def _verify_token(token: str) -> bool:
@@ -56,6 +58,74 @@ def _cors_headers(origin=""):
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, x-admin-token",
     }
+
+
+def _safe_slug(text):
+    text = (text or "").lower()
+    for src, dst in [("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss"), ("&", "-"), ("'", "")]:
+        text = text.replace(src, dst)
+    text = re.sub(r"[^a-z0-9\-]", "-", text)
+    return re.sub(r"-+", "-", text).strip("-")[:60]
+
+
+def _unsplash_search(query, per_page=4):
+    if not UNSPLASH_ACCESS_KEY or not query or not query.strip():
+        return []
+    params = {
+        "query": query.strip(),
+        "per_page": str(max(1, min(per_page, 12))),
+        "orientation": "landscape",
+        "content_filter": "high",
+    }
+    qs = "&".join(f"{k}={v}" for k, v in params.items())
+    url = f"https://api.unsplash.com/search/photos?{qs}"
+    req = Request(url, headers={
+        "Authorization": f"Client-ID {UNSPLASH_ACCESS_KEY}",
+        "User-Agent": "WhiskyMagazin-Dashboard",
+    })
+    try:
+        with urlopen(req, timeout=10) as resp:
+            if resp.status != 200:
+                return []
+            data = json.loads(resp.read().decode("utf-8"))
+    except Exception:
+        return []
+
+    candidates = []
+    for p in data.get("results", []):
+        photographer = p.get("user", {}).get("name", "")
+        photo_link = p.get("links", {}).get("html", "")
+        raw = p.get("urls", {}).get("raw", "")
+        if not raw:
+            continue
+        candidates.append({
+            "photo_id": p.get("id", ""),
+            "url_full": raw + "?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=80",
+            "url_small": raw + "?w=400&h=225&fit=crop&crop=entropy&auto=format&q=70",
+            "photographer": photographer,
+            "description": p.get("alt_description") or p.get("description") or "",
+            "attribution": (
+                f'Foto von <a href="{photo_link}?utm_source=whisky_magazin'
+                f'&utm_medium=referral">{photographer}</a> auf '
+                f'<a href="https://unsplash.com/?utm_source=whisky_magazin'
+                f'&utm_medium=referral">Unsplash</a>'
+            ),
+        })
+    return candidates
+
+
+def _download_image_bytes(url):
+    req = Request(url, headers={"User-Agent": "WhiskyMagazin-Dashboard"})
+    try:
+        with urlopen(req, timeout=30) as resp:
+            if resp.status != 200:
+                return None
+            data = resp.read()
+            if len(data) < 5000:
+                return None
+            return data
+    except Exception:
+        return None
 
 
 def _github_get(path):
@@ -220,8 +290,45 @@ class handler(BaseHTTPRequestHandler):
         except Exception as e:
             return None, str(e)
 
+    def do_GET(self):
+        """GET ?action=image_candidates&filename=X[&query=Y] → 4 Unsplash candidates."""
+        cors = _cors_headers(self.headers.get("Origin", ""))
+        token = self.headers.get("x-admin-token", "")
+        if not _verify_token(token):
+            return self._json(401, {"error": "Unauthorized"}, cors)
+
+        qs = parse_qs(urlparse(self.path).query)
+        action = (qs.get("action", [""])[0] or "").strip().lower()
+        if action != "image_candidates":
+            return self._json(400, {"error": "unknown action"}, cors)
+
+        filename = (qs.get("filename", [""])[0] or "").strip()
+        query = (qs.get("query", [""])[0] or "").strip()
+
+        default_query = ""
+        if filename:
+            if not re.match(r'^[\w\-]+\.json$', filename):
+                return self._json(400, {"error": "invalid filename"}, cors)
+            _, article, err = _fetch_draft(filename)
+            if err:
+                return self._json(404, {"error": err}, cors)
+            default_query = article.get("title", "")
+
+        search_query = query or default_query
+        if not search_query:
+            return self._json(400, {"error": "query or filename required"}, cors)
+        if not UNSPLASH_ACCESS_KEY:
+            return self._json(500, {"error": "UNSPLASH_ACCESS_KEY not configured"}, cors)
+
+        candidates = _unsplash_search(search_query, per_page=4)
+        return self._json(200, {
+            "query": search_query,
+            "default_query": default_query,
+            "candidates": candidates,
+        }, cors)
+
     def do_PUT(self):
-        """Update a draft article (edit fields)."""
+        """Update a draft article (edit fields) OR set its image (action='set_image')."""
         cors = _cors_headers(self.headers.get("Origin", ""))
         token = self.headers.get("x-admin-token", "")
         if not _verify_token(token):
@@ -234,6 +341,10 @@ class handler(BaseHTTPRequestHandler):
         filename = (body.get("filename") or "").strip()
         if not filename or not re.match(r'^[\w\-]+\.json$', filename):
             return self._json(400, {"error": "filename is required and must be a safe .json filename"}, cors)
+
+        action = (body.get("action") or "").strip().lower()
+        if action == "set_image":
+            return self._handle_set_image(filename, body, cors)
 
         file_data, article, err = _fetch_draft(filename)
         if err:
@@ -340,6 +451,66 @@ class handler(BaseHTTPRequestHandler):
         if "error" in result:
             return self._json(500, {"error": result["error"]}, cors)
         return self._json(200, {"success": True, "filename": filename, "action": "rejected"}, cors)
+
+    def _handle_set_image(self, filename, body, cors):
+        """Download Unsplash image, save to site-v2/images/{slug}.jpg, update draft JSON."""
+        url_full = (body.get("url_full") or "").strip()
+        if not url_full.startswith("https://"):
+            return self._json(400, {"error": "url_full missing"}, cors)
+        attribution = body.get("attribution", "")
+        photo_id = body.get("photo_id", "")
+        alt = (body.get("alt") or "").strip()
+
+        file_data, article, err = _fetch_draft(filename)
+        if err:
+            return self._json(404, {"error": err}, cors)
+
+        meta_slug = article.get("meta", {}).get("slug", "") if isinstance(article.get("meta"), dict) else ""
+        slug = _safe_slug(meta_slug) if meta_slug else _safe_slug(article.get("title", "artikel"))
+        if not slug:
+            return self._json(500, {"error": "could not derive slug"}, cors)
+
+        img_bytes = _download_image_bytes(url_full)
+        if not img_bytes:
+            return self._json(502, {"error": "image download failed"}, cors)
+
+        image_path = f"{IMAGES_DIR}/{slug}.jpg"
+        existing = _github_get(f"contents/{image_path}")
+        existing_sha = existing.get("sha") if isinstance(existing, dict) and "error" not in existing else None
+
+        if existing_sha:
+            img_result = _github_update_file(image_path, img_bytes, existing_sha,
+                                             f"dashboard: update image for {slug}")
+        else:
+            img_result = _github_create_file(image_path, img_bytes,
+                                             f"dashboard: add image for {slug}")
+        if "error" in img_result:
+            return self._json(500, {"error": f"image upload: {img_result['error']}"}, cors)
+
+        article["image_url"] = f"/images/{slug}.jpg"
+        if alt:
+            article["image_alt"] = alt
+        elif not article.get("image_alt"):
+            article["image_alt"] = article.get("title", "")
+        article["image_credit"] = attribution
+        article["image_photo_id"] = photo_id
+        article["image_source"] = "unsplash"
+
+        draft_bytes = json.dumps(article, ensure_ascii=False, indent=2).encode("utf-8")
+        draft_result = _github_update_file(
+            f"articles/drafts/{filename}", draft_bytes, file_data.get("sha", ""),
+            f"dashboard: update image for draft {filename}",
+        )
+        if "error" in draft_result:
+            return self._json(500, {"error": f"draft update: {draft_result['error']}"}, cors)
+
+        return self._json(200, {
+            "success": True, "filename": filename,
+            "image_url": article["image_url"],
+            "image_alt": article["image_alt"],
+            "image_credit": article["image_credit"],
+            "image_photo_id": article["image_photo_id"],
+        }, cors)
 
     def _handle_unpublish(self, filename, cors):
         """Move a published article articles/{filename} back to articles/drafts/{filename}."""

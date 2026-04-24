@@ -1695,7 +1695,6 @@ const API = {
   auth:     '/api/admin_auth',
   data:     '/api/admin_data',
   articles: '/api/admin_articles',
-  image:    '/api/admin_image',
   topics:   '/api/admin_topics',
   generate: '/api/generate_article',
   publish:  '/api/admin_publish',
@@ -2772,9 +2771,9 @@ async function searchImageCandidates() {
   _imageModal.selected = null;
 
   try {
-    const params = new URLSearchParams({ filename });
+    const params = new URLSearchParams({ action: 'image_candidates', filename });
     if (query) params.set('query', query);
-    const data = await apiGet(API.image + '?' + params.toString());
+    const data = await apiGet(API.articles + '?' + params.toString());
     const candidates = data.candidates || [];
     if (candidates.length === 0) {
       statusEl.textContent = `Keine Treffer für „${data.query || query}".`;
@@ -2817,7 +2816,8 @@ async function saveImageSelection() {
   btn.disabled = true;
   btn.textContent = 'Lädt Bild…';
   try {
-    const result = await apiPut(API.image, {
+    const result = await apiPut(API.articles, {
+      action:      'set_image',
       filename,
       photo_id:    sel.photo_id,
       url_full:    sel.url_full,
