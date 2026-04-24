@@ -14247,7 +14247,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14287,7 +14287,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:54:08Z"
+      "reviewed_at": "2026-04-24T18:54:08Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185131_2a35dd",
@@ -14299,7 +14300,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14339,7 +14340,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:56:42Z"
+      "reviewed_at": "2026-04-24T18:56:42Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185134_1e4c47",
@@ -14351,7 +14353,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14391,7 +14393,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:57:22Z"
+      "reviewed_at": "2026-04-24T18:57:22Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185137_bc4e5f",
@@ -14403,7 +14406,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -14464,7 +14467,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:57:31Z"
+      "reviewed_at": "2026-04-24T18:57:31Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185139_623c4b",
@@ -14476,7 +14480,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -14535,7 +14539,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:57:41Z"
+      "reviewed_at": "2026-04-24T18:57:41Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185143_035036",
@@ -14547,7 +14552,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -14605,7 +14610,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:57:50Z"
+      "reviewed_at": "2026-04-24T18:57:50Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185146_69c84c",
@@ -14617,7 +14623,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14657,7 +14663,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:57:56Z"
+      "reviewed_at": "2026-04-24T18:57:56Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185149_a469ea",
@@ -14669,7 +14676,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14709,7 +14716,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:02Z"
+      "reviewed_at": "2026-04-24T18:58:02Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185152_ed84e4",
@@ -14721,7 +14729,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14761,7 +14769,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:08Z"
+      "reviewed_at": "2026-04-24T18:58:08Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185155_7f81bd",
@@ -14773,7 +14782,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14813,7 +14822,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:14Z"
+      "reviewed_at": "2026-04-24T18:58:14Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185157_1c68ca",
@@ -14825,7 +14835,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14865,7 +14875,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:20Z"
+      "reviewed_at": "2026-04-24T18:58:20Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185200_98d3b1",
@@ -14877,7 +14888,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14917,7 +14928,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:27Z"
+      "reviewed_at": "2026-04-24T18:58:27Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185204_90fa15",
@@ -14929,7 +14941,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14969,7 +14981,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:33Z"
+      "reviewed_at": "2026-04-24T18:58:33Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185207_bfa89e",
@@ -14981,7 +14994,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -15038,7 +15051,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:39Z"
+      "reviewed_at": "2026-04-24T18:58:39Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185209_701e33",
@@ -15050,7 +15064,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15090,7 +15104,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:45Z"
+      "reviewed_at": "2026-04-24T18:58:45Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185212_b9ca75",
@@ -15102,7 +15117,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15142,7 +15157,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:52Z"
+      "reviewed_at": "2026-04-24T18:58:52Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185215_94a571",
@@ -15154,7 +15170,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -15211,7 +15227,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:58:59Z"
+      "reviewed_at": "2026-04-24T18:58:59Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185218_e423d2",
@@ -15223,7 +15240,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -15285,7 +15302,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:06Z"
+      "reviewed_at": "2026-04-24T18:59:06Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185221_d20c13",
@@ -15297,7 +15315,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15337,7 +15355,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:12Z"
+      "reviewed_at": "2026-04-24T18:59:12Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185224_617fe6",
@@ -15349,7 +15368,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15389,7 +15408,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:17Z"
+      "reviewed_at": "2026-04-24T18:59:17Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185227_970750",
@@ -15401,7 +15421,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15441,7 +15461,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:23Z"
+      "reviewed_at": "2026-04-24T18:59:23Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185230_fa8d41",
@@ -15453,7 +15474,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15493,7 +15514,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:29Z"
+      "reviewed_at": "2026-04-24T18:59:29Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185233_7fed41",
@@ -15505,7 +15527,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15545,7 +15567,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:34Z"
+      "reviewed_at": "2026-04-24T18:59:34Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185236_541bdb",
@@ -15557,7 +15580,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15597,7 +15620,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:40Z"
+      "reviewed_at": "2026-04-24T18:59:40Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185239_a03185",
@@ -15609,7 +15633,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15649,7 +15673,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:46Z"
+      "reviewed_at": "2026-04-24T18:59:46Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185242_314aa4",
@@ -15661,7 +15686,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -15701,7 +15726,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:52Z"
+      "reviewed_at": "2026-04-24T18:59:52Z",
+      "published_at": "2026-04-24T19:00:04Z"
     },
     {
       "batch_id": "whiskies_20260424T185245_bc4d83",
@@ -15713,7 +15739,7 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "coillmor-american-oak",
         "distillery_id": "coillmor",
@@ -15771,7 +15797,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T18:59:59Z"
+      "reviewed_at": "2026-04-24T18:59:59Z",
+      "published_at": "2026-04-24T19:00:04Z"
     }
   ]
 }
