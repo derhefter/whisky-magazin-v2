@@ -1,0 +1,55 @@
+{
+  "batch_id": "whiskies_20260424T185233_7fed41",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:52:33Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 0,
+  "errors": 1,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "vallendar-single-malt",
+        "name": "Vallendar Single Malt Whisky",
+        "distillery_id": "vallendar",
+        "whisky_type": "Single Malt",
+        "abv": 40,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Enorm aromendicht mit Noten von Honig, reifen Birnen und einer feinen Getreidewürze.",
+        "tasting_notes_palate": "Präzise und rein, vielschichtige Fruchtaromen gepaart mit eleganter Malzsüße.",
+        "tasting_notes_finish": "Langanhaltend, sauber und komplex im Nachklang.",
+        "seo_title": "Vallendar Single Malt | Präzision von der Mosel",
+        "seo_description": "Der Single Malt von Hubertus Vallendar steht für höchste Reinheit und Aromendichte. Ein Meisterwerk der Brennkunst."
+      },
+      "normalized": {
+        "id": "vallendar-single-malt",
+        "name": "Vallendar Single Malt Whisky",
+        "distillery_id": "vallendar",
+        "whisky_type": "Single Malt",
+        "abv": 40,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Enorm aromendicht mit Noten von Honig, reifen Birnen und einer feinen Getreidewürze.",
+        "tasting_notes_palate": "Präzise und rein, vielschichtige Fruchtaromen gepaart mit eleganter Malzsüße.",
+        "tasting_notes_finish": "Langanhaltend, sauber und komplex im Nachklang.",
+        "seo_title": "Vallendar Single Malt | Präzision von der Mosel",
+        "seo_description": "Der Single Malt von Hubertus Vallendar steht für höchste Reinheit und Aromendichte. Ein Meisterwerk der Brennkunst.",
+        "slug": "vallendar-single-malt-whisky",
+        "created_at": "2026-04-24T18:52:33Z",
+        "last_updated": "2026-04-24T18:52:33Z",
+        "published": false
+      },
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
