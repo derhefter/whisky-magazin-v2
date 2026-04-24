@@ -2071,6 +2071,13 @@
       "imported_at": "2026-04-24T18:52:36Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185239_a03185",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:52:39Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -15450,6 +15457,50 @@
         "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
         "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
         "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185239_a03185",
+      "entity": "whiskies",
+      "item_id": "weyermann-single-malt",
+      "item_slug": "weyermann-single-malt-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "weyermann-single-malt",
+        "name": "Weyermann Single Malt Whisky",
+        "distillery_id": "weyermann",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Einzigartige Malzaromatik, Noten von Schokolade, Röstkaffee und dunklem Karamell.",
+        "tasting_notes_palate": "Vollmundig mit einer komplexen Textur, Röstaromen treffen auf Süße und Vanille.",
+        "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
+        "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
+        "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil.",
+        "slug": "weyermann-single-malt-whisky",
+        "created_at": "2026-04-24T18:52:39Z",
+        "last_updated": "2026-04-24T18:52:39Z",
+        "published": false
+      },
+      "raw": {
+        "id": "weyermann-single-malt",
+        "name": "Weyermann Single Malt Whisky",
+        "distillery_id": "weyermann",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Einzigartige Malzaromatik, Noten von Schokolade, Röstkaffee und dunklem Karamell.",
+        "tasting_notes_palate": "Vollmundig mit einer komplexen Textur, Röstaromen treffen auf Süße und Vanille.",
+        "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
+        "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
+        "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil."
       }
     }
   ]
