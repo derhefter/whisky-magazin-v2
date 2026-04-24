@@ -1,0 +1,56 @@
+{
+  "batch_id": "whiskies_20260424T185124_d6b0f3",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:24Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht."
+      },
+      "normalized": {
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
+        "created_at": "2026-04-24T18:51:24Z",
+        "last_updated": "2026-04-24T18:51:24Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "Pflichtfeld fehlt: country_id",
+        "ID bereits vorhanden (Duplikat): coillmor-american-oak"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
