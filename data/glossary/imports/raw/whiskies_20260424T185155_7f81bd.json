@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185155_7f81bd",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:55Z",
+  "raw": [
+    {
+      "id": "mc-raven-single-malt",
+      "name": "Mc Raven Single Malt Whisky",
+      "distillery_id": "thousand-mountains",
+      "whisky_type": "Single Malt",
+      "abv": 46.2,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Fruchtig und elegant mit Noten von dunklen Beeren, floralen Hinweisen und einer Spur Vanille.",
+      "tasting_notes_palate": "Vollmundig mit Akzenten von dunklen Früchten, Malz, Eichenholz und einer feinen Schokoladennote.",
+      "tasting_notes_finish": "Langanhaltend und wärmend mit würzigen Nuancen und einer angenehmen Süße.",
+      "seo_title": "Mc Raven Single Malt | Thousand Mountains Sauerland",
+      "seo_description": "Der Mc Raven ist der Star der Thousand Mountains Distillery. Ein eleganter Single Malt mit 46,2% Vol. aus dem Sauerland."
+    }
+  ]
+}
