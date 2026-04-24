@@ -15102,24 +15102,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "senft-bodensee-whisky",
-        "name": "Senft Bodensee Whisky",
-        "distillery_id": "senft",
-        "whisky_type": "Single Malt",
-        "abv": 42,
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
+        "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Vollmundig mit angenehmer Rauchnote, unterlegt mit fruchtigen Sherry-Aromen und Malz.",
-        "tasting_notes_palate": "Harmonisches Zusammenspiel von dezenter Torfigkeit, Vanille und reifen roten Früchten.",
-        "tasting_notes_finish": "Fruchtig-warmer Nachklang mit einem Hauch von Würze.",
-        "seo_title": "Senft Bodensee Whisky | Fruchtig-rauchiger Single Malt",
-        "seo_description": "Der Bodensee Whisky von Senft reift in einer Kombination aus Bourbon- und Sherryfässern. Ein harmonisches Erlebnis.",
-        "slug": "senft-bodensee-whisky",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:52:12Z",
-        "last_updated": "2026-04-24T18:52:12Z",
-        "published": false
+        "last_updated": "2026-04-24T18:58:52Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "senft-bodensee-whisky",
@@ -15134,7 +15139,10 @@
         "tasting_notes_finish": "Fruchtig-warmer Nachklang mit einem Hauch von Würze.",
         "seo_title": "Senft Bodensee Whisky | Fruchtig-rauchiger Single Malt",
         "seo_description": "Der Bodensee Whisky von Senft reift in einer Kombination aus Bourbon- und Sherryfässern. Ein harmonisches Erlebnis."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:58:52Z"
     },
     {
       "batch_id": "whiskies_20260424T185215_94a571",
