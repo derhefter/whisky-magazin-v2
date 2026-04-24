@@ -1,0 +1,30 @@
+{
+  "batch_id": "distilleries_20260424T085357_d1610d",
+  "entity": "distilleries",
+  "imported_at": "2026-04-24T08:53:57Z",
+  "raw": [
+    {
+      "id": "mortlach",
+      "name": "Mortlach",
+      "slug": "mortlach",
+      "region_id": "speyside",
+      "country_id": "scotland",
+      "status": "active",
+      "founded": 1823,
+      "owner": "Diageo",
+      "website": "https://www.malts.com/en-gb/distilleries/mortlach",
+      "short_description": "Bekannt als 'The Beast of Dufftown', produziert diese Destillerie einen extrem kräftigen und fleischigen Malt.",
+      "long_description": "Mortlach war die erste legale Brennerei in Dufftown, der heutigen Whisky-Hauptstadt Schottlands. Sie ist berühmt für ihren hochkomplexen Destillationsprozess, der als '2.81-fache Destillation' bekannt ist. Dieser komplizierte Ablauf in sechs unterschiedlich geformten Brennblasen erzeugt einen schweren, robusten und 'fleischigen' Spirit, der Mortlach den Spitznamen 'The Beast of Dufftown' einbrachte. Er wird traditionell in Sherryfässern gereift und ist ein Favorit für anspruchsvolle Genießer.",
+      "travel_info": "Die Destillerie ist für Besucher teilweise zugänglich (meist 11:00-17:00 Uhr). Touren werden oft im Rahmen von Festivals wie dem 'Spirit of Speyside' angeboten. Eine Vorab-Anfrage oder Buchung über malts.com ist für Besuche in Dufftown empfehlenswert.",
+      "seo_title": "Mortlach Destillerie: Das Biest von Dufftown | Whisky-Glossar",
+      "seo_description": "Erfahre mehr über Mortlach in Dufftown. Entdecke das Geheimnis der 2.81-fachen Destillation, den kräftig-fleischigen Single Malt und Besuche bei der Speyside-Legende.",
+      "coordinates": {
+        "lat": 57.4411,
+        "lng": -3.1258
+      },
+      "published": true,
+      "created_at": "2026-04-21T17:05:36Z",
+      "last_updated": "2026-04-23T02:05:00Z"
+    }
+  ]
+}
