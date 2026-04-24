@@ -1924,6 +1924,13 @@
       "imported_at": "2026-04-24T18:51:34Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185137_bc4e5f",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:37Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14187,6 +14194,86 @@
         "tasting_notes_finish": "Langanhaltend und intensiv rauchig mit einer Spur Meersalz und Süße.",
         "seo_title": "Elch-Whisky Torf vom Dorf | Kräftig rauchiger Franken-Whisky",
         "seo_description": "Torf vom Dorf ist die rauchige Legende aus Thuisbrunn. Single Malt mit deutschem Torfrauch und 51,9% Vol."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185137_bc4e5f",
+      "entity": "whiskies",
+      "item_id": "elsburn-journey",
+      "item_slug": "elsburn-the-journey-single-malt",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "elsburn-journey",
+        "distillery_id": "hercynian",
+        "name": "Elsburn The Journey (2023 Edition)",
+        "whisky_type": "Single Malt",
+        "slug": "elsburn-the-journey-single-malt",
+        "published": true,
+        "age_statement": "NAS",
+        "nas": true,
+        "abv": 43,
+        "tasting_notes_nose": "Fruchtige Aromen kombiniert mit deutlichem Eichenholz. Noten von Malz, Toffee, Rosinen und ein Hauch Vanille.",
+        "tasting_notes_palate": "Weich und malzig am Gaumen. Es zeigen sich getrocknete Früchte, Eiche, Toffee und eine dezente Mokka-Note.",
+        "tasting_notes_finish": "Ein schöner Wechselspiel zwischen fruchtigen und würzig-herben Noten im Nachhall.",
+        "short_description": "Der ideale Einstieg in die Welt des Harzer Single Malts – fruchtig und mild.",
+        "long_description": "Elsburn The Journey ist die Standardabfüllung der Hercynian Distilling Co. und dient als Botschafter des milden Harzer Whisky-Stils. Er wird aus einer Komposition verschiedener Fasstypen kreiert, wobei der Fokus auf hochwertigen Sherry- und Süßweinfässern liegt. 'The Journey' ersetzt die frühere Core Range und bietet ein konstantes Geschmackserlebnis, das die fruchtige DNA der Brennerei perfekt einfängt.",
+        "seo_title": "Elsburn The Journey | Der Klassiker aus der Hammerschmiede Harz",
+        "seo_description": "Elsburn The Journey Single Malt Whisky. Erleben Sie die fruchtige Milde des Harzes. Gereift in feinsten Weinfässern. Jetzt entdecken.",
+        "style_tags": [
+          "mild",
+          "fruchtig",
+          "malzig",
+          "Harz"
+        ],
+        "cask_types": [
+          "Sherry",
+          "Port",
+          "Madeira",
+          "Marsala",
+          "Malaga"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z",
+        "created_at": "2026-04-24T18:51:37Z",
+        "last_updated": "2026-04-24T18:51:37Z"
+      },
+      "raw": {
+        "id": "elsburn-journey",
+        "distillery_id": "hercynian",
+        "name": "Elsburn The Journey (2023 Edition)",
+        "whisky_type": "Single Malt",
+        "slug": "elsburn-the-journey-single-malt",
+        "published": true,
+        "age_statement": "NAS",
+        "nas": true,
+        "abv": 43,
+        "tasting_notes_nose": "Fruchtige Aromen kombiniert mit deutlichem Eichenholz. Noten von Malz, Toffee, Rosinen und ein Hauch Vanille.",
+        "tasting_notes_palate": "Weich und malzig am Gaumen. Es zeigen sich getrocknete Früchte, Eiche, Toffee und eine dezente Mokka-Note.",
+        "tasting_notes_finish": "Ein schöner Wechselspiel zwischen fruchtigen und würzig-herben Noten im Nachhall.",
+        "short_description": "Der ideale Einstieg in die Welt des Harzer Single Malts – fruchtig und mild.",
+        "long_description": "Elsburn The Journey ist die Standardabfüllung der Hercynian Distilling Co. und dient als Botschafter des milden Harzer Whisky-Stils. Er wird aus einer Komposition verschiedener Fasstypen kreiert, wobei der Fokus auf hochwertigen Sherry- und Süßweinfässern liegt. 'The Journey' ersetzt die frühere Core Range und bietet ein konstantes Geschmackserlebnis, das die fruchtige DNA der Brennerei perfekt einfängt.",
+        "seo_title": "Elsburn The Journey | Der Klassiker aus der Hammerschmiede Harz",
+        "seo_description": "Elsburn The Journey Single Malt Whisky. Erleben Sie die fruchtige Milde des Harzes. Gereift in feinsten Weinfässern. Jetzt entdecken.",
+        "style_tags": [
+          "mild",
+          "fruchtig",
+          "malzig",
+          "Harz"
+        ],
+        "cask_types": [
+          "Sherry",
+          "Port",
+          "Madeira",
+          "Marsala",
+          "Malaga"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z"
       }
     }
   ]
