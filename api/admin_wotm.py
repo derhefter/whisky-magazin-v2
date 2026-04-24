@@ -904,13 +904,16 @@ class handler(BaseHTTPRequestHandler):
                         photo_b64 = photo_b64.split(",", 1)[1]
                     img_bytes = base64.b64decode(photo_b64)
                     ext = (photo_ext_list[idx] if idx < len(photo_ext_list) else "jpg").strip().lstrip(".")
-                    img_path = f"images/wotm/{month_key}_{idx+1}.{ext}"
-                    existing = _github_get(f"contents/{img_path}")
+                    # Speicherort im Repo: site-v2/images/wotm/ (Vercel output directory)
+                    # URL im Browser: /images/wotm/... (site-v2 wird als root ausgeliefert)
+                    img_repo_path = f"site-v2/images/wotm/{month_key}_{idx+1}.{ext}"
+                    img_url_path  = f"/images/wotm/{month_key}_{idx+1}.{ext}"
+                    existing = _github_get(f"contents/{img_repo_path}")
                     img_sha  = existing.get("sha") if "error" not in existing else None
-                    result   = _github_put(img_path, img_bytes, img_sha,
+                    result   = _github_put(img_repo_path, img_bytes, img_sha,
                                            f"WotM Foto {month_key} #{idx+1}")
                     if "error" not in result:
-                        new_photo_urls.append(f"/{img_path}")
+                        new_photo_urls.append(img_url_path)
                 except Exception:
                     pass
 

@@ -888,7 +888,7 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 | Problem                                                             | Moegliche Ursache                       | Loesung                                                                                                      |
 | ------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | Dashboard zeigt "Fehler"                                            | GITHUB_TOKEN abgelaufen                 | Neuen Token in Vercel setzen + neu deployen                                                                  |
-| Dashboard zeigt Nullen ueberall                                     | Env Vars fehlen oder falsch             | `/api/admin_debug` aufrufen (nach Login)                                                                     |
+| Dashboard zeigt Nullen ueberall                                     | Env Vars fehlen oder falsch             | Vercel -> Settings -> Environment Variables pruefen (GITHUB_TOKEN, DASHBOARD_PASSWORD, BREVO_API_KEY)        |
 | Artikel werden nicht veroeffentlicht                                | Keine freigegebenen Entwuerfe           | Im Artikel-Tab pruefen und freigeben                                                                         |
 | Artikel werden nicht veroeffentlicht                                | Cron-Job laeuft nicht                   | Vercel Dashboard -> Cron Jobs pruefen                                                                        |
 | Artikel ist im Dashboard "veroeffentlicht" aber nicht auf der Seite | `meta.slug` fehlte in der JSON-Datei    | `python main.py --build-v2` ausfuehren — der Builder normalisiert fehlende Slugs automatisch seit April 2026 |
@@ -909,23 +909,7 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 | Uebersetzung liefert alten Stand                                    | localStorage-Cache (24h) veraltet       | Browser-DevTools -> Application -> LocalStorage -> `tr_slug_lang` Eintrag loeschen                          |
 | Glossar-Import zeigt keine Duplikat-Warnungen                       | Batch-Groesse zu klein                  | Mindestens 5+ Eintraege importieren; Duplikate werden nur gegen bestehende Eintraege erkannt                 |
 
-### 8.2 Debug-Endpoint
-
-Nach dem Login im Dashboard kannst du den Debug-Endpoint aufrufen:
-
-```
-GET https://www.whisky-reise.com/api/admin_debug
-Header: x-admin-token: <dein-token>
-```
-
-Zeigt:
-
-- Welche Environment Variables gesetzt sind (ja/nein, keine Werte!)
-- GitHub API Verbindungsstatus
-- Brevo API Verbindungsstatus
-- Drafts-Verzeichnis Inhalt
-
-### 8.3 Notfall-Prozeduren
+### 8.2 Notfall-Prozeduren
 
 #### Seite ist komplett down
 
@@ -982,7 +966,6 @@ whisky-magazin/
 |   +-- admin_topics.py         Themen-Queue verwalten
 |   +-- admin_publish.py        Cron: Artikel veroeffentlichen
 |   +-- admin_wotm.py           WotM + Newsletter
-|   +-- admin_debug.py          Debug-Endpoint
 |   +-- generate_article.py     KI-Artikelgenerierung
 |   +-- subscribe.py            Newsletter-Anmeldung
 |   +-- admin_glossary.py       Glossar-Verwaltung (CRUD + Import/Review)
