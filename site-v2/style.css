@@ -111,7 +111,6 @@
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }
-        .mobile-lang-block { display: none; }
 
         /* --- HEADINGS --- */
         h1, h2, h3, h4 {
@@ -878,15 +877,9 @@
             .site-nav a { margin-left: 0; padding: 10px 4px; font-size: 16px; }
             #lang-switcher { display: none !important; }
             #lang-notice { display: none !important; }
-            .mobile-lang-block { display: none !important; }
             #site-lang-notice { display: none !important; }
             #lang-availability-hint { display: none !important; }
             body.nav-open { overflow: hidden; }
-            .mobile-lang-block { display: block; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px; }
-            .mobile-lang-label { display: block; font-family: 'Inter',sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-amber); font-weight: 600; margin-bottom: 10px; }
-            .mobile-lang-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-            .mobile-lang-buttons .site-lang-btn { padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-surface); color: var(--text-primary); font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; text-align: left; touch-action: manipulation; -webkit-tap-highlight-color: rgba(200,150,62,0.2); }
-            .mobile-lang-buttons .site-lang-btn.site-lang-active { background: #C8963E; color: #FFFFFF; border-color: #C8963E; font-weight: 700; }
             .site-nav a.active::after { display: none; }
             .card-image-wrapper, .card-image, .card-image-placeholder { height: 160px; }
             .article-hero-image { max-height: 240px; }
