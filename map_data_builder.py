@@ -708,6 +708,10 @@ def build_map_data(config=None):
                 "date": a.get("date_display", a.get("date", ""))
             }
 
+    # Nur Destillerien ausgeben – alle anderen Typen (POI, Stadt, Natur, Reisestopp) entfernen
+    locations = [l for l in locations if l["type"] == "distillery"]
+    print(f"  {len(locations)} Destillerien nach Typ-Filter.")
+
     # 6. Regions und Years sammeln
     all_regions = sorted(set(loc["region"] for loc in locations if loc["region"]))
     all_years = sorted(set(y for loc in locations for y in loc["years_visited"]))

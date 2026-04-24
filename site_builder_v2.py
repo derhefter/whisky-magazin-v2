@@ -432,6 +432,7 @@ def _base_template():
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }}
+        .mobile-lang-block {{ display: none; }}
 
         /* --- HEADINGS --- */
         h1, h2, h3, h4 {{
@@ -1180,20 +1181,32 @@ def _base_template():
             .header-inner {{ position: relative; }}
             .site-nav {{
                 display: none;
-                position: absolute;
-                top: 64px;
-                left: -24px;
-                right: -24px;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
                 background: var(--bg-elevated);
                 border-bottom: 1px solid var(--border);
-                box-shadow: var(--shadow-sm);
+                box-shadow: 0 8px 24px rgba(42,32,21,0.18);
                 flex-direction: column;
-                padding: 16px 24px;
+                padding: 16px 24px 24px;
                 gap: 12px;
-                z-index: 99;
+                z-index: 150;
             }}
             .site-nav.open {{ display: flex; }}
-            .site-nav a {{ margin-left: 0; }}
+            .site-nav a {{ margin-left: 0; padding: 10px 4px; font-size: 16px; }}
+            #lang-switcher {{ display: none !important; }}
+            #lang-notice {{ display: none !important; }}
+            .mobile-lang-block {{ display: none !important; }}
+            #site-lang-notice {{ display: none !important; }}
+            body.nav-open {{ overflow: hidden; }}
+            .mobile-lang-block {{ display: block; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px; }}
+            .mobile-lang-label {{ display: block; font-family: 'Inter',sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-amber); font-weight: 600; margin-bottom: 10px; }}
+            .mobile-lang-buttons {{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }}
+            .mobile-lang-buttons .site-lang-btn {{ padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-surface); color: var(--text-primary); font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; text-align: left; touch-action: manipulation; -webkit-tap-highlight-color: rgba(200,150,62,0.2); }}
+            .mobile-lang-buttons .site-lang-btn.site-lang-active {{ background: #C8963E; color: #FFFFFF; border-color: #C8963E; font-weight: 700; }}
             .site-nav a.active::after {{ display: none; }}
             .card-image-wrapper, .card-image, .card-image-placeholder {{ height: 160px; }}
             .article-hero-image {{ max-height: 240px; }}
@@ -1270,6 +1283,17 @@ def _base_template():
                 <a href="/karte.html" data-i18n="nav_map">Karte</a>
                 <a href="/whisky-glossar/" data-i18n="nav_glossar">Glossar</a>
                 <a href="/ueber-uns.html" data-i18n="nav_about">Über uns</a>
+                <div class="mobile-lang-block">
+                    <span class="mobile-lang-label">&#127760; Language / Sprache</span>
+                    <div class="mobile-lang-buttons">
+                        <button type="button" class="site-lang-btn site-lang-active" data-sitelang="de">DE &middot; Deutsch</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="en">EN &middot; English</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="fr">FR &middot; Fran&ccedil;ais</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="nl">NL &middot; Nederlands</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="es">ES &middot; Espa&ntilde;ol</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="ja">JA &middot; &#26085;&#26412;&#35486;</button>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -1292,8 +1316,17 @@ def _base_template():
         if(toggle&&nav){{
             toggle.addEventListener('click',function(){{
                 var isOpen=nav.classList.toggle('open');
+                document.body.classList.toggle('nav-open',isOpen);
                 toggle.setAttribute('aria-expanded',isOpen);
                 toggle.textContent=isOpen?'\u2715':'\u2630';
+            }});
+            nav.querySelectorAll('a').forEach(function(a){{
+                a.addEventListener('click',function(){{
+                    nav.classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                    toggle.setAttribute('aria-expanded','false');
+                    toggle.textContent='\u2630';
+                }});
             }});
         }}
     }})();
@@ -1359,14 +1392,7 @@ def _base_template():
   #site-lang-rail:hover .full {{ display:inline; }}
   #site-lang-rail .code {{ min-width:18px; text-align:center; }}
   @media (max-width: 1023px) {{
-    #site-lang-rail {{ top:auto; bottom:24px; right:16px; transform:none; border-radius:28px; padding:6px; border:1px solid var(--border); flex-direction:row; gap:0; backdrop-filter:none; -webkit-backdrop-filter:none; background:rgba(255,253,249,0.98); pointer-events:auto; z-index:9000; }}
-    #site-lang-rail.mobile-collapsed button:not(.rail-fab) {{ display:none; }}
-    #site-lang-rail .rail-globe {{ display:none; }}
-    #site-lang-rail .rail-fab {{ display:inline-flex; width:52px; height:52px; justify-content:center; align-items:center; border-radius:50%; background:#C8963E; color:#fff; font-size:20px; padding:0; touch-action:manipulation; -webkit-tap-highlight-color:transparent; cursor:pointer; pointer-events:auto; }}
-    #site-lang-rail:not(.mobile-collapsed) .rail-fab {{ display:none; }}
-    #site-lang-rail:not(.mobile-collapsed) {{ flex-direction:row; padding:6px 8px; }}
-    #site-lang-rail:not(.mobile-collapsed) .full {{ display:none; }}
-    #site-lang-rail button {{ pointer-events:auto; touch-action:manipulation; }}
+    #site-lang-rail {{ display:none !important; }}
   }}
   @media (min-width: 1024px) {{
     #site-lang-rail .rail-fab {{ display:none; }}
@@ -1434,34 +1460,17 @@ def _base_template():
       if(lang==='de'){{ notice.style.display='none'; }}
       else{{ notice.style.display=''; }}
     }}
-    var rail=document.getElementById('site-lang-rail');
-    if(rail){{ rail.classList.add('mobile-collapsed'); }}
+    var navEl=document.querySelector('.site-nav');
+    var navToggle=document.querySelector('.nav-toggle');
+    if(navEl&&navEl.classList.contains('open')){{
+      navEl.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      if(navToggle){{navToggle.setAttribute('aria-expanded','false');navToggle.textContent='\u2630';}}
+    }}
   }}
   document.querySelectorAll('.site-lang-btn').forEach(function(b){{
-    b.addEventListener('click',function(){{ pickLang(b.dataset.sitelang); }});
+    b.addEventListener('click',function(ev){{ ev.stopPropagation(); pickLang(b.dataset.sitelang); }});
   }});
-  var fab=document.querySelector('.rail-fab');
-  if(fab){{
-    var fabTouched=false;
-    fab.addEventListener('touchend',function(e){{
-      e.preventDefault();
-      fabTouched=true;
-      document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');
-      setTimeout(function(){{fabTouched=false;}},600);
-    }});
-    fab.addEventListener('click',function(e){{
-      e.stopPropagation();
-      if(!fabTouched){{
-        document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');
-      }}
-    }});
-  }}
-  function closeRailIfOutside(e){{
-    var rail=document.getElementById('site-lang-rail');
-    if(rail&&!rail.contains(e.target)){{ rail.classList.add('mobile-collapsed'); }}
-  }}
-  document.addEventListener('touchstart',closeRailIfOutside,{{passive:true}});
-  document.addEventListener('click',closeRailIfOutside);
   var initial=getLang();
   updateRail(initial);
   if(initial!=='de'){{
@@ -2582,7 +2591,6 @@ def build_map_page(config):
             <div class="filter-group filter-toggles">
                 <label class="toggle-label" title="Destillerien die wir besucht haben"><input type="checkbox" id="toggle-visited" checked> 🥃 Besucht</label>
                 <label class="toggle-label" title="Destillerien auf unserer Wunschliste"><input type="checkbox" id="toggle-unvisited" checked> 🥃 Geplant</label>
-                <label class="toggle-label"><input type="checkbox" id="toggle-poi" checked> Sehenswürdigkeiten</label>
             </div>
             <div class="map-stats" id="map-stats"></div>
         </div>
@@ -2871,11 +2879,7 @@ def build_map_page(config):
                 className: 'custom-marker',
                 html: '<div style="font-size:22px;opacity:0.7;filter:grayscale(80%);line-height:1;">🥃</div>',
                 iconSize: [30, 30], iconAnchor: [15, 15]
-            }}),
-            city: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">🏙️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
-            nature: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">🌿</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
-            poi: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:20px">📍</div>', iconSize: [28, 28], iconAnchor: [14, 14] }}),
-            travel_stop: L.divIcon({{ className: 'custom-marker', html: '<div style="font-size:18px">✈️</div>', iconSize: [28, 28], iconAnchor: [14, 14] }})
+            }})
         }};
 
         // Routen-Farben pro Jahr
@@ -2886,10 +2890,7 @@ def build_map_page(config):
             '#000075', '#a9a9a9', '#e6beff'
         ];
 
-        const TYPE_LABELS = {{
-            distillery: 'Destillerie', city: 'Stadt', nature: 'Natur',
-            poi: 'Sehenswürdigkeit', travel_stop: 'Reisestopp'
-        }};
+        const TYPE_LABELS = {{ distillery: 'Destillerie' }};
 
         let mapData = null;
         let map = null;
@@ -3058,7 +3059,6 @@ def build_map_page(config):
             const SECTIONS = [
                 {{ filter: l => l.type === 'distillery' && l.visited,  icon: '🥃', label: 'Besuchte Destillerien', cssType: 'distillery' }},
                 {{ filter: l => l.type === 'distillery' && !l.visited, icon: '🥃', label: 'Weitere Destillerien',  cssType: 'distillery-unvisited' }},
-                {{ filter: l => l.type === 'poi',                       icon: '📍', label: 'Sehenswürdigkeiten',    cssType: 'poi' }},
             ];
 
             let html = '';
@@ -3144,7 +3144,6 @@ def build_map_page(config):
             const query   = searchEl ? searchEl.value.trim().toLowerCase() : '';
             const showVisited   = document.getElementById('toggle-visited')?.checked ?? true;
             const showUnvisited = document.getElementById('toggle-unvisited')?.checked ?? false;
-            const showPoi       = document.getElementById('toggle-poi')?.checked ?? true;
 
             // Deduplizierung: Locations mit gleicher lat/lon+name werden zusammengeführt
             const seen = new Set();
@@ -3156,8 +3155,6 @@ def build_map_page(config):
                 if (loc.type === 'distillery') {{
                     if (loc.visited && !showVisited) return false;
                     if (!loc.visited && !showUnvisited) return false;
-                }} else if (loc.type === 'poi') {{
-                    if (!showPoi) return false;
                 }} else {{
                     return false;
                 }}
@@ -3305,7 +3302,7 @@ def build_map_page(config):
         ['filter-year', 'filter-region', 'filter-country'].forEach(id => {{
             document.getElementById(id).addEventListener('change', applyFilters);
         }});
-        ['toggle-visited', 'toggle-unvisited', 'toggle-poi'].forEach(id => {{
+        ['toggle-visited', 'toggle-unvisited'].forEach(id => {{
             const el = document.getElementById(id);
             if (el) el.addEventListener('change', applyFilters);
         }});

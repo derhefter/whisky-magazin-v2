@@ -29,6 +29,10 @@ _rate_store = defaultdict(list)
 RATE_LIMIT_PER_MINUTE = 5
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$')
 
+FEEDBACK_RECIPIENT = "feedback@whisky-reise.com"
+_feedback_rate = defaultdict(list)
+FEEDBACK_RATE_LIMIT = 3  # max pro Stunde pro IP
+
 # DOI confirmation email HTML (uses HTML entities for umlauts to avoid encoding issues)
 DOI_HTML = (
     '<!DOCTYPE html><html><head><meta charset="utf-8"></head>'
@@ -258,6 +262,56 @@ def _send_thank_you_feedback(email, name):
     urlopen(req)
 
 
+def _is_feedback_rate_limited(ip):
+    now = time.time()
+    _feedback_rate[ip] = [t for t in _feedback_rate[ip] if now - t < 3600]
+    if len(_feedback_rate[ip]) >= FEEDBACK_RATE_LIMIT:
+        return True
+    _feedback_rate[ip].append(now)
+    return False
+
+
+def _send_feedback_email(page_name, page_type, page_url, message, reply_email):
+    type_label = {"distillery": "Destillerie", "whisky": "Whisky"}.get(page_type, page_type)
+    reply_row = f"<tr><td style='padding:6px 0;color:#5C5C5C;font-size:14px;'><strong>Antwort-Mail:</strong> {reply_email}</td></tr>" if reply_email else ""
+    html = (
+        '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"></head>'
+        '<body style="font-family:Inter,Helvetica,Arial,sans-serif;background:#FAFAF7;margin:0;padding:24px;">'
+        '<div style="max-width:520px;margin:0 auto;background:#fff;border-radius:10px;overflow:hidden;'
+        'box-shadow:0 2px 12px rgba(0,0,0,0.08);">'
+        '<div style="background:#2C2C2C;padding:24px 28px;">'
+        '<span style="font-family:Georgia,serif;font-size:20px;color:#fff;font-weight:700;">whisky</span>'
+        '<span style="color:#C8963E;font-size:20px;">.</span>'
+        '<span style="font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-left:4px;">MAGAZIN</span>'
+        '<p style="font-size:12px;color:#999;margin:8px 0 0;">Redaktionelles Feedback</p>'
+        '</div>'
+        '<div style="padding:28px 28px 20px;">'
+        f'<table style="width:100%;border-collapse:collapse;margin-bottom:20px;">'
+        f'<tr><td style="padding:6px 0;color:#5C5C5C;font-size:14px;"><strong>Seite:</strong> <a href="https://www.whisky-reise.com{page_url}" style="color:#C8963E;">{page_name}</a></td></tr>'
+        f'<tr><td style="padding:6px 0;color:#5C5C5C;font-size:14px;"><strong>Typ:</strong> {type_label}</td></tr>'
+        f'{reply_row}'
+        '</table>'
+        '<div style="background:#FAF6F0;border-left:4px solid #C8963E;border-radius:0 6px 6px 0;padding:16px 20px;font-size:15px;line-height:1.7;color:#2C2C2C;">'
+        f'{message.replace(chr(10), "<br>")}'
+        '</div>'
+        '</div>'
+        '<div style="padding:16px 28px;border-top:1px solid #E8E4DF;font-size:12px;color:#8A8A8A;">'
+        '&copy; Whisky Magazin &middot; Automatisch generiert'
+        '</div></div></body></html>'
+    )
+    payload = json.dumps({
+        "sender": {"name": "Whisky Magazin Feedback", "email": "whisky-news@whisky-reise.com"},
+        "to": [{"email": FEEDBACK_RECIPIENT}],
+        "replyTo": {"email": reply_email} if reply_email else {"email": "whisky-news@whisky-reise.com"},
+        "subject": f"[Feedback] {type_label}: {page_name}",
+        "htmlContent": html,
+    }).encode("utf-8")
+    req = Request("https://api.brevo.com/v3/smtp/email", data=payload, headers={
+        "api-key": BREVO_API_KEY, "Content-Type": "application/json", "Accept": "application/json",
+    }, method="POST")
+    urlopen(req)
+
+
 def _cors_headers(origin=""):
     base = {"Access-Control-Allow-Methods": "POST, GET, OPTIONS", "Access-Control-Allow-Headers": "Content-Type"}
     if origin in ALLOWED_ORIGINS:
@@ -395,11 +449,37 @@ class handler(BaseHTTPRequestHandler):
 
         try:
             length = int(self.headers.get("Content-Length", 0))
-            if length > 1024:
+            if length > 4096:
                 return self._json(400, {"error": "Anfrage zu gross."}, cors)
             body = json.loads(self.rfile.read(length)) if length else {}
         except Exception:
             return self._json(400, {"error": "Ungueltige Anfrage."}, cors)
+
+        # Feedback-Aktion (redaktionelle Anmerkungen)
+        if body.get("action") == "feedback":
+            honeypot = body.get("honeypot", "")
+            if honeypot:
+                return self._json(400, {"error": "Ungueltige Anfrage."}, cors)
+            if _is_feedback_rate_limited(client_ip):
+                return self._json(429, {"error": "Zu viele Feedback-Einsendungen. Bitte warte eine Stunde."}, cors)
+            message = (body.get("message") or "").strip()
+            if len(message) < 20:
+                return self._json(400, {"error": "Bitte mindestens 20 Zeichen eingeben."}, cors)
+            if len(message) > 2000:
+                return self._json(400, {"error": "Nachricht zu lang (max. 2000 Zeichen)."}, cors)
+            page_name = (body.get("page_name") or "")[:200]
+            page_type = (body.get("page_type") or "")[:50]
+            page_url = (body.get("page_url") or "")[:300]
+            reply_email = (body.get("reply_email") or "").strip().lower()
+            if reply_email and not EMAIL_REGEX.match(reply_email):
+                reply_email = ""
+            if not BREVO_API_KEY:
+                return self._json(500, {"error": "Mail-Service nicht konfiguriert."}, cors)
+            try:
+                _send_feedback_email(page_name, page_type, page_url, message, reply_email)
+                return self._json(200, {"ok": True}, cors)
+            except Exception as exc:
+                return self._json(500, {"error": str(exc)}, cors)
 
         # Thank-you e-mail action (beta-tester survey)
         if body.get("action") == "thankyou":
