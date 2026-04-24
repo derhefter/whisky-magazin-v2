@@ -285,7 +285,7 @@ def build_glossary_index(data: dict, config: dict) -> str:
     country_cards = "\n".join(
         _card_link(
             c["name_de"],
-            c.get("short_description", "")[:100] + "…",
+            (c["short_description"][:100] + "…") if c.get("short_description") else "",
             f"/whisky-glossar/laender/{c['slug']}/"
         )
         for c in countries
@@ -294,7 +294,7 @@ def build_glossary_index(data: dict, config: dict) -> str:
     region_cards = "\n".join(
         _card_link(
             r["name"],
-            r.get("short_description", "")[:80] + "…",
+            (r["short_description"][:80] + "…") if r.get("short_description") else "",
             f"/whisky-glossar/regionen/{r['slug']}/"
         )
         for r in regions[:6]
@@ -303,7 +303,7 @@ def build_glossary_index(data: dict, config: dict) -> str:
     distillery_cards = "\n".join(
         _card_link(
             d["name"],
-            d.get("short_description", "")[:80] + "…",
+            (d["short_description"][:80] + "…") if d.get("short_description") else "",
             f"/whisky-glossar/destillerien/{d['slug']}/"
         )
         for d in distilleries[:6]
@@ -421,14 +421,14 @@ def build_country_page(country: dict, regions: list, distilleries: list,
     country_whiskies = [w for w in whiskies if w.get("country_id") == cid]
 
     region_cards = "\n".join(
-        _card_link(r["name"], r.get("short_description", "")[:80] + "…",
+        _card_link(r["name"], (r["short_description"][:80] + "…") if r.get("short_description") else "",
                    f"/whisky-glossar/regionen/{r['slug']}/")
         for r in country_regions
     )
     distillery_cards = "\n".join(
-        _card_link(d["name"], d.get("short_description", "")[:80] + "…",
+        _card_link(d["name"], (d["short_description"][:80] + "…") if d.get("short_description") else "",
                    f"/whisky-glossar/destillerien/{d['slug']}/")
-        for d in country_distilleries[:8]
+        for d in country_distilleries
     )
     whisky_cards = "\n".join(
         _card_link(
@@ -501,7 +501,7 @@ def build_region_page(region: dict, countries: list, distilleries: list,
     region_whiskies = [w for w in whiskies if w.get("region_id") == rid]
 
     distillery_cards = "\n".join(
-        _card_link(d["name"], d.get("short_description", "")[:80] + "…",
+        _card_link(d["name"], (d["short_description"][:80] + "…") if d.get("short_description") else "",
                    f"/whisky-glossar/destillerien/{d['slug']}/")
         for d in region_distilleries
     )
