@@ -1,0 +1,67 @@
+{
+  "batch_id": "distilleries_20260424T085339_000062",
+  "entity": "distilleries",
+  "imported_at": "2026-04-24T08:53:39Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "balvenie",
+        "name": "The Balvenie",
+        "slug": "balvenie",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1892,
+        "owner": "William Grant & Sons",
+        "website": "https://www.thebalvenie.com/",
+        "short_description": "Eine der letzten Destillerien, die noch alle 'Fünf Seltenen Handwerke' – inklusive eigener Malzböden – betreibt.",
+        "long_description": "The Balvenie, gegründet 1892 von William Grant, liegt direkt neben der Schwesterbrennerei Glenfiddich. Sie ist berühmt dafür, dass sie noch immer eigene Gerste anbaut, traditionelle Malzböden nutzt und eigene Kupferschmiede sowie Küfer beschäftigt. Unter der langjährigen Leitung von Malt Master David C. Stewart wurde die Brennerei zum Pionier der Fassnachreifung. Der Stil ist honigsüß, reichhaltig und von einer feinen Würzigkeit geprägt.",
+        "travel_info": "Die Touren (Mo-Fr) gelten als einige der besten in Schottland, da sie einen sehr tiefen Einblick in das Handwerk bieten. Gruppen sind klein, daher ist eine Buchung Monate im Voraus ratsam. Kinder unter 18 Jahren dürfen nicht an den Touren teilnehmen.",
+        "seo_title": "The Balvenie Destillerie: Traditionelles Handwerk in Speyside | Whisky-Glossar",
+        "seo_description": "Entdecke The Balvenie. Erfahre mehr über die Malzböden, die hauseigene Küferei und den honigsüßen Single Malt aus einer der traditionsreichsten Brennereien Schottlands.",
+        "coordinates": {
+          "lat": 57.46,
+          "lng": -3.1283
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T01:35:00Z"
+      },
+      "normalized": {
+        "id": "balvenie",
+        "name": "The Balvenie",
+        "slug": "balvenie",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1892,
+        "owner": "William Grant & Sons",
+        "website": "https://www.thebalvenie.com/",
+        "short_description": "Eine der letzten Destillerien, die noch alle 'Fünf Seltenen Handwerke' – inklusive eigener Malzböden – betreibt.",
+        "long_description": "The Balvenie, gegründet 1892 von William Grant, liegt direkt neben der Schwesterbrennerei Glenfiddich. Sie ist berühmt dafür, dass sie noch immer eigene Gerste anbaut, traditionelle Malzböden nutzt und eigene Kupferschmiede sowie Küfer beschäftigt. Unter der langjährigen Leitung von Malt Master David C. Stewart wurde die Brennerei zum Pionier der Fassnachreifung. Der Stil ist honigsüß, reichhaltig und von einer feinen Würzigkeit geprägt.",
+        "travel_info": "Die Touren (Mo-Fr) gelten als einige der besten in Schottland, da sie einen sehr tiefen Einblick in das Handwerk bieten. Gruppen sind klein, daher ist eine Buchung Monate im Voraus ratsam. Kinder unter 18 Jahren dürfen nicht an den Touren teilnehmen.",
+        "seo_title": "The Balvenie Destillerie: Traditionelles Handwerk in Speyside | Whisky-Glossar",
+        "seo_description": "Entdecke The Balvenie. Erfahre mehr über die Malzböden, die hauseigene Küferei und den honigsüßen Single Malt aus einer der traditionsreichsten Brennereien Schottlands.",
+        "coordinates": {
+          "lat": 57.46,
+          "lng": -3.1283
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-24T08:53:39Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
