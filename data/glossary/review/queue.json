@@ -13065,19 +13065,19 @@
         "ID bereits vorhanden (Duplikat): glenfiddich"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "merged",
       "normalized": {
-        "id": "glenfiddich",
-        "name": "Glenfiddich",
-        "slug": "glenfiddich",
-        "region_id": "speyside",
+        "id": "old-pulteney-15",
+        "name": "Old Pulteney 15 Year Old",
+        "slug": "old-pulteney-15",
+        "region_id": "highlands",
         "country_id": "scotland",
         "status": "active",
         "founded": 1887,
         "owner": "William Grant & Sons",
         "website": "https://www.glenfiddich.com/",
-        "short_description": "Die meistverkaufte Single-Malt-Destillerie der Welt und Pionier in der weltweiten Vermarktung von Single Malt.",
-        "long_description": "Glenfiddich wurde 1887 von William Grant erbaut und ist bis heute im Familienbesitz. Die Brennerei war 1963 die erste, die ihren Single Malt aktiv außerhalb Schottlands vermarktete und legte damit den Grundstein für den heutigen Erfolg der Kategorie. Der Stil ist klassisch Speyside: leicht, fruchtig (vor allem Birnennoten) und mit einer sanften Süße. Glenfiddich nutzt eine Vielzahl kleiner Brennblasen und verfügt über eine eigene Küferei vor Ort.",
+        "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+        "long_description": "Nach der Reifung in Bourbonfässern wird dieser 15-jährige Malt in erstbefüllten spanischen Sherryfässern veredelt. Er vereint die maritime Frische von Old Pulteney mit der reichen Süße des Sherrys.",
         "travel_info": "Das Besucherzentrum in Dufftown ist eines der umfangreichsten Schottlands und täglich geöffnet (9:30-16:30 Uhr). Es gibt eine große Auswahl an Touren, einen exzellenten Shop und eine Whisky-Lounge. Eine rechtzeitige Online-Buchung ist bei dieser Weltmarke Pflicht.",
         "seo_title": "Glenfiddich Destillerie: Die Ikone des Single Malt | Whisky-Glossar",
         "seo_description": "Besuche Glenfiddich in Dufftown. Erfahre mehr über die Geschichte von William Grant, den meistverkauften Single Malt der Welt und Touren durch die beeindruckende Anlage.",
@@ -13087,7 +13087,8 @@
         },
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
-        "last_updated": "2026-04-24T08:53:48Z"
+        "last_updated": "2026-04-24T08:56:13Z",
+        "visit_info": "Glenfiddich bietet umfangreiche Touren (einschließlich Fass-Versiegelungs-Erlebnisse) und ist ganzjährig geöffnet."
       },
       "raw": {
         "id": "glenfiddich",
@@ -13111,7 +13112,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:50:00Z"
-      }
+      },
+      "decision": "merge",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T08:56:13Z"
     },
     {
       "batch_id": "distilleries_20260424T085351_2d5ead",
