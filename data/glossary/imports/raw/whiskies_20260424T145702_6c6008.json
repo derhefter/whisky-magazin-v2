@@ -1,0 +1,196 @@
+{
+  "batch_id": "whiskies_20260424T145702_6c6008",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T14:57:02Z",
+  "raw": [
+    {
+      "id": "salzatal-nr-1",
+      "slug": "salzatal-whisky-nr-1",
+      "name": "Salzatal Whisky Nr. 1",
+      "country_id": "germany",
+      "region_id": "sachsen-anhalt",
+      "distillery_id": "gerhard-buechner",
+      "whisky_type": "single_malt",
+      "style_tags": [
+        "fruchtig",
+        "vollmundig",
+        "Sherry-Finish"
+      ],
+      "age_statement": 8,
+      "nas": false,
+      "abv": 43,
+      "cask_types": [
+        "Bourbon",
+        "Portwein",
+        "Sherry"
+      ],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "Zart blumiger Charakter, leichte Süße.",
+      "tasting_notes_palate": "Vollmundiges Aroma, Schokolade, Vanille.",
+      "tasting_notes_finish": "Nachhaltiger Abgang mit Honig und Vanille.",
+      "short_description": "Der derzeit älteste Single Malt der Destillerie, 8 Jahre gereift in einer Kombination aus Bourbon-, Port- und Sherryfässern.",
+      "long_description": "Salzatal Whisky Nr. 1 ist das Flaggschiff der Brennerei. Er reifte zunächst zwei Jahre in Bourbonfässern, dann zwei Jahre in Portweinfässern und schließlich mindestens vier Jahre in Sherryfässern. Diese komplexe Reifung verleiht ihm eine außergewöhnliche Tiefe und einen vielschichtigen Charakter.",
+      "editorial_notes": "Prämiert mit DLG Gold 2019.",
+      "source_urls": [
+        "https://www.gerhard-buechner.de/whisky"
+      ],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "seo_title": "Salzatal Whisky Nr. 1 - 8 Jahre Single Malt",
+      "seo_description": "Der älteste Whisky von Gerhard Büchner: Salzatal Nr. 1 reifte 8 Jahre in Bourbon-, Port- und Sherryfässern.",
+      "created_at": "2026-04-23T15:00:00Z",
+      "last_updated": "2026-04-23T15:00:00Z"
+    },
+    {
+      "id": "salzatal-nr-2",
+      "slug": "salzatal-whisky-nr-2",
+      "name": "Salzatal Whisky Nr. 2",
+      "country_id": "germany",
+      "region_id": "sachsen-anhalt",
+      "distillery_id": "gerhard-buechner",
+      "whisky_type": "single_malt",
+      "style_tags": [
+        "mild",
+        "blumig",
+        "Rotwein-Sherry-Cask"
+      ],
+      "age_statement": 6,
+      "nas": false,
+      "abv": 43,
+      "cask_types": [
+        "Rotwein",
+        "Sherry"
+      ],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "Leicht und zart blumig.",
+      "tasting_notes_palate": "Vollmundig, Noten von Schokolade.",
+      "tasting_notes_finish": "Ein Hauch von Vanille im Abgang.",
+      "short_description": "Ein weicher Single Malt, gereift in Rotwein- und Sherryfässern.",
+      "long_description": "Dieser Single Malt wird aus zwei Sorten Gerstenmalz hergestellt und reifte insgesamt sechs Jahre (3 Jahre Rotweinfass, 3 Jahre Sherryfass). Er zeichnet sich durch seine besondere Milde aus.",
+      "editorial_notes": "Prämiert mit DLG Bronze 2017.",
+      "source_urls": [
+        "https://www.gerhard-buechner.de/whisky"
+      ],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "seo_title": "Salzatal Whisky Nr. 2 - Single Malt aus Sachsen-Anhalt",
+      "seo_description": "Salzatal Whisky Nr. 2: 6 Jahre Reifezeit in Rotwein- und Sherryfässern sorgen für einen milden, blumigen Geschmack.",
+      "created_at": "2026-04-23T15:00:00Z",
+      "last_updated": "2026-04-23T15:00:00Z"
+    },
+    {
+      "id": "salzatal-nr-3",
+      "slug": "salzatal-whisky-nr-3",
+      "name": "Salzatal Whisky Nr. 3",
+      "country_id": "germany",
+      "region_id": "sachsen-anhalt",
+      "distillery_id": "gerhard-buechner",
+      "whisky_type": "single_malt",
+      "style_tags": [
+        "torfig",
+        "rauchig",
+        "erdig"
+      ],
+      "age_statement": 6,
+      "nas": false,
+      "abv": 43,
+      "cask_types": [
+        "Rotwein",
+        "Sherry"
+      ],
+      "smoke_profile": "light",
+      "tasting_notes_nose": "Mild-torfiger Charakter mit fruchtiger Note.",
+      "tasting_notes_palate": "Rauchig-erdig, Anklänge von Schokolade und Vanille.",
+      "tasting_notes_finish": "Honigsüße gepaart mit dezentem Rauch.",
+      "short_description": "Die getorfte Variante des Salzatal Whiskys, hergestellt mit schottischem Torfmalz.",
+      "long_description": "Für die Nr. 3 wird neben Pilsner- und Karamalz auch getorftes schottisches Malz verwendet. Die sechsjährige Reifung in Rotwein- und Sherryfässern balanciert den Rauch mit fruchtigen Noten aus.",
+      "editorial_notes": "Prämiert mit DLG Silber 2019.",
+      "source_urls": [
+        "https://www.gerhard-buechner.de/whisky"
+      ],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "seo_title": "Salzatal Whisky Nr. 3 - Getorfter Single Malt",
+      "seo_description": "Erleben Sie den rauchigen Salzatal Whisky Nr. 3. Ein mild-torfiger Single Malt, 6 Jahre gereift.",
+      "created_at": "2026-04-23T15:00:00Z",
+      "last_updated": "2026-04-23T15:00:00Z"
+    },
+    {
+      "id": "salzatal-single-grain",
+      "slug": "salzatal-whisky-single-grain",
+      "name": "Salzatal Single Grain",
+      "country_id": "germany",
+      "region_id": "sachsen-anhalt",
+      "distillery_id": "gerhard-buechner",
+      "whisky_type": "single_grain",
+      "style_tags": [
+        "Weizen",
+        "aromatisch",
+        "Portwein-Cask"
+      ],
+      "age_statement": null,
+      "nas": true,
+      "abv": 45,
+      "cask_types": [
+        "Portwein"
+      ],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "Grazil und aromatisch.",
+      "tasting_notes_palate": "Weiche Weizennote, Fruchtsüße.",
+      "tasting_notes_finish": "Elegant und anhaltend.",
+      "short_description": "Ein exklusiver Single Grain Whisky aus feinem Weizen, gereift im französischen Portweinfass.",
+      "long_description": "Dieser Whisky weicht von der Single Malt Tradition ab und nutzt Weizen als Basis. Die Lagerung im Portweinfass verleiht dem Grain seine spezifische aromatische Note und Farbe.",
+      "source_urls": [
+        "https://www.gerhard-buechner.de/whisky"
+      ],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "seo_title": "Salzatal Single Grain - Weizenwhisky aus Deutschland",
+      "seo_description": "Der Salzatal Single Grain überzeugt durch die Verwendung von Weizen und die Reifung im Portweinfass.",
+      "created_at": "2026-04-23T15:00:00Z",
+      "last_updated": "2026-04-23T15:00:00Z"
+    },
+    {
+      "id": "salzatal-cask-cherry",
+      "slug": "salzatal-whisky-cask-edition-cherry",
+      "name": "Salzatal Cask Edition Cherry",
+      "country_id": "germany",
+      "region_id": "sachsen-anhalt",
+      "distillery_id": "gerhard-buechner",
+      "whisky_type": "single_malt",
+      "style_tags": [
+        "Kirschlikörwein-Finish",
+        "süß",
+        "fruchtig"
+      ],
+      "age_statement": 7,
+      "nas": false,
+      "abv": 57.8,
+      "cask_types": [
+        "Bordeaux",
+        "Kirschlikörwein"
+      ],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "Starke Kirscharomen, Honig.",
+      "tasting_notes_palate": "Karamell, Kirsche, malzig.",
+      "tasting_notes_finish": "Lang und fruchtig-süß.",
+      "short_description": "Ein Single Malt mit einem außergewöhnlichen Finish in Kirschlikörweinfässern.",
+      "long_description": "Diese Cask Edition reifte zunächst 5 Jahre in französischen Bordeauxfässern und erhielt dann ein zweijähriges Finish in Fässern, die zuvor mit hauseigenem Kirschlikörwein belegt waren.",
+      "editorial_notes": "Limitierte Edition, oft in Fassstärke abgefüllt.",
+      "source_urls": [
+        "https://www.gerhard-buechner.de/Whisky-Limited-Edition-Cherry-Cask-Salzatal"
+      ],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "seo_title": "Salzatal Cask Edition Cherry - Cherry Finish Single Malt",
+      "seo_description": "Einzigartiger Whisky mit Kirschlikörwein-Finish: Entdecken Sie die Salzatal Cask Edition Cherry.",
+      "created_at": "2026-04-23T15:00:00Z",
+      "last_updated": "2026-04-23T15:00:00Z"
+    }
+  ]
+}
