@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185204_90fa15",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:52:04Z",
+  "raw": [
+    {
+      "id": "old-sandhill-single-malt",
+      "name": "Old Sandhill Single Malt Whisky",
+      "distillery_id": "old-sandhill",
+      "whisky_type": "Single Malt",
+      "abv": 43,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Malzige Süße, Getreidenoten und Anklänge von frischem Heu und Vanille.",
+      "tasting_notes_palate": "Ehrlich und bodenständig, Noten von Karamell, Eichenholz und reifen Gartenfrüchten.",
+      "tasting_notes_finish": "Mittellang und wärmend mit einer angenehmen Holzwürze.",
+      "seo_title": "Old Sandhill Single Malt | Whisky aus Bad Belzig",
+      "seo_description": "Der Old Sandhill Single Malt spiegelt die märkische Landschaft wider. Handwerklich gebrannt in Brandenburg."
+    }
+  ]
+}
