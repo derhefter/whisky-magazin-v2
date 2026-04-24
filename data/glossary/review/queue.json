@@ -15050,24 +15050,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "schlitzer-single-malt-klassisch",
-        "name": "Schlitzer Single Malt Klassisch",
-        "distillery_id": "schlitzer",
-        "whisky_type": "Single Malt",
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
         "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Frische Eichenfässer, Vanille, helle Früchte wie Apfel und gelbe Pflaume, dazu ein Hauch Marzipan.",
-        "tasting_notes_palate": "Weich und rund, fruchtige Süße von Äpfeln und Birnen, gefolgt von Malz und einer dezenten Holzwürze.",
-        "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
-        "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
-        "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig.",
-        "slug": "schlitzer-single-malt-klassisch",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:52:09Z",
-        "last_updated": "2026-04-24T18:52:09Z",
-        "published": false
+        "last_updated": "2026-04-24T18:58:45Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "schlitzer-single-malt-klassisch",
@@ -15082,7 +15087,10 @@
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
         "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
         "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:58:45Z"
     },
     {
       "batch_id": "whiskies_20260424T185212_b9ca75",
