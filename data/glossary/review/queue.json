@@ -1903,6 +1903,13 @@
       "imported_at": "2026-04-24T18:51:24Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185128_51128b",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:28Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14034,6 +14041,50 @@
         "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
         "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
         "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185128_51128b",
+      "entity": "whiskies",
+      "item_id": "decavo-hoehlenwhisky",
+      "item_slug": "decavo-hoehlenwhisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "decavo-hoehlenwhisky",
+        "name": "DeCavo Höhlenwhisky",
+        "distillery_id": "maerkische-spezialitaetenbrennerei",
+        "whisky_type": "Single Malt",
+        "abv": 47.3,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Einzigartige Aromatik mit Noten von Malz, erdigen Nuancen und einer feinen Süße.",
+        "tasting_notes_palate": "Kräftig und komplex, mineralische Töne gepaart mit Karamell, Vanille und dunklem Brot.",
+        "tasting_notes_finish": "Langanhaltend und markant mit einer ganz eigenen Tiefe.",
+        "seo_title": "DeCavo Höhlenwhisky | Weltweit einzigartige Reifung",
+        "seo_description": "DeCavo reift in der Dechenhöhle. Erleben Sie einen Whisky mit mineralischer Tiefe und 47,3% Vol.",
+        "slug": "decavo-hoehlenwhisky",
+        "created_at": "2026-04-24T18:51:28Z",
+        "last_updated": "2026-04-24T18:51:28Z",
+        "published": false
+      },
+      "raw": {
+        "id": "decavo-hoehlenwhisky",
+        "name": "DeCavo Höhlenwhisky",
+        "distillery_id": "maerkische-spezialitaetenbrennerei",
+        "whisky_type": "Single Malt",
+        "abv": 47.3,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Einzigartige Aromatik mit Noten von Malz, erdigen Nuancen und einer feinen Süße.",
+        "tasting_notes_palate": "Kräftig und komplex, mineralische Töne gepaart mit Karamell, Vanille und dunklem Brot.",
+        "tasting_notes_finish": "Langanhaltend und markant mit einer ganz eigenen Tiefe.",
+        "seo_title": "DeCavo Höhlenwhisky | Weltweit einzigartige Reifung",
+        "seo_description": "DeCavo reift in der Dechenhöhle. Erleben Sie einen Whisky mit mineralischer Tiefe und 47,3% Vol."
       }
     }
   ]
