@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185152_ed84e4",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:52Z",
+  "raw": [
+    {
+      "id": "hellinger-42-rauch",
+      "name": "Hellinger 42 Rauch",
+      "distillery_id": "dresdner-whisky-manufaktur",
+      "whisky_type": "Peated Single Malt",
+      "abv": 46,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Deutlicher malziger Rauch, kombiniert mit Vanille, Honig und Zitrusnoten wie Orange und Mandarine.",
+      "tasting_notes_palate": "Kräftiger Geschmack nach Lagerfeuerrauch, dunkler Schokolade, Karamell und würzigen Akzenten, begleitet von Fruchtnoten.",
+      "tasting_notes_finish": "Langanhaltend und rauchig mit einer feinen Süße und würzigem Nachklang.",
+      "seo_title": "Hellinger 42 Rauch | Torfiger Single Malt aus Sachsen",
+      "seo_description": "Erleben Sie den rauchigen Hellinger 42 aus Dresden. Malziger Rauch trifft auf Schokolade und Zitrusfrucht."
+    }
+  ]
+}
