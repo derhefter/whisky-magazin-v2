@@ -42,6 +42,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.whisky-reise.com/artikel/leichte-fruhlings-whiskys-fur-die-warme-jahreszeit.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.whisky-reise.com/artikel/scapa-whisky-orkney-inseln-entdecken.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1557064851-47ac466cf3d5?ixid=M3w5MDA5ODZ8MHwxfHNlYXJjaHwxfHx3aGlza3klMjBnbGFzcyUyMGFtYmVyJTIwZHJhbSUyMGRhcmslMjBlbGVnYW50fGVufDF8MHx8fDE3NzYzNDg4OTJ8MA&amp;ixlib=rb-4.1.0?w=1200&amp;h=630&amp;fit=crop&amp;crop=entropy&amp;auto=format&amp;q=80</image:loc>
+      <image:title>Scapa</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.whisky-reise.com/artikel/whiskys-fuer-verregnete-april-tage.html</loc>
     <lastmod>2026-04-12</lastmod>
     <priority>0.8</priority>
