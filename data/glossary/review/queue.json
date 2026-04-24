@@ -12827,7 +12827,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "aberlour",
         "name": "Aberlour",
@@ -12876,7 +12876,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:54:56Z"
+      "reviewed_at": "2026-04-24T08:54:56Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085339_000062",
@@ -12886,7 +12887,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balvenie",
         "name": "The Balvenie",
@@ -12935,7 +12936,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:54:57Z"
+      "reviewed_at": "2026-04-24T08:54:57Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085342_035466",
@@ -12945,7 +12947,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "craigellachie",
         "name": "Craigellachie",
@@ -12994,7 +12996,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:54:59Z"
+      "reviewed_at": "2026-04-24T08:54:59Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085345_7b1a5c",
@@ -13004,7 +13007,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenfarclas",
         "name": "Glenfarclas",
@@ -13053,7 +13056,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:55:01Z"
+      "reviewed_at": "2026-04-24T08:55:01Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085348_47cff9",
@@ -13065,7 +13069,7 @@
         "ID bereits vorhanden (Duplikat): glenfiddich"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "old-pulteney-15",
         "name": "Old Pulteney 15 Year Old",
@@ -13115,7 +13119,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:56:13Z"
+      "reviewed_at": "2026-04-24T08:56:13Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085351_2d5ead",
@@ -13125,7 +13130,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenlivet",
         "name": "The Glenlivet",
@@ -13174,7 +13179,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:55:02Z"
+      "reviewed_at": "2026-04-24T08:55:02Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085354_86ca0b",
@@ -13184,7 +13190,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "macallan",
         "name": "The Macallan",
@@ -13233,7 +13239,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:55:04Z"
+      "reviewed_at": "2026-04-24T08:55:04Z",
+      "published_at": "2026-04-24T08:56:17Z"
     },
     {
       "batch_id": "distilleries_20260424T085357_d1610d",
@@ -13243,7 +13250,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "mortlach",
         "name": "Mortlach",
@@ -13292,7 +13299,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T08:55:05Z"
+      "reviewed_at": "2026-04-24T08:55:05Z",
+      "published_at": "2026-04-24T08:56:17Z"
     }
   ]
 }
