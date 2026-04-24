@@ -2064,6 +2064,13 @@
       "imported_at": "2026-04-24T18:52:33Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185236_541bdb",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:52:36Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -15399,6 +15406,50 @@
         "tasting_notes_finish": "Langanhaltend, sauber und komplex im Nachklang.",
         "seo_title": "Vallendar Single Malt | Präzision von der Mosel",
         "seo_description": "Der Single Malt von Hubertus Vallendar steht für höchste Reinheit und Aromendichte. Ein Meisterwerk der Brennkunst."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185236_541bdb",
+      "entity": "whiskies",
+      "item_id": "van-loon-single-malt",
+      "item_slug": "van-loon-single-malt-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "van-loon-single-malt",
+        "name": "Van Loon Single Malt Whisky",
+        "distillery_id": "piekfeine-braende",
+        "whisky_type": "Single Malt",
+        "abv": 40,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Rein und klar mit hellen Fruchtnoten, Malz und einer dezenten Vanillesüße.",
+        "tasting_notes_palate": "Feine Textur, Noten von Getreide, Honig und leichten Gewürzen aus der Fassreifung.",
+        "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
+        "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
+        "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität.",
+        "slug": "van-loon-single-malt-whisky",
+        "created_at": "2026-04-24T18:52:36Z",
+        "last_updated": "2026-04-24T18:52:36Z",
+        "published": false
+      },
+      "raw": {
+        "id": "van-loon-single-malt",
+        "name": "Van Loon Single Malt Whisky",
+        "distillery_id": "piekfeine-braende",
+        "whisky_type": "Single Malt",
+        "abv": 40,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Rein und klar mit hellen Fruchtnoten, Malz und einer dezenten Vanillesüße.",
+        "tasting_notes_palate": "Feine Textur, Noten von Getreide, Honig und leichten Gewürzen aus der Fassreifung.",
+        "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
+        "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
+        "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität."
       }
     }
   ]
