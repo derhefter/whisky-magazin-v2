@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185131_2a35dd",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:31Z",
+  "raw": [
+    {
+      "id": "dolleruper-single-malt",
+      "name": "Dolleruper Single Malt Whisky",
+      "distillery_id": "dolleruper-destille",
+      "whisky_type": "Single Malt",
+      "abv": 42,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
+      "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
+      "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
+      "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
+      "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk."
+    }
+  ]
+}
