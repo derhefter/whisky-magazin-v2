@@ -5448,7 +5448,7 @@
     "created_at": "2026-04-23T13:48:17Z",
     "last_updated": "2026-04-23T13:51:37Z",
     "published": true,
-    "country_id": "deutschland",
+    "country_id": "germany",
     "age_statement": null,
     "smoke_profile": "none",
     "cask_types": [],
@@ -5471,7 +5471,7 @@
     "created_at": "2026-04-23T13:48:21Z",
     "last_updated": "2026-04-23T13:51:37Z",
     "published": true,
-    "country_id": "deutschland",
+    "country_id": "germany",
     "age_statement": null,
     "smoke_profile": "none",
     "cask_types": [],
@@ -5494,7 +5494,7 @@
     "created_at": "2026-04-23T13:48:24Z",
     "last_updated": "2026-04-23T13:51:37Z",
     "published": true,
-    "country_id": "deutschland",
+    "country_id": "germany",
     "age_statement": null,
     "smoke_profile": "none",
     "cask_types": [],
@@ -5523,7 +5523,7 @@
     "updated_at": "2026-04-22T23:45:00Z",
     "created_at": "2026-04-24T18:52:45Z",
     "last_updated": "2026-04-24T19:00:04Z",
-    "country_id": "deutschland"
+    "country_id": "germany"
   },
   {
     "id": "salzatal-nr-1",
