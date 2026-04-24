@@ -15557,24 +15557,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "van-loon-single-malt",
-        "name": "Van Loon Single Malt Whisky",
-        "distillery_id": "piekfeine-braende",
-        "whisky_type": "Single Malt",
-        "abv": 40,
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
+        "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Rein und klar mit hellen Fruchtnoten, Malz und einer dezenten Vanillesüße.",
-        "tasting_notes_palate": "Feine Textur, Noten von Getreide, Honig und leichten Gewürzen aus der Fassreifung.",
-        "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
-        "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
-        "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität.",
-        "slug": "van-loon-single-malt-whisky",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:52:36Z",
-        "last_updated": "2026-04-24T18:52:36Z",
-        "published": false
+        "last_updated": "2026-04-24T18:59:40Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "van-loon-single-malt",
@@ -15589,7 +15594,10 @@
         "tasting_notes_finish": "Harmonisch und sauber mit einem mittellangen Nachklang.",
         "seo_title": "Van Loon Single Malt | Whisky aus Bremen",
         "seo_description": "Van Loon Single Malt von Piekfeine Brände besticht durch hanseatische Klarheit und handwerkliche Qualität."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:59:40Z"
     },
     {
       "batch_id": "whiskies_20260424T185239_a03185",
