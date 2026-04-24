@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185116_2570a6",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:16Z",
+  "raw": [
+    {
+      "id": "bellerhof-single-malt",
+      "name": "Bellerhof Single Malt Whisky",
+      "distillery_id": "bellerhof",
+      "whisky_type": "Single Malt",
+      "abv": 40,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Würzig mit deutlichen Getreidearomen, Malz und einer Spur von Streuobstwiesen.",
+      "tasting_notes_palate": "Charakterstark mit kräftiger Malznote, feiner Süße und schwäbischer Bodenständigkeit.",
+      "tasting_notes_finish": "Wärmend mit einem würzigen Nachklang von Holz und Korn.",
+      "seo_title": "Bellerhof Single Malt | Schwäbischer Whisky aus Owen",
+      "seo_description": "Echter schwäbischer Single Malt vom Bellerhof aus der Whisky-Stadt Owen. Würzig und regional."
+    }
+  ]
+}
