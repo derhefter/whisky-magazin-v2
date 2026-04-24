@@ -1432,6 +1432,36 @@
   </div>
 </div>
 
+<!-- ===== IMAGE MODAL ===== -->
+<div class="modal-overlay" id="image-modal" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
+  <div class="modal-box" style="max-width:780px">
+    <div class="modal-header">
+      <h3 id="image-modal-title">Bild auswählen</h3>
+      <button class="modal-close" onclick="closeImageModal()" aria-label="Schließen">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin:0 0 12px;font-size:0.85rem;color:var(--color-muted)">
+        Suche auf Unsplash nach einem passenden Bild. Der gewählte Kandidat ersetzt das aktuelle Artikelbild.
+      </p>
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <input type="text" id="image-search-input" placeholder="Suchbegriff (z. B. islay coast scotland)"
+               style="flex:1;padding:8px 10px;border:2px solid var(--color-beige);border-radius:var(--radius);font-size:0.9rem;font-family:inherit">
+        <button class="btn btn-primary" onclick="searchImageCandidates()">Suchen</button>
+      </div>
+      <div id="image-modal-error" class="error-box" style="display:none;margin-bottom:12px"></div>
+      <div id="image-modal-status" style="font-size:0.85rem;color:var(--color-muted);margin-bottom:8px"></div>
+      <div id="image-candidates"
+           style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeImageModal()">Abbrechen</button>
+      <button class="btn btn-primary" id="image-modal-apply" onclick="saveImageSelection()" disabled>
+        Übernehmen
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- ===== NEW TOPIC MODAL ===== -->
 <div class="modal-overlay" id="new-topic-modal" role="dialog" aria-modal="true" aria-labelledby="new-topic-modal-title">
   <div class="modal-box" style="max-width:540px">
@@ -1665,6 +1695,7 @@ const API = {
   auth:     '/api/admin_auth',
   data:     '/api/admin_data',
   articles: '/api/admin_articles',
+  image:    '/api/admin_image',
   topics:   '/api/admin_topics',
   generate: '/api/generate_article',
   publish:  '/api/admin_publish',
@@ -2425,6 +2456,9 @@ function renderDraftCard(d, i) {
   const teaser    = d.teaser ?? d.description ?? '';
   const teaserShort = teaser.length > 150 ? teaser.slice(0, 150) + '…' : teaser;
   const hasContent  = !!(d.html_content ?? d.content ?? '');
+  const imageUrl    = d.image_url ?? '';
+  const imageAlt    = d.image_alt ?? '';
+  const imageCredit = d.image_credit ?? '';
 
   const statusBadge = {
     pending:    '<span class="badge badge-pending">&#128993; Ausstehend</span>',
@@ -2448,6 +2482,19 @@ function renderDraftCard(d, i) {
         ${filename ? `<span>&#128196; ${esc(filename)}</span>` : ''}
       </div>
       ${teaser ? `<p class="article-teaser">${esc(teaserShort)}</p>` : ''}
+      <div class="article-thumb-wrap" style="margin:10px 0;display:flex;gap:12px;align-items:flex-start">
+        ${imageUrl
+          ? `<img src="${esc(imageUrl)}" alt="${esc(imageAlt)}" class="article-thumb"
+                 style="width:200px;height:112px;object-fit:cover;border-radius:6px;border:1px solid var(--color-beige);flex-shrink:0"
+                 onerror="this.style.display='none';this.nextElementSibling.textContent='&#128247; Bild fehlt: ${esc(imageUrl)}'">`
+          : `<div style="width:200px;height:112px;background:#f5f2ed;border:1px dashed var(--color-beige);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--color-muted);font-size:0.8rem;flex-shrink:0">&#128247; Kein Bild</div>`}
+        <div style="font-size:0.78rem;color:var(--color-muted);flex:1;min-width:0">
+          ${imageCredit ? `<div style="margin-bottom:4px">${imageCredit}</div>` : '<div style="margin-bottom:4px;font-style:italic">Kein Bildnachweis</div>'}
+          <button class="btn btn-secondary btn-sm" onclick="openImageModal('${esc(filename)}', ${i})">
+            &#128444;&#65039; Bild tauschen
+          </button>
+        </div>
+      </div>
       <div class="article-actions">
         ${hasContent ? `<button class="btn btn-secondary btn-sm" onclick="openPreview(${i})">&#128065;&#65039; Vorschau</button>` : ''}
         <button class="btn btn-secondary btn-sm" onclick="toggleEdit(${i})">&#9998; Bearbeiten</button>
@@ -2659,6 +2706,109 @@ async function saveEdit(filename, sha, i) {
     showToast('Fehler beim Speichern: ' + err.message, 'error');
     btn.disabled = false;
     btn.textContent = 'Speichern';
+  }
+}
+
+/* ============================================================
+   IMAGE PICKER MODAL
+   ============================================================ */
+let _imageModal = { filename: null, index: null, selected: null };
+
+function openImageModal(filename, i) {
+  _imageModal = { filename, index: i, selected: null };
+  const draft = artikelData && (artikelData.drafts ?? artikelData.entwuerfe ?? [])[i];
+  const defaultQuery = draft?.title ?? '';
+  document.getElementById('image-search-input').value = defaultQuery;
+  document.getElementById('image-candidates').innerHTML = '';
+  document.getElementById('image-modal-error').style.display = 'none';
+  document.getElementById('image-modal-status').textContent = '';
+  document.getElementById('image-modal-apply').disabled = true;
+  document.getElementById('image-modal').classList.add('open');
+  searchImageCandidates();
+}
+
+function closeImageModal() {
+  document.getElementById('image-modal').classList.remove('open');
+  _imageModal = { filename: null, index: null, selected: null };
+}
+
+async function searchImageCandidates() {
+  const query = document.getElementById('image-search-input').value.trim();
+  const filename = _imageModal.filename;
+  if (!filename) return;
+  const errEl  = document.getElementById('image-modal-error');
+  const statusEl = document.getElementById('image-modal-status');
+  const gridEl = document.getElementById('image-candidates');
+  errEl.style.display = 'none';
+  statusEl.textContent = 'Suche auf Unsplash…';
+  gridEl.innerHTML = '';
+  document.getElementById('image-modal-apply').disabled = true;
+  _imageModal.selected = null;
+
+  try {
+    const params = new URLSearchParams({ filename });
+    if (query) params.set('query', query);
+    const data = await apiGet(API.image + '?' + params.toString());
+    const candidates = data.candidates || [];
+    if (candidates.length === 0) {
+      statusEl.textContent = `Keine Treffer für „${data.query || query}".`;
+      return;
+    }
+    statusEl.textContent = `${candidates.length} Ergebnisse für „${data.query || query}" – auswählen:`;
+    gridEl.innerHTML = candidates.map((c, idx) => `
+      <div class="image-candidate" data-idx="${idx}"
+           onclick="selectImageCandidate(${idx})"
+           style="border:2px solid var(--color-beige);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color 0.15s">
+        <img src="${esc(c.url_small)}" alt="${esc(c.description || c.photographer || '')}"
+             style="width:100%;height:160px;object-fit:cover;display:block;background:#f5f2ed">
+        <div style="padding:6px 8px;font-size:0.75rem;color:var(--color-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+          &#128247; ${esc(c.photographer || 'Unsplash')}
+        </div>
+      </div>
+    `).join('');
+    _imageModal.candidates = candidates;
+  } catch (e) {
+    errEl.textContent = 'Fehler: ' + e.message;
+    errEl.style.display = 'block';
+    statusEl.textContent = '';
+  }
+}
+
+function selectImageCandidate(idx) {
+  const all = document.querySelectorAll('#image-candidates .image-candidate');
+  all.forEach(el => el.style.borderColor = 'var(--color-beige)');
+  const picked = document.querySelector(`#image-candidates .image-candidate[data-idx="${idx}"]`);
+  if (picked) picked.style.borderColor = 'var(--color-success, #4a7c59)';
+  _imageModal.selected = _imageModal.candidates?.[idx] || null;
+  document.getElementById('image-modal-apply').disabled = !_imageModal.selected;
+}
+
+async function saveImageSelection() {
+  const sel = _imageModal.selected;
+  const filename = _imageModal.filename;
+  if (!sel || !filename) return;
+  const btn = document.getElementById('image-modal-apply');
+  btn.disabled = true;
+  btn.textContent = 'Lädt Bild…';
+  try {
+    const result = await apiPut(API.image, {
+      filename,
+      photo_id:    sel.photo_id,
+      url_full:    sel.url_full,
+      attribution: sel.attribution,
+      alt:         sel.description || '',
+    });
+    if (!result || !result.success) throw new Error(result?.error || 'Unbekannter Fehler');
+    showToast('Bild aktualisiert – Website wird automatisch neu gebaut.', 'success', 6000);
+    closeImageModal();
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch (e) {
+    const errEl = document.getElementById('image-modal-error');
+    errEl.textContent = 'Fehler: ' + e.message;
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Übernehmen';
   }
 }
 
@@ -5054,6 +5204,12 @@ document.getElementById('new-topic-modal').addEventListener('click', function(e)
 });
 document.getElementById('publish-modal').addEventListener('click', function(e) {
   if (e.target === this) closePublishModal();
+});
+document.getElementById('image-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeImageModal();
+});
+document.getElementById('image-search-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { e.preventDefault(); searchImageCandidates(); }
 });
 document.getElementById('glossar-entry-modal').addEventListener('click', function(e) {
   if (e.target === this) closeGlossarModal();

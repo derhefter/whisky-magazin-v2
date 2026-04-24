@@ -378,6 +378,56 @@ def get_unsplash_image_url(queries, api_key=None, used_photo_ids=None):
     }
 
 
+def get_unsplash_candidates(query, api_key, per_page=4):
+    """
+    Liefert eine Liste von Bild-Kandidaten für die manuelle Auswahl im Admin-UI.
+    Kein Duplikat-Filter, kein LoremFlickr-Fallback (UI zeigt Leer-Zustand sinnvoller an).
+    """
+    if not api_key or api_key in ("", "DEIN_UNSPLASH_API_KEY_OPTIONAL"):
+        return []
+    if not query or not query.strip():
+        return []
+
+    try:
+        response = requests.get(
+            "https://api.unsplash.com/search/photos",
+            params={
+                "query": query.strip(),
+                "per_page": max(1, min(per_page, 12)),
+                "orientation": "landscape",
+                "content_filter": "high",
+            },
+            headers={"Authorization": f"Client-ID {api_key}"},
+            timeout=10,
+        )
+        if response.status_code != 200:
+            return []
+
+        results = response.json().get("results", [])
+        candidates = []
+        for p in results:
+            photographer = p["user"]["name"]
+            photo_link = p["links"]["html"]
+            raw = p["urls"]["raw"]
+            candidates.append({
+                "photo_id": p["id"],
+                "url_full": raw + "?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=80",
+                "url_small": raw + "?w=400&h=225&fit=crop&crop=entropy&auto=format&q=70",
+                "photographer": photographer,
+                "description": p.get("alt_description") or p.get("description") or "",
+                "attribution": (
+                    f'Foto von <a href="{photo_link}?utm_source=whisky_magazin'
+                    f'&utm_medium=referral">{photographer}</a> auf '
+                    f'<a href="https://unsplash.com/?utm_source=whisky_magazin'
+                    f'&utm_medium=referral">Unsplash</a>'
+                ),
+            })
+        return candidates
+    except Exception as e:
+        print(f"    Unsplash Candidates Fehler: {e}")
+        return []
+
+
 def download_image(image_url, save_path):
     """Lädt ein Bild herunter, prüft Mindestgröße."""
     try:
