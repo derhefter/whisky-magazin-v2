@@ -3904,10 +3904,12 @@ async function wotmGenerateNewsletter(force) {
     : [];
   const localDataUrlsOk = localDataUrls.filter(Boolean);
 
-  // Was ans Backend geht: gespeicherte URLs ODER lokale data:-URLs für die Vorschau
-  const previewPhotoUrls = savedPhotoUrls.length > 0
-    ? savedPhotoUrls
-    : localDataUrlsOk;
+  // Was ans Backend geht: frisch ausgewaehlte lokale Fotos haben Vorrang
+  // (sonst sieht man weiter die alten gespeicherten Bilder trotz neuer Auswahl).
+  // Fallback: gespeicherte Foto-URLs, wenn keine neuen ausgewaehlt sind.
+  const previewPhotoUrls = localDataUrlsOk.length > 0
+    ? localDataUrlsOk
+    : savedPhotoUrls;
 
   const _toNumG = id => { const v = document.getElementById(id)?.value; return v ? Number(v) : null; };
   const payload = {
@@ -3945,12 +3947,12 @@ async function wotmGenerateNewsletter(force) {
     // Vorschau: data:-URLs sind bereits im HTML enthalten – kein Ersetzen nötig
     let previewHtml = html;
 
-    // Hinweis wenn Fotos noch nicht gespeichert sind
-    if (localFiles.length > 0 && savedPhotoUrls.length === 0) {
+    // Hinweis wenn lokale (noch ungespeicherte) Fotos in der Vorschau verwendet werden
+    if (localFiles.length > 0) {
       const failedCount = localDataUrls.filter(u => !u).length;
       const banner = failedCount > 0
         ? `⚠ ${failedCount} Foto(s) konnten nicht geladen werden (Format prüfen). Bitte <strong>Speichern</strong>, dann <strong>Neu generieren</strong>.`
-        : `⚠ Foto nur in dieser Vorschau sichtbar – bitte erst <strong>Speichern</strong>, dann <strong>Neu generieren</strong> für den finalen Newsletter.`;
+        : `⚠ ${localDataUrlsOk.length} Foto(s) nur in dieser Vorschau sichtbar – bitte erst <strong>Speichern</strong>, dann <strong>Neu generieren</strong> für den finalen Newsletter.`;
       previewHtml = previewHtml.replace(
         '</body>',
         `<div style="background:#FFF8E1;padding:10px 16px;font-size:0.8rem;color:#7B6200;
