@@ -2036,6 +2036,13 @@
       "imported_at": "2026-04-24T18:52:21Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185224_617fe6",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:52:24Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -15195,6 +15202,50 @@
         "tasting_notes_finish": "Mittellang, ausgewogen und rund mit einer feinen Würze aus dem Holz.",
         "seo_title": "Stonewood Drà Single Malt | Bayerischer Whisky",
         "seo_description": "Der Stonewood Drà reift 5 Jahre in amerikanischer Weißeiche. Ein milder und fruchtiger Single Malt aus der Oberpfalz."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185224_617fe6",
+      "entity": "whiskies",
+      "item_id": "stonewood-woaz",
+      "item_slug": "stonewood-woaz",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "stonewood-woaz",
+        "name": "Stonewood Woaz",
+        "distillery_id": "stonewood",
+        "whisky_type": "Grain Whisky",
+        "abv": 43,
+        "age": 5,
+        "nas": false,
+        "tasting_notes_nose": "Würzig-malziges Aroma mit frischen Holznoten, Honig und einer deutlichen Bananennote.",
+        "tasting_notes_palate": "Kraftvoll mit Röstaromen, Vanille, Zimt und Mocha, begleitet von einem dezenten Hauch Rauch.",
+        "tasting_notes_finish": "Sehr langanhaltend, vielschichtig mit subtilem Rauch im Nachklang.",
+        "seo_title": "Stonewood Woaz | Einzigartiger bayerischer Weizen-Whisky",
+        "seo_description": "Woaz ist bayerisch für Weizen. Stonewood Woaz überzeugt durch Röstaromen und feine Würze. Ein echter Geheimtipp.",
+        "slug": "stonewood-woaz",
+        "created_at": "2026-04-24T18:52:24Z",
+        "last_updated": "2026-04-24T18:52:24Z",
+        "published": false
+      },
+      "raw": {
+        "id": "stonewood-woaz",
+        "name": "Stonewood Woaz",
+        "distillery_id": "stonewood",
+        "whisky_type": "Grain Whisky",
+        "abv": 43,
+        "age": 5,
+        "nas": false,
+        "tasting_notes_nose": "Würzig-malziges Aroma mit frischen Holznoten, Honig und einer deutlichen Bananennote.",
+        "tasting_notes_palate": "Kraftvoll mit Röstaromen, Vanille, Zimt und Mocha, begleitet von einem dezenten Hauch Rauch.",
+        "tasting_notes_finish": "Sehr langanhaltend, vielschichtig mit subtilem Rauch im Nachklang.",
+        "seo_title": "Stonewood Woaz | Einzigartiger bayerischer Weizen-Whisky",
+        "seo_description": "Woaz ist bayerisch für Weizen. Stonewood Woaz überzeugt durch Röstaromen und feine Würze. Ein echter Geheimtipp."
       }
     }
   ]
