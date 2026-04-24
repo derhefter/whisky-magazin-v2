@@ -66,6 +66,17 @@
                 <a href="/karte.html" data-i18n="nav_map">Karte</a>
                 <a href="/whisky-glossar/" data-i18n="nav_glossar">Glossar</a>
                 <a href="/ueber-uns.html" data-i18n="nav_about">Über uns</a>
+                <div class="mobile-lang-block">
+                    <span class="mobile-lang-label">&#127760; Language / Sprache</span>
+                    <div class="mobile-lang-buttons">
+                        <button type="button" class="site-lang-btn site-lang-active" data-sitelang="de">DE &middot; Deutsch</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="en">EN &middot; English</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="fr">FR &middot; Fran&ccedil;ais</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="nl">NL &middot; Nederlands</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="es">ES &middot; Espa&ntilde;ol</button>
+                        <button type="button" class="site-lang-btn" data-sitelang="ja">JA &middot; &#26085;&#26412;&#35486;</button>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -119,8 +130,17 @@
         if(toggle&&nav){
             toggle.addEventListener('click',function(){
                 var isOpen=nav.classList.toggle('open');
+                document.body.classList.toggle('nav-open',isOpen);
                 toggle.setAttribute('aria-expanded',isOpen);
                 toggle.textContent=isOpen?'✕':'☰';
+            });
+            nav.querySelectorAll('a').forEach(function(a){
+                a.addEventListener('click',function(){
+                    nav.classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                    toggle.setAttribute('aria-expanded','false');
+                    toggle.textContent='☰';
+                });
             });
         }
     })();
@@ -186,14 +206,7 @@
   #site-lang-rail:hover .full { display:inline; }
   #site-lang-rail .code { min-width:18px; text-align:center; }
   @media (max-width: 1023px) {
-    #site-lang-rail { top:auto; bottom:24px; right:16px; transform:none; border-radius:28px; padding:6px; border:1px solid var(--border); flex-direction:row; gap:0; backdrop-filter:none; -webkit-backdrop-filter:none; background:rgba(255,253,249,0.98); pointer-events:auto; z-index:9000; }
-    #site-lang-rail.mobile-collapsed button:not(.rail-fab) { display:none; }
-    #site-lang-rail .rail-globe { display:none; }
-    #site-lang-rail .rail-fab { display:inline-flex; width:52px; height:52px; justify-content:center; align-items:center; border-radius:50%; background:#C8963E; color:#fff; font-size:20px; padding:0; touch-action:manipulation; -webkit-tap-highlight-color:transparent; cursor:pointer; pointer-events:auto; }
-    #site-lang-rail:not(.mobile-collapsed) .rail-fab { display:none; }
-    #site-lang-rail:not(.mobile-collapsed) { flex-direction:row; padding:6px 8px; }
-    #site-lang-rail:not(.mobile-collapsed) .full { display:none; }
-    #site-lang-rail button { pointer-events:auto; touch-action:manipulation; }
+    #site-lang-rail { display:none !important; }
   }
   @media (min-width: 1024px) {
     #site-lang-rail .rail-fab { display:none; }
@@ -261,34 +274,17 @@
       if(lang==='de'){ notice.style.display='none'; }
       else{ notice.style.display=''; }
     }
-    var rail=document.getElementById('site-lang-rail');
-    if(rail){ rail.classList.add('mobile-collapsed'); }
+    var navEl=document.querySelector('.site-nav');
+    var navToggle=document.querySelector('.nav-toggle');
+    if(navEl&&navEl.classList.contains('open')){
+      navEl.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      if(navToggle){navToggle.setAttribute('aria-expanded','false');navToggle.textContent='☰';}
+    }
   }
   document.querySelectorAll('.site-lang-btn').forEach(function(b){
-    b.addEventListener('click',function(){ pickLang(b.dataset.sitelang); });
+    b.addEventListener('click',function(ev){ ev.stopPropagation(); pickLang(b.dataset.sitelang); });
   });
-  var fab=document.querySelector('.rail-fab');
-  if(fab){
-    var fabTouched=false;
-    fab.addEventListener('touchend',function(e){
-      e.preventDefault();
-      fabTouched=true;
-      document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');
-      setTimeout(function(){fabTouched=false;},600);
-    });
-    fab.addEventListener('click',function(e){
-      e.stopPropagation();
-      if(!fabTouched){
-        document.getElementById('site-lang-rail').classList.toggle('mobile-collapsed');
-      }
-    });
-  }
-  function closeRailIfOutside(e){
-    var rail=document.getElementById('site-lang-rail');
-    if(rail&&!rail.contains(e.target)){ rail.classList.add('mobile-collapsed'); }
-  }
-  document.addEventListener('touchstart',closeRailIfOutside,{passive:true});
-  document.addEventListener('click',closeRailIfOutside);
   var initial=getLang();
   updateRail(initial);
   if(initial!=='de'){
