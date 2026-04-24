@@ -876,9 +876,10 @@
             }
             .site-nav.open { display: flex; }
             .site-nav a { margin-left: 0; padding: 10px 4px; font-size: 16px; }
-            #lang-switcher { flex-wrap: wrap !important; gap: 4px !important; justify-content: center !important; padding: 0 12px !important; }
-            #lang-switcher .lang-btn { padding: 4px 7px !important; font-size: 11px !important; }
-            #lang-switcher > span:first-child { width: 100%; text-align: center; margin: 0 0 4px 0 !important; }
+            #lang-switcher { display: none !important; }
+            #lang-notice { display: none !important; }
+            .mobile-lang-block { display: none !important; }
+            #site-lang-notice { display: none !important; }
             body.nav-open { overflow: hidden; }
             .mobile-lang-block { display: block; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px; }
             .mobile-lang-label { display: block; font-family: 'Inter',sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-amber); font-weight: 600; margin-bottom: 10px; }
