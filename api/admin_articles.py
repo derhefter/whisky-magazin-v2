@@ -127,6 +127,78 @@ def _fetch_draft(filename):
     return file_data, article, None
 
 
+def _fetch_published(filename):
+    """Fetch a published article file from articles/{filename} (not drafts)."""
+    file_data = _github_get(f"contents/articles/{filename}")
+    if "error" in file_data:
+        return None, None, file_data["error"]
+    try:
+        raw = base64.b64decode(file_data.get("content", "").replace("\n", "")).decode("utf-8")
+        article = json.loads(raw)
+    except Exception as e:
+        return None, None, str(e)
+    return file_data, article, None
+
+
+def _github_create_file(path, content_bytes, message):
+    """Create a new file via GitHub API (no sha needed)."""
+    import urllib.request
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
+    payload = json.dumps({
+        "message": message,
+        "content": base64.b64encode(content_bytes).decode("ascii"),
+        "branch": GITHUB_BRANCH,
+    }).encode("utf-8")
+    req = Request(url, data=payload, headers={
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+        "User-Agent": "WhiskyMagazin-Dashboard",
+    }, method="PUT")
+    try:
+        with urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except HTTPError as e:
+        return {"error": str(e)}
+
+
+def _mark_topic_open(topic_id):
+    """Revert topic status to 'open' when an article gets unpublished."""
+    if not topic_id:
+        return None
+    topics_path = "data/topics_queue.json"
+    file_data = _github_get(f"contents/{topics_path}")
+    if "error" in file_data:
+        return {"error": file_data["error"]}
+    try:
+        raw = base64.b64decode(file_data.get("content", "").replace("\n", "")).decode("utf-8")
+        data = json.loads(raw)
+    except Exception as e:
+        return {"error": str(e)}
+
+    sha = file_data.get("sha", "")
+    topics_list = data.get("topics") if isinstance(data, dict) else data
+    if not isinstance(topics_list, list):
+        return {"warning": "topics list not found"}
+
+    for t in topics_list:
+        if t.get("id") == topic_id:
+            t["status"] = "open"
+            t.pop("article_slug", None)
+            t.pop("done_at", None)
+            break
+    else:
+        return {"warning": f"Topic {topic_id} not found"}
+
+    if isinstance(data, dict):
+        data["topics"] = topics_list
+    content_bytes = json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")
+    return _github_update_file(
+        topics_path, content_bytes, sha,
+        f"unpublish: reopen topic {topic_id}",
+    )
+
+
 class handler(BaseHTTPRequestHandler):
 
     def do_OPTIONS(self):
@@ -192,7 +264,7 @@ class handler(BaseHTTPRequestHandler):
         return self._json(200, {"success": True, "filename": filename}, cors)
 
     def do_POST(self):
-        """Approve a draft article (set _status to 'approved', optionally with _publish_at date)."""
+        """Approve a draft (default) OR unpublish a published article (action='unpublish')."""
         cors = _cors_headers(self.headers.get("Origin", ""))
         token = self.headers.get("x-admin-token", "")
         if not _verify_token(token):
@@ -205,6 +277,10 @@ class handler(BaseHTTPRequestHandler):
         filename = (body.get("filename") or "").strip()
         if not filename or not re.match(r'^[\w\-]+\.json$', filename):
             return self._json(400, {"error": "filename is required and must be a safe .json filename"}, cors)
+
+        action = (body.get("action") or "").strip().lower()
+        if action == "unpublish":
+            return self._handle_unpublish(filename, cors)
 
         file_data, article, err = _fetch_draft(filename)
         if err:
@@ -264,6 +340,52 @@ class handler(BaseHTTPRequestHandler):
         if "error" in result:
             return self._json(500, {"error": result["error"]}, cors)
         return self._json(200, {"success": True, "filename": filename, "action": "rejected"}, cors)
+
+    def _handle_unpublish(self, filename, cors):
+        """Move a published article articles/{filename} back to articles/drafts/{filename}."""
+        file_data, article, err = _fetch_published(filename)
+        if err:
+            return self._json(404, {"error": f"published article not found: {err}"}, cors)
+
+        topic_id = article.get("_topic_id", "")
+        article["_status"] = "pending"
+
+        draft_bytes = json.dumps(article, ensure_ascii=False, indent=2).encode("utf-8")
+        existing_draft = _github_get(f"contents/articles/drafts/{filename}")
+        if isinstance(existing_draft, dict) and "error" not in existing_draft:
+            # Draft with same name already exists — overwrite it
+            draft_result = _github_update_file(
+                f"articles/drafts/{filename}",
+                draft_bytes,
+                existing_draft.get("sha", ""),
+                f"dashboard: unpublish {filename} (overwrite existing draft)",
+            )
+        else:
+            draft_result = _github_create_file(
+                f"articles/drafts/{filename}",
+                draft_bytes,
+                f"dashboard: unpublish {filename} (restore as draft)",
+            )
+        if "error" in draft_result:
+            return self._json(500, {"error": f"draft restore failed: {draft_result['error']}"}, cors)
+
+        del_result = _github_delete_file(
+            f"articles/{filename}",
+            file_data.get("sha", ""),
+            f"dashboard: unpublish {filename}",
+        )
+        if "error" in del_result:
+            return self._json(500, {"error": f"published deletion failed: {del_result['error']}"}, cors)
+
+        topic_update = _mark_topic_open(topic_id) if topic_id else None
+
+        return self._json(200, {
+            "success": True,
+            "filename": filename,
+            "action": "unpublished",
+            "topic_id": topic_id or None,
+            "topic_update": topic_update,
+        }, cors)
 
     def _json(self, status, data, cors):
         self.send_response(status)

@@ -2423,6 +2423,10 @@ function renderArtikel(data) {
         <span class="badge badge-approved">&#10003;</span>
         <span style="flex:1; font-size:0.875rem">${esc(fn)}</span>
         <span class="pub-date">${esc(dateStr)}</span>
+        <button class="btn btn-secondary btn-sm" onclick="unpublishArticle('${esc(fn)}')"
+                title="Artikel zurück in die Entwürfe verschieben">
+          &#8617;&#65039; Zurückziehen
+        </button>
       </li>`;
     }).join('');
     pubHtml = `<ul class="pub-list">${items}</ul>`;
@@ -2665,6 +2669,28 @@ async function publishNow(filename, i) {
     showToast('Fehler beim Veröffentlichen: ' + err.message, 'error');
     btn.disabled = false;
     btn.textContent = '🚀 Jetzt veröffentlichen';
+  }
+}
+
+async function unpublishArticle(filename) {
+  if (!filename) return;
+  if (!confirm(`Artikel "${filename}" von der Website zurückziehen?\n\nDer Artikel wird gelöscht und als Entwurf zur erneuten Bearbeitung wiederhergestellt.`)) return;
+  const btn = event.target;
+  btn.disabled = true;
+  btn.textContent = '⏳ Zieht zurück…';
+  try {
+    const result = await apiPost(API.articles, { filename, action: 'unpublish' });
+    if (result && result.success) {
+      showToast(`"${filename}" zurückgezogen – Entwurf wiederhergestellt. Website wird neu gebaut.`, 'success', 6000);
+    } else {
+      showToast(result?.error || 'Unbekannter Fehler beim Zurückziehen', 'warn');
+    }
+    tabLoaded.artikel = false;
+    await loadArtikel();
+  } catch (err) {
+    showToast('Fehler: ' + err.message, 'error');
+    btn.disabled = false;
+    btn.textContent = '↩️ Zurückziehen';
   }
 }
 
