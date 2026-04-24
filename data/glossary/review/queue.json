@@ -14299,24 +14299,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "dolleruper-single-malt",
-        "name": "Dolleruper Single Malt Whisky",
-        "distillery_id": "dolleruper-destille",
-        "whisky_type": "Single Malt",
-        "abv": 42,
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
+        "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
-        "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
-        "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
-        "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
-        "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk.",
-        "slug": "dolleruper-single-malt-whisky",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:51:31Z",
-        "last_updated": "2026-04-24T18:51:31Z",
-        "published": false
+        "last_updated": "2026-04-24T18:56:42Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "dolleruper-single-malt",
@@ -14331,7 +14336,10 @@
         "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
         "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
         "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:56:42Z"
     },
     {
       "batch_id": "whiskies_20260424T185134_1e4c47",
