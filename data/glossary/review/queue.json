@@ -1987,6 +1987,13 @@
       "imported_at": "2026-04-24T18:52:00Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185204_90fa15",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:52:04Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14744,6 +14751,50 @@
         "tasting_notes_finish": "Voluminös mit einer leicht herben Tanninstruktur, die würzigen Noten klingen lange nach.",
         "seo_title": "Nine Springs Triple Cask | Thüringer Single Malt Whisky",
         "seo_description": "Der Nine Springs Triple Cask überzeugt durch komplexe Reifung in drei Fasstypen. Malzig, fruchtig und würzig."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185204_90fa15",
+      "entity": "whiskies",
+      "item_id": "old-sandhill-single-malt",
+      "item_slug": "old-sandhill-single-malt-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "old-sandhill-single-malt",
+        "name": "Old Sandhill Single Malt Whisky",
+        "distillery_id": "old-sandhill",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Malzige Süße, Getreidenoten und Anklänge von frischem Heu und Vanille.",
+        "tasting_notes_palate": "Ehrlich und bodenständig, Noten von Karamell, Eichenholz und reifen Gartenfrüchten.",
+        "tasting_notes_finish": "Mittellang und wärmend mit einer angenehmen Holzwürze.",
+        "seo_title": "Old Sandhill Single Malt | Whisky aus Bad Belzig",
+        "seo_description": "Der Old Sandhill Single Malt spiegelt die märkische Landschaft wider. Handwerklich gebrannt in Brandenburg.",
+        "slug": "old-sandhill-single-malt-whisky",
+        "created_at": "2026-04-24T18:52:04Z",
+        "last_updated": "2026-04-24T18:52:04Z",
+        "published": false
+      },
+      "raw": {
+        "id": "old-sandhill-single-malt",
+        "name": "Old Sandhill Single Malt Whisky",
+        "distillery_id": "old-sandhill",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Malzige Süße, Getreidenoten und Anklänge von frischem Heu und Vanille.",
+        "tasting_notes_palate": "Ehrlich und bodenständig, Noten von Karamell, Eichenholz und reifen Gartenfrüchten.",
+        "tasting_notes_finish": "Mittellang und wärmend mit einer angenehmen Holzwürze.",
+        "seo_title": "Old Sandhill Single Malt | Whisky aus Bad Belzig",
+        "seo_description": "Der Old Sandhill Single Malt spiegelt die märkische Landschaft wider. Handwerklich gebrannt in Brandenburg."
       }
     }
   ]
