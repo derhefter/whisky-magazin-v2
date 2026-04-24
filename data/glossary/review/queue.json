@@ -14721,24 +14721,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "hellinger-42-rauch",
-        "name": "Hellinger 42 Rauch",
-        "distillery_id": "dresdner-whisky-manufaktur",
-        "whisky_type": "Peated Single Malt",
-        "abv": 46,
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
+        "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Deutlicher malziger Rauch, kombiniert mit Vanille, Honig und Zitrusnoten wie Orange und Mandarine.",
-        "tasting_notes_palate": "Kräftiger Geschmack nach Lagerfeuerrauch, dunkler Schokolade, Karamell und würzigen Akzenten, begleitet von Fruchtnoten.",
-        "tasting_notes_finish": "Langanhaltend und rauchig mit einer feinen Süße und würzigem Nachklang.",
-        "seo_title": "Hellinger 42 Rauch | Torfiger Single Malt aus Sachsen",
-        "seo_description": "Erleben Sie den rauchigen Hellinger 42 aus Dresden. Malziger Rauch trifft auf Schokolade und Zitrusfrucht.",
-        "slug": "hellinger-42-rauch",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:51:52Z",
-        "last_updated": "2026-04-24T18:51:52Z",
-        "published": false
+        "last_updated": "2026-04-24T18:58:08Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "hellinger-42-rauch",
@@ -14753,7 +14758,10 @@
         "tasting_notes_finish": "Langanhaltend und rauchig mit einer feinen Süße und würzigem Nachklang.",
         "seo_title": "Hellinger 42 Rauch | Torfiger Single Malt aus Sachsen",
         "seo_description": "Erleben Sie den rauchigen Hellinger 42 aus Dresden. Malziger Rauch trifft auf Schokolade und Zitrusfrucht."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:58:08Z"
     },
     {
       "batch_id": "whiskies_20260424T185155_7f81bd",
