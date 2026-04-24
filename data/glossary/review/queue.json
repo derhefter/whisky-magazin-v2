@@ -15154,37 +15154,31 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "slyrs-classic",
-        "distillery_id": "slyrs",
-        "name": "Slyrs Classic Single Malt Whisky",
-        "whisky_type": "Single Malt",
-        "slug": "slyrs-classic-single-malt",
+        "id": "coillmor-american-oak",
+        "distillery_id": "coillmor",
+        "name": "Coillmór American Oak",
+        "whisky_type": "single_malt",
+        "slug": "coillm-r-american-oak",
         "published": true,
-        "age_statement": "3-6 Jahre",
-        "nas": false,
+        "age_statement": null,
+        "nas": true,
         "abv": 43,
-        "tasting_notes_nose": "Intensiv und komplex mit fruchtigen Aromen von Marille (Aprikose) und Orangenschale. Dazu gesellen sich Noten von frischem Ingwer und cremigem Karamell.",
-        "tasting_notes_palate": "Elegante Struktur mit spürbarer Süße. Noten von Marzipan und Walnuss dominieren, begleitet von einer feinen Würze und einem Hauch Vanille.",
-        "tasting_notes_finish": "Langanhaltend und intensiv mit würzigen Nuancen und einer leichten Zimtnote im Abgang.",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
         "short_description": "Der bayerische Klassiker vom Schliersee – fruchtig, mild und vollmundig.",
         "long_description": "Der Slyrs Classic ist das Herzstück der Brennerei und repräsentiert den bayerischen Single Malt Stil par excellence. Hergestellt aus bayerischer Sommergerste und alpinem Quellwasser, reift dieser Whisky für drei bis sechs Jahre in neuen Fässern aus amerikanischer Weißeiche. Diese Reifung verleiht ihm seine charakteristische helle Bernsteinfarbe und die typischen Vanille- und Karamellnoten. Er wird nicht kühlfiltriert und nicht gefärbt, um den natürlichen Charakter zu bewahren.",
-        "seo_title": "Slyrs Classic Single Malt Whisky | Bayerischer Whisky online kaufen",
-        "seo_description": "Der Slyrs Classic Single Malt Whisky vom Schliersee besticht durch Aromen von Marille, Marzipan und Walnuss. Ein bayerisches Original in höchster Qualität.",
-        "style_tags": [
-          "fruchtig",
-          "mild",
-          "süßlich",
-          "alpin"
-        ],
-        "cask_types": [
-          "New American Oak"
-        ],
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "style_tags": [],
+        "cask_types": [],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z",
         "created_at": "2026-04-24T18:52:15Z",
-        "last_updated": "2026-04-24T18:52:15Z"
+        "last_updated": "2026-04-24T18:58:59Z",
+        "country_id": "deutschland"
       },
       "raw": {
         "id": "slyrs-classic",
@@ -15214,7 +15208,10 @@
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:58:59Z"
     },
     {
       "batch_id": "whiskies_20260424T185218_e423d2",
