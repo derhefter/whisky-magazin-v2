@@ -1938,6 +1938,13 @@
       "imported_at": "2026-04-24T18:51:39Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185143_035036",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:43Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14354,6 +14361,80 @@
           "Ex-Bourbon",
           "Oloroso Sherry",
           "PX Sherry"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z"
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185143_035036",
+      "entity": "whiskies",
+      "item_id": "finch-classic",
+      "item_slug": "finch-classic-highland-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "finch-classic",
+        "distillery_id": "finch",
+        "name": "finch® Schwäbischer Hochland Whisky Classic",
+        "whisky_type": "Single Malt / Grain",
+        "slug": "finch-classic-highland-whisky",
+        "published": true,
+        "age_statement": "5 Jahre",
+        "nas": false,
+        "abv": 40,
+        "tasting_notes_nose": "Süße Vanille gepaart mit hellen Früchten und Traubennoten aus der Weinfaßlagerung.",
+        "tasting_notes_palate": "Sehr mild und ohne Alkoholbrennen. Dominante Vanille, Honig und Schokolade treffen auf fruchtige Traubennuancen.",
+        "tasting_notes_finish": "Überraschend würzig im Abgang mit Honigsüße und einem leichten Anklang von Wein.",
+        "short_description": "Ein milder und fruchtiger Hochland-Whisky von der Schwäbischen Alb.",
+        "long_description": "Der finch® Classic reift für fünf Jahre in einer Kombination aus ausgewählten Barrique-Wein- und Bourbonfässern. Hergestellt aus eigenem Getreide der Schwäbischen Alb, besticht dieser Whisky durch seine außergewöhnliche Milde. Die Lagerung in den Barriquefässern verleiht ihm eine feine Fruchtigkeit, die ihn besonders für Einsteiger und Liebhaber leichter Whiskys attraktiv macht.",
+        "seo_title": "finch Classic Whisky | Schwäbischer Hochland Whisky kaufen",
+        "seo_description": "Der milde Klassiker von finch® Whisky. 5 Jahre gereift in Barrique- und Bourbonfässern. Fruchtig-süßes Aroma von der Schwäbischen Alb.",
+        "style_tags": [
+          "mild",
+          "fruchtig",
+          "Vanille",
+          "Barrique"
+        ],
+        "cask_types": [
+          "Wine Barriques",
+          "Bourbon Casks"
+        ],
+        "smoke_profile": "none",
+        "updated_at": "2026-04-22T23:45:00Z",
+        "created_at": "2026-04-24T18:51:43Z",
+        "last_updated": "2026-04-24T18:51:43Z"
+      },
+      "raw": {
+        "id": "finch-classic",
+        "distillery_id": "finch",
+        "name": "finch® Schwäbischer Hochland Whisky Classic",
+        "whisky_type": "Single Malt / Grain",
+        "slug": "finch-classic-highland-whisky",
+        "published": true,
+        "age_statement": "5 Jahre",
+        "nas": false,
+        "abv": 40,
+        "tasting_notes_nose": "Süße Vanille gepaart mit hellen Früchten und Traubennoten aus der Weinfaßlagerung.",
+        "tasting_notes_palate": "Sehr mild und ohne Alkoholbrennen. Dominante Vanille, Honig und Schokolade treffen auf fruchtige Traubennuancen.",
+        "tasting_notes_finish": "Überraschend würzig im Abgang mit Honigsüße und einem leichten Anklang von Wein.",
+        "short_description": "Ein milder und fruchtiger Hochland-Whisky von der Schwäbischen Alb.",
+        "long_description": "Der finch® Classic reift für fünf Jahre in einer Kombination aus ausgewählten Barrique-Wein- und Bourbonfässern. Hergestellt aus eigenem Getreide der Schwäbischen Alb, besticht dieser Whisky durch seine außergewöhnliche Milde. Die Lagerung in den Barriquefässern verleiht ihm eine feine Fruchtigkeit, die ihn besonders für Einsteiger und Liebhaber leichter Whiskys attraktiv macht.",
+        "seo_title": "finch Classic Whisky | Schwäbischer Hochland Whisky kaufen",
+        "seo_description": "Der milde Klassiker von finch® Whisky. 5 Jahre gereift in Barrique- und Bourbonfässern. Fruchtig-süßes Aroma von der Schwäbischen Alb.",
+        "style_tags": [
+          "mild",
+          "fruchtig",
+          "Vanille",
+          "Barrique"
+        ],
+        "cask_types": [
+          "Wine Barriques",
+          "Bourbon Casks"
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
