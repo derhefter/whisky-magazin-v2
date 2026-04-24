@@ -14200,7 +14200,7 @@
         "ID bereits vorhanden (Duplikat): coillmor-american-oak"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "coillmor-american-oak",
         "name": "Coillmór American Oak",
@@ -14232,7 +14232,10 @@
         "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
         "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
         "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:53:48Z"
     },
     {
       "batch_id": "whiskies_20260424T185128_51128b",
