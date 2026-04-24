@@ -1,2540 +1,6 @@
 {
   "locations": [
     {
-      "id": "loc-glasgow-ankunft",
-      "name": "Glasgow Ankunft",
-      "lat": 55.86,
-      "lon": -4.25,
-      "type": "travel_stop",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2007,
-        2009,
-        2013,
-        2016,
-        2021
-      ],
-      "articles": [
-        "glasgow-winter-citybreak-2025",
-        "arran-ayrshire-celtic-vs-bayern-2017",
-        "campbeltown-springbank-glengyle-glen-scotia-2016",
-        "glasgow-fife-football-2013",
-        "glasgow-islay-erste-schottlandreise-2007",
-        "trossachs-oban-hadrians-wall-2009",
-        "westküste-mull-zurück-in-schottland-2021",
-        "glasgow-winter-weihnachten-2022"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-glasgow-ankunft_0.jpg",
-          "year": 2007,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_1.jpg",
-          "year": 2007,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_2.jpg",
-          "year": 2007,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_3.jpg",
-          "year": 2009,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_4.jpg",
-          "year": 2009,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_5.jpg",
-          "year": 2013,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_6.jpg",
-          "year": 2013,
-          "caption": "Glasgow Ankunft"
-        },
-        {
-          "src": "/images/map/loc-glasgow-ankunft_7.jpg",
-          "year": 2013,
-          "caption": "Glasgow Ankunft"
-        }
-      ]
-    },
-    {
-      "id": "loc-faehre-nach-islay",
-      "name": "Fähre nach Islay",
-      "lat": 55.79,
-      "lon": -5.459,
-      "type": "travel_stop",
-      "region": "Argyll",
-      "country": "Schottland",
-      "years_visited": [
-        2007
-      ],
-      "articles": [
-        "islay-erreichen-fähre-flug-oder-beides",
-        "glasgow-islay-erste-schottlandreise-2007"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-faehre-nach-islay_0.jpg",
-          "year": 2007,
-          "caption": "Fähre nach Islay"
-        },
-        {
-          "src": "/images/map/loc-faehre-nach-islay_1.jpg",
-          "year": 2007,
-          "caption": "Fähre nach Islay"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-ankunft",
-      "name": "Edinburgh Ankunft",
-      "lat": 55.95,
-      "lon": -3.19,
-      "type": "travel_stop",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2008,
-        2012,
-        2019
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019",
-        "edinburgh-orkney-scapa-private-tour-2008",
-        "highlands-skye-talisker-2012"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_0.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_1.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_2.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_3.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_4.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_5.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_6.jpg",
-          "year": 2012,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft_7.jpg",
-          "year": 2019,
-          "caption": "Edinburgh Ankunft"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-castle",
-      "name": "Edinburgh Castle",
-      "lat": 55.949,
-      "lon": -3.2,
-      "type": "nature",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2008
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019",
-        "edinburgh-orkney-scapa-private-tour-2008"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-castle_0.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Castle"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-castle_1.jpg",
-          "year": 2008,
-          "caption": "Edinburgh Castle"
-        }
-      ]
-    },
-    {
-      "id": "loc-fahrt-nach-orkney",
-      "name": "Fahrt nach Orkney",
-      "lat": 58.6,
-      "lon": -3.1,
-      "type": "city",
-      "region": "Highlands",
-      "country": "Schottland",
-      "years_visited": [
-        2008
-      ],
-      "articles": [
-        "edinburgh-orkney-scapa-private-tour-2008"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-fahrt-nach-orkney_0.jpg",
-          "year": 2008,
-          "caption": "Fahrt nach Orkney"
-        },
-        {
-          "src": "/images/map/loc-fahrt-nach-orkney_1.jpg",
-          "year": 2008,
-          "caption": "Fahrt nach Orkney"
-        }
-      ]
-    },
-    {
-      "id": "loc-rueckfahrt-highlands",
-      "name": "Rückfahrt Highlands",
-      "lat": 57.5,
-      "lon": -3.5,
-      "type": "city",
-      "region": "Highlands",
-      "country": "Schottland",
-      "years_visited": [
-        2008
-      ],
-      "articles": [
-        "edinburgh-orkney-scapa-private-tour-2008"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-rueckfahrt-highlands_0.jpg",
-          "year": 2008,
-          "caption": "Rückfahrt Highlands"
-        },
-        {
-          "src": "/images/map/loc-rueckfahrt-highlands_1.jpg",
-          "year": 2008,
-          "caption": "Rückfahrt Highlands"
-        },
-        {
-          "src": "/images/map/loc-rueckfahrt-highlands_2.jpg",
-          "year": 2008,
-          "caption": "Rückfahrt Highlands"
-        },
-        {
-          "src": "/images/map/loc-rueckfahrt-highlands_3.jpg",
-          "year": 2008,
-          "caption": "Rückfahrt Highlands"
-        }
-      ]
-    },
-    {
-      "id": "loc-famous-grouse-experience",
-      "name": "Famous Grouse Experience",
-      "lat": 56.383,
-      "lon": -3.862,
-      "type": "poi",
-      "region": "Perthshire",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-famous-grouse-experience_0.jpg",
-          "year": 2009,
-          "caption": "Famous Grouse Experience"
-        },
-        {
-          "src": "/images/map/loc-famous-grouse-experience_1.jpg",
-          "year": 2009,
-          "caption": "Famous Grouse Experience"
-        }
-      ]
-    },
-    {
-      "id": "loc-callander",
-      "name": "Callander",
-      "lat": 56.245,
-      "lon": -4.215,
-      "type": "city",
-      "region": "Trossachs",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-callander_0.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        },
-        {
-          "src": "/images/map/loc-callander_1.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        },
-        {
-          "src": "/images/map/loc-callander_2.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        }
-      ]
-    },
-    {
-      "id": "loc-callander-2009",
-      "name": "Callander",
-      "lat": 56.01398,
-      "lon": -4.36417,
-      "type": "city",
-      "region": "Trossachs",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-callander-2009_0.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        },
-        {
-          "src": "/images/map/loc-callander-2009_1.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        }
-      ]
-    },
-    {
-      "id": "loc-callander-2009",
-      "name": "Callander",
-      "lat": 56.24093,
-      "lon": -4.2635,
-      "type": "city",
-      "region": "Trossachs",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-callander-2009_0.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        },
-        {
-          "src": "/images/map/loc-callander-2009_1.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        }
-      ]
-    },
-    {
-      "id": "loc-callander-2009",
-      "name": "Callander",
-      "lat": 56.18847,
-      "lon": -4.48271,
-      "type": "city",
-      "region": "Trossachs",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-callander-2009_0.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        },
-        {
-          "src": "/images/map/loc-callander-2009_1.jpg",
-          "year": 2009,
-          "caption": "Callander"
-        }
-      ]
-    },
-    {
-      "id": "loc-falkirk",
-      "name": "Falkirk",
-      "lat": 56.0,
-      "lon": -3.84,
-      "type": "poi",
-      "region": "Falkirk",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-falkirk_0.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        },
-        {
-          "src": "/images/map/loc-falkirk_1.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        },
-        {
-          "src": "/images/map/loc-falkirk_2.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        }
-      ]
-    },
-    {
-      "id": "loc-falkirk-2009",
-      "name": "Falkirk",
-      "lat": 56.41478,
-      "lon": -5.47411,
-      "type": "poi",
-      "region": "Falkirk",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-falkirk-2009_0.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        },
-        {
-          "src": "/images/map/loc-falkirk-2009_1.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        }
-      ]
-    },
-    {
-      "id": "loc-falkirk-2009",
-      "name": "Falkirk",
-      "lat": 56.38925,
-      "lon": -3.85388,
-      "type": "poi",
-      "region": "Falkirk",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-falkirk-2009_0.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        },
-        {
-          "src": "/images/map/loc-falkirk-2009_1.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        }
-      ]
-    },
-    {
-      "id": "loc-falkirk-2009",
-      "name": "Falkirk",
-      "lat": 56.25778,
-      "lon": -3.78555,
-      "type": "poi",
-      "region": "Falkirk",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-falkirk-2009_0.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        }
-      ]
-    },
-    {
-      "id": "loc-falkirk-2009",
-      "name": "Falkirk",
-      "lat": 56.1732,
-      "lon": -4.41442,
-      "type": "poi",
-      "region": "Falkirk",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-falkirk-2009_0.jpg",
-          "year": 2009,
-          "caption": "Falkirk"
-        }
-      ]
-    },
-    {
-      "id": "loc-cumberland-hotel",
-      "name": "Cumberland Hotel",
-      "lat": 55.87,
-      "lon": -4.28,
-      "type": "travel_stop",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-cumberland-hotel_0.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        },
-        {
-          "src": "/images/map/loc-cumberland-hotel_1.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        },
-        {
-          "src": "/images/map/loc-cumberland-hotel_2.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        },
-        {
-          "src": "/images/map/loc-cumberland-hotel_3.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        }
-      ]
-    },
-    {
-      "id": "loc-cumberland-hotel-2009",
-      "name": "Cumberland Hotel",
-      "lat": 56.22507,
-      "lon": -4.40235,
-      "type": "travel_stop",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-cumberland-hotel-2009_0.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        }
-      ]
-    },
-    {
-      "id": "loc-cumberland-hotel-2009",
-      "name": "Cumberland Hotel",
-      "lat": 56.04961,
-      "lon": -4.40703,
-      "type": "travel_stop",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2009
-      ],
-      "articles": [
-        "trossachs-oban-hadrians-wall-2009"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-cumberland-hotel-2009_0.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        },
-        {
-          "src": "/images/map/loc-cumberland-hotel-2009_1.jpg",
-          "year": 2009,
-          "caption": "Cumberland Hotel"
-        }
-      ]
-    },
-    {
-      "id": "loc-rannoch-moor",
-      "name": "Rannoch Moor",
-      "lat": 56.642,
-      "lon": -4.774,
-      "type": "city",
-      "region": "Highlands",
-      "country": "Schottland",
-      "years_visited": [
-        2012
-      ],
-      "articles": [
-        "highlands-skye-talisker-2012"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-rannoch-moor_0.jpg",
-          "year": 2012,
-          "caption": "Rannoch Moor"
-        },
-        {
-          "src": "/images/map/loc-rannoch-moor_1.jpg",
-          "year": 2012,
-          "caption": "Rannoch Moor"
-        }
-      ]
-    },
-    {
-      "id": "loc-celtic-park",
-      "name": "Celtic Park",
-      "lat": 55.85,
-      "lon": -4.206,
-      "type": "city",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2013
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017",
-        "glasgow-fife-football-2013"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-celtic-park_0.jpg",
-          "year": 2013,
-          "caption": "Celtic Park"
-        },
-        {
-          "src": "/images/map/loc-celtic-park_1.jpg",
-          "year": 2013,
-          "caption": "Celtic Park"
-        }
-      ]
-    },
-    {
-      "id": "loc-doubletree-by-hilton-dunblane",
-      "name": "DoubleTree by Hilton Dunblane",
-      "lat": 56.19,
-      "lon": -3.962,
-      "type": "city",
-      "region": "Stirling",
-      "country": "Schottland",
-      "years_visited": [
-        2013
-      ],
-      "articles": [
-        "glasgow-fife-football-2013"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-doubletree-by-hilton-dunblane_0.jpg",
-          "year": 2013,
-          "caption": "DoubleTree by Hilton Dunblane"
-        },
-        {
-          "src": "/images/map/loc-doubletree-by-hilton-dunblane_1.jpg",
-          "year": 2013,
-          "caption": "DoubleTree by Hilton Dunblane"
-        },
-        {
-          "src": "/images/map/loc-doubletree-by-hilton-dunblane_2.jpg",
-          "year": 2013,
-          "caption": "DoubleTree by Hilton Dunblane"
-        }
-      ]
-    },
-    {
-      "id": "loc-aberdeen-ankunft",
-      "name": "Aberdeen Ankunft",
-      "lat": 57.15,
-      "lon": -2.094,
-      "type": "travel_stop",
-      "region": "Aberdeen",
-      "country": "Schottland",
-      "years_visited": [
-        2014
-      ],
-      "articles": [
-        "speyside-aberdeen-dufftown-2014"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-aberdeen-ankunft_0.jpg",
-          "year": 2014,
-          "caption": "Aberdeen Ankunft"
-        },
-        {
-          "src": "/images/map/loc-aberdeen-ankunft_1.jpg",
-          "year": 2014,
-          "caption": "Aberdeen Ankunft"
-        },
-        {
-          "src": "/images/map/loc-aberdeen-ankunft_2.jpg",
-          "year": 2014,
-          "caption": "Aberdeen Ankunft"
-        },
-        {
-          "src": "/images/map/loc-aberdeen-ankunft_3.jpg",
-          "year": 2014,
-          "caption": "Aberdeen Ankunft"
-        }
-      ]
-    },
-    {
-      "id": "loc-dufftown",
-      "name": "Dufftown",
-      "lat": 57.445,
-      "lon": -3.128,
-      "type": "city",
-      "region": "Speyside",
-      "country": "Schottland",
-      "years_visited": [
-        2014
-      ],
-      "articles": [
-        "speyside-aberdeen-dufftown-2014"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-dufftown_0.jpg",
-          "year": 2014,
-          "caption": "Dufftown"
-        },
-        {
-          "src": "/images/map/loc-dufftown_1.jpg",
-          "year": 2014,
-          "caption": "Dufftown"
-        }
-      ]
-    },
-    {
-      "id": "loc-aberdeen-fc-stadion-pittodrie",
-      "name": "Aberdeen FC Stadion Pittodrie",
-      "lat": 57.16,
-      "lon": -2.089,
-      "type": "city",
-      "region": "Aberdeen",
-      "country": "Schottland",
-      "years_visited": [
-        2014
-      ],
-      "articles": [
-        "speyside-aberdeen-dufftown-2014"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-aberdeen-fc-stadion-pittodrie_0.jpg",
-          "year": 2014,
-          "caption": "Aberdeen FC Stadion Pittodrie"
-        },
-        {
-          "src": "/images/map/loc-aberdeen-fc-stadion-pittodrie_1.jpg",
-          "year": 2014,
-          "caption": "Aberdeen FC Stadion Pittodrie"
-        }
-      ]
-    },
-    {
-      "id": "loc-dublin-ankunft",
-      "name": "Dublin Ankunft",
-      "lat": 53.35,
-      "lon": -6.26,
-      "type": "travel_stop",
-      "region": "Dublin",
-      "country": "Irland",
-      "years_visited": [
-        2015
-      ],
-      "articles": [
-        "special-edition-dublin-irland-2015",
-        "teeling-distillery-dublin-ein-besuch-lohnt-sich"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-dublin-ankunft_0.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        },
-        {
-          "src": "/images/map/loc-dublin-ankunft_1.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        },
-        {
-          "src": "/images/map/loc-dublin-ankunft_2.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        },
-        {
-          "src": "/images/map/loc-dublin-ankunft_3.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        },
-        {
-          "src": "/images/map/loc-dublin-ankunft_4.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        },
-        {
-          "src": "/images/map/loc-dublin-ankunft_5.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        },
-        {
-          "src": "/images/map/loc-dublin-ankunft_6.jpg",
-          "year": 2015,
-          "caption": "Dublin Ankunft"
-        }
-      ]
-    },
-    {
-      "id": "loc-campbeltown",
-      "name": "Campbeltown",
-      "lat": 55.427,
-      "lon": -5.6,
-      "type": "city",
-      "region": "Campbeltown",
-      "country": "Schottland",
-      "years_visited": [
-        2016
-      ],
-      "articles": [
-        "campbeltown-springbank-glengyle-glen-scotia-2016"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-campbeltown_0.jpg",
-          "year": 2016,
-          "caption": "Campbeltown"
-        },
-        {
-          "src": "/images/map/loc-campbeltown_1.jpg",
-          "year": 2016,
-          "caption": "Campbeltown"
-        },
-        {
-          "src": "/images/map/loc-campbeltown_2.jpg",
-          "year": 2016,
-          "caption": "Campbeltown"
-        },
-        {
-          "src": "/images/map/loc-campbeltown_3.jpg",
-          "year": 2016,
-          "caption": "Campbeltown"
-        }
-      ]
-    },
-    {
-      "id": "loc-glasgow",
-      "name": "Edinburgh (Anflug)",
-      "lat": 55.86,
-      "lon": -4.25,
-      "type": "city",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2016,
-        2025
-      ],
-      "articles": [
-        "glasgow-winter-citybreak-2025",
-        "campbeltown-springbank-glengyle-glen-scotia-2016"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-glasgow_0.jpg",
-          "year": 2016,
-          "caption": "Edinburgh (Anflug)"
-        },
-        {
-          "src": "/images/map/loc-glasgow_1.jpg",
-          "year": 2016,
-          "caption": "Edinburgh (Anflug)"
-        },
-        {
-          "src": "/images/map/loc-glasgow_2.jpg",
-          "year": 2016,
-          "caption": "Edinburgh (Anflug)"
-        },
-        {
-          "src": "/images/map/loc-glasgow_3.jpg",
-          "year": 2016,
-          "caption": "Edinburgh (Anflug)"
-        },
-        {
-          "src": "/images/map/loc-glasgow_5.jpg",
-          "year": 2025,
-          "caption": "Edinburgh (Anflug)"
-        }
-      ]
-    },
-    {
-      "id": "loc-flug-sxf-gla",
-      "name": "Flug SXF-GLA",
-      "lat": 55.85543,
-      "lon": -4.25021,
-      "type": "city",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-flug-sxf-gla_0.jpg",
-          "year": 2017,
-          "caption": "Flug SXF-GLA"
-        },
-        {
-          "src": "/images/map/loc-flug-sxf-gla_1.jpg",
-          "year": 2017,
-          "caption": "Flug SXF-GLA"
-        }
-      ]
-    },
-    {
-      "id": "loc-calmac-faehre-nach-arran",
-      "name": "CalMac Fähre nach Arran",
-      "lat": 55.76,
-      "lon": -5.059,
-      "type": "travel_stop",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran_0.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        }
-      ]
-    },
-    {
-      "id": "loc-calmac-faehre-nach-arran-2017",
-      "name": "CalMac Fähre nach Arran",
-      "lat": 55.63907,
-      "lon": -4.81509,
-      "type": "travel_stop",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran-2017_0.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        }
-      ]
-    },
-    {
-      "id": "loc-calmac-faehre-nach-arran-2017",
-      "name": "CalMac Fähre nach Arran",
-      "lat": 55.49817,
-      "lon": -4.56549,
-      "type": "travel_stop",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran-2017_0.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        }
-      ]
-    },
-    {
-      "id": "loc-calmac-faehre-nach-arran-2017",
-      "name": "CalMac Fähre nach Arran",
-      "lat": 54.85798,
-      "lon": -4.46178,
-      "type": "travel_stop",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran-2017_0.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        },
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran-2017_1.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        }
-      ]
-    },
-    {
-      "id": "loc-calmac-faehre-nach-arran-2017",
-      "name": "CalMac Fähre nach Arran",
-      "lat": 55.00142,
-      "lon": -3.25891,
-      "type": "travel_stop",
-      "region": "Ayrshire",
-      "country": "Schottland",
-      "years_visited": [
-        2017
-      ],
-      "articles": [
-        "arran-ayrshire-celtic-vs-bayern-2017"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran-2017_0.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        },
-        {
-          "src": "/images/map/loc-calmac-faehre-nach-arran-2017_1.jpg",
-          "year": 2017,
-          "caption": "CalMac Fähre nach Arran"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-ankunft-2019",
-      "name": "Edinburgh Ankunft",
-      "lat": 55.95125,
-      "lon": -3.2605,
-      "type": "travel_stop",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2019
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-ankunft-2019_0.jpg",
-          "year": 2019,
-          "caption": "Edinburgh Ankunft"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-ankunft-2019_1.jpg",
-          "year": 2019,
-          "caption": "Edinburgh Ankunft"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-castle-2019",
-      "name": "Edinburgh Castle",
-      "lat": 55.9476,
-      "lon": -3.18924,
-      "type": "nature",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2019
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-castle-2019_0.jpg",
-          "year": 2019,
-          "caption": "Edinburgh Castle"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-castle-2019_1.jpg",
-          "year": 2019,
-          "caption": "Edinburgh Castle"
-        }
-      ]
-    },
-    {
-      "id": "loc-the-booking-office",
-      "name": "The Booking Office",
-      "lat": 55.95041,
-      "lon": -3.19673,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2019
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-the-booking-office_0.jpg",
-          "year": 2019,
-          "caption": "The Booking Office"
-        },
-        {
-          "src": "/images/map/loc-the-booking-office_1.jpg",
-          "year": 2019,
-          "caption": "The Booking Office"
-        }
-      ]
-    },
-    {
-      "id": "loc-the-booking-office-2019",
-      "name": "The Booking Office",
-      "lat": 55.95135,
-      "lon": -3.20526,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2019
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-the-booking-office-2019_0.jpg",
-          "year": 2019,
-          "caption": "The Booking Office"
-        }
-      ]
-    },
-    {
-      "id": "loc-the-booking-office-2019",
-      "name": "The Booking Office",
-      "lat": 55.952,
-      "lon": -3.189,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2019
-      ],
-      "articles": [
-        "edinburgh-halloween-holyrood-2019"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-the-booking-office-2019_0.jpg",
-          "year": 2019,
-          "caption": "The Booking Office"
-        },
-        {
-          "src": "/images/map/loc-the-booking-office-2019_1.jpg",
-          "year": 2019,
-          "caption": "The Booking Office"
-        }
-      ]
-    },
-    {
-      "id": "loc-ryanair-flug",
-      "name": "Ryanair Flug",
-      "lat": 55.862,
-      "lon": -4.432,
-      "type": "city",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2021
-      ],
-      "articles": [
-        "westküste-mull-zurück-in-schottland-2021"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-ryanair-flug_0.jpg",
-          "year": 2021,
-          "caption": "Ryanair Flug"
-        }
-      ]
-    },
-    {
-      "id": "loc-stop-55-94723-3-36549",
-      "name": "Stop @ 55.94723,-3.36549",
-      "lat": 55.87205,
-      "lon": -4.11196,
-      "type": "city",
-      "region": null,
-      "country": "Schottland",
-      "years_visited": [
-        2022
-      ],
-      "articles": [
-        "glasgow-winter-weihnachten-2022",
-        "special-edition-deutschland-berlin-dresden-2022"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-stop-55-94723-3-36549_0.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.94723,-3.36549"
-        },
-        {
-          "src": "/images/map/loc-stop-55-94723-3-36549_1.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.94723,-3.36549"
-        }
-      ]
-    },
-    {
-      "id": "loc-stop-55-85839-4-25823",
-      "name": "Stop @ 55.85839,-4.25823",
-      "lat": 55.86396,
-      "lon": -4.28339,
-      "type": "city",
-      "region": null,
-      "country": "Schottland",
-      "years_visited": [
-        2022
-      ],
-      "articles": [
-        "glasgow-winter-weihnachten-2022",
-        "special-edition-deutschland-berlin-dresden-2022"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-stop-55-85839-4-25823_0.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.85839,-4.25823"
-        },
-        {
-          "src": "/images/map/loc-stop-55-85839-4-25823_1.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.85839,-4.25823"
-        }
-      ]
-    },
-    {
-      "id": "loc-stop-55-86266-4-26582",
-      "name": "Stop @ 55.86266,-4.26582",
-      "lat": 55.86609,
-      "lon": -4.26428,
-      "type": "city",
-      "region": null,
-      "country": "Schottland",
-      "years_visited": [
-        2022
-      ],
-      "articles": [
-        "glasgow-winter-weihnachten-2022",
-        "special-edition-deutschland-berlin-dresden-2022"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-stop-55-86266-4-26582_0.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.86266,-4.26582"
-        },
-        {
-          "src": "/images/map/loc-stop-55-86266-4-26582_1.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.86266,-4.26582"
-        }
-      ]
-    },
-    {
-      "id": "loc-stop-55-94835-3-36402",
-      "name": "Stop @ 55.94835,-3.36402",
-      "lat": 55.94835,
-      "lon": -3.36402,
-      "type": "city",
-      "region": null,
-      "country": "Schottland",
-      "years_visited": [
-        2022,
-        2025
-      ],
-      "articles": [
-        "glasgow-winter-citybreak-2025",
-        "glasgow-winter-weihnachten-2022",
-        "special-edition-deutschland-berlin-dresden-2022"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-stop-55-94835-3-36402_0.jpg",
-          "year": 2022,
-          "caption": "Stop @ 55.94835,-3.36402"
-        },
-        {
-          "src": "/images/map/loc-stop-55-94835-3-36402_1.jpg",
-          "year": 2025,
-          "caption": "Stop @ 55.94835,-3.36402"
-        },
-        {
-          "src": "/images/map/loc-stop-55-94835-3-36402_2.jpg",
-          "year": 2025,
-          "caption": "Stop @ 55.94835,-3.36402"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen",
-      "name": "Berlin BER Flughafen",
-      "lat": 52.36601,
-      "lon": 13.50616,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023",
-        "special-edition-deutsche-whisky-tour-2020",
-        "special-edition-deutschland-berlin-dresden-2022"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 55.94811,
-      "lon": -3.36112,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 56.58938,
-      "lon": -3.67394,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 56.62461,
-      "lon": -3.84938,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 56.6481,
-      "lon": -3.80848,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 56.8751,
-      "lon": -4.24214,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 57.24882,
-      "lon": -3.79569,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 57.54777,
-      "lon": -4.29303,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 57.60311,
-      "lon": -4.3424,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-berlin-ber-flughafen-2023",
-      "name": "Berlin BER Flughafen",
-      "lat": 57.59959,
-      "lon": -4.37034,
-      "type": "travel_stop",
-      "region": "Berlin",
-      "country": "Deutschland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_0.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        },
-        {
-          "src": "/images/map/loc-berlin-ber-flughafen-2023_1.jpg",
-          "year": 2023,
-          "caption": "Berlin BER Flughafen"
-        }
-      ]
-    },
-    {
-      "id": "loc-beauly-muir-of-ord-dingwall",
-      "name": "Beauly / Muir of Ord / Dingwall",
-      "lat": 57.64677,
-      "lon": -4.27293,
-      "type": "city",
-      "region": "Easter Ross",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall_0.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        },
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall_1.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        }
-      ]
-    },
-    {
-      "id": "loc-beauly-muir-of-ord-dingwall-2023",
-      "name": "Beauly / Muir of Ord / Dingwall",
-      "lat": 57.82945,
-      "lon": -4.08649,
-      "type": "city",
-      "region": "Easter Ross",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_0.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        },
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_1.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        }
-      ]
-    },
-    {
-      "id": "loc-beauly-muir-of-ord-dingwall-2023",
-      "name": "Beauly / Muir of Ord / Dingwall",
-      "lat": 57.605,
-      "lon": -4.342,
-      "type": "city",
-      "region": "Easter Ross",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_0.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        }
-      ]
-    },
-    {
-      "id": "loc-beauly-muir-of-ord-dingwall-2023",
-      "name": "Beauly / Muir of Ord / Dingwall",
-      "lat": 57.85239,
-      "lon": -4.0828,
-      "type": "city",
-      "region": "Easter Ross",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_0.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        },
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_1.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        }
-      ]
-    },
-    {
-      "id": "loc-beauly-muir-of-ord-dingwall-2023",
-      "name": "Beauly / Muir of Ord / Dingwall",
-      "lat": 57.64126,
-      "lon": -4.34692,
-      "type": "city",
-      "region": "Easter Ross",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_0.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        },
-        {
-          "src": "/images/map/loc-beauly-muir-of-ord-dingwall-2023_1.jpg",
-          "year": 2023,
-          "caption": "Beauly / Muir of Ord / Dingwall"
-        }
-      ]
-    },
-    {
-      "id": "loc-inverness-uile-bheist",
-      "name": "Inverness / Uile-bheist",
-      "lat": 57.5637,
-      "lon": -4.40813,
-      "type": "city",
-      "region": "Inverness",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-inverness-uile-bheist_0.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        },
-        {
-          "src": "/images/map/loc-inverness-uile-bheist_1.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        }
-      ]
-    },
-    {
-      "id": "loc-inverness-uile-bheist-2023",
-      "name": "Inverness / Uile-bheist",
-      "lat": 57.47691,
-      "lon": -4.22914,
-      "type": "city",
-      "region": "Inverness",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_0.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        },
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_1.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        }
-      ]
-    },
-    {
-      "id": "loc-inverness-uile-bheist-2023",
-      "name": "Inverness / Uile-bheist",
-      "lat": 57.5386,
-      "lon": -3.90556,
-      "type": "city",
-      "region": "Inverness",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_0.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        }
-      ]
-    },
-    {
-      "id": "loc-inverness-uile-bheist-2023",
-      "name": "Inverness / Uile-bheist",
-      "lat": 57.50726,
-      "lon": -4.26273,
-      "type": "city",
-      "region": "Inverness",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_0.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        },
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_1.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        }
-      ]
-    },
-    {
-      "id": "loc-inverness-uile-bheist-2023",
-      "name": "Inverness / Uile-bheist",
-      "lat": 57.54491,
-      "lon": -4.28463,
-      "type": "city",
-      "region": "Inverness",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_0.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        },
-        {
-          "src": "/images/map/loc-inverness-uile-bheist-2023_1.jpg",
-          "year": 2023,
-          "caption": "Inverness / Uile-bheist"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-rueckfahrt",
-      "name": "Edinburgh / Rueckfahrt",
-      "lat": 57.33952,
-      "lon": -4.00299,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt_0.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt_1.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-rueckfahrt-2023",
-      "name": "Edinburgh / Rueckfahrt",
-      "lat": 57.08048,
-      "lon": -4.03374,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_0.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_1.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-rueckfahrt-2023",
-      "name": "Edinburgh / Rueckfahrt",
-      "lat": 56.93782,
-      "lon": -4.24006,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_0.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_1.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-rueckfahrt-2023",
-      "name": "Edinburgh / Rueckfahrt",
-      "lat": 56.079,
-      "lon": -3.397,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_0.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_1.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        }
-      ]
-    },
-    {
-      "id": "loc-edinburgh-rueckfahrt-2023",
-      "name": "Edinburgh / Rueckfahrt",
-      "lat": 56.01553,
-      "lon": -3.3972,
-      "type": "city",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [
-        2023
-      ],
-      "articles": [
-        "highlands-whisky-trail-2023"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_0.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        },
-        {
-          "src": "/images/map/loc-edinburgh-rueckfahrt-2023_1.jpg",
-          "year": 2023,
-          "caption": "Edinburgh / Rueckfahrt"
-        }
-      ]
-    },
-    {
-      "id": "loc-london-heathrow",
-      "name": "London Heathrow",
-      "lat": 51.47,
-      "lon": -0.47,
-      "type": "travel_stop",
-      "region": "London",
-      "country": "England",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-london-heathrow_0.jpg",
-          "year": 2024,
-          "caption": "London Heathrow"
-        },
-        {
-          "src": "/images/map/loc-london-heathrow_1.jpg",
-          "year": 2024,
-          "caption": "London Heathrow"
-        },
-        {
-          "src": "/images/map/loc-london-heathrow_2.jpg",
-          "year": 2024,
-          "caption": "London Heathrow"
-        },
-        {
-          "src": "/images/map/loc-london-heathrow_3.jpg",
-          "year": 2024,
-          "caption": "London Heathrow"
-        }
-      ]
-    },
-    {
-      "id": "loc-louisville-downtown-whiskey-row",
-      "name": "Louisville Downtown / Whiskey Row",
-      "lat": 38.257,
-      "lon": -85.763,
-      "type": "city",
-      "region": "Kentucky",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-louisville-downtown-whiskey-row_0.jpg",
-          "year": 2024,
-          "caption": "Louisville Downtown / Whiskey Row"
-        },
-        {
-          "src": "/images/map/loc-louisville-downtown-whiskey-row_1.jpg",
-          "year": 2024,
-          "caption": "Louisville Downtown / Whiskey Row"
-        },
-        {
-          "src": "/images/map/loc-louisville-downtown-whiskey-row_2.jpg",
-          "year": 2024,
-          "caption": "Louisville Downtown / Whiskey Row"
-        },
-        {
-          "src": "/images/map/loc-louisville-downtown-whiskey-row_3.jpg",
-          "year": 2024,
-          "caption": "Louisville Downtown / Whiskey Row"
-        }
-      ]
-    },
-    {
-      "id": "loc-fort-knox",
-      "name": "Fort Knox",
-      "lat": 37.883,
-      "lon": -85.962,
-      "type": "city",
-      "region": "Kentucky",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-fort-knox_0.jpg",
-          "year": 2024,
-          "caption": "Fort Knox"
-        },
-        {
-          "src": "/images/map/loc-fort-knox_1.jpg",
-          "year": 2024,
-          "caption": "Fort Knox"
-        },
-        {
-          "src": "/images/map/loc-fort-knox_2.jpg",
-          "year": 2024,
-          "caption": "Fort Knox"
-        },
-        {
-          "src": "/images/map/loc-fort-knox_3.jpg",
-          "year": 2024,
-          "caption": "Fort Knox"
-        }
-      ]
-    },
-    {
-      "id": "loc-jeptha-creed-bulleit-whiskey-thief",
-      "name": "Jeptha Creed / Bulleit / Whiskey Thief",
-      "lat": 38.189,
-      "lon": -85.265,
-      "type": "city",
-      "region": "Kentucky",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-jeptha-creed-bulleit-whiskey-thief_0.jpg",
-          "year": 2024,
-          "caption": "Jeptha Creed / Bulleit / Whiskey Thief"
-        },
-        {
-          "src": "/images/map/loc-jeptha-creed-bulleit-whiskey-thief_1.jpg",
-          "year": 2024,
-          "caption": "Jeptha Creed / Bulleit / Whiskey Thief"
-        },
-        {
-          "src": "/images/map/loc-jeptha-creed-bulleit-whiskey-thief_2.jpg",
-          "year": 2024,
-          "caption": "Jeptha Creed / Bulleit / Whiskey Thief"
-        },
-        {
-          "src": "/images/map/loc-jeptha-creed-bulleit-whiskey-thief_3.jpg",
-          "year": 2024,
-          "caption": "Jeptha Creed / Bulleit / Whiskey Thief"
-        }
-      ]
-    },
-    {
-      "id": "loc-barrel-house-distilling",
-      "name": "Barrel House Distilling",
-      "lat": 38.047,
-      "lon": -84.75,
-      "type": "poi",
-      "region": "Lexington",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-barrel-house-distilling_0.jpg",
-          "year": 2024,
-          "caption": "Barrel House Distilling"
-        },
-        {
-          "src": "/images/map/loc-barrel-house-distilling_1.jpg",
-          "year": 2024,
-          "caption": "Barrel House Distilling"
-        },
-        {
-          "src": "/images/map/loc-barrel-house-distilling_2.jpg",
-          "year": 2024,
-          "caption": "Barrel House Distilling"
-        },
-        {
-          "src": "/images/map/loc-barrel-house-distilling_3.jpg",
-          "year": 2024,
-          "caption": "Barrel House Distilling"
-        }
-      ]
-    },
-    {
-      "id": "loc-nashville-pennington",
-      "name": "Nashville / Pennington",
-      "lat": 36.16,
-      "lon": -86.78,
-      "type": "city",
-      "region": "Tennessee",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-nashville-pennington_0.jpg",
-          "year": 2024,
-          "caption": "Nashville / Pennington"
-        },
-        {
-          "src": "/images/map/loc-nashville-pennington_1.jpg",
-          "year": 2024,
-          "caption": "Nashville / Pennington"
-        },
-        {
-          "src": "/images/map/loc-nashville-pennington_2.jpg",
-          "year": 2024,
-          "caption": "Nashville / Pennington"
-        },
-        {
-          "src": "/images/map/loc-nashville-pennington_3.jpg",
-          "year": 2024,
-          "caption": "Nashville / Pennington"
-        }
-      ]
-    },
-    {
-      "id": "loc-nissan-stadium-nfl",
-      "name": "Nissan Stadium / NFL",
-      "lat": 36.166,
-      "lon": -86.771,
-      "type": "poi",
-      "region": "Nashville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-nissan-stadium-nfl_0.jpg",
-          "year": 2024,
-          "caption": "Nissan Stadium / NFL"
-        },
-        {
-          "src": "/images/map/loc-nissan-stadium-nfl_1.jpg",
-          "year": 2024,
-          "caption": "Nissan Stadium / NFL"
-        },
-        {
-          "src": "/images/map/loc-nissan-stadium-nfl_2.jpg",
-          "year": 2024,
-          "caption": "Nissan Stadium / NFL"
-        },
-        {
-          "src": "/images/map/loc-nissan-stadium-nfl_3.jpg",
-          "year": 2024,
-          "caption": "Nissan Stadium / NFL"
-        }
-      ]
-    },
-    {
-      "id": "loc-glasgow-city-centre",
-      "name": "Glasgow City Centre",
-      "lat": 55.87988,
-      "lon": -4.31464,
-      "type": "city",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2025
-      ],
-      "articles": [
-        "glasgow-winter-citybreak-2025"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-glasgow-city-centre_0.jpg",
-          "year": 2025,
-          "caption": "Glasgow City Centre"
-        },
-        {
-          "src": "/images/map/loc-glasgow-city-centre_1.jpg",
-          "year": 2025,
-          "caption": "Glasgow City Centre"
-        }
-      ]
-    },
-    {
-      "id": "loc-barrowland-ballroom-glasgow-city",
-      "name": "Barrowland Ballroom / Glasgow City",
-      "lat": 55.86369,
-      "lon": -4.27287,
-      "type": "poi",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2025
-      ],
-      "articles": [
-        "glasgow-winter-citybreak-2025"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-barrowland-ballroom-glasgow-city_0.jpg",
-          "year": 2025,
-          "caption": "Barrowland Ballroom / Glasgow City"
-        },
-        {
-          "src": "/images/map/loc-barrowland-ballroom-glasgow-city_1.jpg",
-          "year": 2025,
-          "caption": "Barrowland Ballroom / Glasgow City"
-        }
-      ]
-    },
-    {
-      "id": "loc-glasgow-central-station",
-      "name": "Glasgow Central Station",
-      "lat": 55.86271,
-      "lon": -4.34105,
-      "type": "city",
-      "region": "Glasgow",
-      "country": "Schottland",
-      "years_visited": [
-        2025
-      ],
-      "articles": [
-        "glasgow-winter-citybreak-2025"
-      ],
-      "photos": [
-        {
-          "src": "/images/map/loc-glasgow-central-station_0.jpg",
-          "year": 2025,
-          "caption": "Glasgow Central Station"
-        },
-        {
-          "src": "/images/map/loc-glasgow-central-station_1.jpg",
-          "year": 2025,
-          "caption": "Glasgow Central Station"
-        }
-      ]
-    },
-    {
-      "id": "loc-printers-alley",
-      "name": "Printers Alley",
-      "lat": 36.163,
-      "lon": -86.779,
-      "type": "poi",
-      "region": "Nashville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-arnold-s-country-kitchen",
-      "name": "Arnold's Country Kitchen",
-      "lat": 36.152,
-      "lon": -86.778,
-      "type": "poi",
-      "region": "Nashville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-legends-corner",
-      "name": "Legends Corner",
-      "lat": 36.162,
-      "lon": -86.776,
-      "type": "poi",
-      "region": "Nashville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-louisville-slugger-museum-factory",
-      "name": "Louisville Slugger Museum & Factory",
-      "lat": 38.2585,
-      "lon": -85.761,
-      "type": "poi",
-      "region": "Louisville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-country-music-hall-of-fame",
-      "name": "Country Music Hall of Fame",
-      "lat": 36.1582,
-      "lon": -86.7764,
-      "type": "poi",
-      "region": "Nashville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-whiskey-row-louisville",
-      "name": "Whiskey Row Louisville",
-      "lat": 38.257,
-      "lon": -85.7575,
-      "type": "poi",
-      "region": "Louisville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024",
-        "special-edition-dublin-irland-2015"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-kentucky-bourbon-trail-visitor-center",
-      "name": "Kentucky Bourbon Trail Visitor Center",
-      "lat": 38.257,
-      "lon": -85.758,
-      "type": "poi",
-      "region": "Louisville",
-      "country": "USA",
-      "years_visited": [
-        2024
-      ],
-      "articles": [
-        "bourbon-trail-kentucky-tennessee-2024"
-      ],
-      "photos": []
-    },
-    {
-      "id": "loc-abbey-whisky",
-      "name": "Abbey Whisky",
-      "lat": 56.072,
-      "lon": -3.459,
-      "type": "poi",
-      "region": "Fife",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
-      "id": "loc-highland-whisky-shop",
-      "name": "Highland Whisky Shop",
-      "lat": 57.478,
-      "lon": -4.225,
-      "type": "poi",
-      "region": "Inverness",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
-      "id": "loc-royal-mile-whiskies",
-      "name": "Royal Mile Whiskies",
-      "lat": 55.95,
-      "lon": -3.188,
-      "type": "poi",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
-      "id": "loc-cadenhead-s-whisky-shop",
-      "name": "Cadenhead's Whisky Shop",
-      "lat": 55.951,
-      "lon": -3.182,
-      "type": "poi",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
-      "id": "loc-whiskies-of-scotland",
-      "name": "Whiskies of Scotland",
-      "lat": 57.447,
-      "lon": -2.786,
-      "type": "poi",
-      "region": "Aberdeenshire",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
-      "id": "loc-the-scotch-whisky-experience",
-      "name": "The Scotch Whisky Experience",
-      "lat": 55.949,
-      "lon": -3.195,
-      "type": "poi",
-      "region": "Edinburgh",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
-      "id": "loc-scotland-whisky-tours",
-      "name": "Scotland Whisky Tours",
-      "lat": 56.501,
-      "lon": -2.712,
-      "type": "poi",
-      "region": "Angus",
-      "country": "Schottland",
-      "years_visited": [],
-      "articles": [],
-      "photos": []
-    },
-    {
       "id": "loc-glengoyne-distillery",
       "name": "Glengoyne Distillery",
       "lat": 56.01,
@@ -2618,6 +84,10 @@
         "die-besten-whisky-destillerien-auf-islay",
         "glasgow-islay-erste-schottlandreise-2007"
       ],
+      "glossary_url": "/whisky-glossar/destillerien/kilchoman/",
+      "slug": "kilchoman",
+      "short_description": "Eine Farm-Destillerie, die den gesamten Prozess vom Gerstenanbau bis zur Abfüllung vor Ort durchführt.",
+      "founded": 2005,
       "photos": [
         {
           "src": "/images/map/loc-kilchoman-distillery_0.jpg",
@@ -2630,11 +100,7 @@
           "caption": "Kilchoman Distillery"
         }
       ],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-tennent-s-brewery",
@@ -4669,12 +2135,12 @@
       "articles": [
         "macallan-ist-der-hype-gerechtfertigt"
       ],
+      "glossary_url": "/whisky-glossar/destillerien/macallan/",
+      "slug": "macallan",
+      "short_description": "Eine der weltweit renommiertesten Destillerien, berühmt für ihre exklusiven Sherry-Fass-Reifungen.",
+      "founded": 1824,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-glenfarclas-distillery",
@@ -4688,12 +2154,12 @@
       "articles": [
         "speyside-marathon-zwölf-destillerien-2010"
       ],
+      "glossary_url": "/whisky-glossar/destillerien/glenfarclas/",
+      "slug": "glenfarclas",
+      "short_description": "Eine der letzten unabhängigen Familien-Destillerien Schottlands, berühmt für ihre schweren Sherry-Fass-Reifungen.",
+      "founded": 1836,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-aberlour-distillery",
@@ -4709,12 +2175,12 @@
         "speyside-aberdeen-dufftown-2014",
         "speyside-marathon-zwölf-destillerien-2010"
       ],
+      "glossary_url": "/whisky-glossar/destillerien/aberlour/",
+      "slug": "aberlour",
+      "short_description": "Ein Klassiker aus Speyside, berühmt für seine tiefen, fruchtigen Whiskys mit ausgeprägter Sherry-Reifung.",
+      "founded": 1879,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-the-balvenie-distillery",
@@ -4726,12 +2192,12 @@
       "country": "Schottland",
       "years_visited": [],
       "articles": [],
+      "glossary_url": "/whisky-glossar/destillerien/balvenie/",
+      "slug": "balvenie",
+      "short_description": "Eine der letzten Destillerien, die noch alle 'Fünf Seltenen Handwerke' – inklusive eigener Malzböden – betreibt.",
+      "founded": 1892,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-the-glenlivet-distillery",
@@ -4747,12 +2213,12 @@
         "speyside-marathon-zwölf-destillerien-2010",
         "glenfiddich-vs-glenlivet-der-grosse-vergleich"
       ],
+      "glossary_url": "/whisky-glossar/destillerien/glenlivet/",
+      "slug": "glenlivet",
+      "short_description": "Die erste lizensierte Destillerie im Glenlivet-Tal, bekannt als 'Der Single Malt, mit dem alles begann'.",
+      "founded": 1824,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-strathisla-distillery",
@@ -4786,12 +2252,12 @@
       "articles": [
         "speyside-marathon-zwölf-destillerien-2010"
       ],
+      "glossary_url": "/whisky-glossar/destillerien/craigellachie/",
+      "slug": "craigellachie",
+      "short_description": "Bekannt für seinen schwefeligen, fleischigen Charakter, der durch die Nutzung traditioneller Worm Tubs entsteht.",
+      "founded": 1891,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-mortlach-distillery",
@@ -4803,12 +2269,12 @@
       "country": "Schottland",
       "years_visited": [],
       "articles": [],
+      "glossary_url": "/whisky-glossar/destillerien/mortlach/",
+      "slug": "mortlach",
+      "short_description": "Bekannt als 'The Beast of Dufftown', produziert diese Destillerie einen extrem kräftigen und fleischigen Malt.",
+      "founded": 1823,
       "photos": [],
-      "visited": true,
-      "glossary_url": "",
-      "short_description": "",
-      "founded": null,
-      "slug": ""
+      "visited": true
     },
     {
       "id": "loc-laphroaig-distillery",
@@ -4903,7 +2369,7 @@
       ],
       "glossary_url": "/whisky-glossar/destillerien/bunnahabhain/",
       "slug": "bunnahabhain",
-      "short_description": "Die sanfte Seite Islays: Bekannt für ungetorfte, nussige und sherrybetonte Single Malts.",
+      "short_description": "Traditionell bekannt für ungetorfte, maritime Whiskys, was sie von den meisten Islay-Nachbarn unterscheidet.",
       "founded": 1881,
       "photos": [],
       "visited": true
@@ -4923,7 +2389,7 @@
       ],
       "glossary_url": "/whisky-glossar/destillerien/caol-ila/",
       "slug": "caol-ila",
-      "short_description": "Die größte Brennerei der Insel. Liefert hellen, maritimen und aschigen Torfrauch.",
+      "short_description": "Die größte Destillerie der Insel, liefert einen eleganten, rauchigen Malt mit Noten von Zitrusfrüchten.",
       "founded": 1846,
       "photos": [],
       "visited": true
@@ -5308,8 +2774,8 @@
       "id": "glossary-dist-ardnahoe",
       "slug": "ardnahoe",
       "name": "Ardnahoe",
-      "lat": 55.87,
-      "lon": -6.115,
+      "lat": 55.8689,
+      "lon": -6.1175,
       "type": "distillery",
       "region": "Islay",
       "country": "Schottland",
@@ -5660,6 +3126,159 @@
       "articles": [],
       "photos": [],
       "visited": false
+    },
+    {
+      "id": "glossary-dist-birkenhof-brennerei",
+      "slug": "birkenhof-brennerei",
+      "name": "Birkenhof Brennerei",
+      "lat": 50.6403,
+      "lon": 7.9158,
+      "type": "distillery",
+      "region": "rhineland-palatinate",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "1848",
+      "glossary_url": "/whisky-glossar/destillerien/birkenhof-brennerei/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-finch-whiskydestillerie",
+      "slug": "finch-whiskydestillerie",
+      "name": "finch® Whiskydestillerie",
+      "lat": 48.4489,
+      "lon": 9.7283,
+      "type": "distillery",
+      "region": "baden-wuerttemberg",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "1999",
+      "glossary_url": "/whisky-glossar/destillerien/finch-whiskydestillerie/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-hercynian-distilling-co-hammerschmiede",
+      "slug": "hercynian-distilling-co-hammerschmiede",
+      "name": "Hercynian Distilling Co. / Hammerschmiede",
+      "lat": 51.6425,
+      "lon": 10.6139,
+      "type": "distillery",
+      "region": "lower-saxony",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "1985",
+      "glossary_url": "/whisky-glossar/destillerien/hercynian-distilling-co-hammerschmiede/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-badische-staatsbrauerei-rothaus",
+      "slug": "badische-staatsbrauerei-rothaus",
+      "name": "Badische Staatsbrauerei Rothaus",
+      "lat": 47.7953,
+      "lon": 8.2458,
+      "type": "distillery",
+      "region": "baden-wuerttemberg",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "1791 (Whisky seit 2006)",
+      "glossary_url": "/whisky-glossar/destillerien/badische-staatsbrauerei-rothaus/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-slyrs-destillerie",
+      "slug": "slyrs-destillerie",
+      "name": "Slyrs Destillerie",
+      "lat": 47.7225,
+      "lon": 11.8597,
+      "type": "distillery",
+      "region": "bavaria",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "1999",
+      "glossary_url": "/whisky-glossar/destillerien/slyrs-destillerie/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-st-kilian-distillers",
+      "slug": "st-kilian-distillers",
+      "name": "St. Kilian Distillers",
+      "lat": 49.7153,
+      "lon": 9.2231,
+      "type": "distillery",
+      "region": "bavaria",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "2012",
+      "glossary_url": "/whisky-glossar/destillerien/st-kilian-distillers/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-edelbrennerei-ziegler",
+      "slug": "edelbrennerei-ziegler",
+      "name": "Edelbrennerei Ziegler",
+      "lat": 49.7436,
+      "lon": 9.3289,
+      "type": "distillery",
+      "region": "bavaria",
+      "country": "Deutschland",
+      "short_description": "",
+      "founded": "1865",
+      "glossary_url": "/whisky-glossar/destillerien/edelbrennerei-ziegler/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-old-pulteney-15",
+      "slug": "old-pulteney-15",
+      "name": "Old Pulteney 15 Year Old",
+      "lat": 57.4547,
+      "lon": -3.1286,
+      "type": "distillery",
+      "region": "Highlands",
+      "country": "Schottland",
+      "short_description": "Ein wunderbar ausbalancierter Whisky mit Sherry-Einfluss.",
+      "founded": 1887,
+      "glossary_url": "/whisky-glossar/destillerien/old-pulteney-15/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
+    },
+    {
+      "id": "glossary-dist-gerhard-buechner",
+      "slug": "gerhard-buechner",
+      "name": "Feindestillerie Gerhard Büchner",
+      "lat": 51.48594,
+      "lon": 11.77078,
+      "type": "distillery",
+      "region": "sachsen-anhalt",
+      "country": "Deutschland",
+      "short_description": "Handwerkliche Destillerie im Salzatal, Sachsen-Anhalt, spezialisiert auf Single Malt Whisky und Edelbrände.",
+      "founded": 2010,
+      "glossary_url": "/whisky-glossar/destillerien/gerhard-buechner/",
+      "years_visited": [],
+      "articles": [],
+      "photos": [],
+      "visited": false
     }
   ],
   "routes": [],
@@ -5971,16 +3590,27 @@
       "image": "https://images.unsplash.com/photo-1657270086175-8c0e37e09a76?ixid=M3w5MDA5ODZ8MHwxfHNlYXJjaHwxfHxyYWlueSUyMGRheSUyMGNvenklMjB3aGlza3klMjBnbGFzcyUyMGFtYmVyJTIwd2FybXxlbnwwfDB8fHwxNzc2MTQ1MzUyfDA&ixlib=rb-4.1.0?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=80",
       "category": "Whisky",
       "date": "2026-04-12"
+    },
+    "leichte-fruhlings-whiskys-fur-die-warme-jahreszeit": {
+      "title": "Leichte Frühlings-Whiskys für die warme Jahreszeit",
+      "teaser": "Lust auf einen erfrischenden Whisky für den Frühling? Entdecke leichte Sorten, die perfekt für warme Tage sind und mit ihrem Aroma überzeugen.",
+      "image": "",
+      "category": "Whisky",
+      "date": "24. April 2026"
+    },
+    "schottland-im-fruhling-beste-reisezeit-fur-destillerie-besuche": {
+      "title": "Schottland im Frühling: Beste Reisezeit für Destillerie-Besuche",
+      "teaser": "Schottland im Frühling: Die perfekte Zeit, um die faszinierenden Destillerien zu erkunden und den einzigartigen Whisky zu genießen. Erfahren Sie mehr!",
+      "image": "/images/schottland-im-fruhling-beste-reisezeit-fur-destillerie-besuc.jpg",
+      "category": "Reise",
+      "date": "24. April 2026"
     }
   },
   "regions": [
-    "Aberdeen",
     "Aberdeenshire",
-    "Angus",
     "Argyll",
     "Ayrshire",
     "Bardstown",
-    "Berlin",
     "Caithness",
     "Campbeltown",
     "Clarksville",
@@ -5990,9 +3620,7 @@
     "Dumfries",
     "Easter Ross",
     "Eastern Kentucky",
-    "Edinburgh",
     "Estill County",
-    "Falkirk",
     "Fife",
     "Frankfort",
     "Franklin KY",
@@ -6005,10 +3633,8 @@
     "Isle of Jura",
     "Isle of Mull",
     "Isle of Skye",
-    "Kentucky",
     "Lawrenceburg",
     "Lexington",
-    "London",
     "Loretto",
     "Louisville",
     "Lowlands",
@@ -6021,16 +3647,18 @@
     "Royal Deeside",
     "Shelbyville",
     "Speyside",
-    "Stirling",
     "Stirlingshire",
-    "Tennessee",
     "Thüringen",
-    "Trossachs",
     "Tullahoma",
     "Versailles",
     "West Dunbartonshire",
     "Woodford County",
-    "islands"
+    "baden-wuerttemberg",
+    "bavaria",
+    "islands",
+    "lower-saxony",
+    "rhineland-palatinate",
+    "sachsen-anhalt"
   ],
   "years": [
     2007,
@@ -6038,32 +3666,26 @@
     2009,
     2012,
     2013,
-    2014,
     2015,
     2016,
     2017,
-    2019,
     2020,
     2021,
-    2022,
-    2023,
-    2024,
-    2025
+    2024
   ],
   "countries": [
     "Deutschland",
-    "England",
     "Irland",
     "Schottland",
     "USA"
   ],
   "stats": {
-    "total_locations": 234,
-    "total_distilleries": 141,
+    "total_locations": 150,
+    "total_distilleries": 150,
     "visited_distilleries": 120,
-    "unvisited_distilleries": 21,
+    "unvisited_distilleries": 30,
     "total_routes": 0,
-    "total_articles": 44,
-    "years_covered": "2007-2025"
+    "total_articles": 46,
+    "years_covered": "2007-2024"
   }
 }
