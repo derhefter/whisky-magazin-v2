@@ -5,8 +5,16 @@
     <link>https://www.whisky-reise.com</link>
     <description>Dein Guide fuer Whisky, Destillerien &amp; Reisen</description>
     <language>de-de</language>
-    <lastBuildDate>Fri, 24 Apr 2026 18:41:51 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 18:43:46 +0100</lastBuildDate>
     <atom:link href="https://www.whisky-reise.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Schottland im Frühling: Beste Reisezeit für Destillerie-Besuche</title>
+      <link>https://www.whisky-reise.com/artikel/schottland-im-fruhling-beste-reisezeit-fur-destillerie-besuche.html</link>
+      <description>Entdecken Sie Schottland im Frühling und erleben Sie die besten Destillerie-Besuche. Die ideale Reisezeit für Whisky-Liebhaber.</description>
+      <pubDate>Fri, 24 Apr 2026 08:00:00 +0100</pubDate>
+      <category>Reise</category>
+      <guid isPermaLink="true">https://www.whisky-reise.com/artikel/schottland-im-fruhling-beste-reisezeit-fur-destillerie-besuche.html</guid>
+    </item>
     <item>
       <title>Leichte Frühlings-Whiskys für die warme Jahreszeit</title>
       <link>https://www.whisky-reise.com/artikel/leichte-fruhlings-whiskys-fur-die-warme-jahreszeit.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Tue, 17 Mar 2026 08:00:00 +0100</pubDate>
       <category>Reise</category>
       <guid isPermaLink="true">https://www.whisky-reise.com/artikel/trossachs-oban-hadrians-wall-2009.html</guid>
-    </item>
-    <item>
-      <title>Speyside Marathon 2010: Zwölf Destillerien in drei Tagen</title>
-      <link>https://www.whisky-reise.com/artikel/speyside-marathon-zwölf-destillerien-2010.html</link>
-      <description>Speyside Marathon 2010: Zwölf Destillerien in drei Tagen. Glenfiddich, The Glenlivet, Glenfarclas, Strathisla und die Speyside Cooperage. Persönlicher Reisebericht.</description>
-      <pubDate>Tue, 17 Mar 2026 08:00:00 +0100</pubDate>
-      <category>Reise</category>
-      <guid isPermaLink="true">https://www.whisky-reise.com/artikel/speyside-marathon-zwölf-destillerien-2010.html</guid>
     </item>
   </channel>
 </rss>
