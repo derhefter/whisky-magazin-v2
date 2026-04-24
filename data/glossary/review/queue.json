@@ -1910,6 +1910,13 @@
       "imported_at": "2026-04-24T18:51:28Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185131_2a35dd",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:31Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14085,6 +14092,50 @@
         "tasting_notes_finish": "Langanhaltend und markant mit einer ganz eigenen Tiefe.",
         "seo_title": "DeCavo Höhlenwhisky | Weltweit einzigartige Reifung",
         "seo_description": "DeCavo reift in der Dechenhöhle. Erleben Sie einen Whisky mit mineralischer Tiefe und 47,3% Vol."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185131_2a35dd",
+      "entity": "whiskies",
+      "item_id": "dolleruper-single-malt",
+      "item_slug": "dolleruper-single-malt-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "dolleruper-single-malt",
+        "name": "Dolleruper Single Malt Whisky",
+        "distillery_id": "dolleruper-destille",
+        "whisky_type": "Single Malt",
+        "abv": 42,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
+        "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
+        "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
+        "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
+        "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk.",
+        "slug": "dolleruper-single-malt-whisky",
+        "created_at": "2026-04-24T18:51:31Z",
+        "last_updated": "2026-04-24T18:51:31Z",
+        "published": false
+      },
+      "raw": {
+        "id": "dolleruper-single-malt",
+        "name": "Dolleruper Single Malt Whisky",
+        "distillery_id": "dolleruper-destille",
+        "whisky_type": "Single Malt",
+        "abv": 42,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Nordisch klar mit Malz, einer Prise Meersalz und hellen Fruchtnoten.",
+        "tasting_notes_palate": "Maritimer Einschlag, Malzsüße kombiniert mit einer feinen Würze und Vanille.",
+        "tasting_notes_finish": "Mittellang und erfrischend mit einem Hauch von Seeluft.",
+        "seo_title": "Dolleruper Single Malt | Der nördlichste Whisky Deutschlands",
+        "seo_description": "Dolleruper Single Malt aus Schleswig-Holstein. Geprägt von der Nähe zur Ostsee und norddeutschem Handwerk."
       }
     }
   ]
