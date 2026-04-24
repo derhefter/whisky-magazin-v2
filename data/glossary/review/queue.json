@@ -15713,38 +15713,31 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "ziegler-aureum-chestnut",
-        "distillery_id": "ziegler",
-        "name": "Ziegler Aureum Chestnut Cask 5 Jahre",
-        "whisky_type": "Single Malt",
-        "slug": "ziegler-aureum-chestnut-cask",
+        "id": "coillmor-american-oak",
+        "distillery_id": "coillmor",
+        "name": "Coillmór American Oak",
+        "whisky_type": "single_malt",
+        "slug": "coillm-r-american-oak",
         "published": true,
-        "age_statement": "5 Jahre",
-        "nas": false,
+        "age_statement": null,
+        "nas": true,
         "abv": 43,
-        "tasting_notes_nose": "Markant nussig mit feinen Holzaromen. Dazu würzig-süße Vanille und ein Hauch von Orangenblüten.",
-        "tasting_notes_palate": "Vollmundig und weich. Cremige Süße trifft auf würzige Vanille, Kastaniennoten und dezente Fruchttöne wie Birne.",
-        "tasting_notes_finish": "Mild und rund mit einer subtilen Süße und sehr zurückhaltenden Gerbstoffen.",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
         "short_description": "Einzigartig gereift in edlen Kastanienfässern – nussig und vollmundig.",
         "long_description": "Das Besondere am Ziegler Aureum Chestnut Cask ist seine fünfjährige Reifung, die anteilig in Fässern aus Kastanienholz erfolgt, bevor er in Bourbonfässern finalisiert wird. Kastanienholz gibt deutlich andere Aromen ab als die klassische Eiche, was sich in der ausgeprägten Nussigkeit und der weichen Textur widerspiegelt. Ein spannender Whisky für Entdecker neuer Geschmackshorizonte.",
-        "seo_title": "Ziegler Aureum Chestnut Cask | Whisky aus Kastanienholz online",
-        "seo_description": "Entdecken Sie den Ziegler Aureum Chestnut Cask. Ein fränkischer Single Malt mit einzigartiger Kastanienholz-Reifung und nussigem Aroma.",
-        "style_tags": [
-          "nussig",
-          "cremig",
-          "würzig",
-          "besonders"
-        ],
-        "cask_types": [
-          "Chestnut Wood",
-          "Ex-Bourbon"
-        ],
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "style_tags": [],
+        "cask_types": [],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z",
         "created_at": "2026-04-24T18:52:45Z",
-        "last_updated": "2026-04-24T18:52:45Z"
+        "last_updated": "2026-04-24T18:59:59Z",
+        "country_id": "deutschland"
       },
       "raw": {
         "id": "ziegler-aureum-chestnut",
@@ -15775,7 +15768,10 @@
         ],
         "smoke_profile": "none",
         "updated_at": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:59:59Z"
     }
   ]
 }
