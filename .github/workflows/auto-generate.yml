@@ -1,14 +1,14 @@
-name: Auto-Generate Articles (DEAKTIVIERT)
+name: Auto-Generate Articles
 
-# DEAKTIVIERT: Artikel-Generierung läuft über Windows Task Scheduler (Montag 07:00 Uhr)
-# → python main.py --auto -n 2  (erstellt Entwürfe im Dashboard zur Freigabe)
+# Generiert automatisch jeden Montag 2 Artikel-Entwürfe via GPT-4o und pusht sie
+# nach articles/drafts/. Die Entwürfe erscheinen im Dashboard zur Freigabe.
 #
-# Dieser Workflow wurde ersetzt, weil:
-# - Er Artikel direkt veröffentlicht (kein Draft-Workflow)
-# - Er den Windows Task Scheduler dupliziert (→ Konflikte)
-# - Er eine veraltete URL und Konfiguration hatte
+# Zeitplan: Mo 05:00 UTC = 07:00 CEST (Sommer) / 06:00 CET (Winter).
+# Manueller Trigger (z.B. für Tests) über "Run workflow" in der Actions-UI.
 #
-# Manueller Trigger bleibt erhalten für Notfälle.
+# Voraussetzungen (GitHub Repo → Settings → Secrets and variables → Actions):
+#   - OPENAI_API_KEY (Pflicht)
+#   - BREVO_API_KEY  (optional; nötig für Benachrichtigungs-E-Mail an rosenhefter@gmail.com)
 
 on:
   workflow_dispatch:
@@ -17,6 +17,8 @@ on:
         description: 'Anzahl zu generierender Artikel'
         required: false
         default: '2'
+  schedule:
+    - cron: '0 5 * * 1'
 
 permissions:
   contents: write
@@ -112,6 +114,7 @@ jobs:
         run: python main.py --auto -n ${{ github.event.inputs.count || '2' }}
         env:
           PYTHONIOENCODING: utf-8
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
 
       - name: Änderungen committen
         run: |

@@ -12,6 +12,10 @@ config.json
 temp/
 *.log
 used_topics.json
+/site/
+newsletter_preview.html
+test_write.html
+_fix_umlauts.py
 
 # OS
 .DS_Store

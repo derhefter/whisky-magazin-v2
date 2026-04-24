@@ -551,13 +551,12 @@ def interactive_menu(config):
 
     print(f"  --- SETUP ---")
     print(f"  [15] Mailchimp einrichten")
-    print(f"  [16] Zeitplaner einrichten")
     print(f"  [7]  Statistiken")
     print(f"  [0]  Beenden")
     print()
 
     try:
-        choice = input("  Deine Wahl (0-16): ").strip()
+        choice = input("  Deine Wahl (0-15): ").strip()
     except (EOFError, KeyboardInterrupt):
         return
 
@@ -597,8 +596,6 @@ def interactive_menu(config):
             subprocess.run([sys.executable, "newsletter_generator.py", "--send"], cwd=str(PROJECT_DIR))
     elif choice == "15":
         subprocess.run([sys.executable, "mailchimp_setup.py"], cwd=str(PROJECT_DIR))
-    elif choice == "16":
-        subprocess.run([sys.executable, "schedule_setup.py"], cwd=str(PROJECT_DIR))
     elif choice == "0":
         return
     else:

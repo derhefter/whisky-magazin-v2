@@ -52,7 +52,7 @@ Das System laeuft weitgehend automatisch:
 
 | Zeitpunkt                 | Was passiert                                         | Wer/Was                        |
 | ------------------------- | ---------------------------------------------------- | ------------------------------ |
-| **Montag 07:00 Uhr**      | 2 neue Artikel-Entwuerfe werden generiert            | Windows Task Scheduler (lokal) |
+| **Montag 07:00 CEST**     | 2 neue Artikel-Entwuerfe werden generiert            | GitHub Actions (Cron)          |
 | **Nach Generierung**      | E-Mail an rosenhefter@gmail.com                      | Brevo Transactional API        |
 | **Mittwoch 10:00 CEST**   | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job                |
 | **Samstag 10:00 CEST**    | Aeltester freigegebener Entwurf wird veroeffentlicht | Vercel Cron-Job                |
@@ -379,36 +379,41 @@ Alle Operationen erfordern den Admin-Token im HTTP-Header `x-admin-token`.
 
 ## 3. Automatisierung
 
-### 3.1 Windows Task Scheduler (lokale Artikel-Generierung)
+### 3.1 GitHub Actions (automatische Artikel-Generierung)
 
-| Eigenschaft            | Wert                                                                        |
-| ---------------------- | --------------------------------------------------------------------------- |
-| **Task-Name**          | `WhiskyMagazin-AutoGenerate`                                                |
-| **Zeitplan**           | Jeden Montag, 07:00 Uhr                                                     |
-| **Befehl**             | `python main.py --auto -n 2`                                                |
-| **Arbeitsverzeichnis** | `C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin` |
-| **Log**                | `magazin.log` im Projektordner                                              |
+| Eigenschaft     | Wert                                                                              |
+| --------------- | --------------------------------------------------------------------------------- |
+| **Workflow**    | `Auto-Generate Articles`                                                          |
+| **Datei**       | `.github/workflows/auto-generate.yml`                                             |
+| **Zeitplan**    | Jeden Montag, 07:00 CEST (Sommer) / 06:00 CET (Winter) -- Cron `0 5 * * 1` (UTC)  |
+| **Befehl**      | `python main.py --auto -n 2` auf einem Ubuntu-Runner                              |
+| **Log**         | GitHub -> Actions -> "Auto-Generate Articles" -> Run auswaehlen                   |
 
 **Was passiert:**
 
 1. 2 Artikel-Entwuerfe werden per GPT-4o generiert
 2. Entwuerfe werden als JSON in `articles/drafts/` auf GitHub gepusht
-3. Benachrichtigungs-E-Mail wird an rosenhefter@gmail.com gesendet
+3. Benachrichtigungs-E-Mail wird an rosenhefter@gmail.com gesendet (sofern `BREVO_API_KEY` als Repo-Secret gesetzt ist)
 4. Entwuerfe erscheinen im Dashboard unter "Artikel"
 
-**Task manuell ausfuehren (z.B. fuer Tests):**
+**Manuell ausfuehren (z.B. fuer Tests):**
+
+1. GitHub -> Repository oeffnen
+2. Reiter "Actions" -> "Auto-Generate Articles"
+3. Rechts: "Run workflow" -> Anzahl eingeben (z.B. `1` fuer API-schonenden Test) -> "Run workflow"
+4. Nach ~2-3 Minuten erscheint der neue Draft im Dashboard
+
+**Alternativ lokal ausfuehren (Ad-hoc-Generierung):**
 
 ```
 cd "C:\Users\steff\Documents lokal\Business-Ideen\Whisky_Ideen\whisky-magazin"
 python main.py --auto -n 3
 ```
 
-**Task pruefen/aendern:**
+**Voraussetzung:** Repo-Secrets unter *GitHub -> Settings -> Secrets and variables -> Actions*:
 
-1. Windows-Taste -> "Aufgabenplanung" suchen und oeffnen
-2. Links: "Aufgabenplanungsbibliothek" klicken
-3. Task `WhiskyMagazin-AutoGenerate` suchen
-4. Rechtsklick -> "Eigenschaften" zum Aendern, "Ausfuehren" zum manuellen Start
+- `OPENAI_API_KEY` (Pflicht) -- sonst bricht der Workflow im Step "OpenAI Key pruefen" ab
+- `BREVO_API_KEY` (optional) -- ohne diesen Key laeuft die Generierung durch, aber die E-Mail-Benachrichtigung wird uebersprungen
 
 ### 3.2 Vercel Cron-Jobs (automatische Veroeffentlichung)
 
@@ -446,11 +451,11 @@ Datei: `.github/workflows/build.yml`
 
 **Hinweis:** Das `[skip ci]` im Commit-Nachricht verhindert, dass der Build sich selbst in einer Endlosschleife aufruft.
 
-**Zweiter Workflow – `auto-generate.yml`:** Kein automatischer Zeitplan mehr (deaktiviert April 2026). Nur noch manuell ueber "workflow_dispatch" ausfuehren falls der Windows Task Scheduler ausnahmesweise ausfaellt. Der Workflow erstellt dann Entwuerfe (nicht direkt veroeffentlichte Artikel).
+**Zweiter Workflow – `auto-generate.yml`:** Siehe Abschnitt 3.1. Laeuft automatisch jeden Montag 07:00 CEST und erstellt 2 Entwuerfe in `articles/drafts/`. Kann zusaetzlich jederzeit manuell ueber "Run workflow" angestossen werden.
 
 ### 3.4 E-Mail-Benachrichtigungen
 
-Jedes Mal wenn `python main.py --auto` laeuft (Montag 07:00 per Task Scheduler), sendet das System eine HTML-E-Mail via Brevo Transactional API:
+Jedes Mal wenn `python main.py --auto` laeuft (Montag 07:00 CEST per GitHub-Actions-Cron, siehe 3.1), sendet das System eine HTML-E-Mail via Brevo Transactional API:
 
 | Eigenschaft    | Wert                                                                                                                           |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -459,7 +464,12 @@ Jedes Mal wenn `python main.py --auto` laeuft (Montag 07:00 per Task Scheduler),
 | **Betreff**    | "X neue Whisky-Artikel warten auf Freigabe"                                                                                    |
 | **Inhalt**     | Titel, Kategorie, Teaser und Wortanzahl jedes Entwurfs; Direktlink zum Dashboard; naechste Veroeffentlichungstermine (Mi + Sa) |
 
-**Voraussetzung:** `BREVO_API_KEY` muss in der lokalen `.env`-Datei stehen.
+**Voraussetzung:**
+
+- Fuer den automatischen Montags-Lauf: `BREVO_API_KEY` als GitHub-Actions-Secret (Settings -> Secrets and variables -> Actions).
+- Fuer lokale Ad-hoc-Laeufe (`python main.py --auto`): `BREVO_API_KEY` in der lokalen `.env`-Datei.
+
+Ohne den Key laeuft die Generierung normal durch, nur die Benachrichtigungs-E-Mail wird uebersprungen.
 
 **E-Mail manuell testen:**
 
@@ -783,12 +793,12 @@ Alle hier aufgefuehrten Variablen muessen in Vercel unter **Settings -> Environm
 #### `.env` (im Projektordner, nicht in Git)
 
 ```
-BREVO_API_KEY=xkeysib-...        # Pflicht: fuer E-Mail-Benachrichtigungen (montags)
+BREVO_API_KEY=xkeysib-...        # Nur fuer lokale `python main.py --auto`-Laeufe (der Montags-Cron nutzt das GitHub-Secret)
 OPENAI_API_KEY=sk-proj-...       # Optional: wird auch aus config.json gelesen
 CRON_SECRET=...                  # Nur fuer Vercel noetig, lokal nicht benoetigt
 ```
 
-`BREVO_API_KEY` ist Pflicht fuer die montaegliche E-Mail-Benachrichtigung an rosenhefter@gmail.com. Ohne diesen Key wird die E-Mail uebersprungen (kein Fehler, nur kein Versand).
+`BREVO_API_KEY` ist fuer die montaegliche E-Mail-Benachrichtigung an rosenhefter@gmail.com zustaendig. Den **automatischen** Montags-Lauf uebernimmt GitHub Actions (siehe 3.1); dort muss der Key als Repo-Secret unter *Settings -> Secrets and variables -> Actions* gesetzt sein. In der lokalen `.env` wird er nur fuer manuelle `python main.py --auto`-Laeufe gebraucht. Ohne Key wird die E-Mail uebersprungen (kein Fehler, nur kein Versand).
 
 #### `config.json` (im Projektordner, nicht in Git)
 
@@ -883,7 +893,8 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 | Artikel werden nicht veroeffentlicht                                | Cron-Job laeuft nicht                   | Vercel Dashboard -> Cron Jobs pruefen                                                                        |
 | Artikel ist im Dashboard "veroeffentlicht" aber nicht auf der Seite | `meta.slug` fehlte in der JSON-Datei    | `python main.py --build-v2` ausfuehren — der Builder normalisiert fehlende Slugs automatisch seit April 2026 |
 | Artikel hat kein Bild                                               | `UNSPLASH_API_KEY` fehlt in Vercel      | In Vercel setzen + neu deployen; dann Artikel im Dashboard neu generieren                                    |
-| E-Mail kommt nicht (montags)                                        | `BREVO_API_KEY` fehlt in `.env`         | `.env` Datei pruefen: `BREVO_API_KEY=xkeysib-...`                                                            |
+| E-Mail kommt nicht (montags)                                        | `BREVO_API_KEY` fehlt als GitHub-Secret | GitHub -> Repo -> Settings -> Secrets and variables -> Actions -> `BREVO_API_KEY` setzen                     |
+| Montags keine Artikel generiert                                     | GitHub-Actions-Cron nicht gelaufen      | GitHub -> Actions -> "Auto-Generate Articles" -> letzten Run pruefen; ggf. manuell "Run workflow"            |
 | /admin zeigt 404                                                    | Deployment veraltet                     | Vercel manuell neu deployen                                                                                  |
 | Thema wird nicht gespeichert                                        | GITHUB_TOKEN abgelaufen                 | Neuen Token setzen + neu deployen                                                                            |
 | Newsletter-Versand schlaegt fehl                                    | BREVO_API_KEY fehlt in Vercel           | In Vercel setzen + neu deployen                                                                              |
@@ -997,7 +1008,7 @@ whisky-magazin/
 |   +-- style.css           Globales Stylesheet
 +-- .github/workflows/
 |   +-- build.yml           Auto-Rebuild bei Artikel-Aenderungen (aktiv)
-|   +-- auto-generate.yml   Notfall-Backup fuer Artikel-Generierung (nur manuell, kein Zeitplan)
+|   +-- auto-generate.yml   Wochentliche Artikel-Generierung (Mo 07:00 CEST) + manueller Trigger
 |   +-- pylint.yml          Code-Qualitaetspruefung bei Python-Aenderungen
 +-- main.py                 CLI-Hauptskript
 +-- content_generator.py    GPT-4o Artikel-Generator
