@@ -14104,7 +14104,7 @@
         "ID bereits vorhanden (Duplikat): beverbach-single-malt"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "beverbach-single-malt",
         "name": "Beverbach Single Malt German Highland Whisky",
@@ -14136,7 +14136,10 @@
         "tasting_notes_finish": "Mittellang und wärmend mit feinen Holzaromen.",
         "seo_title": "Beverbach Single Malt | Whisky der Hardenberg Distillery",
         "seo_description": "Entdecken Sie Beverbach Single Malt aus Niedersachsen. Modernes Design und klassische Handwerkskunst."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:53:41Z"
     },
     {
       "batch_id": "whiskies_20260424T185121_304de1",
