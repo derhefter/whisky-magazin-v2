@@ -117,15 +117,15 @@ def _unsplash_search(query, per_page=4):
 def _download_image_bytes(url):
     req = Request(url, headers={"User-Agent": "WhiskyMagazin-Dashboard"})
     try:
-        with urlopen(req, timeout=30) as resp:
+        with urlopen(req, timeout=25) as resp:
             if resp.status != 200:
-                return None
+                return None, f"unsplash status {resp.status}"
             data = resp.read()
             if len(data) < 5000:
-                return None
-            return data
-    except Exception:
-        return None
+                return None, f"payload too small ({len(data)}B)"
+            return data, None
+    except Exception as e:
+        return None, f"download exception: {e}"
 
 
 def _github_get(path):
@@ -162,10 +162,17 @@ def _github_update_file(path, content_bytes, sha, message):
         "User-Agent": "WhiskyMagazin-Dashboard",
     }, method="PUT")
     try:
-        with urlopen(req, timeout=15) as resp:
+        with urlopen(req, timeout=25) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except HTTPError as e:
-        return {"error": str(e)}
+        body = ""
+        try:
+            body = e.read().decode("utf-8", errors="replace")[:200]
+        except Exception:
+            pass
+        return {"error": f"{e} {body}".strip()}
+    except Exception as e:
+        return {"error": f"{type(e).__name__}: {e}"}
 
 
 def _github_delete_file(path, sha, message):
@@ -212,7 +219,6 @@ def _fetch_published(filename):
 
 def _github_create_file(path, content_bytes, message):
     """Create a new file via GitHub API (no sha needed)."""
-    import urllib.request
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
     payload = json.dumps({
         "message": message,
@@ -226,10 +232,17 @@ def _github_create_file(path, content_bytes, message):
         "User-Agent": "WhiskyMagazin-Dashboard",
     }, method="PUT")
     try:
-        with urlopen(req, timeout=15) as resp:
+        with urlopen(req, timeout=25) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except HTTPError as e:
-        return {"error": str(e)}
+        body = ""
+        try:
+            body = e.read().decode("utf-8", errors="replace")[:200]
+        except Exception:
+            pass
+        return {"error": f"{e} {body}".strip()}
+    except Exception as e:
+        return {"error": f"{type(e).__name__}: {e}"}
 
 
 def _mark_topic_open(topic_id):
@@ -461,18 +474,21 @@ class handler(BaseHTTPRequestHandler):
         photo_id = body.get("photo_id", "")
         alt = (body.get("alt") or "").strip()
 
+        if not GITHUB_TOKEN:
+            return self._json(500, {"error": "stage=config: GITHUB_TOKEN missing"}, cors)
+
         file_data, article, err = _fetch_draft(filename)
         if err:
-            return self._json(404, {"error": err}, cors)
+            return self._json(404, {"error": f"stage=fetch_draft: {err}"}, cors)
 
         meta_slug = article.get("meta", {}).get("slug", "") if isinstance(article.get("meta"), dict) else ""
         slug = _safe_slug(meta_slug) if meta_slug else _safe_slug(article.get("title", "artikel"))
         if not slug:
-            return self._json(500, {"error": "could not derive slug"}, cors)
+            return self._json(500, {"error": "stage=slug: could not derive slug"}, cors)
 
-        img_bytes = _download_image_bytes(url_full)
+        img_bytes, dl_err = _download_image_bytes(url_full)
         if not img_bytes:
-            return self._json(502, {"error": "image download failed"}, cors)
+            return self._json(502, {"error": f"stage=download: {dl_err or 'unknown'}"}, cors)
 
         image_path = f"{IMAGES_DIR}/{slug}.jpg"
         existing = _github_get(f"contents/{image_path}")
@@ -485,7 +501,9 @@ class handler(BaseHTTPRequestHandler):
             img_result = _github_create_file(image_path, img_bytes,
                                              f"dashboard: add image for {slug}")
         if "error" in img_result:
-            return self._json(500, {"error": f"image upload: {img_result['error']}"}, cors)
+            return self._json(500, {
+                "error": f"stage=upload_image ({image_path}, {len(img_bytes)}B): {img_result['error']}"
+            }, cors)
 
         article["image_url"] = f"/images/{slug}.jpg"
         if alt:
@@ -502,7 +520,7 @@ class handler(BaseHTTPRequestHandler):
             f"dashboard: update image for draft {filename}",
         )
         if "error" in draft_result:
-            return self._json(500, {"error": f"draft update: {draft_result['error']}"}, cors)
+            return self._json(500, {"error": f"stage=update_draft: {draft_result['error']}"}, cors)
 
         return self._json(200, {
             "success": True, "filename": filename,
@@ -510,6 +528,7 @@ class handler(BaseHTTPRequestHandler):
             "image_alt": article["image_alt"],
             "image_credit": article["image_credit"],
             "image_photo_id": article["image_photo_id"],
+            "image_bytes": len(img_bytes),
         }, cors)
 
     def _handle_unpublish(self, filename, cors):
