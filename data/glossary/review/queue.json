@@ -14825,24 +14825,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "meissner-10-jahre",
-        "name": "Meißner Single Malt 10 Jahre",
-        "distillery_id": "meissener-spezialitaetenbrennerei",
-        "whisky_type": "Single Malt",
-        "abv": 42,
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
+        "abv": 43,
         "age": 10,
-        "nas": false,
-        "tasting_notes_nose": "Feine Malzaromen, dezent fruchtig mit Hinweisen auf reife Birnen und einem Hauch von blumigen Noten.",
-        "tasting_notes_palate": "Elegant und weich, eine feine Balance zwischen Malzsüße und dezenten Holznoten, Anklänge von getrockneten Früchten.",
-        "tasting_notes_finish": "Harmonisch und langanhaltend mit einer feinen Würze und trockenem Nachklang.",
-        "seo_title": "Meißner Single Malt 10 Jahre | Sächsische Whiskytradition",
-        "seo_description": "Der 10-jährige Single Malt der Meißner Spezialitätenbrennerei ist ein Klassiker aus Sachsen. Elegant und gereift.",
-        "slug": "meissner-single-malt-10-jahre",
+        "nas": true,
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:51:57Z",
-        "last_updated": "2026-04-24T18:51:57Z",
-        "published": false
+        "last_updated": "2026-04-24T18:58:20Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "meissner-10-jahre",
@@ -14857,7 +14862,10 @@
         "tasting_notes_finish": "Harmonisch und langanhaltend mit einer feinen Würze und trockenem Nachklang.",
         "seo_title": "Meißner Single Malt 10 Jahre | Sächsische Whiskytradition",
         "seo_description": "Der 10-jährige Single Malt der Meißner Spezialitätenbrennerei ist ein Klassiker aus Sachsen. Elegant und gereift."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:58:20Z"
     },
     {
       "batch_id": "whiskies_20260424T185200_98d3b1",
