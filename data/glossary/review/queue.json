@@ -15609,24 +15609,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "weyermann-single-malt",
-        "name": "Weyermann Single Malt Whisky",
-        "distillery_id": "weyermann",
-        "whisky_type": "Single Malt",
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
         "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Einzigartige Malzaromatik, Noten von Schokolade, Röstkaffee und dunklem Karamell.",
-        "tasting_notes_palate": "Vollmundig mit einer komplexen Textur, Röstaromen treffen auf Süße und Vanille.",
-        "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
-        "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
-        "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil.",
-        "slug": "weyermann-single-malt-whisky",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:52:39Z",
-        "last_updated": "2026-04-24T18:52:39Z",
-        "published": false
+        "last_updated": "2026-04-24T18:59:46Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "weyermann-single-malt",
@@ -15641,7 +15646,10 @@
         "tasting_notes_finish": "Langanhaltend mit einem Nachklang von Malz und feiner Würze.",
         "seo_title": "Weyermann Single Malt | Expertise im Rohstoff Malz",
         "seo_description": "Weyermann Single Malt aus Bamberg nutzt Spezialmalze für ein unverwechselbares Geschmacksprofil."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:59:46Z"
     },
     {
       "batch_id": "whiskies_20260424T185242_314aa4",
