@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185157_1c68ca",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:57Z",
+  "raw": [
+    {
+      "id": "meissner-10-jahre",
+      "name": "Meißner Single Malt 10 Jahre",
+      "distillery_id": "meissener-spezialitaetenbrennerei",
+      "whisky_type": "Single Malt",
+      "abv": 42,
+      "age": 10,
+      "nas": false,
+      "tasting_notes_nose": "Feine Malzaromen, dezent fruchtig mit Hinweisen auf reife Birnen und einem Hauch von blumigen Noten.",
+      "tasting_notes_palate": "Elegant und weich, eine feine Balance zwischen Malzsüße und dezenten Holznoten, Anklänge von getrockneten Früchten.",
+      "tasting_notes_finish": "Harmonisch und langanhaltend mit einer feinen Würze und trockenem Nachklang.",
+      "seo_title": "Meißner Single Malt 10 Jahre | Sächsische Whiskytradition",
+      "seo_description": "Der 10-jährige Single Malt der Meißner Spezialitätenbrennerei ist ein Klassiker aus Sachsen. Elegant und gereift."
+    }
+  ]
+}
