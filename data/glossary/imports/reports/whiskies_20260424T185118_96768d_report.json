@@ -1,0 +1,56 @@
+{
+  "batch_id": "whiskies_20260424T185118_96768d",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:18Z",
+  "total": 1,
+  "new": 0,
+  "update_candidates": 1,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "beverbach-single-malt",
+        "name": "Beverbach Single Malt German Highland Whisky",
+        "distillery_id": "hardenberg-beverbach",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Frische florale Noten, Vanille, Malz und ein Hauch von grünen Äpfeln.",
+        "tasting_notes_palate": "Würzig-süß mit Karamell, Vanille, leichter Honignote und einer Spur von getrockneten Früchten.",
+        "tasting_notes_finish": "Mittellang und wärmend mit feinen Holzaromen.",
+        "seo_title": "Beverbach Single Malt | Whisky der Hardenberg Distillery",
+        "seo_description": "Entdecken Sie Beverbach Single Malt aus Niedersachsen. Modernes Design und klassische Handwerkskunst."
+      },
+      "normalized": {
+        "id": "beverbach-single-malt",
+        "name": "Beverbach Single Malt German Highland Whisky",
+        "distillery_id": "hardenberg-beverbach",
+        "whisky_type": "Single Malt",
+        "abv": 43,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Frische florale Noten, Vanille, Malz und ein Hauch von grünen Äpfeln.",
+        "tasting_notes_palate": "Würzig-süß mit Karamell, Vanille, leichter Honignote und einer Spur von getrockneten Früchten.",
+        "tasting_notes_finish": "Mittellang und wärmend mit feinen Holzaromen.",
+        "seo_title": "Beverbach Single Malt | Whisky der Hardenberg Distillery",
+        "seo_description": "Entdecken Sie Beverbach Single Malt aus Niedersachsen. Modernes Design und klassische Handwerkskunst.",
+        "slug": "beverbach-single-malt-german-highland-whisky",
+        "created_at": "2026-04-24T18:51:18Z",
+        "last_updated": "2026-04-24T18:51:18Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "Pflichtfeld fehlt: country_id",
+        "ID bereits vorhanden (Duplikat): beverbach-single-malt"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
