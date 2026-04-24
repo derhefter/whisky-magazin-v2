@@ -22,10 +22,11 @@
       "season": "fruehling",
       "occasion": null,
       "priority": 10,
-      "status": "in_progress",
-      "article_slug": null,
+      "status": "done",
+      "article_slug": "schottland-im-fruhling-beste-reisezeit-fur-destillerie-besuche",
       "created_at": "2026-04-09",
-      "notes": ""
+      "notes": "",
+      "done_at": "2026-04-24T18:43:28Z"
     },
     {
       "id": "31649472-e130-42c0-9350-df88024b7ff3",
