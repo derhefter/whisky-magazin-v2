@@ -1966,6 +1966,13 @@
       "imported_at": "2026-04-24T18:51:52Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185155_7f81bd",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:55Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14591,6 +14598,50 @@
         "tasting_notes_finish": "Langanhaltend und rauchig mit einer feinen Süße und würzigem Nachklang.",
         "seo_title": "Hellinger 42 Rauch | Torfiger Single Malt aus Sachsen",
         "seo_description": "Erleben Sie den rauchigen Hellinger 42 aus Dresden. Malziger Rauch trifft auf Schokolade und Zitrusfrucht."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185155_7f81bd",
+      "entity": "whiskies",
+      "item_id": "mc-raven-single-malt",
+      "item_slug": "mc-raven-single-malt-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "mc-raven-single-malt",
+        "name": "Mc Raven Single Malt Whisky",
+        "distillery_id": "thousand-mountains",
+        "whisky_type": "Single Malt",
+        "abv": 46.2,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Fruchtig und elegant mit Noten von dunklen Beeren, floralen Hinweisen und einer Spur Vanille.",
+        "tasting_notes_palate": "Vollmundig mit Akzenten von dunklen Früchten, Malz, Eichenholz und einer feinen Schokoladennote.",
+        "tasting_notes_finish": "Langanhaltend und wärmend mit würzigen Nuancen und einer angenehmen Süße.",
+        "seo_title": "Mc Raven Single Malt | Thousand Mountains Sauerland",
+        "seo_description": "Der Mc Raven ist der Star der Thousand Mountains Distillery. Ein eleganter Single Malt mit 46,2% Vol. aus dem Sauerland.",
+        "slug": "mc-raven-single-malt-whisky",
+        "created_at": "2026-04-24T18:51:55Z",
+        "last_updated": "2026-04-24T18:51:55Z",
+        "published": false
+      },
+      "raw": {
+        "id": "mc-raven-single-malt",
+        "name": "Mc Raven Single Malt Whisky",
+        "distillery_id": "thousand-mountains",
+        "whisky_type": "Single Malt",
+        "abv": 46.2,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Fruchtig und elegant mit Noten von dunklen Beeren, floralen Hinweisen und einer Spur Vanille.",
+        "tasting_notes_palate": "Vollmundig mit Akzenten von dunklen Früchten, Malz, Eichenholz und einer feinen Schokoladennote.",
+        "tasting_notes_finish": "Langanhaltend und wärmend mit würzigen Nuancen und einer angenehmen Süße.",
+        "seo_title": "Mc Raven Single Malt | Thousand Mountains Sauerland",
+        "seo_description": "Der Mc Raven ist der Star der Thousand Mountains Distillery. Ein eleganter Single Malt mit 46,2% Vol. aus dem Sauerland."
       }
     }
   ]
