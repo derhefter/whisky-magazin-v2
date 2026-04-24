@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185209_701e33",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:52:09Z",
+  "raw": [
+    {
+      "id": "schlitzer-single-malt-klassisch",
+      "name": "Schlitzer Single Malt Klassisch",
+      "distillery_id": "schlitzer",
+      "whisky_type": "Single Malt",
+      "abv": 43,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Frische Eichenfässer, Vanille, helle Früchte wie Apfel und gelbe Pflaume, dazu ein Hauch Marzipan.",
+      "tasting_notes_palate": "Weich und rund, fruchtige Süße von Äpfeln und Birnen, gefolgt von Malz und einer dezenten Holzwürze.",
+      "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eiche und Pfeffer.",
+      "seo_title": "Schlitzer Single Malt Klassisch | Hessischer Whisky aus Schlitz",
+      "seo_description": "Der klassische Single Malt der traditionsreichen Schlitzer Destillerie. Klar, ausgewogen und fruchtig."
+    }
+  ]
+}
