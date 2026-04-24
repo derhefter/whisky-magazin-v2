@@ -1952,6 +1952,13 @@
       "imported_at": "2026-04-24T18:51:46Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260424T185149_a469ea",
+      "entity": "whiskies",
+      "imported_at": "2026-04-24T18:51:49Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -14489,6 +14496,50 @@
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eichenholz und einer leichten Pfeffrigkeit.",
         "seo_title": "Glina Single Malt Classic | Handwerk aus Brandenburg",
         "seo_description": "Der Glina Single Malt Classic besticht durch seine regionale Herkunft und ehrliche Handwerkskunst. Fruchtig und mild."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260424T185149_a469ea",
+      "entity": "whiskies",
+      "item_id": "hellinger-42-classic",
+      "item_slug": "hellinger-42-single-malt-whisky",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: country_id"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "hellinger-42-classic",
+        "name": "Hellinger 42 Single Malt Whisky",
+        "distillery_id": "dresdner-whisky-manufaktur",
+        "whisky_type": "Single Malt",
+        "abv": 46,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Rundes Aroma mit Noten von Apfel, Pfirsich, Vanille und Honig, unterlegt mit einer leichten Malzigkeit und einem Hauch von Weißwein.",
+        "tasting_notes_palate": "Vollmundig und harmonisch, erneut fruchtige Akzente von hellen Früchten, süßer Vanille und cremigem Honig.",
+        "tasting_notes_finish": "Mittellang und weich mit einer angenehmen Malzsüße und dezenten Holznoten.",
+        "seo_title": "Hellinger 42 Single Malt Classic | Dresdner Whisky Manufaktur",
+        "seo_description": "Der Hellinger 42 Classic ist das Aushängeschild aus Dresden. Ein fruchtiger Single Malt mit 46% Vol. und Reifung in Bourbon-Fässern.",
+        "slug": "hellinger-42-single-malt-whisky",
+        "created_at": "2026-04-24T18:51:49Z",
+        "last_updated": "2026-04-24T18:51:49Z",
+        "published": false
+      },
+      "raw": {
+        "id": "hellinger-42-classic",
+        "name": "Hellinger 42 Single Malt Whisky",
+        "distillery_id": "dresdner-whisky-manufaktur",
+        "whisky_type": "Single Malt",
+        "abv": 46,
+        "age": null,
+        "nas": true,
+        "tasting_notes_nose": "Rundes Aroma mit Noten von Apfel, Pfirsich, Vanille und Honig, unterlegt mit einer leichten Malzigkeit und einem Hauch von Weißwein.",
+        "tasting_notes_palate": "Vollmundig und harmonisch, erneut fruchtige Akzente von hellen Früchten, süßer Vanille und cremigem Honig.",
+        "tasting_notes_finish": "Mittellang und weich mit einer angenehmen Malzsüße und dezenten Holznoten.",
+        "seo_title": "Hellinger 42 Single Malt Classic | Dresdner Whisky Manufaktur",
+        "seo_description": "Der Hellinger 42 Classic ist das Aushängeschild aus Dresden. Ein fruchtiger Single Malt mit 46% Vol. und Reifung in Bourbon-Fässern."
       }
     }
   ]
