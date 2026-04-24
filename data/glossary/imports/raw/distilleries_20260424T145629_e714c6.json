@@ -1,0 +1,32 @@
+{
+  "batch_id": "distilleries_20260424T145629_e714c6",
+  "entity": "distilleries",
+  "imported_at": "2026-04-24T14:56:29Z",
+  "raw": [
+    {
+      "id": "gerhard-buechner",
+      "slug": "gerhard-buechner",
+      "name": "Feindestillerie Gerhard Büchner",
+      "country_id": "germany",
+      "region_id": "sachsen-anhalt",
+      "founded": 2010,
+      "owner": "Gerhard Büchner",
+      "status": "active",
+      "website": "https://www.gerhard-buechner.de",
+      "short_description": "Handwerkliche Destillerie im Salzatal, Sachsen-Anhalt, spezialisiert auf Single Malt Whisky und Edelbrände.",
+      "long_description": "Die Feindestillerie Gerhard Büchner befindet sich in Langenbogen im Salzatal, westlich von Halle (Saale). Seit 2010 produziert Gerhard Büchner hier Whiskys und Edelbrände mit regionalem Bezug. Der 'Salzatal Whisky' wird aus verschiedenen Qualitätsgersten (Pilsner- und Karamellmalz) einer regionalen Mälzerei hergestellt. Die Destillation erfolgt auf modernen Brenngeräten mit Wasserbad und Verstärkerböden, was zu einem besonders weichen Rohbrand führt. Die Reifung findet in einer Vielzahl von Fässern statt, darunter Bourbon-, Portwein-, Sherry- und Weinfässer sowie spezielle Fässer, die zuvor mit eigenen Fruchtlikörweinen belegt waren.",
+      "visit_info": "Die Destillerie bietet regelmäßige Whisky-Tastings an. Ein Laden in Halle (Saale) sowie der Hofladen in Langenbogen laden zum Probieren und Kaufen ein.",
+      "travel_context": "Gelegen in der sanften Agrarlandschaft Sachsen-Anhalts, nahe dem Süßen See, bietet die Region eine Mischung aus landwirtschaftlicher Tradition und modernem Genusshandwerk.",
+      "coordinates": {
+        "lat": 51.485942,
+        "lng": 11.770777
+      },
+      "image": null,
+      "seo_title": "Feindestillerie Gerhard Büchner - Salzatal Whisky aus Sachsen-Anhalt",
+      "seo_description": "Entdecken Sie den Salzatal Whisky der Feindestillerie Gerhard Büchner. Handwerkliche Herstellung, regionale Rohstoffe und vielfältige Fassreifungen.",
+      "published": true,
+      "created_at": "2026-04-23T15:00:00Z",
+      "last_updated": "2026-04-23T15:00:00Z"
+    }
+  ]
+}
