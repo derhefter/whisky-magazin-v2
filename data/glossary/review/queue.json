@@ -1840,6 +1840,13 @@
       "imported_at": "2026-04-24T08:53:48Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260424T085351_2d5ead",
+      "entity": "distilleries",
+      "imported_at": "2026-04-24T08:53:51Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -13078,6 +13085,62 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:50:00Z"
+      }
+    },
+    {
+      "batch_id": "distilleries_20260424T085351_2d5ead",
+      "entity": "distilleries",
+      "item_id": "glenlivet",
+      "item_slug": "glenlivet",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "glenlivet",
+        "name": "The Glenlivet",
+        "slug": "glenlivet",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1824,
+        "owner": "Chivas Brothers (Pernod Ricard)",
+        "website": "https://www.theglenlivet.com/",
+        "short_description": "Die erste lizensierte Destillerie im Glenlivet-Tal, bekannt als 'Der Single Malt, mit dem alles begann'.",
+        "long_description": "The Glenlivet wurde 1824 von George Smith als erste legale Brennerei nach dem Excise Act gegründet. Ihr Erfolg war so groß, dass viele andere Brennereien den Namen 'Glenlivet' kopierten, bis Smith sich das Recht am definitiven Artikel 'The' sicherte. Der Whisky ist berühmt für seinen eleganten, blumigen und fruchtigen Speyside-Stil, der durch die Nutzung hoher, laternenförmiger Brennblasen entsteht.",
+        "travel_info": "Das Besucherzentrum wurde kürzlich spektakulär neugestaltet und ist täglich geöffnet (Sommer 10:00-17:00 Uhr). Es bietet innovative interaktive Erlebnisse und erstklassige Tastings. Eine Reservierung über die Website wird dringend empfohlen.",
+        "seo_title": "The Glenlivet Destillerie: Ein Meilenstein der Whisky-Geschichte | Whisky-Glossar",
+        "seo_description": "Entdecke The Glenlivet in Speyside. Erfahre mehr über George Smith, den ersten legalen Single Malt und das hochmoderne Besucherzentrum im Herzen der Region.",
+        "coordinates": {
+          "lat": 57.3439,
+          "lng": -3.3386
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-24T08:53:51Z"
+      },
+      "raw": {
+        "id": "glenlivet",
+        "name": "The Glenlivet",
+        "slug": "glenlivet",
+        "region_id": "speyside",
+        "country_id": "scotland",
+        "status": "active",
+        "founded": 1824,
+        "owner": "Chivas Brothers (Pernod Ricard)",
+        "website": "https://www.theglenlivet.com/",
+        "short_description": "Die erste lizensierte Destillerie im Glenlivet-Tal, bekannt als 'Der Single Malt, mit dem alles begann'.",
+        "long_description": "The Glenlivet wurde 1824 von George Smith als erste legale Brennerei nach dem Excise Act gegründet. Ihr Erfolg war so groß, dass viele andere Brennereien den Namen 'Glenlivet' kopierten, bis Smith sich das Recht am definitiven Artikel 'The' sicherte. Der Whisky ist berühmt für seinen eleganten, blumigen und fruchtigen Speyside-Stil, der durch die Nutzung hoher, laternenförmiger Brennblasen entsteht.",
+        "travel_info": "Das Besucherzentrum wurde kürzlich spektakulär neugestaltet und ist täglich geöffnet (Sommer 10:00-17:00 Uhr). Es bietet innovative interaktive Erlebnisse und erstklassige Tastings. Eine Reservierung über die Website wird dringend empfohlen.",
+        "seo_title": "The Glenlivet Destillerie: Ein Meilenstein der Whisky-Geschichte | Whisky-Glossar",
+        "seo_description": "Entdecke The Glenlivet in Speyside. Erfahre mehr über George Smith, den ersten legalen Single Malt und das hochmoderne Besucherzentrum im Herzen der Region.",
+        "coordinates": {
+          "lat": 57.3439,
+          "lng": -3.3386
+        },
+        "published": true,
+        "created_at": "2026-04-21T17:05:36Z",
+        "last_updated": "2026-04-23T01:55:00Z"
       }
     }
   ]
