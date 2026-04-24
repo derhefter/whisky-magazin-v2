@@ -13317,7 +13317,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "gerhard-buechner",
         "slug": "gerhard-buechner",
@@ -13341,7 +13341,7 @@
         "seo_description": "Entdecken Sie den Salzatal Whisky der Feindestillerie Gerhard Büchner. Handwerkliche Herstellung, regionale Rohstoffe und vielfältige Fassreifungen.",
         "published": true,
         "created_at": "2026-04-23T15:00:00Z",
-        "last_updated": "2026-04-24T14:56:29Z"
+        "last_updated": "2026-04-24T14:56:44Z"
       },
       "raw": {
         "id": "gerhard-buechner",
@@ -13367,7 +13367,10 @@
         "published": true,
         "created_at": "2026-04-23T15:00:00Z",
         "last_updated": "2026-04-23T15:00:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T14:56:44Z"
     }
   ]
 }
