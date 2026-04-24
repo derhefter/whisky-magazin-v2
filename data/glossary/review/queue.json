@@ -14152,7 +14152,7 @@
         "ID bereits vorhanden (Duplikat): brigantia-classic"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "brigantia-classic",
         "name": "Brigantia Classic Single Malt",
@@ -14184,7 +14184,10 @@
         "tasting_notes_finish": "Elegant und langanhaltend mit feiner Würze und warmen Holzakzenten.",
         "seo_title": "Brigantia Classic Single Malt | Bodensee Whisky",
         "seo_description": "Der preisgekrönte Brigantia Classic vom Bodensee. Ein fruchtiger und eleganter Single Malt mit 43% Vol."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:53:45Z"
     },
     {
       "batch_id": "whiskies_20260424T185124_d6b0f3",
