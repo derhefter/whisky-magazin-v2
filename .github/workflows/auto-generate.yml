@@ -121,5 +121,20 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add articles/drafts/ data/
-          git diff --cached --quiet || git commit -m "Auto-Generate: ${{ github.event.inputs.count || '2' }} Entwürfe erstellt [$(date +%Y-%m-%d)]"
-          git push
+          if git diff --cached --quiet; then
+            echo "Keine neuen Dateien zu committen."
+            exit 0
+          fi
+          git commit -m "Auto-Generate: ${{ github.event.inputs.count || '2' }} Entwürfe erstellt [$(date +%Y-%m-%d)]"
+          # Race-Condition absichern: Dashboard/Vercel-Cron pusht parallel ueber die GitHub-API.
+          # Bis zu 3 Versuche mit Pull-Rebase vor jedem Push.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Push erfolgreich (Versuch $attempt)."
+              exit 0
+            fi
+            echo "Push abgelehnt (Versuch $attempt) - pulle neuen Stand und rebase."
+            git pull --rebase origin main
+          done
+          echo "::error::Push nach 3 Versuchen fehlgeschlagen."
+          exit 1
