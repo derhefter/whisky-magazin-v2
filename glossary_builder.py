@@ -600,8 +600,14 @@ def build_distillery_page(distillery: dict, countries: list, regions: list,
 
     # Karten-Link, wenn Koordinaten vorhanden
     coords = distillery.get("coordinates", {})
+    if isinstance(coords, str) and coords.strip():
+        parts = coords.split(",")
+        try:
+            coords = {"lat": float(parts[0].strip()), "lng": float(parts[1].strip())}
+        except (IndexError, ValueError):
+            coords = {}
     map_link = ""
-    if coords and coords.get("lat"):
+    if coords and isinstance(coords, dict) and coords.get("lat"):
         map_link = (
             f'<div style="margin:20px 0;">'
             f'<a href="/karte.html?loc=loc-{distillery["slug"]}" '

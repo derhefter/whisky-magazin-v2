@@ -1328,7 +1328,10 @@
     "owner": "Familie Klöckner",
     "website": "https://www.birkenhof-brennerei.de",
     "founded": "1848",
-    "coordinates": "50.6403, 7.9158",
+    "coordinates": {
+      "lat": 50.6403,
+      "lng": 7.9158
+    },
     "seo_title": "Birkenhof Brennerei | Fading Hill Whisky aus dem Westerwald",
     "seo_description": "Besuchen Sie die Birkenhof Brennerei im Westerwald. Entdecken Sie den preisgekrönten Fading Hill Whisky und erleben Sie 'Faszination Brennerei'.",
     "long_description": "Die Birkenhof Brennerei in Nistertal ist ein familiengeführter Traditionsbetrieb im Westerwald, der heute in der siebten Generation geleitet wird. Seit 2002 produziert Birkenhof unter dem Namen 'Fading Hill' hochwertige Whiskys. Die Brennerei kombiniert moderne Technik mit handwerklicher Tradition und ist mehrfach als 'Beste Destillerie Deutschlands' ausgezeichnet worden. Neben Single Malts produziert Birkenhof auch markante Rye Whiskys. Das Fassmanagement ist sehr vielfältig und umfasst neben klassischen Bourbon- und Sherryfässern auch exotischere Weinfässer wie Sauternes oder Amarone.",
@@ -1449,7 +1452,10 @@
     "owner": "Hans-Gerhard Fink",
     "website": "https://finch-whisky.com",
     "founded": "1999",
-    "coordinates": "48.4489, 9.7283",
+    "coordinates": {
+      "lat": 48.4489,
+      "lng": 9.7283
+    },
     "seo_title": "finch® Whiskydestillerie | Schwäbischer Hochland Whisky",
     "seo_description": "Vom Feld ins Glas: Entdecken Sie finch® Whisky von der Schwäbischen Alb. Hochwertiger Single Malt und Grain Whisky aus eigenem Anbau.",
     "long_description": "Die finch® Whiskydestillerie auf der Schwäbischen Alb verfolgt das konsequente Konzept 'Vom Feld ins Glas'. Inhaber Hans-Gerhard Fink ist Landwirt und baut das Getreide für seinen Whisky auf über 400 Hektar eigenem Land selbst an – darunter auch alte Sorten wie Emmer und Dinkel. Die Destillerie betreibt eine der größten Pot-Still-Anlagen Deutschlands. Finch ist bekannt für seine Vielfalt, die von klassischem Single Malt über Grain Whiskys bis hin zu speziellen Editionen aus seltenen Getreidesorten reicht. Die Reifung erfolgt oft in hochwertigen Wein-Barriques, was den Whiskys eine besondere Fruchtigkeit und Komplexität verleiht.",
@@ -1519,7 +1525,10 @@
     "owner": "Familie Buchholz",
     "website": "https://www.hercynian-distilling.de",
     "founded": "1985",
-    "coordinates": "51.6425, 10.6139",
+    "coordinates": {
+      "lat": 51.6425,
+      "lng": 10.6139
+    },
     "seo_title": "Hercynian Distilling Co. | Hammerschmiede Harz Whisky",
     "seo_description": "Entdecken Sie die Hammerschmiede im Harz. Heimat der Marken Elsburn, Willowburn und The Alrik. Traditionelle Whisky-Herstellung in Zorge.",
     "long_description": "Die Hercynian Distilling Co., besser bekannt als Hammerschmiede, ist eine der ältesten Whisky-Brennereien Deutschlands. Ansässig in Zorge im Harz, produziert die Familie Buchholz seit 2002 Whisky nach traditionellen Methoden. Die Brennblasen werden teilweise noch mit Holz befeuert, und für die Produktion wird reines Harzer Bergquellwasser genutzt. Bekannt wurde die Brennerei unter dem Namen 'The Glen Els', musste diesen jedoch nach einem Rechtsstreit mit der Scotch Whisky Association in 'Elsburn' ändern. Neben der fruchtigen Elsburn-Reihe produziert die Destillerie auch rauchige Varianten wie Willowburn und extrem rauchige Malts unter dem Namen The Alrik.",
@@ -1674,7 +1683,10 @@
     "owner": "Land Baden-Württemberg",
     "website": "https://www.rothaus.de",
     "founded": "1791 (Whisky seit 2006)",
-    "coordinates": "47.7953, 8.2458",
+    "coordinates": {
+      "lat": 47.7953,
+      "lng": 8.2458
+    },
     "seo_title": "Rothaus Black Forest Single Malt | Schwarzwald Whisky",
     "seo_description": "Der Rothaus Black Forest Single Malt Whisky verbindet Brautradition mit Destillierkunst. Erfahren Sie mehr über den Schwarzwald-Klassiker.",
     "long_description": "Die Badische Staatsbrauerei Rothaus ist weltbekannt für ihr 'Tannenzäpfle' Bier, produziert jedoch in Kooperation mit der Destillerie Kammer-Kirsch in Karlsruhe auch einen der erfolgreichsten deutschen Whiskys: den Rothaus Black Forest Single Malt. Das Malz wird in Rothaus mit dem weichen Brauwasser aus eigenen Quellen gemaischt und vergoren, bevor die Würze bei Kammer-Kirsch zweifach destilliert wird. Die Lagerung erfolgt dann wieder im Schwarzwald in den kühlen Kellern der Brauerei auf 1000 Metern Höhe. Der Whisky ist bekannt für seine Milde und feine Fruchtigkeit und hat international zahlreiche Goldmedaillen gewonnen.",
@@ -1744,7 +1756,10 @@
     "owner": "Familie Stetter",
     "website": "https://slyrs.com",
     "founded": "1999",
-    "coordinates": "47.7225, 11.8597",
+    "coordinates": {
+      "lat": 47.7225,
+      "lng": 11.8597
+    },
     "seo_title": "Slyrs Destillerie | Bayerischer Single Malt Whisky vom Schliersee",
     "seo_description": "Entdecken Sie die Slyrs Destillerie am Schliersee. Erfahren Sie alles über bayerischen Single Malt Whisky, Besichtigungen und Tastings in den Alpen.",
     "long_description": "Die Slyrs Destillerie am malerischen Schliersee in den bayerischen Alpen gilt als Pionier des bayerischen Single Malt Whiskys. Gegründet 1999 von Florian Stetter, hat sich Slyrs zu einer der bekanntesten deutschen Whisky-Marken entwickelt. Die Destillerie nutzt regionales bayerisches Gerstenmalz und reines alpines Quellwasser für ihre Produktion. Besonders markant ist das Höhenlager auf dem Gipfel des Stümpflings auf 1501 Metern, wo ausgewählte Fässer unter extremen klimatischen Bedingungen reifen. Die Destillation erfolgt in klassischen Kupferbrennblasen, und die Reifung findet vorwiegend in neuen Fässern aus amerikanischer Weißeiche statt, was den Slyrs-Whiskys ihre charakteristische Vanille- und Karamellnote verleiht.",
@@ -1763,7 +1778,10 @@
     "owner": "Andreas Thümmler",
     "website": "https://www.stkiliandistillers.com",
     "founded": "2012",
-    "coordinates": "49.7153, 9.2231",
+    "coordinates": {
+      "lat": 49.7153,
+      "lng": 9.2231
+    },
     "seo_title": "St. Kilian Distillers | Größte Whisky-Destillerie Deutschlands",
     "seo_description": "St. Kilian Distillers in Rüdenau kombiniert schottische Tradition mit deutscher Ingenieurskunst. Entdecken Sie Single Malt Whiskys aus über 375 Fassarten.",
     "long_description": "St. Kilian Distillers im unterfränkischen Rüdenau ist eine der größten und modernsten Whiskydestillerien Kontinentaleuropas. Gegründet 2012 von Andreas Thümmler, begann die Produktion im Jahr 2016 nach dem Vorbild schottischer Destillerien. Mit originalen schottischen Pot Stills aus Rothes produziert St. Kilian sowohl milde als auch rauchige Single Malts. Einzigartig ist das Fassmanagement mit Zugriff auf über 375 verschiedene Fassarten. Ein besonderes Merkmal ist die Lagerung in 'Bunker City', ehemaligen Munitionsbunkern der NATO, die ideale Reifebedingungen bieten. Die Destillerie hat international zahlreiche Preise gewonnen, darunter 'Distillery of the Year'.",
@@ -1884,7 +1902,10 @@
     "owner": "Rantum Capital",
     "website": "https://brennerei-ziegler.de",
     "founded": "1865",
-    "coordinates": "49.7436, 9.3289",
+    "coordinates": {
+      "lat": 49.7436,
+      "lng": 9.3289
+    },
     "seo_title": "Ziegler Aureum | Exklusiver Single Malt Whisky aus Franken",
     "seo_description": "Ziegler Aureum ist der Single Malt der traditionsreichen Edelbrennerei Ziegler. Entdecken Sie fränkische Destillierkunst und Fassreife in Perfektion.",
     "long_description": "Die Edelbrennerei Ziegler in Freudenberg am Main ist eigentlich für ihre erstklassigen Obstbrände berühmt, stellt aber seit 2008 auch den Aureum Single Malt Whisky her. Ziegler nutzt für seinen Whisky bayerisches Gerstenmalz und das Wissen aus über 150 Jahren Destillierkunst. Eine Besonderheit bei Ziegler ist die Verwendung seltener Holzfässer für die Reifung, darunter Kastanienholz aus der Region, was dem Aureum ein ganz eigenes Profil verleiht. Die Whiskys reifen in den historischen Felsenkellern der Brennerei bei konstant kühlen Temperaturen.",
