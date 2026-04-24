@@ -14617,24 +14617,29 @@
         "Pflichtfeld fehlt: country_id"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
-        "id": "glina-single-malt-classic",
-        "name": "Glina Single Malt Classic",
-        "distillery_id": "glina",
-        "whisky_type": "Single Malt",
-        "abv": 40,
+        "id": "coillmor-american-oak",
+        "name": "Coillmór American Oak",
+        "distillery_id": "coillmor",
+        "whisky_type": "single_malt",
+        "abv": 43,
         "age": null,
         "nas": true,
-        "tasting_notes_nose": "Fruchtig mit Gartenfrüchten und reifen Beeren, dazu Töne von Vanille, Honig und Getreide.",
-        "tasting_notes_palate": "Weich und rund auf der Zunge, fruchtige Süße mit Noten von Äpfeln und Birnen, später würziger mit Eichenholz und Malz.",
-        "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eichenholz und einer leichten Pfeffrigkeit.",
-        "seo_title": "Glina Single Malt Classic | Handwerk aus Brandenburg",
-        "seo_description": "Der Glina Single Malt Classic besticht durch seine regionale Herkunft und ehrliche Handwerkskunst. Fruchtig und mild.",
-        "slug": "glina-single-malt-classic",
+        "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+        "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+        "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+        "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+        "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht.",
+        "slug": "coillm-r-american-oak",
         "created_at": "2026-04-24T18:51:46Z",
-        "last_updated": "2026-04-24T18:51:46Z",
-        "published": false
+        "last_updated": "2026-04-24T18:57:56Z",
+        "published": true,
+        "country_id": "deutschland",
+        "age_statement": null,
+        "smoke_profile": "none",
+        "cask_types": [],
+        "style_tags": []
       },
       "raw": {
         "id": "glina-single-malt-classic",
@@ -14649,7 +14654,10 @@
         "tasting_notes_finish": "Mittellang und fruchtig mit etwas Eichenholz und einer leichten Pfeffrigkeit.",
         "seo_title": "Glina Single Malt Classic | Handwerk aus Brandenburg",
         "seo_description": "Der Glina Single Malt Classic besticht durch seine regionale Herkunft und ehrliche Handwerkskunst. Fruchtig und mild."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T18:57:56Z"
     },
     {
       "batch_id": "whiskies_20260424T185149_a469ea",
