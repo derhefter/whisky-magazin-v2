@@ -13317,7 +13317,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "gerhard-buechner",
         "slug": "gerhard-buechner",
@@ -13370,7 +13370,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-24T14:56:44Z"
+      "reviewed_at": "2026-04-24T14:56:44Z",
+      "published_at": "2026-04-24T14:56:49Z"
     }
   ]
 }
