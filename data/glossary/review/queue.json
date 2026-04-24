@@ -12945,7 +12945,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "craigellachie",
         "name": "Craigellachie",
@@ -12991,7 +12991,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:40:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-24T08:54:59Z"
     },
     {
       "batch_id": "distilleries_20260424T085345_7b1a5c",
