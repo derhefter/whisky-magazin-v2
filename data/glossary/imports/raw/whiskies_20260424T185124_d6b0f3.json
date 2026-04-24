@@ -1,0 +1,21 @@
+{
+  "batch_id": "whiskies_20260424T185124_d6b0f3",
+  "entity": "whiskies",
+  "imported_at": "2026-04-24T18:51:24Z",
+  "raw": [
+    {
+      "id": "coillmor-american-oak",
+      "name": "Coillmór American Oak",
+      "distillery_id": "coillmor",
+      "whisky_type": "Single Malt",
+      "abv": 43,
+      "age": null,
+      "nas": true,
+      "tasting_notes_nose": "Klassische Vanillenote, gepaart mit Karamell, Kokos und hellen Früchten wie Birne.",
+      "tasting_notes_palate": "Cremig und weich mit viel Vanillesüße, Malz und einer Spur von Zitrusfrüchten.",
+      "tasting_notes_finish": "Harmonisch und süßlich mit dezenten Eichenholznoten.",
+      "seo_title": "Coillmór American Oak | Bayerischer Single Malt",
+      "seo_description": "Gereift in ausgesuchten American Oak Casks. Der Coillmór Single Malt besticht durch Vanille und Frucht."
+    }
+  ]
+}
