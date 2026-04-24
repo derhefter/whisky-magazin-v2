@@ -286,6 +286,7 @@ def _base_template():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <meta name="google-site-verification" content="3OKzP9zKRrZV5V4-chXaN7GG39fdLAEeymXqKeqn4Rw">
     <meta name="p:domain_verify" content="4b7a0461f2dd530e9a9c5894618a229d">
     <title>{title} | {site_name}</title>
@@ -432,7 +433,6 @@ def _base_template():
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }}
-        .mobile-lang-block {{ display: none; }}
 
         /* --- HEADINGS --- */
         h1, h2, h3, h4 {{
@@ -1199,14 +1199,9 @@ def _base_template():
             .site-nav a {{ margin-left: 0; padding: 10px 4px; font-size: 16px; }}
             #lang-switcher {{ display: none !important; }}
             #lang-notice {{ display: none !important; }}
-            .mobile-lang-block {{ display: none !important; }}
             #site-lang-notice {{ display: none !important; }}
+            #lang-availability-hint {{ display: none !important; }}
             body.nav-open {{ overflow: hidden; }}
-            .mobile-lang-block {{ display: block; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px; }}
-            .mobile-lang-label {{ display: block; font-family: 'Inter',sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-amber); font-weight: 600; margin-bottom: 10px; }}
-            .mobile-lang-buttons {{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }}
-            .mobile-lang-buttons .site-lang-btn {{ padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-surface); color: var(--text-primary); font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; text-align: left; touch-action: manipulation; -webkit-tap-highlight-color: rgba(200,150,62,0.2); }}
-            .mobile-lang-buttons .site-lang-btn.site-lang-active {{ background: #C8963E; color: #FFFFFF; border-color: #C8963E; font-weight: 700; }}
             .site-nav a.active::after {{ display: none; }}
             .card-image-wrapper, .card-image, .card-image-placeholder {{ height: 160px; }}
             .article-hero-image {{ max-height: 240px; }}
@@ -1283,17 +1278,6 @@ def _base_template():
                 <a href="/karte.html" data-i18n="nav_map">Karte</a>
                 <a href="/whisky-glossar/" data-i18n="nav_glossar">Glossar</a>
                 <a href="/ueber-uns.html" data-i18n="nav_about">Über uns</a>
-                <div class="mobile-lang-block">
-                    <span class="mobile-lang-label">&#127760; Language / Sprache</span>
-                    <div class="mobile-lang-buttons">
-                        <button type="button" class="site-lang-btn site-lang-active" data-sitelang="de">DE &middot; Deutsch</button>
-                        <button type="button" class="site-lang-btn" data-sitelang="en">EN &middot; English</button>
-                        <button type="button" class="site-lang-btn" data-sitelang="fr">FR &middot; Fran&ccedil;ais</button>
-                        <button type="button" class="site-lang-btn" data-sitelang="nl">NL &middot; Nederlands</button>
-                        <button type="button" class="site-lang-btn" data-sitelang="es">ES &middot; Espa&ntilde;ol</button>
-                        <button type="button" class="site-lang-btn" data-sitelang="ja">JA &middot; &#26085;&#26412;&#35486;</button>
-                    </div>
-                </div>
             </nav>
         </div>
     </header>
@@ -2161,7 +2145,7 @@ def build_index_page(articles, config):
             <span style="font-size:12px;color:var(--accent-muted);">Schottland-Reisende &amp; Whisky-Enthusiasten seit 2007</span>
         </div>
     </div>
-    <div style="max-width:var(--max-width);margin:0 auto;padding:14px 24px 0;text-align:center;font-family:'Inter',sans-serif;">
+    <div id="lang-availability-hint" style="max-width:var(--max-width);margin:0 auto;padding:14px 24px 0;text-align:center;font-family:'Inter',sans-serif;">
         <p style="margin:0;font-size:13px;color:var(--text-secondary);letter-spacing:0.02em;">
             <span style="color:#C8963E;font-size:15px;">&#127760;</span>
             <span style="margin:0 6px;">Articles available in</span>
