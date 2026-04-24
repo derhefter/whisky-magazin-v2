@@ -331,32 +331,35 @@ def build_glossary_index(data: dict, config: dict) -> str:
                        border-radius:var(--radius-sm);font-size:16px;font-family:'Inter',sans-serif;
                        color:var(--text-primary);background:var(--bg-primary);
                        outline:none;box-sizing:border-box;box-shadow:var(--shadow-hover);"
-                oninput="glossarSearch(this.value)">
+                oninput="glossarSearch(this.value)"
+                onkeydown="if(event.key==='Escape'){{this.value='';glossarSearch('');}}">
             <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);
                          color:var(--text-secondary);font-size:18px;pointer-events:none;">🔍</span>
+            <div id="glossar-results" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;
+                 z-index:500;background:var(--bg-elevated);border:1px solid var(--border);
+                 border-radius:var(--radius-sm);box-shadow:0 8px 32px rgba(139,115,85,0.18);
+                 max-height:360px;overflow-y:auto;"></div>
         </div>
-        <div id="glossar-results" style="display:none;background:var(--bg-elevated);border:1px solid var(--border);
-             border-radius:var(--radius-sm);margin-top:4px;box-shadow:var(--shadow-hover);
-             max-height:320px;overflow-y:auto;"></div>
     </div>
     <script>
     var _glossarData={search_items};
     function glossarSearch(q){{
         var box=document.getElementById('glossar-results');
-        if(!q.trim()){{box.style.display='none';return;}}
+        if(!q||!q.trim()){{box.style.display='none';return;}}
         var ql=q.toLowerCase();
         var matches=_glossarData.filter(function(i){{
-            return i.n.toLowerCase().includes(ql)||i.s.toLowerCase().includes(ql);
+            return i.n.toLowerCase().indexOf(ql)!==-1||i.s.toLowerCase().indexOf(ql)!==-1;
         }}).slice(0,12);
-        if(!matches.length){{box.innerHTML='<div style="padding:12px 16px;font-size:14px;color:var(--text-secondary);">Keine Treffer</div>';box.style.display='block';return;}}
+        if(!matches.length){{
+            box.innerHTML='<div style="padding:12px 16px;font-size:14px;color:var(--text-secondary);">Keine Treffer f\u00fcr &bdquo;'+q+'&ldquo;</div>';
+            box.style.display='block';return;
+        }}
         box.innerHTML=matches.map(function(i){{
-            return '<a href="'+i.u+'" style="display:flex;align-items:center;gap:12px;padding:10px 16px;'
-                +'text-decoration:none;color:inherit;border-bottom:1px solid var(--border);"'
-                +' onmouseover="this.style.background=\'var(--bg-surface)\'" onmouseout="this.style.background=\'\'">'+
-                '<span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent-amber);'
-                +'font-family:\'Inter\',sans-serif;min-width:72px;">'+i.t+'</span>'+
-                '<div><div style="font-family:\'Fraunces\',serif;font-weight:600;font-size:15px;">'+i.n+'</div>'+
-                '<div style="font-size:12px;color:var(--text-secondary);">'+i.s+'</div></div></a>';
+            var bg='background:var(--bg-surface)';
+            return '<a href="'+i.u+'" style="display:flex;align-items:center;gap:12px;padding:10px 16px;text-decoration:none;color:inherit;border-bottom:1px solid var(--border);" onmouseover="this.style.background=\'var(--bg-surface)\'" onmouseout="this.style.background=\'transparent\'">'
+                +'<span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent-amber);font-family:Inter,sans-serif;min-width:80px;flex-shrink:0;">'+i.t+'</span>'
+                +'<div style="min-width:0;"><div style="font-family:Fraunces,serif;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+i.n+'</div>'
+                +'<div style="font-size:12px;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+i.s+'</div></div></a>';
         }}).join('');
         box.style.display='block';
     }}

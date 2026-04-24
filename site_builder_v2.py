@@ -3003,16 +3003,11 @@ def build_map_page(config):
             // Duplikat-Schutz: gleicher Name + gleicher Typ = nur 1 Marker
             const seenMarkers = new Set();
             locations.forEach(loc => {{
+                if (loc.type !== 'distillery') return;
                 const dedupeKey = loc.name.toLowerCase() + '|' + loc.type;
                 if (seenMarkers.has(dedupeKey)) return;
                 seenMarkers.add(dedupeKey);
-                // Icon je nach Typ + Besucht-Status
-                let icon;
-                if (loc.type === 'distillery') {{
-                    icon = loc.visited ? ICONS.distillery_visited : ICONS.distillery_unvisited;
-                }} else {{
-                    icon = ICONS[loc.type] || ICONS.poi;
-                }}
+                const icon = loc.visited ? ICONS.distillery_visited : ICONS.distillery_unvisited;
                 const zOffset = (loc.type === 'distillery' && loc.visited) ? 500 : 0;
                 const marker = L.marker([loc.lat, loc.lon], {{ icon: icon, zIndexOffset: zOffset, riseOnHover: true }});
                 marker.bindPopup(createPopup(loc), {{ maxWidth: 340 }});
