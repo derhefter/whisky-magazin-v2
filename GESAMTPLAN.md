@@ -253,7 +253,7 @@ Whisky_Ideen/
 
 ```
 Montags automatisch
-    └── Windows Task Scheduler generiert 2 Artikel-Entwürfe
+    └── GitHub Actions (Cron Mo 05:00 UTC) generiert 2 Artikel-Entwürfe
     └── E-Mail-Benachrichtigung an rosenhefter@gmail.com
 
 Steffen prüft im Dashboard (whisky-reise.com/admin)
