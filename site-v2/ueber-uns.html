@@ -37,6 +37,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    <!-- Cloudflare Turnstile (Captcha fuer Newsletter-/Feedback-Forms) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Pinterest Tag -->
     <script>
     !function(e){if(!window.pintrk){window.pintrk = function () {
@@ -175,7 +177,7 @@
                 </p>
                 <p style="font-size:16px;line-height:1.8;color:var(--text-secondary);">
                     110+ besuchte Destillerien, 201 Orte auf unserer interaktiven Karte,
-                    über 45 Artikel und ein absolut nicht behandelbares Verlangen nach dem
+                    über 46 Artikel und ein absolut nicht behandelbares Verlangen nach dem
                     nächsten Trip. Die Ärzte sagen, es gibt keine Heilung.
                     Wir sagen: Gut so.
                 </p>
@@ -362,10 +364,11 @@
                 Kein Spam. Kein Algorithmus. Nur zwei Typen, die zu viel über Schottland nachgedacht haben.
             </p>
             <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
-                <form class="newsletter-form" style="display:flex;gap:8px;width:100%;max-width:420px;">
+                <form class="newsletter-form" style="display:flex;gap:8px;width:100%;max-width:420px;flex-wrap:wrap;">
                     <input type="email" placeholder="Deine E-Mail-Adresse" required
                         style="flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Inter',sans-serif;background:var(--bg-elevated);">
                     <button type="submit" class="btn btn-primary">Dabei sein</button>
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADDDQy_N0i8-7Z8N" data-size="flexible" style="width:100%;"></div>
                 </form>
                 <p style="font-size:13px;color:var(--accent-muted);">Jederzeit abbestellbar. Versprochen.</p>
             </div>
@@ -448,9 +451,12 @@
     var btn=form.querySelector('button[type="submit"]');
     var email=form.querySelector('input[type="email"]').value;
     if(!email)return;
+    var ts=form.querySelector('[name="cf-turnstile-response"]');
+    var tsToken=ts?ts.value:'';
+    if(!tsToken){btn.textContent='Bitte Captcha bestaetigen';setTimeout(function(){btn.textContent='Anmelden';btn.disabled=false},2500);return;}
     var origText=btn.textContent;
     btn.textContent='Wird gesendet…';btn.disabled=true;
-    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,turnstile_token:tsToken})})
       .then(function(r){return r.json()})
       .then(function(d){
         if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}

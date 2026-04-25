@@ -38,6 +38,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    <!-- Cloudflare Turnstile (Captcha fuer Newsletter-/Feedback-Forms) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Pinterest Tag -->
     <script>
     !function(e){if(!window.pintrk){window.pintrk = function () {
@@ -160,9 +162,10 @@
         <p style="font-size:28px;margin:0 0 8px;">🥃</p>
         <h3 style="font-family:'Fraunces',serif;font-size:20px;margin:0 0 8px;padding-left:0;">Kostenloser Whisky-Guide</h3>
         <p style="font-size:14px;color:var(--text-secondary);margin:0 0 16px;">Melde dich an und erhalte unseren Einsteiger-Guide mit Tasting-Tipps, Empfehlungen und Reise-Insiderwissen.</p>
-        <form class="newsletter-form" style="justify-content:center;">
+        <form class="newsletter-form" style="justify-content:center;flex-wrap:wrap;">
             <input type="email" placeholder="Deine E-Mail" required>
             <button type="submit" class="btn btn-primary">Guide sichern</button>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADDDQy_N0i8-7Z8N" data-size="flexible" style="width:100%;margin-top:8px;"></div>
         </form>
     </div>
 
@@ -205,6 +208,7 @@
                     <form class="newsletter-form" style="display:flex;flex-direction:column;gap:8px;">
                         <input type="email" placeholder="E-Mail" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Inter',sans-serif;" required>
                         <button type="submit" class="btn btn-primary" style="font-size:13px;padding:8px 16px;">Anmelden</button>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADDDQy_N0i8-7Z8N" data-size="flexible"></div>
                     </form>
                 </div>
                 <div class="cta-box">
@@ -362,9 +366,12 @@
     var btn=form.querySelector('button[type="submit"]');
     var email=form.querySelector('input[type="email"]').value;
     if(!email)return;
+    var ts=form.querySelector('[name="cf-turnstile-response"]');
+    var tsToken=ts?ts.value:'';
+    if(!tsToken){btn.textContent='Bitte Captcha bestaetigen';setTimeout(function(){btn.textContent='Anmelden';btn.disabled=false},2500);return;}
     var origText=btn.textContent;
     btn.textContent='Wird gesendet…';btn.disabled=true;
-    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,turnstile_token:tsToken})})
       .then(function(r){return r.json()})
       .then(function(d){
         if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}

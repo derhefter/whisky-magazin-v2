@@ -37,6 +37,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    <!-- Cloudflare Turnstile (Captcha fuer Newsletter-/Feedback-Forms) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Pinterest Tag -->
     <script>
     !function(e){if(!window.pintrk){window.pintrk = function () {
@@ -87,11 +89,20 @@
             <span>Whisky</span>
         </nav>
         <h1 style="font-size:28px;margin:0;">Whisky</h1>
-        <p style="color:var(--text-secondary);margin-top:8px;">8 Artikel</p>
+        <p style="color:var(--text-secondary);margin-top:8px;">9 Artikel</p>
     </div>
     <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px 64px;">
         <div class="cat-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
             
+            <div class="card">
+                <div class="card-image" style="background-image:url(/images/leichte-fruhlings-whiskys-fur-die-warme-jahreszeit.jpg);background-size:cover;background-position:center;height:200px;"></div>
+                <div class="card-body">
+                    <span class="badge badge-outline">Whisky</span>
+                    <h3 class="card-title"><a href="https://www.whisky-reise.com/artikel/leichte-fruhlings-whiskys-fur-die-warme-jahreszeit.html">Leichte Frühlings-Whiskys für die warme Jahreszeit</a></h3>
+                    <p class="card-meta">24. April 2026 · 3 Min. Lesezeit</p>
+                    <p class="card-teaser">Lust auf einen erfrischenden Whisky für den Frühling? Entdecke leichte Sorten, die perfekt für warme Tage sind und mit i...</p>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-image" style="background-image:url(https://images.unsplash.com/photo-1657270086175-8c0e37e09a76?ixid=M3w5MDA5ODZ8MHwxfHNlYXJjaHwxfHxyYWlueSUyMGRheSUyMGNvenklMjB3aGlza3klMjBnbGFzcyUyMGFtYmVyJTIwd2FybXxlbnwwfDB8fHwxNzc2MTQ1MzUyfDA&ixlib=rb-4.1.0?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=80);background-size:cover;background-position:center;height:200px;"></div>
                 <div class="card-body">
@@ -235,9 +246,12 @@
     var btn=form.querySelector('button[type="submit"]');
     var email=form.querySelector('input[type="email"]').value;
     if(!email)return;
+    var ts=form.querySelector('[name="cf-turnstile-response"]');
+    var tsToken=ts?ts.value:'';
+    if(!tsToken){btn.textContent='Bitte Captcha bestaetigen';setTimeout(function(){btn.textContent='Anmelden';btn.disabled=false},2500);return;}
     var origText=btn.textContent;
     btn.textContent='Wird gesendet…';btn.disabled=true;
-    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,turnstile_token:tsToken})})
       .then(function(r){return r.json()})
       .then(function(d){
         if(d.error){btn.textContent=d.error;setTimeout(function(){btn.textContent=origText;btn.disabled=false},3000)}
