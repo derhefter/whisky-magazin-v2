@@ -419,10 +419,12 @@ python main.py --auto -n 3
 
 Konfiguriert in `vercel.json`:
 
-| Zeitpunkt               | Schedule (UTC) | Aktion                                           |
-| ----------------------- | -------------- | ------------------------------------------------ |
-| **Mittwoch 10:00 CEST** | `0 8 * * 3`    | Aeltesten freigegebenen Entwurf veroeffentlichen |
-| **Samstag 10:00 CEST**  | `0 8 * * 6`    | Aeltesten freigegebenen Entwurf veroeffentlichen |
+| Zeitpunkt                  | Schedule (UTC) | Aktion                                           |
+| -------------------------- | -------------- | ------------------------------------------------ |
+| **Mittwoch 10:00 / 09:00** | `0 8 * * 3`    | Aeltesten freigegebenen Entwurf veroeffentlichen |
+| **Samstag 10:00 / 09:00**  | `0 8 * * 6`    | Aeltesten freigegebenen Entwurf veroeffentlichen |
+
+> **Sommer-/Winterzeit:** Der Cron laeuft fix um **08:00 UTC**. In der Sommerzeit (CEST, MESZ) entspricht das **10:00 Uhr deutscher Zeit**, in der Winterzeit (CET) **09:00 Uhr**. Vercel kennt keine Zeitzone — wenn du fix 10:00 deutsche Zeit willst, muesste der Schedule im Winter auf `0 9 * * 3,6` geaendert werden.
 
 **Ablauf:**
 
@@ -779,6 +781,9 @@ Alle hier aufgefuehrten Variablen muessen in Vercel unter **Settings -> Environm
 | `DEEPL_API_KEY`           | DeepL API Key fuer Artikel-Uebersetzungen (primaer)                  | Free-Keys enden auf `:fx`            |
 | `AZURE_TRANSLATOR_KEY`    | Azure Translator Key (Fallback wenn DeepL Quota erschoepft)          | Aus Azure Portal -> Cognitive Svcs   |
 | `AZURE_TRANSLATOR_REGION` | Azure-Region des Translator-Dienstes                                 | `westeurope` (Standard)              |
+| `ADMIN_KEY_VERSION`       | Zaehler (kein Random!) — wird in den HMAC der Admin-Tokens gemischt. Inkrementieren = alle Browser-Sessions sofort ungueltig. | `1` (Start), `2`, `3` ... |
+| `NEWSLETTER_TOKEN_SECRET` | Eigenes Secret fuer DOI-/Unsubscribe-Tokens, entkoppelt vom Brevo-Key. Ohne Setzung Fallback auf Legacy-Schema. | `<32+ Bytes Base64>` |
+| `TURNSTILE_SECRET_KEY`    | Cloudflare-Turnstile-Secret fuer Captcha auf Newsletter/Feedback/Survey. Ohne Setzung wird die Captcha-Pruefung uebersprungen (Fail-open). | (aus Cloudflare-Dashboard, NICHT der Site-Key) |
 
 **Wichtig:** Nach jeder Aenderung an Environment Variables muss Vercel **neu deployt** werden!
 
@@ -864,20 +869,47 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 
 ### 7.4 Sicherheitsfeatures (implementiert)
 
-- **HMAC-SHA256 Token-Authentifizierung** mit 24-Stunden-Ablauf
-- **Rate Limiting** auf Login (max. 5 Versuche / 15 Minuten)
-- **CORS-Einschraenkung** auf `whisky-reise.com` und `localhost:8000`
-- **Content Security Policy** (getrennte Regeln fuer Public und Admin)
-- **Path-Traversal-Schutz** (Dateinamen-Validierung per Regex)
-- **CRON_SECRET** fuer Vercel Cron-Authentifizierung
-- **noindex/nofollow** auf Admin-Seiten
-- **Double Opt-In** fuer Newsletter (DSGVO-konform)
-- **Cookie-Consent-Banner** auf allen oeffentlichen Seiten
+- **HMAC-SHA256 Token-Authentifizierung** mit **8-Stunden-Ablauf** und **`ADMIN_KEY_VERSION`-Mischung** (Inkrementieren = sofortige Session-Invalidierung).
+- **Rate Limiting** auf Login (max. 5 Versuche / 15 Minuten — best-effort, da Vercel-Lambda keinen persistenten Speicher hat).
+- **Cloudflare Turnstile (Captcha)** auf Newsletter-, Feedback- und Survey-Forms (siehe `TURNSTILE_SECRET_KEY`).
+- **HTML-Sanitizer (`bleach`)** auf dem Render-Pfad fuer LLM-generierten Artikel-HTML (XSS-Schutz).
+- **DOMPurify** im Admin-SPA fuer Vorschau-Modals.
+- **SSRF-Whitelist** im `set_image`-Endpoint (nur `images.unsplash.com` / `plus.unsplash.com`).
+- **GitHub-PUT mit 1x-Retry** bei SHA-Konflikten (Race-Condition zwischen GitHub Actions und Vercel-Cron entschaerft).
+- **Newsletter-Tokens entkoppelt vom Brevo-Key** via `NEWSLETTER_TOKEN_SECRET` — Brevo-Key-Rotation bricht keine Unsubscribe-Links mehr.
+- **CORS-Einschraenkung** auf `whisky-reise.com` und `localhost:8000`.
+- **Content Security Policy** (getrennte Regeln fuer Public und Admin).
+- **Path-Traversal-Schutz** (Dateinamen-Validierung per Regex).
+- **CRON_SECRET** fuer Vercel Cron-Authentifizierung.
+- **noindex/nofollow** auf Admin-Seiten.
+- **Double Opt-In** fuer Newsletter (DSGVO-konform).
+- **Cookie-Consent-Banner** auf allen oeffentlichen Seiten.
 
-### 7.5 Bekannte Einschraenkungen
+### 7.5 Notfall: Admin-Session widerrufen
 
-- Rate Limiting auf Admin-Operationen (Artikel, Themen, WotM) existiert nicht serverseitig, da Vercel Serverless Functions keinen persistenten Speicher haben. Die Token-basierte Authentifizierung bietet jedoch ausreichenden Schutz.
-- Der Admin-Bereich nutzt `unsafe-inline` fuer JavaScript in der CSP, da das Dashboard ein Single-Page-HTML ist. Fuer die oeffentliche Seite ist `unsafe-inline` nur fuer Styles aktiv (benoetig fuer Leaflet.js).
+Wenn du den Verdacht hast, dein Admin-Token wurde geleakt (Browser-Plugin, fremdes Geraet, geteilter Bildschirm):
+
+1. Vercel Dashboard -> Settings -> Environment Variables
+2. `ADMIN_KEY_VERSION` um 1 erhoehen (z. B. `1` -> `2`)
+3. Vercel neu deployen ("Redeploy" auf letztem Deployment)
+4. **Effekt:** Alle aktiven Browser-Tokens sind sofort 401 — du musst dich neu einloggen, ein Angreifer mit altem Token wird ausgesperrt. Das `DASHBOARD_PASSWORD` selbst bleibt unveraendert.
+
+### 7.6 Schluessel-Rotation (Runbook)
+
+Reihenfolge bei einem vermuteten Komplettleak (z. B. `.env` versehentlich gepostet):
+
+1. **OpenAI**: https://platform.openai.com/api-keys -> alten Key `Revoke`, neuen erstellen, in Vercel als `OPENAI_API_KEY` eintragen.
+2. **Brevo**: https://app.brevo.com -> Settings -> API Keys -> alten Key loeschen, neuen erstellen, in Vercel als `BREVO_API_KEY` eintragen. **Wichtig:** Da `NEWSLETTER_TOKEN_SECRET` unabhaengig ist, bleiben bestehende DOI-/Unsubscribe-Links gueltig.
+3. **Unsplash**: https://unsplash.com/oauth/applications -> Anwendung -> Secret regenerieren, in Vercel als `UNSPLASH_API_KEY`.
+4. **CRON_SECRET**: Vercel-Env neu setzen (langer Random-String, mind. 32 Bytes Base64).
+5. **Admin-Sessions**: `ADMIN_KEY_VERSION` inkrementieren (siehe 7.5).
+6. **GitHub-PAT**: Falls geleakt, in https://github.com/settings/tokens als `Revoke`, neuen Fine-Grained mit Contents R/W erstellen, in Vercel + Repo-Secrets eintragen.
+7. Vercel **redeployen**, GitHub-Action `auto-generate.yml` einmal manuell triggern, um zu pruefen dass der neue Token greift.
+
+### 7.7 Bekannte Einschraenkungen
+
+- Rate Limiting auf Admin-Operationen ist In-Memory pro Lambda-Instanz und damit auf Vercel nur best-effort. Die HMAC + `KEY_VERSION` + Captcha auf Public-Forms sind die wirksamen Schutzschichten.
+- Der Admin-Bereich nutzt `unsafe-inline` fuer JavaScript in der CSP, da das Dashboard ein Single-Page-HTML ist. Fuer die oeffentliche Seite ist `unsafe-inline` nur fuer Styles aktiv (benoetigt fuer Leaflet.js).
 
 ---
 
