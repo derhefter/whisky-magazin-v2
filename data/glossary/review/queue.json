@@ -16087,7 +16087,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "mecklenburg-western-pomerania",
         "slug": "mecklenburg-vorpommern",
@@ -16108,7 +16108,10 @@
         "description": "An der Ostsee reifen in Mecklenburg-Vorpommern Whiskys mit ganz eigenem, oft maritimem Charakter.",
         "seo_title": "Whisky aus Mecklenburg-Vorpommern – Destillerien & Infos",
         "seo_description": "Whisky-Genuss aus dem Nordosten. Entdecken Sie die Destillerien in Mecklenburg-Vorpommern."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:38Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
