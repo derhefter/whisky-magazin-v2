@@ -15822,7 +15822,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "baden-wuerttemberg",
         "slug": "baden-wuerttemberg",
@@ -15846,7 +15846,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:27Z"
+      "reviewed_at": "2026-04-25T06:58:27Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -15856,7 +15857,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bavaria",
         "slug": "bayern",
@@ -15880,7 +15881,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:28Z"
+      "reviewed_at": "2026-04-25T06:58:28Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -15890,7 +15892,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "berlin",
         "slug": "berlin",
@@ -15914,7 +15916,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:30Z"
+      "reviewed_at": "2026-04-25T06:58:30Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -15924,7 +15927,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "brandenburg",
         "slug": "brandenburg",
@@ -15948,7 +15951,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:31Z"
+      "reviewed_at": "2026-04-25T06:58:31Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -15958,7 +15962,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bremen",
         "slug": "bremen",
@@ -15982,7 +15986,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:33Z"
+      "reviewed_at": "2026-04-25T06:58:33Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -15992,7 +15997,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hamburg",
         "slug": "hamburg",
@@ -16016,7 +16021,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:34Z"
+      "reviewed_at": "2026-04-25T06:58:34Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16026,7 +16032,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hesse",
         "slug": "hessen",
@@ -16050,7 +16056,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:35Z"
+      "reviewed_at": "2026-04-25T06:58:35Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16060,7 +16067,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lower-saxony",
         "slug": "niedersachsen",
@@ -16084,7 +16091,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:37Z"
+      "reviewed_at": "2026-04-25T06:58:37Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16094,7 +16102,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "mecklenburg-western-pomerania",
         "slug": "mecklenburg-vorpommern",
@@ -16118,7 +16126,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:38Z"
+      "reviewed_at": "2026-04-25T06:58:38Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16128,7 +16137,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "north-rhine-westphalia",
         "slug": "nordrhein-westfalen",
@@ -16152,7 +16161,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:40Z"
+      "reviewed_at": "2026-04-25T06:58:40Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16162,7 +16172,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "rhineland-palatinate",
         "slug": "rheinland-pfalz",
@@ -16186,7 +16196,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:41Z"
+      "reviewed_at": "2026-04-25T06:58:41Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16196,7 +16207,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "saarland",
         "slug": "saarland",
@@ -16220,7 +16231,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:42Z"
+      "reviewed_at": "2026-04-25T06:58:42Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16230,7 +16242,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "saxony",
         "slug": "sachsen",
@@ -16254,7 +16266,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:44Z"
+      "reviewed_at": "2026-04-25T06:58:44Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16264,7 +16277,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "saxony-anhalt",
         "slug": "sachsen-anhalt",
@@ -16288,7 +16301,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:45Z"
+      "reviewed_at": "2026-04-25T06:58:45Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16298,7 +16312,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "schleswig-holstein",
         "slug": "schleswig-holstein",
@@ -16322,7 +16336,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:47Z"
+      "reviewed_at": "2026-04-25T06:58:47Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
@@ -16332,7 +16347,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "thuringia",
         "slug": "thueringen",
@@ -16356,7 +16371,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T06:58:48Z"
+      "reviewed_at": "2026-04-25T06:58:48Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
@@ -16366,7 +16382,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kentucky",
         "name": "Kentucky",
@@ -16393,7 +16409,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T07:02:06Z"
+      "reviewed_at": "2026-04-25T07:02:06Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
@@ -16403,7 +16420,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tennessee",
         "name": "Tennessee",
@@ -16430,7 +16447,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T07:02:14Z"
+      "reviewed_at": "2026-04-25T07:02:14Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
@@ -16440,7 +16458,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "indiana",
         "name": "Indiana",
@@ -16467,7 +16485,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T07:02:16Z"
+      "reviewed_at": "2026-04-25T07:02:16Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
@@ -16477,7 +16496,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "utah",
         "name": "Utah",
@@ -16504,7 +16523,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T07:02:17Z"
+      "reviewed_at": "2026-04-25T07:02:17Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
@@ -16514,7 +16534,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "washington",
         "name": "Washington",
@@ -16541,7 +16561,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T07:02:18Z"
+      "reviewed_at": "2026-04-25T07:02:18Z",
+      "published_at": "2026-04-25T07:02:25Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
@@ -16551,7 +16572,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "texas",
         "name": "Texas",
@@ -16578,7 +16599,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-25T07:02:20Z"
+      "reviewed_at": "2026-04-25T07:02:20Z",
+      "published_at": "2026-04-25T07:02:25Z"
     }
   ]
 }
