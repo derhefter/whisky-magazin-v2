@@ -16223,7 +16223,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "saxony",
         "slug": "sachsen",
@@ -16244,7 +16244,10 @@
         "description": "Sachsen blickt auf eine lange Tradition der Spirituosenherstellung zurück, die nun auch erstklassige Whiskys hervorbringt.",
         "seo_title": "Whisky aus Sachsen – Destillerien & Infos",
         "seo_description": "Sächsische Whisky-Kultur erleben. Informationen über die Brennereien im Freistaat Sachsen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:44Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
