@@ -15849,7 +15849,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "bavaria",
         "slug": "bayern",
@@ -15870,7 +15870,10 @@
         "description": "Bayern ist das Zentrum der deutschen Whisky-Produktion mit bekannten Namen wie Slyrs und einer hohen Dichte an handwerklichen Brennereien.",
         "seo_title": "Whisky aus Bayern – Destillerien & Infos",
         "seo_description": "Bayerischer Whisky steht für Qualität und Tradition. Erfahren Sie alles über die Destillerien im Freistaat."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:28Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
