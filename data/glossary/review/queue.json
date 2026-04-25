@@ -15951,7 +15951,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "bremen",
         "slug": "bremen",
@@ -15972,7 +15972,10 @@
         "description": "In der Hansestadt Bremen finden sich maritime Einflüsse in der Lagerung und Veredelung von Whisky.",
         "seo_title": "Whisky aus Bremen – Destillerien & Infos",
         "seo_description": "Bremer Whisky-Kultur entdecken. Infos zu Destillerien und Abfüllern in der Hansestadt."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:33Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
