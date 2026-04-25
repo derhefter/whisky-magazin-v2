@@ -15917,7 +15917,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "brandenburg",
         "slug": "brandenburg",
@@ -15938,7 +15938,10 @@
         "description": "Brandenburg nutzt seine weiten Getreidefelder für die Produktion charakterstarker Whiskys, oft in historischem Ambiente.",
         "seo_title": "Whisky aus Brandenburg – Destillerien & Infos",
         "seo_description": "Whisky-Tradition in Brandenburg. Erfahren Sie mehr über die Brennereien in der Mark Brandenburg."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:31Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
