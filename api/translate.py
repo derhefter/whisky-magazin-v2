@@ -28,7 +28,8 @@ AZURE_TRANSLATOR_KEY = os.environ.get("AZURE_TRANSLATOR_KEY", "").strip()
 AZURE_TRANSLATOR_REGION = os.environ.get("AZURE_TRANSLATOR_REGION", "westeurope").strip()
 
 ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
-TOKEN_TTL = 86400
+KEY_VERSION = os.environ.get("ADMIN_KEY_VERSION", "1").strip()
+TOKEN_TTL = 8 * 3600  # 8h, war 24h
 
 
 def _verify_admin_token(token: str) -> bool:
@@ -44,7 +45,8 @@ def _verify_admin_token(token: str) -> bool:
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    expected = f"{ts_str}.{hmac.new(ADMIN_PASSWORD.encode(), ts_str.encode(), hashlib.sha256).hexdigest()}"
+    key = f"{ADMIN_PASSWORD}:{KEY_VERSION}".encode()
+    expected = f"{ts_str}.{hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()}"
     return hmac.compare_digest(token, expected)
 
 ALLOWED_ORIGINS = [

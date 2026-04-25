@@ -20,8 +20,9 @@ SITE_URL        = os.environ.get("SITE_URL", "https://www.whisky-reise.com").str
 AMAZON_TAG      = "whiskyreise74-21"
 OPENAI_API_KEY  = os.environ.get("OPENAI_API_KEY", "").strip()
 OPENAI_MODEL    = "gpt-4o-mini"
+KEY_VERSION     = os.environ.get("ADMIN_KEY_VERSION", "1").strip()
 
-TOKEN_TTL = 86400
+TOKEN_TTL = 8 * 3600  # 8h, war 24h
 WOTM_FILE = "data/whisky-of-the-month.json"
 
 
@@ -42,7 +43,7 @@ def _verify_token(token: str) -> bool:
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    key = ADMIN_PASSWORD.encode()
+    key = f"{ADMIN_PASSWORD}:{KEY_VERSION}".encode()
     sig = hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()
     return hmac.compare_digest(token, f"{ts_str}.{sig}")
 

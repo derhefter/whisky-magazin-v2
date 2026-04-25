@@ -9,7 +9,8 @@ from urllib.parse import urlparse, parse_qs
 from collections import defaultdict
 
 ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
-TOKEN_TTL = 86400  # 24h in Sekunden
+KEY_VERSION = os.environ.get("ADMIN_KEY_VERSION", "1").strip()
+TOKEN_TTL = 8 * 3600  # 8h, war 24h. Per ADMIN_KEY_VERSION inkrementieren = sofort alle Tokens invalidiert.
 
 _rate_store = defaultdict(list)
 RATE_LIMIT = 5   # max 5 Versuche pro 15 Min
@@ -18,7 +19,7 @@ RATE_LIMIT = 5   # max 5 Versuche pro 15 Min
 def _make_token(timestamp_str: str) -> str:
     if not ADMIN_PASSWORD:
         return ""
-    key = ADMIN_PASSWORD.encode()
+    key = f"{ADMIN_PASSWORD}:{KEY_VERSION}".encode()
     sig = hmac.new(key, timestamp_str.encode(), hashlib.sha256).hexdigest()
     return f"{timestamp_str}.{sig}"
 

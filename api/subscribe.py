@@ -17,6 +17,11 @@ BREVO_LIST_ID = int(os.environ.get("BREVO_LIST_ID", "3"))
 REDIRECT_URL = os.environ.get("BREVO_REDIRECT_URL", "https://www.whisky-reise.com/danke.html")
 BASE_URL = os.environ.get("BASE_URL", "https://www.whisky-reise.com")
 
+# Eigenes Secret fuer DOI-/Unsubscribe-Tokens. Frueher wurde sha256(BREVO_API_KEY)
+# benutzt - das brach bei jeder Brevo-Key-Rotation alle bereits versandten Links.
+# Fuer Migration werden alte Tokens uebergangsweise weiter akzeptiert (siehe _verify_token).
+NEWSLETTER_TOKEN_SECRET = os.environ.get("NEWSLETTER_TOKEN_SECRET", "").strip()
+
 ALLOWED_ORIGINS = [
     "https://www.whisky-reise.com",
     "https://www.whisky-magazin.de",
@@ -61,15 +66,46 @@ DOI_HTML = (
 )
 
 
-def _get_secret():
+def _legacy_secret():
+    """Altes Secret-Schema (sha256 vom Brevo-Key). Nur fuer Verify alter Links."""
     if not BREVO_API_KEY:
-        raise RuntimeError("BREVO_API_KEY nicht gesetzt")
+        return None
     return hashlib.sha256(BREVO_API_KEY.encode()).hexdigest()[:32]
 
 
+def _current_secret():
+    """Aktuelles Token-Secret. Bevorzugt NEWSLETTER_TOKEN_SECRET, faellt sonst auf
+    das Legacy-Schema zurueck (Abwaertskompatibilitaet, falls Env-Var fehlt)."""
+    if NEWSLETTER_TOKEN_SECRET:
+        return NEWSLETTER_TOKEN_SECRET
+    return _legacy_secret()
+
+
 def _make_token(email):
-    secret = _get_secret()
+    secret = _current_secret()
+    if not secret:
+        raise RuntimeError("Weder NEWSLETTER_TOKEN_SECRET noch BREVO_API_KEY gesetzt")
     return hmac.new(secret.encode(), email.lower().strip().encode(), hashlib.sha256).hexdigest()
+
+
+def _verify_token(email, token):
+    """True, wenn Token gegen aktuelles Secret ODER Legacy-Secret gueltig ist.
+    Migrationspfad: nach 30 Tagen kann der Legacy-Pfad entfernt werden."""
+    if not token:
+        return False
+    candidates = []
+    cur = _current_secret()
+    if cur:
+        candidates.append(cur)
+    legacy = _legacy_secret()
+    if legacy and legacy not in candidates:
+        candidates.append(legacy)
+    msg = email.lower().strip().encode()
+    for secret in candidates:
+        expected = hmac.new(secret.encode(), msg, hashlib.sha256).hexdigest()
+        if hmac.compare_digest(token, expected):
+            return True
+    return False
 
 
 def _send_welcome_email(email):
@@ -347,8 +383,7 @@ class handler(BaseHTTPRequestHandler):
             token = params.get("token", [""])[0]
 
             if action == "confirm" and email and token:
-                expected = _make_token(email)
-                if hmac.compare_digest(token, expected):
+                if _verify_token(email, token):
                     # Check if already in list (prevent duplicate welcome emails on re-click)
                     already_subscribed = False
                     try:
@@ -385,8 +420,7 @@ class handler(BaseHTTPRequestHandler):
                     return
 
             elif action == "unsubscribe" and email and token:
-                expected = _make_token(email)
-                if hmac.compare_digest(token, expected):
+                if _verify_token(email, token):
                     # Remove from Brevo list
                     try:
                         payload = json.dumps({"emails": [email]}).encode("utf-8")

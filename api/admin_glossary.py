@@ -33,8 +33,9 @@ ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "derhefter/whisky-magazin-v2").strip()
 GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main").strip()
+KEY_VERSION = os.environ.get("ADMIN_KEY_VERSION", "1").strip()
 
-TOKEN_TTL = 86400
+TOKEN_TTL = 8 * 3600  # 8h, war 24h
 
 VALID_ENTITIES = {"countries", "regions", "distilleries", "whiskies"}
 
@@ -61,7 +62,7 @@ def _verify_token(token: str) -> bool:
         return False
     if time.time() - ts > TOKEN_TTL:
         return False
-    key = ADMIN_PASSWORD.encode()
+    key = f"{ADMIN_PASSWORD}:{KEY_VERSION}".encode()
     sig = hmac.new(key, ts_str.encode(), hashlib.sha256).hexdigest()
     return hmac.compare_digest(token, f"{ts_str}.{sig}")
 
