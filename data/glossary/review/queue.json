@@ -16189,7 +16189,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "saarland",
         "slug": "saarland",
@@ -16210,7 +16210,10 @@
         "description": "Das kleinste Flächenbundesland Saarland überzeugt mit handwerklichen Destillerien und viel Liebe zum Detail.",
         "seo_title": "Whisky aus dem Saarland – Destillerien & Infos",
         "seo_description": "Whisky aus dem Saarland: Klein, aber fein. Informationen zu den Brennereien an der Saar."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:42Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
