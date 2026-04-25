@@ -16403,7 +16403,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "tennessee",
         "name": "Tennessee",
@@ -16427,7 +16427,10 @@
         "seo_title": "Tennessee Whiskey | Geschichte, Destillerien & Geschmack",
         "seo_description": "Alles über Tennessee Whiskey: Erfahren Sie mehr über den Lincoln County Process und die berühmten Destillerien aus Tennessee.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T07:02:14Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
