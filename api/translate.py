@@ -7,6 +7,8 @@ GET /api/translate?slug={slug}&lang={lang}
   - Rate limit: 10 uncached requests per IP per hour
 """
 import base64
+import hashlib
+import hmac
 import json
 import os
 import time
@@ -24,6 +26,26 @@ GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main").strip()
 DEEPL_API_KEY = os.environ.get("DEEPL_API_KEY", "").strip()
 AZURE_TRANSLATOR_KEY = os.environ.get("AZURE_TRANSLATOR_KEY", "").strip()
 AZURE_TRANSLATOR_REGION = os.environ.get("AZURE_TRANSLATOR_REGION", "westeurope").strip()
+
+ADMIN_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "").strip()
+TOKEN_TTL = 86400
+
+
+def _verify_admin_token(token: str) -> bool:
+    if not ADMIN_PASSWORD or not token or "." not in token:
+        return False
+    parts = token.split(".", 1)
+    if len(parts) != 2:
+        return False
+    ts_str, _ = parts
+    try:
+        ts = int(ts_str)
+    except ValueError:
+        return False
+    if time.time() - ts > TOKEN_TTL:
+        return False
+    expected = f"{ts_str}.{hmac.new(ADMIN_PASSWORD.encode(), ts_str.encode(), hashlib.sha256).hexdigest()}"
+    return hmac.compare_digest(token, expected)
 
 ALLOWED_ORIGINS = [
     "https://www.whisky-reise.com",
@@ -46,7 +68,7 @@ def _cors_headers(origin=""):
     return {
         "Access-Control-Allow-Origin": allowed,
         "Access-Control-Allow-Methods": "GET, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Headers": "Content-Type, x-admin-token",
     }
 
 
@@ -250,7 +272,10 @@ class handler(BaseHTTPRequestHandler):
         params = parse_qs(urlparse(self.path).query)
 
         # Diagnostic mode: ?status=1 returns which env vars Vercel sees (masked).
+        # Behind admin auth: requires valid x-admin-token header (same as dashboard).
         if params.get("status", [""])[0]:
+            if not _verify_admin_token(self.headers.get("x-admin-token", "")):
+                return self._send(401, {"error": "Unauthorized"}, origin)
             def _mask(v):
                 s = (v or "").strip()
                 if not s:

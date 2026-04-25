@@ -77,11 +77,22 @@ def load_config():
     with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
 
-    if config["openai"]["api_key"].startswith("sk-DEIN"):
+    # Secrets: Env-Var hat Vorrang vor config.json. Damit kann config.json
+    # ohne Klartext-Keys ins Repo bzw. Backup wandern.
+    env_openai = os.environ.get("OPENAI_API_KEY", "").strip()
+    if env_openai:
+        config.setdefault("openai", {})["api_key"] = env_openai
+
+    env_unsplash = os.environ.get("UNSPLASH_API_KEY", "").strip()
+    if env_unsplash:
+        config.setdefault("content_settings", {})["unsplash_api_key"] = env_unsplash
+
+    openai_key = config.get("openai", {}).get("api_key", "")
+    if not openai_key or openai_key.startswith("sk-DEIN"):
         print()
-        print("  FEHLER: OpenAI API-Key ist noch nicht eingetragen!")
-        print("  Oeffne config.json und ersetze 'sk-DEIN_OPENAI_API_KEY'")
-        print("  mit deinem echten API-Key.")
+        print("  FEHLER: OpenAI API-Key fehlt!")
+        print("  Setze entweder die Env-Variable OPENAI_API_KEY")
+        print("  oder traege den Key in config.json ein (nicht empfohlen).")
         print()
         sys.exit(1)
 
