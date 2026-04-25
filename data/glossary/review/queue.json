@@ -16325,7 +16325,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "thuringia",
         "slug": "thueringen",
@@ -16346,7 +16346,10 @@
         "description": "Thüringen bietet mit seinen Wäldern und Wasserquellen ideale Bedingungen für die Whisky-Herstellung.",
         "seo_title": "Whisky aus Thüringen – Destillerien & Infos",
         "seo_description": "Thüringer Whisky entdecken. Profile der Destillerien im grünen Herzen Deutschlands."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:48Z"
     }
   ]
 }
