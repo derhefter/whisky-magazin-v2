@@ -393,21 +393,42 @@ def _build_newsletter_html(entry, month_label, article_teasers):
             valid_photos.append(f"{SITE_URL}{url}")
 
     if valid_photos:
-        if len(valid_photos) == 1:
+        n = len(valid_photos)
+        if n == 1:
             photos_html = (
                 f'<img src="{valid_photos[0]}" alt="{whisky_name}" '
                 f'style="width:100%;max-width:560px;border-radius:8px;margin:12px 0 16px;display:block;">'
             )
-        else:
-            thumb_w = 260
+        elif n == 2:
+            # Eine Reihe, zwei gleichgroße Bilder (Container = 600px abzgl. Padding)
             cells = "".join(
-                f'<td style="padding:4px;"><img src="{u}" alt="{whisky_name}" '
-                f'style="width:{thumb_w}px;max-width:100%;border-radius:6px;display:block;"></td>'
+                f'<td width="50%" style="padding:4px;vertical-align:top;">'
+                f'<img src="{u}" alt="{whisky_name}" '
+                f'style="width:100%;max-width:268px;border-radius:6px;display:block;"></td>'
                 for u in valid_photos
             )
             photos_html = (
                 f'<table width="100%" cellpadding="0" cellspacing="0" border="0" '
                 f'style="margin:12px 0 16px;"><tr>{cells}</tr></table>'
+            )
+        else:
+            # 3 oder 4 Bilder: 2x2-Grid (3. Bild teilt sich die Reihe, ggf. mit leerem Cell)
+            rows_html = ""
+            for row_start in (0, 2):
+                row_imgs = valid_photos[row_start:row_start + 2]
+                cells = "".join(
+                    f'<td width="50%" style="padding:4px;vertical-align:top;">'
+                    f'<img src="{u}" alt="{whisky_name}" '
+                    f'style="width:100%;max-width:268px;border-radius:6px;display:block;"></td>'
+                    for u in row_imgs
+                )
+                # Bei nur 1 Bild in der zweiten Reihe (n=3): leere Zelle, damit das Bild links bündig bleibt
+                if len(row_imgs) == 1:
+                    cells += '<td width="50%" style="padding:4px;"></td>'
+                rows_html += f'<tr>{cells}</tr>'
+            photos_html = (
+                f'<table width="100%" cellpadding="0" cellspacing="0" border="0" '
+                f'style="margin:12px 0 16px;">{rows_html}</table>'
             )
 
     # Destillerie – link if URL provided
@@ -941,7 +962,26 @@ class handler(BaseHTTPRequestHandler):
             if existing_entry.get("newsletter_gesendet"):
                 entry["newsletter_gesendet"] = existing_entry["newsletter_gesendet"]
             saved_html = (body.get("newsletter_html_final") or "").strip()
-            entry["newsletter_html_final"] = saved_html or existing_entry.get("newsletter_html_final", "")
+
+            # Invalidate stale newsletter HTML if photos or articles changed:
+            # the saved HTML may reference an outdated image set / teaser list.
+            old_photos   = existing_entry.get("photo_urls") or []
+            new_photos   = entry["photo_urls"] or []
+            old_articles = existing_entry.get("article_teasers") or []
+            new_articles = entry["article_teasers"] or []
+            content_changed = (
+                len(old_photos) != len(new_photos)
+                or set(old_photos) != set(new_photos)
+                or len(old_articles) != len(new_articles)
+            )
+            if saved_html:
+                entry["newsletter_html_final"] = saved_html
+            elif content_changed:
+                # Frontend hat keine HTML mitgeschickt UND Inhalte haben sich geändert
+                # → alte HTML verwerfen, damit der Redakteur neu generieren muss.
+                entry["newsletter_html_final"] = ""
+            else:
+                entry["newsletter_html_final"] = existing_entry.get("newsletter_html_final", "")
 
             data.setdefault("entries", {})[month_key] = entry
             save_err = _save_wotm_data(data, sha, f"WotM {month_key}: {whisky_name}")
@@ -1007,13 +1047,14 @@ class handler(BaseHTTPRequestHandler):
             if not entry["affiliate_link"] and entry["whisky_name"]:
                 entry["affiliate_link"] = _make_affiliate_link(entry["whisky_name"])
 
-            # Article teasers: manual override > auto-fetch from PREVIOUS month
-            # (Newsletter geht Anfang des Monats raus → zeige Artikel aus dem Vormonat)
+            # Article teasers: manuelle Eingaben + Auto-Fill leerer Slots aus dem Vormonat.
+            # (Newsletter geht Anfang des Monats raus → ergänze um Artikel aus dem Vormonat,
+            #  wenn der Redakteur weniger als 3 Artikel manuell hinterlegt hat.)
             article_teasers = [
                 a for a in (body.get("article_teasers") or [])
                 if (a.get("title") or "").strip()
             ]
-            if not article_teasers and month_key:
+            if len(article_teasers) < 3 and month_key:
                 try:
                     nl_year, nl_month = map(int, month_key.split("-"))
                     prev_month = nl_month - 1 if nl_month > 1 else 12
@@ -1021,7 +1062,16 @@ class handler(BaseHTTPRequestHandler):
                     prev_key   = f"{prev_year}-{prev_month:02d}"
                 except Exception:
                     prev_key = month_key
-                article_teasers = _fetch_month_articles(prev_key)
+                fetched = _fetch_month_articles(prev_key) or []
+                # Doppelte URLs vermeiden (Redakteur hat Artikel bereits manuell eingetragen)
+                existing_urls = {(a.get("url") or "").strip().rstrip("/") for a in article_teasers}
+                for a in fetched:
+                    if len(article_teasers) >= 3:
+                        break
+                    url_norm = (a.get("url") or "").strip().rstrip("/")
+                    if url_norm and url_norm not in existing_urls:
+                        article_teasers.append(a)
+                        existing_urls.add(url_norm)
 
             # Polish texts via AI – skipped when skip_polish=True
             ai_active = bool(OPENAI_API_KEY) and not skip_polish
