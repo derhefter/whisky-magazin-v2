@@ -148,7 +148,7 @@ def _github_get(path):
         return {"error": str(e)}
 
 
-def _github_update_file(path, content_bytes, sha, message):
+def _github_put_once(path, content_bytes, sha, message):
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
     payload = json.dumps({
         "message": message,
@@ -164,16 +164,39 @@ def _github_update_file(path, content_bytes, sha, message):
     }, method="PUT")
     try:
         with urlopen(req, timeout=25) as resp:
-            return json.loads(resp.read().decode("utf-8"))
+            return json.loads(resp.read().decode("utf-8")), None
     except HTTPError as e:
+        return None, e
+    except Exception as e:
+        return None, e
+
+
+def _format_http_err(err):
+    if isinstance(err, HTTPError):
         body = ""
         try:
-            body = e.read().decode("utf-8", errors="replace")[:200]
+            body = err.read().decode("utf-8", errors="replace")[:200]
         except Exception:
             pass
-        return {"error": f"{e} {body}".strip()}
-    except Exception as e:
-        return {"error": f"{type(e).__name__}: {e}"}
+        return f"{err} {body}".strip()
+    return str(err)
+
+
+def _github_update_file(path, content_bytes, sha, message):
+    """PUT mit 1x Retry bei SHA-Konflikt (409/422) — entschaerft Race Condition."""
+    result, err = _github_put_once(path, content_bytes, sha, message)
+    if result is not None:
+        return result
+    is_conflict = isinstance(err, HTTPError) and err.code in (409, 422)
+    if not is_conflict:
+        return {"error": _format_http_err(err)}
+    fresh = _github_get(f"contents/{path}")
+    if isinstance(fresh, dict) and "error" not in fresh and fresh.get("sha"):
+        result2, err2 = _github_put_once(path, content_bytes, fresh["sha"], message)
+        if result2 is not None:
+            return result2
+        return {"error": f"retry failed: {_format_http_err(err2)}"}
+    return {"error": _format_http_err(err)}
 
 
 def _github_delete_file(path, sha, message):
@@ -471,6 +494,13 @@ class handler(BaseHTTPRequestHandler):
         url_full = (body.get("url_full") or "").strip()
         if not url_full.startswith("https://"):
             return self._json(400, {"error": "url_full missing"}, cors)
+        try:
+            parsed_host = urlparse(url_full).hostname or ""
+        except Exception:
+            parsed_host = ""
+        allowed_hosts = {"images.unsplash.com", "plus.unsplash.com"}
+        if parsed_host.lower() not in allowed_hosts:
+            return self._json(400, {"error": f"url_full host not allowed: {parsed_host}"}, cors)
         attribution = body.get("attribution", "")
         photo_id = body.get("photo_id", "")
         alt = (body.get("alt") or "").strip()

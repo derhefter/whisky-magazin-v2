@@ -1179,6 +1179,19 @@
     .review-errors { margin-top:8px; }
     .review-error-item { color: var(--color-red); font-size: 0.8rem; margin-bottom: 2px; }
   </style>
+  <!-- DOMPurify: Sanitizer fuer Vorschau-innerHTML (LLM-Content) -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" integrity="sha384-1pBdnk7uPcfXMP62T6s67/9F6/GtDDRPF73FHZuXKgctoH8HKnAUdYi8w28I3kK7" crossorigin="anonymous"></script>
+  <script>
+    // Fallback falls DOMPurify nicht laedt: gibt Input unveraendert zurueck (kein Bruch der Funktion)
+    window.safeHTML = function(html) {
+      try {
+        if (window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') {
+          return window.DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+        }
+      } catch (e) {}
+      return html || '';
+    };
+  </script>
 </head>
 <body>
 
@@ -2553,7 +2566,7 @@ function openPreview(i) {
   const draft = artikelData && (artikelData.drafts ?? artikelData.entwuerfe ?? [])[i];
   if (!draft) return;
   const content = draft.html_content ?? draft.content ?? '<p><em>Kein Inhalt verfügbar.</em></p>';
-  document.getElementById('preview-modal-content').innerHTML = content;
+  document.getElementById('preview-modal-content').innerHTML = window.safeHTML(content);
   document.getElementById('preview-modal-title').textContent = draft.title ?? draft.titel ?? 'Vorschau';
   document.getElementById('preview-modal').classList.add('open');
 }

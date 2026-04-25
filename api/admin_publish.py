@@ -86,7 +86,7 @@ def _github_get(path):
         return {"error": str(e)}
 
 
-def _github_update_file(path, content_bytes, sha, message):
+def _github_put_once(path, content_bytes, sha, message):
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
     payload = json.dumps({
         "message": message,
@@ -102,9 +102,28 @@ def _github_update_file(path, content_bytes, sha, message):
     }, method="PUT")
     try:
         with urlopen(req, timeout=15) as resp:
-            return json.loads(resp.read().decode("utf-8"))
+            return json.loads(resp.read().decode("utf-8")), None
     except HTTPError as e:
-        return {"error": str(e)}
+        return None, e
+    except Exception as e:
+        return None, e
+
+
+def _github_update_file(path, content_bytes, sha, message):
+    """PUT mit 1x Retry bei SHA-Konflikt (409/422) — entschaerft Race Condition."""
+    result, err = _github_put_once(path, content_bytes, sha, message)
+    if result is not None:
+        return result
+    is_conflict = isinstance(err, HTTPError) and err.code in (409, 422)
+    if not is_conflict:
+        return {"error": str(err)}
+    fresh = _github_get(f"contents/{path}")
+    if isinstance(fresh, dict) and "error" not in fresh and fresh.get("sha"):
+        result2, err2 = _github_put_once(path, content_bytes, fresh["sha"], message)
+        if result2 is not None:
+            return result2
+        return {"error": f"retry failed: {err2}"}
+    return {"error": str(err)}
 
 
 def _github_create_file(path, content_bytes, message):

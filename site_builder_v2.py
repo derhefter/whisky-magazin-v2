@@ -18,6 +18,49 @@ ARTICLES_DIR = PROJECT_DIR / "articles"
 # Flag: CSS wurde bereits extrahiert und geschrieben
 _CSS_EXTRACTED = False
 
+# HTML-Sanitizer (bleach) — schuetzt vor Stored-XSS aus LLM-/User-Content
+try:
+    import bleach as _bleach
+    _BLEACH_AVAILABLE = True
+except ImportError:
+    _bleach = None
+    _BLEACH_AVAILABLE = False
+
+_SAFE_TAGS = {
+    "h1", "h2", "h3", "h4", "h5", "h6",
+    "p", "br", "hr", "div", "span",
+    "ul", "ol", "li",
+    "strong", "em", "b", "i", "u", "s", "mark", "small", "sub", "sup",
+    "blockquote", "q", "cite", "code", "pre", "kbd",
+    "a", "img", "figure", "figcaption",
+    "table", "thead", "tbody", "tfoot", "tr", "th", "td",
+}
+_SAFE_ATTRS = {
+    "*": ["class", "id", "style", "title", "lang", "dir", "data-related-articles"],
+    "a": ["href", "rel", "target", "name"],
+    "img": ["src", "alt", "width", "height", "loading", "decoding"],
+    "td": ["colspan", "rowspan", "align"],
+    "th": ["colspan", "rowspan", "align", "scope"],
+    "blockquote": ["cite"],
+}
+_SAFE_PROTOCOLS = ["http", "https", "mailto", "tel"]
+
+
+def _sanitize_html(html):
+    """Sanitize HTML content with bleach (Allowlist). Idempotent fallback if bleach not installed."""
+    if not html:
+        return html
+    if not _BLEACH_AVAILABLE:
+        return html
+    return _bleach.clean(
+        html,
+        tags=_SAFE_TAGS,
+        attributes=_SAFE_ATTRS,
+        protocols=_SAFE_PROTOCOLS,
+        strip=True,
+        strip_comments=True,
+    )
+
 # Pinterest Tracking Tag (wird auf jeder Seite vor </head> eingefügt)
 _PINTEREST_TAG = """    <!-- Pinterest Tag -->
     <script>
@@ -1809,7 +1852,7 @@ def build_article_page(article, config, all_articles=None):
 
     # Related-Box + Empfehlung-Box
     related_html = _find_related_articles(article, all_articles, base_url, max_count=3)
-    article_html = _replace_related_box(article['html_content'], "")
+    article_html = _replace_related_box(_sanitize_html(article['html_content']), "")
     article_html = _inject_empfehlung_boxes(article_html, article, config)
 
     # Amazon-Links auf ASINs umstellen + Produktboxen einfügen
