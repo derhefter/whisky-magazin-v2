@@ -16366,7 +16366,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kentucky",
         "name": "Kentucky",
@@ -16378,7 +16378,7 @@
         "seo_description": "Entdecken Sie die Welt des Kentucky Bourbons. Erfahren Sie mehr über die traditionsreichen Destillerien und den legendären Whiskey aus Kentucky.",
         "published": true,
         "created_at": "2026-04-25T07:01:22Z",
-        "last_updated": "2026-04-25T07:01:22Z"
+        "last_updated": "2026-04-25T07:02:06Z"
       },
       "raw": {
         "id": "kentucky",
@@ -16390,7 +16390,10 @@
         "seo_title": "Bourbon & Whiskey aus Kentucky | Das Herz der USA-Whiskeywelt",
         "seo_description": "Entdecken Sie die Welt des Kentucky Bourbons. Erfahren Sie mehr über die traditionsreichen Destillerien und den legendären Whiskey aus Kentucky.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T07:02:06Z"
     },
     {
       "batch_id": "regions_20260425T070122_b33fcd",
