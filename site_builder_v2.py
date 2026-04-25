@@ -61,6 +61,9 @@ def _sanitize_html(html):
         strip_comments=True,
     )
 
+# Cloudflare Turnstile Site-Key (oeffentlich, gehoert ins HTML)
+TURNSTILE_SITE_KEY = "0x4AAAAAADDDQy_N0i8-7Z8N"
+
 # Pinterest Tracking Tag (wird auf jeder Seite vor </head> eingefügt)
 _PINTEREST_TAG = """    <!-- Pinterest Tag -->
     <script>
@@ -1307,6 +1310,8 @@ def _base_template():
         .article-card:nth-child(5), .card:nth-child(5) {{ animation-delay: 0.32s; }}
         .article-card:nth-child(6), .card:nth-child(6) {{ animation-delay: 0.40s; }}
     </style>
+    <!-- Cloudflare Turnstile (Captcha fuer Newsletter-/Feedback-Forms) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -1395,9 +1400,12 @@ def _base_template():
     var btn=form.querySelector('button[type="submit"]');
     var email=form.querySelector('input[type="email"]').value;
     if(!email)return;
+    var ts=form.querySelector('[name="cf-turnstile-response"]');
+    var tsToken=ts?ts.value:'';
+    if(!tsToken){{btn.textContent='Bitte Captcha bestaetigen';setTimeout(function(){{btn.textContent='Anmelden';btn.disabled=false}},2500);return;}}
     var origText=btn.textContent;
     btn.textContent='Wird gesendet\u2026';btn.disabled=true;
-    fetch('/api/subscribe',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{email:email}})}})
+    fetch('/api/subscribe',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{email:email,turnstile_token:tsToken}})}})
       .then(function(r){{return r.json()}})
       .then(function(d){{
         if(d.error){{btn.textContent=d.error;setTimeout(function(){{btn.textContent=origText;btn.disabled=false}},3000)}}
@@ -1935,9 +1943,10 @@ def build_article_page(article, config, all_articles=None):
         <p style="font-size:28px;margin:0 0 8px;">🥃</p>
         <h3 style="font-family:'Fraunces',serif;font-size:20px;margin:0 0 8px;padding-left:0;">Kostenloser Whisky-Guide</h3>
         <p style="font-size:14px;color:var(--text-secondary);margin:0 0 16px;">Melde dich an und erhalte unseren Einsteiger-Guide mit Tasting-Tipps, Empfehlungen und Reise-Insiderwissen.</p>
-        <form class="newsletter-form" style="justify-content:center;">
+        <form class="newsletter-form" style="justify-content:center;flex-wrap:wrap;">
             <input type="email" placeholder="Deine E-Mail" required>
             <button type="submit" class="btn btn-primary">Guide sichern</button>
+            <div class="cf-turnstile" data-sitekey="''' + TURNSTILE_SITE_KEY + '''" data-size="flexible" style="width:100%;margin-top:8px;"></div>
         </form>
     </div>'''
 
@@ -2016,6 +2025,7 @@ def build_article_page(article, config, all_articles=None):
                     <form class="newsletter-form" style="display:flex;flex-direction:column;gap:8px;">
                         <input type="email" placeholder="E-Mail" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Inter',sans-serif;" required>
                         <button type="submit" class="btn btn-primary" style="font-size:13px;padding:8px 16px;">Anmelden</button>
+                        <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible"></div>
                     </form>
                 </div>
                 {sidebar_cta_html}
@@ -2389,9 +2399,10 @@ def build_index_page(articles, config):
         <div class="newsletter-inner">
             <h2 style="font-family:'Fraunces',serif;font-size:24px;padding-left:0;">Schottland-Post</h2>
             <p>Die besten Whisky-Geschichten und Reise-Tipps, einmal im Monat. Kostenlos.</p>
-            <form class="newsletter-form">
+            <form class="newsletter-form" style="flex-wrap:wrap;">
                 <input type="email" placeholder="Deine E-Mail-Adresse" required>
                 <button type="submit" class="btn btn-primary">Anmelden</button>
+                <div class="cf-turnstile" data-sitekey=\"""" + TURNSTILE_SITE_KEY + """\" data-size="flexible" style="width:100%;margin-top:8px;"></div>
             </form>
             <p style="font-size:12px;color:var(--accent-muted);margin-top:12px;">Kein Spam, jederzeit abmeldbar. Versprochen.</p>
         </div>
@@ -3716,10 +3727,11 @@ def build_about_page(config):
                 Kein Spam. Kein Algorithmus. Nur zwei Typen, die zu viel über Schottland nachgedacht haben.
             </p>
             <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
-                <form class="newsletter-form" style="display:flex;gap:8px;width:100%;max-width:420px;">
+                <form class="newsletter-form" style="display:flex;gap:8px;width:100%;max-width:420px;flex-wrap:wrap;">
                     <input type="email" placeholder="Deine E-Mail-Adresse" required
                         style="flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Inter',sans-serif;background:var(--bg-elevated);">
                     <button type="submit" class="btn btn-primary">Dabei sein</button>
+                    <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" style="width:100%;"></div>
                 </form>
                 <p style="font-size:13px;color:var(--accent-muted);">Jederzeit abbestellbar. Versprochen.</p>
             </div>
@@ -4235,9 +4247,10 @@ def build_guide_page(config):
         <div style="background:var(--text-primary);color:#fff;border-radius:var(--radius-sm);padding:40px;text-align:center;">
             <h2 style="font-family:'Fraunces',serif;font-size:24px;color:var(--accent-amber);padding-left:0;margin-top:0;">Jetzt kostenlos erhalten</h2>
             <p style="font-size:15px;opacity:0.85;margin-bottom:24px;">Melde dich für unseren Newsletter an und erhalte den Guide direkt in dein Postfach.</p>
-            <form class="newsletter-form" style="justify-content:center;">
+            <form class="newsletter-form" style="justify-content:center;flex-wrap:wrap;">
                 <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required>
                 <button type="submit" class="btn btn-primary">Guide anfordern</button>
+                <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" data-theme="dark" style="width:100%;margin-top:8px;"></div>
             </form>
             <p style="font-size:12px;opacity:0.5;margin-top:12px;">Kein Spam. Jederzeit abbestellbar. <a href="/datenschutz.html" style="color:var(--accent-amber);">Datenschutz</a></p>
         </div>

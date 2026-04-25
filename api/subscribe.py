@@ -22,6 +22,36 @@ BASE_URL = os.environ.get("BASE_URL", "https://www.whisky-reise.com")
 # Fuer Migration werden alte Tokens uebergangsweise weiter akzeptiert (siehe _verify_token).
 NEWSLETTER_TOKEN_SECRET = os.environ.get("NEWSLETTER_TOKEN_SECRET", "").strip()
 
+# Cloudflare Turnstile (Captcha): Secret im Vercel-Env, Verify gegen siteverify-Endpoint.
+TURNSTILE_SECRET_KEY = os.environ.get("TURNSTILE_SECRET_KEY", "").strip()
+
+
+def _verify_turnstile(token: str, remote_ip: str = "") -> bool:
+    """Verify a Cloudflare Turnstile token. Returns True on success.
+    Wenn TURNSTILE_SECRET_KEY nicht gesetzt ist, wird die Pruefung uebersprungen
+    (Fail-open fuer den Migrations-/Setup-Zeitraum)."""
+    if not TURNSTILE_SECRET_KEY:
+        return True
+    if not token:
+        return False
+    try:
+        payload = json.dumps({
+            "secret": TURNSTILE_SECRET_KEY,
+            "response": token,
+            "remoteip": remote_ip or "",
+        }).encode("utf-8")
+        req = Request(
+            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            return bool(data.get("success"))
+    except Exception:
+        return False
+
 ALLOWED_ORIGINS = [
     "https://www.whisky-reise.com",
     "https://www.whisky-magazin.de",
@@ -494,6 +524,8 @@ class handler(BaseHTTPRequestHandler):
             honeypot = body.get("honeypot", "")
             if honeypot:
                 return self._json(400, {"error": "Ungueltige Anfrage."}, cors)
+            if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
+                return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
             if _is_feedback_rate_limited(client_ip):
                 return self._json(429, {"error": "Zu viele Feedback-Einsendungen. Bitte warte eine Stunde."}, cors)
             message = (body.get("message") or "").strip()
@@ -517,6 +549,8 @@ class handler(BaseHTTPRequestHandler):
 
         # Thank-you e-mail action (beta-tester survey)
         if body.get("action") == "thankyou":
+            if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
+                return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
             email = (body.get("email") or "").strip().lower()
             name = (body.get("name") or "").strip()
             if not email or not BREVO_API_KEY:
@@ -530,6 +564,9 @@ class handler(BaseHTTPRequestHandler):
         email = (body.get("email") or "").strip().lower()
         if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
             return self._json(400, {"error": "Bitte gib eine gueltige E-Mail-Adresse ein."}, cors)
+
+        if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
+            return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
 
         if not BREVO_API_KEY:
             return self._json(500, {"error": "Newsletter-Service nicht konfiguriert."}, cors)
