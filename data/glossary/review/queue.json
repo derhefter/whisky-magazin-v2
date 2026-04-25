@@ -15985,7 +15985,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hamburg",
         "slug": "hamburg",
@@ -16006,7 +16006,10 @@
         "description": "Hamburg als Tor zur Welt bietet ideale Bedingungen für die Reifung von Whisky in Seehafennähe.",
         "seo_title": "Whisky aus Hamburg – Destillerien & Infos",
         "seo_description": "Maritimer Genuss: Entdecken Sie die Whisky-Szene in Hamburg und ihre besonderen Abfüllungen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:34Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
