@@ -16551,7 +16551,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "texas",
         "name": "Texas",
@@ -16575,7 +16575,10 @@
         "seo_title": "Texas Whiskey | Intensive Aromen durch texanische Hitze",
         "seo_description": "Erfahren Sie, wie das Klima in Texas den Whiskey-Reifungsprozess beeinflusst und entdecken Sie die kühnen Whiskeys aus dem Lone Star State.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T07:02:20Z"
     }
   ]
 }
