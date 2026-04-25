@@ -16257,7 +16257,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "saxony-anhalt",
         "slug": "sachsen-anhalt",
@@ -16278,7 +16278,10 @@
         "description": "Sachsen-Anhalt nutzt seine landwirtschaftliche Stärke für die Produktion hochwertiger Grain- und Malt-Whiskys.",
         "seo_title": "Whisky aus Sachsen-Anhalt – Destillerien & Infos",
         "seo_description": "Whisky-Produktion in Sachsen-Anhalt. Erfahren Sie mehr über die regionalen Brennereien."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-25T06:58:45Z"
     },
     {
       "batch_id": "regions_20260425T065812_1bacae",
