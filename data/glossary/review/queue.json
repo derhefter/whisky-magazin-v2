@@ -21632,7 +21632,7 @@
         "ID bereits vorhanden (Duplikat): hercynian"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "hercynian",
         "name": "Hercynian Distilling Co. / Hammerschmiede",
@@ -21682,7 +21682,10 @@
         "published": true,
         "created_at": "2026-04-22T23:30:00Z",
         "last_updated": "2026-04-24T19:13:50Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:38:55Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
