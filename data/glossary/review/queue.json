@@ -38295,7 +38295,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "end-of-the-line-moonshine",
         "slug": "end-of-the-line-moonshine",
@@ -38359,7 +38359,10 @@
         "seo_description": "Entdecken Sie End of the Line Moonshine, einen erstklassigen corn von der Brushy Mountain Distillery in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:40Z"
     },
     {
       "batch_id": "whiskies_20260426T172120_717688",
