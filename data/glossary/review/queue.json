@@ -39065,7 +39065,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "leipers-fork-bourbon",
         "slug": "leipers-fork-bourbon",
@@ -39129,7 +39129,10 @@
         "seo_description": "Entdecken Sie Leiper's Fork Bourbon, einen erstklassigen bourbon von der Leiper's Fork Distillery in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:56Z"
     },
     {
       "batch_id": "whiskies_20260426T172152_86d258",
