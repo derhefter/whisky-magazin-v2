@@ -26903,7 +26903,7 @@
         "ID bereits vorhanden (Duplikat): berlin"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "berlin",
         "slug": "berlin",
@@ -26924,7 +26924,10 @@
         "description": "In der Hauptstadt Berlin entwickeln sich urbane Destillerien, die Tradition mit modernem Lifestyle verbinden.",
         "seo_title": "Whisky aus Berlin – Destillerien & Infos",
         "seo_description": "Berliner Whisky ist urban und innovativ. Entdecken Sie die Destillerien der deutschen Hauptstadt."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:12Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
