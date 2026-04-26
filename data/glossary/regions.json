@@ -411,5 +411,57 @@
     "published": true,
     "created_at": "2026-04-25T07:01:22Z",
     "last_updated": "2026-04-25T07:02:25Z"
+  },
+  {
+    "id": "alberta",
+    "name": "Alberta",
+    "slug": "alberta",
+    "country_id": "canada",
+    "short_description": "Spezialisten für 100% Roggen-Whisky.",
+    "long_description": "Alberta ist in der Whisky-Welt vor allem für seine Expertise bei Roggen-Whisky bekannt. Die Brennereien in dieser Region liefern hochwertige Destillate, die oft die Basis für Premium-Marken in ganz Nordamerika bilden.",
+    "seo_title": "Alberta Whisky | Die Experten für Rye-Whisky",
+    "seo_description": "Entdecken Sie die Welt des Alberta Whiskys und die Besonderheiten von 100% Roggen-Destillaten aus den Prairies.",
+    "published": true,
+    "created_at": "2026-04-26T15:08:58Z",
+    "last_updated": "2026-04-26T17:09:50Z"
+  },
+  {
+    "id": "manitoba",
+    "name": "Manitoba",
+    "slug": "manitoba",
+    "country_id": "canada",
+    "short_description": "Heimat weltberühmter Whisky-Marken an den Seen.",
+    "long_description": "In Manitoba, am Ufer des Lake Winnipeg, befindet sich eine der produktivsten Destillerien Kanadas. Das kühle Klima und der Zugang zu hochwertigem Getreide prägen die dort produzierten Whiskys, die weltweit geschätzt werden.",
+    "seo_title": "Whisky aus Manitoba | Crown Royal & Mehr",
+    "seo_description": "Erfahren Sie mehr über die Whisky-Produktion in Manitoba und die Destillerien am Lake Winnipeg.",
+    "published": true,
+    "created_at": "2026-04-26T15:08:58Z",
+    "last_updated": "2026-04-26T17:09:50Z"
+  },
+  {
+    "id": "nova-scotia",
+    "name": "Nova-Scotia",
+    "slug": "nova-scotia",
+    "country_id": "canada",
+    "short_description": "Schottisches Erbe und kanadischer Single Malt.",
+    "long_description": "Nova Scotia, das 'neue Schottland', pflegt sein Erbe auch beim Whisky. Hier entstand die erste Single Malt Brennerei Kanadas, die sich stark an schottischen Traditionen orientiert und diese mit kanadischem Terroir verbindet.",
+    "seo_title": "Single Malt aus Nova Scotia | Kanadischer Whisky im schottischen Stil",
+    "seo_description": "Erfahren Sie mehr über die Single Malt Tradition in Nova Scotia und die Verbindung zwischen schottischem Erbe und kanadischem Whisky.",
+    "published": true,
+    "created_at": "2026-04-26T15:08:58Z",
+    "last_updated": "2026-04-26T17:09:50Z"
+  },
+  {
+    "id": "ontario",
+    "name": "Ontario",
+    "slug": "ontario",
+    "country_id": "canada",
+    "short_description": "Das historische Zentrum des kanadischen Whiskys.",
+    "long_description": "Ontario beheimatet einige der größten und geschichtsträchtigsten Destillerien Kanadas. Entlang der Großen Seen entwickelte sich eine Industrie, die für milden, aber auch charakterstarken Rye-betonten Whisky bekannt ist.",
+    "seo_title": "Kanadischer Whisky aus Ontario | Tradition & Große Marken",
+    "seo_description": "Entdecken Sie die Whisky-Tradition in Ontario, dem Herzen der kanadischen Whisky-Produktion.",
+    "published": true,
+    "created_at": "2026-04-26T15:08:58Z",
+    "last_updated": "2026-04-26T17:09:50Z"
   }
 ]
