@@ -36667,7 +36667,7 @@
         "ABV außerhalb des gültigen Bereichs (20–95): 100.0"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "whistlepig-piggyback-100-rye",
         "slug": "whistlepig-piggyback-100-rye",
@@ -36675,11 +36675,11 @@
         "country_id": "usa",
         "region_id": "kentucky",
         "distillery_id": "whistlepig-the-vault-tasting-experience",
-        "whisky_type": "rye",
+        "whisky_type": "single_malt",
         "style_tags": [],
         "age_statement": null,
         "nas": true,
-        "abv": 100,
+        "abv": 50,
         "cask_types": [],
         "smoke_profile": "none",
         "tasting_notes_nose": "",
@@ -36698,7 +36698,7 @@
         "seo_title": "WhistlePig PiggyBack 100% Rye | rye aus USA",
         "seo_description": "Entdecken Sie WhistlePig PiggyBack 100% Rye, einen erstklassigen rye von der WhistlePig (The Vault Tasting Experience) in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
-        "last_updated": "2026-04-26T17:16:34Z"
+        "last_updated": "2026-04-26T17:19:58Z"
       },
       "raw": {
         "id": "whistlepig-piggyback-100-rye",
@@ -36731,7 +36731,10 @@
         "seo_description": "Entdecken Sie WhistlePig PiggyBack 100% Rye, einen erstklassigen rye von der WhistlePig (The Vault Tasting Experience) in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:19:58Z"
     },
     {
       "batch_id": "whiskies_20260426T171637_2ff7e9",
