@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T173219_573d3c",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:32:19Z",
+  "raw": [
+    {
+      "id": "pike-creek-10",
+      "slug": "pike-creek-10",
+      "name": "Pike Creek 10 Year Old Rum Barrel Finish",
+      "country_id": "canada",
+      "region_id": "ontario",
+      "distillery_id": "hiram-walker",
+      "whisky_type": "blended",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Pike Creek 10 Year Old Rum Barrel Finish ist ein charaktervoller canadian aus der Hiram Walker & Sons Distillery.",
+      "long_description": "Der Pike Creek 10 Year Old Rum Barrel Finish repräsentiert den klassischen Stil der Hiram Walker & Sons Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus ontario.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Pike Creek 10 Year Old Rum Barrel Finish | canadian aus CANADA",
+      "seo_description": "Entdecken Sie Pike Creek 10 Year Old Rum Barrel Finish, einen erstklassigen canadian von der Hiram Walker & Sons Distillery in ontario.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
