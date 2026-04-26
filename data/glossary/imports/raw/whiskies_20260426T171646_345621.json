@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T171646_345621",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:16:46Z",
+  "raw": [
+    {
+      "id": "woodford-reserve-kentucky-straight-bourbon",
+      "slug": "woodford-reserve-kentucky-straight-bourbon",
+      "name": "Woodford Reserve Kentucky Straight Bourbon",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "woodford-reserve-distillery",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Woodford Reserve Kentucky Straight Bourbon ist ein charaktervoller bourbon aus der Woodford Reserve Distillery.",
+      "long_description": "Der Woodford Reserve Kentucky Straight Bourbon repräsentiert den klassischen Stil der Woodford Reserve Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Woodford Reserve Kentucky Straight Bourbon | bourbon aus USA",
+      "seo_description": "Entdecken Sie Woodford Reserve Kentucky Straight Bourbon, einen erstklassigen bourbon von der Woodford Reserve Distillery in Kentucky.",
+      "created_at": "2026-04-24T21:16:37Z",
+      "last_updated": "2026-04-24T21:16:37Z"
+    }
+  ]
+}
