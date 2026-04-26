@@ -20738,7 +20738,7 @@
         "ID bereits vorhanden (Duplikat): glenfiddich"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "glenfiddich",
         "name": "Glenfiddich",
@@ -20784,7 +20784,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-23T01:50:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:38:40Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
