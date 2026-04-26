@@ -27161,7 +27161,7 @@
         "ID bereits vorhanden (Duplikat): lower-saxony"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "lower-saxony",
         "slug": "niedersachsen",
@@ -27182,7 +27182,10 @@
         "description": "Niedersachsen bietet eine abwechslungsreiche Whisky-Landschaft, von der Küste bis zum Harz.",
         "seo_title": "Whisky aus Niedersachsen – Destillerien & Infos",
         "seo_description": "Die Whisky-Vielfalt Niedersachsens entdecken. Von der Nordsee bis in den Harz."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:23Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
