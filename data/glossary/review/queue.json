@@ -27303,7 +27303,7 @@
         "ID bereits vorhanden (Duplikat): northern-ireland"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "northern-ireland",
         "name": "Nordirland",
@@ -27327,7 +27327,10 @@
         "seo_title": "Whiskey aus Nordirland - Bushmills & Mehr",
         "seo_description": "Whiskey aus Nordirland: Heimat von Bushmills und einer jahrhundertelangen Brenntradition. Entdecken Sie die nordirischen Destillerien.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:28Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
