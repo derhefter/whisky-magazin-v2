@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172952_862c0c",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:29:52Z",
+  "raw": [
+    {
+      "id": "alberta-premium",
+      "slug": "alberta-premium",
+      "name": "Alberta Premium",
+      "country_id": "canada",
+      "region_id": "alberta",
+      "distillery_id": "alberta-distillers",
+      "whisky_type": "blended",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Alberta Premium ist ein charaktervoller canadian aus der Alberta Distillers Ltd..",
+      "long_description": "Der Alberta Premium repräsentiert den klassischen Stil der Alberta Distillers Ltd.. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus alberta.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Alberta Premium | canadian aus CANADA",
+      "seo_description": "Entdecken Sie Alberta Premium, einen erstklassigen canadian von der Alberta Distillers Ltd. in alberta.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
