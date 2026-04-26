@@ -30362,7 +30362,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "jim-beam-white",
         "slug": "jim-beam-white",
@@ -30426,7 +30426,10 @@
         "seo_description": "Entdecken Sie Jim Beam White Label, einen erstklassigen bourbon von der James B. Beam Distilling Co. (Jim Beam) in kentucky.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:05:03Z"
     },
     {
       "batch_id": "whiskies_20260426T151541_57482f",
