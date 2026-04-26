@@ -41704,7 +41704,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "westland-colere",
         "slug": "westland-colere",
@@ -41735,7 +41735,7 @@
         "seo_title": "Westland Colere | single_malt aus USA",
         "seo_description": "Entdecken Sie Westland Colere, einen erstklassigen single_malt von der Westland Distillery in washington.",
         "created_at": "2026-04-24T22:20:00Z",
-        "last_updated": "2026-04-26T17:29:09Z"
+        "last_updated": "2026-04-26T17:29:22Z"
       },
       "raw": {
         "id": "westland-colere",
@@ -41768,7 +41768,10 @@
         "seo_description": "Entdecken Sie Westland Colere, einen erstklassigen single_malt von der Westland Distillery in washington.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:29:22Z"
     }
   ]
 }
