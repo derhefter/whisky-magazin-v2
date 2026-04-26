@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172159_ca11ba",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:21:59Z",
+  "raw": [
+    {
+      "id": "naked-biscuit",
+      "slug": "naked-biscuit",
+      "name": "Naked Biscuit",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "nashville-craft-distillery",
+      "whisky_type": "corn",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Naked Biscuit ist ein charaktervoller corn aus der Nashville Craft Distillery.",
+      "long_description": "Der Naked Biscuit repräsentiert den klassischen Stil der Nashville Craft Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Naked Biscuit | corn aus USA",
+      "seo_description": "Entdecken Sie Naked Biscuit, einen erstklassigen corn von der Nashville Craft Distillery in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
