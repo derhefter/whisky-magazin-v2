@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T151501_d3b993",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T15:15:01Z",
+  "raw": [
+    {
+      "id": "elijah-craig-small-batch",
+      "slug": "elijah-craig-small-batch",
+      "name": "Elijah Craig Small Batch",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "heaven-hill",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Elijah Craig Small Batch ist ein charaktervoller bourbon aus der Heaven Hill Distillery.",
+      "long_description": "Der Elijah Craig Small Batch repräsentiert den klassischen Stil der Heaven Hill Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Elijah Craig Small Batch | bourbon aus USA",
+      "seo_description": "Entdecken Sie Elijah Craig Small Batch, einen erstklassigen bourbon von der Heaven Hill Distillery in kentucky.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
