@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172241_9ba2da",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:22:41Z",
+  "raw": [
+    {
+      "id": "single-barrel-bourbon",
+      "slug": "single-barrel-bourbon",
+      "name": "Single Barrel Bourbon",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "nashville-barrel-co",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Single Barrel Bourbon ist ein charaktervoller bourbon aus der Nashville Barrel Co..",
+      "long_description": "Der Single Barrel Bourbon repräsentiert den klassischen Stil der Nashville Barrel Co.. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Single Barrel Bourbon | bourbon aus USA",
+      "seo_description": "Entdecken Sie Single Barrel Bourbon, einen erstklassigen bourbon von der Nashville Barrel Co. in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
