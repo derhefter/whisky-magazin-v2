@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172828_3584fc",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:28:28Z",
+  "raw": [
+    {
+      "id": "high-west-rendezvous-rye",
+      "slug": "high-west-rendezvous-rye",
+      "name": "High West Rendezvous Rye",
+      "country_id": "usa",
+      "region_id": "utah",
+      "distillery_id": "high-west",
+      "whisky_type": "rye",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "High West Rendezvous Rye ist ein charaktervoller rye aus der High West Distillery.",
+      "long_description": "Der High West Rendezvous Rye repräsentiert den klassischen Stil der High West Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus utah.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "High West Rendezvous Rye | rye aus USA",
+      "seo_description": "Entdecken Sie High West Rendezvous Rye, einen erstklassigen rye von der High West Distillery in utah.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
