@@ -16767,7 +16767,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "rossville-union-rye",
         "slug": "rossville-union-rye",
@@ -16775,11 +16775,11 @@
         "country_id": "usa",
         "region_id": "indiana",
         "distillery_id": "ross-squibb",
-        "whisky_type": "rye",
+        "whisky_type": "single_malt",
         "style_tags": [],
         "age_statement": null,
         "nas": true,
-        "abv": null,
+        "abv": 45,
         "cask_types": [],
         "smoke_profile": "none",
         "tasting_notes_nose": "",
@@ -16798,7 +16798,7 @@
         "seo_title": "Rossville Union Master Crafted Rye | rye aus USA",
         "seo_description": "Entdecken Sie Rossville Union Master Crafted Rye, einen erstklassigen rye von der Ross & Squibb Distillery (ehemals MGP) in indiana.",
         "created_at": "2026-04-24T22:20:00Z",
-        "last_updated": "2026-04-26T08:06:06Z"
+        "last_updated": "2026-04-26T08:07:08Z"
       },
       "raw": {
         "id": "rossville-union-rye",
@@ -16831,7 +16831,10 @@
         "seo_description": "Entdecken Sie Rossville Union Master Crafted Rye, einen erstklassigen rye von der Ross & Squibb Distillery (ehemals MGP) in indiana.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T08:07:08Z"
     }
   ]
 }
