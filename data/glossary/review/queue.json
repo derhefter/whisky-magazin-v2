@@ -30202,7 +30202,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "jefferson-s-reserve-bourbon",
         "slug": "jefferson-s-reserve-bourbon",
@@ -30266,7 +30266,10 @@
         "seo_description": "Entdecken Sie Jefferson's Reserve Bourbon, einen erstklassigen bourbon von der Kentucky Artisan Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:04:59Z"
     },
     {
       "batch_id": "whiskies_20260426T151534_dcad14",
