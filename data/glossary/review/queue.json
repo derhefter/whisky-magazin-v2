@@ -38911,7 +38911,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "junction-35-straight-bourbon",
         "slug": "junction-35-straight-bourbon",
@@ -38975,7 +38975,10 @@
         "seo_description": "Entdecken Sie Junction 35 Straight Bourbon, einen erstklassigen bourbon von der Junction 35 Spirits in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:53Z"
     },
     {
       "batch_id": "whiskies_20260426T172146_5ac073",
