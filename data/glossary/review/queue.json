@@ -27343,7 +27343,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "nova-scotia",
         "name": "Nova-Scotia",
@@ -27355,7 +27355,7 @@
         "seo_description": "Erfahren Sie mehr über die Single Malt Tradition in Nova Scotia und die Verbindung zwischen schottischem Erbe und kanadischem Whisky.",
         "published": true,
         "created_at": "2026-04-26T15:08:58Z",
-        "last_updated": "2026-04-26T15:08:58Z"
+        "last_updated": "2026-04-26T15:12:13Z"
       },
       "raw": {
         "id": "nova-scotia",
@@ -27367,7 +27367,10 @@
         "seo_title": "Single Malt aus Nova Scotia | Kanadischer Whisky im schottischen Stil",
         "seo_description": "Erfahren Sie mehr über die Single Malt Tradition in Nova Scotia und die Verbindung zwischen schottischem Erbe und kanadischem Whisky.",
         "published": true
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:12:13Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
