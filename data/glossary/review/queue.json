@@ -27083,7 +27083,7 @@
         "ID bereits vorhanden (Duplikat): indiana"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "indiana",
         "name": "Indiana",
@@ -27107,7 +27107,10 @@
         "seo_title": "Whiskey aus Indiana | Roggen-Expertise & Tradition",
         "seo_description": "Entdecken Sie die Whiskey-Produktion in Indiana, bekannt für erstklassige Rye-Whiskeys und historische Destillerien.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:20Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
