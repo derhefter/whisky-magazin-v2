@@ -36434,7 +36434,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "very-olde-st-nick-bourbon",
         "slug": "very-olde-st-nick-bourbon",
@@ -36498,7 +36498,10 @@
         "seo_description": "Entdecken Sie Very Olde St. Nick Bourbon, einen erstklassigen bourbon von der Preservation Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:19:27Z"
     },
     {
       "batch_id": "whiskies_20260426T171627_6e1764",
