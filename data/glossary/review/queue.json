@@ -37756,7 +37756,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "chattanooga-whiskey-91",
         "slug": "chattanooga-whiskey-91",
@@ -37820,7 +37820,10 @@
         "seo_description": "Entdecken Sie Chattanooga Whiskey 91, einen erstklassigen bourbon von der Chattanooga Whiskey in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:27Z"
     },
     {
       "batch_id": "whiskies_20260426T172057_d8d674",
