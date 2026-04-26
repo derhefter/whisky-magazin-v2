@@ -26665,7 +26665,7 @@
         "ID bereits vorhanden (Duplikat): zeitzer-whisky-manufaktur"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "zeitzer-whisky-manufaktur",
         "name": "Zeitzer Whisky Manufaktur",
@@ -26707,7 +26707,10 @@
         "published": true,
         "created_at": "2026-04-24T19:13:50Z",
         "last_updated": "2026-04-24T19:13:50Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:40:04Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
