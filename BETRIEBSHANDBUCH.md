@@ -294,19 +294,23 @@ Nach jedem Import landen alle Eintraege in der Review-Queue (Sub-Tab "Review"). 
 
 | Typ | Symbol | Bedeutung | Vorgehen |
 |-----|--------|-----------|----------|
-| `new` | gruen | Voellig neuer Eintrag | Checkbox anhaeken → Batch-Freigabe |
-| `update_candidate` | blau | Eintrag existiert bereits, Import hat neue/andere Felder | Einzeln pruefen mit Feld-Vergleich |
+| `new` | gruen | Voellig neuer Eintrag | Checkbox → Batch-Freigabe oder Batch-Ablehnen |
+| `update_candidate` | blau | Eintrag existiert bereits, Import hat neue/andere Felder | Fuer **Ablehnen** per Checkbox waehlbar; fuer **Freigabe** bitte einzeln pruefen |
 
-**Batch-Freigabe fuer neue Eintraege:**
+**Batch-Aktionen (Freigeben oder Ablehnen):**
 
-Neue Eintraege ohne Duplikat-Verdacht koennen in einem Schritt freigegeben werden:
+Alle `pending`-Eintraege (sowohl `new` als auch `update_candidate`) sind per Checkbox waehlbar:
 
-1. Button **"☐ Alle neuen auswaehlen"** (oben rechts in der Queue) anklicken — alle waehlbaren Eintraege werden gecheckt
-2. Grüne Aktionsleiste erscheint: *"X ausgewaehlt"*
-3. **"✓ Alle freigeben"** klicken → Bestaetigungsdialog → Fortschrittsbalken laeuft durch
-4. Danach: **"🚀 Alle veroeffentlichen"** klicken (gruener Balken unten in der Queue)
+1. Button **"☐ Alle auswaehlen"** (oben rechts in der Queue) anklicken — alle pending-Eintraege werden gecheckt
+2. Aktionsleiste erscheint: *"X ausgewaehlt"*
+3. Aktion waehlen:
+   - **"✗ Alle ablehnen"** → Bestaetigungsdialog → alle ausgewaehlten werden verworfen
+   - **"✓ Alle freigeben"** → bei `update_candidate`-Eintraegen erscheint eine **Sicherheitswarnung** (diese sollten einzeln geprueft werden)
+4. Nach Freigabe: **"🚀 Alle veroeffentlichen"** klicken (gruener Balken unten in der Queue)
 
-> **Hinweis:** Eintraege mit `update_candidate`-Status oder Duplikat-Warnung (gelbes Dreieck ⚠) erscheinen **ohne Checkbox** und muessen einzeln geprueft werden.
+**Hinweis zum Bulk-Ablehnen:** Ideal um grosse Batches mit veralteten oder falschen Daten schnell zu verwerfen, ohne jeden Eintrag einzeln anzuklicken. `update_candidate`-Eintraege sind dabei immer waehlbar.
+
+> **Tipp:** Den Filter "Alle Entitaeten" + "Offen" waehlen, dann "☐ Alle auswaehlen" klicken, um die gesamte Queue auf einmal abzulehnen.
 
 **Einzelne Eintraege entscheiden (inkl. update_candidate):**
 

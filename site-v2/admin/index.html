@@ -1377,7 +1377,7 @@
             <option value="rejected">Abgelehnt</option>
             <option value="published">Veröffentlicht</option>
           </select>
-          <button class="btn btn-secondary btn-sm" id="review-select-all-btn" onclick="selectAllNewPending()" style="display:none;">☐ Alle neuen auswählen</button>
+          <button class="btn btn-secondary btn-sm" id="review-select-all-btn" onclick="selectAllPending()" style="display:none;">☐ Alle auswählen</button>
         </div>
       </div>
       <!-- Batch action bar (appears when items are selected) -->
@@ -4759,12 +4759,14 @@ function renderReviewQueue() {
           </div>`).join('')}
       </div>` : '';
 
-    const batchable = canDecide && item.status === 'new' && !dupCandidates.length;
+    // Checkbox für alle pending Items – auch update_candidate und Duplikate (für Bulk-Ablehnen)
+    const batchable = canDecide;
     const cbId = `review-cb-${esc(item.batch_id)}-${esc(item.item_id)}`;
+    const cbTitle = item.status === 'new' ? 'Für Batch-Aktion auswählen' : 'Für Batch-Ablehnen auswählen (update_candidate: Freigabe bitte einzeln prüfen)';
     return `<div class="review-card" id="review-card-${esc(item.batch_id)}-${esc(item.item_id)}" style="position:relative;">
       <div class="review-card-header">
         <div style="display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0;">
-          ${batchable ? `<input type="checkbox" id="${cbId}" data-batch="${esc(item.batch_id)}" data-item="${esc(item.item_id)}" data-entity="${esc(item.entity)}" onchange="updateBatchBar()" style="margin-top:4px;width:16px;height:16px;cursor:pointer;flex-shrink:0;" title="Für Batch-Freigabe auswählen">` : '<span style="width:16px;flex-shrink:0;"></span>'}
+          ${batchable ? `<input type="checkbox" id="${cbId}" data-batch="${esc(item.batch_id)}" data-item="${esc(item.item_id)}" data-entity="${esc(item.entity)}" data-status="${esc(item.status)}" data-hasdup="${dupCandidates.length > 0 ? '1' : '0'}" onchange="updateBatchBar()" style="margin-top:4px;width:16px;height:16px;cursor:pointer;flex-shrink:0;" title="${cbTitle}">` : '<span style="width:16px;flex-shrink:0;"></span>'}
           <div style="flex:1;min-width:0;">
             <div class="review-card-title">${esc(nameField)}</div>
             <div class="review-card-meta">${esc(entityLabel)} &nbsp;·&nbsp; Batch: ${esc(item.batch_id||'')} &nbsp;·&nbsp; ${statusBadge} ${reviewBadge}${dupCandidates.length ? ' <span class="glossar-badge badge-yellow">⚠ Duplikat?</span>' : ''}</div>
@@ -4784,11 +4786,16 @@ function renderReviewQueue() {
     </div>`;
   }).join('');
 
-  const batchableCount = items.filter(i => i.review_status === 'pending' && i.status === 'new' && !(i.duplicate_candidates||[]).length).length;
+  const batchableCount = items.filter(i => i.review_status === 'pending').length;
+  const quickApproveCount = items.filter(i => i.review_status === 'pending' && i.status === 'new' && !(i.duplicate_candidates||[]).length).length;
   const selAllBtn = document.getElementById('review-select-all-btn');
   if (selAllBtn) selAllBtn.style.display = batchableCount > 1 ? '' : 'none';
 
-  container.innerHTML = `<div style="margin-bottom:8px;font-size:0.78rem;color:var(--color-muted);">${items.length} Einträge${batchableCount > 0 ? ` · <strong>${batchableCount}</strong> für Schnellfreigabe wählbar` : ''}</div>${cards}`;
+  const hintParts = [];
+  if (quickApproveCount > 0) hintParts.push(`<strong>${quickApproveCount}</strong> ohne Konflikt (Schnellfreigabe)`);
+  const updateCount = batchableCount - quickApproveCount;
+  if (updateCount > 0) hintParts.push(`<strong>${updateCount}</strong> update_candidate (bitte einzeln prüfen vor Freigabe)`);
+  container.innerHTML = `<div style="margin-bottom:8px;font-size:0.78rem;color:var(--color-muted);">${items.length} Einträge${hintParts.length ? ' · ' + hintParts.join(' · ') : ''}</div>${cards}`;
   updateBatchBar();
 }
 
@@ -4803,19 +4810,19 @@ function updateBatchBar() {
   if (cnt) cnt.textContent = checked.length;
 }
 
-function selectAllNewPending() {
+function selectAllPending() {
   const boxes = document.querySelectorAll('input[type=checkbox][data-batch]');
   const anyUnchecked = [...boxes].some(b => !b.checked);
   boxes.forEach(b => { b.checked = anyUnchecked; });
   const btn = document.getElementById('review-select-all-btn');
-  if (btn) btn.textContent = anyUnchecked ? '☑ Auswahl aufheben' : '☐ Alle neuen auswählen';
+  if (btn) btn.textContent = anyUnchecked ? '☑ Auswahl aufheben' : '☐ Alle auswählen';
   updateBatchBar();
 }
 
 function clearReviewSelection() {
   document.querySelectorAll('input[type=checkbox][data-batch]').forEach(b => { b.checked = false; });
   const btn = document.getElementById('review-select-all-btn');
-  if (btn) btn.textContent = '☐ Alle neuen auswählen';
+  if (btn) btn.textContent = '☐ Alle auswählen';
   updateBatchBar();
 }
 
@@ -4823,7 +4830,23 @@ async function batchDecideSelected(decision) {
   const checked = [...document.querySelectorAll('input[type=checkbox][data-batch]:checked')];
   if (!checked.length) return;
   const label = decision === 'approve' ? 'freigeben' : 'ablehnen';
-  if (!confirm(`${checked.length} Einträge ${label}?`)) return;
+
+  // Warnung bei Bulk-Approve wenn update_candidate oder Duplikat-Items dabei
+  if (decision === 'approve') {
+    const needsReview = checked.filter(cb => cb.dataset.status !== 'new' || cb.dataset.hasdup === '1');
+    if (needsReview.length > 0) {
+      const ok = confirm(
+        `⚠ Achtung: ${needsReview.length} der gewählten Einträge sind update_candidate oder haben mögliche Duplikate.\n\n` +
+        `Diese sollten einzeln geprüft werden, bevor sie freigegeben werden.\n\n` +
+        `Trotzdem alle ${checked.length} Einträge freigeben?`
+      );
+      if (!ok) return;
+    } else {
+      if (!confirm(`${checked.length} Einträge ${label}?`)) return;
+    }
+  } else {
+    if (!confirm(`${checked.length} Einträge ${label}?`)) return;
+  }
 
   const bar = document.getElementById('review-batch-bar');
   let ok = 0, err = 0;
