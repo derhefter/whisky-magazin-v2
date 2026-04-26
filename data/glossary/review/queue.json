@@ -32460,7 +32460,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "canada",
         "slug": "kanada",
@@ -32493,7 +32493,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:08:15Z"
+      "reviewed_at": "2026-04-26T17:08:15Z",
+      "published_at": "2026-04-26T17:09:47Z"
     },
     {
       "batch_id": "countries_20260426T170837_875502",
@@ -32505,7 +32506,7 @@
         "ID bereits vorhanden (Duplikat): usa"
       ],
       "duplicate_candidates": [],
-      "review_status": "merged",
+      "review_status": "published",
       "normalized": {
         "id": "usa",
         "slug": "usa",
@@ -32538,7 +32539,8 @@
       },
       "decision": "merge",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:08:54Z"
+      "reviewed_at": "2026-04-26T17:08:54Z",
+      "published_at": "2026-04-26T17:09:47Z"
     },
     {
       "batch_id": "countries_20260426T170935_8b0342",
@@ -32548,7 +32550,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "japan",
         "slug": "japan",
@@ -32581,7 +32583,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:09:44Z"
+      "reviewed_at": "2026-04-26T17:09:44Z",
+      "published_at": "2026-04-26T17:09:47Z"
     }
   ]
 }
