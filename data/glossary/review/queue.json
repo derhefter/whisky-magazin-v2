@@ -32446,7 +32446,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "canada",
         "slug": "kanada",
@@ -32460,7 +32460,7 @@
         "seo_description": "Entdecken Sie die Vielfalt des kanadischen Whiskys. Alles über Herstellung, Marken wie Crown Royal und die neue Generation von Craft-Destillerien.",
         "published": true,
         "created_at": "2026-04-26T18:00:00Z",
-        "last_updated": "2026-04-26T17:07:54Z"
+        "last_updated": "2026-04-26T17:08:15Z"
       },
       "raw": {
         "id": "canada",
@@ -32476,7 +32476,10 @@
         "published": true,
         "created_at": "2026-04-26T18:00:00Z",
         "last_updated": "2026-04-26T18:00:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:08:15Z"
     }
   ]
 }
