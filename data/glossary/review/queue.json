@@ -28202,7 +28202,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "angel-s-envy-kentucky-straight-bourbon",
         "slug": "angel-s-envy-kentucky-straight-bourbon",
@@ -28266,7 +28266,10 @@
         "seo_description": "Entdecken Sie Angel's Envy Kentucky Straight Bourbon, einen erstklassigen bourbon von der Angel’s Envy Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:04:19Z"
     },
     {
       "batch_id": "whiskies_20260426T151419_581b85",
