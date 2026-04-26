@@ -17144,7 +17144,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "alberta-distillers",
         "slug": "alberta-distillers",
@@ -17191,7 +17191,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:38Z"
+      "reviewed_at": "2026-04-26T08:29:38Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -17201,7 +17202,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "angel-s-envy-distillery",
         "slug": "angel-s-envy-distillery",
@@ -17248,7 +17249,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:39Z"
+      "reviewed_at": "2026-04-26T08:29:39Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -17544,7 +17546,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ayrers",
         "slug": "ayrers",
@@ -17597,7 +17599,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:41Z"
+      "reviewed_at": "2026-04-26T08:29:41Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -17665,7 +17668,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balcones",
         "slug": "balcones",
@@ -17712,7 +17715,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:42Z"
+      "reviewed_at": "2026-04-26T08:29:42Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -17780,7 +17784,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bardstown-bourbon-co",
         "slug": "bardstown-bourbon-co",
@@ -17827,7 +17831,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:44Z"
+      "reviewed_at": "2026-04-26T08:29:44Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18123,7 +18128,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bluegrass-distillers-at-elkwood-farm",
         "slug": "bluegrass-distillers-at-elkwood-farm",
@@ -18170,7 +18175,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:45Z"
+      "reviewed_at": "2026-04-26T08:29:45Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18180,7 +18186,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bootleggers-distillery",
         "slug": "bootleggers-distillery",
@@ -18227,7 +18233,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:47Z"
+      "reviewed_at": "2026-04-26T08:29:47Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18295,7 +18302,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "br-distilling-company",
         "slug": "br-distilling-company",
@@ -18342,7 +18349,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:48Z"
+      "reviewed_at": "2026-04-26T08:29:48Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18464,7 +18472,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "brushy-mountain-distillery",
         "slug": "brushy-mountain-distillery",
@@ -18511,7 +18519,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:50Z"
+      "reviewed_at": "2026-04-26T08:29:50Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18521,7 +18530,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "buffalo-trace",
         "slug": "buffalo-trace",
@@ -18568,7 +18577,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:51Z"
+      "reviewed_at": "2026-04-26T08:29:51Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18578,7 +18588,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bulleit-distilling-co",
         "slug": "bulleit-distilling-co",
@@ -18625,7 +18635,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:52Z"
+      "reviewed_at": "2026-04-26T08:29:52Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18751,7 +18762,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "buzzard-s-roost-distillery-tasting-room",
         "slug": "buzzard-s-roost-distillery-tasting-room",
@@ -18798,7 +18809,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:54Z"
+      "reviewed_at": "2026-04-26T08:29:54Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18866,7 +18878,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "casey-jones-distillery",
         "slug": "casey-jones-distillery",
@@ -18913,7 +18925,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:55Z"
+      "reviewed_at": "2026-04-26T08:29:55Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18923,7 +18936,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "castle-key-distillery",
         "slug": "castle-key-distillery",
@@ -18970,7 +18983,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:57Z"
+      "reviewed_at": "2026-04-26T08:29:57Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -18980,7 +18994,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "chattanooga-whiskey",
         "slug": "chattanooga-whiskey",
@@ -19027,7 +19041,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:29:58Z"
+      "reviewed_at": "2026-04-26T08:29:58Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -19037,7 +19052,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "chicken-cock-whiskey",
         "slug": "chicken-cock-whiskey",
@@ -19084,7 +19099,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:00Z"
+      "reviewed_at": "2026-04-26T08:30:00Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -19206,7 +19222,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "company-distilling",
         "slug": "company-distilling",
@@ -19253,7 +19269,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:02Z"
+      "reviewed_at": "2026-04-26T08:30:02Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -19263,7 +19280,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "corsair-distillery",
         "slug": "corsair-distillery",
@@ -19310,7 +19327,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:03Z"
+      "reviewed_at": "2026-04-26T08:30:03Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -19888,7 +19906,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "eschenbrenner",
         "slug": "eschenbrenner",
@@ -19941,7 +19959,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:05Z"
+      "reviewed_at": "2026-04-26T08:30:05Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -19951,7 +19970,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "evan-williams-bourbon-experience",
         "slug": "evan-williams-bourbon-experience",
@@ -19998,7 +20017,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:06Z"
+      "reviewed_at": "2026-04-26T08:30:06Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -20128,7 +20148,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "four-roses",
         "slug": "four-roses",
@@ -20175,7 +20195,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:08Z"
+      "reviewed_at": "2026-04-26T08:30:08Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -20185,7 +20206,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "gate-11-distillery",
         "slug": "gate-11-distillery",
@@ -20232,7 +20253,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:09Z"
+      "reviewed_at": "2026-04-26T08:30:09Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -20242,7 +20264,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "general-george-stillhouse-boundary-oak-distillery",
         "slug": "general-george-stillhouse-boundary-oak-distillery",
@@ -20289,7 +20311,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:11Z"
+      "reviewed_at": "2026-04-26T08:30:11Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -20299,7 +20322,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "george-dickel",
         "slug": "george-dickel",
@@ -20346,7 +20369,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:12Z"
+      "reviewed_at": "2026-04-26T08:30:12Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -20418,7 +20442,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "gimli",
         "slug": "gimli",
@@ -20465,7 +20489,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:14Z"
+      "reviewed_at": "2026-04-26T08:30:14Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -20881,7 +20906,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glenora",
         "slug": "glenora",
@@ -20928,7 +20953,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:16Z"
+      "reviewed_at": "2026-04-26T08:30:16Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21050,7 +21076,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "green-river-distilling-co",
         "slug": "green-river-distilling-co",
@@ -21097,7 +21123,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:17Z"
+      "reviewed_at": "2026-04-26T08:30:17Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21161,7 +21188,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "h-clark-distillery",
         "slug": "h-clark-distillery",
@@ -21208,7 +21235,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:19Z"
+      "reviewed_at": "2026-04-26T08:30:19Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21218,7 +21246,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "habbels",
         "slug": "habbels",
@@ -21271,7 +21299,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:20Z"
+      "reviewed_at": "2026-04-26T08:30:20Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21393,7 +21422,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "heaven-hill",
         "slug": "heaven-hill",
@@ -21440,7 +21469,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:23Z"
+      "reviewed_at": "2026-04-26T08:30:23Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21512,7 +21542,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "high-west",
         "slug": "high-west",
@@ -21559,7 +21589,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:24Z"
+      "reviewed_at": "2026-04-26T08:30:24Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21681,7 +21712,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hiram-walker",
         "slug": "hiram-walker",
@@ -21728,7 +21759,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:25Z"
+      "reviewed_at": "2026-04-26T08:30:25Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21738,7 +21770,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "j-mattingly-1845-distillery",
         "slug": "j-mattingly-1845-distillery",
@@ -21785,7 +21817,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:28Z"
+      "reviewed_at": "2026-04-26T08:30:28Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21795,7 +21828,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jack-daniels",
         "slug": "jack-daniels",
@@ -21842,7 +21875,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:30Z"
+      "reviewed_at": "2026-04-26T08:30:30Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21852,7 +21886,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jeptha-creed-distillery",
         "slug": "jeptha-creed-distillery",
@@ -21899,7 +21933,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:31Z"
+      "reviewed_at": "2026-04-26T08:30:31Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21909,7 +21944,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jim-beam",
         "slug": "jim-beam",
@@ -21956,7 +21991,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:33Z"
+      "reviewed_at": "2026-04-26T08:30:33Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -21966,7 +22002,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "junction-35-spirits",
         "slug": "junction-35-spirits",
@@ -22013,7 +22049,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:34Z"
+      "reviewed_at": "2026-04-26T08:30:34Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -22081,7 +22118,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kentucky-artisan-distillery",
         "slug": "kentucky-artisan-distillery",
@@ -22128,7 +22165,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:36Z"
+      "reviewed_at": "2026-04-26T08:30:36Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -22138,7 +22176,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kentucky-peerless-distilling-co",
         "slug": "kentucky-peerless-distilling-co",
@@ -22185,7 +22223,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:37Z"
+      "reviewed_at": "2026-04-26T08:30:37Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -22369,7 +22408,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kymsee",
         "slug": "kymsee",
@@ -22422,7 +22461,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:39Z"
+      "reviewed_at": "2026-04-26T08:30:39Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -22606,7 +22646,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "larrikin-bourbon-co",
         "slug": "larrikin-bourbon-co",
@@ -22653,7 +22693,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:40Z"
+      "reviewed_at": "2026-04-26T08:30:40Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -22721,7 +22762,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "leipers-fork-distillery",
         "slug": "leipers-fork-distillery",
@@ -22768,7 +22809,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:42Z"
+      "reviewed_at": "2026-04-26T08:30:42Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -22948,7 +22990,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lux-row-distillers",
         "slug": "lux-row-distillers",
@@ -22995,7 +23037,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:43Z"
+      "reviewed_at": "2026-04-26T08:30:43Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23117,7 +23160,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "makers-mark",
         "slug": "makers-mark",
@@ -23164,7 +23207,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:45Z"
+      "reviewed_at": "2026-04-26T08:30:45Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23228,7 +23272,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "michter-s-distillery",
         "slug": "michter-s-distillery",
@@ -23275,7 +23319,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:46Z"
+      "reviewed_at": "2026-04-26T08:30:46Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23401,7 +23446,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nashville-barrel-co",
         "slug": "nashville-barrel-co",
@@ -23448,7 +23493,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:48Z"
+      "reviewed_at": "2026-04-26T08:30:48Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23458,7 +23504,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nashville-craft-distillery",
         "slug": "nashville-craft-distillery",
@@ -23505,7 +23551,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:50Z"
+      "reviewed_at": "2026-04-26T08:30:50Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23515,7 +23562,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nearest-green",
         "slug": "nearest-green",
@@ -23562,7 +23609,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:51Z"
+      "reviewed_at": "2026-04-26T08:30:51Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23572,7 +23620,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nelsons-green-brier-distillery",
         "slug": "nelsons-green-brier-distillery",
@@ -23619,7 +23667,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:53Z"
+      "reviewed_at": "2026-04-26T08:30:53Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23741,7 +23790,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-dominick-distillery",
         "slug": "old-dominick-distillery",
@@ -23788,7 +23837,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:54Z"
+      "reviewed_at": "2026-04-26T08:30:54Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23798,7 +23848,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-forge-distillery",
         "slug": "old-forge-distillery",
@@ -23845,7 +23895,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:56Z"
+      "reviewed_at": "2026-04-26T08:30:56Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -23855,7 +23906,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-glory-distilling-co",
         "slug": "old-glory-distilling-co",
@@ -23902,7 +23953,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:57Z"
+      "reviewed_at": "2026-04-26T08:30:57Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -24024,7 +24076,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-tennessee-distilling-co",
         "slug": "old-tennessee-distilling-co",
@@ -24071,7 +24123,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:30:59Z"
+      "reviewed_at": "2026-04-26T08:30:59Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -24081,7 +24134,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ole-smoky-distillery",
         "slug": "ole-smoky-distillery",
@@ -24128,7 +24181,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:00Z"
+      "reviewed_at": "2026-04-26T08:31:00Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -24138,7 +24192,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "pennington-distilling-co",
         "slug": "pennington-distilling-co",
@@ -24185,7 +24239,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:02Z"
+      "reviewed_at": "2026-04-26T08:31:02Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -24249,7 +24304,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "postmodern-distilling",
         "slug": "postmodern-distilling",
@@ -24296,7 +24351,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:03Z"
+      "reviewed_at": "2026-04-26T08:31:03Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -24306,7 +24362,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "preservation-distillery",
         "slug": "preservation-distillery",
@@ -24353,7 +24409,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:05Z"
+      "reviewed_at": "2026-04-26T08:31:05Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -24813,7 +24870,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "short-mountain-distillery",
         "slug": "short-mountain-distillery",
@@ -24860,7 +24917,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:07Z"
+      "reviewed_at": "2026-04-26T08:31:07Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -25052,7 +25110,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "stoertebeker",
         "slug": "stoertebeker",
@@ -25105,7 +25163,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:08Z"
+      "reviewed_at": "2026-04-26T08:31:08Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -25223,7 +25282,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "sugarlands-distilling-co",
         "slug": "sugarlands-distilling-co",
@@ -25270,7 +25329,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:10Z"
+      "reviewed_at": "2026-04-26T08:31:10Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -25396,7 +25456,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tenn-south-distillery",
         "slug": "tenn-south-distillery",
@@ -25443,7 +25503,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:11Z"
+      "reviewed_at": "2026-04-26T08:31:11Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -25453,7 +25514,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tennessee-legend-distillery",
         "slug": "tennessee-legend-distillery",
@@ -25500,7 +25561,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:13Z"
+      "reviewed_at": "2026-04-26T08:31:13Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -25510,7 +25572,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "the-bard-distillery",
         "slug": "the-bard-distillery",
@@ -25557,7 +25619,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:14Z"
+      "reviewed_at": "2026-04-26T08:31:14Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -25965,7 +26028,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "westland",
         "slug": "westland",
@@ -26012,7 +26075,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:16Z"
+      "reviewed_at": "2026-04-26T08:31:16Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -26076,7 +26140,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "whiskey-thief-distilling-co",
         "slug": "whiskey-thief-distilling-co",
@@ -26123,7 +26187,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:18Z"
+      "reviewed_at": "2026-04-26T08:31:18Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -26133,7 +26198,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "whistlepig-the-vault-tasting-experience",
         "slug": "whistlepig-the-vault-tasting-experience",
@@ -26180,7 +26245,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:20Z"
+      "reviewed_at": "2026-04-26T08:31:20Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -26190,7 +26256,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "wild-turkey",
         "slug": "wild-turkey",
@@ -26237,7 +26303,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:21Z"
+      "reviewed_at": "2026-04-26T08:31:21Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
@@ -26247,7 +26314,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "woodford-reserve-distillery",
         "slug": "woodford-reserve-distillery",
@@ -26294,7 +26361,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:31:23Z"
+      "reviewed_at": "2026-04-26T08:31:23Z",
+      "published_at": "2026-04-26T08:31:36Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
