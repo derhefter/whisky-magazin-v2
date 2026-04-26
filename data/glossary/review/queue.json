@@ -40073,7 +40073,7 @@
           "match_reason": "Ähnlicher Name (Teilstring)"
         }
       ],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "rye-whiskey",
         "slug": "rye-whiskey",
@@ -40137,7 +40137,10 @@
         "seo_description": "Entdecken Sie Rye Whiskey, einen erstklassigen rye von der PostModern Distilling in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:26:18Z"
     },
     {
       "batch_id": "whiskies_20260426T172235_e60c31",
