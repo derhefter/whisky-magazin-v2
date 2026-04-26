@@ -39989,7 +39989,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "roaming-man-tennessee-straight-rye-whiskey",
         "slug": "roaming-man-tennessee-straight-rye-whiskey",
@@ -40053,7 +40053,10 @@
         "seo_description": "Entdecken Sie Roaming Man Tennessee Straight Rye Whiskey, einen erstklassigen rye von der Sugarlands Distilling Co. in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:26:16Z"
     },
     {
       "batch_id": "whiskies_20260426T172232_cb1f80",
