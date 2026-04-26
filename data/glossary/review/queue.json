@@ -32282,7 +32282,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "woodford-reserve-double-oaked",
         "slug": "woodford-reserve-double-oaked",
@@ -32346,7 +32346,10 @@
         "seo_description": "Entdecken Sie Woodford Reserve Double Oaked, einen erstklassigen bourbon von der Woodford Reserve Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:05:42Z"
     },
     {
       "batch_id": "whiskies_20260426T151654_551814",
