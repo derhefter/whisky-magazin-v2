@@ -40304,7 +40304,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "single-barrel-bourbon",
         "slug": "single-barrel-bourbon",
@@ -40368,7 +40368,10 @@
         "seo_description": "Entdecken Sie Single Barrel Bourbon, einen erstklassigen bourbon von der Nashville Barrel Co. in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:26:23Z"
     },
     {
       "batch_id": "whiskies_20260426T172244_9bf1ee",
