@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172133_deb153",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:21:33Z",
+  "raw": [
+    {
+      "id": "jack-daniels-no-7",
+      "slug": "jack-daniels-no-7",
+      "name": "Jack Daniel's Old No. 7",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "jack-daniels",
+      "whisky_type": "tennessee",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Jack Daniel's Old No. 7 ist ein charaktervoller tennessee aus der Jack Daniel Distillery.",
+      "long_description": "Der Jack Daniel's Old No. 7 repräsentiert den klassischen Stil der Jack Daniel Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Jack Daniel's Old No. 7 | tennessee aus USA",
+      "seo_description": "Entdecken Sie Jack Daniel's Old No. 7, einen erstklassigen tennessee von der Jack Daniel Distillery in tennessee.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
