@@ -1,0 +1,61 @@
+{
+  "batch_id": "distilleries_20260426T080517_2e81cc",
+  "entity": "distilleries",
+  "imported_at": "2026-04-26T08:05:17Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "ross-squibb",
+        "slug": "ross-squibb",
+        "name": "Ross & Squibb Distillery (ehemals MGP)",
+        "country_id": "usa",
+        "region_id": "indiana",
+        "founded": 1847,
+        "owner": null,
+        "status": "active",
+        "website": null,
+        "short_description": "Historische Brennerei, berühmt als Lieferant für viele Craft-Marken.",
+        "long_description": "Ross & Squibb ist bekannt für seine Expertise in der Herstellung von Roggen-Whiskey und liefert seit Jahrzehnten Destillate an zahlreiche bekannte Marken.",
+        "coordinates": null,
+        "image": null,
+        "seo_title": "Ross & Squibb Distillery (ehemals MGP) | Whisky aus indiana",
+        "seo_description": "Erfahren Sie mehr über die Ross & Squibb Distillery (ehemals MGP) in Lawrenceburg, Indiana. Geschichte, Whiskys und Informationen zur Destillerie.",
+        "published": true,
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-24T22:20:00Z"
+      },
+      "normalized": {
+        "id": "ross-squibb",
+        "slug": "ross-squibb",
+        "name": "Ross & Squibb Distillery (ehemals MGP)",
+        "country_id": "usa",
+        "region_id": "indiana",
+        "founded": 1847,
+        "owner": null,
+        "status": "active",
+        "website": null,
+        "short_description": "Historische Brennerei, berühmt als Lieferant für viele Craft-Marken.",
+        "long_description": "Ross & Squibb ist bekannt für seine Expertise in der Herstellung von Roggen-Whiskey und liefert seit Jahrzehnten Destillate an zahlreiche bekannte Marken.",
+        "coordinates": null,
+        "image": null,
+        "seo_title": "Ross & Squibb Distillery (ehemals MGP) | Whisky aus indiana",
+        "seo_description": "Erfahren Sie mehr über die Ross & Squibb Distillery (ehemals MGP) in Lawrenceburg, Indiana. Geschichte, Whiskys und Informationen zur Destillerie.",
+        "published": true,
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-26T08:05:17Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
