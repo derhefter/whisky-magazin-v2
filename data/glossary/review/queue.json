@@ -2512,6 +2512,13 @@
       "imported_at": "2026-04-26T15:16:54Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "countries_20260426T170754_b1e100",
+      "entity": "countries",
+      "imported_at": "2026-04-26T17:07:54Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -32430,6 +32437,46 @@
       "decision": "reject",
       "reviewer_notes": "",
       "reviewed_at": "2026-04-26T17:05:43Z"
+    },
+    {
+      "batch_id": "countries_20260426T170754_b1e100",
+      "entity": "countries",
+      "item_id": "canada",
+      "item_slug": "kanada",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "canada",
+        "slug": "kanada",
+        "name_de": "Kanada",
+        "name_en": "Canada",
+        "short_description": "Bekannt für sanfte Blends und den charakteristischen Roggen-Stil.",
+        "long_description": "Kanadischer Whisky zeichnet sich traditionell durch seine Leichtigkeit und Milde aus. Oft als 'Rye Whisky' bezeichnet, auch wenn der Roggenanteil variieren kann, wird er meist als Blend aus verschiedenen Getreidesorten hergestellt. Kanada hat strenge Regeln für die Reifung (mindestens drei Jahre in kleinen Holzfässern) und erlebt derzeit eine spannende Phase, in der neue Destillerien vermehrt auf Single Malts und reine Rye Whiskys setzen.",
+        "travel_context": "Von den historischen Brennereien in Ontario bis zu den neuen Destillerien in British Columbia und den Highlands von Nova Scotia bietet Kanada weite Whisky-Landschaften.",
+        "image": null,
+        "seo_title": "Kanadischer Whisky Guide: Rye, Blends & Single Malts",
+        "seo_description": "Entdecken Sie die Vielfalt des kanadischen Whiskys. Alles über Herstellung, Marken wie Crown Royal und die neue Generation von Craft-Destillerien.",
+        "published": true,
+        "created_at": "2026-04-26T18:00:00Z",
+        "last_updated": "2026-04-26T17:07:54Z"
+      },
+      "raw": {
+        "id": "canada",
+        "slug": "kanada",
+        "name_de": "Kanada",
+        "name_en": "Canada",
+        "short_description": "Bekannt für sanfte Blends und den charakteristischen Roggen-Stil.",
+        "long_description": "Kanadischer Whisky zeichnet sich traditionell durch seine Leichtigkeit und Milde aus. Oft als 'Rye Whisky' bezeichnet, auch wenn der Roggenanteil variieren kann, wird er meist als Blend aus verschiedenen Getreidesorten hergestellt. Kanada hat strenge Regeln für die Reifung (mindestens drei Jahre in kleinen Holzfässern) und erlebt derzeit eine spannende Phase, in der neue Destillerien vermehrt auf Single Malts und reine Rye Whiskys setzen.",
+        "travel_context": "Von den historischen Brennereien in Ontario bis zu den neuen Destillerien in British Columbia und den Highlands von Nova Scotia bietet Kanada weite Whisky-Landschaften.",
+        "image": null,
+        "seo_title": "Kanadischer Whisky Guide: Rye, Blends & Single Malts",
+        "seo_description": "Entdecken Sie die Vielfalt des kanadischen Whiskys. Alles über Herstellung, Marken wie Crown Royal und die neue Generation von Craft-Destillerien.",
+        "published": true,
+        "created_at": "2026-04-26T18:00:00Z",
+        "last_updated": "2026-04-26T18:00:00Z"
+      }
     }
   ]
 }
