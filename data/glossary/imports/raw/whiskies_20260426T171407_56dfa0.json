@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T171407_56dfa0",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:14:07Z",
+  "raw": [
+    {
+      "id": "angel-s-envy-kentucky-straight-bourbon",
+      "slug": "angel-s-envy-kentucky-straight-bourbon",
+      "name": "Angel's Envy Kentucky Straight Bourbon",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "angel-s-envy-distillery",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Angel's Envy Kentucky Straight Bourbon ist ein charaktervoller bourbon aus der Angel’s Envy Distillery.",
+      "long_description": "Der Angel's Envy Kentucky Straight Bourbon repräsentiert den klassischen Stil der Angel’s Envy Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Angel's Envy Kentucky Straight Bourbon | bourbon aus USA",
+      "seo_description": "Entdecken Sie Angel's Envy Kentucky Straight Bourbon, einen erstklassigen bourbon von der Angel’s Envy Distillery in Kentucky.",
+      "created_at": "2026-04-24T21:16:37Z",
+      "last_updated": "2026-04-24T21:16:37Z"
+    }
+  ]
+}
