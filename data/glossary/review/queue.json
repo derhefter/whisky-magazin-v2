@@ -3303,6 +3303,13 @@
       "imported_at": "2026-04-26T17:29:56Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260426T173041_9d84cd",
+      "entity": "whiskies",
+      "imported_at": "2026-04-26T17:30:41Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -41952,6 +41959,83 @@
       "decision": "approve",
       "reviewer_notes": "",
       "reviewed_at": "2026-04-26T17:30:22Z"
+    },
+    {
+      "batch_id": "whiskies_20260426T173041_9d84cd",
+      "entity": "whiskies",
+      "item_id": "crown-royal-deluxe",
+      "item_slug": "crown-royal-deluxe",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: abv",
+        "ABV muss eine Zahl sein"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "crown-royal-deluxe",
+        "slug": "crown-royal-deluxe",
+        "name": "Crown Royal Deluxe",
+        "country_id": "canada",
+        "region_id": "manitoba",
+        "distillery_id": "gimli",
+        "whisky_type": "blended",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "Crown Royal Deluxe ist ein charaktervoller canadian aus der Gimli Distillery (Crown Royal).",
+        "long_description": "Der Crown Royal Deluxe repräsentiert den klassischen Stil der Gimli Distillery (Crown Royal). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus manitoba.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "Crown Royal Deluxe | canadian aus CANADA",
+        "seo_description": "Entdecken Sie Crown Royal Deluxe, einen erstklassigen canadian von der Gimli Distillery (Crown Royal) in manitoba.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-26T17:30:41Z"
+      },
+      "raw": {
+        "id": "crown-royal-deluxe",
+        "slug": "crown-royal-deluxe",
+        "name": "Crown Royal Deluxe",
+        "country_id": "canada",
+        "region_id": "manitoba",
+        "distillery_id": "gimli",
+        "whisky_type": "blended",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "Crown Royal Deluxe ist ein charaktervoller canadian aus der Gimli Distillery (Crown Royal).",
+        "long_description": "Der Crown Royal Deluxe repräsentiert den klassischen Stil der Gimli Distillery (Crown Royal). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus manitoba.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "Crown Royal Deluxe | canadian aus CANADA",
+        "seo_description": "Entdecken Sie Crown Royal Deluxe, einen erstklassigen canadian von der Gimli Distillery (Crown Royal) in manitoba.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-24T22:20:00Z"
+      }
     }
   ]
 }
