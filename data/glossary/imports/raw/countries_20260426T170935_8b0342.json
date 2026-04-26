@@ -1,0 +1,22 @@
+{
+  "batch_id": "countries_20260426T170935_8b0342",
+  "entity": "countries",
+  "imported_at": "2026-04-26T17:09:35Z",
+  "raw": [
+    {
+      "id": "japan",
+      "slug": "japan",
+      "name_de": "Japan",
+      "name_en": "Japan",
+      "short_description": "Perfektionismus und Eleganz, inspiriert durch die schottische Tradition.",
+      "long_description": "Japanischer Whisky hat in den letzten Jahrzehnten die Weltbühne erobert und wird für seine außergewöhnliche Qualität und Balance geschätzt. Ursprünglich stark am schottischen Vorbild orientiert, hat Japan einen ganz eigenen Stil entwickelt, der oft durch florale Noten, Präzision im Blending und den Einsatz heimischer Hölzer wie Mizunara-Eiche geprägt ist. Die großen Häuser Suntory und Nikka bilden das Rückgrat, ergänzt durch eine wachsende Zahl kleinerer, innovativer Brennereien.",
+      "travel_context": "Die Yamazaki Destillerie bei Kyoto oder Yoichi auf Hokkaido sind Pilgerstätten für Whisky-Liebhaber, die die japanische Handwerkskunst hautnah erleben wollen.",
+      "image": null,
+      "seo_title": "Japanischer Whisky Guide: Hibiki, Yamazaki & Nikka",
+      "seo_description": "Erfahren Sie alles über japanischen Whisky: Von der Geschichte Masataka Taketsurus bis zu den begehrten Raritäten von Suntory und Nikka.",
+      "published": true,
+      "created_at": "2026-04-26T18:00:00Z",
+      "last_updated": "2026-04-26T18:00:00Z"
+    }
+  ]
+}
