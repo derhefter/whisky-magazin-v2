@@ -37448,7 +37448,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "1830-original-moonshine",
         "slug": "1830-original-moonshine",
@@ -37515,7 +37515,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:21Z"
+      "reviewed_at": "2026-04-26T17:25:21Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172044_7deb29",
@@ -37525,7 +37526,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "blue-note-bourbon",
         "slug": "blue-note-bourbon",
@@ -37592,7 +37593,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:22Z"
+      "reviewed_at": "2026-04-26T17:25:22Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172047_37e0e9",
@@ -37602,7 +37604,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bootleggers-moonshine",
         "slug": "bootleggers-moonshine",
@@ -37669,7 +37671,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:24Z"
+      "reviewed_at": "2026-04-26T17:25:24Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172051_3d38b1",
@@ -37679,7 +37682,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "butchers-bourbon",
         "slug": "butchers-bourbon",
@@ -37746,7 +37749,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:26Z"
+      "reviewed_at": "2026-04-26T17:25:26Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172054_c2e7f7",
@@ -37756,7 +37760,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "chattanooga-whiskey-91",
         "slug": "chattanooga-whiskey-91",
@@ -37823,7 +37827,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:27Z"
+      "reviewed_at": "2026-04-26T17:25:27Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172057_d8d674",
@@ -37833,7 +37838,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "chattanooga-whiskey-111-cask",
         "slug": "chattanooga-whiskey-111-cask",
@@ -37900,7 +37905,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:29Z"
+      "reviewed_at": "2026-04-26T17:25:29Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172101_2083ef",
@@ -37910,7 +37916,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "clayton-james-tennessee-whiskey",
         "slug": "clayton-james-tennessee-whiskey",
@@ -37977,7 +37983,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:31Z"
+      "reviewed_at": "2026-04-26T17:25:31Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172104_cbb5f5",
@@ -37987,7 +37994,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "company-distilling-straight-bourbon-whiskey",
         "slug": "company-distilling-straight-bourbon-whiskey",
@@ -38054,7 +38061,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:32Z"
+      "reviewed_at": "2026-04-26T17:25:32Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172107_b37290",
@@ -38064,7 +38072,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "dark-rye",
         "slug": "dark-rye",
@@ -38131,7 +38139,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:34Z"
+      "reviewed_at": "2026-04-26T17:25:34Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172110_d005cb",
@@ -38141,7 +38150,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "davidson-reserve-rye",
         "slug": "davidson-reserve-rye",
@@ -38208,7 +38217,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:36Z"
+      "reviewed_at": "2026-04-26T17:25:36Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172113_f8e5de",
@@ -38218,7 +38228,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "davidson-reserve-tennessee-straight-sour-mash-whiskey",
         "slug": "davidson-reserve-tennessee-straight-sour-mash-whiskey",
@@ -38285,7 +38295,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:38Z"
+      "reviewed_at": "2026-04-26T17:25:38Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172117_4f1641",
@@ -38295,7 +38306,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "end-of-the-line-moonshine",
         "slug": "end-of-the-line-moonshine",
@@ -38362,7 +38373,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:40Z"
+      "reviewed_at": "2026-04-26T17:25:40Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172120_717688",
@@ -38372,7 +38384,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "gate-11-single-malt",
         "slug": "gate-11-single-malt",
@@ -38439,7 +38451,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:41Z"
+      "reviewed_at": "2026-04-26T17:25:41Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172123_b2c26a",
@@ -38449,7 +38462,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "george-dickel-no-8",
         "slug": "george-dickel-no-8",
@@ -38516,7 +38529,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:43Z"
+      "reviewed_at": "2026-04-26T17:25:43Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172126_094bb5",
@@ -38526,7 +38540,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "george-dickel-rye",
         "slug": "george-dickel-rye",
@@ -38593,7 +38607,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:45Z"
+      "reviewed_at": "2026-04-26T17:25:45Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172129_07c626",
@@ -38603,7 +38618,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "huling-station-bourbon",
         "slug": "huling-station-bourbon",
@@ -38670,7 +38685,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:46Z"
+      "reviewed_at": "2026-04-26T17:25:46Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172133_deb153",
@@ -38680,7 +38696,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jack-daniels-no-7",
         "slug": "jack-daniels-no-7",
@@ -38747,7 +38763,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:48Z"
+      "reviewed_at": "2026-04-26T17:25:48Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172136_624432",
@@ -38757,7 +38774,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jack-daniels-single-barrel",
         "slug": "jack-daniels-single-barrel",
@@ -38824,7 +38841,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:50Z"
+      "reviewed_at": "2026-04-26T17:25:50Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172139_479cf4",
@@ -38834,7 +38852,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jumpers-stash",
         "slug": "jumpers-stash",
@@ -38901,7 +38919,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:51Z"
+      "reviewed_at": "2026-04-26T17:25:51Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172143_7c1ba7",
@@ -38911,7 +38930,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "junction-35-straight-bourbon",
         "slug": "junction-35-straight-bourbon",
@@ -38978,7 +38997,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:53Z"
+      "reviewed_at": "2026-04-26T17:25:53Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172146_5ac073",
@@ -38988,7 +39008,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "junction-35-tennessee-whiskey",
         "slug": "junction-35-tennessee-whiskey",
@@ -39055,7 +39075,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:55Z"
+      "reviewed_at": "2026-04-26T17:25:55Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172149_5dd0ea",
@@ -39065,7 +39086,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "leipers-fork-bourbon",
         "slug": "leipers-fork-bourbon",
@@ -39132,7 +39153,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:56Z"
+      "reviewed_at": "2026-04-26T17:25:56Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172152_86d258",
@@ -39142,7 +39164,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "leipers-fork-tennessee-whiskey",
         "slug": "leipers-fork-tennessee-whiskey",
@@ -39209,7 +39231,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:25:58Z"
+      "reviewed_at": "2026-04-26T17:25:58Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172155_f15ab7",
@@ -39219,7 +39242,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "mark-diggers-hazelnut-rum",
         "slug": "mark-diggers-hazelnut-rum",
@@ -39286,7 +39309,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:00Z"
+      "reviewed_at": "2026-04-26T17:26:00Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172159_ca11ba",
@@ -39296,7 +39320,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "naked-biscuit",
         "slug": "naked-biscuit",
@@ -39363,7 +39387,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:01Z"
+      "reviewed_at": "2026-04-26T17:26:01Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172202_904dd2",
@@ -39373,7 +39398,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nelson-brothers-classic-bourbon",
         "slug": "nelson-brothers-classic-bourbon",
@@ -39440,7 +39465,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:03Z"
+      "reviewed_at": "2026-04-26T17:26:03Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172205_997359",
@@ -39450,7 +39476,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nelsons-green-brier-tennessee-whiskey",
         "slug": "nelsons-green-brier-tennessee-whiskey",
@@ -39517,7 +39543,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:05Z"
+      "reviewed_at": "2026-04-26T17:26:05Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172208_6cfb39",
@@ -39527,7 +39554,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-dominick-straight-tennessee-whiskey",
         "slug": "old-dominick-straight-tennessee-whiskey",
@@ -39594,7 +39621,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:06Z"
+      "reviewed_at": "2026-04-26T17:26:06Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172211_ff3691",
@@ -39604,7 +39632,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "old-forge-tennessee-bourbon",
         "slug": "old-forge-tennessee-bourbon",
@@ -39671,7 +39699,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:08Z"
+      "reviewed_at": "2026-04-26T17:26:08Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172215_d86d24",
@@ -39681,7 +39710,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ole-smoky-blue-flame",
         "slug": "ole-smoky-blue-flame",
@@ -39748,7 +39777,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:10Z"
+      "reviewed_at": "2026-04-26T17:26:10Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172218_2e8d46",
@@ -39758,7 +39788,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ole-smoky-original-moonshine",
         "slug": "ole-smoky-original-moonshine",
@@ -39825,7 +39855,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:11Z"
+      "reviewed_at": "2026-04-26T17:26:11Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172221_238748",
@@ -39835,7 +39866,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "organic-rye",
         "slug": "organic-rye",
@@ -39902,7 +39933,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:13Z"
+      "reviewed_at": "2026-04-26T17:26:13Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172225_2fbc47",
@@ -39912,7 +39944,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "riverset-rye",
         "slug": "riverset-rye",
@@ -39979,7 +40011,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:15Z"
+      "reviewed_at": "2026-04-26T17:26:15Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172228_017f6e",
@@ -39989,7 +40022,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "roaming-man-tennessee-straight-rye-whiskey",
         "slug": "roaming-man-tennessee-straight-rye-whiskey",
@@ -40056,7 +40089,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:16Z"
+      "reviewed_at": "2026-04-26T17:26:16Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172232_cb1f80",
@@ -40073,7 +40107,7 @@
           "match_reason": "Ähnlicher Name (Teilstring)"
         }
       ],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "rye-whiskey",
         "slug": "rye-whiskey",
@@ -40140,7 +40174,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:18Z"
+      "reviewed_at": "2026-04-26T17:26:18Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172235_e60c31",
@@ -40150,7 +40185,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "salted-caramel-whiskey",
         "slug": "salted-caramel-whiskey",
@@ -40217,7 +40252,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:20Z"
+      "reviewed_at": "2026-04-26T17:26:20Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172238_8793d2",
@@ -40227,7 +40263,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "short-mountain-authentic-tennessee-moonshine",
         "slug": "short-mountain-authentic-tennessee-moonshine",
@@ -40294,7 +40330,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:21Z"
+      "reviewed_at": "2026-04-26T17:26:21Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172241_9ba2da",
@@ -40304,7 +40341,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "single-barrel-bourbon",
         "slug": "single-barrel-bourbon",
@@ -40371,7 +40408,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:23Z"
+      "reviewed_at": "2026-04-26T17:26:23Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172244_9bf1ee",
@@ -40381,7 +40419,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "single-barrel-rye",
         "slug": "single-barrel-rye",
@@ -40448,7 +40486,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:25Z"
+      "reviewed_at": "2026-04-26T17:26:25Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172248_e49599",
@@ -40458,7 +40497,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "single-malt-whiskey",
         "slug": "single-malt-whiskey",
@@ -40525,7 +40564,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:26Z"
+      "reviewed_at": "2026-04-26T17:26:26Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172251_f4c568",
@@ -40535,7 +40575,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tennessee-black-tan",
         "slug": "tennessee-black-tan",
@@ -40602,7 +40642,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:28Z"
+      "reviewed_at": "2026-04-26T17:26:28Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172254_76eb40",
@@ -40612,7 +40653,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tennessee-bourbon",
         "slug": "tennessee-bourbon",
@@ -40679,7 +40720,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:30Z"
+      "reviewed_at": "2026-04-26T17:26:30Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172257_5c7760",
@@ -40689,7 +40731,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "tennessee-bourbon-whiskey",
         "slug": "tennessee-bourbon-whiskey",
@@ -40756,7 +40798,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:31Z"
+      "reviewed_at": "2026-04-26T17:26:31Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172300_6ecc1d",
@@ -40766,7 +40809,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "thunder-road-corn-whiskey",
         "slug": "thunder-road-corn-whiskey",
@@ -40833,7 +40876,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:33Z"
+      "reviewed_at": "2026-04-26T17:26:33Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172304_ee80be",
@@ -40843,7 +40887,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "traditional-bourbon",
         "slug": "traditional-bourbon",
@@ -40910,7 +40954,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:35Z"
+      "reviewed_at": "2026-04-26T17:26:35Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172307_046d52",
@@ -40920,7 +40965,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "triple-smoke-single-malt",
         "slug": "triple-smoke-single-malt",
@@ -40987,7 +41032,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:36Z"
+      "reviewed_at": "2026-04-26T17:26:36Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172310_42bd9f",
@@ -40997,7 +41043,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "uncle-nearest-1856",
         "slug": "uncle-nearest-1856",
@@ -41064,7 +41110,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:38Z"
+      "reviewed_at": "2026-04-26T17:26:38Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172313_08de17",
@@ -41074,7 +41121,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "uncle-nearest-1884",
         "slug": "uncle-nearest-1884",
@@ -41141,7 +41188,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:40Z"
+      "reviewed_at": "2026-04-26T17:26:40Z",
+      "published_at": "2026-04-26T17:26:49Z"
     },
     {
       "batch_id": "whiskies_20260426T172317_9db1a4",
@@ -41151,7 +41199,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "white-lightning-moonshine",
         "slug": "white-lightning-moonshine",
@@ -41218,7 +41266,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:26:42Z"
+      "reviewed_at": "2026-04-26T17:26:42Z",
+      "published_at": "2026-04-26T17:26:49Z"
     }
   ]
 }
