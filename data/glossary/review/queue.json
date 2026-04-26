@@ -16631,7 +16631,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ross-squibb",
         "slug": "ross-squibb",
@@ -16674,7 +16674,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:05:46Z"
+      "reviewed_at": "2026-04-26T08:05:46Z",
+      "published_at": "2026-04-26T08:07:11Z"
     },
     {
       "batch_id": "whiskies_20260426T080603_1cf779",
