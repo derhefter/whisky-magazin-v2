@@ -27184,7 +27184,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "alberta",
         "name": "Alberta",
@@ -27211,7 +27211,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T15:09:41Z"
+      "reviewed_at": "2026-04-26T15:09:41Z",
+      "published_at": "2026-04-26T17:09:50Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
@@ -27587,7 +27588,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "manitoba",
         "name": "Manitoba",
@@ -27614,7 +27615,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T15:12:09Z"
+      "reviewed_at": "2026-04-26T15:12:09Z",
+      "published_at": "2026-04-26T17:09:50Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
@@ -27735,7 +27737,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "nova-scotia",
         "name": "Nova-Scotia",
@@ -27762,7 +27764,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T15:12:13Z"
+      "reviewed_at": "2026-04-26T15:12:13Z",
+      "published_at": "2026-04-26T17:09:50Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
@@ -27772,7 +27775,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ontario",
         "name": "Ontario",
@@ -27799,7 +27802,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T15:12:18Z"
+      "reviewed_at": "2026-04-26T15:12:18Z",
+      "published_at": "2026-04-26T17:09:50Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
