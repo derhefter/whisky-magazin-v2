@@ -1946,7 +1946,7 @@ def build_article_page(article, config, all_articles=None):
         <form class="newsletter-form" style="justify-content:center;flex-wrap:wrap;">
             <input type="email" placeholder="Deine E-Mail" required>
             <button type="submit" class="btn btn-primary">Guide sichern</button>
-            <div class="cf-turnstile" data-sitekey="''' + TURNSTILE_SITE_KEY + '''" data-size="flexible" style="width:100%;margin-top:8px;"></div>
+            <div class="cf-turnstile" data-sitekey="''' + TURNSTILE_SITE_KEY + '''" data-size="flexible" data-appearance="interaction-only"></div>
         </form>
     </div>'''
 
@@ -2025,7 +2025,7 @@ def build_article_page(article, config, all_articles=None):
                     <form class="newsletter-form" style="display:flex;flex-direction:column;gap:8px;">
                         <input type="email" placeholder="E-Mail" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Inter',sans-serif;" required>
                         <button type="submit" class="btn btn-primary" style="font-size:13px;padding:8px 16px;">Anmelden</button>
-                        <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible"></div>
+                        <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" data-appearance="interaction-only"></div>
                     </form>
                 </div>
                 {sidebar_cta_html}
@@ -2402,7 +2402,7 @@ def build_index_page(articles, config):
             <form class="newsletter-form" style="flex-wrap:wrap;">
                 <input type="email" placeholder="Deine E-Mail-Adresse" required>
                 <button type="submit" class="btn btn-primary">Anmelden</button>
-                <div class="cf-turnstile" data-sitekey=\"""" + TURNSTILE_SITE_KEY + """\" data-size="flexible" style="width:100%;margin-top:8px;"></div>
+                <div class="cf-turnstile" data-sitekey=\"""" + TURNSTILE_SITE_KEY + """\" data-size="flexible" data-appearance="interaction-only"></div>
             </form>
             <p style="font-size:12px;color:var(--accent-muted);margin-top:12px;">Kein Spam, jederzeit abmeldbar. Versprochen.</p>
         </div>
@@ -3731,7 +3731,7 @@ def build_about_page(config):
                     <input type="email" placeholder="Deine E-Mail-Adresse" required
                         style="flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Inter',sans-serif;background:var(--bg-elevated);">
                     <button type="submit" class="btn btn-primary">Dabei sein</button>
-                    <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" style="width:100%;"></div>
+                    <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" data-appearance="interaction-only"></div>
                 </form>
                 <p style="font-size:13px;color:var(--accent-muted);">Jederzeit abbestellbar. Versprochen.</p>
             </div>
@@ -4250,7 +4250,7 @@ def build_guide_page(config):
             <form class="newsletter-form" style="justify-content:center;flex-wrap:wrap;">
                 <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required>
                 <button type="submit" class="btn btn-primary">Guide anfordern</button>
-                <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" data-theme="dark" style="width:100%;margin-top:8px;"></div>
+                <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}" data-size="flexible" data-appearance="interaction-only" data-theme="dark"></div>
             </form>
             <p style="font-size:12px;opacity:0.5;margin-top:12px;">Kein Spam. Jederzeit abbestellbar. <a href="/datenschutz.html" style="color:var(--accent-amber);">Datenschutz</a></p>
         </div>
