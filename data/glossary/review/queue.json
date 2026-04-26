@@ -18002,7 +18002,7 @@
         "ID bereits vorhanden (Duplikat): bladnoch"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "bladnoch",
         "name": "Bladnoch",
@@ -18048,7 +18048,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T23:45:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:38:00Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
