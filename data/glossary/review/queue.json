@@ -38834,7 +38834,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "jumpers-stash",
         "slug": "jumpers-stash",
@@ -38898,7 +38898,10 @@
         "seo_description": "Entdecken Sie Jumper's Stash, einen erstklassigen bourbon von der Old Glory Distilling Co. in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:51Z"
     },
     {
       "batch_id": "whiskies_20260426T172143_7c1ba7",
