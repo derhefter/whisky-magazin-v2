@@ -38218,7 +38218,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "davidson-reserve-tennessee-straight-sour-mash-whiskey",
         "slug": "davidson-reserve-tennessee-straight-sour-mash-whiskey",
@@ -38282,7 +38282,10 @@
         "seo_description": "Entdecken Sie Davidson Reserve Tennessee Straight Sour Mash Whiskey, einen erstklassigen tennessee von der Pennington Distilling Co. in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:38Z"
     },
     {
       "batch_id": "whiskies_20260426T172117_4f1641",
