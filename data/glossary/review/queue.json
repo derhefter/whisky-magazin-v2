@@ -38526,7 +38526,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "george-dickel-rye",
         "slug": "george-dickel-rye",
@@ -38590,7 +38590,10 @@
         "seo_description": "Entdecken Sie George Dickel Rye, einen erstklassigen rye von der George Dickel (Cascade Hollow Distilling Co.) in tennessee.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:45Z"
     },
     {
       "batch_id": "whiskies_20260426T172129_07c626",
