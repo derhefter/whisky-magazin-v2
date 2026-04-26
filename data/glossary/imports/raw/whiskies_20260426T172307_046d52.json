@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172307_046d52",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:23:07Z",
+  "raw": [
+    {
+      "id": "triple-smoke-single-malt",
+      "slug": "triple-smoke-single-malt",
+      "name": "Triple Smoke Single Malt",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "corsair-distillery",
+      "whisky_type": "single_malt",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Triple Smoke Single Malt ist ein charaktervoller single_malt aus der Corsair Distillery.",
+      "long_description": "Der Triple Smoke Single Malt repräsentiert den klassischen Stil der Corsair Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Triple Smoke Single Malt | single_malt aus USA",
+      "seo_description": "Entdecken Sie Triple Smoke Single Malt, einen erstklassigen single_malt von der Corsair Distillery in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
