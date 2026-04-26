@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T151449_e50725",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T15:14:49Z",
+  "raw": [
+    {
+      "id": "castle-key-small-batch-bourbon",
+      "slug": "castle-key-small-batch-bourbon",
+      "name": "Castle & Key Small Batch Bourbon",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "castle-key-distillery",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Castle & Key Small Batch Bourbon ist ein charaktervoller bourbon aus der Castle & Key Distillery.",
+      "long_description": "Der Castle & Key Small Batch Bourbon repräsentiert den klassischen Stil der Castle & Key Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Castle & Key Small Batch Bourbon | bourbon aus USA",
+      "seo_description": "Entdecken Sie Castle & Key Small Batch Bourbon, einen erstklassigen bourbon von der Castle & Key Distillery in Kentucky.",
+      "created_at": "2026-04-24T21:16:37Z",
+      "last_updated": "2026-04-24T21:16:37Z"
+    }
+  ]
+}
