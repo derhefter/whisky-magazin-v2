@@ -34817,7 +34817,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "jefferson-s-ocean-aged-at-sea",
         "slug": "jefferson-s-ocean-aged-at-sea",
@@ -34881,7 +34881,10 @@
         "seo_description": "Entdecken Sie Jefferson's Ocean Aged at Sea, einen erstklassigen bourbon von der Kentucky Artisan Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:18:53Z"
     },
     {
       "batch_id": "whiskies_20260426T171522_c3d2c9",
