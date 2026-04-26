@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T173129_d3b6d3",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:31:29Z",
+  "raw": [
+    {
+      "id": "glen-breton-rare-10",
+      "slug": "glen-breton-rare-10",
+      "name": "Glen Breton Rare 10 Year Old",
+      "country_id": "canada",
+      "region_id": "nova-scotia",
+      "distillery_id": "glenora",
+      "whisky_type": "single_malt",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Glen Breton Rare 10 Year Old ist ein charaktervoller single_malt aus der Glenora Distillery.",
+      "long_description": "Der Glen Breton Rare 10 Year Old repräsentiert den klassischen Stil der Glenora Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus nova-scotia.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Glen Breton Rare 10 Year Old | single_malt aus CANADA",
+      "seo_description": "Entdecken Sie Glen Breton Rare 10 Year Old, einen erstklassigen single_malt von der Glenora Distillery in nova-scotia.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
