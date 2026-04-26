@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172120_717688",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:21:20Z",
+  "raw": [
+    {
+      "id": "gate-11-single-malt",
+      "slug": "gate-11-single-malt",
+      "name": "Gate 11 Single Malt",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "gate-11-distillery",
+      "whisky_type": "single_malt",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Gate 11 Single Malt ist ein charaktervoller single_malt aus der Gate 11 Distillery.",
+      "long_description": "Der Gate 11 Single Malt repräsentiert den klassischen Stil der Gate 11 Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Gate 11 Single Malt | single_malt aus USA",
+      "seo_description": "Entdecken Sie Gate 11 Single Malt, einen erstklassigen single_malt von der Gate 11 Distillery in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
