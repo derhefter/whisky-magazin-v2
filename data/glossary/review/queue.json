@@ -2176,6 +2176,13 @@
       "imported_at": "2026-04-26T15:14:28Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260426T151431_f1df70",
+      "entity": "whiskies",
+      "imported_at": "2026-04-26T15:14:31Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -28238,6 +28245,83 @@
         "seo_description": "Entdecken Sie Boundary Oak Kentucky Bourbon, einen erstklassigen bourbon von der General George Stillhouse (Boundary Oak Distillery) in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
+      }
+    },
+    {
+      "batch_id": "whiskies_20260426T151431_f1df70",
+      "entity": "whiskies",
+      "item_id": "buffalo-trace-straight-bourbon",
+      "item_slug": "buffalo-trace-straight-bourbon",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: abv",
+        "ABV muss eine Zahl sein"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "buffalo-trace-straight-bourbon",
+        "slug": "buffalo-trace-straight-bourbon",
+        "name": "Buffalo Trace Kentucky Straight Bourbon",
+        "country_id": "usa",
+        "region_id": "kentucky",
+        "distillery_id": "buffalo-trace",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "Buffalo Trace Kentucky Straight Bourbon ist ein charaktervoller bourbon aus der Buffalo Trace Distillery.",
+        "long_description": "Der Buffalo Trace Kentucky Straight Bourbon repräsentiert den klassischen Stil der Buffalo Trace Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "Buffalo Trace Kentucky Straight Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie Buffalo Trace Kentucky Straight Bourbon, einen erstklassigen bourbon von der Buffalo Trace Distillery in kentucky.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-26T15:14:31Z"
+      },
+      "raw": {
+        "id": "buffalo-trace-straight-bourbon",
+        "slug": "buffalo-trace-straight-bourbon",
+        "name": "Buffalo Trace Kentucky Straight Bourbon",
+        "country_id": "usa",
+        "region_id": "kentucky",
+        "distillery_id": "buffalo-trace",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "Buffalo Trace Kentucky Straight Bourbon ist ein charaktervoller bourbon aus der Buffalo Trace Distillery.",
+        "long_description": "Der Buffalo Trace Kentucky Straight Bourbon repräsentiert den klassischen Stil der Buffalo Trace Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "Buffalo Trace Kentucky Straight Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie Buffalo Trace Kentucky Straight Bourbon, einen erstklassigen bourbon von der Buffalo Trace Distillery in kentucky.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-24T22:20:00Z"
       }
     }
   ]
