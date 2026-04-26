@@ -27410,7 +27410,7 @@
         "ID bereits vorhanden (Duplikat): republic-of-ireland"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "republic-of-ireland",
         "name": "Republik Irland",
@@ -27434,7 +27434,10 @@
         "seo_title": "Irischer Whiskey aus der Republik Irland - Tradition & Moderne",
         "seo_description": "Entdecken Sie Whiskey aus der Republik Irland: Von Dublin bis Cork, Tradition trifft auf Innovation. Jetzt mehr erfahren!",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:29Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
