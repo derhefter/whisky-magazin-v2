@@ -41804,7 +41804,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "alberta-premium",
         "slug": "alberta-premium",
@@ -41835,7 +41835,7 @@
         "seo_title": "Alberta Premium | canadian aus CANADA",
         "seo_description": "Entdecken Sie Alberta Premium, einen erstklassigen canadian von der Alberta Distillers Ltd. in alberta.",
         "created_at": "2026-04-24T22:20:00Z",
-        "last_updated": "2026-04-26T17:29:52Z"
+        "last_updated": "2026-04-26T17:30:06Z"
       },
       "raw": {
         "id": "alberta-premium",
@@ -41868,7 +41868,10 @@
         "seo_description": "Entdecken Sie Alberta Premium, einen erstklassigen canadian von der Alberta Distillers Ltd. in alberta.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:30:06Z"
     },
     {
       "batch_id": "whiskies_20260426T172956_8818a9",
