@@ -27593,7 +27593,7 @@
         "ID bereits vorhanden (Duplikat): schleswig-holstein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "schleswig-holstein",
         "slug": "schleswig-holstein",
@@ -27614,7 +27614,10 @@
         "description": "Zwischen den Meeren reifen in Schleswig-Holstein Whiskys unter dem Einfluss des Seeklimas.",
         "seo_title": "Whisky aus Schleswig-Holstein – Destillerien & Infos",
         "seo_description": "Norddeutscher Whisky-Genuss. Entdecken Sie die Brennereien in Schleswig-Holstein."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:37Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
