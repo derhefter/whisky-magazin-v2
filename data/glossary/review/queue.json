@@ -40997,7 +40997,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "uncle-nearest-1856",
         "slug": "uncle-nearest-1856",
@@ -41061,7 +41061,10 @@
         "seo_description": "Entdecken Sie Uncle Nearest 1856 Premium Aged, einen erstklassigen tennessee von der Nearest Green Distillery in tennessee.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:26:38Z"
     },
     {
       "batch_id": "whiskies_20260426T172313_08de17",
