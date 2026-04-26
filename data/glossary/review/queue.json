@@ -41884,7 +41884,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "alberta-premium-cask-strength",
         "slug": "alberta-premium-cask-strength",
@@ -41892,11 +41892,11 @@
         "country_id": "canada",
         "region_id": "alberta",
         "distillery_id": "alberta-distillers",
-        "whisky_type": "rye",
+        "whisky_type": "single_malt",
         "style_tags": [],
         "age_statement": null,
         "nas": true,
-        "abv": null,
+        "abv": 50,
         "cask_types": [],
         "smoke_profile": "none",
         "tasting_notes_nose": "",
@@ -41915,7 +41915,7 @@
         "seo_title": "Alberta Premium Cask Strength Rye | rye aus CANADA",
         "seo_description": "Entdecken Sie Alberta Premium Cask Strength Rye, einen erstklassigen rye von der Alberta Distillers Ltd. in alberta.",
         "created_at": "2026-04-24T22:20:00Z",
-        "last_updated": "2026-04-26T17:29:56Z"
+        "last_updated": "2026-04-26T17:30:22Z"
       },
       "raw": {
         "id": "alberta-premium-cask-strength",
@@ -41948,7 +41948,10 @@
         "seo_description": "Entdecken Sie Alberta Premium Cask Strength Rye, einen erstklassigen rye von der Alberta Distillers Ltd. in alberta.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:30:22Z"
     }
   ]
 }
