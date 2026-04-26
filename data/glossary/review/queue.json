@@ -41291,7 +41291,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "balcones-baby-blue",
         "slug": "balcones-baby-blue",
@@ -41299,7 +41299,7 @@
         "country_id": "usa",
         "region_id": "texas",
         "distillery_id": "balcones",
-        "whisky_type": "corn",
+        "whisky_type": "single_malt",
         "style_tags": [],
         "age_statement": null,
         "nas": true,
@@ -41322,7 +41322,7 @@
         "seo_title": "Balcones Baby Blue | corn aus USA",
         "seo_description": "Entdecken Sie Balcones Baby Blue, einen erstklassigen corn von der Balcones Distilling in texas.",
         "created_at": "2026-04-24T22:20:00Z",
-        "last_updated": "2026-04-26T17:27:18Z"
+        "last_updated": "2026-04-26T17:27:33Z"
       },
       "raw": {
         "id": "balcones-baby-blue",
@@ -41355,7 +41355,10 @@
         "seo_description": "Entdecken Sie Balcones Baby Blue, einen erstklassigen corn von der Balcones Distilling in texas.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:27:33Z"
     },
     {
       "batch_id": "whiskies_20260426T172721_4d80dd",
