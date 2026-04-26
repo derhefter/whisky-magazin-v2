@@ -27047,7 +27047,7 @@
         "ID bereits vorhanden (Duplikat): hesse"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "hesse",
         "slug": "hessen",
@@ -27068,7 +27068,10 @@
         "description": "Hessen besticht durch eine wachsende Zahl an Brennereien, die oft regionale Rohstoffe in den Fokus rücken.",
         "seo_title": "Whisky aus Hessen – Destillerien & Infos",
         "seo_description": "Hessischer Whisky im Porträt. Finden Sie Informationen zu den Brennereien zwischen Kassel und Darmstadt."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:18Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
