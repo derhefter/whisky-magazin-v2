@@ -27267,7 +27267,7 @@
         "ID bereits vorhanden (Duplikat): north-rhine-westphalia"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "north-rhine-westphalia",
         "slug": "nordrhein-westfalen",
@@ -27288,7 +27288,10 @@
         "description": "NRW ist ein bedeutender Standort für die deutsche Whisky-Produktion mit einer großen Bandbreite an Brennereitypen.",
         "seo_title": "Whisky aus Nordrhein-Westfalen – Destillerien & Infos",
         "seo_description": "Nordrhein-Westfalen und seine Whisky-Brennereien. Informationen und Profile aus dem Westen."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:26Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
