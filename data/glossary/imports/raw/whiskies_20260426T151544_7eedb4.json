@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T151544_7eedb4",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T15:15:44Z",
+  "raw": [
+    {
+      "id": "knob-creek-9",
+      "slug": "knob-creek-9",
+      "name": "Knob Creek 9 Year Old",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "jim-beam",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Knob Creek 9 Year Old ist ein charaktervoller bourbon aus der James B. Beam Distilling Co. (Jim Beam).",
+      "long_description": "Der Knob Creek 9 Year Old repräsentiert den klassischen Stil der James B. Beam Distilling Co. (Jim Beam). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Knob Creek 9 Year Old | bourbon aus USA",
+      "seo_description": "Entdecken Sie Knob Creek 9 Year Old, einen erstklassigen bourbon von der James B. Beam Distilling Co. (Jim Beam) in kentucky.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
