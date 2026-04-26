@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172104_cbb5f5",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:21:04Z",
+  "raw": [
+    {
+      "id": "company-distilling-straight-bourbon-whiskey",
+      "slug": "company-distilling-straight-bourbon-whiskey",
+      "name": "Company Distilling Straight Bourbon Whiskey",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "company-distilling",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Company Distilling Straight Bourbon Whiskey ist ein charaktervoller bourbon aus der Company Distilling.",
+      "long_description": "Der Company Distilling Straight Bourbon Whiskey repräsentiert den klassischen Stil der Company Distilling. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Company Distilling Straight Bourbon Whiskey | bourbon aus USA",
+      "seo_description": "Entdecken Sie Company Distilling Straight Bourbon Whiskey, einen erstklassigen bourbon von der Company Distilling in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
