@@ -1,0 +1,909 @@
+{
+  "batch_id": "regions_20260426T150858_b5d099",
+  "entity": "regions",
+  "imported_at": "2026-04-26T15:08:58Z",
+  "total": 28,
+  "new": 4,
+  "update_candidates": 24,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "alberta",
+        "name": "Alberta",
+        "slug": "alberta",
+        "country_id": "canada",
+        "short_description": "Spezialisten für 100% Roggen-Whisky.",
+        "long_description": "Alberta ist in der Whisky-Welt vor allem für seine Expertise bei Roggen-Whisky bekannt. Die Brennereien in dieser Region liefern hochwertige Destillate, die oft die Basis für Premium-Marken in ganz Nordamerika bilden.",
+        "seo_title": "Alberta Whisky | Die Experten für Rye-Whisky",
+        "seo_description": "Entdecken Sie die Welt des Alberta Whiskys und die Besonderheiten von 100% Roggen-Destillaten aus den Prairies.",
+        "published": true
+      },
+      "normalized": {
+        "id": "alberta",
+        "name": "Alberta",
+        "slug": "alberta",
+        "country_id": "canada",
+        "short_description": "Spezialisten für 100% Roggen-Whisky.",
+        "long_description": "Alberta ist in der Whisky-Welt vor allem für seine Expertise bei Roggen-Whisky bekannt. Die Brennereien in dieser Region liefern hochwertige Destillate, die oft die Basis für Premium-Marken in ganz Nordamerika bilden.",
+        "seo_title": "Alberta Whisky | Die Experten für Rye-Whisky",
+        "seo_description": "Entdecken Sie die Welt des Alberta Whiskys und die Besonderheiten von 100% Roggen-Destillaten aus den Prairies.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "baden-wuerttemberg",
+        "slug": "baden-wuerttemberg",
+        "country_id": "germany",
+        "name": "Baden-Württemberg",
+        "description": "Baden-Württemberg beheimatet eine Vielzahl von Destillerien, oft aus traditionellen Obstbrennereien hervorgegangen.",
+        "seo_title": "Whisky aus Baden-Württemberg – Destillerien & Infos",
+        "seo_description": "Entdecken Sie die Vielfalt der Whiskys aus Baden-Württemberg. Von traditionellen Brennereien bis zu innovativen Newcomern."
+      },
+      "normalized": {
+        "id": "baden-wuerttemberg",
+        "slug": "baden-wuerttemberg",
+        "country_id": "germany",
+        "name": "Baden-Württemberg",
+        "description": "Baden-Württemberg beheimatet eine Vielzahl von Destillerien, oft aus traditionellen Obstbrennereien hervorgegangen.",
+        "seo_title": "Whisky aus Baden-Württemberg – Destillerien & Infos",
+        "seo_description": "Entdecken Sie die Vielfalt der Whiskys aus Baden-Württemberg. Von traditionellen Brennereien bis zu innovativen Newcomern.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): baden-wuerttemberg"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "bavaria",
+        "slug": "bayern",
+        "country_id": "germany",
+        "name": "Bayern",
+        "description": "Bayern ist das Zentrum der deutschen Whisky-Produktion mit bekannten Namen wie Slyrs und einer hohen Dichte an handwerklichen Brennereien.",
+        "seo_title": "Whisky aus Bayern – Destillerien & Infos",
+        "seo_description": "Bayerischer Whisky steht für Qualität und Tradition. Erfahren Sie alles über die Destillerien im Freistaat."
+      },
+      "normalized": {
+        "id": "bavaria",
+        "slug": "bayern",
+        "country_id": "germany",
+        "name": "Bayern",
+        "description": "Bayern ist das Zentrum der deutschen Whisky-Produktion mit bekannten Namen wie Slyrs und einer hohen Dichte an handwerklichen Brennereien.",
+        "seo_title": "Whisky aus Bayern – Destillerien & Infos",
+        "seo_description": "Bayerischer Whisky steht für Qualität und Tradition. Erfahren Sie alles über die Destillerien im Freistaat.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): bavaria"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "berlin",
+        "slug": "berlin",
+        "country_id": "germany",
+        "name": "Berlin",
+        "description": "In der Hauptstadt Berlin entwickeln sich urbane Destillerien, die Tradition mit modernem Lifestyle verbinden.",
+        "seo_title": "Whisky aus Berlin – Destillerien & Infos",
+        "seo_description": "Berliner Whisky ist urban und innovativ. Entdecken Sie die Destillerien der deutschen Hauptstadt."
+      },
+      "normalized": {
+        "id": "berlin",
+        "slug": "berlin",
+        "country_id": "germany",
+        "name": "Berlin",
+        "description": "In der Hauptstadt Berlin entwickeln sich urbane Destillerien, die Tradition mit modernem Lifestyle verbinden.",
+        "seo_title": "Whisky aus Berlin – Destillerien & Infos",
+        "seo_description": "Berliner Whisky ist urban und innovativ. Entdecken Sie die Destillerien der deutschen Hauptstadt.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): berlin"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "brandenburg",
+        "slug": "brandenburg",
+        "country_id": "germany",
+        "name": "Brandenburg",
+        "description": "Brandenburg nutzt seine weiten Getreidefelder für die Produktion charakterstarker Whiskys, oft in historischem Ambiente.",
+        "seo_title": "Whisky aus Brandenburg – Destillerien & Infos",
+        "seo_description": "Whisky-Tradition in Brandenburg. Erfahren Sie mehr über die Brennereien in der Mark Brandenburg."
+      },
+      "normalized": {
+        "id": "brandenburg",
+        "slug": "brandenburg",
+        "country_id": "germany",
+        "name": "Brandenburg",
+        "description": "Brandenburg nutzt seine weiten Getreidefelder für die Produktion charakterstarker Whiskys, oft in historischem Ambiente.",
+        "seo_title": "Whisky aus Brandenburg – Destillerien & Infos",
+        "seo_description": "Whisky-Tradition in Brandenburg. Erfahren Sie mehr über die Brennereien in der Mark Brandenburg.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): brandenburg"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "bremen",
+        "slug": "bremen",
+        "country_id": "germany",
+        "name": "Bremen",
+        "description": "In der Hansestadt Bremen finden sich maritime Einflüsse in der Lagerung und Veredelung von Whisky.",
+        "seo_title": "Whisky aus Bremen – Destillerien & Infos",
+        "seo_description": "Bremer Whisky-Kultur entdecken. Infos zu Destillerien und Abfüllern in der Hansestadt."
+      },
+      "normalized": {
+        "id": "bremen",
+        "slug": "bremen",
+        "country_id": "germany",
+        "name": "Bremen",
+        "description": "In der Hansestadt Bremen finden sich maritime Einflüsse in der Lagerung und Veredelung von Whisky.",
+        "seo_title": "Whisky aus Bremen – Destillerien & Infos",
+        "seo_description": "Bremer Whisky-Kultur entdecken. Infos zu Destillerien und Abfüllern in der Hansestadt.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): bremen"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "hamburg",
+        "slug": "hamburg",
+        "country_id": "germany",
+        "name": "Hamburg",
+        "description": "Hamburg als Tor zur Welt bietet ideale Bedingungen für die Reifung von Whisky in Seehafennähe.",
+        "seo_title": "Whisky aus Hamburg – Destillerien & Infos",
+        "seo_description": "Maritimer Genuss: Entdecken Sie die Whisky-Szene in Hamburg und ihre besonderen Abfüllungen."
+      },
+      "normalized": {
+        "id": "hamburg",
+        "slug": "hamburg",
+        "country_id": "germany",
+        "name": "Hamburg",
+        "description": "Hamburg als Tor zur Welt bietet ideale Bedingungen für die Reifung von Whisky in Seehafennähe.",
+        "seo_title": "Whisky aus Hamburg – Destillerien & Infos",
+        "seo_description": "Maritimer Genuss: Entdecken Sie die Whisky-Szene in Hamburg und ihre besonderen Abfüllungen.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): hamburg"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "hesse",
+        "slug": "hessen",
+        "country_id": "germany",
+        "name": "Hessen",
+        "description": "Hessen besticht durch eine wachsende Zahl an Brennereien, die oft regionale Rohstoffe in den Fokus rücken.",
+        "seo_title": "Whisky aus Hessen – Destillerien & Infos",
+        "seo_description": "Hessischer Whisky im Porträt. Finden Sie Informationen zu den Brennereien zwischen Kassel und Darmstadt."
+      },
+      "normalized": {
+        "id": "hesse",
+        "slug": "hessen",
+        "country_id": "germany",
+        "name": "Hessen",
+        "description": "Hessen besticht durch eine wachsende Zahl an Brennereien, die oft regionale Rohstoffe in den Fokus rücken.",
+        "seo_title": "Whisky aus Hessen – Destillerien & Infos",
+        "seo_description": "Hessischer Whisky im Porträt. Finden Sie Informationen zu den Brennereien zwischen Kassel und Darmstadt.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): hesse"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "indiana",
+        "name": "Indiana",
+        "slug": "indiana",
+        "country_id": "usa",
+        "short_description": "Bedeutendes Zentrum für Roggen-Whiskey und Sourcing.",
+        "long_description": "Indiana spielt eine zentrale Rolle in der amerikanischen Whiskey-Industrie, vor allem durch die historische Megabrennerei in Lawrenceburg. Der Staat ist besonders für seine hochwertigen Rye-Whiskeys bekannt, die sowohl unter eigenen Labels als auch als Basis für viele andere Marken dienen.",
+        "seo_title": "Whiskey aus Indiana | Roggen-Expertise & Tradition",
+        "seo_description": "Entdecken Sie die Whiskey-Produktion in Indiana, bekannt für erstklassige Rye-Whiskeys und historische Destillerien.",
+        "published": true
+      },
+      "normalized": {
+        "id": "indiana",
+        "name": "Indiana",
+        "slug": "indiana",
+        "country_id": "usa",
+        "short_description": "Bedeutendes Zentrum für Roggen-Whiskey und Sourcing.",
+        "long_description": "Indiana spielt eine zentrale Rolle in der amerikanischen Whiskey-Industrie, vor allem durch die historische Megabrennerei in Lawrenceburg. Der Staat ist besonders für seine hochwertigen Rye-Whiskeys bekannt, die sowohl unter eigenen Labels als auch als Basis für viele andere Marken dienen.",
+        "seo_title": "Whiskey aus Indiana | Roggen-Expertise & Tradition",
+        "seo_description": "Entdecken Sie die Whiskey-Produktion in Indiana, bekannt für erstklassige Rye-Whiskeys und historische Destillerien.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): indiana"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "kentucky",
+        "name": "Kentucky",
+        "slug": "kentucky",
+        "country_id": "usa",
+        "short_description": "Das Herzland des amerikanischen Bourbons.",
+        "long_description": "Kentucky ist weltberühmt als das Zentrum der Bourbon-Produktion. Mit seinem kalkhaltigen Wasser und dem wechselhaften Klima bietet der Bundesstaat ideale Bedingungen für die Reifung von Whiskey. Hier sind einige der traditionsreichsten und bekanntesten Destillerien der USA beheimatet, die den 'Kentucky Straight Bourbon' weltbekannt gemacht haben.",
+        "seo_title": "Bourbon & Whiskey aus Kentucky | Das Herz der USA-Whiskeywelt",
+        "seo_description": "Entdecken Sie die Welt des Kentucky Bourbons. Erfahren Sie mehr über die traditionsreichen Destillerien und den legendären Whiskey aus Kentucky.",
+        "published": true
+      },
+      "normalized": {
+        "id": "kentucky",
+        "name": "Kentucky",
+        "slug": "kentucky",
+        "country_id": "usa",
+        "short_description": "Das Herzland des amerikanischen Bourbons.",
+        "long_description": "Kentucky ist weltberühmt als das Zentrum der Bourbon-Produktion. Mit seinem kalkhaltigen Wasser und dem wechselhaften Klima bietet der Bundesstaat ideale Bedingungen für die Reifung von Whiskey. Hier sind einige der traditionsreichsten und bekanntesten Destillerien der USA beheimatet, die den 'Kentucky Straight Bourbon' weltbekannt gemacht haben.",
+        "seo_title": "Bourbon & Whiskey aus Kentucky | Das Herz der USA-Whiskeywelt",
+        "seo_description": "Entdecken Sie die Welt des Kentucky Bourbons. Erfahren Sie mehr über die traditionsreichen Destillerien und den legendären Whiskey aus Kentucky.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): kentucky"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "lower-saxony",
+        "slug": "niedersachsen",
+        "country_id": "germany",
+        "name": "Niedersachsen",
+        "description": "Niedersachsen bietet eine abwechslungsreiche Whisky-Landschaft, von der Küste bis zum Harz.",
+        "seo_title": "Whisky aus Niedersachsen – Destillerien & Infos",
+        "seo_description": "Die Whisky-Vielfalt Niedersachsens entdecken. Von der Nordsee bis in den Harz."
+      },
+      "normalized": {
+        "id": "lower-saxony",
+        "slug": "niedersachsen",
+        "country_id": "germany",
+        "name": "Niedersachsen",
+        "description": "Niedersachsen bietet eine abwechslungsreiche Whisky-Landschaft, von der Küste bis zum Harz.",
+        "seo_title": "Whisky aus Niedersachsen – Destillerien & Infos",
+        "seo_description": "Die Whisky-Vielfalt Niedersachsens entdecken. Von der Nordsee bis in den Harz.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): lower-saxony"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "manitoba",
+        "name": "Manitoba",
+        "slug": "manitoba",
+        "country_id": "canada",
+        "short_description": "Heimat weltberühmter Whisky-Marken an den Seen.",
+        "long_description": "In Manitoba, am Ufer des Lake Winnipeg, befindet sich eine der produktivsten Destillerien Kanadas. Das kühle Klima und der Zugang zu hochwertigem Getreide prägen die dort produzierten Whiskys, die weltweit geschätzt werden.",
+        "seo_title": "Whisky aus Manitoba | Crown Royal & Mehr",
+        "seo_description": "Erfahren Sie mehr über die Whisky-Produktion in Manitoba und die Destillerien am Lake Winnipeg.",
+        "published": true
+      },
+      "normalized": {
+        "id": "manitoba",
+        "name": "Manitoba",
+        "slug": "manitoba",
+        "country_id": "canada",
+        "short_description": "Heimat weltberühmter Whisky-Marken an den Seen.",
+        "long_description": "In Manitoba, am Ufer des Lake Winnipeg, befindet sich eine der produktivsten Destillerien Kanadas. Das kühle Klima und der Zugang zu hochwertigem Getreide prägen die dort produzierten Whiskys, die weltweit geschätzt werden.",
+        "seo_title": "Whisky aus Manitoba | Crown Royal & Mehr",
+        "seo_description": "Erfahren Sie mehr über die Whisky-Produktion in Manitoba und die Destillerien am Lake Winnipeg.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "mecklenburg-western-pomerania",
+        "slug": "mecklenburg-vorpommern",
+        "country_id": "germany",
+        "name": "Mecklenburg-Vorpommern",
+        "description": "An der Ostsee reifen in Mecklenburg-Vorpommern Whiskys mit ganz eigenem, oft maritimem Charakter.",
+        "seo_title": "Whisky aus Mecklenburg-Vorpommern – Destillerien & Infos",
+        "seo_description": "Whisky-Genuss aus dem Nordosten. Entdecken Sie die Destillerien in Mecklenburg-Vorpommern."
+      },
+      "normalized": {
+        "id": "mecklenburg-western-pomerania",
+        "slug": "mecklenburg-vorpommern",
+        "country_id": "germany",
+        "name": "Mecklenburg-Vorpommern",
+        "description": "An der Ostsee reifen in Mecklenburg-Vorpommern Whiskys mit ganz eigenem, oft maritimem Charakter.",
+        "seo_title": "Whisky aus Mecklenburg-Vorpommern – Destillerien & Infos",
+        "seo_description": "Whisky-Genuss aus dem Nordosten. Entdecken Sie die Destillerien in Mecklenburg-Vorpommern.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): mecklenburg-western-pomerania"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "north-rhine-westphalia",
+        "slug": "nordrhein-westfalen",
+        "country_id": "germany",
+        "name": "Nordrhein-Westfalen",
+        "description": "NRW ist ein bedeutender Standort für die deutsche Whisky-Produktion mit einer großen Bandbreite an Brennereitypen.",
+        "seo_title": "Whisky aus Nordrhein-Westfalen – Destillerien & Infos",
+        "seo_description": "Nordrhein-Westfalen und seine Whisky-Brennereien. Informationen und Profile aus dem Westen."
+      },
+      "normalized": {
+        "id": "north-rhine-westphalia",
+        "slug": "nordrhein-westfalen",
+        "country_id": "germany",
+        "name": "Nordrhein-Westfalen",
+        "description": "NRW ist ein bedeutender Standort für die deutsche Whisky-Produktion mit einer großen Bandbreite an Brennereitypen.",
+        "seo_title": "Whisky aus Nordrhein-Westfalen – Destillerien & Infos",
+        "seo_description": "Nordrhein-Westfalen und seine Whisky-Brennereien. Informationen und Profile aus dem Westen.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): north-rhine-westphalia"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "northern-ireland",
+        "name": "Nordirland",
+        "slug": "northern-ireland",
+        "country_id": "ireland",
+        "short_description": "Heimat der ältesten lizenzierten Brennerei der Welt.",
+        "long_description": "Nordirland ist ein integraler Bestandteil der irischen Whiskey-Geschichte. Dominiert wird die Region von der legendären Old Bushmills Distillery in County Antrim, der ältesten lizenzierten Brennerei der Welt. In den letzten Jahren sind auch hier neue Akteure hinzugekommen, die das Erbe Nordirlands mit frischen Ideen fortführen.",
+        "seo_title": "Whiskey aus Nordirland - Bushmills & Mehr",
+        "seo_description": "Whiskey aus Nordirland: Heimat von Bushmills und einer jahrhundertelangen Brenntradition. Entdecken Sie die nordirischen Destillerien.",
+        "published": true
+      },
+      "normalized": {
+        "id": "northern-ireland",
+        "name": "Nordirland",
+        "slug": "northern-ireland",
+        "country_id": "ireland",
+        "short_description": "Heimat der ältesten lizenzierten Brennerei der Welt.",
+        "long_description": "Nordirland ist ein integraler Bestandteil der irischen Whiskey-Geschichte. Dominiert wird die Region von der legendären Old Bushmills Distillery in County Antrim, der ältesten lizenzierten Brennerei der Welt. In den letzten Jahren sind auch hier neue Akteure hinzugekommen, die das Erbe Nordirlands mit frischen Ideen fortführen.",
+        "seo_title": "Whiskey aus Nordirland - Bushmills & Mehr",
+        "seo_description": "Whiskey aus Nordirland: Heimat von Bushmills und einer jahrhundertelangen Brenntradition. Entdecken Sie die nordirischen Destillerien.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): northern-ireland"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "nova-scotia",
+        "name": "Nova-Scotia",
+        "slug": "nova-scotia",
+        "country_id": "canada",
+        "short_description": "Schottisches Erbe und kanadischer Single Malt.",
+        "long_description": "Nova Scotia, das 'neue Schottland', pflegt sein Erbe auch beim Whisky. Hier entstand die erste Single Malt Brennerei Kanadas, die sich stark an schottischen Traditionen orientiert und diese mit kanadischem Terroir verbindet.",
+        "seo_title": "Single Malt aus Nova Scotia | Kanadischer Whisky im schottischen Stil",
+        "seo_description": "Erfahren Sie mehr über die Single Malt Tradition in Nova Scotia und die Verbindung zwischen schottischem Erbe und kanadischem Whisky.",
+        "published": true
+      },
+      "normalized": {
+        "id": "nova-scotia",
+        "name": "Nova-Scotia",
+        "slug": "nova-scotia",
+        "country_id": "canada",
+        "short_description": "Schottisches Erbe und kanadischer Single Malt.",
+        "long_description": "Nova Scotia, das 'neue Schottland', pflegt sein Erbe auch beim Whisky. Hier entstand die erste Single Malt Brennerei Kanadas, die sich stark an schottischen Traditionen orientiert und diese mit kanadischem Terroir verbindet.",
+        "seo_title": "Single Malt aus Nova Scotia | Kanadischer Whisky im schottischen Stil",
+        "seo_description": "Erfahren Sie mehr über die Single Malt Tradition in Nova Scotia und die Verbindung zwischen schottischem Erbe und kanadischem Whisky.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "ontario",
+        "name": "Ontario",
+        "slug": "ontario",
+        "country_id": "canada",
+        "short_description": "Das historische Zentrum des kanadischen Whiskys.",
+        "long_description": "Ontario beheimatet einige der größten und geschichtsträchtigsten Destillerien Kanadas. Entlang der Großen Seen entwickelte sich eine Industrie, die für milden, aber auch charakterstarken Rye-betonten Whisky bekannt ist.",
+        "seo_title": "Kanadischer Whisky aus Ontario | Tradition & Große Marken",
+        "seo_description": "Entdecken Sie die Whisky-Tradition in Ontario, dem Herzen der kanadischen Whisky-Produktion.",
+        "published": true
+      },
+      "normalized": {
+        "id": "ontario",
+        "name": "Ontario",
+        "slug": "ontario",
+        "country_id": "canada",
+        "short_description": "Das historische Zentrum des kanadischen Whiskys.",
+        "long_description": "Ontario beheimatet einige der größten und geschichtsträchtigsten Destillerien Kanadas. Entlang der Großen Seen entwickelte sich eine Industrie, die für milden, aber auch charakterstarken Rye-betonten Whisky bekannt ist.",
+        "seo_title": "Kanadischer Whisky aus Ontario | Tradition & Große Marken",
+        "seo_description": "Entdecken Sie die Whisky-Tradition in Ontario, dem Herzen der kanadischen Whisky-Produktion.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "republic-of-ireland",
+        "name": "Republik Irland",
+        "slug": "republic-of-ireland",
+        "country_id": "ireland",
+        "short_description": "Der Hauptteil der Insel, bekannt für seine vielfältigen Brennereien von Cork bis Dublin.",
+        "long_description": "Die Republik Irland beheimatet den Großteil der irischen Whiskey-Produktion. Von den historischen Giganten in Midleton bis hin zur modernen Renaissance in Dublin bietet die Republik eine enorme Bandbreite an Stilen, darunter Single Pot Still, Single Malt und Blends. Die Region ist geprägt von einer reichen Tradition, die in den letzten Jahren durch zahlreiche Neugründungen massiv belebt wurde.",
+        "seo_title": "Irischer Whiskey aus der Republik Irland - Tradition & Moderne",
+        "seo_description": "Entdecken Sie Whiskey aus der Republik Irland: Von Dublin bis Cork, Tradition trifft auf Innovation. Jetzt mehr erfahren!",
+        "published": true
+      },
+      "normalized": {
+        "id": "republic-of-ireland",
+        "name": "Republik Irland",
+        "slug": "republic-of-ireland",
+        "country_id": "ireland",
+        "short_description": "Der Hauptteil der Insel, bekannt für seine vielfältigen Brennereien von Cork bis Dublin.",
+        "long_description": "Die Republik Irland beheimatet den Großteil der irischen Whiskey-Produktion. Von den historischen Giganten in Midleton bis hin zur modernen Renaissance in Dublin bietet die Republik eine enorme Bandbreite an Stilen, darunter Single Pot Still, Single Malt und Blends. Die Region ist geprägt von einer reichen Tradition, die in den letzten Jahren durch zahlreiche Neugründungen massiv belebt wurde.",
+        "seo_title": "Irischer Whiskey aus der Republik Irland - Tradition & Moderne",
+        "seo_description": "Entdecken Sie Whiskey aus der Republik Irland: Von Dublin bis Cork, Tradition trifft auf Innovation. Jetzt mehr erfahren!",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): republic-of-ireland"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "rhineland-palatinate",
+        "slug": "rheinland-pfalz",
+        "country_id": "germany",
+        "name": "Rheinland-Pfalz",
+        "description": "Rheinland-Pfalz kombiniert Weinbautradition mit Whisky-Herstellung, was zu spannenden Fassreifungen führt.",
+        "seo_title": "Whisky aus Rheinland-Pfalz – Destillerien & Infos",
+        "seo_description": "Entdecken Sie rheinland-pfälzischen Whisky und den Einfluss der Weinregionen auf den Geschmack."
+      },
+      "normalized": {
+        "id": "rhineland-palatinate",
+        "slug": "rheinland-pfalz",
+        "country_id": "germany",
+        "name": "Rheinland-Pfalz",
+        "description": "Rheinland-Pfalz kombiniert Weinbautradition mit Whisky-Herstellung, was zu spannenden Fassreifungen führt.",
+        "seo_title": "Whisky aus Rheinland-Pfalz – Destillerien & Infos",
+        "seo_description": "Entdecken Sie rheinland-pfälzischen Whisky und den Einfluss der Weinregionen auf den Geschmack.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): rhineland-palatinate"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "saarland",
+        "slug": "saarland",
+        "country_id": "germany",
+        "name": "Saarland",
+        "description": "Das kleinste Flächenbundesland Saarland überzeugt mit handwerklichen Destillerien und viel Liebe zum Detail.",
+        "seo_title": "Whisky aus dem Saarland – Destillerien & Infos",
+        "seo_description": "Whisky aus dem Saarland: Klein, aber fein. Informationen zu den Brennereien an der Saar."
+      },
+      "normalized": {
+        "id": "saarland",
+        "slug": "saarland",
+        "country_id": "germany",
+        "name": "Saarland",
+        "description": "Das kleinste Flächenbundesland Saarland überzeugt mit handwerklichen Destillerien und viel Liebe zum Detail.",
+        "seo_title": "Whisky aus dem Saarland – Destillerien & Infos",
+        "seo_description": "Whisky aus dem Saarland: Klein, aber fein. Informationen zu den Brennereien an der Saar.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): saarland"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "saxony",
+        "slug": "sachsen",
+        "country_id": "germany",
+        "name": "Sachsen",
+        "description": "Sachsen blickt auf eine lange Tradition der Spirituosenherstellung zurück, die nun auch erstklassige Whiskys hervorbringt.",
+        "seo_title": "Whisky aus Sachsen – Destillerien & Infos",
+        "seo_description": "Sächsische Whisky-Kultur erleben. Informationen über die Brennereien im Freistaat Sachsen."
+      },
+      "normalized": {
+        "id": "saxony",
+        "slug": "sachsen",
+        "country_id": "germany",
+        "name": "Sachsen",
+        "description": "Sachsen blickt auf eine lange Tradition der Spirituosenherstellung zurück, die nun auch erstklassige Whiskys hervorbringt.",
+        "seo_title": "Whisky aus Sachsen – Destillerien & Infos",
+        "seo_description": "Sächsische Whisky-Kultur erleben. Informationen über die Brennereien im Freistaat Sachsen.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): saxony"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "saxony-anhalt",
+        "slug": "sachsen-anhalt",
+        "country_id": "germany",
+        "name": "Sachsen-Anhalt",
+        "description": "Sachsen-Anhalt nutzt seine landwirtschaftliche Stärke für die Produktion hochwertiger Grain- und Malt-Whiskys.",
+        "seo_title": "Whisky aus Sachsen-Anhalt – Destillerien & Infos",
+        "seo_description": "Whisky-Produktion in Sachsen-Anhalt. Erfahren Sie mehr über die regionalen Brennereien."
+      },
+      "normalized": {
+        "id": "saxony-anhalt",
+        "slug": "sachsen-anhalt",
+        "country_id": "germany",
+        "name": "Sachsen-Anhalt",
+        "description": "Sachsen-Anhalt nutzt seine landwirtschaftliche Stärke für die Produktion hochwertiger Grain- und Malt-Whiskys.",
+        "seo_title": "Whisky aus Sachsen-Anhalt – Destillerien & Infos",
+        "seo_description": "Whisky-Produktion in Sachsen-Anhalt. Erfahren Sie mehr über die regionalen Brennereien.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): saxony-anhalt"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "schleswig-holstein",
+        "slug": "schleswig-holstein",
+        "country_id": "germany",
+        "name": "Schleswig-Holstein",
+        "description": "Zwischen den Meeren reifen in Schleswig-Holstein Whiskys unter dem Einfluss des Seeklimas.",
+        "seo_title": "Whisky aus Schleswig-Holstein – Destillerien & Infos",
+        "seo_description": "Norddeutscher Whisky-Genuss. Entdecken Sie die Brennereien in Schleswig-Holstein."
+      },
+      "normalized": {
+        "id": "schleswig-holstein",
+        "slug": "schleswig-holstein",
+        "country_id": "germany",
+        "name": "Schleswig-Holstein",
+        "description": "Zwischen den Meeren reifen in Schleswig-Holstein Whiskys unter dem Einfluss des Seeklimas.",
+        "seo_title": "Whisky aus Schleswig-Holstein – Destillerien & Infos",
+        "seo_description": "Norddeutscher Whisky-Genuss. Entdecken Sie die Brennereien in Schleswig-Holstein.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): schleswig-holstein"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "tennessee",
+        "name": "Tennessee",
+        "slug": "tennessee",
+        "country_id": "usa",
+        "short_description": "Heimat des Tennessee Whiskeys und des Lincoln County Process.",
+        "long_description": "Tennessee ist bekannt für seinen eigenen Whiskey-Stil, den Tennessee Whiskey. Charakteristisch ist der Lincoln County Process, bei dem der New Make vor der Fasslagerung durch Ahornholzkohle gefiltert wird. Dies verleiht dem Whiskey seine typische Milde und Reinheit.",
+        "seo_title": "Tennessee Whiskey | Geschichte, Destillerien & Geschmack",
+        "seo_description": "Alles über Tennessee Whiskey: Erfahren Sie mehr über den Lincoln County Process und die berühmten Destillerien aus Tennessee.",
+        "published": true
+      },
+      "normalized": {
+        "id": "tennessee",
+        "name": "Tennessee",
+        "slug": "tennessee",
+        "country_id": "usa",
+        "short_description": "Heimat des Tennessee Whiskeys und des Lincoln County Process.",
+        "long_description": "Tennessee ist bekannt für seinen eigenen Whiskey-Stil, den Tennessee Whiskey. Charakteristisch ist der Lincoln County Process, bei dem der New Make vor der Fasslagerung durch Ahornholzkohle gefiltert wird. Dies verleiht dem Whiskey seine typische Milde und Reinheit.",
+        "seo_title": "Tennessee Whiskey | Geschichte, Destillerien & Geschmack",
+        "seo_description": "Alles über Tennessee Whiskey: Erfahren Sie mehr über den Lincoln County Process und die berühmten Destillerien aus Tennessee.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): tennessee"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "texas",
+        "name": "Texas",
+        "slug": "texas",
+        "country_id": "usa",
+        "short_description": "Whiskey-Reifung unter extremer Hitze.",
+        "long_description": "In Texas wird Whiskey unter extremen klimatischen Bedingungen produziert. Die große Hitze beschleunigt die Interaktion mit dem Holz, was zu sehr intensiven und kräftigen Whiskeys führt. Besonders innovativ ist die Verwendung regionaler Maissorten.",
+        "seo_title": "Texas Whiskey | Intensive Aromen durch texanische Hitze",
+        "seo_description": "Erfahren Sie, wie das Klima in Texas den Whiskey-Reifungsprozess beeinflusst und entdecken Sie die kühnen Whiskeys aus dem Lone Star State.",
+        "published": true
+      },
+      "normalized": {
+        "id": "texas",
+        "name": "Texas",
+        "slug": "texas",
+        "country_id": "usa",
+        "short_description": "Whiskey-Reifung unter extremer Hitze.",
+        "long_description": "In Texas wird Whiskey unter extremen klimatischen Bedingungen produziert. Die große Hitze beschleunigt die Interaktion mit dem Holz, was zu sehr intensiven und kräftigen Whiskeys führt. Besonders innovativ ist die Verwendung regionaler Maissorten.",
+        "seo_title": "Texas Whiskey | Intensive Aromen durch texanische Hitze",
+        "seo_description": "Erfahren Sie, wie das Klima in Texas den Whiskey-Reifungsprozess beeinflusst und entdecken Sie die kühnen Whiskeys aus dem Lone Star State.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): texas"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "thuringia",
+        "slug": "thueringen",
+        "country_id": "germany",
+        "name": "Thüringen",
+        "description": "Thüringen bietet mit seinen Wäldern und Wasserquellen ideale Bedingungen für die Whisky-Herstellung.",
+        "seo_title": "Whisky aus Thüringen – Destillerien & Infos",
+        "seo_description": "Thüringer Whisky entdecken. Profile der Destillerien im grünen Herzen Deutschlands."
+      },
+      "normalized": {
+        "id": "thuringia",
+        "slug": "thueringen",
+        "country_id": "germany",
+        "name": "Thüringen",
+        "description": "Thüringen bietet mit seinen Wäldern und Wasserquellen ideale Bedingungen für die Whisky-Herstellung.",
+        "seo_title": "Whisky aus Thüringen – Destillerien & Infos",
+        "seo_description": "Thüringer Whisky entdecken. Profile der Destillerien im grünen Herzen Deutschlands.",
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z",
+        "published": false
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): thuringia"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "utah",
+        "name": "Utah",
+        "slug": "utah",
+        "country_id": "usa",
+        "short_description": "Innovative Craft-Distilling Szene im Westen.",
+        "long_description": "Utah hat sich in den letzten Jahren zu einem spannenden Standort für Craft-Whiskey entwickelt. Trotz strenger Gesetze produzieren innovative Brennereien hier charakterstarke Whiskeys, die oft Tradition mit modernen Blending-Techniken verbinden.",
+        "seo_title": "Craft Whiskey aus Utah | Innovation & Tradition",
+        "seo_description": "Erfahren Sie mehr über die aufstrebende Craft-Whiskey Szene in Utah und ihre einzigartigen Destillate.",
+        "published": true
+      },
+      "normalized": {
+        "id": "utah",
+        "name": "Utah",
+        "slug": "utah",
+        "country_id": "usa",
+        "short_description": "Innovative Craft-Distilling Szene im Westen.",
+        "long_description": "Utah hat sich in den letzten Jahren zu einem spannenden Standort für Craft-Whiskey entwickelt. Trotz strenger Gesetze produzieren innovative Brennereien hier charakterstarke Whiskeys, die oft Tradition mit modernen Blending-Techniken verbinden.",
+        "seo_title": "Craft Whiskey aus Utah | Innovation & Tradition",
+        "seo_description": "Erfahren Sie mehr über die aufstrebende Craft-Whiskey Szene in Utah und ihre einzigartigen Destillate.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): utah"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    },
+    {
+      "raw": {
+        "id": "washington",
+        "name": "Washington",
+        "slug": "washington",
+        "country_id": "usa",
+        "short_description": "Pionierregion für American Single Malt.",
+        "long_description": "Der Bundesstaat Washington, insbesondere der pazifische Nordwesten, bietet ein ideales Klima für die Herstellung von Single Malt Whiskey. Regionale Gerste und innovative Ansätze beim Torfen prägen den charakteristischen Stil dieser Region.",
+        "seo_title": "American Single Malt aus Washington | Klima & Terroir",
+        "seo_description": "Entdecken Sie den American Single Malt Whiskey aus Washington State und den Einfluss des pazifischen Klimas auf die Reifung.",
+        "published": true
+      },
+      "normalized": {
+        "id": "washington",
+        "name": "Washington",
+        "slug": "washington",
+        "country_id": "usa",
+        "short_description": "Pionierregion für American Single Malt.",
+        "long_description": "Der Bundesstaat Washington, insbesondere der pazifische Nordwesten, bietet ein ideales Klima für die Herstellung von Single Malt Whiskey. Regionale Gerste und innovative Ansätze beim Torfen prägen den charakteristischen Stil dieser Region.",
+        "seo_title": "American Single Malt aus Washington | Klima & Terroir",
+        "seo_description": "Entdecken Sie den American Single Malt Whiskey aus Washington State und den Einfluss des pazifischen Klimas auf die Reifung.",
+        "published": true,
+        "created_at": "2026-04-26T15:08:58Z",
+        "last_updated": "2026-04-26T15:08:58Z"
+      },
+      "status": "update_candidate",
+      "errors": [
+        "ID bereits vorhanden (Duplikat): washington"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
