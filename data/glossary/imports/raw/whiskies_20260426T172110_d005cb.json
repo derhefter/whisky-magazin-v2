@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172110_d005cb",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:21:10Z",
+  "raw": [
+    {
+      "id": "davidson-reserve-rye",
+      "slug": "davidson-reserve-rye",
+      "name": "Davidson Reserve Rye",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "pennington-distilling-co",
+      "whisky_type": "rye",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Davidson Reserve Rye ist ein charaktervoller rye aus der Pennington Distilling Co..",
+      "long_description": "Der Davidson Reserve Rye repräsentiert den klassischen Stil der Pennington Distilling Co.. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Davidson Reserve Rye | rye aus USA",
+      "seo_description": "Entdecken Sie Davidson Reserve Rye, einen erstklassigen rye von der Pennington Distilling Co. in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
