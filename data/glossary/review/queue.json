@@ -27743,7 +27743,7 @@
         "ID bereits vorhanden (Duplikat): utah"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "utah",
         "name": "Utah",
@@ -27767,7 +27767,10 @@
         "seo_title": "Craft Whiskey aus Utah | Innovation & Tradition",
         "seo_description": "Erfahren Sie mehr über die aufstrebende Craft-Whiskey Szene in Utah und ihre einzigartigen Destillate.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:43Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
