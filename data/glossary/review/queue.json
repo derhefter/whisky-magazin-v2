@@ -21681,7 +21681,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hiram-walker",
         "slug": "hiram-walker",
@@ -21725,7 +21725,10 @@
         "published": true,
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T08:30:25Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
