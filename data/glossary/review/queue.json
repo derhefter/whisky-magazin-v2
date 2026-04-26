@@ -32362,7 +32362,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "woodford-reserve-kentucky-straight-bourbon",
         "slug": "woodford-reserve-kentucky-straight-bourbon",
@@ -32426,7 +32426,10 @@
         "seo_description": "Entdecken Sie Woodford Reserve Kentucky Straight Bourbon, einen erstklassigen bourbon von der Woodford Reserve Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:05:43Z"
     }
   ]
 }
