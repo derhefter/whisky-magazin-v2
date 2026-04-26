@@ -38757,7 +38757,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "jack-daniels-single-barrel",
         "slug": "jack-daniels-single-barrel",
@@ -38821,7 +38821,10 @@
         "seo_description": "Entdecken Sie Jack Daniel's Single Barrel Select, einen erstklassigen tennessee von der Jack Daniel Distillery in tennessee.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:50Z"
     },
     {
       "batch_id": "whiskies_20260426T172139_479cf4",
