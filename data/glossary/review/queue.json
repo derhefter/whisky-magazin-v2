@@ -30042,7 +30042,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "green-river-kentucky-straight-rye",
         "slug": "green-river-kentucky-straight-rye",
@@ -30106,7 +30106,10 @@
         "seo_description": "Entdecken Sie Green River Kentucky Straight Rye, einen erstklassigen rye von der Green River Distilling Co. in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:04:56Z"
     },
     {
       "batch_id": "whiskies_20260426T151528_7d1d82",
