@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T171624_ee422f",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:16:24Z",
+  "raw": [
+    {
+      "id": "very-olde-st-nick-bourbon",
+      "slug": "very-olde-st-nick-bourbon",
+      "name": "Very Olde St. Nick Bourbon",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "preservation-distillery",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Very Olde St. Nick Bourbon ist ein charaktervoller bourbon aus der Preservation Distillery.",
+      "long_description": "Der Very Olde St. Nick Bourbon repräsentiert den klassischen Stil der Preservation Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Very Olde St. Nick Bourbon | bourbon aus USA",
+      "seo_description": "Entdecken Sie Very Olde St. Nick Bourbon, einen erstklassigen bourbon von der Preservation Distillery in Kentucky.",
+      "created_at": "2026-04-24T21:16:37Z",
+      "last_updated": "2026-04-24T21:16:37Z"
+    }
+  ]
+}
