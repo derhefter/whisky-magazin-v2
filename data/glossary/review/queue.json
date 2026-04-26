@@ -18888,7 +18888,7 @@
         "Slug ungültig (nur a-z, 0-9, Bindestrich): caol_ila"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "caol_ila",
         "name": "Caol Ila",
@@ -18934,7 +18934,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T21:45:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:38:12Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
