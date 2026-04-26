@@ -2162,6 +2162,13 @@
       "imported_at": "2026-04-26T15:14:22Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260426T151425_25ce9a",
+      "entity": "whiskies",
+      "imported_at": "2026-04-26T15:14:25Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -28070,6 +28077,83 @@
         "seo_description": "Entdecken Sie Bluegrass Kentucky Straight Bourbon, einen erstklassigen bourbon von der Bluegrass Distillers at Elkwood Farm in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
+      }
+    },
+    {
+      "batch_id": "whiskies_20260426T151425_25ce9a",
+      "entity": "whiskies",
+      "item_id": "bookers-bourbon",
+      "item_slug": "bookers-bourbon",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: abv",
+        "ABV muss eine Zahl sein"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "bookers-bourbon",
+        "slug": "bookers-bourbon",
+        "name": "Booker's Bourbon",
+        "country_id": "usa",
+        "region_id": "kentucky",
+        "distillery_id": "jim-beam",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "Booker's Bourbon ist ein charaktervoller bourbon aus der James B. Beam Distilling Co. (Jim Beam).",
+        "long_description": "Der Booker's Bourbon repräsentiert den klassischen Stil der James B. Beam Distilling Co. (Jim Beam). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "Booker's Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie Booker's Bourbon, einen erstklassigen bourbon von der James B. Beam Distilling Co. (Jim Beam) in kentucky.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-26T15:14:25Z"
+      },
+      "raw": {
+        "id": "bookers-bourbon",
+        "slug": "bookers-bourbon",
+        "name": "Booker's Bourbon",
+        "country_id": "usa",
+        "region_id": "kentucky",
+        "distillery_id": "jim-beam",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "Booker's Bourbon ist ein charaktervoller bourbon aus der James B. Beam Distilling Co. (Jim Beam).",
+        "long_description": "Der Booker's Bourbon repräsentiert den klassischen Stil der James B. Beam Distilling Co. (Jim Beam). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "Booker's Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie Booker's Bourbon, einen erstklassigen bourbon von der James B. Beam Distilling Co. (Jim Beam) in kentucky.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-24T22:20:00Z"
       }
     }
   ]
