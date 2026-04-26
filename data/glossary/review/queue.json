@@ -25664,7 +25664,7 @@
         "ID bereits vorhanden (Duplikat): teeling"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "teeling",
         "name": "Teeling Whiskey Distillery",
@@ -25710,7 +25710,10 @@
         "published": true,
         "created_at": "2026-04-22T21:40:00Z",
         "last_updated": "2026-04-22T21:40:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:39:50Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
