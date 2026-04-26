@@ -41319,7 +41319,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balcones-baby-blue",
         "slug": "balcones-baby-blue",
@@ -41386,7 +41386,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:27:33Z"
+      "reviewed_at": "2026-04-26T17:27:33Z",
+      "published_at": "2026-04-26T17:29:27Z"
     },
     {
       "batch_id": "whiskies_20260426T172721_4d80dd",
@@ -41396,7 +41397,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "balcones-texas-single-malt",
         "slug": "balcones-texas-single-malt",
@@ -41463,7 +41464,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:27:37Z"
+      "reviewed_at": "2026-04-26T17:27:37Z",
+      "published_at": "2026-04-26T17:29:27Z"
     },
     {
       "batch_id": "whiskies_20260426T172825_b714af",
@@ -41473,7 +41475,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "high-west-double-rye",
         "slug": "high-west-double-rye",
@@ -41540,7 +41542,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:28:38Z"
+      "reviewed_at": "2026-04-26T17:28:38Z",
+      "published_at": "2026-04-26T17:29:27Z"
     },
     {
       "batch_id": "whiskies_20260426T172828_3584fc",
@@ -41550,7 +41553,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "high-west-rendezvous-rye",
         "slug": "high-west-rendezvous-rye",
@@ -41617,7 +41620,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:28:42Z"
+      "reviewed_at": "2026-04-26T17:28:42Z",
+      "published_at": "2026-04-26T17:29:27Z"
     },
     {
       "batch_id": "whiskies_20260426T172906_721bc1",
@@ -41627,7 +41631,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "westland-american-single-malt",
         "slug": "westland-american-single-malt",
@@ -41694,7 +41698,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:29:17Z"
+      "reviewed_at": "2026-04-26T17:29:17Z",
+      "published_at": "2026-04-26T17:29:27Z"
     },
     {
       "batch_id": "whiskies_20260426T172909_accd8a",
@@ -41704,7 +41709,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "westland-colere",
         "slug": "westland-colere",
@@ -41771,7 +41776,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:29:22Z"
+      "reviewed_at": "2026-04-26T17:29:22Z",
+      "published_at": "2026-04-26T17:29:27Z"
     }
   ]
 }
