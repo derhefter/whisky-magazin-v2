@@ -593,21 +593,21 @@ class handler(BaseHTTPRequestHandler):
 
             report = _build_import_report(batch_id, entity, items, existing or [], now_iso)
 
-            # Write raw batch
+            # Write raw batch [skip ci] – kein Deployment für Zwischen-Commits
             raw_sha = ""
             raw_result = _write_json_file(
                 _import_raw_path(batch_id),
                 {"batch_id": batch_id, "entity": entity, "imported_at": now_iso, "raw": items},
                 raw_sha,
-                f"glossary-import: raw batch {batch_id}"
+                f"glossary-import: raw batch {batch_id} [skip ci]"
             )
 
-            # Write report
+            # Write report [skip ci]
             _write_json_file(
                 _import_report_path(batch_id),
                 report,
                 "",
-                f"glossary-import: report {batch_id}"
+                f"glossary-import: report {batch_id} [skip ci]"
             )
 
             # Enqueue in review queue
@@ -637,7 +637,7 @@ class handler(BaseHTTPRequestHandler):
                     "raw": item["raw"],
                 })
 
-            _write_json_file(_review_queue_path(), queue, q_sha, f"glossary-import: queue {batch_id}")
+            _write_json_file(_review_queue_path(), queue, q_sha, f"glossary-import: queue {batch_id} [skip ci]")
 
             if "error" in raw_result:
                 return self._send(500, {"error": raw_result["error"]}, origin)
@@ -687,7 +687,7 @@ class handler(BaseHTTPRequestHandler):
                 item["normalized"]["last_updated"] = now_iso
 
             _write_json_file(_review_queue_path(), queue, q_sha,
-                             f"glossary-review: {decision} {item_id}")
+                             f"glossary-review: {decision} {item_id} [skip ci]")
 
             return self._send(200, {"ok": True, "item_id": item_id, "decision": decision}, origin)
 
@@ -745,7 +745,7 @@ class handler(BaseHTTPRequestHandler):
                 return self._send(500, {"error": result["error"]}, origin)
 
             _write_json_file(_review_queue_path(), queue, q_sha,
-                             f"glossary-review: mark published {entity}")
+                             f"glossary-review: mark published {entity} [skip ci]")
 
             return self._send(200, {"ok": True, "published": published_count}, origin)
 
