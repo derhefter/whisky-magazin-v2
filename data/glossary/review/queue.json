@@ -26831,7 +26831,7 @@
         "ID bereits vorhanden (Duplikat): baden-wuerttemberg"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "baden-wuerttemberg",
         "slug": "baden-wuerttemberg",
@@ -26852,7 +26852,10 @@
         "description": "Baden-Württemberg beheimatet eine Vielzahl von Destillerien, oft aus traditionellen Obstbrennereien hervorgegangen.",
         "seo_title": "Whisky aus Baden-Württemberg – Destillerien & Infos",
         "seo_description": "Entdecken Sie die Vielfalt der Whiskys aus Baden-Württemberg. Von traditionellen Brennereien bis zu innovativen Newcomern."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:09Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
