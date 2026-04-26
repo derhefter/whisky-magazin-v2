@@ -35664,7 +35664,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "muhlenberg-bourbon",
         "slug": "muhlenberg-bourbon",
@@ -35728,7 +35728,10 @@
         "seo_description": "Entdecken Sie Muhlenberg Bourbon, einen erstklassigen bourbon von der The Bard Distillery in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:19:10Z"
     },
     {
       "batch_id": "whiskies_20260426T171556_47b86e",
