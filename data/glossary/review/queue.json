@@ -16688,7 +16688,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "george-remus-bourbon",
         "slug": "george-remus-bourbon",
@@ -16755,7 +16755,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:06:52Z"
+      "reviewed_at": "2026-04-26T08:06:52Z",
+      "published_at": "2026-04-26T08:07:14Z"
     },
     {
       "batch_id": "whiskies_20260426T080606_ccf5ea",
@@ -16768,7 +16769,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "rossville-union-rye",
         "slug": "rossville-union-rye",
@@ -16835,7 +16836,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T08:07:08Z"
+      "reviewed_at": "2026-04-26T08:07:08Z",
+      "published_at": "2026-04-26T08:07:14Z"
     }
   ]
 }
