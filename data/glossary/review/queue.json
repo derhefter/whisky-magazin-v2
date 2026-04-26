@@ -27782,7 +27782,7 @@
         "ID bereits vorhanden (Duplikat): washington"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "washington",
         "name": "Washington",
@@ -27806,7 +27806,10 @@
         "seo_title": "American Single Malt aus Washington | Klima & Terroir",
         "seo_description": "Entdecken Sie den American Single Malt Whiskey aus Washington State und den Einfluss des pazifischen Klimas auf die Reifung.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:45Z"
     }
   ]
 }
