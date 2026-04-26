@@ -2113,6 +2113,13 @@
       "imported_at": "2026-04-26T08:05:17Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260426T080603_1cf779",
+      "entity": "whiskies",
+      "imported_at": "2026-04-26T08:06:03Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -16661,6 +16668,83 @@
       "decision": "approve",
       "reviewer_notes": "",
       "reviewed_at": "2026-04-26T08:05:46Z"
+    },
+    {
+      "batch_id": "whiskies_20260426T080603_1cf779",
+      "entity": "whiskies",
+      "item_id": "george-remus-bourbon",
+      "item_slug": "george-remus-bourbon",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: abv",
+        "ABV muss eine Zahl sein"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "george-remus-bourbon",
+        "slug": "george-remus-bourbon",
+        "name": "George Remus Bourbon",
+        "country_id": "usa",
+        "region_id": "indiana",
+        "distillery_id": "ross-squibb",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "George Remus Bourbon ist ein charaktervoller bourbon aus der Ross & Squibb Distillery (ehemals MGP).",
+        "long_description": "Der George Remus Bourbon repräsentiert den klassischen Stil der Ross & Squibb Distillery (ehemals MGP). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus indiana.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "George Remus Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie George Remus Bourbon, einen erstklassigen bourbon von der Ross & Squibb Distillery (ehemals MGP) in indiana.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-26T08:06:03Z"
+      },
+      "raw": {
+        "id": "george-remus-bourbon",
+        "slug": "george-remus-bourbon",
+        "name": "George Remus Bourbon",
+        "country_id": "usa",
+        "region_id": "indiana",
+        "distillery_id": "ross-squibb",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "George Remus Bourbon ist ein charaktervoller bourbon aus der Ross & Squibb Distillery (ehemals MGP).",
+        "long_description": "Der George Remus Bourbon repräsentiert den klassischen Stil der Ross & Squibb Distillery (ehemals MGP). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus indiana.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "George Remus Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie George Remus Bourbon, einen erstklassigen bourbon von der Ross & Squibb Distillery (ehemals MGP) in indiana.",
+        "created_at": "2026-04-24T22:20:00Z",
+        "last_updated": "2026-04-24T22:20:00Z"
+      }
     }
   ]
 }
