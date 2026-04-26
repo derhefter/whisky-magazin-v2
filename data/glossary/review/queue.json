@@ -42333,7 +42333,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "jp-wisers-15",
         "slug": "jp-wisers-15",
@@ -42343,9 +42343,9 @@
         "distillery_id": "hiram-walker",
         "whisky_type": "blended",
         "style_tags": [],
-        "age_statement": null,
-        "nas": true,
-        "abv": null,
+        "age_statement": 15,
+        "nas": false,
+        "abv": 40,
         "cask_types": [],
         "smoke_profile": "none",
         "tasting_notes_nose": "",
@@ -42364,7 +42364,7 @@
         "seo_title": "J.P. Wiser's 15 Year Old | canadian aus CANADA",
         "seo_description": "Entdecken Sie J.P. Wiser's 15 Year Old, einen erstklassigen canadian von der Hiram Walker & Sons Distillery in ontario.",
         "created_at": "2026-04-24T22:20:00Z",
-        "last_updated": "2026-04-26T17:32:13Z"
+        "last_updated": "2026-04-26T17:32:38Z"
       },
       "raw": {
         "id": "jp-wisers-15",
@@ -42397,7 +42397,10 @@
         "seo_description": "Entdecken Sie J.P. Wiser's 15 Year Old, einen erstklassigen canadian von der Hiram Walker & Sons Distillery in ontario.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:32:38Z"
     },
     {
       "batch_id": "whiskies_20260426T173216_ef73c3",
