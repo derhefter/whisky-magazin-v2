@@ -35972,7 +35972,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "peerless-small-batch-rye",
         "slug": "peerless-small-batch-rye",
@@ -36036,7 +36036,10 @@
         "seo_description": "Entdecken Sie Peerless Small Batch Rye, einen erstklassigen rye von der Kentucky Peerless Distilling Co. in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:19:17Z"
     },
     {
       "batch_id": "whiskies_20260426T171609_a51e41",
