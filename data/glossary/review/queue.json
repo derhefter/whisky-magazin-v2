@@ -2337,6 +2337,13 @@
       "imported_at": "2026-04-26T15:15:38Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260426T151541_57482f",
+      "entity": "whiskies",
+      "imported_at": "2026-04-26T15:15:41Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -30170,6 +30177,83 @@
         "seo_description": "Entdecken Sie Jim Beam White Label, einen erstklassigen bourbon von der James B. Beam Distilling Co. (Jim Beam) in kentucky.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
+      }
+    },
+    {
+      "batch_id": "whiskies_20260426T151541_57482f",
+      "entity": "whiskies",
+      "item_id": "j-mattingly-1845-classic-bourbon",
+      "item_slug": "j-mattingly-1845-classic-bourbon",
+      "status": "error",
+      "errors": [
+        "Pflichtfeld fehlt: abv",
+        "ABV muss eine Zahl sein"
+      ],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "j-mattingly-1845-classic-bourbon",
+        "slug": "j-mattingly-1845-classic-bourbon",
+        "name": "J. Mattingly 1845 Classic Bourbon",
+        "country_id": "usa",
+        "region_id": "kentucky",
+        "distillery_id": "j-mattingly-1845-distillery",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "J. Mattingly 1845 Classic Bourbon ist ein charaktervoller bourbon aus der J. Mattingly 1845 Distillery.",
+        "long_description": "Der J. Mattingly 1845 Classic Bourbon repräsentiert den klassischen Stil der J. Mattingly 1845 Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "J. Mattingly 1845 Classic Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie J. Mattingly 1845 Classic Bourbon, einen erstklassigen bourbon von der J. Mattingly 1845 Distillery in Kentucky.",
+        "created_at": "2026-04-24T21:16:37Z",
+        "last_updated": "2026-04-26T15:15:41Z"
+      },
+      "raw": {
+        "id": "j-mattingly-1845-classic-bourbon",
+        "slug": "j-mattingly-1845-classic-bourbon",
+        "name": "J. Mattingly 1845 Classic Bourbon",
+        "country_id": "usa",
+        "region_id": "kentucky",
+        "distillery_id": "j-mattingly-1845-distillery",
+        "whisky_type": "bourbon",
+        "style_tags": [],
+        "age_statement": null,
+        "nas": true,
+        "abv": null,
+        "cask_types": [],
+        "smoke_profile": "none",
+        "tasting_notes_nose": "",
+        "tasting_notes_palate": "",
+        "tasting_notes_finish": "",
+        "short_description": "J. Mattingly 1845 Classic Bourbon ist ein charaktervoller bourbon aus der J. Mattingly 1845 Distillery.",
+        "long_description": "Der J. Mattingly 1845 Classic Bourbon repräsentiert den klassischen Stil der J. Mattingly 1845 Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+        "editorial_notes": "",
+        "travel_context": "",
+        "image": null,
+        "source_urls": [],
+        "source_status": "verified",
+        "review_status": "approved",
+        "published": true,
+        "related_articles": [],
+        "seo_title": "J. Mattingly 1845 Classic Bourbon | bourbon aus USA",
+        "seo_description": "Entdecken Sie J. Mattingly 1845 Classic Bourbon, einen erstklassigen bourbon von der J. Mattingly 1845 Distillery in Kentucky.",
+        "created_at": "2026-04-24T21:16:37Z",
+        "last_updated": "2026-04-24T21:16:37Z"
       }
     }
   ]
