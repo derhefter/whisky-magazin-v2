@@ -37448,7 +37448,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "1830-original-moonshine",
         "slug": "1830-original-moonshine",
@@ -37512,7 +37512,10 @@
         "seo_description": "Entdecken Sie 1830 Original Moonshine, einen erstklassigen corn von der Old Forge Distillery in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:25:21Z"
     },
     {
       "batch_id": "whiskies_20260426T172044_7deb29",
