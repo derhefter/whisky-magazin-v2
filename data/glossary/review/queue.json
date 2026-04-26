@@ -18866,7 +18866,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "casey-jones-distillery",
         "slug": "casey-jones-distillery",
@@ -18910,7 +18910,10 @@
         "published": true,
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T08:29:55Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
