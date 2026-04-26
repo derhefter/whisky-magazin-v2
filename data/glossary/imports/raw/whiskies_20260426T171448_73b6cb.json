@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T171448_73b6cb",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:14:48Z",
+  "raw": [
+    {
+      "id": "eagle-rare-10",
+      "slug": "eagle-rare-10",
+      "name": "Eagle Rare 10 Year Old",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "buffalo-trace",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Eagle Rare 10 Year Old ist ein charaktervoller bourbon aus der Buffalo Trace Distillery.",
+      "long_description": "Der Eagle Rare 10 Year Old repräsentiert den klassischen Stil der Buffalo Trace Distillery. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Eagle Rare 10 Year Old | bourbon aus USA",
+      "seo_description": "Entdecken Sie Eagle Rare 10 Year Old, einen erstklassigen bourbon von der Buffalo Trace Distillery in kentucky.",
+      "created_at": "2026-04-24T22:20:00Z",
+      "last_updated": "2026-04-24T22:20:00Z"
+    }
+  ]
+}
