@@ -36203,7 +36203,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "rittenhouse-rye",
         "slug": "rittenhouse-rye",
@@ -36267,7 +36267,10 @@
         "seo_description": "Entdecken Sie Rittenhouse Rye, einen erstklassigen rye von der Heaven Hill Distillery in kentucky.",
         "created_at": "2026-04-24T22:20:00Z",
         "last_updated": "2026-04-24T22:20:00Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:19:22Z"
     },
     {
       "batch_id": "whiskies_20260426T171618_9b9fa7",
