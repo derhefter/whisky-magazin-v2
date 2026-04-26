@@ -39681,7 +39681,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "ole-smoky-blue-flame",
         "slug": "ole-smoky-blue-flame",
@@ -39745,7 +39745,10 @@
         "seo_description": "Entdecken Sie Ole Smoky Blue Flame, einen erstklassigen corn von der Ole Smoky Distillery in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:26:10Z"
     },
     {
       "batch_id": "whiskies_20260426T172218_2e8d46",
