@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T172232_cb1f80",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T17:22:32Z",
+  "raw": [
+    {
+      "id": "rye-whiskey",
+      "slug": "rye-whiskey",
+      "name": "Rye Whiskey",
+      "country_id": "usa",
+      "region_id": "tennessee",
+      "distillery_id": "postmodern-distilling",
+      "whisky_type": "rye",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": 40,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Rye Whiskey ist ein charaktervoller rye aus der PostModern Distilling.",
+      "long_description": "Der Rye Whiskey repräsentiert den klassischen Stil der PostModern Distilling. Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Tennessee.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Rye Whiskey | rye aus USA",
+      "seo_description": "Entdecken Sie Rye Whiskey, einen erstklassigen rye von der PostModern Distilling in Tennessee.",
+      "created_at": "2026-04-24T21:18:11Z",
+      "last_updated": "2026-04-24T21:18:11Z"
+    }
+  ]
+}
