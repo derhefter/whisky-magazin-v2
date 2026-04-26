@@ -24943,7 +24943,7 @@
         "ID bereits vorhanden (Duplikat): scapa"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "scapa",
         "name": "Scapa",
@@ -24989,7 +24989,10 @@
         "published": true,
         "created_at": "2026-04-21T17:05:36Z",
         "last_updated": "2026-04-22T22:45:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:39:37Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
