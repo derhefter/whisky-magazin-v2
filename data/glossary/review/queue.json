@@ -34355,7 +34355,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "evan-williams-single-barrel-vintage",
         "slug": "evan-williams-single-barrel-vintage",
@@ -34419,7 +34419,10 @@
         "seo_description": "Entdecken Sie Evan Williams Single Barrel Vintage, einen erstklassigen bourbon von der Evan Williams Bourbon Experience in Kentucky.",
         "created_at": "2026-04-24T21:16:37Z",
         "last_updated": "2026-04-24T21:16:37Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:18:42Z"
     },
     {
       "batch_id": "whiskies_20260426T171504_4034fa",
