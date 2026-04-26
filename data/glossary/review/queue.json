@@ -27449,7 +27449,7 @@
         "ID bereits vorhanden (Duplikat): rhineland-palatinate"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "rhineland-palatinate",
         "slug": "rheinland-pfalz",
@@ -27470,7 +27470,10 @@
         "description": "Rheinland-Pfalz kombiniert Weinbautradition mit Whisky-Herstellung, was zu spannenden Fassreifungen führt.",
         "seo_title": "Whisky aus Rheinland-Pfalz – Destillerien & Infos",
         "seo_description": "Entdecken Sie rheinland-pfälzischen Whisky und den Einfluss der Weinregionen auf den Geschmack."
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:31Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
