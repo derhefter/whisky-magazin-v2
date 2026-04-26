@@ -626,6 +626,10 @@ python main.py --build-v2
 # Lokalen Webserver starten (zum Testen):
 python main.py --serve-v2
 # Oeffnet http://localhost:8000
+
+# Sicherheits-Smoke-Tests laufen lassen (HMAC, DOI, Retry-Logik):
+python -m pytest tests/ -v
+# Erwartung: 17 passed
 ```
 
 ### 5.3 Artikel direkt bearbeiten (ohne Dashboard)
@@ -868,6 +872,12 @@ GitHub Fine-Grained Personal Access Tokens laufen ab. So erneuerst du:
 | Azure Translator | Vercel                         | Laeuft nicht ab; Free: 2 Mio. Zchn/Mon | https://portal.azure.com -> Cognitive Services        |
 
 ### 7.4 Sicherheitsfeatures (implementiert)
+
+> **Audit-Stand 2026-04-26:** vollstaendiger Sicherheits- und Stabilitaets-Check abgeschlossen.
+> 19 identifizierte Schwachstellen (S1–S19) sind code-seitig adressiert. Plan-Tasks T1–T10
+> abgeschlossen. Live-Smokes erfolgreich (translate?status=1 → 401, Turnstile-Widget aktiv,
+> Newsletter-DOI funktional). Test-Suite: `python -m pytest tests/` → 17 passed.
+
 
 - **HMAC-SHA256 Token-Authentifizierung** mit **8-Stunden-Ablauf** und **`ADMIN_KEY_VERSION`-Mischung** (Inkrementieren = sofortige Session-Invalidierung).
 - **Rate Limiting** auf Login (max. 5 Versuche / 15 Minuten — best-effort, da Vercel-Lambda keinen persistenten Speicher hat).
