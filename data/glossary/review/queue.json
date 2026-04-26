@@ -32969,7 +32969,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "angel-s-envy-kentucky-straight-bourbon",
         "slug": "angel-s-envy-kentucky-straight-bourbon",
@@ -33036,7 +33036,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:13Z"
+      "reviewed_at": "2026-04-26T17:18:13Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171410_5ff80e",
@@ -33046,7 +33047,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "angel-s-envy-rye-whiskey",
         "slug": "angel-s-envy-rye-whiskey",
@@ -33113,7 +33114,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:14Z"
+      "reviewed_at": "2026-04-26T17:18:14Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171413_a0d5e1",
@@ -33123,7 +33125,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bluegrass-kentucky-straight-bourbon",
         "slug": "bluegrass-kentucky-straight-bourbon",
@@ -33190,7 +33192,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:16Z"
+      "reviewed_at": "2026-04-26T17:18:16Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171416_fe7b80",
@@ -33200,7 +33203,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bookers-bourbon",
         "slug": "bookers-bourbon",
@@ -33267,7 +33270,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:18Z"
+      "reviewed_at": "2026-04-26T17:18:18Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171419_64a737",
@@ -33277,7 +33281,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "boundary-oak-kentucky-bourbon",
         "slug": "boundary-oak-kentucky-bourbon",
@@ -33344,7 +33348,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:19Z"
+      "reviewed_at": "2026-04-26T17:18:19Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171422_ab201b",
@@ -33354,7 +33359,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "buffalo-trace-straight-bourbon",
         "slug": "buffalo-trace-straight-bourbon",
@@ -33421,7 +33426,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:21Z"
+      "reviewed_at": "2026-04-26T17:18:21Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171425_42dcbc",
@@ -33431,7 +33437,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bulleit-bourbon",
         "slug": "bulleit-bourbon",
@@ -33498,7 +33504,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:22Z"
+      "reviewed_at": "2026-04-26T17:18:22Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171428_c2393b",
@@ -33508,7 +33515,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "bulleit-rye",
         "slug": "bulleit-rye",
@@ -33575,7 +33582,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:24Z"
+      "reviewed_at": "2026-04-26T17:18:24Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171431_1f2ba8",
@@ -33585,7 +33593,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "buzzard-s-roost-straight-bourbon",
         "slug": "buzzard-s-roost-straight-bourbon",
@@ -33652,7 +33660,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:26Z"
+      "reviewed_at": "2026-04-26T17:18:26Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171434_205e31",
@@ -33662,7 +33671,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "buzzard-s-roost-straight-rye",
         "slug": "buzzard-s-roost-straight-rye",
@@ -33729,7 +33738,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:27Z"
+      "reviewed_at": "2026-04-26T17:18:27Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171437_d48106",
@@ -33739,7 +33749,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "casey-jones-small-batch-bourbon",
         "slug": "casey-jones-small-batch-bourbon",
@@ -33806,7 +33816,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:29Z"
+      "reviewed_at": "2026-04-26T17:18:29Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171440_dce514",
@@ -33816,7 +33827,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "castle-key-small-batch-bourbon",
         "slug": "castle-key-small-batch-bourbon",
@@ -33883,7 +33894,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:30Z"
+      "reviewed_at": "2026-04-26T17:18:30Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171443_8f46c0",
@@ -33893,7 +33905,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "chicken-cock-kentucky-straight-bourbon",
         "slug": "chicken-cock-kentucky-straight-bourbon",
@@ -33960,7 +33972,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:32Z"
+      "reviewed_at": "2026-04-26T17:18:32Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171445_4a0781",
@@ -33970,7 +33983,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "chicken-cock-kentucky-straight-rye",
         "slug": "chicken-cock-kentucky-straight-rye",
@@ -34037,7 +34050,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:34Z"
+      "reviewed_at": "2026-04-26T17:18:34Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171448_73b6cb",
@@ -34047,7 +34061,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "eagle-rare-10",
         "slug": "eagle-rare-10",
@@ -34114,7 +34128,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:35Z"
+      "reviewed_at": "2026-04-26T17:18:35Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171451_33d172",
@@ -34124,7 +34139,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "elijah-craig-small-batch",
         "slug": "elijah-craig-small-batch",
@@ -34191,7 +34206,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:37Z"
+      "reviewed_at": "2026-04-26T17:18:37Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171454_c06530",
@@ -34201,7 +34217,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "evan-williams-black",
         "slug": "evan-williams-black",
@@ -34268,7 +34284,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:39Z"
+      "reviewed_at": "2026-04-26T17:18:39Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171457_c12d6d",
@@ -34278,7 +34295,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "evan-williams-black-label",
         "slug": "evan-williams-black-label",
@@ -34345,7 +34362,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:40Z"
+      "reviewed_at": "2026-04-26T17:18:40Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171501_93ecf2",
@@ -34355,7 +34373,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "evan-williams-single-barrel-vintage",
         "slug": "evan-williams-single-barrel-vintage",
@@ -34422,7 +34440,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:42Z"
+      "reviewed_at": "2026-04-26T17:18:42Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171504_4034fa",
@@ -34432,7 +34451,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "ezra-brooks-kentucky-straight-bourbon",
         "slug": "ezra-brooks-kentucky-straight-bourbon",
@@ -34499,7 +34518,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:43Z"
+      "reviewed_at": "2026-04-26T17:18:43Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171507_1b1db9",
@@ -34509,7 +34529,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "four-roses-single-barrel",
         "slug": "four-roses-single-barrel",
@@ -34576,7 +34596,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:45Z"
+      "reviewed_at": "2026-04-26T17:18:45Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171510_5eadff",
@@ -34586,7 +34607,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "four-roses-small-batch",
         "slug": "four-roses-small-batch",
@@ -34653,7 +34674,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:47Z"
+      "reviewed_at": "2026-04-26T17:18:47Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171513_8ab8b7",
@@ -34663,7 +34685,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "green-river-kentucky-straight-bourbon",
         "slug": "green-river-kentucky-straight-bourbon",
@@ -34730,7 +34752,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:49Z"
+      "reviewed_at": "2026-04-26T17:18:49Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171516_15ed4b",
@@ -34740,7 +34763,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "green-river-kentucky-straight-rye",
         "slug": "green-river-kentucky-straight-rye",
@@ -34807,7 +34830,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:50Z"
+      "reviewed_at": "2026-04-26T17:18:50Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171519_7953d1",
@@ -34817,7 +34841,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jefferson-s-ocean-aged-at-sea",
         "slug": "jefferson-s-ocean-aged-at-sea",
@@ -34884,7 +34908,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:53Z"
+      "reviewed_at": "2026-04-26T17:18:53Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171522_c3d2c9",
@@ -34894,7 +34919,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jefferson-s-reserve-bourbon",
         "slug": "jefferson-s-reserve-bourbon",
@@ -34961,7 +34986,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:54Z"
+      "reviewed_at": "2026-04-26T17:18:54Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171525_07800b",
@@ -34971,7 +34997,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jeptha-creed-straight-4-grain-bourbon",
         "slug": "jeptha-creed-straight-4-grain-bourbon",
@@ -35038,7 +35064,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:56Z"
+      "reviewed_at": "2026-04-26T17:18:56Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171528_0336d7",
@@ -35048,7 +35075,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jim-beam-white",
         "slug": "jim-beam-white",
@@ -35115,7 +35142,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:57Z"
+      "reviewed_at": "2026-04-26T17:18:57Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171531_f87b00",
@@ -35125,7 +35153,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "j-mattingly-1845-classic-bourbon",
         "slug": "j-mattingly-1845-classic-bourbon",
@@ -35192,7 +35220,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:18:59Z"
+      "reviewed_at": "2026-04-26T17:18:59Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171534_3dfa54",
@@ -35202,7 +35231,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "knob-creek-9",
         "slug": "knob-creek-9",
@@ -35269,7 +35298,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:01Z"
+      "reviewed_at": "2026-04-26T17:19:01Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171537_51d273",
@@ -35279,7 +35309,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "larrikin-straight-bourbon",
         "slug": "larrikin-straight-bourbon",
@@ -35346,7 +35376,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:02Z"
+      "reviewed_at": "2026-04-26T17:19:02Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171540_58460a",
@@ -35356,7 +35387,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "makers-mark",
         "slug": "makers-mark",
@@ -35423,7 +35454,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:04Z"
+      "reviewed_at": "2026-04-26T17:19:04Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171543_6e389e",
@@ -35433,7 +35465,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "makers-mark-46",
         "slug": "makers-mark-46",
@@ -35500,7 +35532,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:05Z"
+      "reviewed_at": "2026-04-26T17:19:05Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171546_cdf52c",
@@ -35510,7 +35543,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "michter-s-us-1-kentucky-straight-bourbon",
         "slug": "michter-s-us-1-kentucky-straight-bourbon",
@@ -35577,7 +35610,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:07Z"
+      "reviewed_at": "2026-04-26T17:19:07Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171549_673118",
@@ -35587,7 +35621,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "michter-s-us-1-kentucky-straight-rye",
         "slug": "michter-s-us-1-kentucky-straight-rye",
@@ -35654,7 +35688,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:09Z"
+      "reviewed_at": "2026-04-26T17:19:09Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171552_298758",
@@ -35664,7 +35699,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "muhlenberg-bourbon",
         "slug": "muhlenberg-bourbon",
@@ -35731,7 +35766,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:10Z"
+      "reviewed_at": "2026-04-26T17:19:10Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171556_47b86e",
@@ -35741,7 +35777,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "origin-series-kentucky-straight-bourbon",
         "slug": "origin-series-kentucky-straight-bourbon",
@@ -35808,7 +35844,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:12Z"
+      "reviewed_at": "2026-04-26T17:19:12Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171559_d4c18a",
@@ -35818,7 +35855,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "origin-series-kentucky-straight-rye",
         "slug": "origin-series-kentucky-straight-rye",
@@ -35885,7 +35922,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:14Z"
+      "reviewed_at": "2026-04-26T17:19:14Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171602_005ef9",
@@ -35895,7 +35933,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "peerless-small-batch-bourbon",
         "slug": "peerless-small-batch-bourbon",
@@ -35962,7 +36000,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:15Z"
+      "reviewed_at": "2026-04-26T17:19:15Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171605_c7b3c3",
@@ -35972,7 +36011,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "peerless-small-batch-rye",
         "slug": "peerless-small-batch-rye",
@@ -36039,7 +36078,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:17Z"
+      "reviewed_at": "2026-04-26T17:19:17Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171609_a51e41",
@@ -36049,7 +36089,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "rebel-kentucky-straight-bourbon",
         "slug": "rebel-kentucky-straight-bourbon",
@@ -36116,7 +36156,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:19Z"
+      "reviewed_at": "2026-04-26T17:19:19Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171612_d1723b",
@@ -36126,7 +36167,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "restoration-rye",
         "slug": "restoration-rye",
@@ -36193,7 +36234,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:20Z"
+      "reviewed_at": "2026-04-26T17:19:20Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171615_b2060e",
@@ -36203,7 +36245,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "rittenhouse-rye",
         "slug": "rittenhouse-rye",
@@ -36270,7 +36312,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:22Z"
+      "reviewed_at": "2026-04-26T17:19:22Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171618_9b9fa7",
@@ -36280,7 +36323,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "russells-reserve-10",
         "slug": "russells-reserve-10",
@@ -36347,7 +36390,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:24Z"
+      "reviewed_at": "2026-04-26T17:19:24Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171621_9db4e6",
@@ -36357,7 +36401,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "sazerac-rye",
         "slug": "sazerac-rye",
@@ -36424,7 +36468,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:25Z"
+      "reviewed_at": "2026-04-26T17:19:25Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171624_ee422f",
@@ -36434,7 +36479,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "very-olde-st-nick-bourbon",
         "slug": "very-olde-st-nick-bourbon",
@@ -36501,7 +36546,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:27Z"
+      "reviewed_at": "2026-04-26T17:19:27Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171627_6e1764",
@@ -36511,7 +36557,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "whiskey-thief-straight-bourbon",
         "slug": "whiskey-thief-straight-bourbon",
@@ -36578,7 +36624,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:29Z"
+      "reviewed_at": "2026-04-26T17:19:29Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171631_cb8443",
@@ -36588,7 +36635,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "whistlepig-10-year-rye",
         "slug": "whistlepig-10-year-rye",
@@ -36655,7 +36702,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:30Z"
+      "reviewed_at": "2026-04-26T17:19:30Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171634_391fad",
@@ -36667,7 +36715,7 @@
         "ABV außerhalb des gültigen Bereichs (20–95): 100.0"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "whistlepig-piggyback-100-rye",
         "slug": "whistlepig-piggyback-100-rye",
@@ -36734,7 +36782,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:58Z"
+      "reviewed_at": "2026-04-26T17:19:58Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171637_2ff7e9",
@@ -36744,7 +36793,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "wild-turkey-101",
         "slug": "wild-turkey-101",
@@ -36811,7 +36860,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:32Z"
+      "reviewed_at": "2026-04-26T17:19:32Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171640_87031c",
@@ -36821,7 +36871,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "wild-turkey-101-rye",
         "slug": "wild-turkey-101-rye",
@@ -36888,7 +36938,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:34Z"
+      "reviewed_at": "2026-04-26T17:19:34Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171643_49bee9",
@@ -36898,7 +36949,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "woodford-reserve-double-oaked",
         "slug": "woodford-reserve-double-oaked",
@@ -36965,7 +37016,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:36Z"
+      "reviewed_at": "2026-04-26T17:19:36Z",
+      "published_at": "2026-04-26T17:20:07Z"
     },
     {
       "batch_id": "whiskies_20260426T171646_345621",
@@ -36975,7 +37027,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "woodford-reserve-kentucky-straight-bourbon",
         "slug": "woodford-reserve-kentucky-straight-bourbon",
@@ -37042,7 +37094,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:19:37Z"
+      "reviewed_at": "2026-04-26T17:19:37Z",
+      "published_at": "2026-04-26T17:20:07Z"
     }
   ]
 }
