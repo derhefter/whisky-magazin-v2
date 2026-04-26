@@ -27122,7 +27122,7 @@
         "ID bereits vorhanden (Duplikat): kentucky"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "kentucky",
         "name": "Kentucky",
@@ -27146,7 +27146,10 @@
         "seo_title": "Bourbon & Whiskey aus Kentucky | Das Herz der USA-Whiskeywelt",
         "seo_description": "Entdecken Sie die Welt des Kentucky Bourbons. Erfahren Sie mehr über die traditionsreichen Destillerien und den legendären Whiskey aus Kentucky.",
         "published": true
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T15:11:22Z"
     },
     {
       "batch_id": "regions_20260426T150858_b5d099",
