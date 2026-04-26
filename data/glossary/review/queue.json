@@ -41853,7 +41853,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "alberta-premium",
         "slug": "alberta-premium",
@@ -41920,7 +41920,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:30:06Z"
+      "reviewed_at": "2026-04-26T17:30:06Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T172956_8818a9",
@@ -41933,7 +41934,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "alberta-premium-cask-strength",
         "slug": "alberta-premium-cask-strength",
@@ -42000,7 +42001,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:30:22Z"
+      "reviewed_at": "2026-04-26T17:30:22Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173041_9d84cd",
@@ -42013,7 +42015,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "crown-royal-deluxe",
         "slug": "crown-royal-deluxe",
@@ -42080,7 +42082,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:30:59Z"
+      "reviewed_at": "2026-04-26T17:30:59Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173044_88976b",
@@ -42093,7 +42096,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "crown-royal-northern-harvest-rye",
         "slug": "crown-royal-northern-harvest-rye",
@@ -42160,7 +42163,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:31:05Z"
+      "reviewed_at": "2026-04-26T17:31:05Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173129_d3b6d3",
@@ -42173,7 +42177,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glen-breton-rare-10",
         "slug": "glen-breton-rare-10",
@@ -42240,7 +42244,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:31:43Z"
+      "reviewed_at": "2026-04-26T17:31:43Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173132_1e308a",
@@ -42253,7 +42258,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "glen-breton-rare-14",
         "slug": "glen-breton-rare-14",
@@ -42320,7 +42325,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:31:51Z"
+      "reviewed_at": "2026-04-26T17:31:51Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173213_a515ec",
@@ -42333,7 +42339,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "jp-wisers-15",
         "slug": "jp-wisers-15",
@@ -42400,7 +42406,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:32:38Z"
+      "reviewed_at": "2026-04-26T17:32:38Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173216_ef73c3",
@@ -42413,7 +42420,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "lot-no-40",
         "slug": "lot-no-40",
@@ -42480,7 +42487,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:32:47Z"
+      "reviewed_at": "2026-04-26T17:32:47Z",
+      "published_at": "2026-04-26T17:33:02Z"
     },
     {
       "batch_id": "whiskies_20260426T173219_573d3c",
@@ -42493,7 +42501,7 @@
         "ABV muss eine Zahl sein"
       ],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "pike-creek-10",
         "slug": "pike-creek-10",
@@ -42560,7 +42568,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-26T17:32:57Z"
+      "reviewed_at": "2026-04-26T17:32:57Z",
+      "published_at": "2026-04-26T17:33:02Z"
     }
   ]
 }
