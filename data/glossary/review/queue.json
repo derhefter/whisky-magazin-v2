@@ -26200,7 +26200,7 @@
         "ID bereits vorhanden (Duplikat): tullamore-dew"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "tullamore-dew",
         "name": "Tullamore D.E.W. Distillery",
@@ -26246,7 +26246,10 @@
         "published": true,
         "created_at": "2026-04-22T21:45:00Z",
         "last_updated": "2026-04-22T21:45:00Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:39:59Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
