@@ -17880,7 +17880,7 @@
         "ID bereits vorhanden (Duplikat): bellerhof"
       ],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "rejected",
       "normalized": {
         "id": "bellerhof",
         "name": "Bellerhof Brennerei",
@@ -17922,7 +17922,10 @@
         "published": true,
         "created_at": "2026-04-24T19:13:49Z",
         "last_updated": "2026-04-24T19:13:49Z"
-      }
+      },
+      "decision": "reject",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T14:37:57Z"
     },
     {
       "batch_id": "distilleries_20260426T082819_7aaf7a",
