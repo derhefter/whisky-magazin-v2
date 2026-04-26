@@ -1,0 +1,39 @@
+{
+  "batch_id": "whiskies_20260426T151428_45a3d8",
+  "entity": "whiskies",
+  "imported_at": "2026-04-26T15:14:28Z",
+  "raw": [
+    {
+      "id": "boundary-oak-kentucky-bourbon",
+      "slug": "boundary-oak-kentucky-bourbon",
+      "name": "Boundary Oak Kentucky Bourbon",
+      "country_id": "usa",
+      "region_id": "kentucky",
+      "distillery_id": "general-george-stillhouse-boundary-oak-distillery",
+      "whisky_type": "bourbon",
+      "style_tags": [],
+      "age_statement": null,
+      "nas": true,
+      "abv": null,
+      "cask_types": [],
+      "smoke_profile": "none",
+      "tasting_notes_nose": "",
+      "tasting_notes_palate": "",
+      "tasting_notes_finish": "",
+      "short_description": "Boundary Oak Kentucky Bourbon ist ein charaktervoller bourbon aus der General George Stillhouse (Boundary Oak Distillery).",
+      "long_description": "Der Boundary Oak Kentucky Bourbon repräsentiert den klassischen Stil der General George Stillhouse (Boundary Oak Distillery). Sorgfältig hergestellt und gereift, bietet er ein authentisches Geschmackserlebnis aus Kentucky.",
+      "editorial_notes": "",
+      "travel_context": "",
+      "image": null,
+      "source_urls": [],
+      "source_status": "verified",
+      "review_status": "approved",
+      "published": true,
+      "related_articles": [],
+      "seo_title": "Boundary Oak Kentucky Bourbon | bourbon aus USA",
+      "seo_description": "Entdecken Sie Boundary Oak Kentucky Bourbon, einen erstklassigen bourbon von der General George Stillhouse (Boundary Oak Distillery) in Kentucky.",
+      "created_at": "2026-04-24T21:16:37Z",
+      "last_updated": "2026-04-24T21:16:37Z"
+    }
+  ]
+}
