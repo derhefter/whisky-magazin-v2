@@ -55,13 +55,48 @@
     "deleted": true
   },
   {
+    "id": "usa",
     "slug": "usa",
-    "published": true,
-    "short_description": "Das Mutterland des Bourbon Whiskys.",
     "name_de": "USA",
     "name_en": "USA",
-    "id": "usa",
-    "created_at": "2026-04-25T07:00:36Z",
-    "last_updated": "2026-04-25T07:00:36Z"
+    "short_description": "Heimat von Bourbon und Rye, geprägt durch Mais und Roggen.",
+    "long_description": "Der amerikanische Whiskey hat eine bewegte Geschichte, von den Anfängen der Siedler bis zur Prohibition und der heutigen Renaissance. Die bekannteste Gattung ist der Bourbon, der mindestens 51% Mais enthalten muss und in frischen, ausgekohlten Eichenfässern reift. Neben Kentucky und Tennessee, dem Herzen der Produktion, entstehen heute in fast allen Bundesstaaten hochwertige Whiskeys, darunter Rye, Single Malt und Wheat Whiskeys.",
+    "travel_context": "Der Kentucky Bourbon Trail ist ein Muss für jeden Fan, aber auch Regionen wie Washington und Texas bieten spannende Destillerietouren.",
+    "image": null,
+    "seo_title": "Amerikanischer Whiskey: Bourbon, Rye & Tennessee Whiskey Guide",
+    "seo_description": "Alles über US-Whiskey: Entdecken Sie die Welt von Bourbon und Rye. Von den großen Destillerien in Kentucky bis zu Craft-Distilleries landesweit.",
+    "published": true,
+    "created_at": "2026-04-26T18:00:00Z",
+    "last_updated": "2026-04-26T17:09:47Z"
+  },
+  {
+    "id": "canada",
+    "slug": "kanada",
+    "name_de": "Kanada",
+    "name_en": "Canada",
+    "short_description": "Bekannt für sanfte Blends und den charakteristischen Roggen-Stil.",
+    "long_description": "Kanadischer Whisky zeichnet sich traditionell durch seine Leichtigkeit und Milde aus. Oft als 'Rye Whisky' bezeichnet, auch wenn der Roggenanteil variieren kann, wird er meist als Blend aus verschiedenen Getreidesorten hergestellt. Kanada hat strenge Regeln für die Reifung (mindestens drei Jahre in kleinen Holzfässern) und erlebt derzeit eine spannende Phase, in der neue Destillerien vermehrt auf Single Malts und reine Rye Whiskys setzen.",
+    "travel_context": "Von den historischen Brennereien in Ontario bis zu den neuen Destillerien in British Columbia und den Highlands von Nova Scotia bietet Kanada weite Whisky-Landschaften.",
+    "image": null,
+    "seo_title": "Kanadischer Whisky Guide: Rye, Blends & Single Malts",
+    "seo_description": "Entdecken Sie die Vielfalt des kanadischen Whiskys. Alles über Herstellung, Marken wie Crown Royal und die neue Generation von Craft-Destillerien.",
+    "published": true,
+    "created_at": "2026-04-26T18:00:00Z",
+    "last_updated": "2026-04-26T17:09:47Z"
+  },
+  {
+    "id": "japan",
+    "slug": "japan",
+    "name_de": "Japan",
+    "name_en": "Japan",
+    "short_description": "Perfektionismus und Eleganz, inspiriert durch die schottische Tradition.",
+    "long_description": "Japanischer Whisky hat in den letzten Jahrzehnten die Weltbühne erobert und wird für seine außergewöhnliche Qualität und Balance geschätzt. Ursprünglich stark am schottischen Vorbild orientiert, hat Japan einen ganz eigenen Stil entwickelt, der oft durch florale Noten, Präzision im Blending und den Einsatz heimischer Hölzer wie Mizunara-Eiche geprägt ist. Die großen Häuser Suntory und Nikka bilden das Rückgrat, ergänzt durch eine wachsende Zahl kleinerer, innovativer Brennereien.",
+    "travel_context": "Die Yamazaki Destillerie bei Kyoto oder Yoichi auf Hokkaido sind Pilgerstätten für Whisky-Liebhaber, die die japanische Handwerkskunst hautnah erleben wollen.",
+    "image": null,
+    "seo_title": "Japanischer Whisky Guide: Hibiki, Yamazaki & Nikka",
+    "seo_description": "Erfahren Sie alles über japanischen Whisky: Von der Geschichte Masataka Taketsurus bis zu den begehrten Raritäten von Suntory und Nikka.",
+    "published": true,
+    "created_at": "2026-04-26T18:00:00Z",
+    "last_updated": "2026-04-26T17:09:47Z"
   }
 ]
