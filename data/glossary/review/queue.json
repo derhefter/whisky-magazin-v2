@@ -40612,7 +40612,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "tennessee-bourbon",
         "slug": "tennessee-bourbon",
@@ -40676,7 +40676,10 @@
         "seo_description": "Entdecken Sie Tennessee Bourbon, einen erstklassigen bourbon von der H Clark Distillery in Tennessee.",
         "created_at": "2026-04-24T21:18:11Z",
         "last_updated": "2026-04-24T21:18:11Z"
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-26T17:26:30Z"
     },
     {
       "batch_id": "whiskies_20260426T172257_5c7760",
