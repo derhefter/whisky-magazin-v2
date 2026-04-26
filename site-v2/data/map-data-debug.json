@@ -3162,23 +3162,6 @@
       "visited": false
     },
     {
-      "id": "glossary-dist-hercynian-distilling-co-hammerschmiede",
-      "slug": "hercynian-distilling-co-hammerschmiede",
-      "name": "Hercynian Distilling Co. / Hammerschmiede",
-      "lat": 51.6425,
-      "lon": 10.6139,
-      "type": "distillery",
-      "region": "Niedersachsen",
-      "country": "Deutschland",
-      "short_description": "",
-      "founded": "1985",
-      "glossary_url": "/whisky-glossar/destillerien/hercynian-distilling-co-hammerschmiede/",
-      "years_visited": [],
-      "articles": [],
-      "photos": [],
-      "visited": false
-    },
-    {
       "id": "glossary-dist-badische-staatsbrauerei-rothaus",
       "slug": "badische-staatsbrauerei-rothaus",
       "name": "Badische Staatsbrauerei Rothaus",
@@ -3642,7 +3625,6 @@
     "Lowlands",
     "Lynchburg",
     "Nashville",
-    "Niedersachsen",
     "Nordirland",
     "Orkney",
     "Perthshire",
@@ -3680,10 +3662,10 @@
     "USA"
   ],
   "stats": {
-    "total_locations": 150,
-    "total_distilleries": 150,
+    "total_locations": 149,
+    "total_distilleries": 149,
     "visited_distilleries": 120,
-    "unvisited_distilleries": 30,
+    "unvisited_distilleries": 29,
     "total_routes": 0,
     "total_articles": 46,
     "years_covered": "2007-2024"
