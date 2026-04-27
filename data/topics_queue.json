@@ -220,7 +220,7 @@
       "season": "winter",
       "occasion": "weihnachten",
       "priority": 18,
-      "status": "pending",
+      "status": "in_progress",
       "article_slug": null,
       "created_at": "2026-04-09",
       "notes": ""
@@ -285,7 +285,7 @@
       "season": "winter",
       "occasion": "silvester",
       "priority": 18,
-      "status": "pending",
+      "status": "in_progress",
       "article_slug": null,
       "created_at": "2026-04-09",
       "notes": ""
