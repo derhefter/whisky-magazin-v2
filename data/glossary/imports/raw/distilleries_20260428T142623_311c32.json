@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142623_311c32",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:23Z",
+  "raw": [
+    {
+      "id": "kurayoshi-matsui",
+      "name": "Kurayoshi / Matsui Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Matsui Shuzo",
+      "founded": 1910,
+      "description": "Gelegen in der Präfektur Tottori, nutzt die Destillerie das weiche Quellwasser des Berg Daisen."
+    }
+  ]
+}
