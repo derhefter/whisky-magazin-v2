@@ -43087,7 +43087,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kanosuke",
         "name": "Kanosuke Distillery",
@@ -43109,7 +43109,10 @@
         "owner": "Komasa Jozo",
         "founded": 2017,
         "description": "Gelegen am Fukiagehama Strand in Kagoshima, nutzt diese Destillerie drei verschiedene Brennblasen für unterschiedliche Geschmacksprofile."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:05Z"
     },
     {
       "batch_id": "distilleries_20260428T142608_3fed45",
