@@ -43933,7 +43933,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "amahagan-edition-no1",
         "name": "Amahagan World Malt Edition No.1",
@@ -43959,7 +43959,10 @@
         "smoke_profile": "unpeated",
         "abv": 47,
         "description": "Ein 'World Malt' Blend der Nagahama Destillerie, der japanischen Malt mit importiertem Malt kombiniert."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:45Z"
     },
     {
       "batch_id": "whiskies_20260428T143033_493efd",
