@@ -44327,7 +44327,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "matsui-the-kurayoshi-pure-malt",
         "name": "The Kurayoshi Pure Malt",
@@ -44353,7 +44353,10 @@
         "smoke_profile": "unpeated",
         "abv": 43,
         "description": "Ein Pure Malt (Blended Malt), gereift mit dem weichen Wasser der Tottori-Präfektur."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:07Z"
     },
     {
       "batch_id": "whiskies_20260428T143122_b0203f",
