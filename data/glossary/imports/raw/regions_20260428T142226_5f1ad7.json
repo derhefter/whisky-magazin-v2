@@ -1,0 +1,13 @@
+{
+  "batch_id": "regions_20260428T142226_5f1ad7",
+  "entity": "regions",
+  "imported_at": "2026-04-28T14:22:26Z",
+  "raw": [
+    {
+      "id": "kyushu",
+      "name": "Kyushu",
+      "country_id": "japan",
+      "description": "Die südlichste der vier Hauptinseln, bekannt für ein wärmeres Klima, das eine schnellere Reifung begünstigt."
+    }
+  ]
+}
