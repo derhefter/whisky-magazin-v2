@@ -43297,7 +43297,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "mars-tsunuki",
         "name": "Mars Tsunuki Distillery",
@@ -43319,7 +43319,10 @@
         "owner": "Hombo Shuzo",
         "founded": 2016,
         "description": "Die zweite Destillerie von Mars Whisky, gelegen im subtropischen Süden Japans in der Präfektur Kagoshima."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:21Z"
     },
     {
       "batch_id": "distilleries_20260428T142636_f241a7",
