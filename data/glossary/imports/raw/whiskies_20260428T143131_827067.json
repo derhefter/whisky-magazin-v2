@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143131_827067",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:31Z",
+  "raw": [
+    {
+      "id": "miyagikyo-single-malt",
+      "name": "Miyagikyo Single Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "miyagikyo",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 45,
+      "description": "Ein eleganter Single Malt mit Fokus auf Sherry-Einfluss, getrockneten Früchten und blumigen Noten."
+    }
+  ]
+}
