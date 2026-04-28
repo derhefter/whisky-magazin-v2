@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143018_fdb8d4",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:18Z",
+  "raw": [
+    {
+      "id": "akashi-blended",
+      "name": "Akashi Blended Whisky",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "white-oak",
+      "whisky_type": "blend",
+      "smoke_profile": "unpeated",
+      "abv": 40,
+      "description": "Ein zugänglicher Blend von White Oak (Eigashima), der sowohl Grain- als auch Malt-Whiskys enthält."
+    }
+  ]
+}
