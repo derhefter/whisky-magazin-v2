@@ -42877,7 +42877,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "akkeshi",
         "name": "Akkeshi Distillery",
@@ -42899,7 +42899,10 @@
         "owner": "Kenten Co., Ltd.",
         "founded": 2016,
         "description": "Inspiriert von Islay-Whiskys, produziert Akkeshi auf Hokkaido stark getorften Whisky in einer feuchten, nebligen Umgebung."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:28:50Z"
     },
     {
       "batch_id": "distilleries_20260428T142539_1b644e",
