@@ -44600,7 +44600,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "saburomaru-single-malt",
         "name": "Saburomaru Single Malt",
@@ -44626,7 +44626,10 @@
         "smoke_profile": "peated",
         "abv": 53,
         "description": "Ein kräftiger, rauchiger Single Malt aus der Präfektur Toyama."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:23Z"
     },
     {
       "batch_id": "whiskies_20260428T143154_5dc15d",
