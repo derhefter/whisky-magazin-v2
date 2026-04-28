@@ -42912,7 +42912,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "asaka",
         "name": "Asaka Distillery",
@@ -42934,7 +42934,10 @@
         "owner": "Sasanokawa Shuzo",
         "founded": 2016,
         "description": "Eine historische Sake-Brauerei in Fukushima, die 2016 die Whisky-Produktion unter dem Namen Asaka wiederaufnahm."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:28:52Z"
     },
     {
       "batch_id": "distilleries_20260428T142544_8a3733",
