@@ -44444,7 +44444,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "miyagikyo-single-malt",
         "name": "Miyagikyo Single Malt",
@@ -44470,7 +44470,10 @@
         "smoke_profile": "unpeated",
         "abv": 45,
         "description": "Ein eleganter Single Malt mit Fokus auf Sherry-Einfluss, getrockneten Früchten und blumigen Noten."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:15Z"
     },
     {
       "batch_id": "whiskies_20260428T143135_f5b1cc",
