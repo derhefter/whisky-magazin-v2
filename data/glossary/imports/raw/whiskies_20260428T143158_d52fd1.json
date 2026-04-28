@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143158_d52fd1",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:58Z",
+  "raw": [
+    {
+      "id": "shizuoka-prologue-k",
+      "name": "Shizuoka Prologue K",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "shizuoka",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 55.5,
+      "description": "Hergestellt mit den legendären Brennblasen der ehemaligen Karuizawa-Destillerie."
+    }
+  ]
+}
