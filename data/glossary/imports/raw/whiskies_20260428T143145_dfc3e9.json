@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143145_dfc3e9",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:45Z",
+  "raw": [
+    {
+      "id": "ontake-single-malt",
+      "name": "Ontake Single Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "ontake",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 48,
+      "description": "Der erste Single Malt der Ontake-Destillerie aus Nagano."
+    }
+  ]
+}
