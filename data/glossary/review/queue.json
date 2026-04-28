@@ -3429,6 +3429,13 @@
       "imported_at": "2026-04-28T14:26:03Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142608_3fed45",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:26:08Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -42986,6 +42993,38 @@
         "owner": "Komasa Jozo",
         "founded": 2017,
         "description": "Gelegen am Fukiagehama Strand in Kagoshima, nutzt diese Destillerie drei verschiedene Brennblasen für unterschiedliche Geschmacksprofile."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142608_3fed45",
+      "entity": "distilleries",
+      "item_id": "kiyosato-mobius",
+      "item_slug": "kiyosato-moebius-yamanashi-craft-whisky",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "kiyosato-mobius",
+        "name": "Kiyosato / Möbius (Yamanashi) Craft Whisky",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Kiyosato",
+        "founded": 2014,
+        "description": "Eine kleine Craft-Whisky-Destillerie in der Präfektur Yamanashi.",
+        "slug": "kiyosato-moebius-yamanashi-craft-whisky",
+        "created_at": "2026-04-28T14:26:08Z",
+        "last_updated": "2026-04-28T14:26:08Z",
+        "published": false
+      },
+      "raw": {
+        "id": "kiyosato-mobius",
+        "name": "Kiyosato / Möbius (Yamanashi) Craft Whisky",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Kiyosato",
+        "founded": 2014,
+        "description": "Eine kleine Craft-Whisky-Destillerie in der Präfektur Yamanashi."
       }
     }
   ]
