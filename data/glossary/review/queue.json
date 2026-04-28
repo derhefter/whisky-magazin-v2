@@ -43262,7 +43262,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "mars-shinshu",
         "name": "Mars Shinshu Distillery",
@@ -43284,7 +43284,10 @@
         "owner": "Hombo Shuzo",
         "founded": 1985,
         "description": "Die höchstgelegene Destillerie Japans in den japanischen Alpen, Präfektur Nagano."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:19Z"
     },
     {
       "batch_id": "distilleries_20260428T142631_1e1a70",
