@@ -44678,7 +44678,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "shizuoka-prologue-k",
         "name": "Shizuoka Prologue K",
@@ -44704,7 +44704,10 @@
         "smoke_profile": "unpeated",
         "abv": 55.5,
         "description": "Hergestellt mit den legendären Brennblasen der ehemaligen Karuizawa-Destillerie."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:28Z"
     },
     {
       "batch_id": "whiskies_20260428T143203_81db4c",
