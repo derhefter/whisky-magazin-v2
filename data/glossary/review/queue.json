@@ -42636,7 +42636,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "honshu",
         "name": "Honshu",
@@ -42652,7 +42652,10 @@
         "name": "Honshu",
         "country_id": "japan",
         "description": "Die größte Hauptinsel Japans, Heimat der meisten Destillerien, darunter Yamazaki und Hakushu."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:24:07Z"
     },
     {
       "batch_id": "regions_20260428T142226_5f1ad7",
