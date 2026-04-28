@@ -1,0 +1,47 @@
+{
+  "batch_id": "whiskies_20260428T143018_fdb8d4",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:18Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "akashi-blended",
+        "name": "Akashi Blended Whisky",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "white-oak",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 40,
+        "description": "Ein zugänglicher Blend von White Oak (Eigashima), der sowohl Grain- als auch Malt-Whiskys enthält."
+      },
+      "normalized": {
+        "id": "akashi-blended",
+        "name": "Akashi Blended Whisky",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "white-oak",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 40,
+        "description": "Ein zugänglicher Blend von White Oak (Eigashima), der sowohl Grain- als auch Malt-Whiskys enthält.",
+        "slug": "akashi-blended-whisky",
+        "created_at": "2026-04-28T14:30:18Z",
+        "last_updated": "2026-04-28T14:30:18Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
