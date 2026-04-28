@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143044_02b4db",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:44Z",
+  "raw": [
+    {
+      "id": "fuji-single-blended",
+      "name": "Fuji Single Blended Japanese Whisky",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "fuji-gotemba",
+      "whisky_type": "blend",
+      "smoke_profile": "unpeated",
+      "abv": 43,
+      "description": "Eine Kombination aus Malt und Grain Whiskys, die beide in der Fuji Gotemba Destillerie hergestellt wurden."
+    }
+  ]
+}
