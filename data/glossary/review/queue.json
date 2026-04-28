@@ -3506,6 +3506,13 @@
       "imported_at": "2026-04-28T14:26:55Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142700_221ded",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:27:00Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -43415,6 +43422,38 @@
         "owner": "Sakurao Brewery and Distillery",
         "founded": 2018,
         "description": "Ansässig in Hiroshima, produziert die Destillerie sowohl Single Malts als auch Blends wie Togouchi."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142700_221ded",
+      "entity": "distilleries",
+      "item_id": "shizuoka",
+      "item_slug": "shizuoka-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "shizuoka",
+        "name": "Shizuoka Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Gaiaflow",
+        "founded": 2016,
+        "description": "Gelegen in der Präfektur Shizuoka, nutzt die Destillerie unter anderem alte Brennblasen der legendären Karuizawa-Destillerie.",
+        "slug": "shizuoka-distillery",
+        "created_at": "2026-04-28T14:27:00Z",
+        "last_updated": "2026-04-28T14:27:00Z",
+        "published": false
+      },
+      "raw": {
+        "id": "shizuoka",
+        "name": "Shizuoka Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Gaiaflow",
+        "founded": 2016,
+        "description": "Gelegen in der Präfektur Shizuoka, nutzt die Destillerie unter anderem alte Brennblasen der legendären Karuizawa-Destillerie."
       }
     }
   ]
