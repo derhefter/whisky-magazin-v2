@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142608_3fed45",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:08Z",
+  "raw": [
+    {
+      "id": "kiyosato-mobius",
+      "name": "Kiyosato / Möbius (Yamanashi) Craft Whisky",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Kiyosato",
+      "founded": 2014,
+      "description": "Eine kleine Craft-Whisky-Destillerie in der Präfektur Yamanashi."
+    }
+  ]
+}
