@@ -43577,7 +43577,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "yamazaki",
         "name": "Yamazaki Distillery",
@@ -43599,7 +43599,10 @@
         "owner": "Suntory",
         "founded": 1923,
         "description": "Die erste und älteste kommerzielle Whisky-Brennerei Japans, gelegen in Shimamoto, Präfektur Osaka."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:40Z"
     },
     {
       "batch_id": "distilleries_20260428T142716_71c73f",
