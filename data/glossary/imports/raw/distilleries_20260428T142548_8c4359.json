@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142548_8c4359",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:25:48Z",
+  "raw": [
+    {
+      "id": "chita",
+      "name": "Chita Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Suntory",
+      "founded": 1972,
+      "description": "Die Getreidedestillerie von Suntory in der Präfektur Aichi, die hauptsächlich Grain Whisky für Blends wie Hibiki und Toki produziert."
+    }
+  ]
+}
