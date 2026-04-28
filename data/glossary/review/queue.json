@@ -44522,7 +44522,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "nikka-from-the-barrel",
         "name": "Nikka From The Barrel",
@@ -44548,7 +44548,10 @@
         "smoke_profile": "lightly_peated",
         "abv": 51.4,
         "description": "Ein ikonischer Blend mit hohem Alkoholgehalt. Kraftvoll, komplex mit Noten von Karamell, Gewürzen und einer Spur Rauch."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:19Z"
     },
     {
       "batch_id": "whiskies_20260428T143145_dfc3e9",
