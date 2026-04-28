@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143207_aa5566",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:32:07Z",
+  "raw": [
+    {
+      "id": "tsunuki-single-malt",
+      "name": "Tsunuki Single Malt",
+      "country_id": "japan",
+      "region_id": "kyushu",
+      "distillery_id": "mars-tsunuki",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 50,
+      "description": "Ein kräftiger Single Malt aus der subtropischen Mars Tsunuki Destillerie in Kagoshima."
+    }
+  ]
+}
