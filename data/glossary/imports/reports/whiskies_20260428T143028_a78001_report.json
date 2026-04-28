@@ -1,0 +1,47 @@
+{
+  "batch_id": "whiskies_20260428T143028_a78001",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:28Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "amahagan-edition-no1",
+        "name": "Amahagan World Malt Edition No.1",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "nagahama",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 47,
+        "description": "Ein 'World Malt' Blend der Nagahama Destillerie, der japanischen Malt mit importiertem Malt kombiniert."
+      },
+      "normalized": {
+        "id": "amahagan-edition-no1",
+        "name": "Amahagan World Malt Edition No.1",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "nagahama",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 47,
+        "description": "Ein 'World Malt' Blend der Nagahama Destillerie, der japanischen Malt mit importiertem Malt kombiniert.",
+        "slug": "amahagan-world-malt-edition-no-1",
+        "created_at": "2026-04-28T14:30:28Z",
+        "last_updated": "2026-04-28T14:30:28Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
