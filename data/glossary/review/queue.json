@@ -44639,7 +44639,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "sakurao-single-malt",
         "name": "Sakurao Single Malt",
@@ -44665,7 +44665,10 @@
         "smoke_profile": "unpeated",
         "abv": 54,
         "description": "Ein Single Malt direkt aus der Küstenregion Hiroshima."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:26Z"
     },
     {
       "batch_id": "whiskies_20260428T143158_d52fd1",
