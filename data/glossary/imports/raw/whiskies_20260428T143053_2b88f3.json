@@ -1,0 +1,19 @@
+{
+  "batch_id": "whiskies_20260428T143053_2b88f3",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:53Z",
+  "raw": [
+    {
+      "id": "hakushu-12",
+      "name": "Hakushu 12 Year Old",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "hakushu",
+      "whisky_type": "single_malt",
+      "smoke_profile": "lightly_peated",
+      "abv": 43,
+      "age": 12,
+      "description": "Ein frischer, kräuteriger Single Malt mit Noten von grünem Apfel, Jasmin und einer dezenten Rauchigkeit."
+    }
+  ]
+}
