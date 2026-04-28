@@ -42694,7 +42694,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "okinawa",
         "name": "Okinawa",
@@ -42710,7 +42710,10 @@
         "name": "Okinawa",
         "country_id": "japan",
         "description": "Die südlichste Präfektur Japans, bekannt für die Herstellung von Ryukyu-Whisky auf Reisbasis."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:24:12Z"
     }
   ]
 }
