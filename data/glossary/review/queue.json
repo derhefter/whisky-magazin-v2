@@ -44208,7 +44208,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kanosuke-single-malt",
         "name": "Kanosuke Single Malt",
@@ -44234,7 +44234,10 @@
         "smoke_profile": "unpeated",
         "abv": 48,
         "description": "Ein weicher Single Malt aus Kagoshima, der oft in Shochu-Fässern gereift wird."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:00Z"
     },
     {
       "batch_id": "whiskies_20260428T143108_60e72c",
