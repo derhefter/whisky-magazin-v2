@@ -44717,7 +44717,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "togouchi-premium",
         "name": "Togouchi Premium Blended Whisky",
@@ -44743,7 +44743,10 @@
         "smoke_profile": "unpeated",
         "abv": 40,
         "description": "Ein Blend, der in einem stillgelegten Eisenbahntunnel in den Bergen von Hiroshima gereift wird."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:30Z"
     },
     {
       "batch_id": "whiskies_20260428T143207_aa5566",
