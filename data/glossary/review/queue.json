@@ -44483,7 +44483,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "nagahama-single-malt-bourbon-cask",
         "name": "Nagahama Single Malt Bourbon Cask",
@@ -44509,7 +44509,10 @@
         "smoke_profile": "unpeated",
         "abv": 50,
         "description": "Ein Single Malt aus der kleinsten Brennerei Japans, gereift in Bourbon-Fässern."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:17Z"
     },
     {
       "batch_id": "whiskies_20260428T143141_5d418e",
