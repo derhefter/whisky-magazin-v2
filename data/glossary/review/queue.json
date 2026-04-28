@@ -3646,6 +3646,13 @@
       "imported_at": "2026-04-28T14:31:31Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143135_f5b1cc",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:31:35Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44355,6 +44362,42 @@
         "smoke_profile": "unpeated",
         "abv": 45,
         "description": "Ein eleganter Single Malt mit Fokus auf Sherry-Einfluss, getrockneten Früchten und blumigen Noten."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143135_f5b1cc",
+      "entity": "whiskies",
+      "item_id": "nagahama-single-malt-bourbon-cask",
+      "item_slug": "nagahama-single-malt-bourbon-cask",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "nagahama-single-malt-bourbon-cask",
+        "name": "Nagahama Single Malt Bourbon Cask",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "nagahama",
+        "whisky_type": "single_malt",
+        "smoke_profile": "unpeated",
+        "abv": 50,
+        "description": "Ein Single Malt aus der kleinsten Brennerei Japans, gereift in Bourbon-Fässern.",
+        "slug": "nagahama-single-malt-bourbon-cask",
+        "created_at": "2026-04-28T14:31:35Z",
+        "last_updated": "2026-04-28T14:31:35Z",
+        "published": false
+      },
+      "raw": {
+        "id": "nagahama-single-malt-bourbon-cask",
+        "name": "Nagahama Single Malt Bourbon Cask",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "nagahama",
+        "whisky_type": "single_malt",
+        "smoke_profile": "unpeated",
+        "abv": 50,
+        "description": "Ein Single Malt aus der kleinsten Brennerei Japans, gereift in Bourbon-Fässern."
       }
     }
   ]
