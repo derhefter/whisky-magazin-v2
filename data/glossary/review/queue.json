@@ -43122,7 +43122,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kiyosato-mobius",
         "name": "Kiyosato / Möbius (Yamanashi) Craft Whisky",
@@ -43144,7 +43144,10 @@
         "owner": "Kiyosato",
         "founded": 2014,
         "description": "Eine kleine Craft-Whisky-Destillerie in der Präfektur Yamanashi."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:07Z"
     },
     {
       "batch_id": "distilleries_20260428T142613_ed4d3c",
