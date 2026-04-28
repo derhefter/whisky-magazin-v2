@@ -44795,7 +44795,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "yamazaki-12",
         "name": "Yamazaki 12 Year Old",
@@ -44823,7 +44823,10 @@
         "abv": 43,
         "age": 12,
         "description": "Der Klassiker unter den japanischen Single Malts. Bekannt für Noten von Pfirsich, Ananas, Grapefruit und Mizunara-Eiche."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:35Z"
     },
     {
       "batch_id": "whiskies_20260428T143217_dcecee",
