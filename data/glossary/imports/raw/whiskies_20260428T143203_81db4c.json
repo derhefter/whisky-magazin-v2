@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143203_81db4c",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:32:03Z",
+  "raw": [
+    {
+      "id": "togouchi-premium",
+      "name": "Togouchi Premium Blended Whisky",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "sakurao",
+      "whisky_type": "blend",
+      "smoke_profile": "unpeated",
+      "abv": 40,
+      "description": "Ein Blend, der in einem stillgelegten Eisenbahntunnel in den Bergen von Hiroshima gereift wird."
+    }
+  ]
+}
