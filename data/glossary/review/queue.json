@@ -43612,7 +43612,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "yoichi",
         "name": "Yoichi Distillery",
@@ -43634,7 +43634,10 @@
         "owner": "Nikka Whisky",
         "founded": 1934,
         "description": "Gegründet von Masataka Taketsuru auf Hokkaido, nutzt Kohlebefeuerung für die Brennblasen, was zu einem kräftigen, rauchigen Stil führt."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:43Z"
     }
   ]
 }
