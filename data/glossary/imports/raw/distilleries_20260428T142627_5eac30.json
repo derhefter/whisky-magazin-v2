@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142627_5eac30",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:27Z",
+  "raw": [
+    {
+      "id": "mars-shinshu",
+      "name": "Mars Shinshu Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Hombo Shuzo",
+      "founded": 1985,
+      "description": "Die höchstgelegene Destillerie Japans in den japanischen Alpen, Präfektur Nagano."
+    }
+  ]
+}
