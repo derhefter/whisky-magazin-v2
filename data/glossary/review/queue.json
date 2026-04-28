@@ -44366,7 +44366,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "mars-komagatake-limited-edition",
         "name": "Mars Komagatake Limited Edition",
@@ -44392,7 +44392,10 @@
         "smoke_profile": "unpeated",
         "abv": 48,
         "description": "Ein jährlich erscheinender Single Malt aus der Mars Shinshu Destillerie, gereift in den japanischen Alpen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:10Z"
     },
     {
       "batch_id": "whiskies_20260428T143126_a8510e",
