@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143135_f5b1cc",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:35Z",
+  "raw": [
+    {
+      "id": "nagahama-single-malt-bourbon-cask",
+      "name": "Nagahama Single Malt Bourbon Cask",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "nagahama",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 50,
+      "description": "Ein Single Malt aus der kleinsten Brennerei Japans, gereift in Bourbon-Fässern."
+    }
+  ]
+}
