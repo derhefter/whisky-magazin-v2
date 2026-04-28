@@ -44561,7 +44561,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "ontake-single-malt",
         "name": "Ontake Single Malt",
@@ -44587,7 +44587,10 @@
         "smoke_profile": "unpeated",
         "abv": 48,
         "description": "Der erste Single Malt der Ontake-Destillerie aus Nagano."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:21Z"
     },
     {
       "batch_id": "whiskies_20260428T143149_88ad37",
