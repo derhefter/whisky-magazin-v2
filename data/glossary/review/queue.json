@@ -44286,7 +44286,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kujira-ryukyu-whisky-12",
         "name": "Kujira Ryukyu Whisky 12 Years Old",
@@ -44314,7 +44314,10 @@
         "abv": 43,
         "age": 12,
         "description": "Ein einzigartiger Whisky aus 100% Indica-Reis, gereift in Sherryfässern auf Okinawa."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:05Z"
     },
     {
       "batch_id": "whiskies_20260428T143117_d07c88",
