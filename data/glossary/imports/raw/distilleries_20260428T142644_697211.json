@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142644_697211",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:44Z",
+  "raw": [
+    {
+      "id": "ontake",
+      "name": "Ontake Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Nishi Shuzo",
+      "founded": 2019,
+      "description": "Eine neue Destillerie in Nagano, betrieben von einem renommierten Shochu-Hersteller."
+    }
+  ]
+}
