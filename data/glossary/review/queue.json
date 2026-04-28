@@ -43157,7 +43157,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "komoro",
         "name": "Komoro Distillery",
@@ -43179,7 +43179,10 @@
         "owner": "Karuisawa Distillers Inc.",
         "founded": 2023,
         "description": "Eine neue High-Tech-Destillerie in Nagano, geleitet von Ian Chang (ehemals Kavalan)."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:11Z"
     },
     {
       "batch_id": "distilleries_20260428T142619_b83c17",
