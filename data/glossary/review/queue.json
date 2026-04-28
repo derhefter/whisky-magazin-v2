@@ -43192,7 +43192,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kujira-kumesen",
         "name": "Kujira / Kumesen (Okinawa)",
@@ -43214,7 +43214,10 @@
         "owner": "Kumesen Syuzo",
         "founded": 1952,
         "description": "Spezialisiert auf Ryukyu Whisky, der aus Indica-Reis destilliert und in Eichenfässern in Okinawas subtropischem Klima gereift wird."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:13Z"
     },
     {
       "batch_id": "distilleries_20260428T142623_311c32",
