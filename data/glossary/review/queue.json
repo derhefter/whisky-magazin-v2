@@ -3709,6 +3709,13 @@
       "imported_at": "2026-04-28T14:32:12Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143217_dcecee",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:32:17Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44744,6 +44751,42 @@
         "abv": 43,
         "age": 12,
         "description": "Der Klassiker unter den japanischen Single Malts. Bekannt für Noten von Pfirsich, Ananas, Grapefruit und Mizunara-Eiche."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143217_dcecee",
+      "entity": "whiskies",
+      "item_id": "yoichi-single-malt",
+      "item_slug": "yoichi-single-malt",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "yoichi-single-malt",
+        "name": "Yoichi Single Malt",
+        "country_id": "japan",
+        "region_id": "hokkaido",
+        "distillery_id": "yoichi",
+        "whisky_type": "single_malt",
+        "smoke_profile": "peated",
+        "abv": 45,
+        "description": "Die Standardabfüllung ohne Altersangabe (NAS) von Yoichi. Kräftig, maritim und mit deutlichem Torfrauch.",
+        "slug": "yoichi-single-malt",
+        "created_at": "2026-04-28T14:32:17Z",
+        "last_updated": "2026-04-28T14:32:17Z",
+        "published": false
+      },
+      "raw": {
+        "id": "yoichi-single-malt",
+        "name": "Yoichi Single Malt",
+        "country_id": "japan",
+        "region_id": "hokkaido",
+        "distillery_id": "yoichi",
+        "whisky_type": "single_malt",
+        "smoke_profile": "peated",
+        "abv": 45,
+        "description": "Die Standardabfüllung ohne Altersangabe (NAS) von Yoichi. Kräftig, maritim und mit deutlichem Torfrauch."
       }
     }
   ]
