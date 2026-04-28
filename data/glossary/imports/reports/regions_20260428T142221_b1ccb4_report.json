@@ -1,0 +1,37 @@
+{
+  "batch_id": "regions_20260428T142221_b1ccb4",
+  "entity": "regions",
+  "imported_at": "2026-04-28T14:22:21Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "honshu",
+        "name": "Honshu",
+        "country_id": "japan",
+        "description": "Die größte Hauptinsel Japans, Heimat der meisten Destillerien, darunter Yamazaki und Hakushu."
+      },
+      "normalized": {
+        "id": "honshu",
+        "name": "Honshu",
+        "country_id": "japan",
+        "description": "Die größte Hauptinsel Japans, Heimat der meisten Destillerien, darunter Yamazaki und Hakushu.",
+        "slug": "honshu",
+        "created_at": "2026-04-28T14:22:21Z",
+        "last_updated": "2026-04-28T14:22:21Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
