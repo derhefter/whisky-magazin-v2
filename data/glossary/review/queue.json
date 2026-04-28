@@ -3576,6 +3576,13 @@
       "imported_at": "2026-04-28T14:30:44Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143049_a9bc4b",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:30:49Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -43921,6 +43928,42 @@
         "smoke_profile": "unpeated",
         "abv": 43,
         "description": "Eine Kombination aus Malt und Grain Whiskys, die beide in der Fuji Gotemba Destillerie hergestellt wurden."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143049_a9bc4b",
+      "entity": "whiskies",
+      "item_id": "fuji-single-grain",
+      "item_slug": "fuji-single-grain-whiskey",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "fuji-single-grain",
+        "name": "Fuji Single Grain Whiskey",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "fuji-gotemba",
+        "whisky_type": "grain",
+        "smoke_profile": "unpeated",
+        "abv": 46,
+        "description": "Ein Blend aus verschiedenen Grain Whiskys (Heavy, Medium, Light), destilliert am Fuße des Mount Fuji.",
+        "slug": "fuji-single-grain-whiskey",
+        "created_at": "2026-04-28T14:30:49Z",
+        "last_updated": "2026-04-28T14:30:49Z",
+        "published": false
+      },
+      "raw": {
+        "id": "fuji-single-grain",
+        "name": "Fuji Single Grain Whiskey",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "fuji-gotemba",
+        "whisky_type": "grain",
+        "smoke_profile": "unpeated",
+        "abv": 46,
+        "description": "Ein Blend aus verschiedenen Grain Whiskys (Heavy, Medium, Light), destilliert am Fuße des Mount Fuji."
       }
     }
   ]
