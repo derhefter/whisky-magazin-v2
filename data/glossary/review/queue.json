@@ -3401,6 +3401,13 @@
       "imported_at": "2026-04-28T14:25:44Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142548_8c4359",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:25:48Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -42830,6 +42837,38 @@
         "owner": "Venture Whisky",
         "founded": 2008,
         "description": "Eine kleine, hoch angesehene handwerkliche Destillerie von Ichiro Akuto, bekannt für experimentelle Reifungen."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142548_8c4359",
+      "entity": "distilleries",
+      "item_id": "chita",
+      "item_slug": "chita-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "chita",
+        "name": "Chita Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Suntory",
+        "founded": 1972,
+        "description": "Die Getreidedestillerie von Suntory in der Präfektur Aichi, die hauptsächlich Grain Whisky für Blends wie Hibiki und Toki produziert.",
+        "slug": "chita-distillery",
+        "created_at": "2026-04-28T14:25:48Z",
+        "last_updated": "2026-04-28T14:25:48Z",
+        "published": false
+      },
+      "raw": {
+        "id": "chita",
+        "name": "Chita Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Suntory",
+        "founded": 1972,
+        "description": "Die Getreidedestillerie von Suntory in der Präfektur Aichi, die hauptsächlich Grain Whisky für Blends wie Hibiki und Toki produziert."
       }
     }
   ]
