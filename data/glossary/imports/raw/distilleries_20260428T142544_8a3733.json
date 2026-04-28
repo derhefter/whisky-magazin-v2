@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142544_8a3733",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:25:44Z",
+  "raw": [
+    {
+      "id": "chichibu",
+      "name": "Chichibu Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Venture Whisky",
+      "founded": 2008,
+      "description": "Eine kleine, hoch angesehene handwerkliche Destillerie von Ichiro Akuto, bekannt für experimentelle Reifungen."
+    }
+  ]
+}
