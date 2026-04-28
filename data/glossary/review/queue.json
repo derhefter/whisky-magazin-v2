@@ -3520,6 +3520,13 @@
       "imported_at": "2026-04-28T14:27:05Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142711_b2fa58",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:27:11Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -43493,6 +43500,38 @@
         "owner": "Eigashima Shuzo",
         "founded": 1888,
         "description": "Die Destillerie liegt in Akashi, Präfektur Hyogo, direkt am Meer. Sie erhielt 1919 die erste Lizenz zur Whisky-Herstellung in Japan."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142711_b2fa58",
+      "entity": "distilleries",
+      "item_id": "yamazaki",
+      "item_slug": "yamazaki-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "yamazaki",
+        "name": "Yamazaki Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Suntory",
+        "founded": 1923,
+        "description": "Die erste und älteste kommerzielle Whisky-Brennerei Japans, gelegen in Shimamoto, Präfektur Osaka.",
+        "slug": "yamazaki-distillery",
+        "created_at": "2026-04-28T14:27:11Z",
+        "last_updated": "2026-04-28T14:27:11Z",
+        "published": false
+      },
+      "raw": {
+        "id": "yamazaki",
+        "name": "Yamazaki Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Suntory",
+        "founded": 1923,
+        "description": "Die erste und älteste kommerzielle Whisky-Brennerei Japans, gelegen in Shimamoto, Präfektur Osaka."
       }
     }
   ]
