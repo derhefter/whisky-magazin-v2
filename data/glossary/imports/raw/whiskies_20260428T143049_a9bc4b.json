@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143049_a9bc4b",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:49Z",
+  "raw": [
+    {
+      "id": "fuji-single-grain",
+      "name": "Fuji Single Grain Whiskey",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "fuji-gotemba",
+      "whisky_type": "grain",
+      "smoke_profile": "unpeated",
+      "abv": 46,
+      "description": "Ein Blend aus verschiedenen Grain Whiskys (Heavy, Medium, Light), destilliert am Fuße des Mount Fuji."
+    }
+  ]
+}
