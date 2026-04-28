@@ -3681,6 +3681,13 @@
       "imported_at": "2026-04-28T14:31:54Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143158_d52fd1",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:31:58Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44570,6 +44577,42 @@
         "smoke_profile": "unpeated",
         "abv": 54,
         "description": "Ein Single Malt direkt aus der Küstenregion Hiroshima."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143158_d52fd1",
+      "entity": "whiskies",
+      "item_id": "shizuoka-prologue-k",
+      "item_slug": "shizuoka-prologue-k",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "shizuoka-prologue-k",
+        "name": "Shizuoka Prologue K",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "shizuoka",
+        "whisky_type": "single_malt",
+        "smoke_profile": "unpeated",
+        "abv": 55.5,
+        "description": "Hergestellt mit den legendären Brennblasen der ehemaligen Karuizawa-Destillerie.",
+        "slug": "shizuoka-prologue-k",
+        "created_at": "2026-04-28T14:31:58Z",
+        "last_updated": "2026-04-28T14:31:58Z",
+        "published": false
+      },
+      "raw": {
+        "id": "shizuoka-prologue-k",
+        "name": "Shizuoka Prologue K",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "shizuoka",
+        "whisky_type": "single_malt",
+        "smoke_profile": "unpeated",
+        "abv": 55.5,
+        "description": "Hergestellt mit den legendären Brennblasen der ehemaligen Karuizawa-Destillerie."
       }
     }
   ]
