@@ -43017,7 +43017,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "fuji-gotemba",
         "name": "Fuji Gotemba Distillery",
@@ -43039,7 +43039,10 @@
         "owner": "Kirin",
         "founded": 1973,
         "description": "Am Fuße des Mount Fuji gelegen, produziert sowohl Malt als auch Grain Whiskys und nutzt drei verschiedene Grain-Destillationsverfahren."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:00Z"
     },
     {
       "batch_id": "distilleries_20260428T142559_a08d17",
