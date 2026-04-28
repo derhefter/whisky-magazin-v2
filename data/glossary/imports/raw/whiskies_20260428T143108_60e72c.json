@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143108_60e72c",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:08Z",
+  "raw": [
+    {
+      "id": "komoro-single-malt",
+      "name": "Komoro Single Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "komoro",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 46,
+      "description": "Zukünftiger Single Malt der neuen Komoro-Destillerie."
+    }
+  ]
+}
