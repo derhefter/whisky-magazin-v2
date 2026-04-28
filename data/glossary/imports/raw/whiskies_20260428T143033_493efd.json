@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143033_493efd",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:33Z",
+  "raw": [
+    {
+      "id": "asaka-single-malt",
+      "name": "Asaka Single Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "asaka",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 48,
+      "description": "Ein feiner Single Malt aus der Region Fukushima."
+    }
+  ]
+}
