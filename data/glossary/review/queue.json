@@ -3471,6 +3471,13 @@
       "imported_at": "2026-04-28T14:26:31Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142636_f241a7",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:26:36Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -43220,6 +43227,38 @@
         "owner": "Hombo Shuzo",
         "founded": 2016,
         "description": "Die zweite Destillerie von Mars Whisky, gelegen im subtropischen Süden Japans in der Präfektur Kagoshima."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142636_f241a7",
+      "entity": "distilleries",
+      "item_id": "miyagikyo",
+      "item_slug": "miyagikyo-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "miyagikyo",
+        "name": "Miyagikyo Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Nikka Whisky",
+        "founded": 1969,
+        "description": "Nikkas zweite Brennerei, gelegen in der Präfektur Miyagi, produziert einen eleganteren und fruchtigeren Whisky als Yoichi.",
+        "slug": "miyagikyo-distillery",
+        "created_at": "2026-04-28T14:26:36Z",
+        "last_updated": "2026-04-28T14:26:36Z",
+        "published": false
+      },
+      "raw": {
+        "id": "miyagikyo",
+        "name": "Miyagikyo Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Nikka Whisky",
+        "founded": 1969,
+        "description": "Nikkas zweite Brennerei, gelegen in der Präfektur Miyagi, produziert einen eleganteren und fruchtigeren Whisky als Yoichi."
       }
     }
   ]
