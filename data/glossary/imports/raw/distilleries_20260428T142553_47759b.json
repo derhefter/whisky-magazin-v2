@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142553_47759b",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:25:53Z",
+  "raw": [
+    {
+      "id": "fuji-gotemba",
+      "name": "Fuji Gotemba Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Kirin",
+      "founded": 1973,
+      "description": "Am Fuße des Mount Fuji gelegen, produziert sowohl Malt als auch Grain Whiskys und nutzt drei verschiedene Grain-Destillationsverfahren."
+    }
+  ]
+}
