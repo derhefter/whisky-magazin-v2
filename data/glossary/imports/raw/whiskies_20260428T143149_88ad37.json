@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143149_88ad37",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:49Z",
+  "raw": [
+    {
+      "id": "saburomaru-single-malt",
+      "name": "Saburomaru Single Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "saburomaru",
+      "whisky_type": "single_malt",
+      "smoke_profile": "peated",
+      "abv": 53,
+      "description": "Ein kräftiger, rauchiger Single Malt aus der Präfektur Toyama."
+    }
+  ]
+}
