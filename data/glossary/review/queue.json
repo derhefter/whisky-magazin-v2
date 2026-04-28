@@ -3422,6 +3422,13 @@
       "imported_at": "2026-04-28T14:25:59Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142603_e90f73",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:26:03Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -42947,6 +42954,38 @@
         "owner": "Suntory",
         "founded": 1973,
         "description": "Gelegen in den Bergwäldern der japanischen Alpen, bekannt für ihren 'grünen' und leicht rauchigen Charakter."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142603_e90f73",
+      "entity": "distilleries",
+      "item_id": "kanosuke",
+      "item_slug": "kanosuke-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "kanosuke",
+        "name": "Kanosuke Distillery",
+        "country_id": "japan",
+        "region_id": "kyushu",
+        "owner": "Komasa Jozo",
+        "founded": 2017,
+        "description": "Gelegen am Fukiagehama Strand in Kagoshima, nutzt diese Destillerie drei verschiedene Brennblasen für unterschiedliche Geschmacksprofile.",
+        "slug": "kanosuke-distillery",
+        "created_at": "2026-04-28T14:26:03Z",
+        "last_updated": "2026-04-28T14:26:03Z",
+        "published": false
+      },
+      "raw": {
+        "id": "kanosuke",
+        "name": "Kanosuke Distillery",
+        "country_id": "japan",
+        "region_id": "kyushu",
+        "owner": "Komasa Jozo",
+        "founded": 2017,
+        "description": "Gelegen am Fukiagehama Strand in Kagoshima, nutzt diese Destillerie drei verschiedene Brennblasen für unterschiedliche Geschmacksprofile."
       }
     }
   ]
