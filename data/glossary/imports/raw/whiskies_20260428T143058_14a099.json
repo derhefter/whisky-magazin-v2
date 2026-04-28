@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143058_14a099",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:58Z",
+  "raw": [
+    {
+      "id": "hibiki-japanese-harmony",
+      "name": "Hibiki Japanese Harmony",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "yamazaki",
+      "whisky_type": "blended",
+      "smoke_profile": "unpeated",
+      "abv": 43,
+      "description": "Ein Blend aus Malt Whiskys von Yamazaki und Hakushu sowie Grain Whisky von Chita. Eine perfekte Balance von Honig, Orange und Eiche."
+    }
+  ]
+}
