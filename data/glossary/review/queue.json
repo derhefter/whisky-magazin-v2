@@ -44756,7 +44756,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "tsunuki-single-malt",
         "name": "Tsunuki Single Malt",
@@ -44782,7 +44782,10 @@
         "smoke_profile": "unpeated",
         "abv": 50,
         "description": "Ein kräftiger Single Malt aus der subtropischen Mars Tsunuki Destillerie in Kagoshima."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:33Z"
     },
     {
       "batch_id": "whiskies_20260428T143212_6eda08",
