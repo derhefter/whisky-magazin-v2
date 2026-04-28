@@ -44011,7 +44011,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "chita-single-grain",
         "name": "The Chita Single Grain",
@@ -44037,7 +44037,10 @@
         "smoke_profile": "unpeated",
         "abv": 43,
         "description": "Ein leichter und floraler Grain Whisky von Suntory, gereift in verschiedenen Weinfässern."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:50Z"
     },
     {
       "batch_id": "whiskies_20260428T143044_02b4db",
