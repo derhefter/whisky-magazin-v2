@@ -1,0 +1,19 @@
+{
+  "batch_id": "whiskies_20260428T143212_6eda08",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:32:12Z",
+  "raw": [
+    {
+      "id": "yamazaki-12",
+      "name": "Yamazaki 12 Year Old",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "yamazaki",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 43,
+      "age": 12,
+      "description": "Der Klassiker unter den japanischen Single Malts. Bekannt für Noten von Pfirsich, Ananas, Grapefruit und Mizunara-Eiche."
+    }
+  ]
+}
