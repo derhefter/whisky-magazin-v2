@@ -43972,7 +43972,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "asaka-single-malt",
         "name": "Asaka Single Malt",
@@ -43998,7 +43998,10 @@
         "smoke_profile": "unpeated",
         "abv": 48,
         "description": "Ein feiner Single Malt aus der Region Fukushima."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:47Z"
     },
     {
       "batch_id": "whiskies_20260428T143039_6468b7",
