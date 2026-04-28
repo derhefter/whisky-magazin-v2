@@ -43894,7 +43894,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "akkeshi-kanlu",
         "name": "Akkeshi Kanlu",
@@ -43920,7 +43920,10 @@
         "smoke_profile": "peated",
         "abv": 55,
         "description": "Ein getorfter Single Malt von Hokkaido, Teil der '24 Solar Terms' Serie."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:43Z"
     },
     {
       "batch_id": "whiskies_20260428T143028_a78001",
