@@ -3597,6 +3597,13 @@
       "imported_at": "2026-04-28T14:30:58Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143102_611896",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:31:02Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44052,6 +44059,42 @@
         "smoke_profile": "unpeated",
         "abv": 43,
         "description": "Ein Blend aus Malt Whiskys von Yamazaki und Hakushu sowie Grain Whisky von Chita. Eine perfekte Balance von Honig, Orange und Eiche."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143102_611896",
+      "entity": "whiskies",
+      "item_id": "kanosuke-single-malt",
+      "item_slug": "kanosuke-single-malt",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "kanosuke-single-malt",
+        "name": "Kanosuke Single Malt",
+        "country_id": "japan",
+        "region_id": "kyushu",
+        "distillery_id": "kanosuke",
+        "whisky_type": "single_malt",
+        "smoke_profile": "unpeated",
+        "abv": 48,
+        "description": "Ein weicher Single Malt aus Kagoshima, der oft in Shochu-Fässern gereift wird.",
+        "slug": "kanosuke-single-malt",
+        "created_at": "2026-04-28T14:31:02Z",
+        "last_updated": "2026-04-28T14:31:02Z",
+        "published": false
+      },
+      "raw": {
+        "id": "kanosuke-single-malt",
+        "name": "Kanosuke Single Malt",
+        "country_id": "japan",
+        "region_id": "kyushu",
+        "distillery_id": "kanosuke",
+        "whisky_type": "single_malt",
+        "smoke_profile": "unpeated",
+        "abv": 48,
+        "description": "Ein weicher Single Malt aus Kagoshima, der oft in Shochu-Fässern gereift wird."
       }
     }
   ]
