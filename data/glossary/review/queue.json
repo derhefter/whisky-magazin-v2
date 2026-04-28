@@ -43437,7 +43437,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "saburomaru",
         "name": "Saburomaru Distillery",
@@ -43459,7 +43459,10 @@
         "owner": "Wakatsuru Shuzo",
         "founded": 1952,
         "description": "Die einzige Whisky-Destillerie in der Präfektur Toyama, bekannt für ihre torfigen Whiskys."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:31Z"
     },
     {
       "batch_id": "distilleries_20260428T142655_ba2fb8",
