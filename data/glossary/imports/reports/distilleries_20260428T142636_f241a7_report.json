@@ -1,0 +1,43 @@
+{
+  "batch_id": "distilleries_20260428T142636_f241a7",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:36Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "miyagikyo",
+        "name": "Miyagikyo Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Nikka Whisky",
+        "founded": 1969,
+        "description": "Nikkas zweite Brennerei, gelegen in der Präfektur Miyagi, produziert einen eleganteren und fruchtigeren Whisky als Yoichi."
+      },
+      "normalized": {
+        "id": "miyagikyo",
+        "name": "Miyagikyo Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Nikka Whisky",
+        "founded": 1969,
+        "description": "Nikkas zweite Brennerei, gelegen in der Präfektur Miyagi, produziert einen eleganteren und fruchtigeren Whisky als Yoichi.",
+        "slug": "miyagikyo-distillery",
+        "created_at": "2026-04-28T14:26:36Z",
+        "last_updated": "2026-04-28T14:26:36Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
