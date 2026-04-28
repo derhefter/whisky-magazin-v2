@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143028_a78001",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:28Z",
+  "raw": [
+    {
+      "id": "amahagan-edition-no1",
+      "name": "Amahagan World Malt Edition No.1",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "nagahama",
+      "whisky_type": "blend",
+      "smoke_profile": "unpeated",
+      "abv": 47,
+      "description": "Ein 'World Malt' Blend der Nagahama Destillerie, der japanischen Malt mit importiertem Malt kombiniert."
+    }
+  ]
+}
