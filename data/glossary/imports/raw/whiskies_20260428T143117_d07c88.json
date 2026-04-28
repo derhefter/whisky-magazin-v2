@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143117_d07c88",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:17Z",
+  "raw": [
+    {
+      "id": "matsui-the-kurayoshi-pure-malt",
+      "name": "The Kurayoshi Pure Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "kurayoshi-matsui",
+      "whisky_type": "blend",
+      "smoke_profile": "unpeated",
+      "abv": 43,
+      "description": "Ein Pure Malt (Blended Malt), gereift mit dem weichen Wasser der Tottori-Präfektur."
+    }
+  ]
+}
