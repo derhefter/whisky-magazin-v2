@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142631_1e1a70",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:31Z",
+  "raw": [
+    {
+      "id": "mars-tsunuki",
+      "name": "Mars Tsunuki Distillery",
+      "country_id": "japan",
+      "region_id": "kyushu",
+      "owner": "Hombo Shuzo",
+      "founded": 2016,
+      "description": "Die zweite Destillerie von Mars Whisky, gelegen im subtropischen Süden Japans in der Präfektur Kagoshima."
+    }
+  ]
+}
