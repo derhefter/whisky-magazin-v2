@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143102_611896",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:02Z",
+  "raw": [
+    {
+      "id": "kanosuke-single-malt",
+      "name": "Kanosuke Single Malt",
+      "country_id": "japan",
+      "region_id": "kyushu",
+      "distillery_id": "kanosuke",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 48,
+      "description": "Ein weicher Single Malt aus Kagoshima, der oft in Shochu-Fässern gereift wird."
+    }
+  ]
+}
