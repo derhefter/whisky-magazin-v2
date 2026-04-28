@@ -42607,7 +42607,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hokkaido",
         "name": "Hokkaido",
@@ -42623,7 +42623,10 @@
         "name": "Hokkaido",
         "country_id": "japan",
         "description": "Die nördlichste Hauptinsel Japans, bekannt für ihr kühles Klima und raue Natur, ideal für die Reifung von Whisky mit schottischem Charakter."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:24:04Z"
     },
     {
       "batch_id": "regions_20260428T142221_b1ccb4",
