@@ -43507,7 +43507,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "shizuoka",
         "name": "Shizuoka Distillery",
@@ -43529,7 +43529,10 @@
         "owner": "Gaiaflow",
         "founded": 2016,
         "description": "Gelegen in der Präfektur Shizuoka, nutzt die Destillerie unter anderem alte Brennblasen der legendären Karuizawa-Destillerie."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:35Z"
     },
     {
       "batch_id": "distilleries_20260428T142705_dcd2d5",
