@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143126_a8510e",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:26Z",
+  "raw": [
+    {
+      "id": "matsui-the-peated",
+      "name": "The Matsui The Peated",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "kurayoshi-matsui",
+      "whisky_type": "single_malt",
+      "smoke_profile": "peated",
+      "abv": 48,
+      "description": "Ein getorfter Single Malt aus der Matsui Destillerie."
+    }
+  ]
+}
