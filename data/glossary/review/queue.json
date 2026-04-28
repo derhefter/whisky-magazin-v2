@@ -43542,7 +43542,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "white-oak",
         "name": "White Oak (Eigashima) Distillery",
@@ -43564,7 +43564,10 @@
         "owner": "Eigashima Shuzo",
         "founded": 1888,
         "description": "Die Destillerie liegt in Akashi, Präfektur Hyogo, direkt am Meer. Sie erhielt 1919 die erste Lizenz zur Whisky-Herstellung in Japan."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:38Z"
     },
     {
       "batch_id": "distilleries_20260428T142711_b2fa58",
