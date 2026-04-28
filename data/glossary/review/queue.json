@@ -3562,6 +3562,13 @@
       "imported_at": "2026-04-28T14:30:33Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143039_6468b7",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:30:39Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -43835,6 +43842,42 @@
         "smoke_profile": "unpeated",
         "abv": 48,
         "description": "Ein feiner Single Malt aus der Region Fukushima."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143039_6468b7",
+      "entity": "whiskies",
+      "item_id": "chita-single-grain",
+      "item_slug": "the-chita-single-grain",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "chita-single-grain",
+        "name": "The Chita Single Grain",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "chita",
+        "whisky_type": "grain",
+        "smoke_profile": "unpeated",
+        "abv": 43,
+        "description": "Ein leichter und floraler Grain Whisky von Suntory, gereift in verschiedenen Weinfässern.",
+        "slug": "the-chita-single-grain",
+        "created_at": "2026-04-28T14:30:39Z",
+        "last_updated": "2026-04-28T14:30:39Z",
+        "published": false
+      },
+      "raw": {
+        "id": "chita-single-grain",
+        "name": "The Chita Single Grain",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "chita",
+        "whisky_type": "grain",
+        "smoke_profile": "unpeated",
+        "abv": 43,
+        "description": "Ein leichter und floraler Grain Whisky von Suntory, gereift in verschiedenen Weinfässern."
       }
     }
   ]
