@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143154_5dc15d",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:54Z",
+  "raw": [
+    {
+      "id": "sakurao-single-malt",
+      "name": "Sakurao Single Malt",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "sakurao",
+      "whisky_type": "single_malt",
+      "smoke_profile": "unpeated",
+      "abv": 54,
+      "description": "Ein Single Malt direkt aus der Küstenregion Hiroshima."
+    }
+  ]
+}
