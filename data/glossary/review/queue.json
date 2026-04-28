@@ -43052,7 +43052,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hakushu",
         "name": "Hakushu Distillery",
@@ -43074,7 +43074,10 @@
         "owner": "Suntory",
         "founded": 1973,
         "description": "Gelegen in den Bergwäldern der japanischen Alpen, bekannt für ihren 'grünen' und leicht rauchigen Charakter."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:02Z"
     },
     {
       "batch_id": "distilleries_20260428T142603_e90f73",
