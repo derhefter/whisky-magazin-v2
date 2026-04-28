@@ -3688,6 +3688,13 @@
       "imported_at": "2026-04-28T14:31:58Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143203_81db4c",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:32:03Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44613,6 +44620,42 @@
         "smoke_profile": "unpeated",
         "abv": 55.5,
         "description": "Hergestellt mit den legendären Brennblasen der ehemaligen Karuizawa-Destillerie."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143203_81db4c",
+      "entity": "whiskies",
+      "item_id": "togouchi-premium",
+      "item_slug": "togouchi-premium-blended-whisky",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "togouchi-premium",
+        "name": "Togouchi Premium Blended Whisky",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "sakurao",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 40,
+        "description": "Ein Blend, der in einem stillgelegten Eisenbahntunnel in den Bergen von Hiroshima gereift wird.",
+        "slug": "togouchi-premium-blended-whisky",
+        "created_at": "2026-04-28T14:32:03Z",
+        "last_updated": "2026-04-28T14:32:03Z",
+        "published": false
+      },
+      "raw": {
+        "id": "togouchi-premium",
+        "name": "Togouchi Premium Blended Whisky",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "sakurao",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 40,
+        "description": "Ein Blend, der in einem stillgelegten Eisenbahntunnel in den Bergen von Hiroshima gereift wird."
       }
     }
   ]
