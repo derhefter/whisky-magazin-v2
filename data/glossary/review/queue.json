@@ -42947,7 +42947,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "chichibu",
         "name": "Chichibu Distillery",
@@ -42969,7 +42969,10 @@
         "owner": "Venture Whisky",
         "founded": 2008,
         "description": "Eine kleine, hoch angesehene handwerkliche Destillerie von Ichiro Akuto, bekannt für experimentelle Reifungen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:28:55Z"
     },
     {
       "batch_id": "distilleries_20260428T142548_8c4359",
