@@ -43402,7 +43402,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "ontake",
         "name": "Ontake Distillery",
@@ -43424,7 +43424,10 @@
         "owner": "Nishi Shuzo",
         "founded": 2019,
         "description": "Eine neue Destillerie in Nagano, betrieben von einem renommierten Shochu-Hersteller."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:28Z"
     },
     {
       "batch_id": "distilleries_20260428T142650_c28992",
