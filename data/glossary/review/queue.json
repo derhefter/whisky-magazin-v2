@@ -42982,7 +42982,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "chita",
         "name": "Chita Distillery",
@@ -43004,7 +43004,10 @@
         "owner": "Suntory",
         "founded": 1972,
         "description": "Die Getreidedestillerie von Suntory in der Präfektur Aichi, die hauptsächlich Grain Whisky für Blends wie Hibiki und Toki produziert."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:28:57Z"
     },
     {
       "batch_id": "distilleries_20260428T142553_47759b",
