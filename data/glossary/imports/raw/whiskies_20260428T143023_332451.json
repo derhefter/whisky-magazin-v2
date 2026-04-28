@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143023_332451",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:23Z",
+  "raw": [
+    {
+      "id": "akkeshi-kanlu",
+      "name": "Akkeshi Kanlu",
+      "country_id": "japan",
+      "region_id": "hokkaido",
+      "distillery_id": "akkeshi",
+      "whisky_type": "single_malt",
+      "smoke_profile": "peated",
+      "abv": 55,
+      "description": "Ein getorfter Single Malt von Hokkaido, Teil der '24 Solar Terms' Serie."
+    }
+  ]
+}
