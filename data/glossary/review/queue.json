@@ -43227,7 +43227,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "kurayoshi-matsui",
         "name": "Kurayoshi / Matsui Distillery",
@@ -43249,7 +43249,10 @@
         "owner": "Matsui Shuzo",
         "founded": 1910,
         "description": "Gelegen in der Präfektur Tottori, nutzt die Destillerie das weiche Quellwasser des Berg Daisen."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:16Z"
     },
     {
       "batch_id": "distilleries_20260428T142627_5eac30",
