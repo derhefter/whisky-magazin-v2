@@ -3618,6 +3618,13 @@
       "imported_at": "2026-04-28T14:31:13Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143117_d07c88",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:31:17Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44183,6 +44190,42 @@
         "abv": 43,
         "age": 12,
         "description": "Ein einzigartiger Whisky aus 100% Indica-Reis, gereift in Sherryfässern auf Okinawa."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143117_d07c88",
+      "entity": "whiskies",
+      "item_id": "matsui-the-kurayoshi-pure-malt",
+      "item_slug": "the-kurayoshi-pure-malt",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "matsui-the-kurayoshi-pure-malt",
+        "name": "The Kurayoshi Pure Malt",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "kurayoshi-matsui",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 43,
+        "description": "Ein Pure Malt (Blended Malt), gereift mit dem weichen Wasser der Tottori-Präfektur.",
+        "slug": "the-kurayoshi-pure-malt",
+        "created_at": "2026-04-28T14:31:17Z",
+        "last_updated": "2026-04-28T14:31:17Z",
+        "published": false
+      },
+      "raw": {
+        "id": "matsui-the-kurayoshi-pure-malt",
+        "name": "The Kurayoshi Pure Malt",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "distillery_id": "kurayoshi-matsui",
+        "whisky_type": "blend",
+        "smoke_profile": "unpeated",
+        "abv": 43,
+        "description": "Ein Pure Malt (Blended Malt), gereift mit dem weichen Wasser der Tottori-Präfektur."
       }
     }
   ]
