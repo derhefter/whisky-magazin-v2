@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143039_6468b7",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:30:39Z",
+  "raw": [
+    {
+      "id": "chita-single-grain",
+      "name": "The Chita Single Grain",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "distillery_id": "chita",
+      "whisky_type": "grain",
+      "smoke_profile": "unpeated",
+      "abv": 43,
+      "description": "Ein leichter und floraler Grain Whisky von Suntory, gereift in verschiedenen Weinfässern."
+    }
+  ]
+}
