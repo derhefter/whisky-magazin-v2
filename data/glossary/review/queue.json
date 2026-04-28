@@ -43332,7 +43332,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "miyagikyo",
         "name": "Miyagikyo Distillery",
@@ -43354,7 +43354,10 @@
         "owner": "Nikka Whisky",
         "founded": 1969,
         "description": "Nikkas zweite Brennerei, gelegen in der Präfektur Miyagi, produziert einen eleganteren und fruchtigeren Whisky als Yoichi."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:23Z"
     },
     {
       "batch_id": "distilleries_20260428T142640_11c634",
