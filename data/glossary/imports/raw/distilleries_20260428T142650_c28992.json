@@ -1,0 +1,16 @@
+{
+  "batch_id": "distilleries_20260428T142650_c28992",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:50Z",
+  "raw": [
+    {
+      "id": "saburomaru",
+      "name": "Saburomaru Distillery",
+      "country_id": "japan",
+      "region_id": "honshu",
+      "owner": "Wakatsuru Shuzo",
+      "founded": 1952,
+      "description": "Die einzige Whisky-Destillerie in der Präfektur Toyama, bekannt für ihre torfigen Whiskys."
+    }
+  ]
+}
