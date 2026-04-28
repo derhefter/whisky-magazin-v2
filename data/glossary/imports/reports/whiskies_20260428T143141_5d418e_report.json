@@ -1,0 +1,47 @@
+{
+  "batch_id": "whiskies_20260428T143141_5d418e",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:31:41Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "nikka-from-the-barrel",
+        "name": "Nikka From The Barrel",
+        "country_id": "japan",
+        "region_id": "hokkaido",
+        "distillery_id": "yoichi",
+        "whisky_type": "blended",
+        "smoke_profile": "lightly_peated",
+        "abv": 51.4,
+        "description": "Ein ikonischer Blend mit hohem Alkoholgehalt. Kraftvoll, komplex mit Noten von Karamell, Gewürzen und einer Spur Rauch."
+      },
+      "normalized": {
+        "id": "nikka-from-the-barrel",
+        "name": "Nikka From The Barrel",
+        "country_id": "japan",
+        "region_id": "hokkaido",
+        "distillery_id": "yoichi",
+        "whisky_type": "blended",
+        "smoke_profile": "lightly_peated",
+        "abv": 51.4,
+        "description": "Ein ikonischer Blend mit hohem Alkoholgehalt. Kraftvoll, komplex mit Noten von Karamell, Gewürzen und einer Spur Rauch.",
+        "slug": "nikka-from-the-barrel",
+        "created_at": "2026-04-28T14:31:41Z",
+        "last_updated": "2026-04-28T14:31:41Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
