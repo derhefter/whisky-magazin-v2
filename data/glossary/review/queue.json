@@ -44128,7 +44128,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "hakushu-12",
         "name": "Hakushu 12 Year Old",
@@ -44156,7 +44156,10 @@
         "abv": 43,
         "age": 12,
         "description": "Ein frischer, kräuteriger Single Malt mit Noten von grünem Apfel, Jasmin und einer dezenten Rauchigkeit."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:56Z"
     },
     {
       "batch_id": "whiskies_20260428T143058_14a099",
