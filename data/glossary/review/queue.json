@@ -44050,7 +44050,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "fuji-single-blended",
         "name": "Fuji Single Blended Japanese Whisky",
@@ -44076,7 +44076,10 @@
         "smoke_profile": "unpeated",
         "abv": 43,
         "description": "Eine Kombination aus Malt und Grain Whiskys, die beide in der Fuji Gotemba Destillerie hergestellt wurden."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:52Z"
     },
     {
       "batch_id": "whiskies_20260428T143049_a9bc4b",
