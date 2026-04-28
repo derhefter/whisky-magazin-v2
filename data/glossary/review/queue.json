@@ -43855,7 +43855,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "akashi-blended",
         "name": "Akashi Blended Whisky",
@@ -43881,7 +43881,10 @@
         "smoke_profile": "unpeated",
         "abv": 40,
         "description": "Ein zugänglicher Blend von White Oak (Eigashima), der sowohl Grain- als auch Malt-Whiskys enthält."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:00:39Z"
     },
     {
       "batch_id": "whiskies_20260428T143023_332451",
