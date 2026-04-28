@@ -42761,7 +42761,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "hokkaido",
         "name": "Hokkaido",
@@ -42780,7 +42780,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-28T14:24:04Z"
+      "reviewed_at": "2026-04-28T14:24:04Z",
+      "published_at": "2026-04-28T14:29:49Z"
     },
     {
       "batch_id": "regions_20260428T142221_b1ccb4",
@@ -42790,7 +42791,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "honshu",
         "name": "Honshu",
@@ -42809,7 +42810,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-28T14:24:07Z"
+      "reviewed_at": "2026-04-28T14:24:07Z",
+      "published_at": "2026-04-28T14:29:49Z"
     },
     {
       "batch_id": "regions_20260428T142226_5f1ad7",
@@ -42819,7 +42821,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "kyushu",
         "name": "Kyushu",
@@ -42838,7 +42840,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-28T14:24:09Z"
+      "reviewed_at": "2026-04-28T14:24:09Z",
+      "published_at": "2026-04-28T14:29:49Z"
     },
     {
       "batch_id": "regions_20260428T142230_acd209",
@@ -42848,7 +42851,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "approved",
+      "review_status": "published",
       "normalized": {
         "id": "okinawa",
         "name": "Okinawa",
@@ -42867,7 +42870,8 @@
       },
       "decision": "approve",
       "reviewer_notes": "",
-      "reviewed_at": "2026-04-28T14:24:12Z"
+      "reviewed_at": "2026-04-28T14:24:12Z",
+      "published_at": "2026-04-28T14:29:49Z"
     },
     {
       "batch_id": "distilleries_20260428T142535_f6be45",
