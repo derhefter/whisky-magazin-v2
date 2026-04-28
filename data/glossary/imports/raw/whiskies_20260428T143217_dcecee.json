@@ -1,0 +1,18 @@
+{
+  "batch_id": "whiskies_20260428T143217_dcecee",
+  "entity": "whiskies",
+  "imported_at": "2026-04-28T14:32:17Z",
+  "raw": [
+    {
+      "id": "yoichi-single-malt",
+      "name": "Yoichi Single Malt",
+      "country_id": "japan",
+      "region_id": "hokkaido",
+      "distillery_id": "yoichi",
+      "whisky_type": "single_malt",
+      "smoke_profile": "peated",
+      "abv": 45,
+      "description": "Die Standardabfüllung ohne Altersangabe (NAS) von Yoichi. Kräftig, maritim und mit deutlichem Torfrauch."
+    }
+  ]
+}
