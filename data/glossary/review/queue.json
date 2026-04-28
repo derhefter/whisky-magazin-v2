@@ -43472,7 +43472,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "sakurao",
         "name": "Sakurao Distillery",
@@ -43494,7 +43494,10 @@
         "owner": "Sakurao Brewery and Distillery",
         "founded": 2018,
         "description": "Ansässig in Hiroshima, produziert die Destillerie sowohl Single Malts als auch Blends wie Togouchi."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T14:29:33Z"
     },
     {
       "batch_id": "distilleries_20260428T142700_221ded",
