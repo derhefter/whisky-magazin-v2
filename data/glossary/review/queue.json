@@ -44836,7 +44836,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "yoichi-single-malt",
         "name": "Yoichi Single Malt",
@@ -44862,7 +44862,10 @@
         "smoke_profile": "peated",
         "abv": 45,
         "description": "Die Standardabfüllung ohne Altersangabe (NAS) von Yoichi. Kräftig, maritim und mit deutlichem Torfrauch."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:37Z"
     }
   ]
 }
