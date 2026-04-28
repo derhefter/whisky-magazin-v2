@@ -3408,6 +3408,13 @@
       "imported_at": "2026-04-28T14:25:48Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "distilleries_20260428T142553_47759b",
+      "entity": "distilleries",
+      "imported_at": "2026-04-28T14:25:53Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -42869,6 +42876,38 @@
         "owner": "Suntory",
         "founded": 1972,
         "description": "Die Getreidedestillerie von Suntory in der Präfektur Aichi, die hauptsächlich Grain Whisky für Blends wie Hibiki und Toki produziert."
+      }
+    },
+    {
+      "batch_id": "distilleries_20260428T142553_47759b",
+      "entity": "distilleries",
+      "item_id": "fuji-gotemba",
+      "item_slug": "fuji-gotemba-distillery",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "fuji-gotemba",
+        "name": "Fuji Gotemba Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Kirin",
+        "founded": 1973,
+        "description": "Am Fuße des Mount Fuji gelegen, produziert sowohl Malt als auch Grain Whiskys und nutzt drei verschiedene Grain-Destillationsverfahren.",
+        "slug": "fuji-gotemba-distillery",
+        "created_at": "2026-04-28T14:25:53Z",
+        "last_updated": "2026-04-28T14:25:53Z",
+        "published": false
+      },
+      "raw": {
+        "id": "fuji-gotemba",
+        "name": "Fuji Gotemba Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Kirin",
+        "founded": 1973,
+        "description": "Am Fuße des Mount Fuji gelegen, produziert sowohl Malt als auch Grain Whiskys und nutzt drei verschiedene Grain-Destillationsverfahren."
       }
     }
   ]
