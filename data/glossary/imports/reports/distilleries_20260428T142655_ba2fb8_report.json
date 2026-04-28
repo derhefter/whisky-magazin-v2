@@ -1,0 +1,43 @@
+{
+  "batch_id": "distilleries_20260428T142655_ba2fb8",
+  "entity": "distilleries",
+  "imported_at": "2026-04-28T14:26:55Z",
+  "total": 1,
+  "new": 1,
+  "update_candidates": 0,
+  "errors": 0,
+  "incomplete": 0,
+  "potential_duplicates": 0,
+  "items": [
+    {
+      "raw": {
+        "id": "sakurao",
+        "name": "Sakurao Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Sakurao Brewery and Distillery",
+        "founded": 2018,
+        "description": "Ansässig in Hiroshima, produziert die Destillerie sowohl Single Malts als auch Blends wie Togouchi."
+      },
+      "normalized": {
+        "id": "sakurao",
+        "name": "Sakurao Distillery",
+        "country_id": "japan",
+        "region_id": "honshu",
+        "owner": "Sakurao Brewery and Distillery",
+        "founded": 2018,
+        "description": "Ansässig in Hiroshima, produziert die Destillerie sowohl Single Malts als auch Blends wie Togouchi.",
+        "slug": "sakurao-distillery",
+        "created_at": "2026-04-28T14:26:55Z",
+        "last_updated": "2026-04-28T14:26:55Z",
+        "published": false
+      },
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "reviewer_notes": "",
+      "decision": null
+    }
+  ]
+}
