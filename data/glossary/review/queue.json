@@ -44405,7 +44405,7 @@
       "status": "new",
       "errors": [],
       "duplicate_candidates": [],
-      "review_status": "pending",
+      "review_status": "approved",
       "normalized": {
         "id": "matsui-the-peated",
         "name": "The Matsui The Peated",
@@ -44431,7 +44431,10 @@
         "smoke_profile": "peated",
         "abv": 48,
         "description": "Ein getorfter Single Malt aus der Matsui Destillerie."
-      }
+      },
+      "decision": "approve",
+      "reviewer_notes": "",
+      "reviewed_at": "2026-04-28T15:01:12Z"
     },
     {
       "batch_id": "whiskies_20260428T143131_827067",
