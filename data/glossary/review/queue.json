@@ -3611,6 +3611,13 @@
       "imported_at": "2026-04-28T14:31:08Z",
       "total": 1,
       "status": "pending_review"
+    },
+    {
+      "batch_id": "whiskies_20260428T143113_7ce695",
+      "entity": "whiskies",
+      "imported_at": "2026-04-28T14:31:13Z",
+      "total": 1,
+      "status": "pending_review"
     }
   ],
   "items": [
@@ -44138,6 +44145,44 @@
         "smoke_profile": "unpeated",
         "abv": 46,
         "description": "Zukünftiger Single Malt der neuen Komoro-Destillerie."
+      }
+    },
+    {
+      "batch_id": "whiskies_20260428T143113_7ce695",
+      "entity": "whiskies",
+      "item_id": "kujira-ryukyu-whisky-12",
+      "item_slug": "kujira-ryukyu-whisky-12-years-old",
+      "status": "new",
+      "errors": [],
+      "duplicate_candidates": [],
+      "review_status": "pending",
+      "normalized": {
+        "id": "kujira-ryukyu-whisky-12",
+        "name": "Kujira Ryukyu Whisky 12 Years Old",
+        "country_id": "japan",
+        "region_id": "okinawa",
+        "distillery_id": "kujira-kumesen",
+        "whisky_type": "other",
+        "smoke_profile": "unpeated",
+        "abv": 43,
+        "age": 12,
+        "description": "Ein einzigartiger Whisky aus 100% Indica-Reis, gereift in Sherryfässern auf Okinawa.",
+        "slug": "kujira-ryukyu-whisky-12-years-old",
+        "created_at": "2026-04-28T14:31:13Z",
+        "last_updated": "2026-04-28T14:31:13Z",
+        "published": false
+      },
+      "raw": {
+        "id": "kujira-ryukyu-whisky-12",
+        "name": "Kujira Ryukyu Whisky 12 Years Old",
+        "country_id": "japan",
+        "region_id": "okinawa",
+        "distillery_id": "kujira-kumesen",
+        "whisky_type": "other",
+        "smoke_profile": "unpeated",
+        "abv": 43,
+        "age": 12,
+        "description": "Ein einzigartiger Whisky aus 100% Indica-Reis, gereift in Sherryfässern auf Okinawa."
       }
     }
   ]
