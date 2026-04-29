@@ -123,10 +123,15 @@
             });
         }
         function highlight(text,q){
-            var t=escapeHtml(text);
-            if(!q)return t;
-            var qe=q.replace(/[.*+?^${}()|[\]\]/g,'\$&');
-            return t.replace(new RegExp('('+qe+')','ig'),'<mark style="background:rgba(200,150,62,0.25);color:inherit;padding:0 1px;border-radius:2px;">$1</mark>');
+            if(!q)return escapeHtml(text);
+            var lower=String(text).toLowerCase();
+            var ql=q.toLowerCase();
+            var i=lower.indexOf(ql);
+            if(i<0)return escapeHtml(text);
+            return escapeHtml(text.slice(0,i))
+                +'<mark style="background:rgba(200,150,62,0.25);color:inherit;padding:0 1px;border-radius:2px;">'
+                +escapeHtml(text.slice(i,i+q.length))+'</mark>'
+                +escapeHtml(text.slice(i+q.length));
         }
         function renderHint(msg){
             box.innerHTML='<div style="padding:14px 16px;font-size:13px;color:var(--text-secondary);font-style:italic;">'+msg+'</div>';
