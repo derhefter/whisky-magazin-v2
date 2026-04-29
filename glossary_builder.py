@@ -326,48 +326,135 @@ def build_glossary_index(data: dict, config: dict) -> str:
     <div style="max-width:760px;margin:0 auto;padding:24px 24px 0;">
         <div style="position:relative;">
             <input type="search" id="glossar-search" placeholder="Destillerie oder Whisky suchen … z.B. Lagavulin, Ardbeg 10"
-                autocomplete="off"
+                autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+                aria-label="Glossar durchsuchen" aria-autocomplete="list" aria-controls="glossar-results"
                 style="width:100%;padding:12px 44px 12px 18px;border:2px solid var(--accent-amber);
                        border-radius:var(--radius-sm);font-size:16px;font-family:'Inter',sans-serif;
                        color:var(--text-primary);background:var(--bg-primary);
-                       outline:none;box-sizing:border-box;box-shadow:var(--shadow-hover);"
-                oninput="glossarSearch(this.value)"
-                onkeydown="if(event.key==='Escape'){{this.value='';glossarSearch('');}}">
-            <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);
-                         color:var(--text-secondary);font-size:18px;pointer-events:none;">🔍</span>
-            <div id="glossar-results" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;
+                       outline:none;box-sizing:border-box;box-shadow:var(--shadow-hover);">
+            <span aria-hidden="true" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);
+                         color:var(--accent-amber);font-size:20px;pointer-events:none;line-height:1;">⌕</span>
+            <div id="glossar-results" role="listbox" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;
                  z-index:500;background:var(--bg-elevated);border:1px solid var(--border);
                  border-radius:var(--radius-sm);box-shadow:0 8px 32px rgba(139,115,85,0.18);
-                 max-height:360px;overflow-y:auto;"></div>
+                 max-height:420px;overflow-y:auto;"></div>
         </div>
     </div>
     <script>
-    var _glossarData={search_items};
-    function glossarSearch(q){{
-        var box=document.getElementById('glossar-results');
-        if(!q||!q.trim()){{box.style.display='none';return;}}
-        var ql=q.toLowerCase();
-        var matches=_glossarData.filter(function(i){{
-            return i.n.toLowerCase().indexOf(ql)!==-1||i.s.toLowerCase().indexOf(ql)!==-1;
-        }}).slice(0,12);
-        if(!matches.length){{
-            box.innerHTML='<div style="padding:12px 16px;font-size:14px;color:var(--text-secondary);">Keine Treffer f\u00fcr &bdquo;'+q+'&ldquo;</div>';
-            box.style.display='block';return;
-        }}
-        box.innerHTML=matches.map(function(i){{
-            var bg='background:var(--bg-surface)';
-            return '<a href="'+i.u+'" style="display:flex;align-items:center;gap:12px;padding:10px 16px;text-decoration:none;color:inherit;border-bottom:1px solid var(--border);" onmouseover="this.style.background=\'var(--bg-surface)\'" onmouseout="this.style.background=\'transparent\'">'
-                +'<span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent-amber);font-family:Inter,sans-serif;min-width:80px;flex-shrink:0;">'+i.t+'</span>'
-                +'<div style="min-width:0;"><div style="font-family:Fraunces,serif;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+i.n+'</div>'
-                +'<div style="font-size:12px;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+i.s+'</div></div></a>';
-        }}).join('');
-        box.style.display='block';
-    }}
-    document.addEventListener('click',function(e){{
-        var box=document.getElementById('glossar-results');
+    (function(){{
+        var DATA={search_items};
+        var MIN_CHARS=3;
+        var MAX_PER_GROUP=8;
         var inp=document.getElementById('glossar-search');
-        if(box&&inp&&!box.contains(e.target)&&e.target!==inp)box.style.display='none';
-    }});
+        var box=document.getElementById('glossar-results');
+        if(!inp||!box)return;
+        var activeIdx=-1;
+        function escapeHtml(s){{
+            return String(s).replace(/[&<>"']/g,function(c){{
+                return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c];
+            }});
+        }}
+        function highlight(text,q){{
+            if(!q)return escapeHtml(text);
+            var lower=String(text).toLowerCase();
+            var ql=q.toLowerCase();
+            var i=lower.indexOf(ql);
+            if(i<0)return escapeHtml(text);
+            return escapeHtml(text.slice(0,i))
+                +'<mark style="background:rgba(200,150,62,0.25);color:inherit;padding:0 1px;border-radius:2px;">'
+                +escapeHtml(text.slice(i,i+q.length))+'</mark>'
+                +escapeHtml(text.slice(i+q.length));
+        }}
+        function renderHint(msg){{
+            box.innerHTML='<div style="padding:14px 16px;font-size:13px;color:var(--text-secondary);font-style:italic;">'+msg+'</div>';
+            box.style.display='block';
+        }}
+        function hide(){{box.style.display='none';box.innerHTML='';activeIdx=-1;}}
+        function rowHtml(item,q,idx){{
+            return '<a href="'+escapeHtml(item.u)+'" role="option" data-idx="'+idx+'" '
+                +'style="display:flex;align-items:center;gap:12px;padding:10px 16px;text-decoration:none;color:inherit;border-bottom:1px solid var(--border);">'
+                +'<span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent-amber);font-family:Inter,sans-serif;min-width:84px;flex-shrink:0;">'+escapeHtml(item.t)+'</span>'
+                +'<div style="min-width:0;flex:1;">'
+                +'<div style="font-family:Fraunces,serif;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+highlight(item.n,q)+'</div>'
+                +(item.s?'<div style="font-size:12px;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+escapeHtml(item.s)+'</div>':'')
+                +'</div></a>';
+        }}
+        function search(rawQ){{
+            var q=(rawQ||'').trim();
+            if(!q){{hide();return;}}
+            if(q.length<MIN_CHARS){{
+                renderHint('Bitte mindestens '+MIN_CHARS+' Buchstaben eingeben\u2026');
+                return;
+            }}
+            var ql=q.toLowerCase();
+            var dist=[],whisky=[];
+            for(var i=0;i<DATA.length;i++){{
+                var it=DATA[i];
+                if(it.n.toLowerCase().indexOf(ql)!==-1){{
+                    if(it.t==='Destillerie')dist.push(it);else whisky.push(it);
+                }}
+            }}
+            function rank(a,b){{
+                var an=a.n.toLowerCase().indexOf(ql)===0?0:1;
+                var bn=b.n.toLowerCase().indexOf(ql)===0?0:1;
+                if(an!==bn)return an-bn;
+                return a.n.localeCompare(b.n);
+            }}
+            dist.sort(rank);whisky.sort(rank);
+            dist=dist.slice(0,MAX_PER_GROUP);whisky=whisky.slice(0,MAX_PER_GROUP);
+            if(!dist.length&&!whisky.length){{
+                renderHint('Keine Treffer f\u00fcr \u201e'+escapeHtml(q)+'\u201c.');
+                return;
+            }}
+            var html='';
+            var idx=0;
+            if(dist.length){{
+                html+='<div style="padding:8px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-muted);background:var(--bg-surface);">Destillerien</div>';
+                for(var j=0;j<dist.length;j++){{html+=rowHtml(dist[j],q,idx++);}}
+            }}
+            if(whisky.length){{
+                html+='<div style="padding:8px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-muted);background:var(--bg-surface);">Whiskys</div>';
+                for(var k=0;k<whisky.length;k++){{html+=rowHtml(whisky[k],q,idx++);}}
+            }}
+            box.innerHTML=html;
+            box.style.display='block';
+            activeIdx=-1;
+        }}
+        function setActive(newIdx){{
+            var rows=box.querySelectorAll('a[role="option"]');
+            if(!rows.length)return;
+            if(newIdx<0)newIdx=rows.length-1;
+            if(newIdx>=rows.length)newIdx=0;
+            for(var i=0;i<rows.length;i++){{
+                if(i===newIdx){{rows[i].style.background='var(--bg-surface)';rows[i].scrollIntoView({{block:'nearest'}});rows[i].setAttribute('aria-selected','true');}}
+                else{{rows[i].style.background='transparent';rows[i].removeAttribute('aria-selected');}}
+            }}
+            activeIdx=newIdx;
+        }}
+        inp.addEventListener('input',function(){{search(inp.value);}});
+        inp.addEventListener('focus',function(){{if(inp.value.trim().length>=MIN_CHARS)search(inp.value);}});
+        inp.addEventListener('keydown',function(e){{
+            if(e.key==='Escape'){{inp.value='';hide();return;}}
+            var rows=box.querySelectorAll('a[role="option"]');
+            if(e.key==='ArrowDown'){{e.preventDefault();if(rows.length)setActive(activeIdx+1);}}
+            else if(e.key==='ArrowUp'){{e.preventDefault();if(rows.length)setActive(activeIdx-1);}}
+            else if(e.key==='Enter'){{
+                if(activeIdx>=0&&rows[activeIdx]){{e.preventDefault();window.location.href=rows[activeIdx].href;}}
+                else if(rows.length===1){{e.preventDefault();window.location.href=rows[0].href;}}
+            }}
+        }});
+        box.addEventListener('mouseover',function(e){{
+            var a=e.target.closest&&e.target.closest('a[role="option"]');
+            if(a)a.style.background='var(--bg-surface)';
+        }});
+        box.addEventListener('mouseout',function(e){{
+            var a=e.target.closest&&e.target.closest('a[role="option"]');
+            if(a&&!a.hasAttribute('aria-selected'))a.style.background='transparent';
+        }});
+        document.addEventListener('click',function(e){{
+            if(!box.contains(e.target)&&e.target!==inp)hide();
+        }});
+    }})();
     </script>
 
     <!-- Statistik-Band -->
