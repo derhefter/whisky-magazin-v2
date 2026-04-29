@@ -1401,15 +1401,27 @@ Sammelpunkt fuer die Frontend- und WotM-Anpassungen aus diesem Sprint. Detail-Do
 
 Ueberblick der CSP-Direktiven, die Drittanbieter-Integrationen freischalten muessen, damit sie auf Production funktionieren:
 
-| Direktive          | Wofuer                          | Aktuelle Whitelist (Public-CSP)                                                                                  |
+**Public-CSP** (`/((?!admin/).*)` in `vercel.json`):
+
+| Direktive          | Wofuer                          | Aktuelle Whitelist                                                                                               |
 | ------------------ | ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `script-src`       | externe `<script src=...>`      | `'self' 'unsafe-inline' 'unsafe-hashes' unpkg.com challenges.cloudflare.com s.pinimg.com ct.pinterest.com`       |
 | `script-src-attr`  | inline `onclick=`/`oninput=`    | `'self' 'unsafe-inline' 'unsafe-hashes'` (besser: gar nicht nutzen, immer `addEventListener`)                    |
 | `style-src`        | externe Stylesheets             | `'self' 'unsafe-inline' fonts.googleapis.com unpkg.com`                                                          |
-| `connect-src`      | `fetch()`/`XHR` zu Drittanbietern | `'self' api.brevo.com *.tile.openstreetmap.org *.basemaps.cartocdn.com challenges.cloudflare.com formspree.io`   |
+| `connect-src`      | `fetch()`/`XHR` zu Drittanbietern | `'self' api.brevo.com *.tile.openstreetmap.org *.basemaps.cartocdn.com challenges.cloudflare.com formspree.io ct.pinterest.com s.pinimg.com` |
 | `frame-src`        | iFrames (z. B. Captcha)         | `challenges.cloudflare.com`                                                                                      |
 | `img-src`          | externe Bilder                  | `'self' data: https: blob: *.basemaps.cartocdn.com`                                                              |
 | `font-src`         | Webfonts                        | `fonts.gstatic.com`                                                                                              |
+
+**Admin-CSP** (`/admin/(.*)` in `vercel.json`) — ist strenger:
+
+| Direktive       | Aktuelle Whitelist                                              | Wofuer                                |
+| --------------- | --------------------------------------------------------------- | ------------------------------------- |
+| `script-src`    | `'self' 'unsafe-inline' cdn.jsdelivr.net`                       | DOMPurify (XSS-Sanitizer fuer KI-Content) |
+| `style-src`     | `'self' 'unsafe-inline' fonts.googleapis.com`                   | Fonts                                 |
+| `font-src`      | `fonts.gstatic.com`                                             | Webfonts                              |
+| `connect-src`   | `'self' api.brevo.com api.github.com api.openai.com`            | Brevo-Stats, GitHub-Inhaltspflege, OpenAI |
+| `img-src`       | `'self' data: https: blob:`                                     | Avatars, generierte Bilder            |
 
 **Faustregel beim Hinzufuegen einer neuen Integration:**
 1. Welche Domain wird angesprochen? (z. B. `https://api.example.com`)
@@ -1417,3 +1429,27 @@ Ueberblick der CSP-Direktiven, die Drittanbieter-Integrationen freischalten mues
 3. Domain in der entsprechenden Direktive in `vercel.json` ergaenzen, deployen, in der DevTools-Konsole pruefen ob CSP-Violations weg sind.
 
 **Inline-Eventhandler vermeiden.** Die meisten "Button tut nichts"-Reports der letzten Iterationen hingen an `oninput=""`/`onclick=""` und der CSP — nicht an der eigentlichen Logik. Neue interaktive Komponenten konsequent mit `addEventListener` bauen, dann sind sie auch bei strikteren CSP-Profilen robust.
+
+### 13.7 Voller CSP-Audit (29.04.2026)
+
+Nach dem dritten CSP-bedingten Bug in diesem Sprint wurde ein vollstaendiger Audit aller `fetch()`-/Drittanbieter-Calls und Inline-Handler in `site-v2/` durchgefuehrt. Ergebnis:
+
+| Workflow                                | Status nach Sprint  | Anmerkung                                                                       |
+| --------------------------------------- | ------------------- | ------------------------------------------------------------------------------- |
+| Hamburger-Menue (mobil)                 | ✅                   | siehe 13.1                                                                      |
+| Glossar-Suche (Hauptseite)              | ✅                   | siehe 13.4                                                                      |
+| Glossar-Feedback (Whisky-/Distillerie-Detailseiten) | ✅       | inline `onclick=submitFb_*()` durch `'unsafe-inline'` erlaubt; fetch -> `/api/subscribe?action=feedback` (self) |
+| Beta-Fragebogen                         | ✅                   | siehe 13.5                                                                      |
+| Newsletter-Anmeldung (jeder Footer)     | ✅                   | Submit-Listener ueber `addEventListener`, fetch -> `/api/subscribe` (self), Turnstile-iFrame ueber `frame-src` erlaubt |
+| Newsletter-Versand (Admin)              | ✅                   | komplett serverseitig in `api/admin_wotm.py`                                    |
+| WotM-Sync zur Startseite                | ✅                   | siehe 13.3, serverseitig                                                        |
+| Cookie-Banner                           | ✅                   | inline `onclick=cookieConsent()` ok unter `script-src-attr`                     |
+| Hero-Scroll-Pfeil (Startseite)          | ✅                   | inline `onclick=scrollIntoView()` ok                                            |
+| Lang-Switcher (rechte Sprachleiste)     | ✅                   | reines Inline-Script, alles ueber `localStorage`                                |
+| Karten-Seite (Leaflet + Tiles)          | ✅                   | `unpkg.com` (script), Tile-Server (`*.tile.openstreetmap.org`, `*.basemaps.cartocdn.com`) in `connect-src` und `img-src` ✅ |
+| Artikel-Uebersetzung (`/api/translate`) | ✅                   | self                                                                            |
+| Such-Seite (`suche.html`)               | ✅                   | fetch `/data/search-index.json` (self)                                          |
+| Pinterest-Tracking                      | ✅ (heute gefixt)    | `s.pinimg.com` und `ct.pinterest.com` jetzt auch in `connect-src` (vorher nur in `script-src`) |
+| Admin-Panel: DOMPurify                  | ✅ (heute gefixt)    | `cdn.jsdelivr.net` in Admin-`script-src` aufgenommen — XSS-Sanitizer laedt jetzt sauber statt in den Fallback zu fallen (Sicherheitsverbesserung, nicht funktional sichtbar) |
+
+**Kein weiterer Workflow blockiert.** Sollte ein neuer Drittanbieter-Endpoint dazukommen, vorher die CSP-Tabelle in 13.6 abgleichen und die entsprechende Direktive ergaenzen — sonst Wiederholung der Stille-Fehler-Falle.
