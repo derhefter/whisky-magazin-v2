@@ -1,6 +1,6 @@
 # Whisky Magazin -- Betriebshandbuch
 
-Stand: April 2026
+Stand: April 2026 (zuletzt ergaenzt: 29.04.2026 — Hamburger/CSP, Tasting-Icons, WotM-Sync, Glossar-Suche; siehe Abschnitt 13)
 
 ---
 
@@ -230,6 +230,23 @@ Dieser Tab hat zwei Bereiche: Links das WotM-Formular, rechts den Newsletter-Ver
 5. Erfolg: Kampagnen-ID wird angezeigt
 
 **Wichtig:** Immer erst Newsletter generieren und in der Vorschau pruefen, bevor du sendest!
+
+#### Auto-Sync zur Startseite (seit April 2026)
+
+Sobald der Newsletter erfolgreich ueber Brevo versendet wurde, uebernimmt das Admin-API automatisch denselben Whisky-Eintrag auch in `data/wotm.json` (Quelle der oeffentlichen Startseite):
+
+- bisheriger `current` wandert in `archiv`
+- neuer `current` = der gerade versendete Monatswhisky (Name, Region, Tasting-Notes, Bewertung, Affiliate-Link, Bild)
+- Commit ueber GitHub-API -> Vercel deployt automatisch -> Startseite zeigt **denselben Whisky** wie der Newsletter
+
+Das verhindert die alte Doppelpflege (Admin-Datei `whisky-of-the-month.json` vs. Site-Datei `wotm.json`). Du musst hier nichts mehr per Hand machen.
+
+**Falls der Sync mal fehlschlaegt** (z. B. GitHub-API-Hiccup): Der Newsletter ist trotzdem raus. Die JSON-Antwort des Endpoints enthaelt dann ein Feld `site_sync_warning` mit der Fehlerursache. Manueller Nachzug ueber CLI:
+
+```bash
+python wotm_generator.py --new "Scapa" --region Highlands
+python wotm_generator.py --approve   # baut die Site neu
+```
 
 ---
 
@@ -736,6 +753,16 @@ Alle Seiten werden von `site_builder_v2.py` generiert:
 
 **SEO-Hinweis:** Neue Seiten, die nicht indexiert werden sollen (Utility-, Legal- oder Duplikat-Seiten), muessen zwei Dinge bekommen: (1) `<meta name="robots" content="noindex, follow">` im `<head>` und (2) keinen Eintrag in `build_sitemap()`. Beides wird im Builder per Post-Processing (`.replace()`-Aufruf nach `.format()`) und durch Weglassen in der `static_pages`-Liste geloest -- analog zu impressum/datenschutz/suche.
 
+#### Frontend-Komponenten mit eigenen Verhaltens-Regeln
+
+| Komponente              | Quelle                        | Worauf achten                                                                                                                                                                          |
+| ----------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hamburger-Menue (mobil) | `_base_template()` (~1320)    | Toggle-Logik laeuft via Event-Delegation auf `document` (kein Inline-`onclick`!), Tap-Target ist hart 48x48 px, `z-index: 200`. Aenderungen am Header duerfen das nicht zerschiessen.   |
+| Tasting-Icons (WotM)    | `_render_wotm_section()`      | Aroma/Geschmack/Abgang sind Inline-SVGs im Konturstil mit `currentColor` = `var(--accent-amber)`. **Keine Emoji** zurueck einfuehren — siehe `design-concepts/REDESIGN-KONZEPT.md` Abschnitt "Tasting-Icons".  |
+| Glossar-Suche           | `glossary_builder.py` (~325)  | Mindestens 3 Buchstaben, gruppiert in Destillerien/Whiskys, Tastatur-Navigation. Listener werden via `addEventListener` gebunden — **keine** `oninput=`/`onkeydown=`-Attribute. |
+
+**Wichtige Regel fuer Inline-Scripts:** Die oeffentliche Site laeuft mit einer Content-Security-Policy in `vercel.json`. Inline-`<script>`-Bloecke sind erlaubt (`'unsafe-inline'` + `'unsafe-hashes'`), aber `oninput=""`-/`onclick=""`-Attribute sind aus Wartbarkeitsgruenden zu vermeiden — bei aelteren CSP-Headers wurden die stillschweigend geblockt (-> "Button tut nichts"-Bug). Neue interaktive Komponenten daher immer mit `addEventListener` umsetzen.
+
 Nach jeder Aenderung: `python main.py --build-v2`
 
 #### Webmaster-Verification-Tags
@@ -954,6 +981,11 @@ Reihenfolge bei einem vermuteten Komplettleak (z. B. `.env` versehentlich gepost
 | Uebersetzung liefert 429                                            | Rate-Limit (10 Anf./Stunde/IP)          | 1 Stunde warten; fuer internen Test VPN/anderen Rechner nutzen                                               |
 | Uebersetzung liefert alten Stand                                    | localStorage-Cache (24h) veraltet       | Browser-DevTools -> Application -> LocalStorage -> `tr_slug_lang` Eintrag loeschen                          |
 | Glossar-Import zeigt keine Duplikat-Warnungen                       | Batch-Groesse zu klein                  | Mindestens 5+ Eintraege importieren; Duplikate werden nur gegen bestehende Eintraege erkannt                 |
+| Hamburger-Menue auf Handy reagiert nicht (Klick "still")            | CSP blockiert Inline-Script             | Konsole pruefen auf "violates Content Security Policy"; CSP in `vercel.json` muss `'unsafe-inline'` + `'unsafe-hashes'` in `script-src`/`script-src-attr` enthalten |
+| Glossar-Suche reagiert nicht beim Tippen                            | Selbe CSP-Ursache wie oben              | Konsole pruefen; ggf. `vercel.json` CSP korrigieren; alternativ: Inline-Eventhandler durch `addEventListener` ersetzen                                              |
+| Newsletter ist raus, Startseite zeigt aber alten Whisky             | `site_sync_warning` im Send-Response    | JSON-Response des Send-Endpoints pruefen; manueller Nachzug: `python wotm_generator.py --new "<Name>" --region <Region>` + `--approve`                              |
+| WotM-Newsletter geht raus, aber Site bleibt gleich (kein Warning)   | Vercel-Deploy haengt                    | Vercel-Dashboard -> letztes Deployment pruefen; ggf. "Redeploy" anstossen; sonst lokal `python main.py --build-v2` + `git push`                                     |
+| Verspielte Emoji (👃👅✨) tauchen wieder im WotM-Block auf          | Jemand hat den Builder zurueckgesetzt   | Im `_render_wotm_section()` muessen die drei Inline-SVGs stehen — siehe `design-concepts/REDESIGN-KONZEPT.md` "Tasting-Icons" fuer die Soll-Quellen                  |
 
 ### 8.2 Notfall-Prozeduren
 
@@ -1310,3 +1342,53 @@ Das Design der Landingpage und des Fragebogens folgt dem Standard-Brand:
 - **Schriften:** Fraunces (Headings), Inter (Body)
 - **Stylesheet:** `/style.css` (gemeinsam mit dem Rest der Website)
 - **OG-Tags:** Optimiert fuer WhatsApp-Link-Preview (Titel, Beschreibung, Foto)
+
+---
+
+## 13. Aenderungs-Log April 2026
+
+Sammelpunkt fuer die Frontend- und WotM-Anpassungen aus diesem Sprint. Detail-Doku jeweils in den verlinkten Sektionen.
+
+### 13.1 Hamburger-Menue (mobil) reaktiviert
+
+**Symptom:** Klick auf das `☰`-Symbol auf dem Handy hatte keinen Effekt — und das mehrfach hintereinander, obwohl der Code "richtig aussah".
+**Eigentliche Ursache:** Die Content-Security-Policy in `vercel.json` lautete `script-src 'self' https://unpkg.com` ohne `'unsafe-inline'`. Der Browser hat damit **alle** inline-`<script>`-Bloecke der Site stillschweigend verworfen — auch den Toggle. Lokal (`python -m http.server`) gab es keine CSP, deshalb hat dort alles funktioniert.
+**Fix-Bestandteile:**
+- `vercel.json`: CSP erlaubt jetzt `'unsafe-inline'` + `'unsafe-hashes'` fuer `script-src`/`script-src-attr`; zusaetzlich `challenges.cloudflare.com` (Turnstile) und `s.pinimg.com` / `ct.pinterest.com` (Pinterest-Tag) freigeschaltet.
+- `site_builder_v2.py`: Tap-Target hart 48x48 px (`width`/`height` + `min-*`), `position: relative; z-index: 200`, Toggle-Logik via Event-Delegation auf `document` (kein direkter Listener mehr — ueberlebt Re-Layouts und Overlays).
+- Outside-Click + ESC schliessen das Menue.
+
+**Wo dokumentiert:** Sektion 5.7 "Frontend-Komponenten mit eigenen Verhaltens-Regeln" + Sektion 8.1 (zwei neue Tabellenzeilen).
+
+### 13.2 Tasting-Icons im Whisky-des-Monats-Block
+
+**Vorher:** Aroma 👃, Geschmack 👅, Abgang ✨ (Emoji, wirkten verspielt).
+**Jetzt:** Drei Inline-SVGs im Konturstil — Nosing-Glas mit Dampf · Tropfen · Sanduhr — eingefaerbt in `var(--accent-amber)`.
+**Warum SVG inline:** Kein zusaetzlicher HTTP-Request, scharf auf Retina, ueber `currentColor` einfaerbbar, kein Asset-Management noetig.
+**Wo dokumentiert:** Brand-Guide `design-concepts/REDESIGN-KONZEPT.md` Abschnitt "Tasting-Icons" (mit Don't-Hinweis fuer kuenftige Verkostungs-Felder).
+
+### 13.3 Whisky-des-Monats-Sync (Newsletter -> Startseite)
+
+**Vorher:** Admin-Panel + Brevo-Versand lasen aus `data/whisky-of-the-month.json`, die oeffentliche Startseite aus `data/wotm.json`. Wer den Mai-Newsletter (Scapa) ueber das Dashboard verschickte, hatte die Site weiter auf "Maerz — Lagavulin".
+**Jetzt:** Nach erfolgreichem `_brevo_send_now` schreibt `api/admin_wotm.py` automatisch denselben Eintrag in `wotm.json.current` (alter `current` -> Archiv) und committet via GitHub-API. Vercel deployt automatisch.
+**Fail-Safe:** Schlaegt der Sync fehl, ist der Newsletter trotzdem raus; die Send-Response enthaelt dann `site_sync_warning` mit der Ursache.
+**Wo dokumentiert:** Sektion 2.5 Schritt 3 "Auto-Sync zur Startseite".
+
+### 13.4 Glossar-Suche reaktiviert + Autocomplete ab 3 Zeichen
+
+**Vorher:** Suche reagierte gar nicht — selbe CSP-Falle wie beim Hamburger (`oninput=""`/`onkeydown=""` als Inline-Attribute).
+**Jetzt:**
+- Inline-Handler raus, sauber via `addEventListener` in einer IIFE
+- Vorschlaege erst ab **3 Buchstaben** (vorher 1) — mit Hinweis "Bitte mindestens 3 Buchstaben eingeben…" im Dropdown
+- Treffer in zwei Gruppen (Destillerien zuerst, dann Whiskys), je max 8
+- "Beginnt mit Suchbegriff" priorisiert (Lagavulin vor Glenglassaugh)
+- Match-Highlighting via `indexOf`-Slice (kein fragiles Regex-Escaping)
+- Tastaturbedienung: ↑/↓ navigiert, Enter oeffnet Treffer, Esc leert das Feld
+- Suche feuert nur noch im Namen, nicht mehr in den Beschreibungen
+- Barrierefrei: `aria-label`, `role="listbox"`, `aria-selected`
+
+**Wo dokumentiert:** Sektion 5.7 "Frontend-Komponenten mit eigenen Verhaltens-Regeln".
+
+### 13.5 Globale Lehre
+
+**Inline-Eventhandler vermeiden.** Die meisten "Button tut nichts"-Reports der letzten Iterationen hingen an `oninput=""`/`onclick=""` und der CSP — nicht an der eigentlichen Logik. Neue interaktive Komponenten konsequent mit `addEventListener` bauen, dann sind sie auch bei strikteren CSP-Profilen robust.
