@@ -24,6 +24,13 @@ KEY_VERSION     = os.environ.get("ADMIN_KEY_VERSION", "1").strip()
 
 TOKEN_TTL = 8 * 3600  # 8h, war 24h
 WOTM_FILE = "data/whisky-of-the-month.json"
+SITE_WOTM_FILE = "data/wotm.json"  # Quelle, die der site_builder_v2 für die Startseite liest
+
+GERMAN_MONTHS = {
+    "01": "Januar", "02": "Februar", "03": "März", "04": "April",
+    "05": "Mai", "06": "Juni", "07": "Juli", "08": "August",
+    "09": "September", "10": "Oktober", "11": "November", "12": "Dezember",
+}
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
@@ -128,6 +135,112 @@ def _save_wotm_data(data, sha, message):
     content_bytes = json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")
     result = _github_put(WOTM_FILE, content_bytes, sha, message)
     return result.get("error") if "error" in result else None
+
+
+# ── Site-WOTM sync ─────────────────────────────────────────────────────────────
+# Beim Newsletter-Versand wird der Eintrag aus whisky-of-the-month.json (Admin)
+# zusätzlich nach wotm.json (Startseite) übernommen. Vercel deployt automatisch
+# bei Commit, dadurch zeigt die Startseite genau das, was im Newsletter steht.
+
+def _slugify_for_id(s):
+    import re
+    s = (s or "").lower()
+    repl = {"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"}
+    for k, v in repl.items():
+        s = s.replace(k, v)
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s or "whisky"
+
+
+def _sync_site_wotm(month_key, entry):
+    """Promoted den Newsletter-Eintrag (whisky-of-the-month.json) in
+    wotm.json.current, sodass die öffentliche Startseite dasselbe anzeigt.
+
+    Returns None on success, error string on failure (Versand soll trotzdem
+    als erfolgreich gelten — Newsletter ist raus).
+    """
+    file_data = _github_get(f"contents/{SITE_WOTM_FILE}")
+    if isinstance(file_data, dict) and "error" in file_data:
+        return f"wotm.json laden fehlgeschlagen: {file_data['error']}"
+    try:
+        raw = base64.b64decode(file_data["content"].replace("\n", "")).decode("utf-8")
+        site = json.loads(raw)
+    except Exception as e:
+        return f"wotm.json parsen fehlgeschlagen: {e}"
+    sha = file_data.get("sha")
+
+    try:
+        year, month_num = month_key.split("-", 1)
+    except ValueError:
+        return f"ungültiger month_key: {month_key}"
+    month_label = f"{GERMAN_MONTHS.get(month_num, month_num)} {year}"
+    name = entry.get("whisky_name") or "Unbekannt"
+    new_id = f"{_slugify_for_id(name)}-{month_key}"
+
+    # Schon synchron → nichts tun
+    if isinstance(site.get("current"), dict) and site["current"].get("id") == new_id:
+        return None
+
+    # Alten current ins Archiv (ohne Duplikate)
+    old = site.get("current") if isinstance(site.get("current"), dict) else None
+    if old and old.get("id"):
+        archiv_entry = {
+            "id":           old.get("id"),
+            "month":        old.get("month"),
+            "name":         old.get("name"),
+            "distillery":   old.get("distillery"),
+            "region":       old.get("region"),
+            "age":          old.get("age"),
+            "abv":          old.get("abv"),
+            "price_eur":    old.get("price_eur"),
+            "affiliate_url": old.get("affiliate_url"),
+            "newsletter_teaser": old.get("newsletter_teaser"),
+            "approved":     True,
+        }
+        if not isinstance(site.get("archiv"), list):
+            site["archiv"] = []
+        if not any(isinstance(a, dict) and a.get("id") == archiv_entry["id"]
+                   for a in site["archiv"]):
+            site["archiv"].insert(0, archiv_entry)
+
+    today = time.strftime("%Y-%m-%d")
+    photos = entry.get("photo_urls") or []
+    image_url = photos[0] if photos else ""
+
+    site["current"] = {
+        "id":                new_id,
+        "month":             month_label,
+        "name":              name,
+        "distillery":        entry.get("destillerie", ""),
+        "region":            entry.get("region", ""),
+        "age":               entry.get("alter"),
+        "abv":               entry.get("abv"),
+        "price_eur":         entry.get("preis_eur"),
+        "price_range":       "",
+        "image_url":         image_url,
+        "affiliate_url":     entry.get("affiliate_link", ""),
+        "tasting": {
+            "aroma":     entry.get("aroma", ""),
+            "geschmack": entry.get("geschmack", ""),
+            "abgang":    entry.get("abgang", ""),
+            "wertung":   entry.get("bewertung") or 0,
+        },
+        "beschreibung":      entry.get("kommentar", ""),
+        "newsletter_teaser": entry.get("intro_text", ""),
+        "created_at":        entry.get("erstellt_am", today),
+        "created_by":        "newsletter-send",
+        "approved":          True,
+        "approved_at":       today,
+    }
+    site["draft"] = None
+
+    content_bytes = json.dumps(site, ensure_ascii=False, indent=2).encode("utf-8")
+    result = _github_put(
+        SITE_WOTM_FILE, content_bytes, sha,
+        f"sync: Site-WotM auf {name} ({month_label}) — Newsletter-Versand")
+    if isinstance(result, dict) and "error" in result:
+        return f"wotm.json speichern fehlgeschlagen: {result['error']}"
+    return None
 
 
 # ── Affiliate link helper ──────────────────────────────────────────────────────
@@ -1144,7 +1257,16 @@ class handler(BaseHTTPRequestHandler):
             entry["newsletter_gesendet"] = time.strftime("%Y-%m-%d %H:%M")
             _save_wotm_data(data, sha, f"Newsletter gesendet {month_key}")
 
-            return self._json(200, {"ok": True, "campaign_id": campaign_id})
+            # Site-WotM auf der Startseite mit dem versendeten Newsletter-Eintrag
+            # synchronisieren. Schlägt der Sync fehl, ist der Newsletter trotzdem
+            # raus — wir geben nur eine Warnung mit zurück.
+            sync_err = _sync_site_wotm(month_key, entry)
+            response = {"ok": True, "campaign_id": campaign_id}
+            if sync_err:
+                response["site_sync_warning"] = sync_err
+            else:
+                response["site_synced"] = True
+            return self._json(200, response)
 
         return self._json(400, {"error": f"Unbekannte action: {action}"})
 
