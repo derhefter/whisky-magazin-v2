@@ -1269,4 +1269,42 @@ body {
 
 ---
 
+## Tasting-Icons (Aroma · Geschmack · Abgang)
+
+**Regel:** In allen Whisky-Tasting-Blöcken (Whisky des Monats, Empfehlungs-Boxen, künftige Verkostungs-Karten) werden **keine Emoji** mehr verwendet (👃 👅 ✨ wirken verspielt und brechen mit dem editorialen Magazin-Ton). Stattdessen kommen drei dedizierte **Inline-SVG-Icons im Konturstil** zum Einsatz — mit `currentColor` einfärbbar (Standard: `var(--accent-amber)`), `stroke-width: 1.6`, viewBox `0 0 24 24`.
+
+| Sektion | Symbolik | Bedeutung |
+|---------|----------|-----------|
+| Aroma | Nosing-Glas mit aufsteigendem Dampf | klassisches Nasing-Symbol |
+| Geschmack | Tropfen mit Highlight | Flüssigkeit, Gaumen |
+| Abgang | Sanduhr | langer, anhaltender Nachklang |
+
+**Verwendung:** Die SVGs sind direkt im Markup eingebettet (kein extra HTTP-Request, scharf auf Retina, einfärbbar via CSS `color`). Renderinggröße 22 × 22 px in einer 24 × 24-Box, `margin-top: 2px` damit das Icon optisch auf der Textgrundlinie sitzt.
+
+```html
+<!-- Aroma: Nosing-Glas mit Dampf -->
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 21h6"/><path d="M12 21v-4"/>
+  <path d="M7 9c0 3 2.2 8 5 8s5-5 5-8z"/>
+  <path d="M10 5c-.5 1 .5 2 0 3"/><path d="M13 4c-.5 1 .5 2 0 3"/>
+</svg>
+
+<!-- Geschmack: Tropfen mit Highlight -->
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/>
+  <path d="M9 14c0 1.6 1.1 3 3 3"/>
+</svg>
+
+<!-- Abgang: Sanduhr -->
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 3h10"/><path d="M7 21h10"/>
+  <path d="M7 3v3c0 3 3 4 5 6 2-2 5-3 5-6V3"/>
+  <path d="M7 21v-3c0-3 3-4 5-6 2 2 5 3 5 6v3"/>
+</svg>
+```
+
+**Don't:** keine farbigen Emoji-Icons, keine ausgefüllten Glyphen, keine doppelte Strichstärke. Wenn neue Tasting-Felder dazukommen (z. B. „Farbe", „Finish-Stil"), ein weiteres Konturikon im selben Stil ergänzen — nicht zu Emoji zurückkehren.
+
+---
+
 *Erstellt als Senior Brand-/Webdesign-Konzept. Alle Entscheidungen sind umsetzbar, konkret und auf Conversion + Magazin-Feeling optimiert.*
