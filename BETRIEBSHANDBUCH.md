@@ -986,6 +986,7 @@ Reihenfolge bei einem vermuteten Komplettleak (z. B. `.env` versehentlich gepost
 | Newsletter ist raus, Startseite zeigt aber alten Whisky             | `site_sync_warning` im Send-Response    | JSON-Response des Send-Endpoints pruefen; manueller Nachzug: `python wotm_generator.py --new "<Name>" --region <Region>` + `--approve`                              |
 | WotM-Newsletter geht raus, aber Site bleibt gleich (kein Warning)   | Vercel-Deploy haengt                    | Vercel-Dashboard -> letztes Deployment pruefen; ggf. "Redeploy" anstossen; sonst lokal `python main.py --build-v2` + `git push`                                     |
 | Verspielte Emoji (👃👅✨) tauchen wieder im WotM-Block auf          | Jemand hat den Builder zurueckgesetzt   | Im `_render_wotm_section()` muessen die drei Inline-SVGs stehen — siehe `design-concepts/REDESIGN-KONZEPT.md` "Tasting-Icons" fuer die Soll-Quellen                  |
+| Beta-Fragebogen zeigt "Fehler – bitte nochmal versuchen"            | Externe Domain nicht in CSP `connect-src` | `vercel.json` -> `connect-src` muss `https://formspree.io` enthalten. Allgemein: bei Drittanbieter-`fetch()` immer prüfen, ob die Domain whitelistet ist (Konsole zeigt "Refused to connect ... violates Content Security Policy"). |
 
 ### 8.2 Notfall-Prozeduren
 
@@ -1389,6 +1390,30 @@ Sammelpunkt fuer die Frontend- und WotM-Anpassungen aus diesem Sprint. Detail-Do
 
 **Wo dokumentiert:** Sektion 5.7 "Frontend-Komponenten mit eigenen Verhaltens-Regeln".
 
-### 13.5 Globale Lehre
+### 13.5 Beta-Fragebogen reanimiert (Hotfix)
+
+**Symptom:** Beta-Tester fuellen den Fragebogen unter `/fragebogen.html` aus, klicken "Absenden", Button schaltet auf **"Fehler – bitte nochmal versuchen"**. Daten landen **nicht** bei Formspree.
+**Ursache:** Geschwister-Falle der CSP-Bugs aus 13.1/13.4 — diesmal die `connect-src`-Direktive in `vercel.json`. `https://formspree.io` war nicht in der Whitelist, der Browser blockte den `fetch()` zum Submit-Endpoint.
+**Fix:** `connect-src` um `https://formspree.io` erweitert.
+**Lehre:** Wenn ein neuer Drittanbieter (Formspree, Mailchimp, Stripe, etc.) per `fetch()` angesprochen wird, **muss seine Domain in `vercel.json` -> `connect-src`** eingetragen werden — sonst greift dieselbe stille Blockade wie bei Inline-Scripts.
+
+### 13.6 Globale Lehre — CSP ist die haeufigste Stille-Fehler-Quelle
+
+Ueberblick der CSP-Direktiven, die Drittanbieter-Integrationen freischalten muessen, damit sie auf Production funktionieren:
+
+| Direktive          | Wofuer                          | Aktuelle Whitelist (Public-CSP)                                                                                  |
+| ------------------ | ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `script-src`       | externe `<script src=...>`      | `'self' 'unsafe-inline' 'unsafe-hashes' unpkg.com challenges.cloudflare.com s.pinimg.com ct.pinterest.com`       |
+| `script-src-attr`  | inline `onclick=`/`oninput=`    | `'self' 'unsafe-inline' 'unsafe-hashes'` (besser: gar nicht nutzen, immer `addEventListener`)                    |
+| `style-src`        | externe Stylesheets             | `'self' 'unsafe-inline' fonts.googleapis.com unpkg.com`                                                          |
+| `connect-src`      | `fetch()`/`XHR` zu Drittanbietern | `'self' api.brevo.com *.tile.openstreetmap.org *.basemaps.cartocdn.com challenges.cloudflare.com formspree.io`   |
+| `frame-src`        | iFrames (z. B. Captcha)         | `challenges.cloudflare.com`                                                                                      |
+| `img-src`          | externe Bilder                  | `'self' data: https: blob: *.basemaps.cartocdn.com`                                                              |
+| `font-src`         | Webfonts                        | `fonts.gstatic.com`                                                                                              |
+
+**Faustregel beim Hinzufuegen einer neuen Integration:**
+1. Welche Domain wird angesprochen? (z. B. `https://api.example.com`)
+2. Wie wird sie angesprochen? (`fetch()` -> `connect-src`; `<script src=>` -> `script-src`; iFrame -> `frame-src`; Bild -> `img-src`)
+3. Domain in der entsprechenden Direktive in `vercel.json` ergaenzen, deployen, in der DevTools-Konsole pruefen ob CSP-Violations weg sind.
 
 **Inline-Eventhandler vermeiden.** Die meisten "Button tut nichts"-Reports der letzten Iterationen hingen an `oninput=""`/`onclick=""` und der CSP — nicht an der eigentlichen Logik. Neue interaktive Komponenten konsequent mit `addEventListener` bauen, dann sind sie auch bei strikteren CSP-Profilen robust.
