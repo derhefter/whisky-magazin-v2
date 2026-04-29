@@ -111,7 +111,7 @@
             <span class="product-price">ca. 30-40 &euro;</span>
         </div>
         <a href="https://www.amazon.de/s?k=Highland+Park+12+Jahre+Viking+Honour&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-primary product-btn">Bei Amazon ansehen &rarr;</a>
-    </div> <h3>Die Route im Überblick</h3> <p>Start war am 7. September um 05:40 Uhr am Flughafen Berlin BER mit <a href="https://clk.tradedoubler.com/click?p=227718&amp;a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Ryanair nach Edinburgh</a>. Von dort ging es im <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a> (einem Polestar &ndash; ja, elektrisch durch die Highlands!) über die A9 nordwärts.</p> <ol>
+    </div> <h3>Die Route im Überblick</h3> <p>Start war am 7. September um 05:40 Uhr am Flughafen Berlin BER mit <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Ryanair nach Edinburgh</a>. Von dort ging es im <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a> (einem Polestar &ndash; ja, elektrisch durch die Highlands!) über die A9 nordwärts.</p> <ol>
 <li><strong>Tag 1:</strong> Edinburgh &rarr; Dewars Aberfeldy &rarr; Dalwhinnie &rarr; Speyside &rarr; Black Isle</li>
 <li><strong>Tag 2:</strong> GlenWyvis &rarr; Glen Ord &rarr; Dalmore &rarr; Glenmorangie &rarr; Balblair &rarr; Dornoch &rarr; Ardross</li>
 <li><strong>Tag 3:</strong> Uile-bheist Inverness &rarr; Royal Brackla &rarr; Moray Firth</li>
@@ -122,7 +122,7 @@
 <li><strong>Glenmorangie:</strong> Das moderne Besucherzentrum in Tain beeindruckt.</li>
 <li><strong>Uile-bheist Inverness:</strong> Brandneu 2023 eröffnet, direkt am Wasser in Inverness. Ein Muss für jeden, der Neues entdecken will.</li>
 <li><strong>Dalwhinnie:</strong> Die höchstgelegene Destillerie Schottlands, spektakulär an der A9 gelegen.</li>
-</ul> <p>Alle besuchten Whiskys findest du bei <a href="https://www.amazon.de/s?k=highlands+single+malt+whisky&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Natur-Highlights</h3> <ul>
+</ul> <p>Alle besuchten Whiskys findest du bei <a href="https://www.amazon.de/s?k=highlands+single+malt+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Natur-Highlights</h3> <ul>
 <li><strong>Cairngorms:</strong> Heide in voller Blüte entlang der A9, Blick auf die Bergketten</li>
 <li><strong>Kessock Bridge:</strong> Der Blick über den Beauly Firth bei Inverness &ndash; unvergesslich</li>
 <li><strong>Ruthven Barracks:</strong> Historische Ruine auf einem Hügel bei Kingussie, umgeben von grünen Feldern</li>
@@ -130,7 +130,7 @@
 <li><strong>Loch Ness:</strong> Fahrt entlang der A82 &ndash; auch ohne Monster beeindruckend</li>
 </ul> <h3>Praktische Tipps</h3> <ul>
 <li><strong>Mietwagen:</strong> E-Auto (Polestar) funktioniert in den Highlands erstaunlich gut. Ladestationen vorhanden, aber planen! Buche über <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">whisky.reise/mietwagen</a>.</li>
-<li><strong>Flug:</strong> Berlin BER &rarr; Edinburgh mit Ryanair ist günstig und schnell. Vergleiche Flüge über <a href="https://clk.tradedoubler.com/click?p=227718&amp;a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">unseren Flugvergleich</a>.</li>
+<li><strong>Flug:</strong> Berlin BER &rarr; Edinburgh mit Ryanair ist günstig und schnell. Vergleiche Flüge über <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">unseren Flugvergleich</a>.</li>
 <li><strong>Destillerien:</strong> Die meisten bieten Führungen ab 10&ndash;15 GBP an. Vorbuchen empfohlen, besonders bei Glenmorangie und Buffalo Trace... äh, Dalwhinnie.</li>
 <li><strong>Wetter:</strong> September ist ideal. Wir hatten drei Tage Sonne und einen Regentag (Tag 4: Yellow Warning Heavy Rain auf der M90).</li>
 </ul> <blockquote>&bdquo;Zwölf Destillerien. Ein Polestar. Drei Nächte auf der Black Isle. Das ist kein Urlaub &ndash; das ist eine Mission.&ldquo;</blockquote> <p>Die ausführlichen Tagesberichte mit allen Details, Fotos und GPS-Daten findest du in unserer Artikelserie auf <a href="https://www.whisky.reise" target="_blank" rel="noopener noreferrer">whisky.reise</a>.</p> 
@@ -333,24 +333,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">

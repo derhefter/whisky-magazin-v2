@@ -124,7 +124,7 @@
     <li><strong>Wo:</strong> Besonders bekannt ist das Glen Etive, wo du mit etwas Glück diese majestätischen Tiere aus nächster Nähe erleben kannst.</li>
 </ul>
 
-<p>Die Begegnung mit einem Rothirsch in der freien Natur ist ein Erlebnis, das man nicht so schnell vergisst. Und was könnte besser dazu passen, als abends am Kaminfeuer einen edlen <a href="https://www.amazon.de/s?k=Highland+Whisky&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Highland Whisky</a> zu genießen?</p>
+<p>Die Begegnung mit einem Rothirsch in der freien Natur ist ein Erlebnis, das man nicht so schnell vergisst. Und was könnte besser dazu passen, als abends am Kaminfeuer einen edlen <a href="https://www.amazon.de/s?k=Highland+Whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Highland Whisky</a> zu genießen?</p>
 
 <h2>Adler: Die Könige der Lüfte</h2>
 
@@ -147,14 +147,14 @@
     <li><strong>Beste Zeit:</strong> Frühling und Sommer, wenn die Robben ihre Jungen zur Welt bringen und an den Küsten zu sehen sind.</li>
 </ol>
 
-<p>Nach einem aufregenden Tag am Meer, warum nicht in einer gemütlichen Küstenkneipe einen <a href="https://www.amazon.de/s?k=Islay+Whisky&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Islay Whisky</a> probieren? Die rauchigen Aromen passen perfekt zur frischen Meeresluft.</p>
+<p>Nach einem aufregenden Tag am Meer, warum nicht in einer gemütlichen Küstenkneipe einen <a href="https://www.amazon.de/s?k=Islay+Whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Islay Whisky</a> probieren? Die rauchigen Aromen passen perfekt zur frischen Meeresluft.</p>
 
 <h2>Reiseplanung für dein Wildlife-Abenteuer</h2>
 
 <p>Um all diese wunderbaren Tiere in Schottland zu erleben, ist eine gute Planung entscheidend. Hier sind einige Tipps für deine Reise:</p>
 
 <ul>
-    <li><a href="https://clk.tradedoubler.com/click?p=227718&amp;a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge</a> nach Edinburgh oder Glasgow buchen.</li>
+    <li><a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge</a> nach Edinburgh oder Glasgow buchen.</li>
     <li>Ein <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Mietwagen</a> ist ideal, um die abgelegenen Spots zu erreichen.</li>
     <li>Für längere Aufenthalte könnte ein <a href="https://www.whisky.reise/wohnmobil/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Wohnmobil</a> eine flexible Option sein.</li>
     <li>Vergiss nicht, eine <a href="https://www.whisky.reise/reiseversicherung/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Reiseversicherung</a> abzuschließen.</li>
@@ -319,24 +319,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">

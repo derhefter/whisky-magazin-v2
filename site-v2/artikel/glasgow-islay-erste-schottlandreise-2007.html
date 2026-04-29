@@ -111,7 +111,7 @@
             <span class="product-price">ca. 30-40 &euro;</span>
         </div>
         <a href="https://www.amazon.de/s?k=Highland+Park+12+Jahre+Viking+Honour&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-primary product-btn">Bei Amazon ansehen &rarr;</a>
-    </div> <h3>Islay &ndash; die Torf-Insel</h3> <p>Mit der <a href="https://clkde.tradedoubler.com/click?p=40187&amp;a=2205846&amp;g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> ging es von Kennacraig nach Islay. Schon bei der Überfahrt war klar: Das hier ist anders. Wild, windig, und der Geruch von Torf liegt in der Luft.</p>
+    </div> <h3>Islay &ndash; die Torf-Insel</h3> <p>Mit der <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> ging es von Kennacraig nach Islay. Schon bei der Überfahrt war klar: Das hier ist anders. Wild, windig, und der Geruch von Torf liegt in der Luft.</p>
 <div class="product-box">
         <div class="product-info">
             <h4 class="product-name">Islay Single Malt Tasting Collection</h4>
@@ -126,11 +126,11 @@
 <li><strong>Laphroaig:</strong> Medizinisch, torfig, einzigartig. Man liebt es oder man hasst es &ndash; wir lieben es.</li>
 <li><strong>Kilchoman:</strong> Damals noch ganz jung: die erste Farm Distillery auf Islay. Alles von der Gerste bis zur Flasche auf einem Bauernhof.</li>
 <li><strong>Caol Ila:</strong> Versteckt am Sound of Islay mit Blick auf Jura. Der unterschätzte Klassiker.</li>
-</ul> <p>Islay Single Malts findest du bei <a href="https://www.amazon.de/s?k=islay+single+malt+whisky&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Tennent's &ndash; nicht nur Whisky</h3> <p>Zurück in Glasgow besuchten wir die <strong>Tennent's Brewery</strong>. Ja, Bier in Schottland. Tennent's Lager ist das Volksgetränk, und die Brauerei mitten in Glasgow ist eine Institution.</p> <h3>Praktische Tipps</h3> <ul>
-<li><strong>Anreise Islay:</strong> <a href="https://clkde.tradedoubler.com/click?p=40187&amp;a=2205846&amp;g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> ab Kennacraig (ca. 2 Stunden). Alternativ Flug ab Glasgow. Früh buchen!</li>
+</ul> <p>Islay Single Malts findest du bei <a href="https://www.amazon.de/s?k=islay+single+malt+whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Amazon</a>.</p> <h3>Tennent's &ndash; nicht nur Whisky</h3> <p>Zurück in Glasgow besuchten wir die <strong>Tennent's Brewery</strong>. Ja, Bier in Schottland. Tennent's Lager ist das Volksgetränk, und die Brauerei mitten in Glasgow ist eine Institution.</p> <h3>Praktische Tipps</h3> <ul>
+<li><strong>Anreise Islay:</strong> <a href="https://clkde.tradedoubler.com/click?p=40187&a=2205846&g=23855448" target="_blank" rel="noopener noreferrer" class="affiliate-link">CalMac-Fähre</a> ab Kennacraig (ca. 2 Stunden). Alternativ Flug ab Glasgow. Früh buchen!</li>
 <li><strong>Mietwagen:</strong> Auf Islay Pflicht. Buche über <a href="https://www.whisky.reise/mietwagen/" target="_blank" rel="noopener noreferrer" class="affiliate-link">whisky.reise/mietwagen</a>.</li>
 <li><strong>Old Scotia Bar:</strong> 42 Stockwell Street, Glasgow. Ältester Pub der Stadt, Livemusik fast jeden Abend. Pflichtprogramm.</li>
-<li><strong>Flüge:</strong> Vergleiche Flüge nach Glasgow über <a href="https://clk.tradedoubler.com/click?p=227718&amp;a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">unseren Flugvergleich</a>.</li>
+<li><strong>Flüge:</strong> Vergleiche Flüge nach Glasgow über <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">unseren Flugvergleich</a>.</li>
 </ul> <blockquote>&bdquo;Sechs Destillerien, ein alter Pub und eine Fährfahrt durch den Regen. So begann unsere Schottland-Sucht.&ldquo;</blockquote> 
 
             
@@ -331,24 +331,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">

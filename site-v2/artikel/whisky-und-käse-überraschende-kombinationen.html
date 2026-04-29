@@ -113,9 +113,9 @@
         </div>
         <a href="https://www.amazon.de/s?k=Islay+Single+Malt+Tasting+Collection&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-primary product-btn">Bei Amazon ansehen &rarr;</a>
     </div> <p>Empfohlene Whiskys:</p>
-<ul> <li><a href="https://www.amazon.de/s?k=lagavulin&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Lagavulin 16 Jahre</a></li> </ul> <h3>2. Fruchtiger Speyside Whisky und Brie</h3> <p>Ein Speyside Whisky, der oft fruchtige und blumige Noten aufweist, kann hervorragend mit einem weichen, cremigen Brie kombiniert werden. Der milde Geschmack des Käses lässt die subtilen Aromen des Whiskys durchscheinen und schafft eine harmonische Balance.</p> <p>Empfohlene Whiskys:</p>
+<ul> <li><a href="https://www.amazon.de/s?k=lagavulin&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Lagavulin 16 Jahre</a></li> </ul> <h3>2. Fruchtiger Speyside Whisky und Brie</h3> <p>Ein Speyside Whisky, der oft fruchtige und blumige Noten aufweist, kann hervorragend mit einem weichen, cremigen Brie kombiniert werden. Der milde Geschmack des Käses lässt die subtilen Aromen des Whiskys durchscheinen und schafft eine harmonische Balance.</p> <p>Empfohlene Whiskys:</p>
 <ul> </ul> <h3>3. Sherryfass gereifter Whisky und gereifter Cheddar</h3> <p>Ein Whisky, der in Sherryfässern gereift ist, bringt oft Noten von getrockneten Früchten und Gewürzen mit sich. Diese passen hervorragend zu einem gereiften Cheddar. Der kräftige, nussige Geschmack des Käses wird durch die süßen Noten des Whiskys perfekt ergänzt.</p> <p>Empfohlene Whiskys:</p>
-<ul> <li><a href="https://www.amazon.de/s?k=aberlour&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Aberlour A'Bunadh</a></li> </ul> <blockquote>"Ein guter Whisky ist wie ein guter Käse: Beide brauchen Geduld und Leidenschaft. Und zusammen genossen, erzählen sie eine Geschichte, die man schmecken kann." - Ellas</blockquote> <h2>Praktische Tipps für die Verkostung</h2> <p>Hier sind einige meiner persönlichen Tipps, um das Beste aus deiner Whisky- und Käseverkostung herauszuholen:</p> <ol> <li>Beginne mit dem Käse und folge mit einem Schluck Whisky, um die Aromen zu vergleichen und zu kontrastieren.</li> <li>Verwende ungesüßte Cracker oder Brot, um deinen Gaumen zwischen den Kombinationen zu neutralisieren.</li> <li>Nimm dir Zeit, um jeden Bissen und Schluck zu genießen und die sich entwickelnden Aromen wahrzunehmen.</li>
+<ul> <li><a href="https://www.amazon.de/s?k=aberlour&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Aberlour A'Bunadh</a></li> </ul> <blockquote>"Ein guter Whisky ist wie ein guter Käse: Beide brauchen Geduld und Leidenschaft. Und zusammen genossen, erzählen sie eine Geschichte, die man schmecken kann." - Ellas</blockquote> <h2>Praktische Tipps für die Verkostung</h2> <p>Hier sind einige meiner persönlichen Tipps, um das Beste aus deiner Whisky- und Käseverkostung herauszuholen:</p> <ol> <li>Beginne mit dem Käse und folge mit einem Schluck Whisky, um die Aromen zu vergleichen und zu kontrastieren.</li> <li>Verwende ungesüßte Cracker oder Brot, um deinen Gaumen zwischen den Kombinationen zu neutralisieren.</li> <li>Nimm dir Zeit, um jeden Bissen und Schluck zu genießen und die sich entwickelnden Aromen wahrzunehmen.</li>
 </ol> <h2>Fazit</h2> <p>Die Kombination von Whisky und Käse bietet eine fantastische Möglichkeit, die Nuancen beider Welten zu erkunden. Ob du ein erfahrener Whisky-Kenner oder ein neugieriger Neuling bist, es gibt immer neue Geschmäcker und Aromen, die darauf warten, entdeckt zu werden. Also, warum nicht deine eigene Verkostung planen und vielleicht sogar eine <a href="https://www.whisky.reise/touren/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Whisky-Tour</a> unternehmen, um noch mehr über diese faszinierende Welt zu lernen?</p> 
 
             
@@ -316,24 +316,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">

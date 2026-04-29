@@ -120,7 +120,7 @@
 <ol>
     <li>
         <strong>Glencairn Glas</strong>
-        <p>Das <a href="https://www.amazon.de/s?k=glencairn+glas&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Glencairn Glas</a> ist der Klassiker unter den Whisky-Gläsern. Mit seinem bauchigen Körper und der verjüngenden Öffnung konzentriert es die Aromen perfekt. Es ist ideal für die Verkostung von Scotch Whisky.</p>
+        <p>Das <a href="https://www.amazon.de/s?k=glencairn+glas&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Glencairn Glas</a> ist der Klassiker unter den Whisky-Gläsern. Mit seinem bauchigen Körper und der verjüngenden Öffnung konzentriert es die Aromen perfekt. Es ist ideal für die Verkostung von Scotch Whisky.</p>
     </li>
     <li>
         <strong>Tumbler</strong>
@@ -134,7 +134,7 @@
 
 <h3>2. Dekanter</h3>
 <p>Ein Dekanter ist nicht nur funktional, sondern auch ein stilvolles Accessoire für jede Hausbar. Er wertet das Erscheinungsbild deiner Whisky-Sammlung auf und kann den Whisky atmen lassen.</p>
-<p>Ein hochwertiger <a href="https://www.amazon.de/s?k=whisky+dekanter&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Whisky-Dekanter</a> ist ein Muss für jeden passionierten Sammler. Achte darauf, dass er aus bleifreiem Kristallglas gefertigt ist, um den Geschmack deines Whiskys nicht zu beeinträchtigen.</p>
+<p>Ein hochwertiger <a href="https://www.amazon.de/s?k=whisky+dekanter&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Whisky-Dekanter</a> ist ein Muss für jeden passionierten Sammler. Achte darauf, dass er aus bleifreiem Kristallglas gefertigt ist, um den Geschmack deines Whiskys nicht zu beeinträchtigen.</p>
 
 <h3>3. Whisky-Steine</h3>
 <p>Whisky-Steine sind eine großartige Alternative zu Eiswürfeln, da sie den Whisky kühlen, ohne ihn zu verwässern. Sie bestehen meist aus Speckstein oder Edelstahl und sind wiederverwendbar.</p>
@@ -160,7 +160,7 @@
 <h3>6. Reisen für Whisky-Liebhaber</h3>
 <p>Wenn du deine Leidenschaft für Whisky mit einer Reise kombinieren möchtest, gibt es einige fantastische Destinationen weltweit.</p>
 <ul>
-    <li><a href="https://clk.tradedoubler.com/click?p=227718&amp;a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge nach Schottland</a>: Entdecke die Heimat des Scotch Whiskys und besuche berühmte Destillerien in den Highlands.</li>
+    <li><a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge nach Schottland</a>: Entdecke die Heimat des Scotch Whiskys und besuche berühmte Destillerien in den Highlands.</li>
     <li><a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Hotels in Irland</a>: Erlebe die Gastfreundschaft der Iren und erkunde die Irish Whiskey-Szene.</li>
     <li><a href="https://www.whisky.reise/touren/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Touren in Kentucky</a>: Tauche ein in die Welt des Bourbon Whiskeys und genieße die Südstaaten-Küche.</li>
 </ul>
@@ -323,24 +323,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">

@@ -139,7 +139,7 @@
 
 <h3>Scotch Whisky</h3>
 
-<p>Kein Burns Supper wäre komplett ohne eine Auswahl an Scotch Whiskys. Von einem weichen Speyside bis zu einem rauchigen Islay – es ist wichtig, den richtigen Whisky für den Anlass zu wählen. Falls du einen guten Scotch Whisky online erwerben möchtest, hier ein Tipp: <a href="https://www.amazon.de/s?k=Scotch+Whisky&amp;tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Scotch Whisky bei Amazon</a>.</p>
+<p>Kein Burns Supper wäre komplett ohne eine Auswahl an Scotch Whiskys. Von einem weichen Speyside bis zu einem rauchigen Islay – es ist wichtig, den richtigen Whisky für den Anlass zu wählen. Falls du einen guten Scotch Whisky online erwerben möchtest, hier ein Tipp: <a href="https://www.amazon.de/s?k=Scotch+Whisky&tag=whiskyreise74-21" target="_blank" rel="noopener noreferrer" class="affiliate-link">Scotch Whisky bei Amazon</a>.</p>
 
 <h2>Wie du Burns Night zu Hause feiern kannst</h2>
 
@@ -306,24 +306,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">

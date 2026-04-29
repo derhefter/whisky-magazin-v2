@@ -99,17 +99,24 @@
             display: none;
             align-items: center;
             justify-content: center;
-            min-width: 44px;
-            min-height: 44px;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 26px;
             cursor: pointer;
             color: var(--text-primary);
-            padding: 4px 8px;
+            padding: 0;
             line-height: 1;
+            position: relative;
+            z-index: 200;
+            pointer-events: auto;
             touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(200,150,62,0.2);
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         /* --- HEADINGS --- */

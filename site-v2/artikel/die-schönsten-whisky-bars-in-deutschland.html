@@ -105,7 +105,7 @@
         <article class="article-body" data-slug="die-schönsten-whisky-bars-in-deutschland">
             <h2>Die schönsten Whisky-Bars in Deutschland</h2> <p>Als leidenschaftlicher Whisky-Experte und Reiseblogger habe ich das Vergnügen, einige der besten Whisky-Bars in Deutschland zu erkunden. Jede dieser Bars hat ihren eigenen Charme und bietet eine einzigartige Auswahl an Whiskys, die das Herz eines jeden Whisky-Liebhabers höherschlagen lässt. Lass uns gemeinsam die besten Orte entdecken, um ein Glas des goldenen Elixiers zu genießen.</p> <h2>1. The Auld Dubliner, Berlin</h2><div class="empfehlung-box"><span class="emp-icon">🥃</span><div class="emp-content"><p class="emp-title">Whisky Bars bei Amazon</p><p class="emp-text">Den im Artikel besprochenen Whisky direkt bestellen – oft mit Prime-Lieferung.</p><a href="https://www.amazon.de/s?k=whisky+bars+whisky+single+malt&tag=whiskyreise74-21" class="emp-cta" target="_blank" rel="nofollow noopener">Whisky Bars bei Amazon ansehen</a> <a href="https://www.amazon.de/s?k=deutschland&tag=whiskyreise74-21" class="btn btn-secondary" style="margin-top:12px;" target="_blank" rel="nofollow noopener">Deutschland ansehen</a></div></div>
 <p>Mitten im Herzen Berlins liegt <strong>The Auld Dubliner</strong>, eine Bar, die nicht nur durch ihre Irish-Pub-Atmosphäre besticht, sondern auch durch ihre beeindruckende Auswahl an irischen und schottischen Whiskys. Hier kannst du in entspannter Umgebung verschiedene Sorten probieren und dich von der Expertise der Barkeeper leiten lassen.</p>
-<p>Wenn du in Berlin unterwegs bist, solltest du dir auch die lebendige Kulturszene ansehen. <a href="https://clk.tradedoubler.com/click?p=227718&amp;a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge nach Berlin</a> sind oft erschwinglich und die Stadt bietet zahlreiche Sehenswürdigkeiten.</p> <h2>2. Bar Convent, München</h2>
+<p>Wenn du in Berlin unterwegs bist, solltest du dir auch die lebendige Kulturszene ansehen. <a href="https://clk.tradedoubler.com/click?p=227718&a=2205846" target="_blank" rel="noopener noreferrer" class="affiliate-link">Flüge nach Berlin</a> sind oft erschwinglich und die Stadt bietet zahlreiche Sehenswürdigkeiten.</p> <h2>2. Bar Convent, München</h2>
 <p>Die <strong>Bar Convent</strong> in München ist ein Muss für jeden Whisky-Enthusiasten. Diese stilvolle Bar bietet eine exquisite Auswahl an internationalen Whiskys und ist bekannt für ihre Tastings und Events. Die Mischung aus bayerischer Gastfreundschaft und schottischer Tradition macht diesen Ort besonders einladend.</p>
 <p>Für deinen Aufenthalt in München empfehle ich, ein <a href="https://www.whisky.reise/hotels/" target="_blank" rel="noopener noreferrer" class="affiliate-link">Hotel</a> in der Nähe der Altstadt zu buchen, um das volle Erlebnis der Stadt zu genießen.</p> <h2>3. Glen Els Whisky Lounge, Hannover</h2>
 <p>Die <strong>Glen Els Whisky Lounge</strong> in Hannover ist bekannt für ihre regionalen Spezialitäten. Der Fokus liegt hier auf deutschen Whiskys, insbesondere denen aus der Harz-Region. Eine Verkostung hier bietet dir die Möglichkeit, die Vielfalt und Qualität deutscher Whiskys zu entdecken.</p>
@@ -269,24 +269,43 @@
         });
     })();
     (function(){
-        var toggle=document.querySelector('.nav-toggle');
-        var nav=document.querySelector('.site-nav');
-        if(toggle&&nav){
-            toggle.addEventListener('click',function(){
-                var isOpen=nav.classList.toggle('open');
-                document.body.classList.toggle('nav-open',isOpen);
-                toggle.setAttribute('aria-expanded',isOpen);
-                toggle.textContent=isOpen?'✕':'☰';
-            });
-            nav.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click',function(){
-                    nav.classList.remove('open');
-                    document.body.classList.remove('nav-open');
-                    toggle.setAttribute('aria-expanded','false');
-                    toggle.textContent='☰';
-                });
-            });
+        function getToggle(){return document.querySelector('.nav-toggle');}
+        function getNav(){return document.querySelector('.site-nav');}
+        function closeNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}
         }
+        function openNav(){
+            var nav=getNav(),toggle=getToggle();
+            if(!nav)return;
+            nav.classList.add('open');
+            document.body.classList.add('nav-open');
+            if(toggle){toggle.setAttribute('aria-expanded','true');toggle.textContent='✕';}
+        }
+        document.addEventListener('click',function(e){
+            var t=e.target;
+            if(!t)return;
+            var toggleEl=t.closest&&t.closest('.nav-toggle');
+            if(toggleEl){
+                e.preventDefault();
+                e.stopPropagation();
+                var nav=getNav();
+                if(nav&&nav.classList.contains('open')){closeNav();}else{openNav();}
+                return;
+            }
+            var navLink=t.closest&&t.closest('.site-nav a');
+            if(navLink){closeNav();return;}
+            var nav=getNav();
+            if(nav&&nav.classList.contains('open')&&!t.closest('.site-nav')&&!t.closest('.nav-toggle')){
+                closeNav();
+            }
+        },false);
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeNav();}
+        });
     })();
     </script>
     <footer class="site-footer">
