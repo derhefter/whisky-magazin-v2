@@ -685,12 +685,14 @@
         }
 
         // 2. Newsletter Double-Opt-In (Brevo)
+        // source: "fragebogen" => Server-side Trust-Pfad (Fragebogen hat kein Captcha-Widget,
+        // dafuer striktes IP-Rate-Limit + Origin-Check in api/subscribe.py)
         if (newsletter) {
             try {
                 await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: emailVal })
+                    body: JSON.stringify({ email: emailVal, source: 'fragebogen' })
                 });
             } catch(_) { /* non-blocking */ }
         }
@@ -700,7 +702,7 @@
             await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'thankyou', email: emailVal, name: nameVal })
+                body: JSON.stringify({ action: 'thankyou', email: emailVal, name: nameVal, source: 'fragebogen' })
             });
         } catch(_) { /* non-blocking */ }
 

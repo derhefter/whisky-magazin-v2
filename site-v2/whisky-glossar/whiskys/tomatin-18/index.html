@@ -154,7 +154,7 @@
         if(msg.length<20){status.textContent='Bitte mindestens 20 Zeichen eingeben.';status.style.color='var(--accent-warm)';return;}
         status.textContent='Wird gesendet …';status.style.color='var(--text-secondary)';
         fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({action:'feedback',page_name:'Tomatin 18 Year Old Oloroso Sherry',
+            body:JSON.stringify({action:'feedback',source:'glossar',page_name:'Tomatin 18 Year Old Oloroso Sherry',
                 page_type:'whisky',page_url:'/whisky-glossar/whiskys/tomatin-18/',
                 message:msg,reply_email:email,honeypot:hp})
         })

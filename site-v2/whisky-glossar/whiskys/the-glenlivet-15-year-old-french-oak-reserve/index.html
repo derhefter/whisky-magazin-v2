@@ -158,7 +158,7 @@
         if(msg.length<20){status.textContent='Bitte mindestens 20 Zeichen eingeben.';status.style.color='var(--accent-warm)';return;}
         status.textContent='Wird gesendet …';status.style.color='var(--text-secondary)';
         fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({action:'feedback',page_name:'The Glenlivet 15 Year Old French Oak Reserve',
+            body:JSON.stringify({action:'feedback',source:'glossar',page_name:'The Glenlivet 15 Year Old French Oak Reserve',
                 page_type:'whisky',page_url:'/whisky-glossar/whiskys/the-glenlivet-15-year-old-french-oak-reserve/',
                 message:msg,reply_email:email,honeypot:hp})
         })

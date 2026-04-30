@@ -158,7 +158,7 @@
         if(msg.length<20){status.textContent='Bitte mindestens 20 Zeichen eingeben.';status.style.color='var(--accent-warm)';return;}
         status.textContent='Wird gesendet …';status.style.color='var(--text-secondary)';
         fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({action:'feedback',page_name:'Jameson Black Barrel',
+            body:JSON.stringify({action:'feedback',source:'glossar',page_name:'Jameson Black Barrel',
                 page_type:'whisky',page_url:'/whisky-glossar/whiskys/jameson-black-barrel/',
                 message:msg,reply_email:email,honeypot:hp})
         })
