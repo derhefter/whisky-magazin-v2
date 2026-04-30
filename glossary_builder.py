@@ -183,7 +183,7 @@ def _feedback_section(page_name: str, page_type: str, page_url: str) -> str:
         if(msg.length<20){{status.textContent='Bitte mindestens 20 Zeichen eingeben.';status.style.color='var(--accent-warm)';return;}}
         status.textContent='Wird gesendet \u2026';status.style.color='var(--text-secondary)';
         fetch('/api/subscribe',{{method:'POST',headers:{{'Content-Type':'application/json'}},
-            body:JSON.stringify({{action:'feedback',page_name:'{safe_name}',
+            body:JSON.stringify({{action:'feedback',source:'glossar',page_name:'{safe_name}',
                 page_type:'{page_type}',page_url:'{page_url}',
                 message:msg,reply_email:email,honeypot:hp}})
         }})

@@ -68,6 +68,24 @@ FEEDBACK_RECIPIENT = "feedback@whisky-reise.com"
 _feedback_rate = defaultdict(list)
 FEEDBACK_RATE_LIMIT = 3  # max pro Stunde pro IP
 
+# Trusted-Form Bypass: Forms ohne sichtbares Captcha (Beta-Fragebogen,
+# Glossar-Feedback) duerfen den Turnstile-Check ueberspringen, dafuer aber
+# striktes IP-Rate-Limit + Origin-Check (do_POST validiert Origin bereits
+# gegen ALLOWED_ORIGINS).
+TRUSTED_FORM_SOURCES = {"fragebogen", "glossar"}
+_trusted_form_rate = defaultdict(list)
+TRUSTED_FORM_RATE_LIMIT = 5  # max pro Stunde pro IP
+
+
+def _is_trusted_form_rate_limited(ip: str) -> bool:
+    now = time.time()
+    cutoff = now - 3600
+    _trusted_form_rate[ip] = [t for t in _trusted_form_rate[ip] if t > cutoff]
+    if len(_trusted_form_rate[ip]) >= TRUSTED_FORM_RATE_LIMIT:
+        return True
+    _trusted_form_rate[ip].append(now)
+    return False
+
 # DOI confirmation email HTML (uses HTML entities for umlauts to avoid encoding issues)
 DOI_HTML = (
     '<!DOCTYPE html><html><head><meta charset="utf-8"></head>'
@@ -524,8 +542,14 @@ class handler(BaseHTTPRequestHandler):
             honeypot = body.get("honeypot", "")
             if honeypot:
                 return self._json(400, {"error": "Ungueltige Anfrage."}, cors)
-            if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
-                return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
+            source = body.get("source", "")
+            if source in TRUSTED_FORM_SOURCES:
+                # Glossar-Feedback hat kein Captcha-Widget. Stattdessen striktes IP-Limit.
+                if _is_trusted_form_rate_limited(client_ip):
+                    return self._json(429, {"error": "Zu viele Anfragen. Bitte warte eine Stunde."}, cors)
+            else:
+                if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
+                    return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
             if _is_feedback_rate_limited(client_ip):
                 return self._json(429, {"error": "Zu viele Feedback-Einsendungen. Bitte warte eine Stunde."}, cors)
             message = (body.get("message") or "").strip()
@@ -549,8 +573,13 @@ class handler(BaseHTTPRequestHandler):
 
         # Thank-you e-mail action (beta-tester survey)
         if body.get("action") == "thankyou":
-            if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
-                return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
+            source = body.get("source", "")
+            if source in TRUSTED_FORM_SOURCES:
+                if _is_trusted_form_rate_limited(client_ip):
+                    return self._json(429, {"error": "Zu viele Anfragen. Bitte warte eine Stunde."}, cors)
+            else:
+                if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
+                    return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
             email = (body.get("email") or "").strip().lower()
             name = (body.get("name") or "").strip()
             if not email or not BREVO_API_KEY:
@@ -565,7 +594,12 @@ class handler(BaseHTTPRequestHandler):
         if not email or not EMAIL_REGEX.match(email) or len(email) > 254:
             return self._json(400, {"error": "Bitte gib eine gueltige E-Mail-Adresse ein."}, cors)
 
-        if not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
+        source = body.get("source", "")
+        if source in TRUSTED_FORM_SOURCES:
+            # Newsletter-Anmeldung aus Beta-Fragebogen (kein Captcha-Widget vorhanden).
+            if _is_trusted_form_rate_limited(client_ip):
+                return self._json(429, {"error": "Zu viele Anfragen. Bitte warte eine Stunde."}, cors)
+        elif not _verify_turnstile(body.get("turnstile_token", ""), client_ip):
             return self._json(400, {"error": "Captcha-Pruefung fehlgeschlagen. Bitte Seite neu laden."}, cors)
 
         if not BREVO_API_KEY:
