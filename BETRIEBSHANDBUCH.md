@@ -1453,3 +1453,16 @@ Nach dem dritten CSP-bedingten Bug in diesem Sprint wurde ein vollstaendiger Aud
 | Admin-Panel: DOMPurify                  | ✅ (heute gefixt)    | `cdn.jsdelivr.net` in Admin-`script-src` aufgenommen — XSS-Sanitizer laedt jetzt sauber statt in den Fallback zu fallen (Sicherheitsverbesserung, nicht funktional sichtbar) |
 
 **Kein weiterer Workflow blockiert.** Sollte ein neuer Drittanbieter-Endpoint dazukommen, vorher die CSP-Tabelle in 13.6 abgleichen und die entsprechende Direktive ergaenzen — sonst Wiederholung der Stille-Fehler-Falle.
+
+### 13.8 Newsletter-DOI nach Fragebogen + Glossar-Feedback (Hotfix 30.04.2026)
+
+**Symptom:** Beta-Tester fuellen den Fragebogen aus, kreuzen die Newsletter-Checkbox an, sehen keinen Fehler — bekommen aber **keine DOI-Mail**. Bei den ersten 6 Beta-Testern (28.–29.04.) ging keine einzige Bestaetigungsmail raus.
+**Ursache:** `api/subscribe.py` verlangte fuer `action=feedback`, `action=thankyou` und den Default-Newsletter-Signup einen Cloudflare-Turnstile-Token. Der Fragebogen und das Glossar-Feedback haben aber kein Captcha-Widget; die fetch-Aufrufe gingen ohne Token raus → Server antwortete `400 Captcha-Pruefung fehlgeschlagen`. Im Client-JS waren die DOI-/Dankesmail-Aufrufe in `try/catch` mit `/* non-blocking */` gewrappt — Tester sah brav die Danke-Seite, niemand merkte was.
+**Fix:**
+- `api/subscribe.py`: neuer Trust-Pfad `source: "fragebogen"|"glossar"`. Statt Turnstile greift dort ein striktes IP-Rate-Limit (5 / Stunde / IP). Origin-Check bleibt aktiv (siehe `ALLOWED_ORIGINS`).
+- `fragebogen.html`: `source: "fragebogen"` bei DOI- und Dankesmail-Aufruf mitgesendet.
+- `glossary_builder.py`: `source: "glossar"` im Feedback-Body — Site-Rebuild zieht das auf alle ~700 Glossar-Detailseiten.
+
+**Manueller Nachzug fuer die ersten 6 Beta-Tester:** Im Formspree-Dashboard pruefen, wer die `newsletter`-Checkbox `=on` hatte. Diese Adressen einmalig manuell ueber das Brevo-Dashboard zur Liste hinzufuegen (oder per CLI/curl gegen den neuen Endpoint mit `source=fragebogen` nachholen).
+
+**Lehre:** Wenn ein Form serverseitig Anti-Spam (Captcha/Token) erwartet, aber clientseitig nichts mitliefert, schlaegt der Aufruf still fehl — egal wie die CSP aussieht. Bei jeder Erweiterung von `api/subscribe.py` um neue `action=`-Pfade pruefen, ob die zugehoerigen Forms tatsaechlich Captcha/Trust-Pfad mitschicken.
